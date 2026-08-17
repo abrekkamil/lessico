@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#15171c">
+<title>Lessico Drill</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<style>
+  :root {
+    --bg:#15171c; --surface:#1e2128; --surface2:#262a33; --border:#333844;
+    --text:#ecebe8; --muted:#98a0ad; --accent:#e0a458; --good:#6fcf97;
+    --bad:#eb6f6f; --info:#7aa2f7; --violet:#b48ead; --masc:#7aa2f7; --fem:#e88ba0;
+    --serif: "Iowan Old Style","Palatino Linotype",Georgia,"Times New Roman",serif;
+  }
+  * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body { margin:0; height:100%; background:var(--bg); color:var(--text);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; font-size:16px; }
+  body { display:flex; flex-direction:column;
+    padding:env(safe-area-inset-top) env(safe-area-inset-right)
+            env(safe-area-inset-bottom) env(safe-area-inset-left); }
+  #top { display:flex; align-items:center; gap:12px; padding:12px 16px 8px; }
+  #top .meta { color:var(--muted); font-size:13px; }
+  #bar { flex:1; height:6px; background:var(--surface2); border-radius:3px; overflow:hidden; }
+  #bar i { display:block; height:100%; width:0; background:var(--accent); transition:width .2s; }
+  #main { flex:1; overflow-y:auto; padding:8px 16px 4px; -webkit-overflow-scrolling:touch; }
+  #foot { padding:10px 16px calc(12px + env(safe-area-inset-bottom));
+          display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+          border-top:1px solid var(--border); background:var(--bg); }
+  button { font:inherit; color:var(--text); background:var(--surface2);
+    border:1px solid var(--border); border-radius:11px; padding:13px 16px;
+    min-height:48px; cursor:pointer; }
+  button:active { background:var(--border); }
+  button.primary { background:var(--accent); color:#15171c; border-color:var(--accent);
+                   font-weight:600; }
+  button.ghost { background:transparent; border-color:transparent; color:var(--muted);
+                 text-decoration:underline; padding:13px 8px; }
+  button:disabled { opacity:.4; }
+  button.grow { flex:1; }
+  input, textarea { font:inherit; width:100%; color:var(--text);
+    background:var(--surface2); border:1px solid var(--border); border-radius:11px;
+    padding:14px; min-height:52px; }
+  input:focus, textarea:focus { outline:none; border-color:var(--accent); }
+  .prompt { font-family:var(--serif); font-size:clamp(30px,9vw,44px); text-align:center;
+            line-height:1.15; margin:22px 0 6px; }
+  .sub { color:var(--muted); text-align:center; font-size:14px; margin-bottom:14px; }
+  .sentence { font-family:var(--serif); font-size:clamp(19px,5.4vw,25px); line-height:1.5; }
+  .muted { color:var(--muted); font-size:14px; line-height:1.5; }
+  .accent { color:var(--accent); }
+  .good { color:var(--good); } .bad { color:var(--bad); }
+  .slot { border:1px dashed var(--border); border-radius:10px; padding:13px;
+          text-align:center; margin-bottom:8px; color:var(--muted); letter-spacing:3px; }
+  .slot.filled { border-style:solid; border-color:var(--good); color:var(--text);
+                 letter-spacing:normal; }
+  .slot.missed { border-style:solid; border-color:var(--bad); color:var(--bad);
+                 letter-spacing:normal; }
+  .shape { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:21px;
+           letter-spacing:3px; text-align:center; margin:10px 0; }
+  .card { background:var(--surface); border:1px solid var(--border);
+          border-radius:16px; padding:16px; margin-bottom:12px; }
+  .tiles { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:14px; }
+  .tile { background:var(--surface); border:1px solid var(--border);
+          border-radius:14px; padding:14px; }
+  .tile b { display:block; font-size:27px; font-weight:600; }
+  .tile span { color:var(--muted); font-size:13px; }
+  .row { display:flex; gap:10px; flex-wrap:wrap; }
+  h1 { font-family:var(--serif); font-size:26px; margin:6px 0 2px; font-weight:600; }
+  h2 { font-size:16px; margin:16px 0 8px; }
+  a { color:var(--accent); }
+  .hidden { display:none !important; }
+</style>
+</head>
+<body>
+
+<div id="top">
+  <span class="meta" id="counter"></span>
+  <span id="bar"><i></i></span>
+  <button class="ghost" id="quit" style="padding:6px 8px;min-height:0">Close</button>
+</div>
+
+<div id="main"></div>
+
+<div id="foot"></div>
+
+<script>
+"use strict";
+
+/* ---------------------------------------------------------------- storage
+   IndexedDB holds the collection so it survives being closed and works with
+   no signal. One record per card, keyed by the word itself, which is also
+   how the desktop keys its sync file. */
+const DB_NAME = "lessico", STORE = "state";
+let idb = null;
+
+function openDB() {
+  return new Promise((ok, fail) => {
+    const req = indexedDB.open(DB_NAME, 1);
+    req.onupgradeneeded = () => req.result.createObjectStore(STORE);
+    req.onsuccess = () => { idb = req.result; ok(idb); };
+    req.onerror = () => fail(req.error);
+  });
+}
+function idbGet(key) {
+  return new Promise((ok, fail) => {
+    const r = idb.transaction(STORE, "readonly").objectStore(STORE).get(key);
+    r.onsuccess = () => ok(r.result); r.onerror = () => fail(r.error);
+  });
+}
+function idbSet(key, value) {
+  return new Promise((ok, fail) => {
+    const tx = idb.transaction(STORE, "readwrite");
+    tx.objectStore(STORE).put(value, key);
+    tx.oncomplete = () => ok(); tx.onerror = () => fail(tx.error);
+  });
+}
+
+/* ------------------------------------------------------------------ state */
+let state = null;          // { language, cards: [...], reviews: [...] }
+let queue = [], index = 0, results = null, filter = null;
+
+const todayStr = () => new Date().toISOString().slice(0, 10);
+const nowStr = () => new Date().toISOString().slice(0, 19);
+const plusDays = n => new Date(Date.now() + n * 864e5).toISOString().slice(0, 10);
+
+async function save() {
+  state.saved_at = nowStr();
+  await idbSet("collection", state);
+}
+
+/* ------------------------------------------------------- the same ladder
+   These constants mirror the desktop app. If one changes, both change. */
+const LEVEL2_TOP = 6, LETTER_LIMIT = 3, WRONG_LIMIT = 3, MARK_LIMIT = 3;
+const BOX_NAME = {
+  1: "the word, native \u2192 English", 2: "the word, English \u2192 native",
+  3: "sentence gap, with the translation", 4: "sentence gap, without the translation",
+  5: "translate the sentence into English", 6: "translate the sentence into native"
+};
+const INTERVALS = [0, 1, 2, 4, 8, 16, 32];
+
+function due(card) { return !card.due || card.due <= todayStr(); }
+function mbox(card) { return Math.min(Math.max(card.mbox || 1, 1), LEVEL2_TOP); }
+
+function modeFor(card) {
+  if (card.stage === 1) return (card.flags & 1) ? "flash_en_it" : "flash_it_en";
+  if (card.stage === 3) return "produce";
+  if (card.stage >= 4) return "spot";
+  const box = mbox(card);
+  if (box === 1) return "meanings";
+  if (box === 2) return "reverse";
+  if (box === 3) return "cloze";
+  if (box === 4) return "cloze_blind";
+  return box === 5 ? "translate_out" : "translate_in";
+}
+
+/* Where an answer sends the card. Returns the wording as well, so the screen
+   and the schedule can never disagree. */
+function planLevel2(card, letters, opts) {
+  opts = opts || {};
+  const box = mbox(card);
+  if (opts.partial && letters < LETTER_LIMIT && !opts.gaveUp) {
+    const marks = (card.marks || 0) + 1;
+    if (marks >= MARK_LIMIT)
+      return [{ stage: 1, box: 5, mbox: 1, marks: 0, flags: 0, due: todayStr(),
+                lapses: (card.lapses || 0) + 1 },
+              `Back to flashcards at box 5: ${MARK_LIMIT} times now with a meaning missing.`];
+    if (box > 1)
+      return [{ mbox: 1, marks, due: plusDays(1) },
+              `A meaning was missing, so back to box 1 of ${LEVEL2_TOP}. Mark ${marks} of ${MARK_LIMIT}.`];
+    return [{ marks, due: plusDays(1) },
+            `A meaning was missing, so box 1 again. Mark ${marks} of ${MARK_LIMIT}.`];
+  }
+  if (opts.gaveUp || opts.wrong || letters >= LETTER_LIMIT) {
+    const why = opts.reason || (opts.gaveUp ? "you asked for the answer"
+      : letters >= LETTER_LIMIT ? `${letters} letters were needed` : "that was not right");
+    const marks = (card.marks || 0) + 1;
+    if (box > 2 && marks < MARK_LIMIT)
+      return [{ mbox: 1, marks, lapses: (card.lapses || 0) + 1, due: plusDays(1) },
+              `Back to box 1 of ${LEVEL2_TOP}: ${why}. Mark ${marks} of ${MARK_LIMIT}.`];
+    return [{ stage: 1, box: 5, mbox: 1, marks: 0, flags: 0,
+              lapses: (card.lapses || 0) + 1, due: todayStr() },
+            `Back to flashcards at box 5: ${why}.`];
+  }
+  if (letters)
+    return [{ due: plusDays(1) },
+            `Stays at box ${box} of ${LEVEL2_TOP}: correct, but ${letters} letter${letters > 1 ? "s" : ""} of help.`];
+  if (box >= LEVEL2_TOP)
+    return [{ stage: 3, mbox: LEVEL2_TOP, marks: 0, due: plusDays(1) },
+            "Every box of level 2 cleared with no help: on to free writing."];
+  const step = INTERVALS[Math.min(box, INTERVALS.length - 1)] || 1;
+  return [{ mbox: box + 1, marks: 0, due: plusDays(step) },
+          `No help needed: box ${box} \u2192 ${box + 1}, ${BOX_NAME[box + 1]}.`];
+}
+
+function applyLevel2(card, letters, opts) {
+  const [fields, message] = planLevel2(card, letters, opts);
+  Object.assign(card, fields);
+  card.updated_at = nowStr();
+  logReview(card, modeFor(card), !(opts && (opts.wrong || opts.gaveUp)) && !letters);
+  return message;
+}
+
+function gradeFlash(card, correct) {
+  const boxes = 7;
+  card.updated_at = nowStr();
+  logReview(card, modeFor(card), correct);
+  if (!correct) {
+    card.flags = 0; card.box = 1; card.due = todayStr();
+    card.lapses = (card.lapses || 0) + 1;
+    return "Back to box 1.";
+  }
+  const bit = modeFor(card) === "flash_it_en" ? 1 : 2;
+  const flags = (card.flags || 0) | bit;
+  if (flags !== 3) {
+    card.flags = flags; card.due = plusDays(1);
+    return "Correct. The other direction comes back tomorrow.";
+  }
+  card.flags = 0;
+  if (card.box >= boxes) {
+    card.stage = 2; card.mbox = 1; card.due = plusDays(1);
+    return "Box 7 cleared in both directions: on to level 2.";
+  }
+  card.box = (card.box || 1) + 1;
+  const step = INTERVALS[Math.min(card.box, INTERVALS.length - 1)] || 1;
+  card.due = plusDays(step);
+  return `Box ${card.box - 1} \u2192 ${card.box}, back in ${step} day(s).`;
+}
+
+function logReview(card, mode, correct) {
+  state.reviews.push([card.w, nowStr(), card.stage, mode, correct ? "correct" : "wrong"]);
+  if (state.reviews.length > 4000) state.reviews.splice(0, state.reviews.length - 4000);
+}
+
+/* --------------------------------------------------------------- matching */
+const ARTICLES = new Set(["a", "an", "the", "to", "some"]);
+// the same stop list the desktop uses, so 'switch' answers 'to switch on'
+const STOP = new Set(["the","a","an","of","to","in","on","at","is","are","am",
+  "do","does","did","it","this","that","and","or","for","with","my","your",
+  "his","her","their","our","i","you","he","she","we","they","be","have",
+  "has","had","will","would","not","no","s","t","m","re","ve","ll"]);
+const norm = s => (s || "").toLowerCase().normalize("NFD")
+  .replace(/[\u0300-\u036f]/g, "").replace(/[^a-z' ]/g, " ").trim().replace(/\s+/g, " ");
+
+function glossKey(text) {
+  const words = norm((text || "").replace(/\([^)]*\)/g, " ")).split(" ").filter(Boolean);
+  const trimmed = words.slice();
+  while (trimmed.length && ARTICLES.has(trimmed[0])) trimmed.shift();
+  return (trimmed.length ? trimmed : words).join(" ");
+}
+function contentWords(text) {
+  return new Set(norm(text).split(" ").filter(w => w && !STOP.has(w)));
+}
+function ratio(a, b) {                       // Dice coefficient on bigrams
+  if (a === b) return 1;
+  if (a.length < 2 || b.length < 2) return a === b ? 1 : 0;
+  const grams = new Map();
+  for (let i = 0; i < a.length - 1; i++) {
+    const g = a.slice(i, i + 2); grams.set(g, (grams.get(g) || 0) + 1);
+  }
+  let hits = 0;
+  for (let i = 0; i < b.length - 1; i++) {
+    const g = b.slice(i, i + 2), n = grams.get(g) || 0;
+    if (n > 0) { hits++; grams.set(g, n - 1); }
+  }
+  return (2 * hits) / (a.length + b.length - 2);
+}
+function variants(gloss) {
+  if (!gloss.includes("/")) return [gloss];
+  const [head, tail] = gloss.split("/", 2);
+  const parts = tail.trim().split(" ");
+  const suffix = parts.slice(1).join(" ");
+  return [`${head.trim()} ${suffix}`.trim(), `${parts[0]} ${suffix}`.trim(), gloss];
+}
+/* returns { hit, near, partial } */
+function matchGloss(typed, glosses) {
+  const key = glossKey(typed);
+  if (!key) return {};
+  let best = null, bestScore = 0, partial = null;
+  for (const gloss of glosses) {
+    for (const v of variants(gloss)) {
+      const target = glossKey(v);
+      if (!target) continue;
+      if (key === target) return { hit: gloss };
+      // everything the meaning carries has to be there, and grammatical
+      // filler does not count: 'switch' answers 'to switch on', but
+      // 'railway' does not answer 'railway track'
+      const mine = contentWords(typed), theirs = contentWords(v);
+      if (theirs.size && [...theirs].every(w => mine.has(w))) return { hit: gloss };
+      if (mine.size && [...mine].every(w => theirs.has(w))) {
+        partial = partial || gloss; continue;
+      }
+      const score = ratio(key, target);
+      if (score > bestScore) { best = gloss; bestScore = score; }
+    }
+  }
+  if (bestScore >= 0.82) return { hit: best };
+  if (partial) return { partial };
+  if (bestScore >= 0.62) return { near: best };
+  return {};
+}
+function closeness(typed, targets) {
+  let score = 0;
+  for (const t of targets) {
+    let a = glossKey(typed), b = glossKey(t);
+    if (!a || !b) { a = (typed || "").trim().toLowerCase(); b = (t || "").trim().toLowerCase(); }
+    score = Math.max(score, ratio(a, b));
+  }
+  const verdict = score >= 0.8 ? "almost: check the spelling"
+    : score >= 0.55 ? "close, but not the word"
+    : score >= 0.3 ? "some way off" : "not one of them";
+  return { score, verdict };
+}
+const looseEq = (a, b) => norm(a).replace(/'/g, "") === norm(b).replace(/'/g, "");
+
+/* letters revealed one at a time, the initial first */
+function makeHint(word) {
+  let shown = new Set(), used = 0;
+  function reset(next) {
+    word = next || "";
+    shown = new Set(); used = 0;
+    const free = /^(to|a|an|the)\s+/i.exec(word);
+    if (free) for (let i = 0; i < free[0].length; i++) shown.add(i);
+  }
+  reset(word);
+  return {
+    reset,
+    get word() { return word; },
+    get used() { return used; },
+    more() {
+      const spots = [];
+      for (let i = 0; i < word.length; i++)
+        if (/[^\W\d_]/u.test(word[i]) && !shown.has(i)) spots.push(i);
+      if (!spots.length) return false;
+      shown.add(used === 0 ? spots[0] : spots[Math.floor(Math.random() * spots.length)]);
+      used++; return true;
+    },
+    pattern() {
+      return [...word].map((ch, i) =>
+        /[^\W\d_]/u.test(ch) ? (shown.has(i) ? ch : "_") : ch).join(" ");
+    }
+  };
+}
+
+/* --------------------------------------------------------------- rendering */
+const main = document.getElementById("main");
+const foot = document.getElementById("foot");
+const counter = document.getElementById("counter");
+const bar = document.querySelector("#bar i");
+const quitBtn = document.getElementById("quit");
+
+function el(tag, cls, html) {
+  const node = document.createElement(tag);
+  if (cls) node.className = cls;
+  if (html !== undefined) node.innerHTML = html;
+  return node;
+}
+function button(text, cls, fn) {
+  const b = el("button", cls, text);
+  b.addEventListener("click", fn);
+  return b;
+}
+function esc(s) {
+  return (s || "").replace(/[&<>"]/g, c =>
+    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+}
+function show(nodes, buttons) {
+  main.innerHTML = ""; foot.innerHTML = "";
+  nodes.filter(Boolean).forEach(n => main.appendChild(n));
+  (buttons || []).filter(Boolean).forEach(b => foot.appendChild(b));
+  main.scrollTop = 0;
+}
+function setProgress(text, fraction) {
+  counter.textContent = text || "";
+  bar.style.width = `${Math.round((fraction || 0) * 100)}%`;
+}
+
+/* ------------------------------------------------------------------- home */
+function counts() {
+  const c = { due: 0, s1: 0, s2: 0, s3: 0, mastered: 0,
+              flashcards: [0, 0], meanings: [0, 0], gaps: [0, 0],
+              translate: [0, 0], writing: [0, 0] };
+  for (const card of state.cards) {
+    const isDue = due(card);
+    if (isDue) c.due++;
+    if (card.stage === 1) { c.s1++; c.flashcards[0]++; if (isDue) c.flashcards[1]++; }
+    else if (card.stage === 2) {
+      c.s2++;
+      const box = mbox(card);
+      const key = box <= 2 ? "meanings" : box <= 4 ? "gaps" : "translate";
+      c[key][0]++; if (isDue) c[key][1]++;
+    } else if (card.stage === 3) { c.s3++; c.writing[0]++; if (isDue) c.writing[1]++; }
+    else c.mastered++;
+  }
+  return c;
+}
+
+function home() {
+  queue = []; setProgress("", 0); quitBtn.classList.add("hidden");
+  if (!state) return setup();
+  const c = counts();
+  const tiles = el("div", "tiles");
+  [["due now", c.due, "accent"], ["mastered", c.mastered, "good"],
+   ["level 1", c.s1, ""], ["level 2", c.s2, ""]].forEach(([name, n, cls]) => {
+    const t = el("div", "tile");
+    t.appendChild(el("b", cls, String(n)));
+    t.appendChild(el("span", "", name));
+    tiles.appendChild(t);
+  });
+
+  const head = el("div");
+  head.appendChild(el("h1", "", "Lessico Drill"));
+  head.appendChild(el("div", "muted", esc(state.language_name || "") +
+    " \u00b7 " + state.cards.length + " words"));
+
+  const study = el("div", "card");
+  study.appendChild(el("h2", "", "Study"));
+  const rows = el("div", "row");
+  rows.appendChild(button("Start session", "primary grow", () => start(null)));
+  rows.appendChild(button("Flashcards " + c.flashcards[1], "grow", () => start("flashcards")));
+  rows.appendChild(button("Meanings " + c.meanings[1], "grow", () => start("meanings")));
+  rows.appendChild(button("Gaps " + c.gaps[1], "grow", () => start("gaps")));
+  rows.appendChild(button("Translation " + c.translate[1], "grow", () => start("translate")));
+  rows.appendChild(button("Writing " + c.writing[1], "grow", () => start("writing")));
+  for (const b of rows.children)
+    if (/ 0$/.test(b.textContent)) b.disabled = true;
+  study.appendChild(rows);
+  study.appendChild(el("div", "muted",
+    "Each button shows how many are due now."));
+
+  const sync = el("div", "card");
+  sync.appendChild(el("h2", "", "Sync with the desktop"));
+  sync.appendChild(el("div", "muted",
+    "Send your phone progress back, or take in the desktop's. Newer wins, card by card." +
+    (state.saved_at ? "<br>Last change here: " + esc(state.saved_at.replace("T", " ")) : "")));
+  const syncRow = el("div", "row");
+  syncRow.style.marginTop = "10px";
+  syncRow.appendChild(button("Export my progress", "grow", exportProgress));
+  syncRow.appendChild(button("Import a file", "grow", () => pick(importFile)));
+  sync.appendChild(syncRow);
+
+  show([head, tiles, study, sync], []);
+}
+
+/* ---------------------------------------------------------------- session */
+function buildQueue(kind) {
+  const size = 30, ration = 15;
+  let pool = state.cards.filter(c => due(c) && !c.suspended);
+  if (kind === "flashcards") pool = pool.filter(c => c.stage === 1);
+  else if (kind === "writing") pool = pool.filter(c => c.stage === 3);
+  else if (kind === "meanings") pool = pool.filter(c => c.stage === 2 && mbox(c) <= 2);
+  else if (kind === "gaps") pool = pool.filter(c => c.stage === 2 && [3, 4].includes(mbox(c)));
+  else if (kind === "translate")
+    pool = pool.filter(c => c.stage === 2 && mbox(c) >= 5 &&
+      (c.sentences || []).some(s => s.en));
+  const seen = pool.filter(c => c.reviews > 0);
+  const fresh = pool.filter(c => !c.reviews).sort(() => Math.random() - 0.5).slice(0, ration);
+  const all = seen.concat(fresh);
+  all.sort((a, b) => (a.due || "9999").localeCompare(b.due || "9999"));
+  return all.slice(0, size);
+}
+
+function start(kind) {
+  filter = kind;
+  queue = buildQueue(kind);
+  index = 0;
+  results = { seen: 0, correct: 0, boxes: 0, levels: 0 };
+  quitBtn.classList.remove("hidden");
+  if (!queue.length) return summary("Nothing is due");
+  next();
+}
+
+function advance() { index++; next(); }
+
+function next() {
+  if (index >= queue.length) return summary("Session complete");
+  const card = queue[index];
+  setProgress(`${index + 1} of ${queue.length}`, index / queue.length);
+  const mode = modeFor(card);
+  if (mode === "flash_it_en" || mode === "flash_en_it") return viewFlash(card, mode);
+  if (mode === "meanings") return viewMeanings(card);
+  if (mode === "reverse") return viewReverse(card);
+  if (mode === "cloze" || mode === "cloze_blind")
+    return viewCloze(card, mode === "cloze_blind");
+  if (mode === "translate_out" || mode === "translate_in")
+    return viewTranslate(card, mode === "translate_in");
+  return viewProduce(card);
+}
+
+function summary(title) {
+  setProgress("", 1); quitBtn.classList.add("hidden");
+  const box = el("div", "card");
+  box.appendChild(el("h1", "", title));
+  box.appendChild(el("div", "muted", results && results.seen
+    ? `${results.seen} answers \u00b7 ${Math.round(100 * results.correct / results.seen)}% correct \u00b7 ` +
+      `${results.boxes} moved up a box \u00b7 ${results.levels} moved up a level.`
+    : "Nothing scheduled right now. Come back tomorrow, or sync from the desktop."));
+  save();
+  show([box], [button("Back", "primary grow", home)]);
+}
+
+function finish(card, message, correct, moved) {
+  results.seen++;
+  if (correct) results.correct++;
+  if (moved === "box") results.boxes++;
+  if (moved === "level") results.levels++;
+  save();
+  advance();
+}
+
+function withArticle(card) {
+  if (state.language !== "it" || card.spos !== "noun") return esc(card.w);
+  const m = /^([a-zA-Zàèéìòù']+)/.exec((card.art || "").trim());
+  const art = m ? m[1].toLowerCase() : "";
+  if (!["il", "lo", "la", "l'", "i", "gli", "le"].includes(art)) return esc(card.w);
+  const colour = art === "la" || art === "le" ? "var(--fem)" : "var(--masc)";
+  return `<span style="color:${colour}">${art}</span>${art.endsWith("'") ? "" : " "}${esc(card.w)}`;
+}
+
+/* --------------------------------------------------------------- exercises */
+function viewFlash(card, mode) {
+  const itEn = mode === "flash_it_en";
+  const meta = el("div", "muted",
+    `Level 1 \u00b7 Box ${card.box || 1} of 7 \u00b7 ` +
+    (itEn ? "native \u2192 English" : "English \u2192 native"));
+  const prompt = el("div", "prompt", itEn ? withArticle(card) : esc(card.en));
+  const sub = el("div", "sub", esc(card.pos || ""));
+  const answer = el("div", "card hidden");
+  answer.innerHTML = `<div class="prompt" style="margin-top:4px">${
+    itEn ? esc(card.en) : withArticle(card)}</div>` +
+    (card.coll ? `<div class="muted">${esc(card.coll)}</div>` : "") +
+    (card.ex ? `<div class="sentence" style="margin-top:8px">${esc(card.ex)}</div>` : "");
+
+  const reveal = button("Show answer", "primary grow", () => {
+    answer.classList.remove("hidden");
+    foot.innerHTML = "";
+    foot.appendChild(button("Didn't know", "grow", () => grade(false)));
+    foot.appendChild(button("Knew it", "primary grow", () => grade(true)));
+  });
+  function grade(correct) {
+    const before = card.stage;
+    const message = gradeFlash(card, correct);
+    result(message, correct, before);
+  }
+  function result(message, correct, before) {
+    answer.appendChild(el("div", "accent", esc(message)));
+    foot.innerHTML = "";
+    foot.appendChild(button("Next", "primary grow", () =>
+      finish(card, message, correct, card.stage > before ? "level" : null)));
+  }
+  const tip = (card.explain || card.explain_native)
+    ? button("What does it mean?", "ghost", () => {
+        answer.classList.remove("hidden");
+        answer.innerHTML = `<div class="muted">${
+          esc(card.explain_native || "")}<br>${esc(card.explain || "")}</div>`;
+      }) : null;
+  show([meta, prompt, sub, answer], [tip, reveal]);
+}
+
+function viewMeanings(card) {
+  const senses = (card.senses && card.senses.length)
+    ? card.senses.map(s => s.gloss) : [card.en];
+  let remaining = senses.slice(), found = [], letters = 0, wrongs = 0;
+  let unaided = 0, gaveUp = false, reason = "", done = false;
+  const hint = makeHint(remaining[0] || "");
+
+  const meta = el("div", "muted",
+    `Level 2 \u00b7 box 1 of ${LEVEL2_TOP} \u00b7 native \u2192 English \u00b7 ` +
+    `${senses.length} meaning(s)` + (card.marks ? ` \u00b7 ${card.marks} mark(s)` : ""));
+  const prompt = el("div", "prompt", withArticle(card));
+  const sub = el("div", "sub", esc(card.pos || ""));
+  const slots = el("div");
+  const input = el("input");
+  input.placeholder = "type a meaning";
+  input.autocapitalize = "none"; input.autocomplete = "off"; input.autocorrect = "off";
+  const feedback = el("div", "muted");
+  feedback.style.textAlign = "center";
+  feedback.style.marginTop = "10px";
+
+  function paint() {
+    slots.innerHTML = "";
+    senses.forEach((gloss, i) => {
+      const state_ = found.includes(gloss) ? "filled"
+        : (done && remaining.includes(gloss)) ? "missed" : "";
+      const text = found.includes(gloss) || (done && remaining.includes(gloss))
+        ? gloss
+        : (remaining[0] === gloss && hint.used ? hint.pattern() : "\u00b7 \u00b7 \u00b7");
+      slots.appendChild(el("div", "slot " + state_, esc(text)));
+    });
+  }
+  function submit() {
+    if (done) return;
+    const typed = input.value.trim();
+    if (!typed) return;
+    const { hit, near, partial } = matchGloss(typed, remaining);
+    if (hit) {
+      if (!(hint.used && remaining[0] === hit)) unaided++;
+      found.push(hit);
+      remaining = remaining.filter(g => g !== hit);
+      input.value = ""; feedback.textContent = "";
+      paint();
+      if (!remaining.length) complete();
+      return;
+    }
+    wrongs++;
+    input.value = "";
+    const left = WRONG_LIMIT - wrongs;
+    if (left <= 0) { reason = `${WRONG_LIMIT} wrong tries`; return revealRest(); }
+    if (partial)
+      feedback.textContent =
+        `Part of it only: this meaning is ${partial.split(" ").length} words \u00b7 ${left} tries left`;
+    else if (near) feedback.textContent = `Close, check the spelling \u00b7 ${left} tries left`;
+    else {
+      const { score, verdict } = closeness(typed, remaining);
+      feedback.textContent = `${verdict} (${Math.round(score * 100)}% match) \u00b7 ${left} tries left`;
+    }
+  }
+  function showLetter() {
+    if (done || !remaining.length) return;
+    // letters go into the first meaning still missing, so the hint has to
+    // follow it as earlier ones are answered
+    if (hint.word !== remaining[0]) hint.reset(remaining[0]);
+    if (!hint.more()) return;
+    letters++;
+    paint();
+    feedback.textContent =
+      `${letters} letter(s) of help. ${LETTER_LIMIT} or more sends this word back to flashcards.`;
+  }
+  function revealRest() { gaveUp = !reason; settle(); }
+  function complete() { settle(); }
+  function settle() {
+    done = true; paint();
+    const partial = unaided > 0 && remaining.length > 0 && letters < LETTER_LIMIT;
+    const before = card.stage, beforeBox = mbox(card);
+    const message = applyLevel2(card, letters, {
+      gaveUp: gaveUp && !partial, reason: partial ? "" : reason, partial
+    });
+    feedback.innerHTML = (remaining.length
+      ? "Marked as missed, so these come back tomorrow.<br>" : "Every meaning recalled.<br>") +
+      `<span class="accent">${esc(message)}</span>`;
+    const context = (card.senses || []).filter(s => s.ex)
+      .map(s => `<div style="margin:6px 0"><b class="${
+        remaining.includes(s.gloss) ? "accent" : "muted"}">${esc(s.gloss)}</b> ${
+        esc(s.ex)}<br><span class="muted">${esc(s.note || "")}</span></div>`).join("");
+    if (context) main.appendChild(el("div", "muted", context));
+    foot.innerHTML = "";
+    foot.appendChild(button("Next", "primary grow", () =>
+      finish(card, message, !remaining.length && !letters,
+             card.stage > before ? "level" : mbox(card) > beforeBox ? "box" : null)));
+  }
+
+  input.addEventListener("keydown", e => { if (e.key === "Enter") submit(); });
+  paint();
+  show([meta, prompt, sub, slots, input, feedback], [
+    button("Show a letter", "", showLetter),
+    button("Show the rest", "ghost", revealRest),
+    button("Check", "primary grow", submit)
+  ]);
+  setTimeout(() => input.focus(), 60);
+}
+
+function viewReverse(card) {
+  const senses = (card.senses && card.senses.length)
+    ? card.senses.map(s => s.gloss) : [card.en];
+  const hint = makeHint(card.w);
+  let letters = 0, wrongs = 0, done = false, correct = false, gaveUp = false;
+
+  const meta = el("div", "muted",
+    `Level 2 \u00b7 box 2 of ${LEVEL2_TOP} \u00b7 English \u2192 native`);
+  const prompt = el("div", "prompt", esc(senses.join(";  ")));
+  const sub = el("div", "sub", esc(card.pos || ""));
+  const shape = el("div", "shape hidden");
+  const input = el("input");
+  input.placeholder = "type the word";
+  input.autocapitalize = "none"; input.autocomplete = "off"; input.autocorrect = "off";
+  const feedback = el("div", "muted");
+  feedback.style.textAlign = "center"; feedback.style.marginTop = "10px";
+
+  function check() {
+    if (done) return;
+    const typed = input.value.trim();
+    if (!typed) return;
+    if (looseEq(typed, card.w)) { correct = true; return settle(`<b class="good">Correct.</b> ${esc(card.w)}`); }
+    wrongs++;
+    input.value = "";
+    const left = WRONG_LIMIT - wrongs;
+    if (left > 0) {
+      const { score, verdict } = closeness(typed, [card.w]);
+      feedback.textContent = `${verdict} (${Math.round(score * 100)}% match) \u00b7 ${left} tries left`;
+      return;
+    }
+    settle(`<b class="bad">Not this time.</b> The word is <b>${esc(card.w)}</b>.`);
+  }
+  function showLetter() {
+    if (done || !hint.more()) return;
+    letters++;
+    shape.textContent = hint.pattern();
+    shape.classList.remove("hidden");
+    feedback.textContent =
+      `${letters} letter(s) of help. ${LETTER_LIMIT} or more sends this word back to flashcards.`;
+  }
+  function settle(message) {
+    done = true;
+    input.disabled = true;
+    const before = card.stage, beforeBox = mbox(card);
+    const applied = applyLevel2(card, letters, {
+      wrong: !correct && !gaveUp, gaveUp,
+      reason: wrongs >= WRONG_LIMIT ? `${WRONG_LIMIT} wrong tries` : ""
+    });
+    feedback.innerHTML = message +
+      (card.ex ? `<br><span class="muted">${esc(card.ex)}</span>` : "") +
+      `<br><span class="accent">${esc(applied)}</span>`;
+    foot.innerHTML = "";
+    foot.appendChild(button("Next", "primary grow", () =>
+      finish(card, applied, correct && !letters,
+             card.stage > before ? "level" : mbox(card) > beforeBox ? "box" : null)));
+  }
+
+  input.addEventListener("keydown", e => { if (e.key === "Enter") check(); });
+  const tip = (card.explain || card.explain_native)
+    ? button("Tip", "ghost", () => {
+        feedback.innerHTML = `<i>${esc(card.explain_native || "")}</i><br>${esc(card.explain || "")}`;
+      }) : null;
+  show([meta, prompt, sub, shape, input, feedback], [
+    tip, button("Show a letter", "", showLetter),
+    button("Show the answer", "ghost", () => { gaveUp = true;
+      shape.textContent = card.w; shape.classList.remove("hidden");
+      settle(`The word is <b>${esc(card.w)}</b>.`); }),
+    button("Check", "primary grow", check)
+  ]);
+  setTimeout(() => input.focus(), 60);
+}
+
+function pickSentence(card, needTranslation) {
+  const rows = (card.sentences || []).filter(s => s.surface && s.a >= 0);
+  const usable = needTranslation ? rows.filter(s => s.en) : rows;
+  const pool = usable.length ? usable : rows;
+  return pool.length ? pool[Math.floor(Math.random() * pool.length)] : null;
+}
+
+function viewCloze(card, blind) {
+  const row = pickSentence(card, !blind);
+  if (!row) { card.mbox = Math.min(mbox(card) + 1, LEVEL2_TOP); card.updated_at = nowStr();
+              return advance(); }
+  const hint = makeHint(row.surface);
+  let letters = 0, done = false, correct = false;
+
+  const meta = el("div", "muted",
+    `Level 2 \u00b7 box ${blind ? 4 : 3} of ${LEVEL2_TOP} \u00b7 sentence gap` +
+    (blind ? "" : ", with the translation"));
+  const gapped = row.it.slice(0, row.a) + "\u2007\u2007____\u2007\u2007" + row.it.slice(row.b);
+  const sentence = el("div", "sentence", esc(gapped));
+  const translation = el("div", "muted", blind ? "" : esc(row.en || ""));
+  const instruction = el("div", "", `<b>${esc(card.en)}</b>` +
+    (row.tag ? ` \u00b7 <span class="accent">${esc(row.tag)}</span>` : ""));
+  instruction.style.margin = "12px 0 8px";
+  const shape = el("div", "shape hidden");
+  const input = el("input");
+  input.placeholder = "the missing word";
+  input.autocapitalize = "none"; input.autocomplete = "off"; input.autocorrect = "off";
+  const feedback = el("div", "muted");
+  feedback.style.marginTop = "10px";
+
+  function check() {
+    if (done) return;
+    const typed = input.value.trim();
+    if (!typed) return;
+    correct = looseEq(typed, row.surface);
+    done = true;
+    input.disabled = true;
+    const before = card.stage, beforeBox = mbox(card);
+    const message = applyLevel2(card, letters, { wrong: !correct });
+    feedback.innerHTML = (correct
+      ? `<b class="good">Correct.</b> ${esc(row.it)}`
+      : `<b class="bad">Not this time.</b> The answer is <b>${esc(row.surface)}</b>.<br>${esc(row.it)}`) +
+      `<br><span class="accent">${esc(message)}</span>`;
+    foot.innerHTML = "";
+    foot.appendChild(button("Next", "primary grow", () =>
+      finish(card, message, correct && !letters,
+             card.stage > before ? "level" : mbox(card) > beforeBox ? "box" : null)));
+  }
+  function showLetter() {
+    if (done || !hint.more()) return;
+    letters++;
+    shape.textContent = hint.pattern();
+    shape.classList.remove("hidden");
+  }
+  input.addEventListener("keydown", e => { if (e.key === "Enter") check(); });
+  show([meta, sentence, translation, instruction, shape, input, feedback], [
+    button("Show a letter", "", showLetter),
+    button("Check", "primary grow", check)
+  ]);
+  setTimeout(() => input.focus(), 60);
+}
+
+function viewTranslate(card, intoNative) {
+  const rows = (card.sentences || []).filter(s => s.en);
+  if (!rows.length) { card.mbox = Math.min(mbox(card) + 1, LEVEL2_TOP);
+                      card.updated_at = nowStr(); return advance(); }
+  const row = rows[Math.floor(Math.random() * rows.length)];
+  const target = intoNative ? row.it : row.en;
+  let hints = 0, done = false;
+
+  const meta = el("div", "muted",
+    `Level 2 \u00b7 box ${intoNative ? 6 : 5} of ${LEVEL2_TOP} \u00b7 translate the sentence`);
+  const source = el("div", "sentence", esc(intoNative ? row.en : row.it));
+  const instruction = el("div", "muted",
+    intoNative ? `Use <b>${esc(card.w)}</b> somewhere in it.` : "Say what it means.");
+  instruction.style.margin = "10px 0";
+  const editor = el("textarea");
+  editor.rows = 3; editor.placeholder = "type the whole sentence";
+  const report = el("div", "muted");
+  report.style.marginTop = "10px";
+
+  function check() {
+    if (done) return;
+    const given = editor.value.trim();
+    if (!given) return;
+    done = true;
+    const want = contentWords(target), got = contentWords(given);
+    const missing = [...want].filter(w => ![...got].some(g =>
+      g === w || g.startsWith(w.slice(0, Math.max(4, w.length - 2)))));
+    const score = want.size ? (want.size - missing.length) / want.size : 1;
+    const verdict = score >= 0.7 ? ["The content words all line up.", "good"]
+      : score >= 0.4 ? ["Some of it lines up.", "accent"]
+      : ["This looks like a different sentence.", "bad"];
+    report.innerHTML =
+      `<span class="${verdict[1]}">${verdict[0]}</span> (${Math.round(score * 100)}% of the key words)` +
+      (missing.length ? `<br>Not found: ${esc(missing.slice(0, 6).join(", "))}` : "") +
+      `<br><br>Reference: <b>${esc(target)}</b>`;
+    foot.innerHTML = "";
+    foot.appendChild(button("Not quite", "grow", () => settle(false)));
+    foot.appendChild(button("That says it", "primary grow", () => settle(true)));
+  }
+  function settle(matched) {
+    const before = card.stage, beforeBox = mbox(card);
+    const message = applyLevel2(card, hints, { wrong: !matched });
+    report.innerHTML += `<br><span class="accent">${esc(message)}</span>`;
+    finish(card, message, matched && !hints,
+           card.stage > before ? "level" : mbox(card) > beforeBox ? "box" : null);
+  }
+  show([meta, source, instruction, editor, report], [
+    button("Show a word", "", () => {
+      const words = target.split(" ");
+      hints++;
+      report.innerHTML = `<span class="shape">${
+        esc(words.map((w, i) => i < hints ? w : "\u00b7".repeat(Math.max(w.length - 1, 2))).join(" "))}</span>`;
+    }),
+    button("Check", "primary grow", check)
+  ]);
+}
+
+function viewProduce(card) {
+  let done = false;
+  const meta = el("div", "muted", "Level 3 \u00b7 your own sentence");
+  const prompt = el("div", "prompt", `Use ${withArticle(card)}`);
+  const sub = el("div", "sub", esc(card.en));
+  const editor = el("textarea");
+  editor.rows = 3; editor.placeholder = "write a sentence using this word";
+  const report = el("div", "muted");
+  report.style.marginTop = "10px";
+
+  function check() {
+    if (done) return;
+    const text = editor.value.trim();
+    if (!text) return;
+    done = true;
+    const has = norm(text).split(" ").some(t =>
+      t === norm(card.w) || t.startsWith(norm(card.w).slice(0, Math.max(4, card.w.length - 2))));
+    report.innerHTML = has
+      ? '<span class="good">The word is there.</span> Does it say what you meant?'
+      : `<span class="bad">Your sentence does not contain ${esc(card.w)}.</span>`;
+    if (card.ex) report.innerHTML += `<br><span class="muted">For reference: ${esc(card.ex)}</span>`;
+    foot.innerHTML = "";
+    foot.appendChild(button("Not quite", "grow", () => settle(false)));
+    if (has) foot.appendChild(button("That works", "primary grow", () => settle(true)));
+  }
+  function settle(ok) {
+    card.updated_at = nowStr();
+    logReview(card, "produce", ok);
+    let message;
+    if (!ok) {
+      card.stage = 2; card.mbox = LEVEL2_TOP; card.due = plusDays(1);
+      message = "Back to level 2 for more practice.";
+    } else {
+      card.prod = (card.prod || 0) + 1;
+      if (card.prod >= 3) { card.stage = 4; card.due = plusDays(45); card.prod = 0;
+        message = "Mastered. Spot-checked in 45 days."; }
+      else { card.due = plusDays(2);
+        message = `Accepted: ${card.prod} of 3 towards mastered.`; }
+    }
+    report.innerHTML += `<br><span class="accent">${esc(message)}</span>`;
+    finish(card, message, ok, card.stage === 4 ? "level" : null);
+  }
+  show([meta, prompt, sub, editor, report], [button("Check", "primary grow", check)]);
+}
+
+/* ------------------------------------------------------------------- sync */
+function download(name, text) {
+  const blob = new Blob([text], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 4000);
+}
+function exportProgress() {
+  const cards = {};
+  for (const c of state.cards) {
+    const entry = {
+      stage: c.stage, box: c.box, meaning_box: c.mbox, meaning_marks: c.marks || 0,
+      dir_flags: c.flags || 0, cloze_passes: 0, prod_passes: c.prod || 0,
+      due: c.due, reviews: c.reviews || 0, correct: c.correct || 0,
+      lapses: c.lapses || 0, suspended: 0, updated_at: c.updated_at || ""
+    };
+    if (c.senses && c.senses.length) {
+      entry.senses = {};
+      for (const s of c.senses)
+        entry.senses[s.gloss] = { box: s.box || 0, due: s.due || null, seen: s.seen || 0,
+          recalled: s.recalled || 0, missed: s.missed || 0,
+          last_review: s.last_review || null };
+    }
+    cards[c.w] = entry;
+  }
+  const payload = { format: 3, language: state.language,
+    language_name: state.language_name, exported_at: nowStr(),
+    cards, reviews: state.reviews.slice(-4000) };
+  download(`lessico-${state.language}-phone.json`, JSON.stringify(payload));
+}
+function pick(handler) {
+  const input = document.createElement("input");
+  input.type = "file"; input.accept = ".json,application/json";
+  input.addEventListener("change", () => {
+    const file = input.files && input.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => { try { handler(JSON.parse(reader.result)); }
+                            catch (e) { alert("That file could not be read: " + e.message); } };
+    reader.readAsText(file);
+  });
+  input.click();
+}
+async function importFile(payload) {
+  if (payload.kind === "collection" || Array.isArray(payload.cards)) {
+    const keep = state ? new Map(state.cards.map(c => [c.w, c])) : new Map();
+    state = { language: payload.language, language_name: payload.language_name,
+              cards: payload.cards, reviews: (state && state.reviews) || [] };
+    // a re-imported collection must not undo progress made here
+    let kept = 0;
+    for (const card of state.cards) {
+      const mine = keep.get(card.w);
+      if (mine && (mine.updated_at || "") > (card.updated_at || "")) {
+        Object.assign(card, { stage: mine.stage, box: mine.box, mbox: mine.mbox,
+          marks: mine.marks, flags: mine.flags, due: mine.due, reviews: mine.reviews,
+          correct: mine.correct, lapses: mine.lapses, updated_at: mine.updated_at });
+        kept++;
+      }
+    }
+    await save();
+    alert(`Loaded ${state.cards.length} words.` + (kept ? ` ${kept} kept from this phone.` : ""));
+    return home();
+  }
+  if (!state) return alert("Load a full collection first, then progress files.");
+  let updated = 0, skipped = 0;
+  const byWord = new Map(state.cards.map(c => [c.w, c]));
+  for (const [word, entry] of Object.entries(payload.cards || {})) {
+    const card = byWord.get(word);
+    if (!card) continue;
+    if ((entry.updated_at || "") <= (card.updated_at || "")) { skipped++; continue; }
+    card.stage = entry.stage; card.box = entry.box; card.mbox = entry.meaning_box;
+    card.marks = entry.meaning_marks; card.flags = entry.dir_flags;
+    card.due = entry.due; card.reviews = entry.reviews; card.correct = entry.correct;
+    card.lapses = entry.lapses; card.prod = entry.prod_passes;
+    card.updated_at = entry.updated_at;
+    updated++;
+  }
+  const have = new Set(state.reviews.map(r => r[0] + r[1]));
+  for (const r of payload.reviews || []) if (!have.has(r[0] + r[1])) state.reviews.push(r);
+  await save();
+  alert(`${updated} card(s) updated, ${skipped} already current.`);
+  home();
+}
+
+/* ------------------------------------------------------------------ setup */
+function setup() {
+  const box = el("div", "card");
+  box.appendChild(el("h1", "", "Lessico Drill"));
+  box.appendChild(el("div", "muted",
+    "Nothing loaded yet.<br><br>On the desktop app choose " +
+    "<b>Collections \u2192 Export for phone</b>, put the file somewhere your phone " +
+    "can reach it, then load it here. After that this works with no signal."));
+  const row = el("div", "row");
+  row.style.marginTop = "14px";
+  row.appendChild(button("Load a collection", "primary grow", () => pick(importFile)));
+  box.appendChild(row);
+  show([box], []);
+}
+
+quitBtn.addEventListener("click", () => { save(); home(); });
+
+(async function boot() {
+  await openDB();
+  state = (await idbGet("collection")) || null;
+  if (state && !state.reviews) state.reviews = [];
+  home();
+  if ("serviceWorker" in navigator)
+    navigator.serviceWorker.register("sw.js").catch(() => {});
+})();
+</script>
+</body>
+</html>

@@ -359,16 +359,41 @@ function el(tag, cls, html) {
 function button(text, cls, fn) {
   const b = el("button", cls, text);
   b.addEventListener("click", fn);
+  // buttons are often added to the footer after the first render, so the
+  // Enter target is picked up here rather than only in show()
+  if ((cls || "").includes("primary")) setTimeout(() => {
+    const inFoot = foot.querySelector("button.primary");
+    if (inFoot) primaryButton = inFoot;
+  }, 0);
   return b;
 }
 function esc(s) {
   return (s || "").replace(/[&<>"]/g, c =>
     ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 }
+/* The primary button is what Enter presses. Without this every card needs a
+   tap even when the answer is already on screen, which is the whole rhythm of
+   a session on a phone with a keyboard attached. */
+let primaryButton = null;
+
+document.addEventListener("keydown", event => {
+  if (event.key !== "Enter" || event.isComposing) return;
+  const node = document.activeElement;
+  const typing = node && !node.disabled &&
+    (node.tagName === "INPUT" || node.tagName === "TEXTAREA");
+  if (typing && node.tagName === "TEXTAREA" && !event.ctrlKey && !event.metaKey) return;
+  if (typing && node.tagName === "INPUT") return;      // its own handler fires
+  if (primaryButton && document.contains(primaryButton)) {
+    event.preventDefault();
+    primaryButton.click();
+  }
+});
+
 function show(nodes, buttons) {
   main.innerHTML = ""; foot.innerHTML = "";
   nodes.filter(Boolean).forEach(n => main.appendChild(n));
   (buttons || []).filter(Boolean).forEach(b => foot.appendChild(b));
+  primaryButton = foot.querySelector("button.primary");
   main.scrollTop = 0;
 }
 function setProgress(text, fraction) {
@@ -643,6 +668,7 @@ function viewMeanings(card) {
   function complete() { settle(); }
   function settle() {
     done = true; paint();
+    input.disabled = true;                 // so Enter reaches the Next button
     const partial = unaided > 0 && remaining.length > 0 && letters < LETTER_LIMIT;
     const before = card.stage, beforeBox = mbox(card);
     const message = applyLevel2(card, letters, {
@@ -1052,6 +1078,16 @@ function flash(text) {
   flashTimer = setTimeout(() => { node.style.display = "none"; }, 4000);
 }
 
+async function cloudFetchCollection(cfg) {
+  const coll = encodeURIComponent(cfg.collection || "default");
+  const rows = await cloudRequest("GET",
+    `collections?collection=eq.${coll}&select=payload&limit=1`);
+  if (!rows.length)
+    throw new Error("No collection there yet. On the desktop press " +
+                    "\u201cUpload words\u201d in Phone sync first.");
+  return rows[0].payload;
+}
+
 function cloudScreen() {
   const cfg = cloudSettings();
   const box = el("div", "card");
@@ -1081,8 +1117,21 @@ function cloudScreen() {
                     auto: check.checked };
     await save();
   }
+  const download = button("Download words", "grow", async () => {
+    await persist();
+    try {
+      flash("Fetching\u2026");
+      const payload = await cloudFetchCollection(cloudSettings());
+      const cloud = cloudSettings();
+      await importFile(payload);
+      state.cloud = cloud;                 // importFile rebuilds state
+      await save();
+      flash("Words loaded.");
+    } catch (e) { alert(e.message); }
+  });
   show([box], [
     button("Back", "grow", home),
+    download,
     button("Save", "grow", async () => { await persist(); flash("Saved."); }),
     button("Sync now", "primary grow", async () => {
       await persist();
@@ -1183,12 +1232,19 @@ function setup() {
   const box = el("div", "card");
   box.appendChild(el("h1", "", "Lessico Drill"));
   box.appendChild(el("div", "muted",
-    "Nothing loaded yet.<br><br>On the desktop app choose " +
-    "<b>Collections \u2192 Export for phone</b>, put the file somewhere your phone " +
-    "can reach it, then load it here. After that this works with no signal."));
+    "Nothing loaded yet. Two ways in.<br><br>" +
+    "<b>From the database</b>, if you have set up sync: enter the three " +
+    "settings and pull the words straight down. Nothing to carry.<br><br>" +
+    "<b>From a file</b>, if you have not: on the desktop use " +
+    "<b>Phone sync \u2192 Export collection for phone</b> and load the file here." +
+    "<br><br>Either way it works with no signal afterwards."));
   const row = el("div", "row");
   row.style.marginTop = "14px";
-  row.appendChild(button("Load a collection", "primary grow", () => pick(importFile)));
+  row.appendChild(button("Set up sync and pull the words", "primary grow", () => {
+    if (!state) state = { language: "it", language_name: "", cards: [], reviews: [] };
+    cloudScreen();
+  }));
+  row.appendChild(button("Load a file instead", "grow", () => pick(importFile)));
   box.appendChild(row);
   show([box], []);
 }

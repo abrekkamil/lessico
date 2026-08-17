@@ -55,7 +55,8 @@ A2 words. It is roughly 600 KB for a thousand-word collection.
 Instead of carrying files, both devices can talk to one small free database
 and keep themselves in step.
 
-**Set it up once, about five minutes.**
+**Set it up once, about five minutes.** After this the phone needs no files
+at all: it pulls the words down from the same database.
 
 1. Make a free project at supabase.com. Any region; the nearest is fastest.
 2. Open the **SQL editor**, paste in `supabase-setup.sql` from the desktop
@@ -65,8 +66,11 @@ and keep themselves in step.
 4. Desktop app → **Phone sync**: paste both, keep the suggested collection
    name, tick *Sync when the app opens and when a session ends*, then
    **Save and test** and **Sync now**.
-5. Phone → **Settings** under "Sync with the desktop": paste the same three
-   values, tick the same box, **Sync now**.
+5. Desktop → **Upload words** in the same dialog. That puts the whole
+   collection in the database, so a phone can set itself up from nothing.
+   Repeat it only when the workbook changes.
+6. Phone → **Set up sync and pull the words**: paste the same three values,
+   tick the same box, then **Download words**.
 
 After that neither device needs anything from you. Each sync sends only the
 cards that changed, so a session's worth is a few kilobytes and works fine on

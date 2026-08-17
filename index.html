@@ -432,13 +432,24 @@ function home() {
   const sync = el("div", "card");
   sync.appendChild(el("h2", "", "Sync with the desktop"));
   sync.appendChild(el("div", "muted",
-    "Send your phone progress back, or take in the desktop's. Newer wins, card by card." +
+    "Newer wins, card by card, so the order never matters." +
     (state.saved_at ? "<br>Last change here: " + esc(state.saved_at.replace("T", " ")) : "")));
   const syncRow = el("div", "row");
   syncRow.style.marginTop = "10px";
-  syncRow.appendChild(button("Export my progress", "grow", exportProgress));
-  syncRow.appendChild(button("Import a file", "grow", () => pick(importFile)));
+  const cfg = cloudSettings();
+  syncRow.appendChild(button(cfg.url ? "Sync now" : "Set up automatic sync",
+    "primary grow", async () => {
+      if (!cfg.url) return cloudScreen();
+      try { flash("Syncing\u2026"); await cloudSync(true); flash("Done."); home(); }
+      catch (e) { alert(e.message); }
+    }));
+  syncRow.appendChild(button("Settings", "grow", cloudScreen));
   sync.appendChild(syncRow);
+  const manual = el("div", "row");
+  manual.style.marginTop = "8px";
+  manual.appendChild(button("Export a file", "grow", exportProgress));
+  manual.appendChild(button("Import a file", "grow", () => pick(importFile)));
+  sync.appendChild(manual);
 
   show([head, tiles, study, sync], []);
 }
@@ -497,6 +508,7 @@ function summary(title) {
       `${results.boxes} moved up a box \u00b7 ${results.levels} moved up a level.`
     : "Nothing scheduled right now. Come back tomorrow, or sync from the desktop."));
   save();
+  autoSync("session end");
   show([box], [button("Back", "primary grow", home)]);
 }
 
@@ -896,6 +908,190 @@ function viewProduce(card) {
   show([meta, prompt, sub, editor, report], [button("Check", "primary grow", check)]);
 }
 
+/* ------------------------------------------------------------- cloud sync
+   The same table the desktop uses, over the same REST endpoint. Only rows
+   changed since the last sync are moved, so a sync on mobile data is a few
+   kilobytes. Settings live in IndexedDB, not in the page, so they survive. */
+function cloudSettings() { return (state && state.cloud) || {}; }
+
+async function cloudRequest(method, path, body) {
+  const cfg = cloudSettings();
+  if (!cfg.url || !cfg.key) throw new Error("Sync is not set up yet.");
+  const response = await fetch(`${cfg.url.replace(/\/$/, "")}/rest/v1/${path}`, {
+    method,
+    headers: {
+      apikey: cfg.key, Authorization: `Bearer ${cfg.key}`,
+      "Content-Type": "application/json", Accept: "application/json",
+      ...(method === "POST" ? { Prefer: "resolution=merge-duplicates,return=minimal" } : {})
+    },
+    body: body === undefined ? undefined : JSON.stringify(body)
+  });
+  if (!response.ok) {
+    const detail = (await response.text()).slice(0, 200);
+    if (response.status === 401 || response.status === 403)
+      throw new Error("The key was refused. Check it is the anon public key.");
+    if (response.status === 404)
+      throw new Error("The table was not found. Run the setup SQL in Supabase.");
+    throw new Error(`${response.status}: ${detail}`);
+  }
+  const text = await response.text();
+  return text ? JSON.parse(text) : [];
+}
+
+function cardState(card) {
+  const out = {
+    stage: card.stage, box: card.box, meaning_box: card.mbox,
+    meaning_marks: card.marks || 0, dir_flags: card.flags || 0,
+    cloze_passes: 0, prod_passes: card.prod || 0, due: card.due,
+    reviews: card.reviews || 0, correct: card.correct || 0,
+    lapses: card.lapses || 0, suspended: 0
+  };
+  if (card.senses && card.senses.length) {
+    out.senses = {};
+    for (const s of card.senses)
+      out.senses[s.gloss] = { box: s.box || 0, due: s.due || null, seen: s.seen || 0,
+        recalled: s.recalled || 0, missed: s.missed || 0,
+        last_review: s.last_review || null };
+  }
+  return out;
+}
+
+async function cloudSync(quiet) {
+  const cfg = cloudSettings();
+  const coll = encodeURIComponent(cfg.collection || "default");
+  let pulledTo = cfg.pulled_to || "", pushedTo = cfg.pushed_to || "";
+
+  // pull first: a card changed in both places then ends up with the later
+  // answer here as well, rather than only on the other device
+  let path = `cards?collection=eq.${coll}&select=word,updated_at,state&order=updated_at.asc`;
+  if (pulledTo) path += `&updated_at=gt.${encodeURIComponent(pulledTo)}`;
+  const remote = await cloudRequest("GET", path);
+  const byWord = new Map(state.cards.map(c => [c.w, c]));
+  let took = 0;
+  for (const row of remote) {
+    if ((row.updated_at || "") > pulledTo) pulledTo = row.updated_at;
+    const card = byWord.get(row.word);
+    if (!card || (row.updated_at || "") <= (card.updated_at || "")) continue;
+    const st = row.state || {};
+    card.stage = st.stage; card.box = st.box; card.mbox = st.meaning_box;
+    card.marks = st.meaning_marks; card.flags = st.dir_flags; card.due = st.due;
+    card.reviews = st.reviews; card.correct = st.correct; card.lapses = st.lapses;
+    card.prod = st.prod_passes; card.updated_at = row.updated_at;
+    if (st.senses && card.senses)
+      for (const s of card.senses) {
+        const inc = st.senses[s.gloss];
+        if (inc && (inc.last_review || "") > (s.last_review || "")) Object.assign(s, inc);
+      }
+    took++;
+  }
+
+  // push what changed here. The cutoff is fixed before the loop: raising it
+  // as we go would make every later card look already sent.
+  const cutoff = pushedTo;
+  const rows = [];
+  for (const card of state.cards) {
+    let stamp = card.updated_at || "";
+    if (cutoff && stamp && stamp <= cutoff) continue;
+    if (!stamp) { stamp = nowStr(); card.updated_at = stamp; }
+    if (stamp > pushedTo) pushedTo = stamp;
+    rows.push({ collection: cfg.collection || "default", word: card.w,
+                updated_at: stamp, state: cardState(card) });
+  }
+  for (let i = 0; i < rows.length; i += 300)
+    await cloudRequest("POST", "cards", rows.slice(i, i + 300));
+
+  // reviews are append-only, so both directions are just 'add what is missing'
+  let reviewPath = `reviews?collection=eq.${coll}&select=word,ts,stage,mode,result`;
+  if (cfg.reviews_to) reviewPath += `&ts=gt.${encodeURIComponent(cfg.reviews_to)}`;
+  const seen = new Set(state.reviews.map(r => r[0] + r[1]));
+  let latestReview = cfg.reviews_to || "";
+  for (const r of await cloudRequest("GET", reviewPath)) {
+    if (r.ts > latestReview) latestReview = r.ts;
+    if (!seen.has(r.word + r.ts)) state.reviews.push([r.word, r.ts, r.stage, r.mode, r.result]);
+  }
+  const mine = state.reviews
+    .filter(r => !cfg.reviews_sent || r[1] > cfg.reviews_sent)
+    .map(r => ({ collection: cfg.collection || "default", word: r[0], ts: r[1],
+                 stage: r[2], mode: r[3], result: r[4] }));
+  for (let i = 0; i < mine.length; i += 300)
+    await cloudRequest("POST", "reviews", mine.slice(i, i + 300));
+
+  state.cloud = { ...cfg, pulled_to: pulledTo, pushed_to: pushedTo,
+                  reviews_to: latestReview,
+                  reviews_sent: mine.length ? mine[mine.length - 1].ts : cfg.reviews_sent,
+                  last: nowStr() };
+  await save();
+  const summary = `Sent ${rows.length}, took in ${took}.`;
+  if (!quiet) alert(summary);
+  return summary;
+}
+
+async function autoSync(reason) {
+  const cfg = cloudSettings();
+  if (!cfg.auto || !cfg.url || !cfg.key) return;
+  try {
+    const summary = await cloudSync(true);
+    flash(summary);
+  } catch (e) { flash("Sync failed: " + e.message); }
+}
+
+let flashTimer = null;
+function flash(text) {
+  let node = document.getElementById("flash");
+  if (!node) {
+    node = el("div", "muted");
+    node.id = "flash";
+    node.style.cssText = "position:fixed;left:12px;right:12px;bottom:calc(84px + env(safe-area-inset-bottom));" +
+      "background:var(--surface2);border:1px solid var(--border);border-radius:11px;" +
+      "padding:10px 14px;text-align:center;z-index:9";
+    document.body.appendChild(node);
+  }
+  node.textContent = text;
+  node.style.display = "block";
+  clearTimeout(flashTimer);
+  flashTimer = setTimeout(() => { node.style.display = "none"; }, 4000);
+}
+
+function cloudScreen() {
+  const cfg = cloudSettings();
+  const box = el("div", "card");
+  box.appendChild(el("h2", "", "Automatic sync"));
+  box.appendChild(el("div", "muted",
+    "Paste the same three values you put in the desktop app. Both then keep " +
+    "themselves in step and there are no files to carry."));
+  const url = el("input"); url.placeholder = "https://xxxxxxxx.supabase.co";
+  url.value = cfg.url || ""; url.autocapitalize = "none"; url.spellcheck = false;
+  const key = el("input"); key.placeholder = "anon public key";
+  key.value = cfg.key || ""; key.autocapitalize = "none"; key.spellcheck = false;
+  const coll = el("input"); coll.placeholder = "collection name";
+  coll.value = cfg.collection || ""; coll.autocapitalize = "none"; coll.spellcheck = false;
+  const auto = el("label", "muted");
+  const check = document.createElement("input");
+  check.type = "checkbox"; check.checked = !!cfg.auto;
+  check.style.cssText = "width:22px;height:22px;vertical-align:middle;margin-right:8px";
+  auto.appendChild(check);
+  auto.appendChild(document.createTextNode("Sync when the app opens and when a session ends"));
+  [url, key, coll].forEach(i => { i.style.marginBottom = "8px"; box.appendChild(i); });
+  box.appendChild(auto);
+  if (cfg.last) box.appendChild(el("div", "muted", "Last sync: " + esc(cfg.last.replace("T", " "))));
+
+  async function persist() {
+    state.cloud = { ...cloudSettings(), url: url.value.trim().replace(/\/$/, ""),
+                    key: key.value.trim(), collection: coll.value.trim(),
+                    auto: check.checked };
+    await save();
+  }
+  show([box], [
+    button("Back", "grow", home),
+    button("Save", "grow", async () => { await persist(); flash("Saved."); }),
+    button("Sync now", "primary grow", async () => {
+      await persist();
+      try { flash("Syncing\u2026"); await cloudSync(true); flash("Done."); home(); }
+      catch (e) { alert(e.message); }
+    })
+  ]);
+}
+
 /* ------------------------------------------------------------------- sync */
 function download(name, text) {
   const blob = new Blob([text], { type: "application/json" });
@@ -1004,6 +1200,7 @@ quitBtn.addEventListener("click", () => { save(); home(); });
   state = (await idbGet("collection")) || null;
   if (state && !state.reviews) state.reviews = [];
   home();
+  autoSync("opened");
   if ("serviceWorker" in navigator)
     navigator.serviceWorker.register("sw.js").catch(() => {});
 })();

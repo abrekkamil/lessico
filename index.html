@@ -1174,6 +1174,24 @@ async function cloudSync(quiet) {
   return summary;
 }
 
+async function forcePull() {
+  /* For a device whose progress was lost while the others still have it: every
+     local card is made to lose, so the database's version is taken instead of
+     being overwritten by this one. */
+  if (!confirm("Take the database's version of every card?\n\n" +
+               "Anything studied here and never synced would be given up."))
+    return;
+  for (const card of state.cards) { card.updated_at = ""; delete card.fresh; }
+  state.cloud = { ...cloudSettings(), pulled_to: "", pushed_to: "",
+                  reviews_to: "", reviews_sent: "" };
+  await save();
+  await cloudSync(true);
+  const c = counts();
+  alert(`Took in ${lastSync.took} card(s) from the database.\n\n` +
+        `To sort: ${c.s0}\nLevel 1: ${c.s1}\nLevel 2: ${c.s2}\nDue now: ${c.due}`);
+  home();
+}
+
 async function fullResync() {
   /* The markers say what has already been exchanged. When the two sides
      disagree and ordinary syncing will not close the gap, the honest fix is
@@ -1188,6 +1206,28 @@ async function fullResync() {
         `Taken in: ${lastSync.took}\n` +
         `Sent up: ${lastSync.sent}\n\n` +
         `Due now: ${c.due}`);
+  home();
+}
+
+async function pushMine() {
+  /* The other direction: this device has the work and the database does not.
+     Sending with each card's own stamp replaces whatever is there, which is
+     what you want when a reset was uploaded over your progress. */
+  if (!confirm("Send this device's progress up, replacing what is in the " +
+               "database for these cards?")) return;
+  const cfg = cloudSettings();
+  const rows = [];
+  for (const card of state.cards) {
+    if (card.fresh) continue;
+    if (!card.updated_at) card.updated_at = nowStr();
+    rows.push({ collection: cfg.collection || "default", word: card.w,
+                updated_at: card.updated_at, state: cardState(card) });
+  }
+  for (let i = 0; i < rows.length; i += 300)
+    await cloudRequest("POST", "cards", rows.slice(i, i + 300));
+  state.cloud = { ...cfg, pushed_to: "", last: nowStr() };
+  await save();
+  alert(`Sent ${rows.length} card(s) up.`);
   home();
 }
 
@@ -1535,6 +1575,14 @@ function cloudScreen() {
       await persist();
       try { flash("Comparing every card\u2026"); await fullResync(); }
       catch (e) { alert(e.message); }
+    }),
+    button("Take from database", "grow", async () => {
+      await persist();
+      try { await forcePull(); } catch (e) { alert(e.message); }
+    }),
+    button("Send mine up", "grow", async () => {
+      await persist();
+      try { await pushMine(); } catch (e) { alert(e.message); }
     }),
     download,
     button("Save", "grow", async () => { await persist(); flash("Saved."); }),

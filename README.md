@@ -104,6 +104,16 @@ the activity chart is the same on both.
 Skipping a sync is not a disaster either. The two copies simply diverge until
 the next one, and then each card takes whichever answer was later.
 
+## Sorting and adding words
+
+The phone has the sorting pass too: the word alone, and you answer *I know
+this*, *Hint* or *New to me*. It is the quickest way to place a fresh list, and
+it works on a walk.
+
+**Add a word** on the home screen takes something you met during the day. It
+starts in the sorting pass, and the desktop adopts it on the next sync,
+rebuilding the gap sentence from your example.
+
 ## What the phone does and does not do
 
 It runs the same ladder with the same rules: flashcards in both directions,

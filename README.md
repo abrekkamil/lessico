@@ -114,6 +114,19 @@ it works on a walk.
 starts in the sorting pass, and the desktop adopts it on the next sync,
 rebuilding the gap sentence from your example.
 
+## Words, progress and sorting on the phone
+
+**Words** lists everything with a search box and filters, showing where each
+word sits: which level, which box, and when it is next due. **Progress** shows
+the same breakdown the desktop does, plus the last fortnight's activity.
+
+**Sort** opens the waiting list rather than showing words at random. Filter by
+part of speech, level or topic, tap anything you already know, and sort the
+rest one by one.
+
+Each collection is stored separately, so Italian and Turkish can both live on
+the phone without disturbing each other.
+
 ## What the phone does and does not do
 
 It runs the same ladder with the same rules: flashcards in both directions,

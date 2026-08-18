@@ -132,9 +132,17 @@ const todayStr = () => localDate(new Date());
 const nowStr = () => new Date().toISOString().slice(0, 23);   // UTC, for sync
 const plusDays = n => localDate(new Date(Date.now() + n * 864e5));
 
+function stateKey(cloud) {
+  // one record per collection, so studying Turkish cannot disturb Italian
+  const name = (cloud && cloud.collection) || (state && state.language) || "default";
+  return "collection:" + name;
+}
+
 async function save() {
   state.saved_at = nowStr();
-  await idbSet("collection", state);
+  await idbSet(stateKey(state && state.cloud), state);
+  await idbSet("last_open", stateKey(state && state.cloud));
+  await idbSet("collection", state);          // read by older builds
 }
 
 /* ------------------------------------------------------- the same ladder
@@ -475,7 +483,7 @@ function home() {
   study.appendChild(el("h2", "", "Study"));
   const rows = el("div", "row");
   rows.appendChild(button("Start session", "primary grow", () => start(null)));
-  rows.appendChild(button("Sort " + c.sorting[1], "grow", () => start("sorting")));
+  rows.appendChild(button("Sort " + c.sorting[1], "grow", sortingScreen));
   rows.appendChild(button("Flashcards " + c.flashcards[1], "grow", () => start("flashcards")));
   rows.appendChild(button("Meanings " + c.meanings[1], "grow", () => start("meanings")));
   rows.appendChild(button("Gaps " + c.gaps[1], "grow", () => start("gaps")));
@@ -488,6 +496,8 @@ function home() {
     "Each button shows how many are due now."));
   const addRow = el("div", "row");
   addRow.style.marginTop = "8px";
+  addRow.appendChild(button("Words", "grow", wordsScreen));
+  addRow.appendChild(button("Progress", "grow", progressScreen));
   addRow.appendChild(button("Add a word", "grow", addWordScreen));
   study.appendChild(addRow);
 
@@ -520,6 +530,17 @@ function home() {
 function buildQueue(kind) {
   const size = 30, ration = 15;
   let pool = state.cards.filter(c => due(c) && !c.suspended);
+  if (kind && kind.sorting) {
+    pool = state.cards.filter(c => !c.stage && !c.suspended);
+    if (kind.pos) pool = pool.filter(c => (c.spos || "") === kind.pos);
+    if (kind.cefr) pool = pool.filter(c => (c.cefr || "") === kind.cefr);
+    if (kind.topic) pool = pool.filter(c => (c.topic || "") === kind.topic);
+    if (kind.order === "alphabetical")
+      pool.sort((a, b) => a.w.localeCompare(b.w));
+    else if (kind.order === "random") pool.sort(() => Math.random() - 0.5);
+    else pool.sort((a, b) => (a.topic + a.spos + a.w).localeCompare(b.topic + b.spos + b.w));
+    return pool.slice(0, 30);
+  }
   if (kind === "sorting") pool = pool.filter(c => !c.stage);
   else if (kind === "flashcards") pool = pool.filter(c => c.stage === 1);
   else if (kind === "writing") pool = pool.filter(c => c.stage === 3);
@@ -1198,6 +1219,214 @@ async function cloudFetchCollection(cfg) {
   return rows[0].payload;
 }
 
+const STAGE_NAME = { 0: "To sort", 1: "Flashcards", 2: "Meanings & gaps",
+                     3: "Free writing", 4: "Mastered" };
+const BOX_SHORT = { 1: "IT\u2192EN", 2: "EN\u2192IT", 3: "gap + translation",
+                    4: "gap alone", 5: "translate out", 6: "translate in" };
+
+function wordsScreen() {
+  let query = "", stageFilter = "", cefrFilter = "";
+  const box = el("div", "card");
+  box.appendChild(el("h2", "", "Words"));
+  const search = el("input");
+  search.placeholder = "search the word or the English";
+  search.autocapitalize = "none"; search.spellcheck = false;
+  search.style.marginBottom = "8px";
+  search.addEventListener("input", () => { query = search.value.trim().toLowerCase(); paint(); });
+  box.appendChild(search);
+
+  const row = el("div", "row");
+  row.style.marginBottom = "10px";
+  function picker(caption, values, onPick) {
+    const sel = document.createElement("select");
+    sel.style.cssText = "flex:1;min-width:130px;font:inherit;color:var(--text);" +
+      "background:var(--surface2);border:1px solid var(--border);border-radius:11px;" +
+      "padding:12px;min-height:48px";
+    for (const [value, text] of values) {
+      const option = document.createElement("option");
+      option.value = value; option.textContent = text;
+      sel.appendChild(option);
+    }
+    sel.addEventListener("change", () => { onPick(sel.value); paint(); });
+    return sel;
+  }
+  row.appendChild(picker("", [["", "all levels"], ...Object.entries(STAGE_NAME)
+    .map(([k, v]) => [k, v])], v => stageFilter = v));
+  const cefrValues = [...new Set(state.cards.map(c => c.cefr).filter(Boolean))].sort();
+  row.appendChild(picker("", [["", "all CEFR"], ...cefrValues.map(v => [v, v])],
+                         v => cefrFilter = v));
+  box.appendChild(row);
+  const list = el("div");
+  const note = el("div", "muted");
+  box.appendChild(list); box.appendChild(note);
+
+  function paint() {
+    let rows = state.cards;
+    if (query) rows = rows.filter(c =>
+      c.w.toLowerCase().includes(query) || (c.en || "").toLowerCase().includes(query));
+    if (stageFilter !== "") rows = rows.filter(c => String(c.stage ?? 1) === stageFilter);
+    if (cefrFilter) rows = rows.filter(c => c.cefr === cefrFilter);
+    rows = rows.slice().sort((a, b) => a.w.localeCompare(b.w));
+    list.innerHTML = "";
+    note.textContent = `${rows.length} of ${state.cards.length} shown`;
+    for (const card of rows.slice(0, 150)) {
+      const stage = card.stage ?? 1;
+      const where = stage === 2
+        ? `level 2 \u00b7 box ${mbox(card)} \u00b7 ${BOX_SHORT[mbox(card)]}`
+        : stage === 1 ? `flashcards \u00b7 box ${card.box || 1}`
+        : STAGE_NAME[stage];
+      const line = el("div", "slot");
+      line.style.cssText += "text-align:left;letter-spacing:normal";
+      line.innerHTML = `<b>${esc(card.w)}</b> <span class="muted">${esc(card.en)}</span>` +
+        `<br><span class="muted" style="font-size:13px">${esc(where)}` +
+        (card.cefr ? ` \u00b7 ${esc(card.cefr)}` : "") +
+        (card.due ? ` \u00b7 due ${esc(card.due)}` : "") + `</span>`;
+      list.appendChild(line);
+    }
+    if (rows.length > 150)
+      list.appendChild(el("div", "muted", `\u2026 and ${rows.length - 150} more.`));
+  }
+  paint();
+  show([box], [button("Back", "primary grow", home)]);
+}
+
+function progressScreen() {
+  const c = counts();
+  const box = el("div", "card");
+  box.appendChild(el("h2", "", "Where your words are"));
+  const total = Math.max(state.cards.length, 1);
+  for (const [stage, name] of Object.entries(STAGE_NAME)) {
+    const n = state.cards.filter(x => (x.stage ?? 1) === Number(stage)).length;
+    const bar = el("div");
+    bar.style.cssText = "background:var(--surface2);border-radius:7px;height:26px;" +
+      "position:relative;margin:6px 0;overflow:hidden";
+    const fill = el("div");
+    fill.style.cssText = `background:var(--accent);height:100%;width:${
+      Math.round(100 * n / total)}%`;
+    const text = el("div", "", `${name} \u00b7 <b>${n}</b> (${Math.round(100 * n / total)}%)`);
+    text.style.cssText = "position:absolute;inset:0;display:flex;align-items:center;" +
+      "padding-left:10px;font-size:14px";
+    bar.appendChild(fill); bar.appendChild(text);
+    box.appendChild(bar);
+  }
+
+  const boxes = el("div", "card");
+  boxes.appendChild(el("h2", "", "Boxes at level 2"));
+  for (let i = 1; i <= LEVEL2_TOP; i++) {
+    const n = state.cards.filter(x => x.stage === 2 && mbox(x) === i).length;
+    boxes.appendChild(el("div", "muted",
+      `Box ${i}: <b style="color:var(--text)">${n}</b> \u00b7 ${BOX_NAME[i]}`));
+  }
+
+  // the last fortnight, from the review log both devices share
+  const activity = el("div", "card");
+  activity.appendChild(el("h2", "", "Last 14 days"));
+  const byDay = new Map();
+  for (const r of state.reviews) {
+    const day = (r[1] || "").slice(0, 10);
+    if (day) byDay.set(day, (byDay.get(day) || 0) + 1);
+  }
+  const days = [];
+  for (let i = 13; i >= 0; i--)
+    days.push(localDate(new Date(Date.now() - i * 864e5)));
+  const peak = Math.max(1, ...days.map(d => byDay.get(d) || 0));
+  const chart = el("div");
+  chart.style.cssText = "display:flex;align-items:flex-end;gap:4px;height:120px;margin-top:8px";
+  for (const day of days) {
+    const n = byDay.get(day) || 0;
+    const col = el("div");
+    col.style.cssText = `flex:1;background:${n ? "var(--accent)" : "var(--surface2)"};` +
+      `height:${Math.max(3, Math.round(100 * n / peak))}%;border-radius:3px`;
+    col.title = `${day}: ${n}`;
+    chart.appendChild(col);
+  }
+  activity.appendChild(chart);
+  activity.appendChild(el("div", "muted",
+    `${[...byDay.entries()].filter(([d]) => days.includes(d))
+        .reduce((a, [, n]) => a + n, 0)} answers in the last fortnight.`));
+
+  show([box, boxes, activity], [button("Back", "primary grow", home)]);
+}
+
+function sortingScreen() {
+  const waiting = state.cards.filter(c => !c.stage && !c.suspended);
+  const facet = field => {
+    const counts = new Map();
+    for (const c of waiting) {
+      const v = c[field] || "";
+      if (v) counts.set(v, (counts.get(v) || 0) + 1);
+    }
+    return [...counts].sort((a, b) => b[1] - a[1]);
+  };
+  const filters = { pos: "", cefr: "", topic: "", order: "grouped" };
+
+  const box = el("div", "card");
+  box.appendChild(el("h2", "", "Sort new words"));
+  box.appendChild(el("div", "muted",
+    "Related words are easier to place together, so this is grouped by topic " +
+    "rather than shuffled. Tap a word if you already know it, or sort them " +
+    "one by one."));
+  const row = el("div", "row");
+  row.style.margin = "10px 0";
+  function picker(field, caption, values) {
+    const sel = document.createElement("select");
+    sel.style.cssText = "flex:1;min-width:130px;font:inherit;color:var(--text);" +
+      "background:var(--surface2);border:1px solid var(--border);border-radius:11px;" +
+      "padding:12px;min-height:48px";
+    const any = document.createElement("option");
+    any.value = ""; any.textContent = caption;
+    sel.appendChild(any);
+    for (const [value, n] of values) {
+      const option = document.createElement("option");
+      option.value = value; option.textContent = `${value} (${n})`;
+      sel.appendChild(option);
+    }
+    sel.addEventListener("change", () => { filters[field] = sel.value; paint(); });
+    return sel;
+  }
+  row.appendChild(picker("pos", "any part of speech", facet("spos")));
+  row.appendChild(picker("cefr", "any level", facet("cefr")));
+  row.appendChild(picker("topic", "any topic", facet("topic")));
+  box.appendChild(row);
+  const list = el("div");
+  box.appendChild(list);
+  const note = el("div", "muted");
+  box.appendChild(note);
+
+  function matching() {
+    let pool = state.cards.filter(c => !c.stage && !c.suspended);
+    if (filters.pos) pool = pool.filter(c => (c.spos || "") === filters.pos);
+    if (filters.cefr) pool = pool.filter(c => (c.cefr || "") === filters.cefr);
+    if (filters.topic) pool = pool.filter(c => (c.topic || "") === filters.topic);
+    pool.sort((a, b) => (a.topic + a.spos + a.w).localeCompare(b.topic + b.spos + b.w));
+    return pool;
+  }
+  function paint() {
+    const pool = matching();
+    list.innerHTML = "";
+    note.textContent = `${pool.length} word(s) waiting. Tap one to mark it known.`;
+    for (const card of pool.slice(0, 120)) {
+      const line = el("div", "slot");
+      line.style.cssText += "text-align:left;letter-spacing:normal;cursor:pointer";
+      line.innerHTML = `<b>${esc(card.w)}</b> <span class="muted">${esc(card.en)}</span>`;
+      line.addEventListener("click", async () => {
+        gradeTriage(card, "knew");
+        await save();
+        paint();
+      });
+      list.appendChild(line);
+    }
+    if (pool.length > 120)
+      list.appendChild(el("div", "muted", `\u2026 and ${pool.length - 120} more.`));
+  }
+  paint();
+  show([box], [
+    button("Back", "grow", home),
+    button("Sort these one by one", "primary grow",
+           () => start({ sorting: true, ...filters }))
+  ]);
+}
+
 function addWordScreen() {
   const box = el("div", "card");
   box.appendChild(el("h2", "", "Add a word"));
@@ -1367,9 +1596,23 @@ async function importFile(payload, quiet) {
               cloud };
     // a re-imported collection must not undo progress made here
     let kept = 0;
+    const wordsOnly = !!payload.words_only;
     for (const card of state.cards) {
       const mine = keep.get(card.w);
-      if (mine && (mine.updated_at || "") > (card.updated_at || "")) {
+      if (wordsOnly) {
+        // the snapshot carries no progress at all, so anything known here is
+        // kept and anything else waits for the sync to fill it in
+        if (mine) {
+          Object.assign(card, { stage: mine.stage, box: mine.box, mbox: mine.mbox,
+            marks: mine.marks, flags: mine.flags, due: mine.due,
+            reviews: mine.reviews, correct: mine.correct, lapses: mine.lapses,
+            prod: mine.prod, updated_at: mine.updated_at });
+          kept++;
+        } else {
+          Object.assign(card, { stage: 0, box: 1, mbox: 1, marks: 0, flags: 0,
+            due: todayStr(), reviews: 0, correct: 0, lapses: 0, updated_at: "" });
+        }
+      } else if (mine && (mine.updated_at || "") > (card.updated_at || "")) {
         Object.assign(card, { stage: mine.stage, box: mine.box, mbox: mine.mbox,
           marks: mine.marks, flags: mine.flags, due: mine.due, reviews: mine.reviews,
           correct: mine.correct, lapses: mine.lapses, updated_at: mine.updated_at });
@@ -1429,7 +1672,8 @@ quitBtn.addEventListener("click", () => { save(); home(); });
 
 (async function boot() {
   await openDB();
-  state = (await idbGet("collection")) || null;
+  const key = await idbGet("last_open");
+  state = (key && await idbGet(key)) || (await idbGet("collection")) || null;
   if (state && !state.reviews) state.reviews = [];
   home();
   autoSync("opened");

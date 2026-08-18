@@ -952,6 +952,7 @@ function viewProduce(card) {
    changed since the last sync are moved, so a sync on mobile data is a few
    kilobytes. Settings live in IndexedDB, not in the page, so they survive. */
 function cloudSettings() { return (state && state.cloud) || {}; }
+let lastSync = null;
 
 async function cloudRequest(method, path, body) {
   const cfg = cloudSettings();
@@ -999,6 +1000,7 @@ async function cloudSync(quiet) {
   const cfg = cloudSettings();
   const coll = encodeURIComponent(cfg.collection || "default");
   let pulledTo = cfg.pulled_to || "", pushedTo = cfg.pushed_to || "";
+  const cutoffPull = pulledTo;
 
   // pull first: a card changed in both places then ends up with the later
   // answer here as well, rather than only on the other device
@@ -1061,8 +1063,27 @@ async function cloudSync(quiet) {
                   last: nowStr() };
   await save();
   const summary = `Sent ${rows.length}, took in ${took}.`;
+  lastSync = { sent: rows.length, took, seen: remote.length,
+               pulledFrom: cutoffPull || "(everything)" };
   if (!quiet) alert(summary);
   return summary;
+}
+
+async function fullResync() {
+  /* The markers say what has already been exchanged. When the two sides
+     disagree and ordinary syncing will not close the gap, the honest fix is
+     to forget them and compare every card once. */
+  state.cloud = { ...cloudSettings(), pulled_to: "", pushed_to: "",
+                  reviews_to: "", reviews_sent: "" };
+  await save();
+  await cloudSync(true);
+  const c = counts();
+  alert(`Compared every card.\n\n` +
+        `Rows seen in the database: ${lastSync.seen}\n` +
+        `Taken in: ${lastSync.took}\n` +
+        `Sent up: ${lastSync.sent}\n\n` +
+        `Due now: ${c.due}`);
+  home();
 }
 
 async function autoSync(reason) {
@@ -1135,15 +1156,25 @@ function cloudScreen() {
     try {
       flash("Fetching\u2026");
       const payload = await cloudFetchCollection(cloudSettings());
-      await importFile(payload);
+      await importFile(payload, true);     // quiet: the report comes below
       flash("Words loaded, catching up\u2026");
       await cloudSync(true);               // markers were cleared by the import
-      flash("Ready.");
+      const c = counts();
+      alert(`Words loaded and reconciled.\n\n` +
+            `Snapshot uploaded: ${(payload.exported_at || "?").replace("T", " ")}\n` +
+            `Rows seen in the database: ${lastSync.seen}\n` +
+            `Taken in: ${lastSync.took}\n\n` +
+            `Due now: ${c.due}`);
       home();
     } catch (e) { alert(e.message); }
   });
   show([box], [
     button("Back", "grow", home),
+    button("Full resync", "grow", async () => {
+      await persist();
+      try { flash("Comparing every card\u2026"); await fullResync(); }
+      catch (e) { alert(e.message); }
+    }),
     download,
     button("Save", "grow", async () => { await persist(); flash("Saved."); }),
     button("Sync now", "primary grow", async () => {
@@ -1199,7 +1230,7 @@ function pick(handler) {
   });
   input.click();
 }
-async function importFile(payload) {
+async function importFile(payload, quiet) {
   if (payload.kind === "collection" || Array.isArray(payload.cards)) {
     const keep = state ? new Map(state.cards.map(c => [c.w, c])) : new Map();
     // the settings must survive an import, and the sync markers must not: the
@@ -1222,8 +1253,10 @@ async function importFile(payload) {
       }
     }
     await save();
-    alert(`Loaded ${state.cards.length} words.` + (kept ? ` ${kept} kept from this phone.` : ""));
-    return home();
+    if (!quiet)
+      alert(`Loaded ${state.cards.length} words.` +
+            (kept ? ` ${kept} kept from this phone.` : ""));
+    return quiet ? undefined : home();
   }
   if (!state) return alert("Load a full collection first, then progress files.");
   let updated = 0, skipped = 0;

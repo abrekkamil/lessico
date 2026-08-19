@@ -640,10 +640,21 @@ function viewTriage(card) {
     done = true;
     if (verdict === "knew" && hinted) verdict = "hinted";
     const message = gradeTriage(card, verdict);
-    answer.innerHTML = `<div class="prompt" style="margin-top:4px">${esc(card.en)}</div>` +
-      `<div class="muted" style="text-align:center">${esc(message)}</div>`;
+    const outcome = el("div", "muted");
+    outcome.style.textAlign = "center";
+    outcome.textContent = message;
+    answer.innerHTML = `<div class="prompt" style="margin-top:4px">${esc(card.en)}</div>`;
+    answer.appendChild(outcome);
     answer.classList.remove("hidden");
     foot.innerHTML = "";
+    if (verdict !== "new")
+      // thinking you know a word and then reading a different meaning is the
+      // commonest way this goes wrong, so the verdict can be taken back
+      foot.appendChild(button("Not what I thought", "grow", () => {
+        outcome.textContent = gradeTriage(card, "new");
+        save();
+        foot.firstChild.remove();
+      }));
     foot.appendChild(button("Next", "primary grow", () => {
       results.seen++; results.correct++;
       save(); advance();

@@ -60,7 +60,8 @@
   html,body { margin:0; height:100%; background:var(--bg); color:var(--text);
     font-family:var(--font); font-size:16px; -webkit-font-smoothing:antialiased;
     -webkit-text-size-adjust:100%; }
-  body { display:flex; flex-direction:column;
+  /* --app-h is the height left above the keyboard, set from the script */
+  body { display:flex; flex-direction:column; height:var(--app-h, 100%);
     padding:env(safe-area-inset-top) env(safe-area-inset-right) 0 env(safe-area-inset-left); }
 
   /* the bar along the top only appears during a session */
@@ -379,6 +380,47 @@
   .tab.on { color:var(--primary-text); }
   .tab.on .pip { background:var(--primary-soft); }
   .tab:active { transform:none; }
+
+  /* ------------------------------------------------------------ typing
+     With the phone's keyboard up there is about half a screen left, so the
+     page tightens and the buttons share one row. In a session the answer box
+     is pinned to the bottom edge of what is left, so nothing above it (a long
+     sentence, four meanings) can push it under the keyboard. */
+  input, textarea { scroll-margin:12px 0 64px; }
+  body.typing #top { padding-top:4px; padding-bottom:2px; }
+  body.typing #quit { width:34px; height:34px; border-radius:11px; }
+  body.typing #main { padding-top:4px; padding-bottom:10px; }
+  body.typing #main .eyebrow { display:none; }
+  body.typing #main .face { min-height:0; padding:12px 14px 10px; margin-bottom:8px; border-radius:20px; }
+  body.typing #main .face::before { height:4px; }
+  body.typing #main .prompt { font-size:clamp(24px,7vw,28px); margin-bottom:2px; }
+  body.typing #main .sub { font-size:13px; }
+  body.typing #main .sentence { font-size:18px; line-height:1.45; }
+  body.typing #main .face.text .muted { margin-top:6px; font-size:14px; }
+  body.typing #main .slots { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px; }
+  body.typing #main .slots .slot { flex:1 1 40%; min-width:0; margin:0; padding:7px 8px;
+    font-size:15px; letter-spacing:2px; overflow-wrap:anywhere; }
+  body.typing #main .slots .slot.filled, body.typing #main .slots .slot.missed { letter-spacing:normal; }
+  body.typing #main .instruction { margin:4px 2px 6px; font-size:15px; }
+  body.typing #main .shape { padding:6px; margin-bottom:8px; font-size:19px; }
+  body.session.typing #main > input:not([type=checkbox]),
+  body.session.typing #main > textarea { position:sticky; bottom:0; z-index:1; }
+  body.session.typing #main > input:not([type=checkbox]) { min-height:48px; padding:11px 14px; }
+  body.session.typing #main > textarea { height:calc(2.9em + 23px); min-height:0; padding:10px 14px; }
+  body.typing #main .feedback { margin-top:6px; font-size:14px; line-height:1.45; }
+  body.typing #main .page-head { margin:4px 2px 10px; }
+  body.typing #foot { padding-top:6px; padding-bottom:6px; gap:8px; }
+  body.typing #foot.tabs { display:none; }
+  body.typing #foot > button { flex:0 1 auto; min-height:42px; padding:8px 12px; font-size:14.5px; }
+  body.typing #foot > button.primary { flex:1 1 auto; order:9; }
+  body.typing #foot > button.ghost { padding:8px 4px; }
+
+  .dbline { display:flex; align-items:center; gap:10px; margin:2px 0 14px; color:var(--muted);
+    font-size:14px; }
+  .dbline svg { width:18px; height:18px; flex:none; }
+  .dbline span { flex:1; min-width:0; overflow-wrap:anywhere; }
+  .dbline b { color:var(--text); font-weight:600; }
+  .hint { color:var(--faint); font-size:13px; margin:-8px 4px 14px; }
 
   /* ------------------------------------------------------------ motion */
   @keyframes rise { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:none; } }
@@ -989,6 +1031,79 @@ function show(nodes, buttons) {
   primaryButton = foot.querySelector("button.primary");
   main.scrollTop = 0;
 }
+/* ------------------------------------------------------------ keyboard
+   On a phone the keyboard covers half the screen. While it is up the page is
+   sized to what is left, the layout tightens (body.typing) and the box being
+   typed in is kept in view. */
+const viewport = window.visualViewport;
+const touchScreen = matchMedia("(pointer: coarse)").matches;
+let tallest = 0, lastWidth = 0;
+const isField = node => !!node && main.contains(node) &&
+  (node.tagName === "TEXTAREA" || (node.tagName === "INPUT" && node.type !== "checkbox"));
+
+function fitKeyboard() {
+  // pinch-zoom also shrinks the visible area, and that is not the keyboard
+  if (viewport && Math.abs(viewport.scale - 1) > 0.01) return;
+  const height = viewport ? viewport.height : window.innerHeight;
+  const width = viewport ? viewport.width : window.innerWidth;
+  if (Math.abs(width - lastWidth) > 1) { tallest = 0; lastWidth = width; }  // turned round
+  tallest = Math.max(tallest, height);
+  const field = document.activeElement;
+  const typing = touchScreen && isField(field) && height < tallest * 0.82;
+  document.documentElement.style.setProperty("--app-h", `${Math.round(height)}px`);
+  document.body.classList.toggle("typing", typing);
+  if (window.scrollY) window.scrollTo(0, 0);
+  if (typing) requestAnimationFrame(keepInView);
+}
+
+/* What is being typed stays on screen, and so does the line of feedback
+   under it. A session's answer box is pinned to the bottom edge by CSS, so
+   there only the feedback after it needs bringing up, and the word or
+   sentence above is never scrolled out of sight for it. */
+function keepInView() {
+  const field = document.activeElement;
+  if (!document.body.classList.contains("typing") || !isField(field)) return;
+  if (field.parentNode === main && document.body.classList.contains("session")) {
+    const after = field.nextElementSibling;
+    if (after && after.textContent.trim()) after.scrollIntoView({ block: "nearest" });
+    // but never at the cost of the word or sentence being asked about
+    const face = main.querySelector(".face");
+    const hidden = face ? main.getBoundingClientRect().top - face.getBoundingClientRect().top : 0;
+    if (hidden > 0) main.scrollTop -= hidden;
+  } else {
+    field.scrollIntoView({ block: "nearest" });
+  }
+}
+if (viewport) viewport.addEventListener("resize", fitKeyboard);
+window.addEventListener("resize", fitKeyboard);
+document.addEventListener("focusin", fitKeyboard);
+document.addEventListener("focusout", () => setTimeout(fitKeyboard, 0));
+
+/* A tap on "Show a letter" or "Check" leaves the keyboard up. The press does
+   not take focus from the box, and if the phone moved it anyway the box takes
+   it back before the button acts, while the tap still counts as the user's,
+   which is what lets a phone reopen its keyboard. A button that is done with
+   the keyboard blurs or disables the box itself, after this. */
+let refocus = null;
+foot.addEventListener("pointerdown", event => {
+  const field = document.activeElement;
+  refocus = isField(field) && event.target.closest("button") ? field : null;
+}, true);
+foot.addEventListener("mousedown", event => {
+  if (isField(document.activeElement) && event.target.closest("button")) event.preventDefault();
+});
+foot.addEventListener("click", () => {
+  const field = refocus;
+  refocus = null;
+  if (field && field.isConnected && !field.disabled && document.activeElement !== field)
+    field.focus({ preventScroll: true });
+}, true);
+foot.addEventListener("click", () => requestAnimationFrame(keepInView));
+main.addEventListener("keydown", event => {
+  if (event.key === "Enter") requestAnimationFrame(keepInView);
+});
+fitKeyboard();
+
 function setProgress(text, fraction) {
   counter.textContent = text || "";
   bar.style.width = `${Math.round((fraction || 0) * 100)}%`;
@@ -1025,6 +1140,7 @@ function onRung(stage) { return state.cards.filter(x => (x.stage ?? 1) === stage
 function home() {
   queue = []; setProgress("", 0); chrome(false);
   if (!state || !state.cards.length) return setup();
+  cameFrom = "";
   const c = counts();
   const days = reviewDays();
   const run = streak(days), today = days.get(todayStr()) || 0;
@@ -1323,10 +1439,11 @@ function viewMeanings(card) {
     (card.marks ? ` \u00b7 ${card.marks} mark(s)` : ""));
   const prompt = el("div", "prompt", withArticle(card));
   const sub = el("div", "sub", esc(card.pos || ""));
-  const slots = el("div");
+  const slots = el("div", "slots");
   const input = el("input");
   input.placeholder = "type a meaning";
   input.autocapitalize = "none"; input.autocomplete = "off"; input.autocorrect = "off";
+  input.enterKeyHint = "go";
   const feedback = el("div", "feedback");
 
   function paint() {
@@ -1426,6 +1543,7 @@ function viewReverse(card) {
   const input = el("input");
   input.placeholder = "type the word";
   input.autocapitalize = "none"; input.autocomplete = "off"; input.autocorrect = "off";
+  input.enterKeyHint = "go";
   const feedback = el("div", "feedback");
 
   function check() {
@@ -1509,6 +1627,7 @@ function viewCloze(card, blind) {
   const input = el("input");
   input.placeholder = "the missing word";
   input.autocapitalize = "none"; input.autocomplete = "off"; input.autocorrect = "off";
+  input.enterKeyHint = "go";
   const feedback = el("div", "feedback left");
 
   function check() {
@@ -1566,6 +1685,7 @@ function viewTranslate(card, intoNative) {
     const given = editor.value.trim();
     if (!given) return;
     done = true;
+    editor.blur();
     const want = contentWords(target), got = contentWords(given);
     const missing = [...want].filter(w => ![...got].some(g =>
       g === w || g.startsWith(w.slice(0, Math.max(4, w.length - 2)))));
@@ -1613,6 +1733,7 @@ function viewProduce(card) {
     const text = editor.value.trim();
     if (!text) return;
     done = true;
+    editor.blur();
     const has = usesWord(text, card.w);
     report.innerHTML = has
       ? '<span class="good">The word is there.</span> Does it say what you meant?'
@@ -1648,6 +1769,13 @@ function viewProduce(card) {
    kilobytes. Settings live in IndexedDB, not in the page, so they survive. */
 function cloudSettings() { return (state && state.cloud) || {}; }
 let lastSync = null;
+
+/* The database address and key, kept once for the whole phone. Every
+   language normally lives in the same Supabase project, so after the first
+   one only a collection name is needed. */
+let connection = { url: "", key: "", auto: false };
+// the language that was open when "Add a language" was pressed, for Back
+let cameFrom = "";
 
 // what the bookmarks go back to when the exchange has to start from scratch
 const NO_MARKERS = { pulled_to: "", pushed_to: "", reviews_to: "", reviews_sent: "",
@@ -2304,9 +2432,11 @@ async function addLanguage() {
   // the same Supabase project usually serves every language, so its address
   // and key come along; the collection name and the words do not
   const prev = cloudSettings();
+  cameFrom = state && state.cards.length ? stateKey(state) : "";
   state = { language: "", language_name: "", cards: [], reviews: [],
-            cloud: { url: prev.url || "", key: prev.key || "" } };
-  setup();
+            cloud: { url: prev.url || connection.url || "", key: prev.key || connection.key || "",
+                     auto: prev.url ? !!prev.auto : !!connection.auto } };
+  cloudScreen();
 }
 
 function collectionRow(entry, current) {
@@ -2370,14 +2500,14 @@ function cloudScreen() {
   const cfg = cloudSettings();
   const hasWords = !!(state && state.cards && state.cards.length);
   const url = el("input"); url.placeholder = "https://xxxxxxxx.supabase.co";
-  url.value = cfg.url || ""; url.autocapitalize = "none"; url.spellcheck = false;
+  url.value = cfg.url || connection.url || ""; url.autocapitalize = "none"; url.spellcheck = false;
   url.inputMode = "url";
   const key = el("input"); key.placeholder = "eyJhbGciOi\u2026";
-  key.value = cfg.key || ""; key.autocapitalize = "none"; key.spellcheck = false;
+  key.value = cfg.key || connection.key || ""; key.autocapitalize = "none"; key.spellcheck = false;
   const coll = el("input"); coll.placeholder = "the name the desktop suggested";
   coll.value = cfg.collection || ""; coll.autocapitalize = "none"; coll.spellcheck = false;
   const check = document.createElement("input");
-  check.type = "checkbox"; check.checked = !!cfg.auto;
+  check.type = "checkbox"; check.checked = cfg.url ? !!cfg.auto : !!connection.auto;
   const auto = el("label", "switch");
   auto.appendChild(el("span", "", "Sync by itself when the app opens and when a session ends"));
   auto.appendChild(check);
@@ -2391,13 +2521,34 @@ function cloudScreen() {
   }));
 
   const conn = el("div", "card");
-  conn.appendChild(el("h2", "", "Connection"));
-  conn.appendChild(el("div", "muted",
-    "The same three values you put in the desktop app. Both then keep " +
-    "themselves in step, with no files to carry."));
-  conn.appendChild(field("Project URL", url));
-  conn.appendChild(field("Anon public key", key));
-  conn.appendChild(field("Collection name", coll));
+  if (hasWords) {
+    conn.appendChild(el("h2", "", "Connection"));
+    conn.appendChild(el("div", "muted",
+      "The same three values you put in the desktop app. Both then keep " +
+      "themselves in step, with no files to carry."));
+    conn.appendChild(field("Project URL", url));
+    conn.appendChild(field("Anon public key", key));
+    conn.appendChild(field("Collection name", coll));
+  } else {
+    // a new language: its name is all that is new, so it comes first and the
+    // database this phone already knows stays folded away
+    conn.appendChild(field("Collection name", coll));
+    conn.appendChild(el("div", "hint",
+      "As the desktop shows it in Phone sync, for example it-1a2b3c4d5e."));
+    const db = el("div");
+    db.appendChild(field("Project URL", url));
+    db.appendChild(field("Anon public key", key));
+    if (url.value && key.value) {
+      db.classList.add("hidden");
+      const line = el("div", "dbline", `${icon("cloud")}<span>Database <b>${
+        esc(url.value.replace(/^https?:\/\//, ""))}</b></span>`);
+      line.appendChild(button("Change", "ghost small", () => {
+        line.remove(); db.classList.remove("hidden"); url.focus();
+      }));
+      conn.appendChild(line);
+    }
+    conn.appendChild(db);
+  }
   conn.appendChild(auto);
 
   /* Saves what was typed. Returns false if you backed out.
@@ -2409,6 +2560,10 @@ function cloudScreen() {
     await syncIdle();
     const settings = { url: url.value.trim().replace(/\/$/, ""),
                        key: key.value.trim(), auto: check.checked };
+    if (settings.url && settings.key) {
+      connection = { ...settings };
+      idbSet("connection", connection).catch(() => {});
+    }
     const name = coll.value.trim();
     const current = cloudSettings().collection || "";
     if (name && name !== current) {
@@ -2491,11 +2646,15 @@ function cloudScreen() {
     const files = el("div", "list");
     files.appendChild(action("file", "Load a file instead",
       "Exported from the desktop with \u201cExport collection for phone\u201d", () => pick(importFile)));
-    show([pageHead("Set up sync", "Then download the words straight from the database."),
+    coll.enterKeyHint = "go";
+    coll.addEventListener("keydown", e => { if (e.key === "Enter") downloadWords(); });
+    show([pageHead(cameFrom ? "Add a language" : "Download your words",
+                   "Enter its collection name and the words come straight from the database."),
           conn, sectionHead("No sync?"), files], [
-      button("Back", "back", home),
+      button("Back", "back", () => cameFrom ? switchTo(cameFrom) : home()),
       button(icon("download") + "Download words", "primary grow", downloadWords)
     ]);
+    if (!coll.value) setTimeout(() => coll.focus(), 60);
     return;
   }
 
@@ -2743,6 +2902,10 @@ quitBtn.addEventListener("click", () => { save(); home(); });
   if (state && !state.reviews) state.reviews = [];
   // records saved before keys were fixed keep the key they were found under
   if (state && state.cards && state.cards.length) state.id = opened ? key : stateKey(state);
+  const known = state && state.cloud;
+  connection = (await idbGet("connection")) ||
+    (known && known.url && known.key
+      ? { url: known.url, key: known.key, auto: !!known.auto } : connection);
   home();
   autoSync("opened");
   if ("serviceWorker" in navigator)

@@ -170,6 +170,10 @@ added to Windows under Settings › Time & language › Speech › Add voices.
 The **Read** tab has short texts from A1 to B2 in Italian and Turkish, from
 easy to hard. They are original texts written for the app (in
 `reading/it.json` and `reading/tr.json`), each with its English translation.
+A1 has 40 texts per language. They start with a few sentences about one
+person and work up to ads, menus, timetables, messages, a diary, short
+biographies and a survey with percentages. The same people come back from
+text to text, so their words do too.
 The method follows exam-style reading books such as METU's *Reader at Work*:
 - **Before you read**, a question gets you thinking about the topic.
 - **Recycled words:** the words you met in earlier texts come back. They are

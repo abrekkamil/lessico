@@ -374,7 +374,7 @@
   .tab { flex:1; flex-direction:column; gap:3px; min-height:58px; padding:5px 0 4px;
     background:none; border:none; box-shadow:none; color:var(--faint); font-size:11.5px;
     font-weight:650; border-radius:14px; }
-  .tab .pip { display:grid; place-items:center; width:58px; height:30px; border-radius:99px;
+  .tab .pip { display:grid; place-items:center; width:100%; max-width:58px; height:30px; border-radius:99px;
     transition:background-color .2s; }
   .tab svg { width:23px; height:23px; }
   .tab.on { color:var(--primary-text); }
@@ -416,6 +416,56 @@
   .details .stat-line { color:var(--faint); font-size:13px; margin:18px 2px 0; }
   .details .actions { position:sticky; bottom:0; margin:14px -20px 0; padding:12px 20px 18px;
     background:var(--surface); border-top:1px solid var(--border); }
+  .details .field { margin-top:14px; }
+  .tag-read { color:var(--warn); font-weight:700; }
+
+  /* ------------------------------------------------------------ reading */
+  .segment { display:flex; gap:4px; padding:4px; margin:0 0 16px; border-radius:14px;
+    background:var(--surface2); }
+  .segment button { flex:1; min-height:40px; padding:8px 10px; border:none; box-shadow:none;
+    background:transparent; color:var(--muted); font-size:14px; border-radius:11px; }
+  .segment button.on { background:var(--surface); color:var(--text); box-shadow:var(--shadow-sm); }
+  .lvl { width:42px; height:42px; border-radius:13px; flex:none; display:grid; place-items:center;
+    font-size:14px; font-weight:800; color:var(--c);
+    background:color-mix(in srgb, var(--c) 15%, transparent); }
+  .before { background:var(--primary-soft); border-color:transparent; box-shadow:none; line-height:1.5; }
+  .before .label { font-size:12.5px; font-weight:800; text-transform:uppercase; letter-spacing:.08em;
+    color:var(--primary-text); margin-bottom:6px; }
+  .recall { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+  .recall button { min-height:0; padding:6px 12px; border-radius:99px; font-size:14px;
+    background:var(--surface); box-shadow:none; }
+  .recall button b { color:var(--primary-text); }
+  .key { display:flex; flex-wrap:wrap; gap:8px 16px; margin:0 4px 16px; font-size:13px; color:var(--muted); }
+  .key span { display:inline-flex; align-items:center; gap:6px; }
+  .key i { font-style:normal; font-weight:700; padding:0 4px; color:var(--text); }
+  .para { position:relative; margin:0 0 20px; padding-left:30px; }
+  .pnum { position:absolute; left:0; top:4px; width:21px; height:21px; border-radius:7px;
+    display:grid; place-items:center; font-size:11.5px; font-weight:800; color:var(--muted);
+    background:var(--surface2); }
+  .ptext { font-size:18.5px; line-height:1.75; overflow-wrap:break-word; }
+  .ptools { display:flex; gap:8px; margin-top:6px; align-items:center; }
+  .ptools .say { width:34px; height:34px; }
+  .ptools .say svg { width:18px; height:18px; }
+  .ptools button.small { min-height:34px; padding:5px 12px; }
+  .ptrans { margin-top:8px; padding:10px 12px; border-radius:var(--radius-sm); background:var(--surface2);
+    color:var(--muted); font-size:15px; line-height:1.55; }
+  .w { cursor:pointer; border-radius:5px; padding:1px 0; -webkit-user-select:none; user-select:none; }
+  .k-new { box-shadow:inset 0 -2px var(--primary); }
+  .k-old { background:color-mix(in srgb, var(--warn) 22%, transparent); }
+  .k-mine { color:var(--good); font-weight:650; }
+  .w.tapped { background:var(--primary-soft); }
+  .qcard .qtext { font-size:19px; font-weight:600; line-height:1.45; }
+  .qcard .prompt { margin-bottom:6px; }
+  .qcard .qen { margin-top:8px; font-size:14.5px; }
+  .qcard .ctx { margin-top:10px; color:var(--muted); font-size:15.5px; line-height:1.5; }
+  .qcard mark, .ptext mark { background:var(--primary-soft); color:var(--primary-text); border-radius:5px;
+    padding:0 3px; }
+  .opts { display:flex; flex-direction:column; gap:8px; margin:4px 0 6px; }
+  .opts button { justify-content:flex-start; text-align:left; min-height:52px; font-weight:600;
+    line-height:1.35; }
+  .opts button:disabled { opacity:1; }
+  .opts button.right { border-color:var(--good); background:var(--good-soft); color:var(--good); }
+  .opts button.wrong { border-color:var(--bad); background:var(--bad-soft); color:var(--bad); }
 
   /* ------------------------------------------------------------ typing
      With the phone's keyboard up there is about half a screen left, so the
@@ -932,7 +982,8 @@ const ICONS = {
        '<path d="M9 3.5v2.5M13 3.5v2.5"/>',
   speaker: '<path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6"/>' +
            '<path d="M18.2 6.3a8 8 0 0 1 0 11.4"/>',
-  info: '<circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5"/><path d="M12 7.5h.01"/>'
+  info: '<circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5"/><path d="M12 7.5h.01"/>',
+  read: '<path d="M6 3.5h8.5L19 8v12.5H6z"/><path d="M14 3.5V8h5"/><path d="M9 12h7M9 15.5h7M9 8.5h3"/>'
 };
 function icon(name) {
   return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" ' +
@@ -1036,7 +1087,7 @@ function chrome(session) { document.body.classList.toggle("session", !!session);
 
 /* The tabs along the bottom of the main screens. */
 function tabBar(active) {
-  return [["home", "Home", home], ["words", "Words", wordsScreen],
+  return [["home", "Home", home], ["read", "Read", () => readScreen()], ["words", "Words", wordsScreen],
           ["progress", "Progress", progressScreen], ["sync", "Sync", cloudScreen]]
     .map(([id, label, go]) => {
       const tab = el("button", "tab" + (id === active ? " on" : ""),
@@ -1244,6 +1295,13 @@ function home() {
 
   // a word met today, and the state of sync
   const more = el("div", "list");
+  const book = books[speechLang()];
+  if (!book) loadBook();          // quietly, so the next visit can name the next text
+  const nextText = book && book.texts.find(t => !reading().done[t.id]);
+  more.appendChild(listItem({ lead: icobox("read", "var(--warn)"), title: "Reading",
+    detail: nextText ? `Next: ${esc(nextText.title)} (${nextText.level})`
+                     : book ? "Every text read" : "Short texts from A1 to B2, with questions",
+    end: icon("chevron"), onTap: () => readScreen() }));
   more.appendChild(listItem({ lead: icobox("plus"), title: "Add a word",
     detail: "Something you met today", end: icon("chevron"), onTap: addWordScreen }));
   const cfg = cloudSettings();
@@ -1288,6 +1346,7 @@ function buildQueue(kind) {
   if (kind === "sorting") pool = pool.filter(c => !c.stage);
   else if (kind === "flashcards") pool = pool.filter(c => c.stage === 1);
   else if (kind === "writing") pool = pool.filter(c => c.stage === 3);
+  else if (kind === "reading") pool = pool.filter(isReadingWord);
   else if (kind === "meanings") pool = pool.filter(c => c.stage === 2 && mbox(c) <= 2);
   else if (kind === "gaps") pool = pool.filter(c => c.stage === 2 && [3, 4].includes(mbox(c)));
   else if (kind === "translate")
@@ -1514,7 +1573,8 @@ function wordSheet(card) {
   if (sayWord) head.appendChild(sayWord);
   box.appendChild(head);
   const tags = [card.pos || card.spos, card.cefr,
-                card.topic && card.topic !== "general" ? card.topic : ""].filter(Boolean);
+                isReadingWord(card) ? "from reading"
+                  : card.topic && card.topic !== "general" ? card.topic : ""].filter(Boolean);
   if (tags.length) box.appendChild(el("div", "tags", esc(tags.join(" · "))));
   if (card.en) box.appendChild(el("div", "gloss", esc(card.en)));
 
@@ -1601,6 +1661,527 @@ function wordSheet(card) {
     primaryButton = close;
     close.focus({ preventScroll: true });
   }, 0);
+}
+
+/* ------------------------------------------------------------------ reading
+   Graded texts from A1 to B2 in the open language, written for this app and
+   kept in reading/<language>.json. Each text glosses its key words, and the
+   texts are written so that words from earlier ones come back in later ones:
+   a word met once is met again, marked, so the reader can check it stuck.
+   Words tapped while reading go into the main list straight into flashcards,
+   with the sentence they were met in, and are remembered here as reading
+   words, since the desktop relabels the topic of words made on the phone. */
+const LEVELS = [["A1", "Beginner", "var(--s1)"], ["A2", "Elementary", "var(--s2)"],
+                ["B1", "Intermediate", "var(--s3)"], ["B2", "Upper intermediate", "var(--s4)"]];
+const WORD_RE = /\p{L}+(?:['’]\p{L}+)*/gu;
+const CONTENT_POS = ["noun", "verb", "adjective", "adverb"];
+const books = {};
+let readSession = null;      // the text open now: { t, recall: {lemma: remembered?}, answers }
+
+async function loadBook() {
+  const lang = speechLang();
+  if (!lang) return null;
+  if (books[lang]) return books[lang];
+  try {
+    const response = await fetch(`reading/${lang}.json`);
+    if (!response.ok) return null;
+    books[lang] = prepareBook(await response.json(), lang);
+  } catch { return null; }
+  return books[lang];
+}
+/* Texts in level order, and for each one which of its words are new and
+   which were first glossed in an earlier text. */
+function prepareBook(data, lang) {
+  const rank = level => LEVELS.findIndex(([l]) => l === level);
+  const texts = (data.texts || []).slice().sort((a, b) => rank(a.level) - rank(b.level));
+  const firstIn = {};
+  for (const t of texts) {
+    const lemmas = [...new Set(Object.values(t.words || {}))];
+    t.fresh = lemmas.filter(l => !firstIn[l]);
+    t.fresh.forEach(l => { firstIn[l] = t; });
+    t.again = lemmas.filter(l => firstIn[l] !== t);
+    t.size = t.p.flat().reduce((n, [s]) => n + (s.match(WORD_RE) || []).length, 0);
+  }
+  return { lang, dict: data.dict || {}, texts, firstIn };
+}
+function reading() {
+  if (!state.reading) state.reading = {};
+  if (!state.reading.done) state.reading.done = {};
+  if (!state.reading.words) state.reading.words = {};
+  return state.reading;
+}
+const wordKey = w => (w || "").trim().toLocaleLowerCase(speechLang() || undefined);
+const cardIndex = () => new Map(state.cards.map(c => [wordKey(c.w), c]));
+function findCard(w) { return cardIndex().get(wordKey(w)) || null; }
+function isReadingWord(card) {
+  return !!(state && state.reading && state.reading.words && state.reading.words[wordKey(card.w)]);
+}
+function readingWords() {
+  const words = reading().words;
+  return state.cards.filter(isReadingWord)
+    .sort((a, b) => (words[wordKey(b.w)].at || "").localeCompare(words[wordKey(a.w)].at || ""));
+}
+/* A dictionary entry as it is said: Italian nouns with their article. */
+function dictWord(book, lemma) {
+  const art = (book.dict[lemma] || [])[2];
+  return art ? art + (art.endsWith("'") ? "" : " ") + lemma : lemma;
+}
+const contentFirst = (book, lemmas) => {
+  const content = lemmas.filter(l => CONTENT_POS.includes((book.dict[l] || [])[1]));
+  return content.length >= 3 ? content : lemmas;
+};
+const shuffle = list => list.map(x => [Math.random(), x]).sort((a, b) => a[0] - b[0]).map(p => p[1]);
+
+/* Which entry a word in the text belongs to. Italian elides ("all'università"),
+   Turkish puts suffixes after an apostrophe on names ("Boğaz'ın"), so the
+   part that carries the meaning is tried as well. Returns the entry (or
+   none), a base form to offer when there is none, and where in the token
+   the meaningful part sits. */
+function lookupToken(book, t, token) {
+  const low = token.toLocaleLowerCase(book.lang);
+  const tries = [[low, 0]];
+  const cut = low.search(/['’]/);
+  if (cut > 0) {
+    const before = [low.slice(0, cut), 0], after = [low.slice(cut + 1), cut + 1];
+    if (book.lang === "tr") tries.push(before); else tries.push(after, before);
+  }
+  for (const [form, off] of tries)
+    if (t.words[form]) return { lemma: t.words[form], base: form, off, len: form.length };
+  const [base, off] = tries[1] || tries[0];
+  return { lemma: null, base, off, len: base.length };
+}
+function markToken(book, t, span, index) {
+  const { lemma, base } = lookupToken(book, t, span.textContent);
+  span.className = "w";
+  if (lemma) span.classList.add(t.fresh.includes(lemma) ? "k-new" : "k-old");
+  if (index.has(wordKey(lemma || base))) span.classList.add("k-mine");
+}
+const markIn = (text, at, length) =>
+  esc(text.slice(0, at)) + `<mark>${esc(text.slice(at, at + length))}</mark>` + esc(text.slice(at + length));
+
+async function readScreen(view) {
+  view = view || "texts";
+  setProgress("", 0); chrome(false);
+  const book = await loadBook();
+  const r = reading();
+  const mine = readingWords();
+  const nodes = [pageHead("Reading", "Short texts from A1 to B2. Each one brings back words " +
+    "from the ones before, so you can see whether they stuck.")];
+  const seg = el("div", "segment");
+  seg.appendChild(button("Texts", view === "texts" ? "on" : "", () => readScreen("texts")));
+  seg.appendChild(button(`My reading words${mine.length ? ` · ${mine.length}` : ""}`,
+    view === "words" ? "on" : "", () => readScreen("words")));
+  nodes.push(seg);
+
+  if (view === "words") {
+    if (!mine.length) {
+      nodes.push(el("div", "card muted", "Words you add while reading land here, and in your main " +
+        "list tagged <span class=\"tag-read\">reading</span>. Open a text and tap any word you don't know."));
+    } else {
+      const ready = mine.filter(due).length;
+      const practise = button(icon("flash") + (ready ? `Practise these · ${ready} due` : "Nothing due yet"),
+                              "primary wide", () => start("reading"));
+      practise.disabled = !ready;
+      practise.style.marginBottom = "14px";
+      nodes.push(practise);
+      const list = el("div", "list");
+      for (const card of mine) {
+        const s = stageOf(card);
+        const from = book && book.texts.find(t => t.id === r.words[wordKey(card.w)].text);
+        list.appendChild(listItem({
+          lead: `<span class="dot" style="--c:${s.colour}"></span>`,
+          title: withArticle(card),
+          detail: esc(card.en) + (from ? ` · from “${esc(from.title)}”` : ""),
+          end: `<span class="badge" style="--c:${s.colour}">${s.short}${s.box ? " · " + s.box : ""}</span>`,
+          onTap: () => wordSheet(card)
+        }));
+      }
+      nodes.push(list);
+    }
+  } else if (!book) {
+    nodes.push(el("div", "card", `<h2>No texts for ${esc(languageName(speechLang()))} yet</h2>` +
+      '<div class="muted">The reading texts are written for Italian and Turkish. If this is one of ' +
+      "them, open this tab once while online so the phone can keep a copy.</div>"));
+  } else {
+    const next = book.texts.find(t => !r.done[t.id]);
+    for (const [level, name, colour] of LEVELS) {
+      const texts = book.texts.filter(t => t.level === level);
+      if (!texts.length) continue;
+      nodes.push(sectionHead(`${level} · ${name}`));
+      const list = el("div", "list");
+      for (const t of texts) {
+        const done = r.done[t.id];
+        list.appendChild(listItem({
+          lead: `<span class="lvl" style="--c:${colour}">${level}</span>`,
+          title: esc(t.title),
+          detail: `${esc(t.title_en)} · ${Math.max(1, Math.round(t.size / 90))} min · ${t.fresh.length} new` +
+            (t.again.length ? `, ${t.again.length} from before` : ""),
+          end: done ? `<span class="badge" style="--c:var(--good)">${icon("check")}${done.score}/${done.total}</span>`
+            : t === next ? '<span class="badge" style="--c:var(--primary)">Start here</span>' : icon("chevron"),
+          onTap: () => readText(book, t)
+        }));
+      }
+      nodes.push(list);
+    }
+  }
+  show(nodes, tabBar("read"));
+}
+
+function readText(book, t) {
+  setProgress("", 0); chrome(false);
+  if (!readSession || readSession.t !== t) readSession = { t, recall: {}, answers: [] };
+  const index = cardIndex();
+  const before = el("div", "card before",
+    `<div class="label">Before you read</div><div>${esc(t.before)}</div>`);
+  // the Reader at Work habit: words from earlier texts are met again, and
+  // checked here before they turn up in the text
+  const old = contentFirst(book, t.again).slice(0, 10);
+  if (old.length) {
+    before.appendChild(el("div", "label", "From earlier texts: do you remember?"))
+      .style.marginTop = "14px";
+    const chips = el("div", "recall");
+    for (const lemma of old) {
+      const word = esc(dictWord(book, lemma));
+      const chip = button(word, "", () => {
+        const open = chip.classList.toggle("shown");
+        chip.innerHTML = open ? `${word} · <b>${esc(book.dict[lemma][0])}</b>` : word;
+      });
+      chips.appendChild(chip);
+    }
+    before.appendChild(chips);
+  }
+  const key = el("div", "key",
+    '<span><i class="k-new">new</i>key word</span><span><i class="k-old">met</i>from before</span>' +
+    '<span><i class="k-mine">word</i>in your words</span><span>Tap any word</span>');
+
+  const body = el("div", "reader");
+  t.p.forEach((para, i) => {
+    const block = el("div", "para");
+    block.appendChild(el("span", "pnum", String(i + 1)));
+    const text = el("div", "ptext");
+    para.forEach(([sentence], j) => {
+      let last = 0;
+      for (const m of sentence.matchAll(WORD_RE)) {
+        if (m.index > last) text.appendChild(document.createTextNode(sentence.slice(last, m.index)));
+        const span = el("span", "w");
+        span.textContent = m[0];
+        Object.assign(span.dataset, { i, j, a: m.index });
+        markToken(book, t, span, index);
+        text.appendChild(span);
+        last = m.index + m[0].length;
+      }
+      text.appendChild(document.createTextNode(sentence.slice(last) + " "));
+    });
+    block.appendChild(text);
+    const tools = el("div", "ptools");
+    const play = sayButton(para.map(([s]) => s).join(" "));
+    if (play) tools.appendChild(play);
+    const english = el("div", "ptrans hidden", esc(para.map(([, en]) => en).join(" ")));
+    tools.appendChild(button("English", "small soft", () => english.classList.toggle("hidden")));
+    block.append(tools, english);
+    body.appendChild(block);
+  });
+  body.addEventListener("click", event => {
+    const span = event.target.closest(".w");
+    if (!span) return;
+    body.querySelectorAll(".w.tapped").forEach(s => s.classList.remove("tapped"));
+    span.classList.add("tapped");
+    tapWord(book, t, span);
+  });
+  readSession.refresh = () => {
+    const now = cardIndex();
+    body.querySelectorAll(".w").forEach(span => markToken(book, t, span, now));
+  };
+  show([metaLine(`${t.level} · ${esc(t.title_en)}`), pageHead(esc(t.title)), before, key, body], [
+    button("All texts", "back", () => readScreen()),
+    button("Questions" + icon("chevron"), "primary grow", () => startQuestions(book, t))
+  ]);
+}
+
+/* A bottom sheet for the reader's small questions. */
+function openSheet(nodes) {
+  const before = primaryButton;
+  const veil = el("div", "veil");
+  const box = el("div", "sheet details");
+  box.setAttribute("role", "dialog");
+  box.setAttribute("aria-modal", "true");
+  nodes.filter(Boolean).forEach(n => box.appendChild(n));
+  const actions = el("div", "actions");
+  box.appendChild(actions);
+  function onKey(event) { if (event.key === "Escape") { event.preventDefault(); close(); } }
+  function close() {
+    if (speech) speech.cancel();
+    document.removeEventListener("keydown", onKey, true);
+    veil.remove();
+    primaryButton = before;
+  }
+  document.addEventListener("keydown", onKey, true);
+  veil.addEventListener("click", event => { if (event.target === veil) close(); });
+  veil.appendChild(box);
+  document.body.appendChild(veil);
+  // after button()'s own deferred pick, so Enter answers the sheet
+  const primary = b => setTimeout(() => { if (document.contains(veil)) primaryButton = b; }, 0);
+  return { box, actions, close, primary };
+}
+function sheetHead(text) {
+  const head = el("div", "head");
+  head.appendChild(el("div", "prompt", esc(text)));
+  const play = sayButton(text);
+  if (play) head.appendChild(play);
+  return head;
+}
+/* The sentence a word was tapped in, with the word marked. */
+function sentenceLine(ctx, withEnglish) {
+  const row = el("div", "line");
+  row.appendChild(el("div", "txt",
+    `<div class="it">${markIn(ctx.sentence, ctx.at + ctx.off, ctx.len)}</div>` +
+    (withEnglish && ctx.sentenceEn ? `<div class="en">${esc(ctx.sentenceEn)}</div>` : "")));
+  const play = sayButton(ctx.sentence);
+  if (play) row.appendChild(play);
+  return row;
+}
+
+function tapWord(book, t, span) {
+  const [sentence, sentenceEn] = t.p[span.dataset.i][span.dataset.j];
+  const token = span.textContent;
+  const hit = lookupToken(book, t, token);
+  const ctx = { book, t, token, sentence, sentenceEn, at: Number(span.dataset.a), ...hit };
+  const card = findCard(hit.lemma || hit.base);
+  // a word from an earlier text is a chance to check it stuck, once per reading
+  if (hit.lemma && !t.fresh.includes(hit.lemma) && !(hit.lemma in readSession.recall))
+    return recallSheet(ctx, card);
+  if (card) return wordSheet(card);
+  addWordSheet(ctx);
+}
+
+function recallSheet(ctx, card) {
+  const { book, lemma } = ctx;
+  const first = book.firstIn[lemma];
+  const meaning = el("div", "gloss hidden", esc(book.dict[lemma][0]));
+  const s = openSheet([
+    sheetHead(dictWord(book, lemma)),
+    el("div", "tags", `You met this in “${esc(first.title)}” (${first.level}). Do you remember what it means?`),
+    meaning,
+    sentenceLine(ctx, false)
+  ]);
+  const reveal = button("Show the meaning", "primary", () => {
+    meaning.classList.remove("hidden");
+    s.box.querySelector(".line").replaceWith(sentenceLine(ctx, true));
+    s.actions.innerHTML = "";
+    const yes = button(icon("check") + "I remembered it", "primary", () => {
+      readSession.recall[lemma] = true;
+      s.close();
+    });
+    const no = button(card ? "I forgot it (it's in my words)" : "I forgot it: add it to my words", "", () => {
+      readSession.recall[lemma] = false;
+      s.close();
+      if (card) return flash(`${card.w} is in your words already, so it will come back in practice.`);
+      const entry = book.dict[lemma];
+      addFromText(ctx, lemma, entry[0], entry[1], entry[2]);
+    });
+    s.actions.append(yes, no);
+    s.primary(yes);
+  });
+  s.actions.appendChild(reveal);
+  s.primary(reveal);
+}
+
+function addWordSheet(ctx) {
+  const { book, t, lemma } = ctx;
+  const entry = lemma && book.dict[lemma];
+  if (entry) {
+    const s = openSheet([
+      sheetHead(dictWord(book, lemma)),
+      el("div", "tags", esc([entry[1], t.fresh.includes(lemma) ? "new in this text" : ""]
+        .filter(Boolean).join(" · "))),
+      el("div", "gloss", esc(entry[0])),
+      sentenceLine(ctx, true)
+    ]);
+    const add = button(icon("plus") + "Add to my words", "primary", () => {
+      s.close();
+      addFromText(ctx, lemma, entry[0], entry[1], entry[2]);
+    });
+    s.actions.append(add, button("Close", "", s.close));
+    s.primary(add);
+    return;
+  }
+  // a word the text does not gloss: the reader names it, helped by the
+  // sentence and its translation
+  const word = el("input"), meaning = el("input");
+  word.value = ctx.base;
+  meaning.placeholder = "what it means here";
+  for (const input of [word, meaning]) {
+    input.autocapitalize = "none"; input.autocomplete = "off"; input.spellcheck = false;
+  }
+  const s = openSheet([
+    el("h2", "", "Add a word from the text"),
+    sentenceLine(ctx, true),
+    field("Word, in its dictionary form", word),
+    field("Meaning in English", meaning)
+  ]);
+  const add = button(icon("plus") + "Add to my words", "primary", () => {
+    if (!word.value.trim() || !meaning.value.trim())
+      return flash("The word and its meaning are both needed.");
+    s.close();
+    addFromText(ctx, word.value, meaning.value, "", "");
+  });
+  meaning.addEventListener("keydown", event => { if (event.key === "Enter") add.click(); });
+  s.actions.append(add, button("Close", "", s.close));
+  s.primary(add);
+  setTimeout(() => meaning.focus(), 60);
+}
+
+/* The word joins the main list straight into flashcards (tapping it was
+   saying it is new), with the sentence it was met in as its example and as
+   a gap sentence, so the gap and translation exercises can use it too. */
+function addFromText(ctx, w, en, pos, art) {
+  w = w.trim(); en = en.trim();
+  let card = findCard(w);
+  if (!card) {
+    const surface = ctx.sentence.slice(ctx.at + ctx.off, ctx.at + ctx.off + ctx.len);
+    card = { w, en, pos: pos || "", spos: CONTENT_POS.includes(pos) ? pos : "", art: art || "",
+      coll: "", ex: ctx.sentence, topic: "reading", cefr: ctx.t.level, explain: "", explain_native: "",
+      stage: 1, box: 1, mbox: 1, marks: 0, flags: 0, due: todayStr(), reviews: 0, correct: 0,
+      lapses: 0, manual: 1, updated_at: nowStr(), senses: [],
+      sentences: [{ it: ctx.sentence, en: ctx.sentenceEn || "", surface,
+                    a: ctx.at + ctx.off, b: ctx.at + ctx.off + ctx.len, tag: "reading" }] };
+    state.cards.push(card);
+  }
+  reading().words[wordKey(card.w)] = { text: ctx.t.id, at: nowStr() };
+  save();
+  if (readSession && readSession.refresh) readSession.refresh();
+  flash(`${card.w} added to your words, with this sentence.`);
+  return card;
+}
+
+/* -------------------------------------------------------- reading questions
+   Exam-style questions after each text: true / false / not given, details,
+   what a word refers to, a meaning guessed from context and the main idea.
+   Then the words: two met in earlier texts and two new here, each shown in
+   its sentence from the text. */
+function vocabQuestions(book, t) {
+  const old = shuffle(contentFirst(book, t.again)).slice(0, 2);
+  const fresh = shuffle(contentFirst(book, t.fresh)).slice(0, 4 - old.length);
+  return [...old.map(l => [l, "old"]), ...fresh.map(l => [l, "new"])].map(([lemma, kind]) => {
+    const [right, pos] = book.dict[lemma];
+    const pool = Object.entries(book.dict).filter(([k, v]) => k !== lemma && v[0] !== right);
+    const same = pool.filter(([, v]) => v[1] === pos);
+    const o = shuffle([right, ...shuffle(same.length >= 3 ? same : pool).slice(0, 3).map(([, v]) => v[0])]);
+    let ctx = "";
+    search: for (const para of t.p) for (const [s] of para) for (const m of s.matchAll(WORD_RE)) {
+      const hit = lookupToken(book, t, m[0]);
+      if (hit.lemma === lemma) { ctx = markIn(s, m.index + hit.off, hit.len); break search; }
+    }
+    return { t: "vocab", kind, lemma, q: dictWord(book, lemma), en: "What does it mean here?", o,
+      a: o.indexOf(right), ctx, why: `It means “${right}”.` +
+        (kind === "old" ? ` You first met it in “${book.firstIn[lemma].title}”.` : "") };
+  });
+}
+
+function startQuestions(book, t) {
+  if (!readSession || readSession.t !== t) readSession = { t, recall: {}, answers: [] };
+  readSession.answers = [];
+  askQuestion(book, t, t.q.concat(vocabQuestions(book, t)), 0);
+}
+
+function askQuestion(book, t, list, i) {
+  const q = list[i];
+  const kinds = { tf: t.level === "A1" ? "True or false?" : "True, false or not given?",
+    mc: "Detail", ref: "What does it refer to?", context: "Guess from context", main: "Main idea",
+    vocab: q.kind === "old" ? "A word from before" : "A new word" };
+  const card = el("div", "face text qcard");
+  if (q.t === "vocab") {
+    card.appendChild(el("div", "prompt", esc(q.q)));
+    if (q.ctx) card.appendChild(el("div", "ctx", q.ctx));
+  } else {
+    card.appendChild(el("div", "qtext", esc(q.q)));
+  }
+  const english = el("div", "muted qen", esc(q.en));
+  // from B1 the question is read in the language, with English on request
+  const hideEnglish = ["B1", "B2"].includes(t.level) && q.t !== "vocab";
+  if (hideEnglish) english.classList.add("hidden");
+  card.appendChild(english);
+  if (hideEnglish) {
+    const show_ = button("English", "small soft", () => { english.classList.remove("hidden"); show_.remove(); });
+    show_.style.marginTop = "10px";
+    card.appendChild(show_);
+  }
+  const say_ = sayButton(q.q);     // every question is in the language being learned
+  if (say_) card.appendChild(say_);
+
+  const choices = q.t === "tf"
+    ? [["T", "True"], ["F", "False"], ["NG", "Not given"]].slice(0, t.level === "A1" ? 2 : 3)
+    : q.o.map((text, k) => [k, text]);
+  const opts = el("div", "opts");
+  const feedback = el("div", "feedback left hidden");
+  const next = button(i + 1 < list.length ? "Next" : "See how you did", "primary grow", () =>
+    i + 1 < list.length ? askQuestion(book, t, list, i + 1) : readingSummary(book, t, list));
+  next.disabled = true;
+  const buttons = choices.map(([value, text]) => {
+    const b = button(esc(text), "", () => {
+      if (!next.disabled) return;
+      const right = value === q.a;
+      readSession.answers[i] = right;
+      if (q.t === "vocab" && q.kind === "old" && !(q.lemma in readSession.recall))
+        readSession.recall[q.lemma] = right;
+      b.classList.add(right ? "right" : "wrong");
+      buttons.forEach(([v, other]) => { other.disabled = true; if (v === q.a) other.classList.add("right"); });
+      feedback.innerHTML = `<b class="${right ? "good" : "bad"}">${right ? "Right." : "Not quite."}</b> ` +
+        esc(q.why) + (q.p ? ` <span class="muted">(Paragraph ${q.p}.)</span>` : "");
+      feedback.classList.remove("hidden");
+      next.disabled = false;
+      primaryButton = next;
+      requestAnimationFrame(() => feedback.scrollIntoView({ block: "nearest", behavior: "smooth" }));
+    });
+    opts.appendChild(b);
+    return [value, b];
+  });
+  show([metaLine(`${kinds[q.t] || "Question"} · ${i + 1} of ${list.length}`), card, opts, feedback], [
+    button("The text", "back", () => textSheet(t)),
+    next
+  ]);
+}
+
+/* The text on its own, to look back at while answering. */
+function textSheet(t) {
+  const s = openSheet([el("h2", "", esc(t.title)), ...t.p.map((para, i) => {
+    const block = el("div", "para");
+    block.appendChild(el("span", "pnum", String(i + 1)));
+    block.appendChild(el("div", "ptext", esc(para.map(([s_]) => s_).join(" "))));
+    return block;
+  })]);
+  const back = button("Back to the question", "primary", s.close);
+  s.actions.appendChild(back);
+  s.primary(back);
+}
+
+function readingSummary(book, t, list) {
+  const right = readSession.answers.filter(Boolean).length;
+  const r = reading();
+  r.done[t.id] = { score: right, total: list.length, at: nowStr() };
+  save();
+  const recalled = Object.values(readSession.recall);
+  const added = Object.values(r.words).filter(w => w.text === t.id).length;
+  const head = el("div", "center");
+  head.appendChild(el("div", "done-mark", icon("check")));
+  head.appendChild(el("h1", "", "Text finished"));
+  head.appendChild(el("div", "muted", right / list.length >= 0.8
+    ? "Well read. The words from this text will come back in the next ones."
+    : "Worth another read later. Its words will come back in the next texts too."));
+  const stats = el("div", "stats");
+  stats.style.marginTop = "22px";
+  for (const [name, value, label, colour] of [
+    ["check", `${right}/${list.length}`, "questions right", "var(--s4)"],
+    ["ladder", recalled.length ? `${recalled.filter(Boolean).length}/${recalled.length}` : "–",
+     "words from before remembered", "var(--warn)"],
+    ["plus", added, added === 1 ? "word added" : "words added", "var(--primary)"]])
+    stats.appendChild(el("div", "stat", `${icobox(name, colour)}<b>${value}</b><span>${label}</span>`));
+  const next = book.texts[book.texts.indexOf(t) + 1];
+  readSession = null;
+  show([head, stats], [
+    button("All texts", next ? "back" : "primary grow", () => readScreen()),
+    next ? button(`Next: ${esc(next.title)}`, "primary grow", () => readText(book, next)) : null
+  ]);
 }
 
 /* Once a word has been answered, its card opens the full entry. */
@@ -2485,7 +3066,7 @@ function selectFrom(values, onPick) {
 
 function wordsScreen() {
   chrome(false);
-  let query = "", stageFilter = "", cefrFilter = "";
+  let query = "", stageFilter = "", cefrFilter = "", sourceFilter = "";
   const search = el("input");
   search.type = "search";
   search.placeholder = "Search words or meanings";
@@ -2501,6 +3082,9 @@ function wordsScreen() {
   if (cefrValues.length)
     filters.appendChild(selectFrom([["", "Any CEFR"], ...cefrValues.map(v => [v, v])],
                                    v => { cefrFilter = v; paint(); }));
+  if (state.cards.some(isReadingWord))
+    filters.appendChild(selectFrom([["", "All words"], ["reading", "From reading"]],
+                                   v => { sourceFilter = v; paint(); }));
   const note = el("div", "muted");
   note.style.margin = "0 4px 10px";
   const list = el("div", "list");
@@ -2512,6 +3096,7 @@ function wordsScreen() {
       c.w.toLowerCase().includes(query) || (c.en || "").toLowerCase().includes(query));
     if (stageFilter !== "") rows = rows.filter(c => String(c.stage ?? 1) === stageFilter);
     if (cefrFilter) rows = rows.filter(c => c.cefr === cefrFilter);
+    if (sourceFilter) rows = rows.filter(isReadingWord);
     rows = rows.slice().sort((a, b) => a.w.localeCompare(b.w));
     note.textContent = `${rows.length} of ${state.cards.length} words`;
     list.innerHTML = "";
@@ -2522,7 +3107,8 @@ function wordsScreen() {
       list.appendChild(listItem({
         lead: `<span class="dot" style="--c:${s.colour}"></span>`,
         title: withArticle(card),
-        detail: esc(card.en) + (card.cefr ? ` · ${esc(card.cefr)}` : ""),
+        detail: esc(card.en) + (card.cefr ? ` · ${esc(card.cefr)}` : "") +
+          (isReadingWord(card) ? ' · <span class="tag-read">reading</span>' : ""),
         end: `<span class="badge" style="--c:${s.colour}">${s.short}${s.box ? " · " + s.box : ""}</span>` +
              (card.suspended ? "<span>paused</span>" : when ? `<span>${when}</span>` : ""),
         onTap: () => wordSheet(card)

@@ -45,7 +45,7 @@ signal is fine. Do not use private browsing: it is cleared when you close it.
    one JSON file with the words, meanings, sentences and your current progress.
 2. Get the file to the phone: email it to yourself, put it in Drive or
    iCloud, or use a cable. Anything that ends with the file on the phone.
-3. In the web app tap **Load a collection** and choose it.
+3. In the web app tap **Load a file** on the welcome screen and choose it.
 
 Do this again only when the workbook itself changes, for example after adding
 A2 words. It is roughly 600 KB for a thousand-word collection.
@@ -69,8 +69,8 @@ at all: it pulls the words down from the same database.
 5. Desktop → **Upload words** in the same dialog. That puts the whole
    collection in the database, so a phone can set itself up from nothing.
    Repeat it only when the workbook changes.
-6. Phone → **Set up sync and pull the words**: paste the same three values,
-   tick the same box, then **Download words**.
+6. Phone → **Download from the database** on the welcome screen: paste the
+   same three values, turn on the same switch, then **Download words**.
 
 After that neither device needs anything from you. Each sync sends only the
 cards that changed, so a session's worth is a few kilobytes and works fine on
@@ -102,9 +102,9 @@ disagree.
 Progress files are small and carry only what changed.
 
 **Before going out**: desktop → Phone sync → **Export progress**, load it on
-the phone with **Import a file**.
+the phone with **Sync → Import a file**.
 
-**When you get back**: phone → **Export my progress**, then desktop → Phone
+**When you get back**: phone → **Sync → Export my progress**, then desktop → Phone
 sync → **Import progress**.
 
 Merging is per card and the newer answer wins, so the order does not matter and
@@ -127,18 +127,19 @@ rebuilding the gap sentence from your example.
 
 ## Words, progress and sorting on the phone
 
-**Words** lists everything with a search box and filters, showing where each
-word sits: which level, which box, and when it is next due. **Progress** shows
-the same breakdown the desktop does, plus the last fortnight's activity.
+**Words** and **Progress** are tabs along the bottom. Words lists everything
+with a search box and filters, showing where each word sits: which level,
+which box, and when it is next due. Progress shows the same breakdown the
+desktop does, plus a streak and the last fortnight's activity.
 
-**Sort** opens the waiting list rather than showing words at random. Filter by
-part of speech, level or topic, tap anything you already know, and sort the
-rest one by one.
+**Sort** on the home screen opens the waiting list rather than showing words
+at random. Filter by part of speech, level or topic, tap anything you already
+know, and sort the rest one by one.
 
 Each collection is stored separately, so Italian and Turkish can both live on
-the phone without disturbing each other. **Switch or add a language** under
-the title on the home screen moves between them or starts another. Each
-language needs its own collection name in sync settings. Typing a name the
+the phone without disturbing each other. The language button at the top of
+the home screen moves between them or starts another. Each language needs its
+own collection name in sync settings. Typing a name the
 phone does not know while words are open asks whether it is another language
 or a new name for these words, and before anything is sent the phone checks
 that the collection holds the same language.

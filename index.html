@@ -3,82 +3,406 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#15171c">
+<meta name="theme-color" content="#f4f4f9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0e19" media="(prefers-color-scheme: dark)">
 <title>Lessico Drill</title>
 <link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon.svg">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <style>
+  /* ------------------------------------------------------------ tokens
+     Light by default, dark when the phone is. Everything below reads these,
+     so a colour is changed in one place. */
   :root {
-    --bg:#15171c; --surface:#1e2128; --surface2:#262a33; --border:#333844;
-    --text:#ecebe8; --muted:#98a0ad; --accent:#e0a458; --good:#6fcf97;
-    --bad:#eb6f6f; --info:#7aa2f7; --violet:#b48ead; --masc:#7aa2f7; --fem:#e88ba0;
-    --serif: "Iowan Old Style","Palatino Linotype",Georgia,"Times New Roman",serif;
+    color-scheme: light dark;
+    --bg:#f4f4f9; --surface:#ffffff; --surface2:#eeeef6; --surface3:#dfe0ee;
+    --border:#e4e4ef; --border-strong:#cdcfe2;
+    --text:#14152b; --muted:#666984; --faint:#9799b2;
+    --primary:#5b5bf0; --primary-2:#8b5cf6; --primary-text:#4c46e0;
+    --primary-soft:rgba(91,91,240,.10); --on-primary:#ffffff;
+    --good:#0f9d63; --good-soft:rgba(16,170,110,.12);
+    --bad:#e0474c; --bad-soft:rgba(224,71,76,.10);
+    --warn:#e48a00; --warn-soft:rgba(245,158,11,.14);
+    --masc:#2f74f0; --fem:#db3f78;
+    /* one colour per rung of the ladder */
+    --s0:#8a94a8; --s1:#0ea5e9; --s2:#8b5cf6; --s3:#f59e0b; --s4:#10b981;
+    --k-gaps:#ec4899; --k-translate:#14b8a6;
+    --shadow-sm:0 1px 2px rgba(20,21,43,.05);
+    --shadow:0 1px 2px rgba(20,21,43,.04), 0 8px 24px -10px rgba(20,21,43,.12);
+    --shadow-lg:0 18px 40px -18px rgba(76,60,220,.55);
+    --radius:20px; --radius-sm:14px;
+    --font:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    --display:ui-rounded,"SF Pro Rounded",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    /* the side margin grows on a wide screen so the content stays a column */
+    --gutter:max(16px, calc((100vw - 560px) / 2));
   }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#0d0e19; --surface:#171829; --surface2:#21233b; --surface3:#2c2f4c;
+      --border:#262943; --border-strong:#383c5e;
+      --text:#eef0fb; --muted:#9c9fbc; --faint:#6e7192;
+      --primary:#6767fa; --primary-2:#9466ff; --primary-text:#a9a9ff;
+      --primary-soft:rgba(124,124,255,.16);
+      --good:#3ddc97; --good-soft:rgba(61,220,151,.14);
+      --bad:#ff6d72; --bad-soft:rgba(255,109,114,.14);
+      --warn:#fbbf24; --warn-soft:rgba(251,191,36,.15);
+      --masc:#78aeff; --fem:#ff80ad;
+      --shadow-sm:none; --shadow:none;
+      --shadow-lg:0 18px 44px -20px rgba(0,0,0,.8);
+    }
+  }
+
+  /* ------------------------------------------------------------ frame */
   * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
   html,body { margin:0; height:100%; background:var(--bg); color:var(--text);
-    font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; font-size:16px; }
+    font-family:var(--font); font-size:16px; -webkit-font-smoothing:antialiased;
+    -webkit-text-size-adjust:100%; }
   body { display:flex; flex-direction:column;
-    padding:env(safe-area-inset-top) env(safe-area-inset-right)
-            env(safe-area-inset-bottom) env(safe-area-inset-left); }
-  #top { display:flex; align-items:center; gap:12px; padding:12px 16px 8px; }
-  #top .meta { color:var(--muted); font-size:13px; }
-  #bar { flex:1; height:6px; background:var(--surface2); border-radius:3px; overflow:hidden; }
-  #bar i { display:block; height:100%; width:0; background:var(--accent); transition:width .2s; }
-  #main { flex:1; overflow-y:auto; padding:8px 16px 4px; -webkit-overflow-scrolling:touch; }
-  #foot { padding:10px 16px calc(12px + env(safe-area-inset-bottom));
-          display:flex; gap:10px; align-items:center; flex-wrap:wrap;
-          border-top:1px solid var(--border); background:var(--bg); }
-  button { font:inherit; color:var(--text); background:var(--surface2);
-    border:1px solid var(--border); border-radius:11px; padding:13px 16px;
-    min-height:48px; cursor:pointer; }
-  button:active { background:var(--border); }
-  button.primary { background:var(--accent); color:#15171c; border-color:var(--accent);
-                   font-weight:600; }
-  button.ghost { background:transparent; border-color:transparent; color:var(--muted);
-                 text-decoration:underline; padding:13px 8px; }
-  button:disabled { opacity:.4; }
-  button.grow { flex:1; }
-  input, textarea { font:inherit; width:100%; color:var(--text);
-    background:var(--surface2); border:1px solid var(--border); border-radius:11px;
-    padding:14px; min-height:52px; }
-  input:focus, textarea:focus { outline:none; border-color:var(--accent); }
-  .prompt { font-family:var(--serif); font-size:clamp(30px,9vw,44px); text-align:center;
-            line-height:1.15; margin:22px 0 6px; }
-  .sub { color:var(--muted); text-align:center; font-size:14px; margin-bottom:14px; }
-  .sentence { font-family:var(--serif); font-size:clamp(19px,5.4vw,25px); line-height:1.5; }
-  .muted { color:var(--muted); font-size:14px; line-height:1.5; }
-  .accent { color:var(--accent); }
+    padding:env(safe-area-inset-top) env(safe-area-inset-right) 0 env(safe-area-inset-left); }
+
+  /* the bar along the top only appears during a session */
+  #top { display:none; align-items:center; gap:12px; padding:10px var(--gutter) 6px; }
+  body.session #top { display:flex; }
+  #quit { width:42px; height:42px; min-height:0; padding:0; border-radius:13px; flex:none;
+    background:var(--surface2); border:none; box-shadow:none; color:var(--muted); }
+  #bar { flex:1; height:10px; background:var(--surface2); border-radius:99px; overflow:hidden; }
+  #bar i { display:block; height:100%; width:0; border-radius:99px;
+    background:linear-gradient(90deg,var(--primary),var(--primary-2));
+    transition:width .35s cubic-bezier(.2,.8,.2,1); }
+  #top .meta { color:var(--muted); font-size:13px; font-weight:700; min-width:54px;
+    text-align:right; font-variant-numeric:tabular-nums; }
+
+  #main { flex:1; overflow-y:auto; padding:6px var(--gutter) 28px;
+    -webkit-overflow-scrolling:touch; overscroll-behavior:contain; }
+  #foot { display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+    padding:12px var(--gutter) calc(12px + env(safe-area-inset-bottom));
+    background:var(--bg); background:color-mix(in srgb, var(--bg) 86%, transparent);
+    -webkit-backdrop-filter:saturate(1.5) blur(18px); backdrop-filter:saturate(1.5) blur(18px);
+    border-top:1px solid var(--border); }
+  #foot:empty { display:none; }
+  #foot > button { flex:1 1 0; }
+  #foot > button.ghost, #foot > button.back { flex:0 0 auto; }
+  #foot > button.back { padding:12px 22px; }
+  /* three or more actions: the main one gets a row of its own */
+  #foot:has(> button:nth-child(3)) > button.primary { flex-basis:100%; order:9; }
+
+  /* ------------------------------------------------------------ type */
+  h1 { font-family:var(--display); font-size:30px; font-weight:800; letter-spacing:-.02em;
+       line-height:1.15; margin:10px 0 6px; }
+  h2 { font-size:18px; font-weight:700; letter-spacing:-.01em; margin:0 0 6px; }
+  .muted { color:var(--muted); font-size:14.5px; line-height:1.55; }
+  .accent { color:var(--primary-text); }
   .good { color:var(--good); } .bad { color:var(--bad); }
-  .slot { border:1px dashed var(--border); border-radius:10px; padding:13px;
-          text-align:center; margin-bottom:8px; color:var(--muted); letter-spacing:3px; }
-  .slot.filled { border-style:solid; border-color:var(--good); color:var(--text);
-                 letter-spacing:normal; }
-  .slot.missed { border-style:solid; border-color:var(--bad); color:var(--bad);
-                 letter-spacing:normal; }
-  .shape { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:21px;
-           letter-spacing:3px; text-align:center; margin:10px 0; }
-  .card { background:var(--surface); border:1px solid var(--border);
-          border-radius:16px; padding:16px; margin-bottom:12px; }
-  .tiles { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:14px; }
-  .tile { background:var(--surface); border:1px solid var(--border);
-          border-radius:14px; padding:14px; }
-  .tile b { display:block; font-size:27px; font-weight:600; }
-  .tile span { color:var(--muted); font-size:13px; }
-  .row { display:flex; gap:10px; flex-wrap:wrap; }
-  h1 { font-family:var(--serif); font-size:26px; margin:6px 0 2px; font-weight:600; }
-  h2 { font-size:16px; margin:16px 0 8px; }
-  a { color:var(--accent); }
+  a { color:var(--primary-text); }
+  b { font-weight:650; }
   .hidden { display:none !important; }
+
+  .page-head { margin:8px 2px 16px; }
+  .page-head h1 { margin-bottom:4px; }
+  .section { display:flex; align-items:baseline; justify-content:space-between;
+    margin:26px 4px 10px; }
+  .section h3 { margin:0; font-size:13px; font-weight:800; text-transform:uppercase;
+    letter-spacing:.08em; color:var(--muted); }
+  .section button { min-height:0; padding:2px 0; background:none; border:none; box-shadow:none;
+    color:var(--primary-text); font-size:14px; font-weight:650; }
+
+  /* ------------------------------------------------------------ controls */
+  button { font:inherit; font-size:15.5px; font-weight:650; color:var(--text);
+    background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-sm);
+    padding:12px 16px; min-height:52px; cursor:pointer; box-shadow:var(--shadow-sm);
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    transition:transform .12s ease, background-color .15s, opacity .15s; }
+  button:active { transform:scale(.97); }
+  button svg { width:20px; height:20px; flex:none; }
+  button.primary { color:var(--on-primary); border-color:transparent;
+    background:linear-gradient(135deg,var(--primary),var(--primary-2));
+    box-shadow:0 8px 20px -10px var(--primary); }
+  button.ghost { background:transparent; border-color:transparent; box-shadow:none;
+    color:var(--primary-text); padding:12px 10px; }
+  button.soft { background:var(--primary-soft); border-color:transparent; box-shadow:none;
+    color:var(--primary-text); }
+  button.small { min-height:38px; padding:8px 14px; font-size:14px; border-radius:99px; }
+  button:disabled { opacity:.42; cursor:default; transform:none; }
+  button.grow { flex:1; }
+  button.wide { width:100%; }
+  button.busy { pointer-events:none; opacity:.75; }
+  button.busy svg { animation:spin 1s linear infinite; }
+
+  input:not([type=checkbox]), textarea, select {
+    font:inherit; font-size:17px; width:100%; color:var(--text); background:var(--surface);
+    border:1.5px solid var(--border); border-radius:var(--radius-sm); padding:14px 16px;
+    min-height:54px; transition:border-color .15s, box-shadow .15s; }
+  input:focus, textarea:focus, select:focus { outline:none; border-color:var(--primary);
+    box-shadow:0 0 0 4px var(--primary-soft); }
+  input:disabled, textarea:disabled { opacity:.75; }
+  input::placeholder, textarea::placeholder { color:var(--faint); }
+  textarea { resize:vertical; line-height:1.45; }
+  select { -webkit-appearance:none; appearance:none; font-size:14.5px; font-weight:600;
+    min-height:42px; padding:9px 34px 9px 14px; border-radius:99px; cursor:pointer;
+    background-repeat:no-repeat; background-position:right 12px center; background-size:14px;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239799b2' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); }
+  label.field { display:block; margin-bottom:14px; }
+  label.field > span { display:block; font-size:13.5px; font-weight:650; color:var(--muted);
+    margin:0 0 6px 4px; }
+  .search { position:relative; margin-bottom:12px; }
+  .search svg { position:absolute; left:16px; top:50%; width:20px; height:20px;
+    transform:translateY(-50%); color:var(--faint); pointer-events:none; }
+  .search input { padding-left:46px; }
+  .filters { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px; }
+  .filters select { width:auto; flex:1 1 auto; min-width:0; max-width:100%; }
+
+  /* a toggle, built from a checkbox so it still works without styles */
+  .switch { display:flex; align-items:center; gap:14px; cursor:pointer; padding:4px 0; }
+  .switch span { flex:1; font-size:15px; line-height:1.4; }
+  .switch input { -webkit-appearance:none; appearance:none; flex:none; margin:0; cursor:pointer;
+    width:52px; height:32px; border-radius:99px; background:var(--surface3); position:relative;
+    transition:background-color .2s; }
+  .switch input::after { content:""; position:absolute; top:3px; left:3px; width:26px;
+    height:26px; border-radius:50%; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,.25);
+    transition:transform .2s cubic-bezier(.2,.8,.2,1); }
+  .switch input:checked { background:var(--good); }
+  .switch input:checked::after { transform:translateX(20px); }
+  .switch input:focus-visible { outline:3px solid var(--primary-soft); outline-offset:2px; }
+
+  /* ------------------------------------------------------------ surfaces */
+  .card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+    padding:18px; margin-bottom:14px; box-shadow:var(--shadow); }
+  .card > h2 + .muted { margin-bottom:12px; }
+  .row { display:flex; gap:10px; flex-wrap:wrap; }
+  .stack { display:flex; flex-direction:column; gap:10px; }
+
+  .list { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+    overflow:hidden; box-shadow:var(--shadow); margin-bottom:14px; }
+  .item { display:flex; align-items:center; gap:14px; padding:13px 16px; text-align:left;
+    border-bottom:1px solid var(--border); }
+  .item:last-child { border-bottom:none; }
+  .item.tap { cursor:pointer; transition:background-color .15s; }
+  .item.tap:active { background:var(--surface2); }
+  .item .body { flex:1; min-width:0; }
+  .item .title { font-weight:650; font-size:16px; overflow-wrap:anywhere; }
+  .item .detail { color:var(--muted); font-size:13.5px; margin-top:2px; line-height:1.4; }
+  .item .end { flex:none; display:flex; flex-direction:column; align-items:flex-end; gap:4px;
+    color:var(--faint); font-size:12.5px; }
+  .item .end svg { width:20px; height:20px; }
+  .item.current { background:var(--primary-soft); }
+  .item button { flex:none; }
+  .icobox { width:42px; height:42px; border-radius:13px; flex:none; display:grid;
+    place-items:center; color:var(--c, var(--primary-text));
+    background:color-mix(in srgb, var(--c, var(--primary)) 14%, transparent); }
+  .icobox svg { width:22px; height:22px; }
+  .avatar { width:42px; height:42px; border-radius:50%; flex:none; display:grid; place-items:center;
+    color:#fff; font-size:14px; font-weight:800; letter-spacing:.03em; text-transform:uppercase;
+    background:linear-gradient(140deg, var(--c, var(--primary)), color-mix(in srgb, var(--c, var(--primary)) 60%, #000)); }
+  .avatar.sm { width:28px; height:28px; font-size:10.5px; }
+  .badge { display:inline-flex; align-items:center; gap:5px; padding:3px 9px; border-radius:99px;
+    font-size:12px; font-weight:700; white-space:nowrap; color:var(--c, var(--muted));
+    background:color-mix(in srgb, var(--c, var(--muted)) 14%, transparent); }
+  .badge svg { width:13px; height:13px; stroke-width:2.6; }
+  .dot { width:10px; height:10px; border-radius:50%; flex:none; background:var(--c); }
+
+  /* ------------------------------------------------------------ home */
+  .topline { display:flex; align-items:center; justify-content:space-between; gap:12px;
+    margin:10px 0 14px; }
+  .brand { display:flex; align-items:center; gap:10px; font-family:var(--display);
+    font-weight:800; font-size:21px; letter-spacing:-.02em; }
+  .mark { width:34px; height:34px; border-radius:11px; display:grid; place-items:center;
+    color:#fff; font-size:19px; font-weight:800;
+    background:linear-gradient(140deg,var(--primary),var(--primary-2)); }
+  .langpill { min-height:0; padding:5px 10px 5px 5px; border-radius:99px; font-size:14px;
+    gap:8px; max-width:60%; }
+  .langpill > span:not(.avatar) { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .langpill svg { width:16px; height:16px; color:var(--faint); }
+
+  .hero { position:relative; overflow:hidden; isolation:isolate; color:#fff;
+    border-radius:26px; padding:20px 20px 18px; margin-bottom:6px; box-shadow:var(--shadow-lg);
+    background:linear-gradient(145deg,#5352ee 0%,#7a4cfb 58%,#a94df5 100%); }
+  .hero::before, .hero::after { content:""; position:absolute; border-radius:50%; z-index:-1;
+    background:rgba(255,255,255,.11); }
+  .hero::before { width:220px; height:220px; right:-70px; top:-90px; }
+  .hero::after { width:150px; height:150px; right:30px; bottom:-95px; background:rgba(255,255,255,.07); }
+  .hero .hero-top { display:flex; align-items:center; justify-content:space-between; gap:8px;
+    font-size:14px; font-weight:650; opacity:.95; }
+  .hero .big { font-family:var(--display); font-size:64px; font-weight:800; line-height:1;
+    letter-spacing:-.03em; margin-top:14px; }
+  .hero .big svg { width:52px; height:52px; stroke-width:2.6; }
+  .hero .label { font-size:16px; font-weight:600; margin-top:6px; opacity:.92; }
+  .hero .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+  .chip { display:inline-flex; align-items:center; gap:6px; padding:5px 11px; border-radius:99px;
+    font-size:13px; font-weight:700; background:rgba(255,255,255,.17); }
+  .chip svg { width:15px; height:15px; }
+  .hero button { width:100%; margin-top:16px; min-height:54px; font-size:16.5px; border:none;
+    color:#4334d6; background:#fff; box-shadow:0 10px 24px -12px rgba(20,10,80,.6); }
+
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .tile { flex-direction:column; align-items:flex-start; justify-content:space-between;
+    gap:12px; padding:16px; min-height:124px; border-radius:var(--radius); text-align:left;
+    box-shadow:var(--shadow); font-weight:400; }
+  .tile .name { font-weight:700; font-size:16px; }
+  .tile .count { color:var(--muted); font-size:13.5px; margin-top:-8px; }
+  .tile .count b { color:var(--text); font-weight:750; }
+
+  .ladder { display:flex; height:14px; border-radius:99px; overflow:hidden; gap:3px;
+    background:var(--surface2); }
+  .ladder i { display:block; height:100%; background:var(--c); border-radius:3px; }
+  .legend { display:grid; grid-template-columns:1fr 1fr; gap:10px 18px; margin-top:16px; }
+  .legend div { display:flex; align-items:center; gap:8px; font-size:14px; color:var(--muted); }
+  .legend b { margin-left:auto; color:var(--text); font-variant-numeric:tabular-nums; }
+
+  .stats { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:14px; }
+  .stat { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+    padding:16px; box-shadow:var(--shadow); }
+  .stat .icobox { width:36px; height:36px; border-radius:11px; margin-bottom:12px; }
+  .stat .icobox svg { width:19px; height:19px; }
+  .stat b { display:block; font-family:var(--display); font-size:28px; font-weight:800;
+    letter-spacing:-.02em; line-height:1.1; }
+  .stat > span:not(.icobox) { color:var(--muted); font-size:13.5px; }
+
+  /* ------------------------------------------------------------ study */
+  .eyebrow { display:flex; justify-content:center; margin:6px 0 14px; }
+  .eyebrow span { display:inline-block; padding:6px 13px; border-radius:99px; text-align:center;
+    background:var(--primary-soft); color:var(--primary-text); font-size:12.5px; font-weight:700;
+    letter-spacing:.01em; line-height:1.4; }
+  .face { position:relative; overflow:hidden; text-align:center; margin-bottom:14px;
+    background:var(--surface); border:1px solid var(--border); border-radius:28px;
+    padding:34px 20px 26px; box-shadow:var(--shadow); }
+  .face::before { content:""; position:absolute; left:0; right:0; top:0; height:5px;
+    background:linear-gradient(90deg,var(--primary),var(--primary-2)); }
+  .face:not(.text):not(.compact) { min-height:clamp(190px, 34vh, 300px); display:flex; flex-direction:column;
+    align-items:center; justify-content:center; }
+  .face.compact { padding:28px 20px 22px; }
+  .face.text { text-align:left; padding:28px 20px 22px; }
+  .face.text .muted { margin-top:10px; }
+  .prompt { font-family:var(--display); font-size:clamp(32px,10vw,46px); font-weight:750;
+    letter-spacing:-.02em; line-height:1.12; margin:0 0 8px; overflow-wrap:anywhere; }
+  .sub { color:var(--muted); font-size:14px; font-weight:600; }
+  .sub:empty { display:none; }
+  .sentence { font-size:clamp(20px,5.6vw,24px); line-height:1.55; font-weight:500; }
+  .gap { display:inline-block; width:4.6em; height:1.15em; vertical-align:-.2em; margin:0 .1em;
+    border-radius:8px; background:var(--primary-soft); border-bottom:3px solid var(--primary); }
+  .reveal { background:var(--primary-soft); border-radius:var(--radius); padding:20px 18px;
+    text-align:center; margin-bottom:14px; }
+  .reveal .prompt { font-size:clamp(24px,7vw,32px); margin:0 0 6px; }
+  .reveal .sentence { font-size:18px; margin-top:10px; }
+  .reveal > .accent, .feedback span.accent { display:inline-block; margin-top:12px;
+    padding:6px 13px; border-radius:99px; font-size:14px; font-weight:650;
+    background:var(--surface); color:var(--primary-text); }
+  .feedback { margin-top:14px; text-align:center; color:var(--muted); font-size:15px;
+    line-height:1.55; }
+  .feedback.left { text-align:left; }
+  .feedback b.good, .feedback b.bad { font-size:16px; }
+  .instruction { margin:14px 2px 10px; font-size:16px; line-height:1.5; }
+  .slot { border:1.5px dashed var(--border-strong); border-radius:var(--radius-sm);
+    padding:14px; text-align:center; margin-bottom:8px; color:var(--faint); font-weight:650;
+    letter-spacing:4px; transition:background-color .2s, color .2s; }
+  .slot.filled { border-style:solid; border-color:transparent; background:var(--good-soft);
+    color:var(--good); letter-spacing:normal; }
+  .slot.missed { border-style:solid; border-color:transparent; background:var(--bad-soft);
+    color:var(--bad); letter-spacing:normal; }
+  .slot + input { margin-top:6px; }
+  .shape { font-family:var(--mono); font-size:22px; letter-spacing:.22em; text-align:center;
+    margin:0 0 12px; padding:12px; border-radius:var(--radius-sm); background:var(--surface2); }
+  .context { margin-top:16px; text-align:left; }
+  .context > div { padding:12px 14px; border-radius:var(--radius-sm); background:var(--surface);
+    border:1px solid var(--border); margin-bottom:8px; line-height:1.5; }
+
+  .done-mark { width:84px; height:84px; border-radius:50%; margin:26px auto 10px; display:grid;
+    place-items:center; color:#fff; box-shadow:var(--shadow-lg);
+    background:linear-gradient(140deg,var(--primary),var(--primary-2)); }
+  .done-mark svg { width:42px; height:42px; stroke-width:2.6; }
+  .center { text-align:center; }
+
+  /* ------------------------------------------------------------ progress */
+  .bars .bar-row { margin-bottom:14px; }
+  .bars .bar-row:last-child { margin-bottom:0; }
+  .bar-row .bar-label { display:flex; align-items:center; gap:8px; font-size:14.5px;
+    margin-bottom:6px; }
+  .bar-row .bar-label b { margin-left:auto; font-variant-numeric:tabular-nums; }
+  .bar-row .bar-label small { color:var(--faint); font-size:12.5px; width:36px; text-align:right; }
+  .meter { height:10px; border-radius:99px; background:var(--surface2); overflow:hidden; }
+  .meter i { display:block; height:100%; border-radius:99px; background:var(--c, var(--primary)); }
+  .chart { display:flex; align-items:flex-end; gap:5px; height:130px; margin-top:14px; }
+  .chart > div { flex:1; display:flex; flex-direction:column; align-items:center; gap:6px;
+    height:100%; justify-content:flex-end; }
+  .chart i { display:block; width:100%; border-radius:6px 6px 3px 3px; background:var(--surface2); }
+  .chart i.on { background:linear-gradient(180deg,var(--primary-2),var(--primary)); }
+  .chart span { font-size:10.5px; font-weight:700; color:var(--faint); }
+  .chart .today span { color:var(--primary-text); }
+  .boxes { display:grid; grid-template-columns:repeat(6,1fr); gap:6px; margin-top:12px; }
+  .boxes div { text-align:center; padding:10px 0 8px; border-radius:12px; background:var(--surface2); }
+  .boxes b { display:block; font-family:var(--display); font-size:20px; font-weight:800; }
+  .boxes span { font-size:11px; font-weight:700; color:var(--faint); }
+
+  /* ------------------------------------------------------------ welcome */
+  .welcome { text-align:center; padding-top:18px; }
+  .welcome .mark { width:76px; height:76px; border-radius:24px; font-size:42px; margin:8px auto 18px;
+    box-shadow:var(--shadow-lg); }
+  .welcome h1 { font-size:32px; margin:0 0 10px; }
+  .welcome > .muted { font-size:16px; max-width:420px; margin:0 auto 24px; }
+  .perks { text-align:left; margin-bottom:8px; }
+  .option { display:flex; align-items:center; gap:14px; width:100%; text-align:left;
+    padding:16px; margin-bottom:10px; border-radius:var(--radius); font-weight:400; min-height:0; }
+  .option.primary .icobox { --c:#fff; background:rgba(255,255,255,.2); color:#fff; }
+  .option .body { flex:1; }
+  .option .title, .option .detail { display:block; }
+  .option .title { font-weight:700; font-size:16px; }
+  .option .detail { font-size:13.5px; opacity:.8; margin-top:2px; line-height:1.4; }
+  .option > svg { width:20px; height:20px; opacity:.7; }
+
+  /* ------------------------------------------------------------ overlays */
+  .toast { position:fixed; left:50%; z-index:30; transform:translateX(-50%);
+    bottom:calc(96px + env(safe-area-inset-bottom)); max-width:calc(100% - 32px);
+    padding:12px 18px; border-radius:99px; background:var(--text); color:var(--bg);
+    font-size:14.5px; font-weight:650; text-align:center; box-shadow:0 12px 30px -12px rgba(0,0,0,.5);
+    animation:toast .25s cubic-bezier(.2,.8,.2,1); }
+  .veil { position:fixed; inset:0; z-index:40; display:flex; align-items:flex-end;
+    justify-content:center; padding:12px 12px calc(12px + env(safe-area-inset-bottom));
+    background:rgba(10,10,28,.45); -webkit-backdrop-filter:blur(3px); backdrop-filter:blur(3px);
+    animation:fade .2s ease; }
+  .sheet { width:100%; max-width:520px; background:var(--surface); border-radius:26px;
+    padding:24px 20px 18px; box-shadow:0 24px 60px -16px rgba(0,0,0,.45);
+    animation:rise .3s cubic-bezier(.2,.8,.2,1); }
+  .sheet h2 { font-size:20px; margin-bottom:8px; }
+  .sheet .muted { font-size:15px; }
+  .sheet .actions { display:flex; flex-direction:column; gap:8px; margin-top:20px; }
+
+  /* the bar of tabs on the main screens */
+  #foot.tabs { flex-wrap:nowrap; gap:4px; padding:6px var(--gutter) calc(6px + env(safe-area-inset-bottom)); }
+  .tab { flex:1; flex-direction:column; gap:3px; min-height:58px; padding:5px 0 4px;
+    background:none; border:none; box-shadow:none; color:var(--faint); font-size:11.5px;
+    font-weight:650; border-radius:14px; }
+  .tab .pip { display:grid; place-items:center; width:58px; height:30px; border-radius:99px;
+    transition:background-color .2s; }
+  .tab svg { width:23px; height:23px; }
+  .tab.on { color:var(--primary-text); }
+  .tab.on .pip { background:var(--primary-soft); }
+  .tab:active { transform:none; }
+
+  /* ------------------------------------------------------------ motion */
+  @keyframes rise { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:none; } }
+  @keyframes fade { from { opacity:0; } }
+  @keyframes toast { from { opacity:0; transform:translate(-50%,10px); } }
+  @keyframes spin { to { transform:rotate(360deg); } }
+  @keyframes pop { 0% { transform:scale(.6); opacity:0; } 70% { transform:scale(1.06); } 100% { transform:none; } }
+  #main > * { animation:rise .34s cubic-bezier(.2,.8,.2,1) both; }
+  #main > *:nth-child(2) { animation-delay:.03s; }
+  #main > *:nth-child(3) { animation-delay:.06s; }
+  #main > *:nth-child(4) { animation-delay:.09s; }
+  #main > *:nth-child(n+5) { animation-delay:.12s; }
+  .done-mark { animation:pop .5s cubic-bezier(.2,.8,.2,1) both; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation:none !important; transition:none !important; }
+  }
 </style>
 </head>
 <body>
 
 <div id="top">
-  <span class="meta" id="counter"></span>
+  <button id="quit" aria-label="End the session"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
   <span id="bar"><i></i></span>
-  <button class="ghost" id="quit" style="padding:6px 8px;min-height:0">Close</button>
+  <span class="meta" id="counter"></span>
 </div>
 
 <div id="main"></div>
@@ -489,6 +813,156 @@ function esc(s) {
   return (s || "").replace(/[&<>"]/g, c =>
     ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 }
+
+/* Line icons on a 24-unit grid, drawn in the text colour. */
+const ICONS = {
+  home: '<path d="M3.5 10.5 12 3.5l8.5 7"/><path d="M5.5 9v11h13V9"/><path d="M10 20v-5.5h4V20"/>',
+  words: '<path d="M3 5.5h6a3 3 0 0 1 3 3V20a2.5 2.5 0 0 0-2.5-2.5H3z"/>' +
+         '<path d="M21 5.5h-6a3 3 0 0 0-3 3V20a2.5 2.5 0 0 1 2.5-2.5H21z"/>',
+  progress: '<path d="M5 20v-6"/><path d="M12 20V5"/><path d="M19 20v-9"/>',
+  sync: '<path d="M20 11a8 8 0 0 0-14.3-4.9L4 8"/><path d="M4 4v4h4"/>' +
+        '<path d="M4 13a8 8 0 0 0 14.3 4.9L20 16"/><path d="M20 20v-4h-4"/>',
+  sort: '<path d="M4 13.5h4.5l1.5 2.5h4l1.5-2.5H20"/><path d="M6.5 5h11L20 13.5V19H4v-5.5z"/>',
+  flash: '<rect x="3" y="7.5" width="13.5" height="13" rx="2.5"/><path d="M7.5 4.5h11a2.5 2.5 0 0 1 2.5 2.5v10"/>',
+  meanings: '<path d="M4 5.5h16v10.5H9.5L5 20v-4H4z"/><path d="M8 9.5h8M8 12.5h5"/>',
+  gaps: '<path d="M8 4H5v16h3"/><path d="M16 4h3v16h-3"/><path d="M9.5 12h5"/>',
+  translate: '<path d="M3.5 5.5h9"/><path d="M8 3.5v2"/><path d="M10.5 5.5c-.8 4-3 7-6.5 8.5"/>' +
+             '<path d="M6 8.5c1 2.4 2.8 4.3 5 5.3"/><path d="M12.5 20.5l4-9 4 9"/><path d="M14 17.5h5"/>',
+  write: '<path d="M4 20h4L19.5 8.5a2.8 2.8 0 0 0-4-4L4 16z"/><path d="M13.5 6.5l4 4"/>',
+  plus: '<path d="M12 5v14M5 12h14"/>',
+  check: '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
+  chevron: '<path d="M9.5 6l6 6-6 6"/>',
+  down: '<path d="M6.5 9.5l5.5 5.5 5.5-5.5"/>',
+  flame: '<path d="M12 3c.6 3.2 5 5.2 5 10.2A5 5 0 0 1 7 13.2c0-2.2 1.1-3.7 2.2-4.6.1 2 1 3.2 2.3 3.4-.3-3.4.2-6.2.5-9z"/>',
+  star: '<path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9l-5.2 2.8 1-5.9-4.3-4.1 5.9-.8z"/>',
+  bolt: '<path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/>',
+  cloud: '<path d="M7 18.5a4.5 4.5 0 0 1-.6-9 6 6 0 0 1 11.5 1.2A4 4 0 0 1 17.5 18.5z"/>',
+  wifi: '<path d="M2.5 9a14 14 0 0 1 19 0"/><path d="M5.5 12.5a9.5 9.5 0 0 1 13 0"/>' +
+        '<path d="M8.7 16a5 5 0 0 1 6.6 0"/><path d="M12 19.5h.01"/>',
+  ladder: '<path d="M3.5 17l6-6 4 4 7-7"/><path d="M15 8h5.5v5.5"/>',
+  download: '<path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 20h14"/>',
+  upload: '<path d="M12 20V9"/><path d="M7 13.5l5-5 5 5"/><path d="M5 4h14"/>',
+  file: '<path d="M14 3.5H7A2.5 2.5 0 0 0 4.5 6v12A2.5 2.5 0 0 0 7 20.5h10a2.5 2.5 0 0 0 2.5-2.5V9z"/>' +
+        '<path d="M14 3.5V9h5.5"/>',
+  globe: '<circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17"/>' +
+         '<path d="M12 3.5c2.3 2.4 3.5 5.2 3.5 8.5s-1.2 6.1-3.5 8.5c-2.3-2.4-3.5-5.2-3.5-8.5S9.7 5.9 12 3.5z"/>',
+  alert: '<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v5.5"/><path d="M12 16.5h.01"/>',
+  search: '<circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.4-4.4"/>',
+  cup: '<path d="M5 9h12v5a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5z"/><path d="M17 10.5h1.5a2.5 2.5 0 0 1 0 5H17"/>' +
+       '<path d="M9 3.5v2.5M13 3.5v2.5"/>'
+};
+function icon(name) {
+  return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" ' +
+    `stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name] || ""}</svg>`;
+}
+function icobox(name, colour) {
+  return `<span class="icobox"${colour ? ` style="--c:${colour}"` : ""}>${icon(name)}</span>`;
+}
+
+/* Small builders the screens share. */
+function pageHead(title, sub) {
+  const head = el("div", "page-head");
+  head.appendChild(el("h1", "", title));
+  if (sub) head.appendChild(el("div", "muted", sub));
+  return head;
+}
+function sectionHead(title, linkText, fn) {
+  const head = el("div", "section");
+  head.appendChild(el("h3", "", title));
+  if (linkText) head.appendChild(button(linkText, "", fn));
+  return head;
+}
+function metaLine(text) { return el("div", "eyebrow", `<span>${text}</span>`); }
+function faceCard(nodes, cls) {
+  const face = el("div", "face" + (cls ? " " + cls : ""));
+  nodes.filter(Boolean).forEach(n => face.appendChild(n));
+  return face;
+}
+/* One row of a list: an icon or avatar, a title, a detail and an end. */
+function listItem({ lead = "", title = "", detail = "", end = "", onTap = null, cls = "" }) {
+  const row = el("div", "item" + (onTap ? " tap" : "") + (cls ? " " + cls : ""),
+    lead + `<div class="body"><div class="title">${title}</div>` +
+    (detail ? `<div class="detail">${detail}</div>` : "") + "</div>" +
+    (end ? `<div class="end">${end}</div>` : ""));
+  if (onTap) {
+    row.setAttribute("role", "button");
+    row.tabIndex = 0;
+    row.addEventListener("click", onTap);
+    row.addEventListener("keydown", e => { if (e.key === "Enter") { e.stopPropagation(); onTap(e); } });
+  }
+  return row;
+}
+function field(caption, input) {
+  const label = el("label", "field");
+  label.appendChild(el("span", "", caption));
+  label.appendChild(input);
+  return label;
+}
+
+/* A colour for each language, so they are easy to tell apart. */
+const LANG_COLOURS = ["#5b5bf0", "#0ea5e9", "#ec4899", "#14b8a6", "#f59e0b", "#8b5cf6", "#ef4444", "#10b981"];
+function langAvatar(s, small) {
+  const code = (s.language || s.language_name || "?").slice(0, 2);
+  let h = 0;
+  for (const ch of code) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+  return `<span class="avatar${small ? " sm" : ""}" style="--c:${
+    LANG_COLOURS[h % LANG_COLOURS.length]}">${esc(code)}</span>`;
+}
+
+/* Answers per day from the review log both devices share. */
+function reviewDays(s) {
+  const byDay = new Map();
+  for (const r of (s || state).reviews || []) {
+    const day = (r[1] || "").slice(0, 10);
+    if (day) byDay.set(day, (byDay.get(day) || 0) + 1);
+  }
+  return byDay;
+}
+/* Days in a row with at least one answer, counting today only once it has one. */
+function streak(byDay) {
+  let n = 0;
+  for (let i = byDay.has(todayStr()) ? 0 : 1; ; i++) {
+    if (!byDay.has(localDate(new Date(Date.now() - i * 864e5)))) return n;
+    n++;
+  }
+}
+function since(stamp) {
+  if (!stamp) return "";
+  const t = Date.parse(/(Z|[+-]\d\d:?\d\d)$/.test(stamp) ? stamp : stamp + "Z");
+  if (isNaN(t)) return "";
+  const min = Math.round((Date.now() - t) / 6e4);
+  if (min < 1) return "just now";
+  if (min < 60) return `${min} min ago`;
+  if (min < 60 * 24) return `${Math.round(min / 60)} h ago`;
+  const days = Math.round(min / 1440);
+  return days === 1 ? "yesterday" : `${days} days ago`;
+}
+function greeting() {
+  const h = new Date().getHours();
+  return h < 5 ? "Good evening" : h < 12 ? "Good morning" : h < 18 ? "Good afternoon" : "Good evening";
+}
+
+/* A message that waits for OK, in the app's own style rather than the
+   browser's grey box. Nothing waits on it, so it can be shown and forgotten. */
+function notify(text, title) {
+  return ask(title || "", esc(String(text)).replace(/\n/g, "<br>"), [["OK", true, "primary"]]);
+}
+
+/* The session bar along the top, shown only while studying. */
+function chrome(session) { document.body.classList.toggle("session", !!session); }
+
+/* The tabs along the bottom of the main screens. */
+function tabBar(active) {
+  return [["home", "Home", home], ["words", "Words", wordsScreen],
+          ["progress", "Progress", progressScreen], ["sync", "Sync", cloudScreen]]
+    .map(([id, label, go]) => {
+      const tab = el("button", "tab" + (id === active ? " on" : ""),
+        `<span class="pip">${icon(id)}</span><span>${label}</span>`);
+      if (id === active) tab.setAttribute("aria-current", "page");
+      tab.addEventListener("click", () => { if (id !== active) go(); });
+      return tab;
+    });
+}
 /* The primary button is what Enter presses. Without this every card needs a
    tap even when the answer is already on screen, which is the whole rhythm of
    a session on a phone with a keyboard attached. */
@@ -511,6 +985,7 @@ function show(nodes, buttons) {
   main.innerHTML = ""; foot.innerHTML = "";
   nodes.filter(Boolean).forEach(n => main.appendChild(n));
   (buttons || []).filter(Boolean).forEach(b => foot.appendChild(b));
+  foot.classList.toggle("tabs", !!foot.querySelector(".tab"));
   primaryButton = foot.querySelector("button.primary");
   main.scrollTop = 0;
 }
@@ -541,73 +1016,97 @@ function counts() {
   return c;
 }
 
+/* The rungs of the ladder, in order, with their colours. */
+const LADDER = [[0, "To sort", "var(--s0)"], [1, "Flashcards", "var(--s1)"],
+                [2, "Meanings & gaps", "var(--s2)"], [3, "Writing", "var(--s3)"],
+                [4, "Mastered", "var(--s4)"]];
+function onRung(stage) { return state.cards.filter(x => (x.stage ?? 1) === stage).length; }
+
 function home() {
-  queue = []; setProgress("", 0); quitBtn.classList.add("hidden");
+  queue = []; setProgress("", 0); chrome(false);
   if (!state || !state.cards.length) return setup();
   const c = counts();
-  const tiles = el("div", "tiles");
-  [["due now", c.due, "accent"], ["mastered", c.mastered, "good"],
-   ["level 1", c.s1, ""], ["level 2", c.s2, ""]].forEach(([name, n, cls]) => {
-    const t = el("div", "tile");
-    t.appendChild(el("b", cls, String(n)));
-    t.appendChild(el("span", "", name));
-    tiles.appendChild(t);
-  });
+  const days = reviewDays();
+  const run = streak(days), today = days.get(todayStr()) || 0;
 
-  const head = el("div");
-  head.appendChild(el("h1", "", "Lessico Drill"));
-  const which = el("div", "muted", esc(state.language_name || state.language || "") +
-    " \u00b7 " + state.cards.length + " words ");
-  const switcher = button("Switch or add a language", "ghost", collectionsScreen);
-  switcher.style.cssText += ";padding:6px 4px;min-height:0;font-size:14px";
-  which.appendChild(switcher);
-  head.appendChild(which);
+  const top = el("div", "topline");
+  top.appendChild(el("div", "brand", '<span class="mark">L</span><span>Lessico</span>'));
+  const pill = button(langAvatar(state, true) +
+    `<span>${esc(state.language_name || state.language || "Words")}</span>${icon("down")}`,
+    "langpill", collectionsScreen);
+  pill.setAttribute("aria-label", "Switch or add a language");
+  top.appendChild(pill);
 
-  const study = el("div", "card");
-  study.appendChild(el("h2", "", "Study"));
-  const rows = el("div", "row");
-  rows.appendChild(button("Start session", "primary grow", () => start(null)));
-  rows.appendChild(button("Sort " + c.sorting[1], "grow", sortingScreen));
-  rows.appendChild(button("Flashcards " + c.flashcards[1], "grow", () => start("flashcards")));
-  rows.appendChild(button("Meanings " + c.meanings[1], "grow", () => start("meanings")));
-  rows.appendChild(button("Gaps " + c.gaps[1], "grow", () => start("gaps")));
-  rows.appendChild(button("Translation " + c.translate[1], "grow", () => start("translate")));
-  rows.appendChild(button("Writing " + c.writing[1], "grow", () => start("writing")));
-  for (const b of rows.children)
-    if (/ 0$/.test(b.textContent)) b.disabled = true;
-  study.appendChild(rows);
-  study.appendChild(el("div", "muted",
-    "Each button shows how many are due now."));
-  const addRow = el("div", "row");
-  addRow.style.marginTop = "8px";
-  addRow.appendChild(button("Words", "grow", wordsScreen));
-  addRow.appendChild(button("Progress", "grow", progressScreen));
-  addRow.appendChild(button("Add a word", "grow", addWordScreen));
-  study.appendChild(addRow);
+  // what to do now, in one place
+  const hero = el("div", "hero");
+  const chips = [];
+  if (run) chips.push(`<span class="chip">${icon("flame")}${run}-day streak</span>`);
+  chips.push(`<span class="chip">${icon("bolt")}${today} answered today</span>`);
+  hero.innerHTML = `<div class="hero-top"><span>${greeting()}</span></div>` +
+    (c.due
+      ? `<div class="big">${c.due}</div><div class="label">${
+          c.due === 1 ? "word is" : "words are"} ready to review</div>`
+      : `<div class="big">${icon("check")}</div><div class="label">${
+          c.s0 ? "All caught up. Sort some new words?" : "All caught up. Come back tomorrow."}</div>`) +
+    `<div class="chips">${chips.join("")}</div>`;
+  if (c.due) hero.appendChild(button("Start session", "", () => start(null)));
+  else if (c.s0) hero.appendChild(button("Sort new words", "", sortingScreen));
 
-  const sync = el("div", "card");
-  sync.appendChild(el("h2", "", "Sync with the desktop"));
-  sync.appendChild(el("div", "muted",
-    "Newer wins, card by card, so the order never matters." +
-    (state.saved_at ? "<br>Last change here: " + esc(state.saved_at.replace("T", " ")) : "")));
-  const syncRow = el("div", "row");
-  syncRow.style.marginTop = "10px";
+  // each exercise on its own, for a short focused round
+  const kinds = [
+    ["sort", "Sort", c.s0, "waiting", "var(--s0)", sortingScreen],
+    ["flash", "Flashcards", c.flashcards[1], "due", "var(--s1)", () => start("flashcards")],
+    ["meanings", "Meanings", c.meanings[1], "due", "var(--s2)", () => start("meanings")],
+    ["gaps", "Gaps", c.gaps[1], "due", "var(--k-gaps)", () => start("gaps")],
+    ["translate", "Translation", c.translate[1], "due", "var(--k-translate)", () => start("translate")],
+    ["write", "Writing", c.writing[1], "due", "var(--s3)", () => start("writing")]
+  ];
+  const grid = el("div", "grid");
+  for (const [id, label, n, word, colour, go] of kinds) {
+    const tile = button(icobox(id, colour) +
+      `<span><span class="name">${label}</span></span>` +
+      `<span class="count">${n ? `<b>${n}</b> ${word}` : id === "sort" ? "All sorted" : "Nothing due"}</span>`,
+      "tile", go);
+    tile.disabled = !n;
+    grid.appendChild(tile);
+  }
+
+  // where the words are on the ladder
+  const ladder = el("div", "card");
+  const total = Math.max(state.cards.length, 1);
+  ladder.innerHTML = '<div class="ladder">' + LADDER.map(([stage, , colour]) => {
+    const n = onRung(stage);
+    return n ? `<i style="--c:${colour};width:${(100 * n / total).toFixed(2)}%"></i>` : "";
+  }).join("") + '</div><div class="legend">' + LADDER.map(([stage, name, colour]) =>
+    `<div><span class="dot" style="--c:${colour}"></span>${name}<b>${onRung(stage)}</b></div>`
+  ).join("") + "</div>";
+
+  // a word met today, and the state of sync
+  const more = el("div", "list");
+  more.appendChild(listItem({ lead: icobox("plus"), title: "Add a word",
+    detail: "Something you met today", end: icon("chevron"), onTap: addWordScreen }));
   const cfg = cloudSettings();
-  syncRow.appendChild(button(cfg.url ? "Sync now" : "Set up automatic sync",
-    "primary grow", async () => {
-      if (!cfg.url) return cloudScreen();
-      try { flash("Syncing\u2026"); await cloudSync(true); flash("Done."); home(); }
-      catch (e) { alert(e.message); }
-    }));
-  syncRow.appendChild(button("Settings", "grow", cloudScreen));
-  sync.appendChild(syncRow);
-  const manual = el("div", "row");
-  manual.style.marginTop = "8px";
-  manual.appendChild(button("Export a file", "grow", exportProgress));
-  manual.appendChild(button("Import a file", "grow", () => pick(importFile)));
-  sync.appendChild(manual);
+  const syncRow = listItem({
+    lead: icobox("cloud", "var(--s1)"),
+    title: cfg.url ? (cfg.last ? `Synced ${since(cfg.last)}` : "Not synced yet") : "Sync is not set up",
+    detail: cfg.url ? (cfg.auto ? "Syncs by itself when you open and finish" : "Newer answer wins, card by card")
+                    : "Keep the phone and the desktop in step",
+    onTap: cfg.url ? null : cloudScreen,
+    end: cfg.url ? "" : icon("chevron")
+  });
+  if (cfg.url) {
+    const now = button(icon("sync") + "Sync", "soft small", async () => {
+      now.classList.add("busy");
+      try { await cloudSync(true); flash("Synced."); home(); }
+      catch (e) { now.classList.remove("busy"); notify(e.message, "Sync failed"); }
+    });
+    syncRow.appendChild(now);
+  }
+  more.appendChild(syncRow);
 
-  show([head, tiles, study, sync], []);
+  show([top, hero, sectionHead("Practise"), grid,
+        sectionHead("Your words", "Details", progressScreen), ladder,
+        sectionHead("More"), more], tabBar("home"));
 }
 
 /* ---------------------------------------------------------------- session */
@@ -645,7 +1144,7 @@ function start(kind) {
   queue = buildQueue(kind);
   index = 0;
   results = { seen: 0, correct: 0, boxes: 0, levels: 0 };
-  quitBtn.classList.remove("hidden");
+  chrome(true);
   if (!queue.length) return summary("Nothing is due");
   next();
 }
@@ -669,16 +1168,30 @@ function next() {
 }
 
 function summary(title) {
-  setProgress("", 1); quitBtn.classList.add("hidden");
-  const box = el("div", "card");
-  box.appendChild(el("h1", "", title));
-  box.appendChild(el("div", "muted", results && results.seen
-    ? `${results.seen} answers \u00b7 ${Math.round(100 * results.correct / results.seen)}% correct \u00b7 ` +
-      `${results.boxes} moved up a box \u00b7 ${results.levels} moved up a level.`
+  setProgress("", 1); chrome(false);
+  const seen = results && results.seen;
+  const head = el("div", "center");
+  head.appendChild(el("div", "done-mark", icon(seen ? "check" : "cup")));
+  head.appendChild(el("h1", "", title));
+  head.appendChild(el("div", "muted", seen
+    ? (results.correct / seen >= 0.8 ? "Strong round. These words are sticking."
+                                      : "Good work. The tricky ones come back sooner.")
     : "Nothing scheduled right now. Come back tomorrow, or sync from the desktop."));
+  const nodes = [head];
+  if (seen) {
+    const stats = el("div", "stats");
+    stats.style.marginTop = "22px";
+    for (const [name, value, label, colour] of [
+      ["bolt", seen, seen === 1 ? "answer" : "answers", "var(--primary)"],
+      ["check", Math.round(100 * results.correct / seen) + "%", "correct", "var(--s4)"],
+      ["ladder", results.boxes, "moved up a box", "var(--s1)"],
+      ["star", results.levels, "moved up a level", "var(--s3)"]])
+      stats.appendChild(el("div", "stat", `${icobox(name, colour)}<b>${value}</b><span>${label}</span>`));
+    nodes.push(stats);
+  }
   save();
   autoSync("session end");
-  show([box], [button("Back", "primary grow", home)]);
+  show(nodes, [button("Back to home", "primary grow", home)]);
 }
 
 function finish(card, message, correct, moved) {
@@ -702,13 +1215,13 @@ function withArticle(card) {
 /* --------------------------------------------------------------- exercises */
 function viewTriage(card) {
   let hinted = false, done = false;
-  const meta = el("div", "muted", "Sorting \u00b7 do you already know this word?");
+  const meta = metaLine("Sorting \u00b7 do you already know this word?");
   const prompt = el("div", "prompt", withArticle(card));
   const sub = el("div", "sub", esc(card.pos || ""));
   const hintBox = el("div", "sentence");
-  hintBox.style.textAlign = "center";
+  hintBox.style.cssText = "margin-top:14px;font-size:18px;color:var(--muted)";
   hintBox.classList.add("hidden");
-  const answer = el("div", "card hidden");
+  const answer = el("div", "reveal hidden");
 
   function hintText() {
     const sentence = (card.sentences || []).find(s => s.it);
@@ -724,10 +1237,9 @@ function viewTriage(card) {
     done = true;
     if (verdict === "knew" && hinted) verdict = "hinted";
     const message = gradeTriage(card, verdict);
-    const outcome = el("div", "muted");
-    outcome.style.textAlign = "center";
+    const outcome = el("div", "accent");
     outcome.textContent = message;
-    answer.innerHTML = `<div class="prompt" style="margin-top:4px">${esc(card.en)}</div>`;
+    answer.innerHTML = `<div class="prompt">${esc(card.en)}</div>`;
     answer.appendChild(outcome);
     answer.classList.remove("hidden");
     foot.innerHTML = "";
@@ -746,7 +1258,7 @@ function viewTriage(card) {
     primaryButton = foot.querySelector("button.primary");
   }
   const knew = button("I know this", "primary grow", () => decide("knew"));
-  show([meta, prompt, sub, hintBox, answer], [
+  show([meta, faceCard([prompt, sub, hintBox]), answer], [
     button("New to me", "grow", () => decide("new")),
     button("Hint", "grow", () => {
       if (done) return;
@@ -761,16 +1273,16 @@ function viewTriage(card) {
 
 function viewFlash(card, mode) {
   const itEn = mode === "flash_it_en";
-  const meta = el("div", "muted",
-    `Level 1 \u00b7 Box ${card.box || 1} of 7 \u00b7 ` +
+  const meta = metaLine(
+    `Flashcards \u00b7 box ${card.box || 1} of 7 \u00b7 ` +
     (itEn ? "native \u2192 English" : "English \u2192 native"));
   const prompt = el("div", "prompt", itEn ? withArticle(card) : esc(card.en));
   const sub = el("div", "sub", esc(card.pos || ""));
-  const answer = el("div", "card hidden");
-  answer.innerHTML = `<div class="prompt" style="margin-top:4px">${
+  const answer = el("div", "reveal hidden");
+  answer.innerHTML = `<div class="prompt">${
     itEn ? esc(card.en) : withArticle(card)}</div>` +
     (card.coll ? `<div class="muted">${esc(card.coll)}</div>` : "") +
-    (card.ex ? `<div class="sentence" style="margin-top:8px">${esc(card.ex)}</div>` : "");
+    (card.ex ? `<div class="sentence">${esc(card.ex)}</div>` : "");
 
   const reveal = button("Show answer", "primary grow", () => {
     answer.classList.remove("hidden");
@@ -795,7 +1307,7 @@ function viewFlash(card, mode) {
         answer.innerHTML = `<div class="muted">${
           esc(card.explain_native || "")}<br>${esc(card.explain || "")}</div>`;
       }) : null;
-  show([meta, prompt, sub, answer], [tip, reveal]);
+  show([meta, faceCard([prompt, sub]), answer], [tip, reveal]);
 }
 
 function viewMeanings(card) {
@@ -805,18 +1317,17 @@ function viewMeanings(card) {
   let unaided = 0, gaveUp = false, reason = "", done = false;
   const hint = makeHint(remaining[0] || "");
 
-  const meta = el("div", "muted",
-    `Level 2 \u00b7 box 1 of ${LEVEL2_TOP} \u00b7 native \u2192 English \u00b7 ` +
-    `${senses.length} meaning(s)` + (card.marks ? ` \u00b7 ${card.marks} mark(s)` : ""));
+  const meta = metaLine(
+    `Meanings \u00b7 box 1 of ${LEVEL2_TOP} \u00b7 native \u2192 English \u00b7 ` +
+    `${senses.length} meaning${senses.length === 1 ? "" : "s"}` +
+    (card.marks ? ` \u00b7 ${card.marks} mark(s)` : ""));
   const prompt = el("div", "prompt", withArticle(card));
   const sub = el("div", "sub", esc(card.pos || ""));
   const slots = el("div");
   const input = el("input");
   input.placeholder = "type a meaning";
   input.autocapitalize = "none"; input.autocomplete = "off"; input.autocorrect = "off";
-  const feedback = el("div", "muted");
-  feedback.style.textAlign = "center";
-  feedback.style.marginTop = "10px";
+  const feedback = el("div", "feedback");
 
   function paint() {
     slots.innerHTML = "";
@@ -881,10 +1392,10 @@ function viewMeanings(card) {
       ? "Marked as missed, so these come back tomorrow.<br>" : "Every meaning recalled.<br>") +
       `<span class="accent">${esc(message)}</span>`;
     const context = (card.senses || []).filter(s => s.ex)
-      .map(s => `<div style="margin:6px 0"><b class="${
-        remaining.includes(s.gloss) ? "accent" : "muted"}">${esc(s.gloss)}</b> ${
-        esc(s.ex)}<br><span class="muted">${esc(s.note || "")}</span></div>`).join("");
-    if (context) main.appendChild(el("div", "muted", context));
+      .map(s => `<div><b class="${
+        remaining.includes(s.gloss) ? "bad" : "good"}">${esc(s.gloss)}</b> ${
+        esc(s.ex)}${s.note ? `<br><span class="muted">${esc(s.note)}</span>` : ""}</div>`).join("");
+    if (context) main.appendChild(el("div", "context", context));
     foot.innerHTML = "";
     foot.appendChild(button("Next", "primary grow", () =>
       finish(card, message, !remaining.length && !letters,
@@ -893,7 +1404,7 @@ function viewMeanings(card) {
 
   input.addEventListener("keydown", e => { if (e.key === "Enter") submit(); });
   paint();
-  show([meta, prompt, sub, slots, input, feedback], [
+  show([meta, faceCard([prompt, sub], "compact"), slots, input, feedback], [
     button("Show a letter", "", showLetter),
     button("Show the rest", "ghost", revealRest),
     button("Check", "primary grow", submit)
@@ -907,16 +1418,15 @@ function viewReverse(card) {
   const hint = makeHint(card.w);
   let letters = 0, wrongs = 0, done = false, correct = false, gaveUp = false;
 
-  const meta = el("div", "muted",
-    `Level 2 \u00b7 box 2 of ${LEVEL2_TOP} \u00b7 English \u2192 native`);
+  const meta = metaLine(
+    `Meanings \u00b7 box 2 of ${LEVEL2_TOP} \u00b7 English \u2192 native`);
   const prompt = el("div", "prompt", esc(senses.join(";  ")));
   const sub = el("div", "sub", esc(card.pos || ""));
   const shape = el("div", "shape hidden");
   const input = el("input");
   input.placeholder = "type the word";
   input.autocapitalize = "none"; input.autocomplete = "off"; input.autocorrect = "off";
-  const feedback = el("div", "muted");
-  feedback.style.textAlign = "center"; feedback.style.marginTop = "10px";
+  const feedback = el("div", "feedback");
 
   function check() {
     if (done) return;
@@ -963,7 +1473,7 @@ function viewReverse(card) {
     ? button("Tip", "ghost", () => {
         feedback.innerHTML = `<i>${esc(card.explain_native || "")}</i><br>${esc(card.explain || "")}`;
       }) : null;
-  show([meta, prompt, sub, shape, input, feedback], [
+  show([meta, faceCard([prompt, sub], "compact"), shape, input, feedback], [
     tip, button("Show a letter", "", showLetter),
     button("Show the answer", "ghost", () => { gaveUp = true;
       shape.textContent = card.w; shape.classList.remove("hidden");
@@ -987,21 +1497,19 @@ function viewCloze(card, blind) {
   const hint = makeHint(row.surface);
   let letters = 0, done = false, correct = false;
 
-  const meta = el("div", "muted",
-    `Level 2 \u00b7 box ${blind ? 4 : 3} of ${LEVEL2_TOP} \u00b7 sentence gap` +
-    (blind ? "" : ", with the translation"));
-  const gapped = row.it.slice(0, row.a) + "\u2007\u2007____\u2007\u2007" + row.it.slice(row.b);
-  const sentence = el("div", "sentence", esc(gapped));
-  const translation = el("div", "muted", blind ? "" : esc(row.en || ""));
-  const instruction = el("div", "", `<b>${esc(card.en)}</b>` +
-    (row.tag ? ` \u00b7 <span class="accent">${esc(row.tag)}</span>` : ""));
-  instruction.style.margin = "12px 0 8px";
+  const meta = metaLine(
+    `Gaps \u00b7 box ${blind ? 4 : 3} of ${LEVEL2_TOP} \u00b7 ` +
+    (blind ? "sentence alone" : "with the translation"));
+  const sentence = el("div", "sentence",
+    esc(row.it.slice(0, row.a)) + '<span class="gap"></span>' + esc(row.it.slice(row.b)));
+  const translation = blind ? null : el("div", "muted", esc(row.en || ""));
+  const instruction = el("div", "instruction", `The missing word means <b>${esc(card.en)}</b>` +
+    (row.tag ? ` <span class="badge" style="--c:var(--primary)">${esc(row.tag)}</span>` : ""));
   const shape = el("div", "shape hidden");
   const input = el("input");
   input.placeholder = "the missing word";
   input.autocapitalize = "none"; input.autocomplete = "off"; input.autocorrect = "off";
-  const feedback = el("div", "muted");
-  feedback.style.marginTop = "10px";
+  const feedback = el("div", "feedback left");
 
   function check() {
     if (done) return;
@@ -1028,7 +1536,7 @@ function viewCloze(card, blind) {
     shape.classList.remove("hidden");
   }
   input.addEventListener("keydown", e => { if (e.key === "Enter") check(); });
-  show([meta, sentence, translation, instruction, shape, input, feedback], [
+  show([meta, faceCard([sentence, translation], "text"), instruction, shape, input, feedback], [
     button("Show a letter", "", showLetter),
     button("Check", "primary grow", check)
   ]);
@@ -1043,16 +1551,15 @@ function viewTranslate(card, intoNative) {
   const target = intoNative ? row.it : row.en;
   let hints = 0, done = false;
 
-  const meta = el("div", "muted",
-    `Level 2 \u00b7 box ${intoNative ? 6 : 5} of ${LEVEL2_TOP} \u00b7 translate the sentence`);
+  const meta = metaLine(
+    `Translation \u00b7 box ${intoNative ? 6 : 5} of ${LEVEL2_TOP} \u00b7 ` +
+    (intoNative ? "English \u2192 native" : "native \u2192 English"));
   const source = el("div", "sentence", esc(intoNative ? row.en : row.it));
-  const instruction = el("div", "muted",
+  const instruction = el("div", "instruction",
     intoNative ? `Use <b>${esc(card.w)}</b> somewhere in it.` : "Say what it means.");
-  instruction.style.margin = "10px 0";
   const editor = el("textarea");
   editor.rows = 3; editor.placeholder = "type the whole sentence";
-  const report = el("div", "muted");
-  report.style.marginTop = "10px";
+  const report = el("div", "feedback left");
 
   function check() {
     if (done) return;
@@ -1081,12 +1588,12 @@ function viewTranslate(card, intoNative) {
     finish(card, message, matched && !hints,
            card.stage > before ? "level" : mbox(card) > beforeBox ? "box" : null);
   }
-  show([meta, source, instruction, editor, report], [
+  show([meta, faceCard([source], "text"), instruction, editor, report], [
     button("Show a word", "", () => {
       const words = target.split(" ");
       hints++;
-      report.innerHTML = `<span class="shape">${
-        esc(words.map((w, i) => i < hints ? w : "\u00b7".repeat(Math.max(w.length - 1, 2))).join(" "))}</span>`;
+      report.innerHTML = `<div class="shape" style="font-size:17px;letter-spacing:.08em">${
+        esc(words.map((w, i) => i < hints ? w : "\u00b7".repeat(Math.max(w.length - 1, 2))).join(" "))}</div>`;
     }),
     button("Check", "primary grow", check)
   ]);
@@ -1094,13 +1601,12 @@ function viewTranslate(card, intoNative) {
 
 function viewProduce(card) {
   let done = false;
-  const meta = el("div", "muted", "Level 3 \u00b7 your own sentence");
-  const prompt = el("div", "prompt", `Use ${withArticle(card)}`);
+  const meta = metaLine("Writing \u00b7 your own sentence");
+  const prompt = el("div", "prompt", withArticle(card));
   const sub = el("div", "sub", esc(card.en));
   const editor = el("textarea");
   editor.rows = 3; editor.placeholder = "write a sentence using this word";
-  const report = el("div", "muted");
-  report.style.marginTop = "10px";
+  const report = el("div", "feedback left");
 
   function check() {
     if (done) return;
@@ -1133,7 +1639,7 @@ function viewProduce(card) {
     report.innerHTML += `<br><span class="accent">${esc(message)}</span>`;
     finish(card, message, ok, card.stage === 4 ? "level" : null);
   }
-  show([meta, prompt, sub, editor, report], [button("Check", "primary grow", check)]);
+  show([meta, faceCard([prompt, sub], "compact"), editor, report], [button("Check", "primary grow", check)]);
 }
 
 /* ------------------------------------------------------------- cloud sync
@@ -1312,7 +1818,7 @@ function cardState(card) {
 
 function cloudSync(quiet) {
   return exclusive(() => syncCollection(state)).then(summary => {
-    if (!quiet) alert(summary);
+    if (!quiet) notify(summary);
     return summary;
   });
 }
@@ -1417,8 +1923,10 @@ async function forcePull() {
   /* For a device whose progress was lost while the others still have it: every
      local card is made to lose, so the database's version is taken instead of
      being overwritten by this one. */
-  if (!confirm("Take the database's version of every card?\n\n" +
-               "Anything studied here and never synced would be given up."))
+  if (await ask("Take the database’s version?",
+      "Every card here is replaced by the one in the database. Anything studied " +
+      "here and never synced would be given up.",
+      [["Take the database’s version", "yes", "primary"], ["Cancel", "", "ghost"]]) !== "yes")
     return;
   await exclusive(async () => {
     const target = state;
@@ -1429,7 +1937,7 @@ async function forcePull() {
     return syncCollection(target);
   });
   const c = counts();
-  alert(`Took in ${lastSync.took} card(s) from the database.\n\n` +
+  notify(`Took in ${lastSync.took} card(s) from the database.\n\n` +
         `To sort: ${c.s0}\nLevel 1: ${c.s1}\nLevel 2: ${c.s2}\nDue now: ${c.due}`);
   home();
 }
@@ -1446,7 +1954,7 @@ async function fullResync() {
     return syncCollection(target);
   });
   const c = counts();
-  alert(`Compared every card.\n\n` +
+  notify(`Compared every card.\n\n` +
         `Rows seen in the database: ${lastSync.seen}\n` +
         `Taken in: ${lastSync.took}\n` +
         `Sent up: ${lastSync.sent}\n\n` +
@@ -1458,8 +1966,9 @@ async function pushMine() {
   /* The other direction: this device has the work and the database does not.
      Sending with each card's own stamp replaces whatever is there, which is
      what you want when a reset was uploaded over your progress. */
-  if (!confirm("Send this device's progress up, replacing what is in the " +
-               "database for these cards?")) return;
+  if (await ask("Send this phone’s progress up?",
+      "Every card in the database is replaced by the one on this phone.",
+      [["Send mine up", "yes", "primary"], ["Cancel", "", "ghost"]]) !== "yes") return;
   const sent = await exclusive(async () => {
     const target = state;
     const cfg = await preflight(target);
@@ -1476,7 +1985,7 @@ async function pushMine() {
     await save(target);
     return rows.length;
   });
-  alert(`Sent ${sent} card(s) up.`);
+  notify(`Sent ${sent} card(s) up.`);
   home();
 }
 
@@ -1493,14 +2002,14 @@ let flashTimer = null;
 function flash(text) {
   let node = document.getElementById("flash");
   if (!node) {
-    node = el("div", "muted");
+    node = el("div", "toast");
     node.id = "flash";
-    node.style.cssText = "position:fixed;left:12px;right:12px;bottom:calc(84px + env(safe-area-inset-bottom));" +
-      "background:var(--surface2);border:1px solid var(--border);border-radius:11px;" +
-      "padding:10px 14px;text-align:center;z-index:9";
+    node.setAttribute("role", "status");
     document.body.appendChild(node);
   }
   node.textContent = text;
+  node.style.display = "none";
+  void node.offsetWidth;                     // so the entrance plays again
   node.style.display = "block";
   clearTimeout(flashTimer);
   flashTimer = setTimeout(() => { node.style.display = "none"; }, 4000);
@@ -1516,46 +2025,54 @@ async function cloudFetchCollection(cfg) {
   return rows[0].payload;
 }
 
-const STAGE_NAME = { 0: "To sort", 1: "Flashcards", 2: "Meanings & gaps",
-                     3: "Free writing", 4: "Mastered" };
-const BOX_SHORT = { 1: "IT\u2192EN", 2: "EN\u2192IT", 3: "gap + translation",
-                    4: "gap alone", 5: "translate out", 6: "translate in" };
+/* Where a card sits, in the words a list can show. */
+const STAGE_SHORT = { 0: "To sort", 1: "Flashcards", 2: "Level 2", 3: "Writing", 4: "Mastered" };
+function stageOf(card) {
+  const stage = card.stage ?? 1;
+  const rung = LADDER.find(([s]) => s === stage) || LADDER[1];
+  const box = stage === 2 ? mbox(card) : stage === 1 ? (card.box || 1) : 0;
+  return { stage, colour: rung[2], short: STAGE_SHORT[stage] || rung[1], box };
+}
+function dueText(day) {
+  if (!day) return "";
+  const [y, m, d] = day.split("-").map(Number);
+  const [ty, tm, td] = todayStr().split("-").map(Number);
+  const n = Math.round((new Date(y, m - 1, d) - new Date(ty, tm - 1, td)) / 864e5);
+  return n <= 0 ? "due now" : n === 1 ? "tomorrow" : `in ${n} days`;
+}
+function selectFrom(values, onPick) {
+  const sel = document.createElement("select");
+  for (const [value, text] of values) {
+    const option = document.createElement("option");
+    option.value = value; option.textContent = text;
+    sel.appendChild(option);
+  }
+  sel.addEventListener("change", () => onPick(sel.value));
+  return sel;
+}
 
 function wordsScreen() {
+  chrome(false);
   let query = "", stageFilter = "", cefrFilter = "";
-  const box = el("div", "card");
-  box.appendChild(el("h2", "", "Words"));
   const search = el("input");
-  search.placeholder = "search the word or the English";
+  search.type = "search";
+  search.placeholder = "Search words or meanings";
   search.autocapitalize = "none"; search.spellcheck = false;
-  search.style.marginBottom = "8px";
   search.addEventListener("input", () => { query = search.value.trim().toLowerCase(); paint(); });
-  box.appendChild(search);
+  const searchBox = el("div", "search", icon("search"));
+  searchBox.appendChild(search);
 
-  const row = el("div", "row");
-  row.style.marginBottom = "10px";
-  function picker(caption, values, onPick) {
-    const sel = document.createElement("select");
-    sel.style.cssText = "flex:1;min-width:130px;font:inherit;color:var(--text);" +
-      "background:var(--surface2);border:1px solid var(--border);border-radius:11px;" +
-      "padding:12px;min-height:48px";
-    for (const [value, text] of values) {
-      const option = document.createElement("option");
-      option.value = value; option.textContent = text;
-      sel.appendChild(option);
-    }
-    sel.addEventListener("change", () => { onPick(sel.value); paint(); });
-    return sel;
-  }
-  row.appendChild(picker("", [["", "all levels"], ...Object.entries(STAGE_NAME)
-    .map(([k, v]) => [k, v])], v => stageFilter = v));
+  const filters = el("div", "filters");
+  filters.appendChild(selectFrom([["", "Every level"],
+    ...LADDER.map(([stage, name]) => [String(stage), name])], v => { stageFilter = v; paint(); }));
   const cefrValues = [...new Set(state.cards.map(c => c.cefr).filter(Boolean))].sort();
-  row.appendChild(picker("", [["", "all CEFR"], ...cefrValues.map(v => [v, v])],
-                         v => cefrFilter = v));
-  box.appendChild(row);
-  const list = el("div");
+  if (cefrValues.length)
+    filters.appendChild(selectFrom([["", "Any CEFR"], ...cefrValues.map(v => [v, v])],
+                                   v => { cefrFilter = v; paint(); }));
   const note = el("div", "muted");
-  box.appendChild(list); box.appendChild(note);
+  note.style.margin = "0 4px 10px";
+  const list = el("div", "list");
+  const more = el("div", "muted center");
 
   function paint() {
     let rows = state.cards;
@@ -1564,88 +2081,95 @@ function wordsScreen() {
     if (stageFilter !== "") rows = rows.filter(c => String(c.stage ?? 1) === stageFilter);
     if (cefrFilter) rows = rows.filter(c => c.cefr === cefrFilter);
     rows = rows.slice().sort((a, b) => a.w.localeCompare(b.w));
+    note.textContent = `${rows.length} of ${state.cards.length} words`;
     list.innerHTML = "";
-    note.textContent = `${rows.length} of ${state.cards.length} shown`;
+    list.classList.toggle("hidden", !rows.length);
     for (const card of rows.slice(0, 150)) {
-      const stage = card.stage ?? 1;
-      const where = stage === 2
-        ? `level 2 \u00b7 box ${mbox(card)} \u00b7 ${BOX_SHORT[mbox(card)]}`
-        : stage === 1 ? `flashcards \u00b7 box ${card.box || 1}`
-        : STAGE_NAME[stage];
-      const line = el("div", "slot");
-      line.style.cssText += "text-align:left;letter-spacing:normal";
-      line.innerHTML = `<b>${esc(card.w)}</b> <span class="muted">${esc(card.en)}</span>` +
-        `<br><span class="muted" style="font-size:13px">${esc(where)}` +
-        (card.cefr ? ` \u00b7 ${esc(card.cefr)}` : "") +
-        (card.due ? ` \u00b7 due ${esc(card.due)}` : "") + `</span>`;
-      list.appendChild(line);
+      const s = stageOf(card);
+      const when = s.stage > 0 && s.stage < 4 && !card.suspended ? dueText(card.due) : "";
+      list.appendChild(listItem({
+        lead: `<span class="dot" style="--c:${s.colour}"></span>`,
+        title: withArticle(card),
+        detail: esc(card.en) + (card.cefr ? ` · ${esc(card.cefr)}` : ""),
+        end: `<span class="badge" style="--c:${s.colour}">${s.short}${s.box ? " · " + s.box : ""}</span>` +
+             (card.suspended ? "<span>paused</span>" : when ? `<span>${when}</span>` : "")
+      }));
     }
-    if (rows.length > 150)
-      list.appendChild(el("div", "muted", `\u2026 and ${rows.length - 150} more.`));
+    more.textContent = rows.length > 150
+      ? `… and ${rows.length - 150} more. Search to narrow it down.`
+      : rows.length ? "" : "No words match.";
   }
   paint();
-  show([box], [button("Back", "primary grow", home)]);
+  show([pageHead("Words"), searchBox, filters, note, list, more], tabBar("words"));
 }
 
 function progressScreen() {
-  const c = counts();
-  const box = el("div", "card");
-  box.appendChild(el("h2", "", "Where your words are"));
+  chrome(false);
+  const days = reviewDays();
+  const fortnight = [];
+  for (let i = 13; i >= 0; i--) fortnight.push(localDate(new Date(Date.now() - i * 864e5)));
+  const answered = fortnight.reduce((sum, d) => sum + (days.get(d) || 0), 0);
   const total = Math.max(state.cards.length, 1);
-  for (const [stage, name] of Object.entries(STAGE_NAME)) {
-    const n = state.cards.filter(x => (x.stage ?? 1) === Number(stage)).length;
-    const bar = el("div");
-    bar.style.cssText = "background:var(--surface2);border-radius:7px;height:26px;" +
-      "position:relative;margin:6px 0;overflow:hidden";
-    const fill = el("div");
-    fill.style.cssText = `background:var(--accent);height:100%;width:${
-      Math.round(100 * n / total)}%`;
-    const text = el("div", "", `${name} \u00b7 <b>${n}</b> (${Math.round(100 * n / total)}%)`);
-    text.style.cssText = "position:absolute;inset:0;display:flex;align-items:center;" +
-      "padding-left:10px;font-size:14px";
-    bar.appendChild(fill); bar.appendChild(text);
-    box.appendChild(bar);
+
+  const stats = el("div", "stats");
+  for (const [name, value, label, colour] of [
+    ["words", state.cards.length, "words", "var(--primary)"],
+    ["star", onRung(4), "mastered", "var(--s4)"],
+    ["flame", streak(days), "day streak", "var(--warn)"],
+    ["bolt", answered, "answers in 14 days", "var(--s1)"]])
+    stats.appendChild(el("div", "stat", `${icobox(name, colour)}<b>${value}</b><span>${label}</span>`));
+
+  // the ladder, rung by rung
+  const ladder = el("div", "card bars");
+  ladder.appendChild(el("h2", "", "Where your words are"));
+  ladder.appendChild(el("div", "muted",
+    "Each word climbs from first sight to using it in a sentence of your own."));
+  for (const [stage, name, colour] of LADDER) {
+    const n = onRung(stage), pct = Math.round(100 * n / total);
+    ladder.appendChild(el("div", "bar-row",
+      `<div class="bar-label"><span class="dot" style="--c:${colour}"></span>${name}` +
+      `<b>${n}</b><small>${pct}%</small></div>` +
+      `<div class="meter"><i style="--c:${colour};width:${pct}%"></i></div>`));
   }
 
   const boxes = el("div", "card");
-  boxes.appendChild(el("h2", "", "Boxes at level 2"));
+  boxes.appendChild(el("h2", "", "Level 2 boxes"));
+  boxes.appendChild(el("div", "muted",
+    "Boxes 1–2 recall the meanings, 3–4 fill sentence gaps, 5–6 translate whole sentences."));
+  const grid = el("div", "boxes");
   for (let i = 1; i <= LEVEL2_TOP; i++) {
-    const n = state.cards.filter(x => x.stage === 2 && mbox(x) === i).length;
-    boxes.appendChild(el("div", "muted",
-      `Box ${i}: <b style="color:var(--text)">${n}</b> \u00b7 ${BOX_NAME[i]}`));
+    const cell = el("div", "", `<b>${state.cards.filter(x => x.stage === 2 && mbox(x) === i).length}</b>` +
+      `<span>Box ${i}</span>`);
+    cell.title = BOX_NAME[i];
+    grid.appendChild(cell);
   }
+  boxes.appendChild(grid);
 
   // the last fortnight, from the review log both devices share
   const activity = el("div", "card");
   activity.appendChild(el("h2", "", "Last 14 days"));
-  const byDay = new Map();
-  for (const r of state.reviews) {
-    const day = (r[1] || "").slice(0, 10);
-    if (day) byDay.set(day, (byDay.get(day) || 0) + 1);
-  }
-  const days = [];
-  for (let i = 13; i >= 0; i--)
-    days.push(localDate(new Date(Date.now() - i * 864e5)));
-  const peak = Math.max(1, ...days.map(d => byDay.get(d) || 0));
-  const chart = el("div");
-  chart.style.cssText = "display:flex;align-items:flex-end;gap:4px;height:120px;margin-top:8px";
-  for (const day of days) {
-    const n = byDay.get(day) || 0;
-    const col = el("div");
-    col.style.cssText = `flex:1;background:${n ? "var(--accent)" : "var(--surface2)"};` +
-      `height:${Math.max(3, Math.round(100 * n / peak))}%;border-radius:3px`;
+  activity.appendChild(el("div", "muted",
+    `${answered} answer${answered === 1 ? "" : "s"}, ${
+      fortnight.filter(d => days.get(d)).length} days with practice.`));
+  const peak = Math.max(1, ...fortnight.map(d => days.get(d) || 0));
+  const chart = el("div", "chart");
+  const today = todayStr();
+  for (const day of fortnight) {
+    const n = days.get(day) || 0;
+    const [y, m, d] = day.split("-").map(Number);
+    const col = el("div", day === today ? "today" : "",
+      `<i class="${n ? "on" : ""}" style="height:${Math.max(4, Math.round(106 * n / peak))}px"></i>` +
+      `<span>${"SMTWTFS"[new Date(y, m - 1, d).getDay()]}</span>`);
     col.title = `${day}: ${n}`;
     chart.appendChild(col);
   }
   activity.appendChild(chart);
-  activity.appendChild(el("div", "muted",
-    `${[...byDay.entries()].filter(([d]) => days.includes(d))
-        .reduce((a, [, n]) => a + n, 0)} answers in the last fortnight.`));
 
-  show([box, boxes, activity], [button("Back", "primary grow", home)]);
+  show([pageHead("Progress"), stats, ladder, boxes, activity], tabBar("progress"));
 }
 
 function sortingScreen() {
+  chrome(false);
   const waiting = state.cards.filter(c => !c.stage && !c.suspended);
   const facet = field => {
     const counts = new Map();
@@ -1657,38 +2181,24 @@ function sortingScreen() {
   };
   const filters = { pos: "", cefr: "", topic: "", order: "grouped" };
 
-  const box = el("div", "card");
-  box.appendChild(el("h2", "", "Sort new words"));
-  box.appendChild(el("div", "muted",
-    "Related words are easier to place together, so this is grouped by topic " +
-    "rather than shuffled. Tap a word if you already know it, or sort them " +
-    "one by one."));
-  const row = el("div", "row");
-  row.style.margin = "10px 0";
+  const head = pageHead("Sort new words",
+    "Tap any word you already know. Go through the rest one by one: related " +
+    "words are grouped together, which makes them easier to place.");
+  const row = el("div", "filters");
   function picker(field, caption, values) {
-    const sel = document.createElement("select");
-    sel.style.cssText = "flex:1;min-width:130px;font:inherit;color:var(--text);" +
-      "background:var(--surface2);border:1px solid var(--border);border-radius:11px;" +
-      "padding:12px;min-height:48px";
-    const any = document.createElement("option");
-    any.value = ""; any.textContent = caption;
-    sel.appendChild(any);
-    for (const [value, n] of values) {
-      const option = document.createElement("option");
-      option.value = value; option.textContent = `${value} (${n})`;
-      sel.appendChild(option);
-    }
-    sel.addEventListener("change", () => { filters[field] = sel.value; paint(); });
-    return sel;
+    if (!values.length) return null;
+    return selectFrom([["", caption], ...values.map(([value, n]) => [value, `${value} (${n})`])],
+                      v => { filters[field] = v; paint(); });
   }
-  row.appendChild(picker("pos", "any part of speech", facet("spos")));
-  row.appendChild(picker("cefr", "any level", facet("cefr")));
-  row.appendChild(picker("topic", "any topic", facet("topic")));
-  box.appendChild(row);
-  const list = el("div");
-  box.appendChild(list);
+  [picker("pos", "Any part of speech", facet("spos")),
+   picker("cefr", "Any level", facet("cefr")),
+   picker("topic", "Any topic", facet("topic"))].forEach(p => p && row.appendChild(p));
   const note = el("div", "muted");
-  box.appendChild(note);
+  note.style.margin = "0 4px 10px";
+  const list = el("div", "list");
+  const more = el("div", "muted center");
+  const go = button("Sort one by one", "primary grow",
+                    () => start({ sorting: true, ...filters }));
 
   function matching() {
     let pool = state.cards.filter(c => !c.stage && !c.suspended);
@@ -1701,57 +2211,56 @@ function sortingScreen() {
   function paint() {
     const pool = matching();
     list.innerHTML = "";
-    note.textContent = `${pool.length} word(s) waiting. Tap one to mark it known.`;
+    list.classList.toggle("hidden", !pool.length);
+    note.textContent = pool.length
+      ? `${pool.length} word${pool.length === 1 ? "" : "s"} waiting`
+      : "Nothing waiting here. Every word is placed.";
+    go.disabled = !pool.length;
     for (const card of pool.slice(0, 120)) {
-      const line = el("div", "slot");
-      line.style.cssText += "text-align:left;letter-spacing:normal;cursor:pointer";
-      line.innerHTML = `<b>${esc(card.w)}</b> <span class="muted">${esc(card.en)}</span>`;
-      line.addEventListener("click", async () => {
-        gradeTriage(card, "knew");
-        await save();
-        paint();
-      });
-      list.appendChild(line);
+      list.appendChild(listItem({
+        title: withArticle(card),
+        detail: esc(card.en),
+        end: `<span class="badge" style="--c:var(--s4)">${icon("check")}I know it</span>`,
+        onTap: async () => {
+          gradeTriage(card, "knew");
+          await save();
+          flash(`${card.w}: known, so straight to the meanings.`);
+          paint();
+        }
+      }));
     }
-    if (pool.length > 120)
-      list.appendChild(el("div", "muted", `\u2026 and ${pool.length - 120} more.`));
+    more.textContent = pool.length > 120 ? `… and ${pool.length - 120} more.` : "";
   }
   paint();
-  show([box], [
-    button("Back", "grow", home),
-    button("Sort these one by one", "primary grow",
-           () => start({ sorting: true, ...filters }))
-  ]);
+  show([head, row, note, list, more], [button("Back", "back", home), go]);
 }
 
 function addWordScreen() {
+  chrome(false);
+  const head = pageHead("Add a word",
+    "For something you met today that the list does not have. It starts in " +
+    "the sorting pass and reaches the desktop on the next sync.");
   const box = el("div", "card");
-  box.appendChild(el("h2", "", "Add a word"));
-  box.appendChild(el("div", "muted",
-    "For something you met today that the list does not have. An example " +
-    "sentence is worth adding: without one the word cannot reach the gap-fill " +
-    "boxes. It travels to the desktop on the next sync."));
   const fields = {};
-  for (const [key, ph] of [["w", "the word"], ["en", "English"],
-                           ["pos", "part of speech (optional)"],
-                           ["ex", "example sentence (optional)"]]) {
+  for (const [key, caption, ph] of [["w", "Word", "e.g. la finestra"],
+                                    ["en", "Meaning in English", "e.g. window"],
+                                    ["pos", "Part of speech", "optional"],
+                                    ["ex", "Example sentence", "optional, but it unlocks the gap exercises"]]) {
     const input = el("input");
     input.placeholder = ph;
     input.autocapitalize = "none"; input.spellcheck = false;
-    input.style.marginBottom = "8px";
     fields[key] = input;
-    box.appendChild(input);
+    box.appendChild(field(caption, input));
   }
-  const where = el("div", "muted", "It starts in the sorting pass with the rest.");
-  box.appendChild(where);
+  box.lastChild.style.marginBottom = "0";
 
-  show([box], [
-    button("Back", "grow", home),
+  show([head, box], [
+    button("Back", "back", home),
     button("Add", "primary grow", async () => {
       const w = fields.w.value.trim(), en = fields.en.value.trim();
-      if (!w || !en) return alert("The word and its English are both needed.");
+      if (!w || !en) return notify("The word and its English are both needed.");
       if (state.cards.some(c => c.w.toLowerCase() === w.toLowerCase()))
-        return alert("That word is already in the collection.");
+        return notify("That word is already in the collection.");
       const ex = fields.ex.value.trim();
       const card = { w, en, pos: fields.pos.value.trim(), spos: "", art: "",
         coll: "", ex, topic: "general", cefr: "", explain: "", explain_native: "",
@@ -1766,10 +2275,11 @@ function addWordScreen() {
       }
       state.cards.push(card);
       await save();
-      alert(`${w} added. It will appear in the sorting pass.`);
+      flash(`${w} added. It will appear in the sorting pass.`);
       home();
     })
   ]);
+  setTimeout(() => fields.w.focus(), 60);
 }
 
 /* ------------------------------------------------------------ collections
@@ -1802,32 +2312,27 @@ async function addLanguage() {
 function collectionRow(entry, current) {
   const s = entry.s;
   const due_ = s.cards.filter(due).length;
-  const line = el("div", "slot");
-  line.style.cssText += "text-align:left;letter-spacing:normal;cursor:pointer";
-  line.innerHTML = `<b>${esc(s.language_name || s.language || "?")}</b> ` +
-    `<span class="muted">${s.cards.length} words · ${due_} due` +
-    (current ? " · open now" : "") + "</span>" +
-    (s.cloud && s.cloud.collection
-      ? `<br><span class="muted" style="font-size:13px">syncs as ${esc(s.cloud.collection)}</span>` : "");
-  if (current) line.classList.add("filled");
-  else line.addEventListener("click", () => switchTo(entry.key));
-  return line;
+  return listItem({
+    lead: langAvatar(s),
+    title: esc(s.language_name || s.language || "?"),
+    detail: `${s.cards.length} words · ${due_} due` +
+      (s.cloud && s.cloud.collection ? ` · syncs as ${esc(s.cloud.collection)}` : ""),
+    end: current ? `<span class="good">${icon("check")}</span>` : icon("chevron"),
+    onTap: current ? null : () => switchTo(entry.key),
+    cls: current ? "current" : ""
+  });
 }
 
 async function collectionsScreen() {
+  chrome(false);
   const list = await storedCollections();
-  const box = el("div", "card");
-  box.appendChild(el("h2", "", "Your languages"));
-  box.appendChild(el("div", "muted",
-    "Each one keeps its own words, progress and sync settings. Tap one to open it."));
-  const rows = el("div");
-  rows.style.marginTop = "10px";
+  const rows = el("div", "list");
   const openKey = state && state.cards.length ? stateKey(state) : "";
   for (const entry of list) rows.appendChild(collectionRow(entry, entry.key === openKey));
-  box.appendChild(rows);
-  show([box], [
-    button("Back", "grow", home),
-    button("Add another language", "primary grow", addLanguage)
+  show([pageHead("Your languages",
+         "Each keeps its own words, progress and sync settings. Tap one to open it."), rows], [
+    button("Back", "back", home),
+    button("Add a language", "primary grow", addLanguage)
   ]);
 }
 
@@ -1836,16 +2341,13 @@ async function collectionsScreen() {
 function ask(title, text, choices) {
   return new Promise(resolve => {
     const before = primaryButton;
-    const veil = el("div");
-    veil.style.cssText = "position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.6);" +
-      "display:flex;align-items:flex-end;justify-content:center;" +
-      "padding:16px 16px calc(16px + env(safe-area-inset-bottom))";
-    const box = el("div", "card");
-    box.style.cssText = "width:100%;max-width:520px;margin:0";
-    box.appendChild(el("h2", "", esc(title)));
+    const veil = el("div", "veil");
+    const box = el("div", "sheet");
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-modal", "true");
+    if (title) box.appendChild(el("h2", "", esc(title)));
     box.appendChild(el("div", "muted", text));
-    const row = el("div", "row");
-    row.style.marginTop = "12px";
+    const row = el("div", "actions");
     for (const [label, value, cls] of choices)
       row.appendChild(button(esc(label), (cls || "") + " grow", () => {
         veil.remove(); primaryButton = before; resolve(value);
@@ -1856,33 +2358,47 @@ function ask(title, text, choices) {
     // after button()'s own deferred pick of the footer's primary, so Enter
     // answers the question rather than pressing whatever is underneath
     setTimeout(() => {
-      if (document.contains(veil)) primaryButton = row.querySelector("button.primary") || null;
+      if (!document.contains(veil)) return;
+      primaryButton = row.querySelector("button.primary") || null;
+      (primaryButton || row.querySelector("button")).focus({ preventScroll: true });
     }, 0);
   });
 }
 
 function cloudScreen() {
+  chrome(false);
   const cfg = cloudSettings();
-  const box = el("div", "card");
-  box.appendChild(el("h2", "", "Automatic sync"));
-  box.appendChild(el("div", "muted",
-    "Paste the same three values you put in the desktop app. Both then keep " +
-    "themselves in step and there are no files to carry."));
+  const hasWords = !!(state && state.cards && state.cards.length);
   const url = el("input"); url.placeholder = "https://xxxxxxxx.supabase.co";
   url.value = cfg.url || ""; url.autocapitalize = "none"; url.spellcheck = false;
-  const key = el("input"); key.placeholder = "anon public key";
+  url.inputMode = "url";
+  const key = el("input"); key.placeholder = "eyJhbGciOi\u2026";
   key.value = cfg.key || ""; key.autocapitalize = "none"; key.spellcheck = false;
-  const coll = el("input"); coll.placeholder = "collection name";
+  const coll = el("input"); coll.placeholder = "the name the desktop suggested";
   coll.value = cfg.collection || ""; coll.autocapitalize = "none"; coll.spellcheck = false;
-  const auto = el("label", "muted");
   const check = document.createElement("input");
   check.type = "checkbox"; check.checked = !!cfg.auto;
-  check.style.cssText = "width:22px;height:22px;vertical-align:middle;margin-right:8px";
+  const auto = el("label", "switch");
+  auto.appendChild(el("span", "", "Sync by itself when the app opens and when a session ends"));
   auto.appendChild(check);
-  auto.appendChild(document.createTextNode("Sync when the app opens and when a session ends"));
-  [url, key, coll].forEach(i => { i.style.marginBottom = "8px"; box.appendChild(i); });
-  box.appendChild(auto);
-  if (cfg.last) box.appendChild(el("div", "muted", "Last sync: " + esc(cfg.last.replace("T", " "))));
+
+  const status = el("div", "list");
+  status.appendChild(listItem({
+    lead: icobox(cfg.url ? "cloud" : "alert", cfg.url ? "var(--s1)" : "var(--warn)"),
+    title: cfg.url ? (cfg.last ? `Synced ${since(cfg.last)}` : "Not synced yet") : "Not set up yet",
+    detail: cfg.url && cfg.collection ? `Collection \u201c${esc(cfg.collection)}\u201d`
+      : "Paste the three values from the desktop\u2019s Phone sync dialog."
+  }));
+
+  const conn = el("div", "card");
+  conn.appendChild(el("h2", "", "Connection"));
+  conn.appendChild(el("div", "muted",
+    "The same three values you put in the desktop app. Both then keep " +
+    "themselves in step, with no files to carry."));
+  conn.appendChild(field("Project URL", url));
+  conn.appendChild(field("Anon public key", key));
+  conn.appendChild(field("Collection name", coll));
+  conn.appendChild(auto);
 
   /* Saves what was typed. Returns false if you backed out.
 
@@ -1938,7 +2454,7 @@ function cloudScreen() {
     await save();
     return true;
   }
-  const download = button("Download words", "grow", async () => {
+  async function downloadWords() {
     if (!await persist()) return;
     try {
       flash("Fetching\u2026");
@@ -1955,37 +2471,67 @@ function cloudScreen() {
       flash("Words loaded, catching up\u2026");
       await cloudSync(true);               // markers were cleared by the import
       const c = counts();
-      alert(`Words loaded and reconciled.\n\n` +
-            `Snapshot uploaded: ${(payload.exported_at || "?").replace("T", " ")}\n` +
-            `Rows seen in the database: ${lastSync.seen}\n` +
-            `Taken in: ${lastSync.took}\n\n` +
-            `Due now: ${c.due}`);
+      notify(`Snapshot uploaded: ${(payload.exported_at || "?").replace("T", " ")}\n` +
+             `Rows seen in the database: ${lastSync.seen}\n` +
+             `Taken in: ${lastSync.took}\n\n` +
+             `Due now: ${c.due}`, "Words loaded");
       home();
-    } catch (e) { alert(e.message); }
+    } catch (e) { notify(e.message, "Could not download the words"); }
+  }
+  // the rarer actions, each with what it does
+  const action = (name, title, detail, fn) =>
+    listItem({ lead: icobox(name), title, detail, end: icon("chevron"), onTap: fn });
+  const guarded = (fn, before) => async () => {
+    if (!await persist()) return;
+    try { if (before) flash(before); await fn(); }
+    catch (e) { notify(e.message, "Sync failed"); }
+  };
+
+  if (!hasWords) {
+    const files = el("div", "list");
+    files.appendChild(action("file", "Load a file instead",
+      "Exported from the desktop with \u201cExport collection for phone\u201d", () => pick(importFile)));
+    show([pageHead("Set up sync", "Then download the words straight from the database."),
+          conn, sectionHead("No sync?"), files], [
+      button("Back", "back", home),
+      button(icon("download") + "Download words", "primary grow", downloadWords)
+    ]);
+    return;
+  }
+
+  const syncNow = button(icon("sync") + "Sync now", "primary wide", async () => {
+    if (!await persist()) return;
+    syncNow.classList.add("busy");
+    try { await cloudSync(true); flash("Synced."); cloudScreen(); }
+    catch (e) { syncNow.classList.remove("busy"); notify(e.message, "Sync failed"); }
   });
-  show([box], [
-    button("Back", "grow", home),
-    button("Full resync", "grow", async () => {
-      if (!await persist()) return;
-      try { flash("Comparing every card\u2026"); await fullResync(); }
-      catch (e) { alert(e.message); }
-    }),
-    button("Take from database", "grow", async () => {
-      if (!await persist()) return;
-      try { await forcePull(); } catch (e) { alert(e.message); }
-    }),
-    button("Send mine up", "grow", async () => {
-      if (!await persist()) return;
-      try { await pushMine(); } catch (e) { alert(e.message); }
-    }),
-    download,
-    button("Save", "grow", async () => { if (await persist()) flash("Saved."); }),
-    button("Sync now", "primary grow", async () => {
-      if (!await persist()) return;
-      try { flash("Syncing\u2026"); await cloudSync(true); flash("Done."); home(); }
-      catch (e) { alert(e.message); }
-    })
-  ]);
+  syncNow.style.marginBottom = "14px";
+  const saveRow = button("Save settings", "soft wide", async () => {
+    if (await persist()) { flash("Saved."); cloudScreen(); }
+  });
+  saveRow.style.marginTop = "16px";
+  conn.appendChild(saveRow);
+
+  const words = el("div", "list");
+  words.appendChild(action("download", "Download words again",
+    "When the workbook changed on the desktop", downloadWords));
+  const files = el("div", "list");
+  files.appendChild(action("upload", "Export my progress",
+    "A small file for the desktop\u2019s Import progress", exportProgress));
+  files.appendChild(action("file", "Import a file",
+    "A collection or a progress file", () => pick(importFile)));
+  const fixes = el("div", "list");
+  fixes.appendChild(action("sync", "Full resync",
+    "Compare every card again, when the two devices disagree",
+    guarded(fullResync, "Comparing every card\u2026")));
+  fixes.appendChild(action("download", "Take from database",
+    "Replace this phone\u2019s progress with the database\u2019s", guarded(forcePull)));
+  fixes.appendChild(action("upload", "Send mine up",
+    "Replace the database\u2019s progress with this phone\u2019s", guarded(pushMine)));
+
+  show([pageHead("Sync"), status, syncNow, conn,
+        sectionHead("Words"), words, sectionHead("Files"), files,
+        sectionHead("Fix a problem"), fixes], tabBar("sync"));
 }
 
 /* ------------------------------------------------------------------- sync */
@@ -2028,7 +2574,7 @@ function pick(handler) {
     if (!file) return;
     const reader = new FileReader();
     reader.onload = () => { try { handler(JSON.parse(reader.result)); }
-                            catch (e) { alert("That file could not be read: " + e.message); } };
+                            catch (e) { notify("That file could not be read: " + e.message); } };
     reader.readAsText(file);
   });
   input.click();
@@ -2099,14 +2645,14 @@ async function importFile(payload, quiet) {
     }
     await save();
     if (!quiet)
-      alert(`Loaded ${state.cards.length} ${state.language_name || ""} words.` +
+      notify(`Loaded ${state.cards.length} ${state.language_name || ""} words.` +
             (kept ? ` ${kept} kept from this phone.` : ""));
     return quiet ? undefined : home();
   }
   if (!state || !state.cards.length)
-    return alert("Load a full collection first, then progress files.");
+    return notify("Load a full collection first, then progress files.");
   if (payload.language && state.language && payload.language !== state.language)
-    return alert(`That progress file is for ${payload.language_name || payload.language}, ` +
+    return notify(`That progress file is for ${payload.language_name || payload.language}, ` +
                  `but the words open here are ${state.language_name || state.language}. ` +
                  "Switch language on the home screen first.");
   let updated = 0, skipped = 0;
@@ -2128,38 +2674,62 @@ async function importFile(payload, quiet) {
   for (const r of payload.reviews || [])
     if (!have.has(r[0] + "\u0000" + r[1])) state.reviews.push(r);
   await save();
-  alert(`${updated} card(s) updated, ${skipped} already current.`);
+  notify(`${updated} card(s) updated, ${skipped} already current.`);
   home();
 }
 
-/* ------------------------------------------------------------------ setup */
+/* ------------------------------------------------------------------ setup
+   The first thing a new user sees, and what "Add a language" opens. */
 function setup() {
-  const box = el("div", "card");
-  box.appendChild(el("h1", "", "Lessico Drill"));
-  box.appendChild(el("div", "muted",
-    "Nothing loaded yet. Two ways in.<br><br>" +
-    "<b>From the database</b>, if you have set up sync: enter the three " +
-    "settings and pull the words straight down. Nothing to carry.<br><br>" +
-    "<b>From a file</b>, if you have not: on the desktop use " +
-    "<b>Phone sync \u2192 Export collection for phone</b> and load the file here." +
-    "<br><br>Either way it works with no signal afterwards."));
-  const row = el("div", "row");
-  row.style.marginTop = "14px";
-  row.appendChild(button("Set up sync and pull the words", "primary grow", () => {
+  chrome(false);
+  const begin = () => {
     if (!state) state = { language: "", language_name: "", cards: [], reviews: [] };
     cloudScreen();
-  }));
-  row.appendChild(button("Load a file instead", "grow", () => pick(importFile)));
-  box.appendChild(row);
+  };
+  const option = (cls, name, title, detail, fn) => {
+    const b = button(icobox(name) + `<span class="body"><span class="title">${title}</span>` +
+      `<span class="detail">${detail}</span></span>${icon("chevron")}`, "option " + cls, fn);
+    return b;
+  };
+
+  const intro = el("div", "welcome");
+  intro.appendChild(el("div", "mark", "L"));
+  const title = el("h1", "", "Words that stay with you");
+  intro.appendChild(title);
+  const lead = el("div", "muted",
+    "Lessico takes each word from first sight to using it in a sentence of your " +
+    "own, and brings it back just before you would forget it.");
+  intro.appendChild(lead);
+
+  const perks = el("div", "list perks");
+  for (const [name, colour, head, text] of [
+    ["ladder", "var(--s2)", "A ladder for every word",
+     "Sort, flashcards, meanings, gaps, translation and writing, one rung at a time."],
+    ["wifi", "var(--s1)", "Works with no signal",
+     "Study on a walk. Everything lives on the phone."],
+    ["sync", "var(--s4)", "In step with the desktop",
+     "Answers merge card by card, so the newer one always wins."]])
+    perks.appendChild(listItem({ lead: icobox(name, colour), title: head, detail: text }));
+
+  const choose = el("div");
+  choose.appendChild(sectionHead("Get your words"));
+  choose.appendChild(option("primary", "download", "Download from the database",
+    "If sync is set up on the desktop", begin));
+  choose.appendChild(option("", "file", "Load a file",
+    "Exported with \u201cExport collection for phone\u201d", () => pick(importFile)));
+
   const others = el("div");
-  show([box, others], []);
+  show([intro, perks, choose, others], []);
   // a language added by mistake, or abandoned halfway, is one tap from the others
   storedCollections().then(list => {
     if (!list.length) return;
-    const card = el("div", "card");
-    card.appendChild(el("h2", "", "Or open one already on this phone"));
-    for (const entry of list) card.appendChild(collectionRow(entry, false));
-    others.appendChild(card);
+    title.textContent = "Add a language";
+    lead.textContent = "Download its words from the database, or load a file from the desktop.";
+    perks.remove();
+    others.appendChild(sectionHead("Already on this phone"));
+    const rows = el("div", "list");
+    for (const entry of list) rows.appendChild(collectionRow(entry, false));
+    others.appendChild(rows);
   }).catch(() => {});
 }
 

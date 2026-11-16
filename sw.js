@@ -1,6 +1,6 @@
 // Cache the shell so the app opens with no signal. The collection itself
 // lives in IndexedDB, not here.
-const CACHE = 'lessico-v1';
+const CACHE = 'lessico-v2';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icon.svg'];
 
 self.addEventListener('install', event => {

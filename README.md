@@ -165,6 +165,26 @@ Turkish, Italian and most other voices built in. Chrome brings only a few of
 its own, Italian among them but not Turkish, and otherwise uses the voices
 added to Windows under Settings › Time & language › Speech › Add voices.
 
+## Reading
+
+The **Read** tab has short texts from A1 to B2 in Italian and Turkish, from
+easy to hard. They are original texts written for the app (in
+`reading/it.json` and `reading/tr.json`), each with its English translation.
+The method follows exam-style reading books such as METU's *Reader at Work*:
+- **Before you read**, a question gets you thinking about the topic.
+- **Recycled words:** the words you met in earlier texts come back. They are
+  listed so you can check you still remember them, and marked in the text.
+- **Numbered paragraphs:** each can be heard aloud or shown in English.
+- **Questions after the text:** true, false or not given; details; what a
+  word refers to; a meaning guessed from context; the main idea. Then a quick
+  check on two words from before and two new ones.
+
+Tap any word you don't know to add it to your words. It goes straight into
+flashcards, with the sentence from the text as its example, and is tagged
+*reading* in the Words tab. **My reading words** in the Read tab lists only
+these, with a button to practise them. The desktop gives phone-made words its
+own topic, so the phone keeps the reading tag itself.
+
 ## What the phone does and does not do
 
 It runs the same ladder with the same rules: flashcards in both directions,

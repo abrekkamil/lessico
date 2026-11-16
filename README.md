@@ -139,7 +139,9 @@ know, and sort the rest one by one.
 Each collection is stored separately, so Italian and Turkish can both live on
 the phone without disturbing each other. The language button at the top of
 the home screen moves between them or starts another. Each language needs its
-own collection name in sync settings. Typing a name the
+own collection name in sync settings. The phone remembers the database address
+and key from the first language, so adding another asks only for its
+collection name. Typing a name the
 phone does not know while words are open asks whether it is another language
 or a new name for these words, and before anything is sent the phone checks
 that the collection holds the same language.

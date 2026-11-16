@@ -381,6 +381,42 @@
   .tab.on .pip { background:var(--primary-soft); }
   .tab:active { transform:none; }
 
+  /* ------------------------------------------------------------ listening and details */
+  .say { width:38px; height:38px; min-height:0; padding:0; flex:none; border-radius:50%;
+    background:var(--primary-soft); border:none; box-shadow:none; color:var(--primary-text); }
+  .say svg { width:20px; height:20px; }
+  .say.speaking { color:var(--on-primary);
+    background:linear-gradient(135deg,var(--primary),var(--primary-2)); }
+  .face > .say { position:absolute; top:12px; right:12px; }
+  .face.text:has(> .say) { padding-right:58px; }
+  .face.tap { cursor:pointer; }
+  .face .more { display:inline-flex; align-items:center; gap:6px; align-self:center; margin-top:12px;
+    padding:6px 12px 6px 10px; border-radius:99px; background:var(--primary-soft);
+    color:var(--primary-text); font-size:13px; font-weight:700; }
+  .face .more svg { width:16px; height:16px; }
+
+  .sheet.details { max-height:calc(var(--app-h, 100vh) - 24px - env(safe-area-inset-bottom));
+    overflow-y:auto; overscroll-behavior:contain; padding-bottom:0; text-align:left; }
+  .details .head { display:flex; align-items:flex-start; gap:12px; }
+  .details .head .prompt { flex:1; margin:0; font-size:clamp(28px,8vw,36px); }
+  .details .tags { color:var(--muted); font-size:13.5px; font-weight:600; margin-top:6px; }
+  .details .gloss { font-size:18px; font-weight:650; margin-top:12px; line-height:1.4; }
+  .details .label { margin:22px 2px 8px; font-size:12.5px; font-weight:800; text-transform:uppercase;
+    letter-spacing:.08em; color:var(--muted); }
+  .details .sense { font-weight:700; margin:12px 2px 6px; }
+  .details .line { display:flex; gap:12px; align-items:flex-start; padding:12px 12px 12px 14px;
+    border-radius:var(--radius-sm); background:var(--surface2); margin-bottom:8px; }
+  .details .line .txt { flex:1; min-width:0; line-height:1.5; overflow-wrap:anywhere; }
+  .details .line .it { font-size:16.5px; font-weight:550; }
+  .details .line .en { color:var(--muted); font-size:14.5px; margin-top:2px; }
+  .details .line .note, .details .note-only { color:var(--faint); font-size:13.5px; margin-top:4px; }
+  .details .note-only { margin:0 2px 8px; }
+  .details mark { background:var(--primary-soft); color:var(--primary-text); border-radius:5px;
+    padding:0 3px; }
+  .details .stat-line { color:var(--faint); font-size:13px; margin:18px 2px 0; }
+  .details .actions { position:sticky; bottom:0; margin:14px -20px 0; padding:12px 20px 18px;
+    background:var(--surface); border-top:1px solid var(--border); }
+
   /* ------------------------------------------------------------ typing
      With the phone's keyboard up there is about half a screen left, so the
      page tightens and the buttons share one row. In a session the answer box
@@ -393,6 +429,8 @@
   body.typing #main .eyebrow { display:none; }
   body.typing #main .face { min-height:0; padding:12px 14px 10px; margin-bottom:8px; border-radius:20px; }
   body.typing #main .face::before { height:4px; }
+  body.typing #main .face > .say { top:8px; right:8px; width:32px; height:32px; }
+  body.typing #main .face > .say svg { width:17px; height:17px; }
   body.typing #main .prompt { font-size:clamp(24px,7vw,28px); margin-bottom:2px; }
   body.typing #main .sub { font-size:13px; }
   body.typing #main .sentence { font-size:18px; line-height:1.45; }
@@ -891,7 +929,10 @@ const ICONS = {
   alert: '<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v5.5"/><path d="M12 16.5h.01"/>',
   search: '<circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.4-4.4"/>',
   cup: '<path d="M5 9h12v5a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5z"/><path d="M17 10.5h1.5a2.5 2.5 0 0 1 0 5H17"/>' +
-       '<path d="M9 3.5v2.5M13 3.5v2.5"/>'
+       '<path d="M9 3.5v2.5M13 3.5v2.5"/>',
+  speaker: '<path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6"/>' +
+           '<path d="M18.2 6.3a8 8 0 0 1 0 11.4"/>',
+  info: '<circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5"/><path d="M12 7.5h.01"/>'
 };
 function icon(name) {
   return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" ' +
@@ -1091,6 +1132,10 @@ foot.addEventListener("pointerdown", event => {
 }, true);
 foot.addEventListener("mousedown", event => {
   if (isField(document.activeElement) && event.target.closest("button")) event.preventDefault();
+});
+// and so does the button that says the word aloud
+main.addEventListener("mousedown", event => {
+  if (isField(document.activeElement) && event.target.closest(".say")) event.preventDefault();
 });
 foot.addEventListener("click", () => {
   const field = refocus;
@@ -1327,6 +1372,224 @@ function withArticle(card) {
   const colour = art === "la" || art === "le" ? "var(--fem)" : "var(--masc)";
   return `<span style="color:${colour}">${art}</span>${art.endsWith("'") ? "" : " "}${esc(card.w)}`;
 }
+/* The word as it is said, article included. */
+function wordText(card) {
+  const box = document.createElement("div");
+  box.innerHTML = withArticle(card);
+  return box.textContent;
+}
+
+/* --------------------------------------------------------------- listening
+   Pronunciation comes from the phone's own voices (the Web Speech API): no
+   cost, no key, and it works offline once the voice is on the phone. A second
+   tap on the same thing within a few seconds says it again, slower. */
+const speech = window.speechSynthesis || null;
+let voices = [];
+function loadVoices() {
+  try { voices = speech ? speech.getVoices() : []; } catch { voices = []; }
+}
+if (speech) {
+  loadVoices();
+  if (speech.addEventListener) speech.addEventListener("voiceschanged", loadVoices);
+}
+// each collection names its own language, so "TUR" and "Turkish" have to
+// land on the same voice as "tr"
+const LANG_ALIASES = {
+  ita: "it", italian: "it", tur: "tr", turkish: "tr", deu: "de", ger: "de", german: "de",
+  fra: "fr", fre: "fr", french: "fr", spa: "es", spanish: "es", por: "pt", portuguese: "pt",
+  eng: "en", english: "en", nld: "nl", dut: "nl", dutch: "nl", rus: "ru", russian: "ru",
+  pol: "pl", polish: "pl", swe: "sv", swedish: "sv", ell: "el", gre: "el", greek: "el",
+  ara: "ar", arabic: "ar", jpn: "ja", japanese: "ja", zho: "zh", chi: "zh", chinese: "zh",
+  kor: "ko", korean: "ko", ukr: "uk", ukrainian: "uk", ron: "ro", rum: "ro", romanian: "ro",
+  ces: "cs", cze: "cs", czech: "cs", hun: "hu", hungarian: "hu", fin: "fi", finnish: "fi",
+  dan: "da", danish: "da", no: "nb", nor: "nb", nob: "nb", norwegian: "nb", heb: "he",
+  hebrew: "he", hin: "hi", hindi: "hi", fas: "fa", per: "fa", persian: "fa", cat: "ca", catalan: "ca"
+};
+function speechLang() {
+  for (const name of [state.language, state.language_name]) {
+    const key = (name || "").trim().toLowerCase();
+    const base = key.split(/[-_ ]/)[0];
+    if (LANG_ALIASES[key]) return LANG_ALIASES[key];
+    if (LANG_ALIASES[base]) return LANG_ALIASES[base];
+    if (/^[a-z]{2}$/.test(base)) return base;
+  }
+  return "";
+}
+function voiceFor(lang) {
+  const tag = v => (v.lang || "").toLowerCase().replace("_", "-");
+  const mine = voices.filter(v => tag(v).split("-")[0] === lang ||
+                                  (lang === "nb" && tag(v).split("-")[0] === "no"));
+  // the better voices a phone can download first, the joke voices last
+  const score = v => (/premium/i.test(v.name) ? 8 : /enhanced|neural|natural/i.test(v.name) ? 4 : 0) +
+    (tag(v) === `${lang}-${lang}` ? 2 : 0) + (v.localService ? 1 : 0) -
+    (/^(eddy|flo|grandma|grandpa|reed|rocko|sandy|shelley)\b/i.test(v.name) ? 6 : 0);
+  return mine.sort((a, b) => score(b) - score(a))[0] || null;
+}
+let lastSaid = { text: "", at: 0 };
+function say(text, from) {
+  if (!speech || !text) return;
+  if (!voices.length) loadVoices();
+  const lang = speechLang();
+  const voice = lang ? voiceFor(lang) : null;
+  if (voices.length && !voice)
+    return notify(`This phone has no ${state.language_name || state.language || "voice for this"} ` +
+      "voice yet. On an iPhone, add one under Settings › Accessibility › Spoken Content › Voices, " +
+      "then try again.", "No voice for this language");
+  const slower = lastSaid.text === text && Date.now() - lastSaid.at < 6000;
+  speech.cancel();
+  const line = new SpeechSynthesisUtterance(text);
+  if (voice) line.voice = voice;
+  line.lang = voice ? voice.lang : lang;
+  line.rate = slower ? 0.6 : 0.92;
+  lastSaid = { text, at: Date.now() };
+  document.querySelectorAll(".say.speaking").forEach(b => b.classList.remove("speaking"));
+  if (from) {
+    from.classList.add("speaking");
+    line.onend = line.onerror = () => from.classList.remove("speaking");
+  }
+  speech.speak(line);
+}
+/* A round button that says `text`; nothing at all where the phone cannot speak. */
+function sayButton(text) {
+  text = (text || "").trim();
+  if (!speech || !text) return null;
+  const b = el("button", "say", icon("speaker"));
+  b.type = "button";
+  b.setAttribute("aria-label", "Listen");
+  b.title = "Listen. Tap again to hear it slower.";
+  b.addEventListener("click", event => { event.stopPropagation(); say(text, b); });
+  return b;
+}
+function withSay(face, text) {
+  const b = sayButton(text);
+  if (b) face.appendChild(b);
+  return face;
+}
+
+/* ------------------------------------------------------------ word details
+   Everything the desktop knows about a word in one sheet: its meanings with
+   their examples and notes, the example sentences, the explanations and the
+   usual phrases, each with a button to hear it. Opened from the card once a
+   word has been answered, and from the Words tab. */
+function wordSheet(card) {
+  const before = primaryButton;
+  const veil = el("div", "veil");
+  const box = el("div", "sheet details");
+  box.setAttribute("role", "dialog");
+  box.setAttribute("aria-modal", "true");
+  box.setAttribute("aria-label", card.w);
+
+  const head = el("div", "head");
+  head.appendChild(el("div", "prompt", withArticle(card)));
+  const sayWord = sayButton(wordText(card));
+  if (sayWord) head.appendChild(sayWord);
+  box.appendChild(head);
+  const tags = [card.pos || card.spos, card.cefr,
+                card.topic && card.topic !== "general" ? card.topic : ""].filter(Boolean);
+  if (tags.length) box.appendChild(el("div", "tags", esc(tags.join(" · "))));
+  if (card.en) box.appendChild(el("div", "gloss", esc(card.en)));
+
+  // a line in the language, its English, a note, and a button to hear it
+  const line = (text, en, note, marked) => {
+    const row = el("div", "line");
+    row.appendChild(el("div", "txt",
+      `<div class="it">${marked || esc(text)}</div>` +
+      (en ? `<div class="en">${esc(en)}</div>` : "") +
+      (note ? `<div class="note">${esc(note)}</div>` : "")));
+    const play = sayButton(text);
+    if (play) row.appendChild(play);
+    return row;
+  };
+  const section = title => box.appendChild(el("div", "label", title));
+  // the word itself is marked in a sentence: where the sentence says it is,
+  // or else wherever its spelling turns up
+  const mark = (text, a, b) => {
+    a = Number(a); b = Number(b);
+    if (!(Number.isInteger(a) && Number.isInteger(b) && a >= 0 && b > a && b <= text.length)) {
+      a = text.toLowerCase().indexOf((card.w || "").toLowerCase());
+      b = a + (card.w || "").length;
+      if (a < 0 || !card.w) return "";
+    }
+    return esc(text.slice(0, a)) + `<mark>${esc(text.slice(a, b))}</mark>` + esc(text.slice(b));
+  };
+
+  const senses = (card.senses || []).filter(s => s.gloss);
+  const shown = new Set();
+  if (senses.length > 1 || senses.some(s => s.ex || s.note)) {
+    section(senses.length === 1 ? "Meaning" : "Meanings");
+    senses.forEach((s, i) => {
+      box.appendChild(el("div", "sense", (senses.length > 1 ? `${i + 1}. ` : "") + esc(s.gloss)));
+      if (s.ex) {
+        shown.add(s.ex.trim());
+        box.appendChild(line(s.ex, s.ex_en, s.note, mark(s.ex)));
+      } else if (s.note) box.appendChild(el("div", "note-only", esc(s.note)));
+    });
+  }
+  const examples = (card.sentences || []).filter(s => s.it && !shown.has(s.it.trim()));
+  examples.forEach(s => shown.add(s.it.trim()));
+  if (card.ex && !shown.has(card.ex.trim())) examples.push({ it: card.ex, en: "" });
+  if (examples.length) {
+    section(examples.length === 1 ? "Example" : "Examples");
+    for (const s of examples) box.appendChild(line(s.it, s.en, "", mark(s.it, s.a, s.b)));
+  }
+  if (card.explain_native || card.explain) {
+    section("Explanation");
+    box.appendChild(card.explain_native ? line(card.explain_native, card.explain)
+      : el("div", "line", `<div class="txt">${esc(card.explain)}</div>`));
+  }
+  const phrases = (card.coll || "").split(/\s*[;|\n]\s*/).filter(Boolean);
+  if (phrases.length) {
+    section("Common phrases");
+    for (const phrase of phrases) box.appendChild(line(phrase, "", "", mark(phrase)));
+  }
+
+  const s = stageOf(card);
+  const when = s.stage < 4 && !card.suspended ? dueText(card.due) : "";
+  box.appendChild(el("div", "stat-line",
+    esc(s.short) + (s.box ? ` · box ${s.box}` : "") +
+    (when ? ` · ${when === "due now" ? when : "next review " + when}` : "") +
+    (card.reviews ? ` · ${card.correct || 0} of ${card.reviews} answers right` : "")));
+
+  function onKey(event) { if (event.key === "Escape") { event.preventDefault(); done(); } }
+  function done() {
+    if (speech) speech.cancel();
+    document.removeEventListener("keydown", onKey, true);
+    veil.remove();
+    primaryButton = before;
+  }
+  const row = el("div", "actions");
+  const close = button("Close", "primary", done);
+  row.appendChild(close);
+  box.appendChild(row);
+  document.addEventListener("keydown", onKey, true);
+  veil.addEventListener("click", event => { if (event.target === veil) done(); });
+  veil.appendChild(box);
+  document.body.appendChild(veil);
+  // after button()'s own deferred pick of the footer's primary, so Enter
+  // closes the sheet rather than pressing Next underneath it
+  setTimeout(() => {
+    if (!document.contains(veil)) return;
+    primaryButton = close;
+    close.focus({ preventScroll: true });
+  }, 0);
+}
+
+/* Once a word has been answered, its card opens the full entry. */
+function offerDetails(card) {
+  const face = main.querySelector(".face");
+  if (!face || face.classList.contains("tap")) return;
+  face.classList.add("tap");
+  face.setAttribute("role", "button");
+  face.tabIndex = 0;
+  face.setAttribute("aria-label", `Details for ${card.w}`);
+  face.appendChild(el("span", "more", `${icon("info")}Details`));
+  face.addEventListener("click", () => wordSheet(card));
+  face.addEventListener("keydown", event => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault(); event.stopPropagation();
+    wordSheet(card);
+  });
+}
 
 /* --------------------------------------------------------------- exercises */
 function viewTriage(card) {
@@ -1358,6 +1621,7 @@ function viewTriage(card) {
     answer.innerHTML = `<div class="prompt">${esc(card.en)}</div>`;
     answer.appendChild(outcome);
     answer.classList.remove("hidden");
+    offerDetails(card);
     foot.innerHTML = "";
     if (verdict !== "new")
       // thinking you know a word and then reading a different meaning is the
@@ -1374,7 +1638,7 @@ function viewTriage(card) {
     primaryButton = foot.querySelector("button.primary");
   }
   const knew = button("I know this", "primary grow", () => decide("knew"));
-  show([meta, faceCard([prompt, sub, hintBox]), answer], [
+  show([meta, withSay(faceCard([prompt, sub, hintBox]), wordText(card)), answer], [
     button("New to me", "grow", () => decide("new")),
     button("Hint", "grow", () => {
       if (done) return;
@@ -1402,6 +1666,7 @@ function viewFlash(card, mode) {
 
   const reveal = button("Show answer", "primary grow", () => {
     answer.classList.remove("hidden");
+    offerDetails(card);
     foot.innerHTML = "";
     foot.appendChild(button("Didn't know", "grow", () => grade(false)));
     foot.appendChild(button("Knew it", "primary grow", () => grade(true)));
@@ -1423,7 +1688,9 @@ function viewFlash(card, mode) {
         answer.innerHTML = `<div class="muted">${
           esc(card.explain_native || "")}<br>${esc(card.explain || "")}</div>`;
       }) : null;
-  show([meta, faceCard([prompt, sub]), answer], [tip, reveal]);
+  // the word can be heard when it is the question, not when it is the answer
+  const face = faceCard([prompt, sub]);
+  show([meta, itEn ? withSay(face, wordText(card)) : face, answer], [tip, reveal]);
 }
 
 function viewMeanings(card) {
@@ -1513,6 +1780,7 @@ function viewMeanings(card) {
         remaining.includes(s.gloss) ? "bad" : "good"}">${esc(s.gloss)}</b> ${
         esc(s.ex)}${s.note ? `<br><span class="muted">${esc(s.note)}</span>` : ""}</div>`).join("");
     if (context) main.appendChild(el("div", "context", context));
+    offerDetails(card);
     foot.innerHTML = "";
     foot.appendChild(button("Next", "primary grow", () =>
       finish(card, message, !remaining.length && !letters,
@@ -1521,7 +1789,7 @@ function viewMeanings(card) {
 
   input.addEventListener("keydown", e => { if (e.key === "Enter") submit(); });
   paint();
-  show([meta, faceCard([prompt, sub], "compact"), slots, input, feedback], [
+  show([meta, withSay(faceCard([prompt, sub], "compact"), wordText(card)), slots, input, feedback], [
     button("Show a letter", "", showLetter),
     button("Show the rest", "ghost", revealRest),
     button("Check", "primary grow", submit)
@@ -1580,6 +1848,7 @@ function viewReverse(card) {
     feedback.innerHTML = message +
       (card.ex ? `<br><span class="muted">${esc(card.ex)}</span>` : "") +
       `<br><span class="accent">${esc(applied)}</span>`;
+    offerDetails(card);
     foot.innerHTML = "";
     foot.appendChild(button("Next", "primary grow", () =>
       finish(card, applied, correct && !letters,
@@ -1643,6 +1912,7 @@ function viewCloze(card, blind) {
       ? `<b class="good">Correct.</b> ${esc(row.it)}`
       : `<b class="bad">Not this time.</b> The answer is <b>${esc(row.surface)}</b>.<br>${esc(row.it)}`) +
       `<br><span class="accent">${esc(message)}</span>`;
+    offerDetails(card);
     foot.innerHTML = "";
     foot.appendChild(button("Next", "primary grow", () =>
       finish(card, message, correct && !letters,
@@ -1697,6 +1967,7 @@ function viewTranslate(card, intoNative) {
       `<span class="${verdict[1]}">${verdict[0]}</span> (${Math.round(score * 100)}% of the key words)` +
       (missing.length ? `<br>Not found: ${esc(missing.slice(0, 6).join(", "))}` : "") +
       `<br><br>Reference: <b>${esc(target)}</b>`;
+    offerDetails(card);
     foot.innerHTML = "";
     foot.appendChild(button("Not quite", "grow", () => settle(false)));
     foot.appendChild(button("That says it", "primary grow", () => settle(true)));
@@ -1708,7 +1979,9 @@ function viewTranslate(card, intoNative) {
     finish(card, message, matched && !hints,
            card.stage > before ? "level" : mbox(card) > beforeBox ? "box" : null);
   }
-  show([meta, faceCard([source], "text"), instruction, editor, report], [
+  // the sentence can be heard when it is the one in the language
+  const face = faceCard([source], "text");
+  show([meta, intoNative ? face : withSay(face, row.it), instruction, editor, report], [
     button("Show a word", "", () => {
       const words = target.split(" ");
       hints++;
@@ -1739,6 +2012,7 @@ function viewProduce(card) {
       ? '<span class="good">The word is there.</span> Does it say what you meant?'
       : `<span class="bad">Your sentence does not contain ${esc(card.w)}.</span>`;
     if (card.ex) report.innerHTML += `<br><span class="muted">For reference: ${esc(card.ex)}</span>`;
+    offerDetails(card);
     foot.innerHTML = "";
     foot.appendChild(button("Not quite", "grow", () => settle(false)));
     if (has) foot.appendChild(button("That works", "primary grow", () => settle(true)));
@@ -1760,7 +2034,8 @@ function viewProduce(card) {
     report.innerHTML += `<br><span class="accent">${esc(message)}</span>`;
     finish(card, message, ok, card.stage === 4 ? "level" : null);
   }
-  show([meta, faceCard([prompt, sub], "compact"), editor, report], [button("Check", "primary grow", check)]);
+  show([meta, withSay(faceCard([prompt, sub], "compact"), wordText(card)), editor, report],
+       [button("Check", "primary grow", check)]);
 }
 
 /* ------------------------------------------------------------- cloud sync
@@ -2220,7 +2495,8 @@ function wordsScreen() {
         title: withArticle(card),
         detail: esc(card.en) + (card.cefr ? ` · ${esc(card.cefr)}` : ""),
         end: `<span class="badge" style="--c:${s.colour}">${s.short}${s.box ? " · " + s.box : ""}</span>` +
-             (card.suspended ? "<span>paused</span>" : when ? `<span>${when}</span>` : "")
+             (card.suspended ? "<span>paused</span>" : when ? `<span>${when}</span>` : ""),
+        onTap: () => wordSheet(card)
       }));
     }
     more.textContent = rows.length > 150

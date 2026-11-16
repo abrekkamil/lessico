@@ -146,6 +146,22 @@ phone does not know while words are open asks whether it is another language
 or a new name for these words, and before anything is sent the phone checks
 that the collection holds the same language.
 
+## Word details and listening
+
+Once a word has been answered, its card shows **Details**: tap it for
+everything the desktop knows about the word. That means each meaning with its
+example and note, the example sentences with the word marked, the
+explanations and the common phrases. Tapping a word in the **Words** tab
+opens the same sheet.
+
+The speaker buttons say the word or sentence aloud with the phone's own
+voices. That costs nothing, needs no key and works offline. Tap again within a
+few seconds to hear it slower. During a session the speaker appears only where
+hearing the word would not give the answer away. If the phone has no voice
+for the language, it says so. On an iPhone, voices are added under Settings ›
+Accessibility › Spoken Content › Voices, and the *Enhanced* ones sound much
+better.
+
 ## What the phone does and does not do
 
 It runs the same ladder with the same rules: flashcards in both directions,

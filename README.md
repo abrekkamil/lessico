@@ -86,6 +86,17 @@ the phone directly, where it is stored only in the phone's own database.
 If a sync fails, nothing is lost. The devices simply diverge until the next
 one, and per-card merging sorts it out then.
 
+**Recommended upgrade.** Run `supabase-sync-cursor.sql` from this repository
+once, in the same SQL editor. Each sync only asks for what changed since the
+last one, and without this the "since" is measured by when a card was
+studied. Answers given offline on a walk then look older than the other
+device's last sync and can be skipped. The upgrade lets the database stamp
+each upload itself. The phone notices it within ten minutes; until it is
+run, the phone reaches back a day on every sync to be safe. The desktop needs the same
+change to its own pull (see `cloud.py`), so until then its pulls can still
+miss answers made offline. Use **Full resync** on the desktop if they
+disagree.
+
 ## Studying on both
 
 Progress files are small and carry only what changed.
@@ -125,7 +136,12 @@ part of speech, level or topic, tap anything you already know, and sort the
 rest one by one.
 
 Each collection is stored separately, so Italian and Turkish can both live on
-the phone without disturbing each other.
+the phone without disturbing each other. **Switch or add a language** under
+the title on the home screen moves between them or starts another. Each
+language needs its own collection name in sync settings. Typing a name the
+phone does not know while words are open asks whether it is another language
+or a new name for these words, and before anything is sent the phone checks
+that the collection holds the same language.
 
 ## What the phone does and does not do
 

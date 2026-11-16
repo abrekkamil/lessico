@@ -116,6 +116,19 @@ function idbSet(key, value) {
     tx.oncomplete = () => ok(); tx.onerror = () => fail(tx.error);
   });
 }
+function idbDelete(key) {
+  return new Promise((ok, fail) => {
+    const tx = idb.transaction(STORE, "readwrite");
+    tx.objectStore(STORE).delete(key);
+    tx.oncomplete = () => ok(); tx.onerror = () => fail(tx.error);
+  });
+}
+function idbKeys() {
+  return new Promise((ok, fail) => {
+    const r = idb.transaction(STORE, "readonly").objectStore(STORE).getAllKeys();
+    r.onsuccess = () => ok(r.result); r.onerror = () => fail(r.error);
+  });
+}
 
 /* ------------------------------------------------------------------ state */
 let state = null;          // { language, cards: [...], reviews: [...] }
@@ -132,17 +145,54 @@ const todayStr = () => localDate(new Date());
 const nowStr = () => new Date().toISOString().slice(0, 23);   // UTC, for sync
 const plusDays = n => localDate(new Date(Date.now() + n * 864e5));
 
-function stateKey(cloud) {
-  // one record per collection, so studying Turkish cannot disturb Italian
-  const name = (cloud && cloud.collection) || (state && state.language) || "default";
-  return "collection:" + name;
+/* One record per collection, so studying Turkish cannot disturb Italian.
+   The key is fixed (`id`) once a collection has words, so editing its sync
+   name can never re-file it on top of another one. */
+function stateKey(s) {
+  if (!s) return "collection:default";
+  return s.id ||
+    "collection:" + ((s.cloud && s.cloud.collection) || s.language || "default");
 }
 
-async function save() {
-  state.saved_at = nowStr();
-  await idbSet(stateKey(state && state.cloud), state);
-  await idbSet("last_open", stateKey(state && state.cloud));
-  await idbSet("collection", state);          // read by older builds
+/* Saves one collection under its own key. A sync or an import can still be
+   finishing on a collection after you have switched away from it, so the
+   collection is passed in rather than read from `state` at the end. */
+async function save(s) {
+  s = s || state;
+  if (!s) return;
+  const hasWords = (s.cards || []).length > 0;
+  let key = stateKey(s);
+  if (!s.id || !hasWords) {
+    const there = await idbGet(key);
+    const taken = there && (there.cards || []).length > 0;
+    // an empty collection never replaces one that has words
+    if (taken && !hasWords) return;
+    // and a new one never lands on an old one's key
+    if (taken) key += "~" + Date.now().toString(36);
+    if (hasWords) s.id = key;
+  }
+  s.saved_at = nowStr();
+  await idbSet(key, s);
+  if (s === state) {
+    await idbSet("last_open", key);
+    await idbSet("collection", s);            // read by older builds
+  }
+}
+
+/* Every collection kept on this phone that has words in it. */
+async function storedCollections() {
+  const out = [];
+  for (const key of await idbKeys()) {
+    if (typeof key !== "string" || !key.startsWith("collection:")) continue;
+    const live = state && state.cards.length && key === stateKey(state);
+    const s = live ? state : await idbGet(key);
+    if (s && (s.cards || []).length) {
+      s.id = key;
+      if (!s.reviews) s.reviews = [];
+      out.push({ key, s });
+    }
+  }
+  return out;
 }
 
 /* ------------------------------------------------------- the same ladder
@@ -217,9 +267,11 @@ function planLevel2(card, letters, opts) {
 
 function applyLevel2(card, letters, opts) {
   const [fields, message] = planLevel2(card, letters, opts);
+  // logged before the move, so the log names the exercise that was answered
+  // rather than the one the card goes on to
+  logReview(card, modeFor(card), !(opts && (opts.wrong || opts.gaveUp)) && !letters);
   Object.assign(card, fields);
   card.updated_at = nowStr();
-  logReview(card, modeFor(card), !(opts && (opts.wrong || opts.gaveUp)) && !letters);
   return message;
 }
 
@@ -269,6 +321,14 @@ function gradeFlash(card, correct) {
 function logReview(card, mode, correct) {
   state.reviews.push([card.w, nowStr(), card.stage, mode, correct ? "correct" : "wrong"]);
   if (state.reviews.length > 4000) state.reviews.splice(0, state.reviews.length - 4000);
+  // The card keeps its own tally too, as the desktop's does. Sorting is left
+  // out there, being a placement rather than a review. These counts travel
+  // with the card, so leaving them at zero here reset the desktop's, and
+  // made every card studied only on the phone look brand new to the queue.
+  if (mode !== "triage") {
+    card.reviews = (card.reviews || 0) + 1;
+    if (correct) card.correct = (card.correct || 0) + 1;
+  }
 }
 
 /* --------------------------------------------------------------- matching */
@@ -278,8 +338,15 @@ const STOP = new Set(["the","a","an","of","to","in","on","at","is","are","am",
   "do","does","did","it","this","that","and","or","for","with","my","your",
   "his","her","their","our","i","you","he","she","we","they","be","have",
   "has","had","will","would","not","no","s","t","m","re","ve","ll"]);
-const norm = s => (s || "").toLowerCase().normalize("NFD")
-  .replace(/[\u0300-\u036f]/g, "").replace(/[^a-z' ]/g, " ").trim().replace(/\s+/g, " ");
+/* Lower case, accents off, punctuation out. Letters of every alphabet are
+   kept: this used to keep a-z only, which turned Turkish 'k\u0131rm\u0131z\u0131' into
+   'k rm z' and a Russian word into nothing at all, so any answer matched it.
+   Letters with no accent to strip are folded by hand, so 'kirmizi' is as
+   acceptable for 'k\u0131rm\u0131z\u0131' as 'sehir' already was for '\u015fehir'. */
+const FOLD = { "\u0131": "i", "\u0142": "l", "\u00f8": "o", "\u0111": "d" };
+const norm = s => (s || "").toLowerCase().replace(/[\u0131\u0142\u00f8\u0111]/g, c => FOLD[c])
+  .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+  .replace(/[^\p{L}\p{M}' ]/gu, " ").trim().replace(/\s+/g, " ");
 
 function glossKey(text) {
   const words = norm((text || "").replace(/\([^)]*\)/g, " ")).split(" ").filter(Boolean);
@@ -352,11 +419,15 @@ function closeness(typed, targets) {
 }
 const looseEq = (a, b) => norm(a).replace(/'/g, "") === norm(b).replace(/'/g, "");
 
-/* letters revealed one at a time, the initial first */
+/* letters revealed one at a time, the initial first. A letter is any letter
+   of any alphabet: \w only knows a-z, so 'à' and 'ı' used to show from the
+   start and a Cyrillic word had nothing left to hide. */
+const LETTER = /\p{L}/u;
 function makeHint(word) {
-  let shown = new Set(), used = 0;
+  let chars = [], shown = new Set(), used = 0;
   function reset(next) {
     word = next || "";
+    chars = [...word];                      // by character, not UTF-16 unit
     shown = new Set(); used = 0;
     const free = /^(to|a|an|the)\s+/i.exec(word);
     if (free) for (let i = 0; i < free[0].length; i++) shown.add(i);
@@ -368,17 +439,26 @@ function makeHint(word) {
     get used() { return used; },
     more() {
       const spots = [];
-      for (let i = 0; i < word.length; i++)
-        if (/[^\W\d_]/u.test(word[i]) && !shown.has(i)) spots.push(i);
+      chars.forEach((ch, i) => { if (LETTER.test(ch) && !shown.has(i)) spots.push(i); });
       if (!spots.length) return false;
       shown.add(used === 0 ? spots[0] : spots[Math.floor(Math.random() * spots.length)]);
       used++; return true;
     },
     pattern() {
-      return [...word].map((ch, i) =>
-        /[^\W\d_]/u.test(ch) ? (shown.has(i) ? ch : "_") : ch).join(" ");
+      return chars.map((ch, i) => LETTER.test(ch) ? (shown.has(i) ? ch : "_") : ch).join(" ");
     }
   };
+}
+
+/* Whether a sentence uses a word: every part of it, allowing a changed
+   ending, so 'parlando' counts for 'parlare'. A phrase such as 'fare la
+   spesa' is looked for word by word; as one token it could never be found. */
+function usesWord(text, word) {
+  const tokens = norm(text).split(" ");
+  return norm(word).split(" ").filter(Boolean).every(part => {
+    const stem = part.slice(0, Math.max(4, part.length - 2));
+    return tokens.some(t => t === part || t.startsWith(stem));
+  });
 }
 
 /* --------------------------------------------------------------- rendering */
@@ -463,7 +543,7 @@ function counts() {
 
 function home() {
   queue = []; setProgress("", 0); quitBtn.classList.add("hidden");
-  if (!state) return setup();
+  if (!state || !state.cards.length) return setup();
   const c = counts();
   const tiles = el("div", "tiles");
   [["due now", c.due, "accent"], ["mastered", c.mastered, "good"],
@@ -476,8 +556,12 @@ function home() {
 
   const head = el("div");
   head.appendChild(el("h1", "", "Lessico Drill"));
-  head.appendChild(el("div", "muted", esc(state.language_name || "") +
-    " \u00b7 " + state.cards.length + " words"));
+  const which = el("div", "muted", esc(state.language_name || state.language || "") +
+    " \u00b7 " + state.cards.length + " words ");
+  const switcher = button("Switch or add a language", "ghost", collectionsScreen);
+  switcher.style.cssText += ";padding:6px 4px;min-height:0;font-size:14px";
+  which.appendChild(switcher);
+  head.appendChild(which);
 
   const study = el("div", "card");
   study.appendChild(el("h2", "", "Study"));
@@ -1023,8 +1107,7 @@ function viewProduce(card) {
     const text = editor.value.trim();
     if (!text) return;
     done = true;
-    const has = norm(text).split(" ").some(t =>
-      t === norm(card.w) || t.startsWith(norm(card.w).slice(0, Math.max(4, card.w.length - 2))));
+    const has = usesWord(text, card.w);
     report.innerHTML = has
       ? '<span class="good">The word is there.</span> Does it say what you meant?'
       : `<span class="bad">Your sentence does not contain ${esc(card.w)}.</span>`;
@@ -1060,8 +1143,14 @@ function viewProduce(card) {
 function cloudSettings() { return (state && state.cloud) || {}; }
 let lastSync = null;
 
-async function cloudRequest(method, path, body) {
-  const cfg = cloudSettings();
+// what the bookmarks go back to when the exchange has to start from scratch
+const NO_MARKERS = { pulled_to: "", pushed_to: "", reviews_to: "", reviews_sent: "",
+                     pulled_seq: "", reviews_seq: "" };
+
+/* The settings are passed in rather than read from `state`, because you can
+   switch collection while a sync is still talking to the database. */
+async function cloudRequest(method, path, body, cfg) {
+  cfg = cfg || cloudSettings();
   if (!cfg.url || !cfg.key) throw new Error("Sync is not set up yet.");
   const response = await fetch(`${cfg.url.replace(/\/$/, "")}/rest/v1/${path}`, {
     method,
@@ -1073,15 +1162,130 @@ async function cloudRequest(method, path, body) {
     body: body === undefined ? undefined : JSON.stringify(body)
   });
   if (!response.ok) {
-    const detail = (await response.text()).slice(0, 200);
+    const text = await response.text();
+    let code = "";
+    try { code = JSON.parse(text).code || ""; } catch (e) { /* not JSON */ }
     if (response.status === 401 || response.status === 403)
       throw new Error("The key was refused. Check it is the anon public key.");
     if (response.status === 404)
       throw new Error("The table was not found. Run the setup SQL in Supabase.");
-    throw new Error(`${response.status}: ${detail}`);
+    const error = new Error(`${response.status}: ${text.slice(0, 200)}`);
+    error.code = code;
+    throw error;
   }
   const text = await response.text();
   return text ? JSON.parse(text) : [];
+}
+
+/* ------------------------------------------------------- reading changes
+   Supabase hands back at most 1000 rows a request and says nothing when it
+   stops short. A pull that asked once therefore got the first 1000 rows of a
+   bigger collection and silently dropped the rest, and "Take from database"
+   then pushed this phone's copy over every card it had not seen. */
+const PAGE = 1000;
+const pgQuote = v => '"' + String(v).replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"';
+
+async function pullAll(cfg, table, select, col, since, extra) {
+  const base = `${table}?collection=eq.${encodeURIComponent(cfg.collection)}` +
+    `&select=${select}&order=${col}.asc,word.asc&limit=${PAGE}` + (extra || "");
+  const rows = [];
+  let last = null;
+  for (;;) {
+    // each page carries on from the last row by (col, word), which stays
+    // exact when many rows share one stamp, as they do after an upload
+    let path = base;
+    if (last) path += "&or=" + encodeURIComponent(
+      `(${col}.gt.${pgQuote(last[col])},` +
+      `and(${col}.eq.${pgQuote(last[col])},word.gt.${pgQuote(last.word)}))`);
+    else if (since) path += `&${col}=gt.${encodeURIComponent(since)}`;
+    const page = await cloudRequest("GET", path, undefined, cfg);
+    if (!page.length) return rows;
+    rows.push(...page);
+    last = page[page.length - 1];
+  }
+}
+
+/* A stamp moved back in time, keeping the format it came in. */
+function shiftStamp(stamp, ms, zoned) {
+  if (!stamp) return "";
+  const plain = stamp.replace(/(\.\d{3})\d+/, "$1");
+  const t = Date.parse(/(Z|[+-]\d\d(:?\d\d)?)$/i.test(plain) ? plain : plain + "Z");
+  if (isNaN(t)) return stamp;
+  const iso = new Date(t - ms).toISOString();
+  return zoned ? iso : iso.slice(0, 23);
+}
+
+/* Rows changed since the last pull.
+
+   Every row carries the time its card was studied. That is the right thing
+   for deciding which answer wins, and the wrong thing for a bookmark: a phone
+   that studied offline at 10:00 and uploads at noon is invisible to a device
+   whose bookmark already says 11:00. With supabase-sync-cursor.sql run once,
+   the database stamps every write itself (synced_at) and that is the
+   bookmark. Without it, each pull reaches back a day, which catches the usual
+   walk with no signal at the cost of reading a day of rows again. */
+const STAMP_OVERLAP = 864e5;      // one day
+const SERVER_OVERLAP = 120e3;     // two minutes: writes can commit out of order
+// projects found without the upgrade, and when: asked again after ten
+// minutes, so running the SQL takes effect without restarting the app
+const noServerStamp = new Map();
+
+async function pullChanged(cfg, table, select, studied, seqMark, stampMark, extraIfNew) {
+  if (!(Date.now() - (noServerStamp.get(cfg.url) || 0) < 6e5)) {
+    try {
+      const since = shiftStamp(cfg[seqMark], SERVER_OVERLAP, true);
+      const rows = await pullAll(cfg, table, `${select},synced_at`, "synced_at", since,
+                                 since ? "" : extraIfNew);
+      // pages arrive in synced_at order, so the last row is the newest
+      return { rows, seq: rows.length ? rows[rows.length - 1].synced_at : (cfg[seqMark] || "") };
+    } catch (e) {
+      const missing = e.code === "42703" || e.code === "PGRST204" ||
+                      /synced_at/.test(e.message || "");
+      if (!missing) throw e;
+      noServerStamp.set(cfg.url, Date.now());
+    }
+  }
+  const since = shiftStamp(cfg[stampMark], STAMP_OVERLAP);
+  const rows = await pullAll(cfg, table, select, studied, since, since ? "" : extraIfNew);
+  return { rows, seq: cfg[seqMark] || "" };
+}
+
+/* One exchange with the database at a time. Two that overlap each write their
+   own bookmarks at the end, and whichever finishes last wins. */
+let syncing = null;
+async function exclusive(fn) {
+  while (syncing) await syncing.catch(() => {});
+  const run = Promise.resolve().then(fn);
+  syncing = run;
+  try { return await run; } finally { if (syncing === run) syncing = null; }
+}
+const syncIdle = () => exclusive(() => {});
+
+/* What has to be true before anything is sent. */
+async function preflight(target) {
+  const cfg = { ...(target.cloud || {}) };
+  if (!cfg.url || !cfg.key) throw new Error("Sync is not set up yet.");
+  if (!cfg.collection)
+    throw new Error("Enter the collection name in sync settings: the same one the desktop uses.");
+  if (!target.cards.length)
+    throw new Error("This collection has no words on this phone yet. " +
+                    "Press “Download words” in sync settings first.");
+  // a name typed for the wrong language would send one language's cards into
+  // the other's table, so it is checked against the words uploaded there
+  if (cfg.checked !== cfg.collection && target.language) {
+    const rows = await cloudRequest("GET",
+      `collections?collection=eq.${encodeURIComponent(cfg.collection)}` +
+      "&select=language:payload->>language,language_name:payload->>language_name&limit=1",
+      undefined, cfg);
+    const theirs = rows[0];
+    if (theirs && theirs.language && theirs.language !== target.language)
+      throw new Error(`“${cfg.collection}” holds ${theirs.language_name || theirs.language} ` +
+        `words, but the words open here are ${target.language_name || target.language}. ` +
+        "Check the collection name in sync settings.");
+    target.cloud = { ...target.cloud, checked: cfg.collection };
+    cfg.checked = cfg.collection;
+  }
+  return cfg;
 }
 
 function cardState(card) {
@@ -1090,9 +1294,11 @@ function cardState(card) {
         ex: card.ex || "", coll: card.coll || "", art: card.art || "" } } : {}),
     stage: card.stage, box: card.box, meaning_box: card.mbox,
     meaning_marks: card.marks || 0, dir_flags: card.flags || 0,
-    cloze_passes: 0, prod_passes: card.prod || 0, due: card.due,
+    // the phone does not use these two, but it must hand back what the
+    // desktop set rather than zeros, or a sync would undo a suspension
+    cloze_passes: card.cloze || 0, prod_passes: card.prod || 0, due: card.due,
     reviews: card.reviews || 0, correct: card.correct || 0,
-    lapses: card.lapses || 0, suspended: 0
+    lapses: card.lapses || 0, suspended: card.suspended ? 1 : 0
   };
   if (card.senses && card.senses.length) {
     out.senses = {};
@@ -1104,18 +1310,26 @@ function cardState(card) {
   return out;
 }
 
-async function cloudSync(quiet) {
-  const cfg = cloudSettings();
-  const coll = encodeURIComponent(cfg.collection || "default");
+function cloudSync(quiet) {
+  return exclusive(() => syncCollection(state)).then(summary => {
+    if (!quiet) alert(summary);
+    return summary;
+  });
+}
+
+/* Works on the collection it was given from start to finish, so switching
+   language halfway through cannot send one collection's cards to the other. */
+async function syncCollection(target) {
+  const cfg = await preflight(target);
   let pulledTo = cfg.pulled_to || "", pushedTo = cfg.pushed_to || "";
   const cutoffPull = pulledTo;
 
   // pull first: a card changed in both places then ends up with the later
   // answer here as well, rather than only on the other device
-  let path = `cards?collection=eq.${coll}&select=word,updated_at,state&order=updated_at.asc`;
-  if (pulledTo) path += `&updated_at=gt.${encodeURIComponent(pulledTo)}`;
-  const remote = await cloudRequest("GET", path);
-  const byWord = new Map(state.cards.map(c => [c.w, c]));
+  const pulled = await pullChanged(cfg, "cards", "word,updated_at,state",
+                                   "updated_at", "pulled_seq", "pulled_to");
+  const remote = pulled.rows;
+  const byWord = new Map(target.cards.map(c => [c.w, c]));
   let took = 0;
   for (const row of remote) {
     if ((row.updated_at || "") > pulledTo) pulledTo = row.updated_at;
@@ -1128,6 +1342,8 @@ async function cloudSync(quiet) {
     card.marks = st.meaning_marks; card.flags = st.dir_flags; card.due = st.due;
     card.reviews = st.reviews; card.correct = st.correct; card.lapses = st.lapses;
     card.prod = st.prod_passes; card.updated_at = row.updated_at;
+    if (st.suspended !== undefined) card.suspended = st.suspended ? 1 : 0;
+    if (st.cloze_passes !== undefined) card.cloze = st.cloze_passes;
     if (st.senses && card.senses)
       for (const s of card.senses) {
         const inc = st.senses[s.gloss];
@@ -1140,48 +1356,60 @@ async function cloudSync(quiet) {
   // as we go would make every later card look already sent.
   const cutoff = pushedTo;
   const rows = [];
-  for (const card of state.cards) {
+  for (const card of target.cards) {
     if (card.fresh) continue;                 // a guess, not a fact
     let stamp = card.updated_at || "";
     if (cutoff && stamp && stamp <= cutoff) continue;
     if (!stamp) { stamp = nowStr(); card.updated_at = stamp; }
     if (stamp > pushedTo) pushedTo = stamp;
-    rows.push({ collection: cfg.collection || "default", word: card.w,
+    rows.push({ collection: cfg.collection, word: card.w,
                 updated_at: stamp, state: cardState(card) });
   }
   for (let i = 0; i < rows.length; i += 300)
-    await cloudRequest("POST", "cards", rows.slice(i, i + 300));
+    await cloudRequest("POST", "cards", rows.slice(i, i + 300), cfg);
 
-  // reviews are append-only, so both directions are just 'add what is missing'
-  let reviewPath = `reviews?collection=eq.${coll}&select=word,ts,stage,mode,result`;
-  if (cfg.reviews_to) reviewPath += `&ts=gt.${encodeURIComponent(cfg.reviews_to)}`;
-  const seen = new Set(state.reviews.map(r => r[0] + r[1]));
-  let latestReview = cfg.reviews_to || "";
-  for (const r of await cloudRequest("GET", reviewPath)) {
-    if (r.ts > latestReview) latestReview = r.ts;
-    if (!seen.has(r.word + r.ts)) state.reviews.push([r.word, r.ts, r.stage, r.mode, r.result]);
-  }
-  const mine = state.reviews
-    .filter(r => !cfg.reviews_sent || r[1] > cfg.reviews_sent)
-    .map(r => ({ collection: cfg.collection || "default", word: r[0], ts: r[1],
+  // reviews are append-only, so both directions are just 'add what is
+  // missing'. What to send is settled before the pull, so reviews that came
+  // from the other device are not sent straight back.
+  const sentBefore = cfg.reviews_sent || "";
+  const mine = target.reviews
+    .filter(r => !sentBefore || r[1] > sentBefore)
+    .map(r => ({ collection: cfg.collection, word: r[0], ts: r[1],
                  stage: r[2], mode: r[3], result: r[4] }));
+  // a first pull only needs recent history: the chart shows a fortnight and
+  // the desktop sends sixty days
+  const sixtyDaysAgo = localDate(new Date(Date.now() - 60 * 864e5));
+  const pulledReviews = await pullChanged(cfg, "reviews", "word,ts,stage,mode,result",
+    "ts", "reviews_seq", "reviews_to", `&ts=gte.${sixtyDaysAgo}`);
+  const seen = new Set(target.reviews.map(r => r[0] + "\u0000" + r[1]));
+  let latestReview = cfg.reviews_to || "";
+  for (const r of pulledReviews.rows) {
+    if (r.ts > latestReview) latestReview = r.ts;
+    if (!seen.has(r.word + "\u0000" + r.ts))
+      target.reviews.push([r.word, r.ts, r.stage, r.mode, r.result]);
+  }
+  if (target.reviews.length > 4000) {
+    target.reviews.sort((a, b) => (a[1] || "").localeCompare(b[1] || ""));
+    target.reviews.splice(0, target.reviews.length - 4000);
+  }
   for (let i = 0; i < mine.length; i += 300)
-    await cloudRequest("POST", "reviews", mine.slice(i, i + 300));
+    await cloudRequest("POST", "reviews", mine.slice(i, i + 300), cfg);
 
   // anything the database had nothing to say about really is new, so it can
   // take the defaults now and travel normally from here on
-  let settled = 0;
-  for (const card of state.cards)
-    if (card.fresh) { delete card.fresh; settled++; }
-  state.cloud = { ...cfg, pulled_to: pulledTo, pushed_to: pushedTo,
-                  reviews_to: latestReview,
-                  reviews_sent: mine.length ? mine[mine.length - 1].ts : cfg.reviews_sent,
-                  last: nowStr() };
-  await save();
+  for (const card of target.cards)
+    if (card.fresh) delete card.fresh;
+  // merged into the settings as they are now, so a change made in the
+  // settings screen while this ran is not undone
+  target.cloud = { ...target.cloud, pulled_to: pulledTo, pushed_to: pushedTo,
+                   pulled_seq: pulled.seq, reviews_seq: pulledReviews.seq,
+                   reviews_to: latestReview,
+                   reviews_sent: mine.reduce((m, r) => r.ts > m ? r.ts : m, sentBefore),
+                   last: nowStr() };
+  await save(target);
   const summary = `Sent ${rows.length}, took in ${took}.`;
   lastSync = { sent: rows.length, took, seen: remote.length,
                pulledFrom: cutoffPull || "(everything)" };
-  if (!quiet) alert(summary);
   return summary;
 }
 
@@ -1192,11 +1420,14 @@ async function forcePull() {
   if (!confirm("Take the database's version of every card?\n\n" +
                "Anything studied here and never synced would be given up."))
     return;
-  for (const card of state.cards) { card.updated_at = ""; delete card.fresh; }
-  state.cloud = { ...cloudSettings(), pulled_to: "", pushed_to: "",
-                  reviews_to: "", reviews_sent: "" };
-  await save();
-  await cloudSync(true);
+  await exclusive(async () => {
+    const target = state;
+    await preflight(target);                 // before anything is cleared
+    for (const card of target.cards) { card.updated_at = ""; delete card.fresh; }
+    target.cloud = { ...target.cloud, ...NO_MARKERS };
+    await save(target);
+    return syncCollection(target);
+  });
   const c = counts();
   alert(`Took in ${lastSync.took} card(s) from the database.\n\n` +
         `To sort: ${c.s0}\nLevel 1: ${c.s1}\nLevel 2: ${c.s2}\nDue now: ${c.due}`);
@@ -1207,10 +1438,13 @@ async function fullResync() {
   /* The markers say what has already been exchanged. When the two sides
      disagree and ordinary syncing will not close the gap, the honest fix is
      to forget them and compare every card once. */
-  state.cloud = { ...cloudSettings(), pulled_to: "", pushed_to: "",
-                  reviews_to: "", reviews_sent: "" };
-  await save();
-  await cloudSync(true);
+  await exclusive(async () => {
+    const target = state;
+    await preflight(target);
+    target.cloud = { ...target.cloud, ...NO_MARKERS };
+    await save(target);
+    return syncCollection(target);
+  });
   const c = counts();
   alert(`Compared every card.\n\n` +
         `Rows seen in the database: ${lastSync.seen}\n` +
@@ -1226,19 +1460,23 @@ async function pushMine() {
      what you want when a reset was uploaded over your progress. */
   if (!confirm("Send this device's progress up, replacing what is in the " +
                "database for these cards?")) return;
-  const cfg = cloudSettings();
-  const rows = [];
-  for (const card of state.cards) {
-    if (card.fresh) continue;
-    if (!card.updated_at) card.updated_at = nowStr();
-    rows.push({ collection: cfg.collection || "default", word: card.w,
-                updated_at: card.updated_at, state: cardState(card) });
-  }
-  for (let i = 0; i < rows.length; i += 300)
-    await cloudRequest("POST", "cards", rows.slice(i, i + 300));
-  state.cloud = { ...cfg, pushed_to: "", last: nowStr() };
-  await save();
-  alert(`Sent ${rows.length} card(s) up.`);
+  const sent = await exclusive(async () => {
+    const target = state;
+    const cfg = await preflight(target);
+    const rows = [];
+    for (const card of target.cards) {
+      if (card.fresh) continue;
+      if (!card.updated_at) card.updated_at = nowStr();
+      rows.push({ collection: cfg.collection, word: card.w,
+                  updated_at: card.updated_at, state: cardState(card) });
+    }
+    for (let i = 0; i < rows.length; i += 300)
+      await cloudRequest("POST", "cards", rows.slice(i, i + 300), cfg);
+    target.cloud = { ...target.cloud, pushed_to: "", last: nowStr() };
+    await save(target);
+    return rows.length;
+  });
+  alert(`Sent ${sent} card(s) up.`);
   home();
 }
 
@@ -1271,7 +1509,7 @@ function flash(text) {
 async function cloudFetchCollection(cfg) {
   const coll = encodeURIComponent(cfg.collection || "default");
   const rows = await cloudRequest("GET",
-    `collections?collection=eq.${coll}&select=payload&limit=1`);
+    `collections?collection=eq.${coll}&select=payload&limit=1`, undefined, cfg);
   if (!rows.length)
     throw new Error("No collection there yet. On the desktop press " +
                     "\u201cUpload words\u201d in Phone sync first.");
@@ -1534,6 +1772,95 @@ function addWordScreen() {
   ]);
 }
 
+/* ------------------------------------------------------------ collections
+   Each language is its own record. Switching saves the one open now and
+   loads the other; nothing is ever written under another collection's key. */
+async function switchTo(key) {
+  await syncIdle();
+  if (state && state.cards.length) await save();
+  const next = await idbGet(key);
+  if (!next || !(next.cards || []).length) return home();
+  if (!next.reviews) next.reviews = [];
+  next.id = key;
+  state = next;
+  await idbSet("last_open", key);
+  home();
+  autoSync("switched");
+}
+
+async function addLanguage() {
+  await syncIdle();
+  if (state && state.cards.length) await save();
+  // the same Supabase project usually serves every language, so its address
+  // and key come along; the collection name and the words do not
+  const prev = cloudSettings();
+  state = { language: "", language_name: "", cards: [], reviews: [],
+            cloud: { url: prev.url || "", key: prev.key || "" } };
+  setup();
+}
+
+function collectionRow(entry, current) {
+  const s = entry.s;
+  const due_ = s.cards.filter(due).length;
+  const line = el("div", "slot");
+  line.style.cssText += "text-align:left;letter-spacing:normal;cursor:pointer";
+  line.innerHTML = `<b>${esc(s.language_name || s.language || "?")}</b> ` +
+    `<span class="muted">${s.cards.length} words · ${due_} due` +
+    (current ? " · open now" : "") + "</span>" +
+    (s.cloud && s.cloud.collection
+      ? `<br><span class="muted" style="font-size:13px">syncs as ${esc(s.cloud.collection)}</span>` : "");
+  if (current) line.classList.add("filled");
+  else line.addEventListener("click", () => switchTo(entry.key));
+  return line;
+}
+
+async function collectionsScreen() {
+  const list = await storedCollections();
+  const box = el("div", "card");
+  box.appendChild(el("h2", "", "Your languages"));
+  box.appendChild(el("div", "muted",
+    "Each one keeps its own words, progress and sync settings. Tap one to open it."));
+  const rows = el("div");
+  rows.style.marginTop = "10px";
+  const openKey = state && state.cards.length ? stateKey(state) : "";
+  for (const entry of list) rows.appendChild(collectionRow(entry, entry.key === openKey));
+  box.appendChild(rows);
+  show([box], [
+    button("Back", "grow", home),
+    button("Add another language", "primary grow", addLanguage)
+  ]);
+}
+
+/* A choice with more than OK and Cancel. Resolves with the value of the
+   button pressed. */
+function ask(title, text, choices) {
+  return new Promise(resolve => {
+    const before = primaryButton;
+    const veil = el("div");
+    veil.style.cssText = "position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.6);" +
+      "display:flex;align-items:flex-end;justify-content:center;" +
+      "padding:16px 16px calc(16px + env(safe-area-inset-bottom))";
+    const box = el("div", "card");
+    box.style.cssText = "width:100%;max-width:520px;margin:0";
+    box.appendChild(el("h2", "", esc(title)));
+    box.appendChild(el("div", "muted", text));
+    const row = el("div", "row");
+    row.style.marginTop = "12px";
+    for (const [label, value, cls] of choices)
+      row.appendChild(button(esc(label), (cls || "") + " grow", () => {
+        veil.remove(); primaryButton = before; resolve(value);
+      }));
+    box.appendChild(row);
+    veil.appendChild(box);
+    document.body.appendChild(veil);
+    // after button()'s own deferred pick of the footer's primary, so Enter
+    // answers the question rather than pressing whatever is underneath
+    setTimeout(() => {
+      if (document.contains(veil)) primaryButton = row.querySelector("button.primary") || null;
+    }, 0);
+  });
+}
+
 function cloudScreen() {
   const cfg = cloudSettings();
   const box = el("div", "card");
@@ -1557,17 +1884,73 @@ function cloudScreen() {
   box.appendChild(auto);
   if (cfg.last) box.appendChild(el("div", "muted", "Last sync: " + esc(cfg.last.replace("T", " "))));
 
+  /* Saves what was typed. Returns false if you backed out.
+
+     A new collection name while words are open used to re-file those words
+     under it, which is how one language overwrote another. Now a name that is
+     already on this phone opens that collection, and a new one asks. */
   async function persist() {
-    state.cloud = { ...cloudSettings(), url: url.value.trim().replace(/\/$/, ""),
-                    key: key.value.trim(), collection: coll.value.trim(),
-                    auto: check.checked };
+    await syncIdle();
+    const settings = { url: url.value.trim().replace(/\/$/, ""),
+                       key: key.value.trim(), auto: check.checked };
+    const name = coll.value.trim();
+    const current = cloudSettings().collection || "";
+    if (name && name !== current) {
+      const there = (await storedCollections())
+        .find(c => c.s !== state && c.s.cloud && c.s.cloud.collection === name);
+      if (there) {
+        if (state.cards.length) await save();
+        state = there.s;
+        state.id = there.key;
+        if (!state.reviews) state.reviews = [];
+        state.cloud = { ...state.cloud, ...settings };
+        await save();
+        flash(`Opened ${state.language_name || name}.`);
+        return true;
+      }
+      if (state.cards.length) {
+        const words = `${state.cards.length} ${esc(state.language_name || "")} words`;
+        const choice = await ask(`\u201c${name}\u201d is new on this phone`, current
+          ? `The ${words} open now sync as \u201c${esc(current)}\u201d. Is ` +
+            `\u201c${esc(name)}\u201d another language, or the right name for these words?`
+          : `The ${words} open now are not synced yet. Should they sync as ` +
+            `\u201c${esc(name)}\u201d, or is that another language?`,
+          current
+            ? [["Another language", "other", "primary"], ["Rename these", "rename"],
+               ["Cancel", "cancel", "ghost"]]
+            : [["Sync these words", "rename", "primary"], ["Another language", "other"],
+               ["Cancel", "cancel", "ghost"]]);
+        if (choice === "cancel") { coll.value = current; return false; }
+        if (choice === "other") {
+          // the words open now stay exactly as they are, under their own key
+          await save();
+          state = { language: "", language_name: "", cards: [], reviews: [],
+                    cloud: { ...settings, collection: name } };
+          flash("Now press \u201cDownload words\u201d to fetch them.");
+          return true;
+        }
+        // a rename: the same words, compared afresh with the named collection
+        // (whose language is checked before anything is sent)
+      }
+    }
+    state.cloud = { ...cloudSettings(), ...settings, collection: name,
+                    ...(name !== current ? { ...NO_MARKERS, checked: "" } : {}) };
     await save();
+    return true;
   }
   const download = button("Download words", "grow", async () => {
-    await persist();
+    if (!await persist()) return;
     try {
       flash("Fetching\u2026");
-      const payload = await cloudFetchCollection(cloudSettings());
+      const cfg = cloudSettings();
+      if (!cfg.collection) throw new Error("Enter the collection name first.");
+      const payload = await cloudFetchCollection(cfg);
+      if (state.cards.length && payload.language && state.language &&
+          payload.language !== state.language)
+        throw new Error(`\u201c${cfg.collection}\u201d holds ` +
+          `${payload.language_name || payload.language} words, but the words open here are ` +
+          `${state.language_name || state.language}. Each language needs its own ` +
+          "collection name; switch between them from the home screen.");
       await importFile(payload, true);     // quiet: the report comes below
       flash("Words loaded, catching up\u2026");
       await cloudSync(true);               // markers were cleared by the import
@@ -1583,22 +1966,22 @@ function cloudScreen() {
   show([box], [
     button("Back", "grow", home),
     button("Full resync", "grow", async () => {
-      await persist();
+      if (!await persist()) return;
       try { flash("Comparing every card\u2026"); await fullResync(); }
       catch (e) { alert(e.message); }
     }),
     button("Take from database", "grow", async () => {
-      await persist();
+      if (!await persist()) return;
       try { await forcePull(); } catch (e) { alert(e.message); }
     }),
     button("Send mine up", "grow", async () => {
-      await persist();
+      if (!await persist()) return;
       try { await pushMine(); } catch (e) { alert(e.message); }
     }),
     download,
-    button("Save", "grow", async () => { await persist(); flash("Saved."); }),
+    button("Save", "grow", async () => { if (await persist()) flash("Saved."); }),
     button("Sync now", "primary grow", async () => {
-      await persist();
+      if (!await persist()) return;
       try { flash("Syncing\u2026"); await cloudSync(true); flash("Done."); home(); }
       catch (e) { alert(e.message); }
     })
@@ -1619,9 +2002,9 @@ function exportProgress() {
   for (const c of state.cards) {
     const entry = {
       stage: c.stage, box: c.box, meaning_box: c.mbox, meaning_marks: c.marks || 0,
-      dir_flags: c.flags || 0, cloze_passes: 0, prod_passes: c.prod || 0,
+      dir_flags: c.flags || 0, cloze_passes: c.cloze || 0, prod_passes: c.prod || 0,
       due: c.due, reviews: c.reviews || 0, correct: c.correct || 0,
-      lapses: c.lapses || 0, suspended: 0, updated_at: c.updated_at || ""
+      lapses: c.lapses || 0, suspended: c.suspended ? 1 : 0, updated_at: c.updated_at || ""
     };
     if (c.senses && c.senses.length) {
       entry.senses = {};
@@ -1650,16 +2033,44 @@ function pick(handler) {
   });
   input.click();
 }
+// everything about a card that is progress rather than dictionary
+const PROGRESS = ["stage", "box", "mbox", "marks", "flags", "due", "reviews", "correct",
+                  "lapses", "prod", "cloze", "suspended", "updated_at"];
+function copyProgress(to, from) {
+  for (const field of PROGRESS) if (from[field] !== undefined) to[field] = from[field];
+}
+
 async function importFile(payload, quiet) {
+  await syncIdle();
   if (payload.kind === "collection" || Array.isArray(payload.cards)) {
-    const keep = state ? new Map(state.cards.map(c => [c.w, c])) : new Map();
+    // Which collection the words go into. The one open now if it is the
+    // same language; otherwise the one already on this phone for that
+    // language; otherwise a new one. Never on top of a different language.
+    const open = state || {};
+    let base = (open.cards || []).length ? open : null;
+    const carry = {};                       // settings typed in before any words
+    for (const [k, v] of Object.entries(base ? {} : (open.cloud || {})))
+      if (v !== "" && v !== undefined) carry[k] = v;
+    let prefill = {};                       // for a brand-new collection only
+    if (base && payload.language && base.language && payload.language !== base.language) {
+      await save(base);
+      if (base.cloud && base.cloud.url) prefill = { url: base.cloud.url, key: base.cloud.key };
+      base = null;
+    }
+    if (!base) {
+      const match = (await storedCollections()).find(c => c.s.language === payload.language &&
+        (!carry.collection || !(c.s.cloud && c.s.cloud.collection) ||
+         c.s.cloud.collection === carry.collection));
+      if (match) base = match.s;
+    }
+    const keep = base ? new Map(base.cards.map(c => [c.w, c])) : new Map();
     // the settings must survive an import, and the sync markers must not: the
     // collection is a snapshot from whenever it was uploaded, so anything the
     // other device pushed between then and now still has to be pulled
-    const cloud = { ...(state && state.cloud), pulled_to: "", pushed_to: "",
-                    reviews_to: "", reviews_sent: "" };
-    state = { language: payload.language, language_name: payload.language_name,
-              cards: payload.cards, reviews: (state && state.reviews) || [],
+    const cloud = { ...(base ? base.cloud : prefill), ...carry, ...NO_MARKERS, checked: "" };
+    state = { id: base ? base.id : undefined,
+              language: payload.language, language_name: payload.language_name,
+              cards: payload.cards, reviews: (base && base.reviews) || [],
               cloud };
     // a re-imported collection must not undo progress made here
     let kept = 0;
@@ -1670,10 +2081,7 @@ async function importFile(payload, quiet) {
         // the snapshot carries no progress at all, so anything known here is
         // kept and anything else waits for the sync to fill it in
         if (mine) {
-          Object.assign(card, { stage: mine.stage, box: mine.box, mbox: mine.mbox,
-            marks: mine.marks, flags: mine.flags, due: mine.due,
-            reviews: mine.reviews, correct: mine.correct, lapses: mine.lapses,
-            prod: mine.prod, updated_at: mine.updated_at });
+          copyProgress(card, mine);
           kept++;
         } else {
           // no local copy and no progress in the snapshot. Defaults are a
@@ -1685,19 +2093,22 @@ async function importFile(payload, quiet) {
             fresh: true });
         }
       } else if (mine && (mine.updated_at || "") > (card.updated_at || "")) {
-        Object.assign(card, { stage: mine.stage, box: mine.box, mbox: mine.mbox,
-          marks: mine.marks, flags: mine.flags, due: mine.due, reviews: mine.reviews,
-          correct: mine.correct, lapses: mine.lapses, updated_at: mine.updated_at });
+        copyProgress(card, mine);
         kept++;
       }
     }
     await save();
     if (!quiet)
-      alert(`Loaded ${state.cards.length} words.` +
+      alert(`Loaded ${state.cards.length} ${state.language_name || ""} words.` +
             (kept ? ` ${kept} kept from this phone.` : ""));
     return quiet ? undefined : home();
   }
-  if (!state) return alert("Load a full collection first, then progress files.");
+  if (!state || !state.cards.length)
+    return alert("Load a full collection first, then progress files.");
+  if (payload.language && state.language && payload.language !== state.language)
+    return alert(`That progress file is for ${payload.language_name || payload.language}, ` +
+                 `but the words open here are ${state.language_name || state.language}. ` +
+                 "Switch language on the home screen first.");
   let updated = 0, skipped = 0;
   const byWord = new Map(state.cards.map(c => [c.w, c]));
   for (const [word, entry] of Object.entries(payload.cards || {})) {
@@ -1708,11 +2119,14 @@ async function importFile(payload, quiet) {
     card.marks = entry.meaning_marks; card.flags = entry.dir_flags;
     card.due = entry.due; card.reviews = entry.reviews; card.correct = entry.correct;
     card.lapses = entry.lapses; card.prod = entry.prod_passes;
+    if (entry.suspended !== undefined) card.suspended = entry.suspended ? 1 : 0;
+    if (entry.cloze_passes !== undefined) card.cloze = entry.cloze_passes;
     card.updated_at = entry.updated_at;
     updated++;
   }
-  const have = new Set(state.reviews.map(r => r[0] + r[1]));
-  for (const r of payload.reviews || []) if (!have.has(r[0] + r[1])) state.reviews.push(r);
+  const have = new Set(state.reviews.map(r => r[0] + "\u0000" + r[1]));
+  for (const r of payload.reviews || [])
+    if (!have.has(r[0] + "\u0000" + r[1])) state.reviews.push(r);
   await save();
   alert(`${updated} card(s) updated, ${skipped} already current.`);
   home();
@@ -1732,12 +2146,21 @@ function setup() {
   const row = el("div", "row");
   row.style.marginTop = "14px";
   row.appendChild(button("Set up sync and pull the words", "primary grow", () => {
-    if (!state) state = { language: "it", language_name: "", cards: [], reviews: [] };
+    if (!state) state = { language: "", language_name: "", cards: [], reviews: [] };
     cloudScreen();
   }));
   row.appendChild(button("Load a file instead", "grow", () => pick(importFile)));
   box.appendChild(row);
-  show([box], []);
+  const others = el("div");
+  show([box, others], []);
+  // a language added by mistake, or abandoned halfway, is one tap from the others
+  storedCollections().then(list => {
+    if (!list.length) return;
+    const card = el("div", "card");
+    card.appendChild(el("h2", "", "Or open one already on this phone"));
+    for (const entry of list) card.appendChild(collectionRow(entry, false));
+    others.appendChild(card);
+  }).catch(() => {});
 }
 
 quitBtn.addEventListener("click", () => { save(); home(); });
@@ -1745,8 +2168,11 @@ quitBtn.addEventListener("click", () => { save(); home(); });
 (async function boot() {
   await openDB();
   const key = await idbGet("last_open");
-  state = (key && await idbGet(key)) || (await idbGet("collection")) || null;
+  const opened = key && await idbGet(key);
+  state = opened || (await idbGet("collection")) || null;
   if (state && !state.reviews) state.reviews = [];
+  // records saved before keys were fixed keep the key they were found under
+  if (state && state.cards && state.cards.length) state.id = opened ? key : stateKey(state);
   home();
   autoSync("opened");
   if ("serviceWorker" in navigator)

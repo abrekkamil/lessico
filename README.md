@@ -157,10 +157,13 @@ opens the same sheet.
 The speaker buttons say the word or sentence aloud with the phone's own
 voices. That costs nothing, needs no key and works offline. Tap again within a
 few seconds to hear it slower. During a session the speaker appears only where
-hearing the word would not give the answer away. If the phone has no voice
-for the language, it says so. On an iPhone, voices are added under Settings ›
-Accessibility › Spoken Content › Voices, and the *Enhanced* ones sound much
-better.
+hearing the word would not give the answer away. If the device has no voice
+for the language, it says so and where to add one. On an iPhone, voices are
+added under Settings › Accessibility › Spoken Content › Voices, and the
+*Enhanced* ones sound much better. On a Windows computer, Microsoft Edge has
+Turkish, Italian and most other voices built in. Chrome brings only a few of
+its own, Italian among them but not Turkish, and otherwise uses the voices
+added to Windows under Settings › Time & language › Speech › Add voices.
 
 ## What the phone does and does not do
 

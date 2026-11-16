@@ -1425,16 +1425,45 @@ function voiceFor(lang) {
     (/^(eddy|flo|grandma|grandpa|reed|rocko|sandy|shelley)\b/i.test(v.name) ? 6 : 0);
   return mine.sort((a, b) => score(b) - score(a))[0] || null;
 }
+/* "Turkish" rather than whatever short code the collection was given. */
+function languageName(lang) {
+  try {
+    const name = lang && new Intl.DisplayNames(["en"], { type: "language" }).of(lang);
+    if (name && name !== lang) return name;
+  } catch {}
+  return state.language_name || state.language || "this language's";
+}
+/* Where voices are added, on the device the app is open on. Browsers on a
+   computer use the system's voices; Edge also brings its own for most
+   languages, and Chrome brings a few (Italian, but not Turkish). */
+function voiceHelp() {
+  const ua = navigator.userAgent;
+  if (/iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1))
+    return "Add one under Settings › Accessibility › Spoken Content › Voices, then try again.";
+  if (/Android/.test(ua))
+    return "Add it in the phone's text-to-speech settings (Speech Services by Google › " +
+           "Install voice data), then try again.";
+  if (/Windows/.test(ua)) {
+    const add = "add one to Windows under Settings › Time & language › Speech › Add voices, " +
+                "then close and reopen the browser.";
+    return /Edg\//.test(ua) ? "A" + add.slice(1)
+      : "Microsoft Edge has one built in, so the app can speak it there. Or " + add;
+  }
+  if (/Macintosh/.test(ua))
+    return "Add one under System Settings › Accessibility › Spoken Content › System voice › " +
+           "Manage Voices, then close and reopen the browser.";
+  return "Add a voice for it in the device's speech settings, then close and reopen the browser.";
+}
 let lastSaid = { text: "", at: 0 };
 function say(text, from) {
   if (!speech || !text) return;
   if (!voices.length) loadVoices();
   const lang = speechLang();
   const voice = lang ? voiceFor(lang) : null;
-  if (voices.length && !voice)
-    return notify(`This phone has no ${state.language_name || state.language || "voice for this"} ` +
-      "voice yet. On an iPhone, add one under Settings › Accessibility › Spoken Content › Voices, " +
-      "then try again.", "No voice for this language");
+  if (voices.length && !voice) {
+    const name = languageName(lang);
+    return notify(`This browser has no ${name} voice yet. ${voiceHelp()}`, `No ${name} voice here`);
+  }
   const slower = lastSaid.text === text && Date.now() - lastSaid.at < 6000;
   speech.cancel();
   const line = new SpeechSynthesisUtterance(text);

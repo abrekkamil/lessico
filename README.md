@@ -86,8 +86,12 @@ the phone directly, where it is stored only in the phone's own database.
 If a sync fails, nothing is lost. The devices simply diverge until the next
 one, and per-card merging sorts it out then.
 
-**Recommended upgrade.** Run `supabase-sync-cursor.sql` from this repository
-once, in the same SQL editor. Each sync only asks for what changed since the
+**Recommended upgrade.** Run `supabase-upgrade.sql` from this repository
+once, in the same SQL editor. It does two things. It adds the `reading`
+table, so finished texts, their answers and the words added while reading
+reach your other phones (see Reading below); until then reading stays on the
+phone it happened on, and the Sync tab says so. And it fixes a gap in how
+changes are found. Each sync only asks for what changed since the
 last one, and without this the "since" is measured by when a card was
 studied. Answers given offline on a walk then look older than the other
 device's last sync and can be skipped. The upgrade lets the database stamp
@@ -123,7 +127,10 @@ it works on a walk.
 
 **Add a word** on the home screen takes something you met during the day. It
 starts in the sorting pass, and the desktop adopts it on the next sync,
-rebuilding the gap sentence from your example.
+rebuilding the gap sentence from your example. Another phone on the same
+collection takes it in on its next sync too, without waiting for the desktop.
+Downloading the words again keeps words made on the phone that the desktop
+has not taken in yet, and keeps everything done in the Read tab.
 
 ## Words, progress and sorting on the phone
 
@@ -164,13 +171,47 @@ to give the meaning of, a sentence to translate), you hear it as the card
 appears. When the card shows the English and you type the word, it is said
 once you have answered, and the card's own speakers then say it again at
 either speed. The speaker in the session bar turns this off and on; the phone
-remembers the choice, and the buttons still work while it is off. If the device has no voice
+remembers the choice, and the buttons still work while it is off. The voice
+itself is chosen in **Settings** (see below). If the device has no voice
 for the language, it says so and where to add one. On an iPhone, voices are
 added under Settings › Accessibility › Spoken Content › Voices, and the
 *Enhanced* ones sound much better. On a Windows computer, Microsoft Edge has
 Turkish, Italian and most other voices built in. Chrome brings only a few of
 its own, Italian among them but not Turkish, and otherwise uses the voices
 added to Windows under Settings › Time & language › Speech › Add voices.
+
+## Settings
+
+**Settings**, at the bottom of the home screen, keeps two things for this
+phone, for every language on it:
+
+* **Words in a session**: 10, 20, 30 or 50. It sets the length of a session,
+  a sorting round and a round of free practice. Up to half of a session can be
+  words not studied yet.
+* **Voice**: every voice the phone has for the language open now, with
+  *Automatic* (the best one) at the top. Tap one to choose it and hear it.
+  Voices belong to each device, so each phone keeps its own choice. The
+  switch for saying words by themselves is here too.
+
+## Free practice
+
+**Free practice**, under the exercises on the home screen, is for playing
+with words without touching their progress: no card moves, nothing becomes
+due and nothing counts as a review. Pick the words by level, kind (nouns,
+verbs, adjectives and so on), topic, and whether you have met them, then one
+of three games:
+
+* **Flip**: see the card, think of the answer, turn it.
+* **Choose**: pick the right one of four.
+* **Type**: see the English and type the word.
+
+Flip and Choose go from the word to English, from English to the word, or
+mixed. A round takes words at random, and at the end you can play the ones
+you missed again. The phone remembers the last set-up.
+
+A word's level is the one the desktop gave it. The Italian workbook has no
+levels yet, so there a word takes the level of the first reading text that
+uses it, and words no text uses have none.
 
 ## Reading
 
@@ -193,11 +234,28 @@ The method follows exam-style reading books such as METU's *Reader at Work*:
   word refers to; a meaning guessed from context; the main idea. Then a quick
   check on two words from before and two new ones.
 
+**A text opens once you have met 80% of its words.** Met means the word is
+in your words and past the sorting pass: it does not have to be learnt yet.
+A closed text shows a lock and how much of it you know. Tapping it shows
+its words and offers a short deck first: the words not met yet (those your
+list lacks are added from the text, with their sentence, and tagged
+*reading*), sorted first because that is what opens the text, then those of
+its words that are due. Words in a box and not due are left alone. A deck is
+as long as a session, or longer when the text needs more to open. When it
+ends you go straight back to the text. An open text with a few words still
+due or unmet offers them before you read, without insisting. A finished text
+always opens again.
+
 Tap any word you don't know to add it to your words. It goes straight into
 flashcards, with the sentence from the text as its example, and is tagged
 *reading* in the Words tab. **My reading words** in the Read tab lists only
 these, with a button to practise them. The desktop gives phone-made words its
 own topic, so the phone keeps the reading tag itself.
+
+With `supabase-upgrade.sql` run, reading syncs like the cards: each finished
+text with its score and every answer, and each reading word, which another
+phone makes into a card if it has never had it. If both phones read the same
+text, the later result wins.
 
 ## What the phone does and does not do
 

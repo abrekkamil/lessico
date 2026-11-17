@@ -161,6 +161,13 @@ example and note, the example sentences with the word marked, the
 explanations and the common phrases. Tapping a word in the **Words** tab
 opens the same sheet.
 
+When a collection includes the generated `reading_texts` index, the Words tab
+also shows how many reading texts contain each word and can filter to **In
+reading texts** or **Not in reading texts**. Word details list the text title,
+ID, level and whether the match was an explicit lemma mapping or exact visible
+wording. This makes the uncovered vocabulary list usable as the plan for new
+reading texts.
+
 The speaker buttons say the word or sentence aloud with the phone's own
 voices. That costs nothing, needs no key and works offline. Next to a word's
 speaker is a turtle that says it slowly, to catch every sound and repeat it.

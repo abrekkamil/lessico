@@ -1756,6 +1756,19 @@ function wordSheet(card) {
     box.appendChild(card.explain_native ? line(card.explain_native, card.explain)
       : el("div", "line", `<div class="txt">${esc(card.explain)}</div>`));
   }
+  if (Array.isArray(card.reading_texts)) {
+    const refs = readingTextRefs(card);
+    section("Reading texts");
+    if (!refs.length) {
+      box.appendChild(el("div", "line", '<div class="txt muted">Not covered by a reading text yet.</div>'));
+    } else {
+      for (const ref of refs) {
+        const kind = ref.match === "mapped" ? "lemma mapped" : "exact wording";
+        box.appendChild(el("div", "line", `<div class="txt"><div class="it">${esc(ref.title || ref.id)}</div>` +
+          `<div class="en">${esc([ref.level, ref.id, kind].filter(Boolean).join(" · "))}</div></div>`));
+      }
+    }
+  }
   const phrases = (card.coll || "").split(/\s*[;|\n]\s*/).filter(Boolean);
   if (phrases.length) {
     section("Common phrases");
@@ -1841,6 +1854,11 @@ const cardIndex = () => new Map(state.cards.map(c => [wordKey(c.w), c]));
 function findCard(w) { return cardIndex().get(wordKey(w)) || null; }
 function isReadingWord(card) {
   return !!(state && state.reading && state.reading.words && state.reading.words[wordKey(card.w)]);
+}
+function readingTextRefs(card) {
+  return Array.isArray(card && card.reading_texts)
+    ? card.reading_texts.filter(ref => ref && ref.id)
+    : [];
 }
 function readingWords() {
   const words = reading().words;
@@ -3487,7 +3505,7 @@ function selectFrom(values, onPick) {
 
 function wordsScreen() {
   chrome(false);
-  let query = "", stageFilter = "", cefrFilter = "", sourceFilter = "";
+  let query = "", stageFilter = "", cefrFilter = "", sourceFilter = "", coverageFilter = "";
   const search = el("input");
   search.type = "search";
   search.placeholder = "Search words or meanings";
@@ -3506,6 +3524,11 @@ function wordsScreen() {
   if (state.cards.some(isReadingWord))
     filters.appendChild(selectFrom([["", "All words"], ["reading", "From reading"]],
                                    v => { sourceFilter = v; paint(); }));
+  const hasCoverageIndex = state.cards.some(card => Array.isArray(card.reading_texts));
+  if (hasCoverageIndex)
+    filters.appendChild(selectFrom([["", "Any text coverage"], ["covered", "In reading texts"],
+                                    ["uncovered", "Not in reading texts"]],
+                                   v => { coverageFilter = v; paint(); }));
   const note = el("div", "muted");
   note.style.margin = "0 4px 10px";
   const list = el("div", "list");
@@ -3518,18 +3541,26 @@ function wordsScreen() {
     if (stageFilter !== "") rows = rows.filter(c => String(c.stage ?? 1) === stageFilter);
     if (cefrFilter) rows = rows.filter(c => c.cefr === cefrFilter);
     if (sourceFilter) rows = rows.filter(isReadingWord);
+    if (coverageFilter === "covered") rows = rows.filter(c => readingTextRefs(c).length);
+    if (coverageFilter === "uncovered") rows = rows.filter(c => !readingTextRefs(c).length);
     rows = rows.slice().sort((a, b) => a.w.localeCompare(b.w));
-    note.textContent = `${rows.length} of ${state.cards.length} words`;
+    const covered = hasCoverageIndex ? state.cards.filter(c => readingTextRefs(c).length).length : 0;
+    note.textContent = `${rows.length} of ${state.cards.length} words` +
+      (hasCoverageIndex ? ` · ${covered} covered by texts · ${state.cards.length - covered} not covered` : "");
     list.innerHTML = "";
     list.classList.toggle("hidden", !rows.length);
     for (const card of rows.slice(0, 150)) {
       const s = stageOf(card);
       const when = s.stage > 0 && s.stage < 4 && !card.suspended ? dueText(card.due) : "";
+      const textRefs = readingTextRefs(card);
+      const coverage = Array.isArray(card.reading_texts)
+        ? ` · <span class="tag-read">${textRefs.length ? `${textRefs.length} text${textRefs.length === 1 ? "" : "s"}` : "not in texts"}</span>`
+        : "";
       list.appendChild(listItem({
         lead: `<span class="dot" style="--c:${s.colour}"></span>`,
         title: withArticle(card),
         detail: esc(card.en) + (card.cefr ? ` · ${esc(card.cefr)}` : "") +
-          (isReadingWord(card) ? ' · <span class="tag-read">reading</span>' : ""),
+          (isReadingWord(card) ? ' · <span class="tag-read">reading</span>' : "") + coverage,
         end: `<span class="badge" style="--c:${s.colour}">${s.short}${s.box ? " · " + s.box : ""}</span>` +
              (card.suspended ? "<span>paused</span>" : when ? `<span>${when}</span>` : ""),
         onTap: () => wordSheet(card)

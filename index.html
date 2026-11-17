@@ -473,6 +473,18 @@
   .opts button:disabled { opacity:1; }
   .opts button.right { border-color:var(--good); background:var(--good-soft); color:var(--good); }
   .opts button.wrong { border-color:var(--bad); background:var(--bad-soft); color:var(--bad); }
+  /* a line of help with its icon, the meeting of a text's words first */
+  .read-note { display:flex; gap:8px; align-items:flex-start; margin:0 4px 6px; font-size:13.5px; }
+  .read-note svg { width:16px; height:16px; flex:none; margin-top:2px; color:var(--faint); }
+  .voices + .read-note { margin-top:10px; }
+  .warm { display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px; margin-top:14px;
+    font-size:14.5px; }
+  .warm button.small { min-height:34px; padding:5px 12px; background:var(--surface); }
+  .chip-word { display:inline-block; padding:6px 12px; border-radius:99px; font-size:14px;
+    font-weight:600; background:var(--surface); border:1px solid var(--border); }
+  .list.free { margin-top:12px; }
+  .chip-head { margin:4px 4px 0; font-size:13px; font-weight:700; color:var(--muted); }
+  .chip-head + .recall { margin-bottom:14px; }
 
   /* ------------------------------------------------------------ typing
      With the phone's keyboard up there is about half a screen left, so the
@@ -997,6 +1009,13 @@ const ICONS = {
         '<path d="M15.6 14.2l1.6-.9"/><circle cx="19.2" cy="12.2" r="2.1"/><path d="M5.5 15.5v3M13.5 15.5v3"/>',
   mute: '<path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M16 9.5l5 5M21 9.5l-5 5"/>',
   info: '<circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5"/><path d="M12 7.5h.01"/>',
+  lock: '<rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/>',
+  play: '<rect x="3" y="7" width="18" height="11" rx="4"/><path d="M7.5 10.5v4M5.5 12.5h4"/>' +
+        '<path d="M15.5 11.5h.01M18 13.5h.01"/>',
+  gear: '<circle cx="12" cy="12" r="3"/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4' +
+        'M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7"/>',
+  turn: '<path d="M4 12a8 8 0 0 1 13.7-5.6L20 8.5"/><path d="M20 4v4.5h-4.5"/>' +
+        '<path d="M20 12a8 8 0 0 1-13.7 5.6L4 15.5"/><path d="M4 20v-4.5h4.5"/>',
   read: '<path d="M6 3.5h8.5L19 8v12.5H6z"/><path d="M14 3.5V8h5"/><path d="M9 12h7M9 15.5h7M9 8.5h3"/>'
 };
 function icon(name) {
@@ -1312,10 +1331,17 @@ function home() {
   const book = books[speechLang()];
   if (!book) loadBook();          // quietly, so the next visit can name the next text
   const nextText = book && book.texts.find(t => !reading().done[t.id]);
+  const nextWords = nextText && textWords(book, nextText, cardIndex());
   more.appendChild(listItem({ lead: icobox("read", "var(--warn)"), title: "Reading",
-    detail: nextText ? `Next: ${esc(nextText.title)} (${nextText.level})`
+    detail: nextText ? `Next: ${esc(nextText.title)} (${nextText.level})` +
+                       (textOpen(nextText, nextWords) ? "" : ", once you meet its words")
                      : book ? "Every text read" : "Short texts from A1 to B2, with questions",
     end: icon("chevron"), onTap: () => readScreen() }));
+  // playing with any words, which never moves a card
+  const free = el("div", "list free");
+  free.appendChild(listItem({ lead: icobox("play", "var(--k-gaps)"), title: "Free practice",
+    detail: "Any words, by level, kind or topic. Your boxes stay as they are.",
+    end: icon("chevron"), onTap: practiceScreen }));
   more.appendChild(listItem({ lead: icobox("plus"), title: "Add a word",
     detail: "Something you met today", end: icon("chevron"), onTap: addWordScreen }));
   const cfg = cloudSettings();
@@ -1336,15 +1362,20 @@ function home() {
     syncRow.appendChild(now);
   }
   more.appendChild(syncRow);
+  more.appendChild(listItem({ lead: icobox("gear"), title: "Settings",
+    detail: `${sessionSize()} words a session · ${speech ? "voice and listening" : "sessions"}`,
+    end: icon("chevron"), onTap: settingsScreen }));
 
-  show([top, hero, sectionHead("Practise"), grid,
+  show([top, hero, sectionHead("Practise"), grid, free,
         sectionHead("Your words", "Details", progressScreen), ladder,
         sectionHead("More"), more], tabBar("home"));
 }
 
 /* ---------------------------------------------------------------- session */
 function buildQueue(kind) {
-  const size = 30, ration = 15;
+  // the size is the learner's to choose; up to half of it can be new words
+  const size = sessionSize(), ration = Math.max(5, Math.round(size / 2));
+  if (kind && kind.learn) return learnQueue(kind.learn.book, kind.learn.t);
   let pool = state.cards.filter(c => due(c) && !c.suspended);
   if (kind && kind.sorting) {
     pool = state.cards.filter(c => !c.stage && !c.suspended);
@@ -1355,7 +1386,7 @@ function buildQueue(kind) {
       pool.sort((a, b) => a.w.localeCompare(b.w));
     else if (kind.order === "random") pool.sort(() => Math.random() - 0.5);
     else pool.sort((a, b) => (a.topic + a.spos + a.w).localeCompare(b.topic + b.spos + b.w));
-    return pool.slice(0, 30);
+    return pool.slice(0, size);
   }
   if (kind === "sorting") pool = pool.filter(c => !c.stage);
   else if (kind === "flashcards") pool = pool.filter(c => c.stage === 1);
@@ -1373,11 +1404,16 @@ function buildQueue(kind) {
   return all.slice(0, size);
 }
 
+// where the cross in the session bar goes: home, or back to a text whose
+// words were being learnt, or to the free-practice menu
+let quitTo = null;
 function start(kind) {
   filter = kind;
+  if (kind && kind.learn) addTextWords(kind.learn.book, kind.learn.t);
   queue = buildQueue(kind);
   index = 0;
   results = { seen: 0, correct: 0, boxes: 0, levels: 0 };
+  quitTo = kind && kind.learn ? () => openText(kind.learn.book, kind.learn.t) : null;
   chrome(true);
   if (!queue.length) return summary("Nothing is due");
   next();
@@ -1425,6 +1461,19 @@ function summary(title) {
   }
   save();
   autoSync("session end");
+  quitTo = null;
+  const learnt = filter && filter.learn;
+  if (learnt) {
+    // straight back to the text, which opens now if enough words were met
+    const { book, t } = learnt;
+    const words = textWords(book, t, cardIndex());
+    nodes.push(el("div", "card center", textOpen(t, words)
+      ? `<b>“${esc(t.title)}” is open.</b> You have met ${words.seen} of its ${words.total} words.`
+      : `You have met ${words.seen} of the ${words.total} words in “${esc(t.title)}”. ` +
+        `It opens at ${Math.ceil(words.total * OPEN_AT)}.`));
+    return show(nodes, [button("Home", "back", home),
+      button("Back to the text" + icon("chevron"), "primary grow", () => openText(book, t))]);
+  }
   show(nodes, [button("Back to home", "primary grow", home)]);
 }
 
@@ -1479,8 +1528,9 @@ const LANG_ALIASES = {
   dan: "da", danish: "da", no: "nb", nor: "nb", nob: "nb", norwegian: "nb", heb: "he",
   hebrew: "he", hin: "hi", hindi: "hi", fas: "fa", per: "fa", persian: "fa", cat: "ca", catalan: "ca"
 };
-function speechLang() {
-  for (const name of [state.language, state.language_name]) {
+function speechLang(s) {
+  s = s || state || {};
+  for (const name of [s.language, s.language_name]) {
     const key = (name || "").trim().toLowerCase();
     const base = key.split(/[-_ ]/)[0];
     if (LANG_ALIASES[key]) return LANG_ALIASES[key];
@@ -1489,15 +1539,24 @@ function speechLang() {
   }
   return "";
 }
-function voiceFor(lang) {
-  const tag = v => (v.lang || "").toLowerCase().replace("_", "-");
-  const mine = voices.filter(v => tag(v).split("-")[0] === lang ||
-                                  (lang === "nb" && tag(v).split("-")[0] === "no"));
-  // the better voices a phone can download first, the joke voices last
+const voiceTag = v => (v.lang || "").toLowerCase().replace("_", "-");
+/* Every voice this device has for the language, the better ones first: the
+   ones a phone can download, then the joke voices last. */
+function voicesFor(lang) {
+  const mine = voices.filter(v => voiceTag(v).split("-")[0] === lang ||
+                                  (lang === "nb" && voiceTag(v).split("-")[0] === "no"));
   const score = v => (/premium/i.test(v.name) ? 8 : /enhanced|neural|natural/i.test(v.name) ? 4 : 0) +
-    (tag(v) === `${lang}-${lang}` ? 2 : 0) + (v.localService ? 1 : 0) -
+    (voiceTag(v) === `${lang}-${lang}` ? 2 : 0) + (v.localService ? 1 : 0) -
     (/^(eddy|flo|grandma|grandpa|reed|rocko|sandy|shelley)\b/i.test(v.name) ? 6 : 0);
-  return mine.sort((a, b) => score(b) - score(a))[0] || null;
+  return mine.sort((a, b) => score(b) - score(a));
+}
+/* The voice picked in Settings when this device still has it, otherwise
+   the best one. Voices belong to each device, so the choice is kept here. */
+function voiceFor(lang) {
+  const mine = voicesFor(lang);
+  const chosen = (prefs.voices || {})[lang];
+  return (chosen && (mine.find(v => v.voiceURI === chosen) || mine.find(v => v.name === chosen))) ||
+    mine[0] || null;
 }
 /* "Turkish" rather than whatever short code the collection was given. */
 function languageName(lang) {
@@ -1588,6 +1647,13 @@ function withSay(face, text) {
    it was the answer, once it has been answered. The speaker in the session
    bar turns this off for the whole phone, for a quiet train, say. */
 let autoSay = true;
+/* Choices kept for this device, whichever language is open: whether words
+   are said by themselves, how many words a session has, the voice picked for
+   each language and the last free-practice set-up. */
+let prefs = { autoSay: true, size: 30, voices: {}, practice: {} };
+function savePrefs() { idbSet("prefs", { ...prefs, autoSay }).catch(() => {}); }
+const SESSION_SIZES = [10, 20, 30, 50];
+const sessionSize = () => SESSION_SIZES.includes(prefs.size) ? prefs.size : 30;
 const soundBtn = document.getElementById("sound");
 function paintSound() {
   soundBtn.classList.toggle("hidden", !speech);
@@ -1600,7 +1666,7 @@ function paintSound() {
 soundBtn.addEventListener("click", () => {
   autoSay = !autoSay;
   paintSound();
-  idbSet("prefs", { autoSay }).catch(() => {});
+  savePrefs();
   if (!autoSay && speech) speech.cancel();
   flash(autoSay ? "Words will be said aloud." : "Words won't be said aloud. The speakers still work.");
 });
@@ -1769,13 +1835,8 @@ function prepareBook(data, lang) {
   }
   return { lang, dict: data.dict || {}, texts, firstIn };
 }
-function reading() {
-  if (!state.reading) state.reading = {};
-  if (!state.reading.done) state.reading.done = {};
-  if (!state.reading.words) state.reading.words = {};
-  return state.reading;
-}
-const wordKey = w => (w || "").trim().toLocaleLowerCase(speechLang() || undefined);
+const reading = () => readingOf(state);
+const wordKey = w => keyIn(state)(w);
 const cardIndex = () => new Map(state.cards.map(c => [wordKey(c.w), c]));
 function findCard(w) { return cardIndex().get(wordKey(w)) || null; }
 function isReadingWord(card) {
@@ -1845,6 +1906,103 @@ function markToken(book, t, span, index) {
 const markIn = (text, at, length) =>
   esc(text.slice(0, at)) + `<mark>${esc(text.slice(at, at + length))}</mark>` + esc(text.slice(at + length));
 
+/* Where a word of the text is first used: its sentence, the translation and
+   the place in the sentence, as a tap on it would give. */
+function occurrence(book, t, lemma) {
+  for (const para of t.p) for (const [sentence, sentenceEn] of para) for (const m of pieces(book, t, sentence)) {
+    const hit = lookupToken(book, t, m.text);
+    if (hit.lemma === lemma) return { book, t, sentence, sentenceEn, at: m.index, token: m.text, ...hit };
+  }
+  return null;
+}
+
+/* ------------------------------------------------- words before the text
+   A text opens once most of its words have been met: 80% of the words it
+   explains must be in the learner's words and past the sorting pass. Met is
+   enough; learnt is not needed. Until then the text offers a short deck:
+   its words not met yet (added from the text when the list lacks them) and
+   those of its words that are due. Words in a box and not due are left
+   alone. A finished text always opens. */
+const OPEN_AT = 0.8;
+const met = card => !!card && ((card.stage || 0) >= 1 || !!card.suspended);
+function textWords(book, t, index) {
+  const rows = [...new Set(Object.values(t.words || {}))]
+    .map(lemma => ({ lemma, card: index.get(wordKey(lemma)) || null }));
+  const seen = rows.filter(x => met(x.card)).length;
+  return { rows, seen, total: rows.length, share: rows.length ? seen / rows.length : 1,
+           unseen: rows.filter(x => !met(x.card)),
+           due: rows.filter(x => met(x.card) && due(x.card)) };
+}
+const textOpen = (t, words) => !!reading().done[t.id] || words.share >= OPEN_AT - 1e-9;
+function openText(book, t) {
+  const words = textWords(book, t, cardIndex());
+  return textOpen(t, words) ? readText(book, t) : learnFirst(book, t, words);
+}
+/* The words the text explains that the learner's list does not have yet go
+   in, waiting to be sorted, with their sentence from the text. */
+function addTextWords(book, t) {
+  const index = cardIndex();
+  let added = 0;
+  for (const lemma of new Set(Object.values(t.words || {}))) {
+    if (index.has(wordKey(lemma)) || !book.dict[lemma]) continue;
+    const ctx = occurrence(book, t, lemma) || { t, sentence: "", sentenceEn: "", at: 0, off: 0, len: 0 };
+    const [en, pos, art] = book.dict[lemma];
+    const card = readingCard(ctx, lemma, en, pos, art, 0);
+    index.set(wordKey(card.w), card);
+    added++;
+  }
+  if (added) save();
+  return added;
+}
+/* Sorting first, since that is what opens the text, then the due words. A
+   session never stops short of what the text needs to open. */
+function learnQueue(book, t) {
+  const words = textWords(book, t, cardIndex());
+  const unseen = words.unseen.map(x => x.card).filter(c => c && !c.suspended);
+  const need = Math.max(0, Math.ceil(words.total * OPEN_AT - 1e-9) - words.seen);
+  return unseen.concat(words.due.map(x => x.card)).slice(0, Math.max(sessionSize(), need));
+}
+
+function learnFirst(book, t, words) {
+  setProgress("", 0); chrome(false);
+  words = words || textWords(book, t, cardIndex());
+  const pct = Math.round(100 * words.share);
+  const target = Math.ceil(words.total * OPEN_AT - 1e-9);
+  const missing = words.unseen.filter(x => !x.card).length;
+  const toSort = words.unseen.length - missing;
+  const intro = el("div", "card");
+  intro.innerHTML = `<h2>Meet its words first</h2><div class="muted">You have met <b>${words.seen}</b> ` +
+    `of the <b>${words.total}</b> words this text explains (${pct}%). A text opens at 80%, here ` +
+    `${target} words, so that you read it rather than decode it. Meeting a word once is enough: ` +
+    "it does not have to be learnt yet.</div>" +
+    `<div class="meter" style="margin-top:14px"><i style="--c:var(--warn);width:${pct}%"></i></div>`;
+  const list = el("div", "list");
+  for (const [name, colour, n, title, detail] of [
+    ["sort", "var(--s0)", toSort, "To sort", "In your words, not met yet"],
+    ["plus", "var(--primary)", missing, "New to your words", "Added from the text, then sorted"],
+    ["flash", "var(--s1)", words.due.length, "Due again", "In a box and due today"],
+    ["check", "var(--good)", words.seen - words.due.length, "Met, not due", "Left alone"]])
+    if (n) list.appendChild(listItem({ lead: icobox(name, colour), title, detail, end: `<b>${n}</b>` }));
+  const chips = el("div");
+  for (const [title, group] of [["Not met yet", words.unseen], ["Due again", words.due]]) {
+    if (!group.length) continue;
+    chips.appendChild(el("div", "label chip-head", title));
+    const row = el("div", "recall");
+    for (const x of group)
+      row.appendChild(el("span", "chip-word", esc(x.card ? wordText(x.card) : dictWord(book, x.lemma))));
+    chips.appendChild(row);
+  }
+  // the same count the session will have once the missing words are in
+  const deck = Math.min(words.unseen.length + words.due.length,
+                        Math.max(sessionSize(), target - words.seen));
+  show([metaLine(`${t.level} · ${esc(t.title_en)}`), pageHead(esc(t.title)), intro, list,
+        sectionHead("Its words"), chips], [
+    button("All texts", "back", () => readScreen()),
+    button(`Learn ${deck} word${deck === 1 ? "" : "s"}` + icon("chevron"),
+           "primary grow", () => start({ learn: { book, t } }))
+  ]);
+}
+
 async function readScreen(view) {
   view = view || "texts";
   setProgress("", 0); chrome(false);
@@ -1890,6 +2048,9 @@ async function readScreen(view) {
       "them, open this tab once while online so the phone can keep a copy.</div>"));
   } else {
     const next = book.texts.find(t => !r.done[t.id]);
+    const index = cardIndex();
+    nodes.push(el("div", "muted read-note", `${icon("lock")}<span>A text opens once you have met 80% of ` +
+      "its words. Tap a closed one to meet them first.</span>"));
     for (const [level, name, colour] of LEVELS) {
       const texts = book.texts.filter(t => t.level === level);
       if (!texts.length) continue;
@@ -1897,14 +2058,18 @@ async function readScreen(view) {
       const list = el("div", "list");
       for (const t of texts) {
         const done = r.done[t.id];
+        const words = textWords(book, t, index);
+        const open = textOpen(t, words);
+        const pct = Math.round(100 * words.share);
         list.appendChild(listItem({
           lead: `<span class="lvl" style="--c:${colour}">${level}</span>`,
           title: esc(t.title),
-          detail: `${esc(t.title_en)} · ${Math.max(1, Math.round(t.size / 90))} min · ${t.fresh.length} new` +
-            (t.again.length ? `, ${t.again.length} from before` : ""),
+          detail: `${esc(t.title_en)} · ${Math.max(1, Math.round(t.size / 90))} min · ` +
+            (done ? `${t.fresh.length} new, ${t.again.length} from before` : `${pct}% of its words met`),
           end: done ? `<span class="badge" style="--c:var(--good)">${icon("check")}${done.score}/${done.total}</span>`
+            : !open ? `<span class="badge" style="--c:var(--muted)">${icon("lock")}${pct}%</span>`
             : t === next ? '<span class="badge" style="--c:var(--primary)">Start here</span>' : icon("chevron"),
-          onTap: () => readText(book, t)
+          onTap: () => open ? readText(book, t) : learnFirst(book, t, words)
         }));
       }
       nodes.push(list);
@@ -1935,6 +2100,17 @@ function readText(book, t) {
       chips.appendChild(chip);
     }
     before.appendChild(chips);
+  }
+  // an open text can still have a few of its words waiting or due: offered,
+  // never required
+  const words = textWords(book, t, index);
+  const warm = words.unseen.length + words.due.length;
+  if (warm) {
+    const line = el("div", "warm", `${warm} of its words ${warm === 1 ? "is" : "are"} ` +
+      (words.due.length && words.unseen.length ? "due or not met yet."
+        : words.due.length ? "due today." : "not met yet."));
+    line.appendChild(button("Review them first", "small soft", () => start({ learn: { book, t } })));
+    before.appendChild(line);
   }
   const key = el("div", "key",
     '<span><i class="k-new">new</i>key word</span><span><i class="k-old">met</i>from before</span>' +
@@ -2122,23 +2298,38 @@ function addWordSheet(ctx) {
    saying it is new), with the sentence it was met in as its example and as
    a gap sentence, so the gap and translation exercises can use it too. */
 function addFromText(ctx, w, en, pos, art) {
-  w = w.trim(); en = en.trim();
-  let card = findCard(w);
-  if (!card) {
-    const surface = ctx.sentence.slice(ctx.at + ctx.off, ctx.at + ctx.off + ctx.len);
-    card = { w, en, pos: pos || "", spos: CONTENT_POS.includes(pos) ? pos : "", art: art || "",
-      coll: "", ex: ctx.sentence, topic: "reading", cefr: ctx.t.level, explain: "", explain_native: "",
-      stage: 1, box: 1, mbox: 1, marks: 0, flags: 0, due: todayStr(), reviews: 0, correct: 0,
-      lapses: 0, manual: 1, updated_at: nowStr(), senses: [],
-      sentences: [{ it: ctx.sentence, en: ctx.sentenceEn || "", surface,
-                    a: ctx.at + ctx.off, b: ctx.at + ctx.off + ctx.len, tag: "reading" }] };
-    state.cards.push(card);
-  }
+  const card = findCard(w) || readingCard(ctx, w, en, pos, art, 1);
   reading().words[wordKey(card.w)] = { text: ctx.t.id, at: nowStr() };
   save();
   if (readSession && readSession.refresh) readSession.refresh();
   flash(`${card.w} added to your words, with this sentence.`);
   return card;
+}
+
+/* A new card made from a word of a text: into flashcards (stage 1) when the
+   reader tapped it as unknown, or waiting to be sorted (stage 0) when it
+   came in with the words a text needs. Either way it is a reading word. */
+function readingCard(ctx, w, en, pos, art, stage) {
+  w = w.trim(); en = en.trim();
+  const a = ctx.at + (ctx.off || 0), b = a + (ctx.len || 0);
+  const card = { w, en, pos: pos || "", spos: sposFor(pos), art: art || "",
+    coll: "", ex: ctx.sentence || "", topic: "reading", cefr: ctx.t.level, explain: "", explain_native: "",
+    stage, box: 1, mbox: 1, marks: 0, flags: 0, due: todayStr(), reviews: 0, correct: 0,
+    lapses: 0, manual: 1, updated_at: nowStr(), senses: [],
+    sentences: ctx.sentence && b > a ? [{ it: ctx.sentence, en: ctx.sentenceEn || "",
+      surface: ctx.sentence.slice(a, b), a, b, tag: "reading" }] : [] };
+  state.cards.push(card);
+  reading().words[wordKey(card.w)] = { text: ctx.t.id, at: nowStr() };
+  return card;
+}
+/* The desktop's short part-of-speech names, which the filters use. */
+const SPOS = { noun: "noun", verb: "verb", adjective: "adj", adj: "adj", adverb: "adv", adv: "adv",
+  expression: "phrase", phrase: "phrase", number: "num", num: "num", pronoun: "func",
+  preposition: "func", conjunction: "func", article: "func", determiner: "func", func: "func" };
+function sposFor(pos) {
+  const p = (pos || "").trim().toLowerCase();
+  if (!p) return "";
+  return SPOS[p] || SPOS[p.split(/[\/ ]/)[0]] || (p.includes("expression") ? "phrase" : "other");
 }
 
 /* -------------------------------------------------------- reading questions
@@ -2154,11 +2345,8 @@ function vocabQuestions(book, t) {
     const pool = Object.entries(book.dict).filter(([k, v]) => k !== lemma && v[0] !== right);
     const same = pool.filter(([, v]) => v[1] === pos);
     const o = shuffle([right, ...shuffle(same.length >= 3 ? same : pool).slice(0, 3).map(([, v]) => v[0])]);
-    let ctx = "";
-    search: for (const para of t.p) for (const [s] of para) for (const m of pieces(book, t, s)) {
-      const hit = lookupToken(book, t, m.text);
-      if (hit.lemma === lemma) { ctx = markIn(s, m.index + hit.off, hit.len); break search; }
-    }
+    const where = occurrence(book, t, lemma);
+    const ctx = where ? markIn(where.sentence, where.at + where.off, where.len) : "";
     return { t: "vocab", kind, lemma, q: dictWord(book, lemma), en: "What does it mean here?", o,
       a: o.indexOf(right), ctx, why: `It means “${right}”.` +
         (kind === "old" ? ` You first met it in “${book.firstIn[lemma].title}”.` : "") };
@@ -2245,8 +2433,11 @@ function textSheet(t) {
 function readingSummary(book, t, list) {
   const right = readSession.answers.filter(Boolean).length;
   const r = reading();
-  r.done[t.id] = { score: right, total: list.length, at: nowStr() };
+  // each answer is kept, right or wrong, and travels to the other devices
+  r.done[t.id] = { score: right, total: list.length, at: nowStr(),
+                   answers: list.map((q, i) => !!readSession.answers[i]) };
   save();
+  autoSync("text finished");
   const recalled = Object.values(readSession.recall);
   const added = Object.values(r.words).filter(w => w.text === t.id).length;
   const head = el("div", "center");
@@ -2267,7 +2458,7 @@ function readingSummary(book, t, list) {
   readSession = null;
   show([head, stats], [
     button("All texts", next ? "back" : "primary grow", () => readScreen()),
-    next ? button(`Next: ${esc(next.title)}`, "primary grow", () => readText(book, next)) : null
+    next ? button(`Next: ${esc(next.title)}`, "primary grow", () => openText(book, next)) : null
   ]);
 }
 
@@ -2760,7 +2951,8 @@ let cameFrom = "";
 
 // what the bookmarks go back to when the exchange has to start from scratch
 const NO_MARKERS = { pulled_to: "", pushed_to: "", reviews_to: "", reviews_sent: "",
-                     pulled_seq: "", reviews_seq: "" };
+                     pulled_seq: "", reviews_seq: "",
+                     reading_sent: "", reading_to: "", reading_seq: "" };
 
 /* The settings are passed in rather than read from `state`, because you can
    switch collection while a sync is still talking to the database. */
@@ -2782,8 +2974,11 @@ async function cloudRequest(method, path, body, cfg) {
     try { code = JSON.parse(text).code || ""; } catch (e) { /* not JSON */ }
     if (response.status === 401 || response.status === 403)
       throw new Error("The key was refused. Check it is the anon public key.");
-    if (response.status === 404)
-      throw new Error("The table was not found. Run the setup SQL in Supabase.");
+    if (response.status === 404) {
+      const error = new Error("The table was not found. Run the setup SQL in Supabase.");
+      error.status = 404; error.code = code;
+      throw error;
+    }
     const error = new Error(`${response.status}: ${text.slice(0, 200)}`);
     error.code = code;
     throw error;
@@ -2800,9 +2995,9 @@ async function cloudRequest(method, path, body, cfg) {
 const PAGE = 1000;
 const pgQuote = v => '"' + String(v).replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"';
 
-async function pullAll(cfg, table, select, col, since, extra) {
+async function pullAll(cfg, table, select, col, since, extra, key = "word") {
   const base = `${table}?collection=eq.${encodeURIComponent(cfg.collection)}` +
-    `&select=${select}&order=${col}.asc,word.asc&limit=${PAGE}` + (extra || "");
+    `&select=${select}&order=${col}.asc,${key}.asc&limit=${PAGE}` + (extra || "");
   const rows = [];
   let last = null;
   for (;;) {
@@ -2811,7 +3006,7 @@ async function pullAll(cfg, table, select, col, since, extra) {
     let path = base;
     if (last) path += "&or=" + encodeURIComponent(
       `(${col}.gt.${pgQuote(last[col])},` +
-      `and(${col}.eq.${pgQuote(last[col])},word.gt.${pgQuote(last.word)}))`);
+      `and(${col}.eq.${pgQuote(last[col])},${key}.gt.${pgQuote(last[key])}))`);
     else if (since) path += `&${col}=gt.${encodeURIComponent(since)}`;
     const page = await cloudRequest("GET", path, undefined, cfg);
     if (!page.length) return rows;
@@ -2835,7 +3030,7 @@ function shiftStamp(stamp, ms, zoned) {
    Every row carries the time its card was studied. That is the right thing
    for deciding which answer wins, and the wrong thing for a bookmark: a phone
    that studied offline at 10:00 and uploads at noon is invisible to a device
-   whose bookmark already says 11:00. With supabase-sync-cursor.sql run once,
+   whose bookmark already says 11:00. With supabase-upgrade.sql run once,
    the database stamps every write itself (synced_at) and that is the
    bookmark. Without it, each pull reaches back a day, which catches the usual
    walk with no signal at the cost of reading a day of rows again. */
@@ -2845,12 +3040,12 @@ const SERVER_OVERLAP = 120e3;     // two minutes: writes can commit out of order
 // minutes, so running the SQL takes effect without restarting the app
 const noServerStamp = new Map();
 
-async function pullChanged(cfg, table, select, studied, seqMark, stampMark, extraIfNew) {
+async function pullChanged(cfg, table, select, studied, seqMark, stampMark, extraIfNew, key) {
   if (!(Date.now() - (noServerStamp.get(cfg.url) || 0) < 6e5)) {
     try {
       const since = shiftStamp(cfg[seqMark], SERVER_OVERLAP, true);
       const rows = await pullAll(cfg, table, `${select},synced_at`, "synced_at", since,
-                                 since ? "" : extraIfNew);
+                                 since ? "" : extraIfNew, key);
       // pages arrive in synced_at order, so the last row is the newest
       return { rows, seq: rows.length ? rows[rows.length - 1].synced_at : (cfg[seqMark] || "") };
     } catch (e) {
@@ -2861,7 +3056,7 @@ async function pullChanged(cfg, table, select, studied, seqMark, stampMark, extr
     }
   }
   const since = shiftStamp(cfg[stampMark], STAMP_OVERLAP);
-  const rows = await pullAll(cfg, table, select, studied, since, since ? "" : extraIfNew);
+  const rows = await pullAll(cfg, table, select, studied, since, since ? "" : extraIfNew, key);
   return { rows, seq: cfg[seqMark] || "" };
 }
 
@@ -2925,6 +3120,42 @@ function cardState(card) {
   return out;
 }
 
+/* A card row's progress, taken onto the card here. */
+function takeState(card, row) {
+  const st = row.state || {};
+  card.stage = st.stage; card.box = st.box; card.mbox = st.meaning_box;
+  card.marks = st.meaning_marks; card.flags = st.dir_flags; card.due = st.due;
+  card.reviews = st.reviews; card.correct = st.correct; card.lapses = st.lapses;
+  card.prod = st.prod_passes; card.updated_at = row.updated_at;
+  if (st.suspended !== undefined) card.suspended = st.suspended ? 1 : 0;
+  if (st.cloze_passes !== undefined) card.cloze = st.cloze_passes;
+  if (st.senses && card.senses)
+    for (const s of card.senses) {
+      const inc = st.senses[s.gloss];
+      if (inc && (inc.last_review || "") > (s.last_review || "")) Object.assign(s, inc);
+    }
+}
+/* A word another device made, as a card here: what it was made with, and
+   its progress from the database when there is a row for it. */
+function adoptCard(target, data, row) {
+  const w = String(data.w || "").trim();
+  const ex = data.ex || "";
+  let sentences = Array.isArray(data.sentences) ? data.sentences : [];
+  if (!sentences.length && ex) {
+    const at = ex.toLowerCase().indexOf(w.toLowerCase());
+    if (at >= 0) sentences = [{ it: ex, en: "", surface: ex.slice(at, at + w.length),
+                                a: at, b: at + w.length, tag: "base" }];
+  }
+  const card = { w, en: data.en || "", pos: data.pos || "", spos: data.spos || sposFor(data.pos),
+    art: data.art || "", coll: data.coll || "", ex, topic: data.topic || "general",
+    cefr: data.cefr || "", explain: "", explain_native: "", stage: 0, box: 1, mbox: 1, marks: 0,
+    flags: 0, due: todayStr(), reviews: 0, correct: 0, lapses: 0, manual: 1, updated_at: "",
+    senses: [], sentences };
+  if (row) takeState(card, row);
+  target.cards.push(card);
+  return card;
+}
+
 function cloudSync(quiet) {
   return exclusive(() => syncCollection(state)).then(summary => {
     if (!quiet) notify(summary);
@@ -2949,21 +3180,16 @@ async function syncCollection(target) {
   for (const row of remote) {
     if ((row.updated_at || "") > pulledTo) pulledTo = row.updated_at;
     const card = byWord.get(row.word);
-    if (!card) continue;
+    if (!card) {
+      // a word made on another phone (added by hand or from a text) comes
+      // here too, rather than waiting for the desktop to adopt it
+      const made = (row.state || {}).new_word;
+      if (made && made.w === row.word) { byWord.set(row.word, adoptCard(target, made, row)); took++; }
+      continue;
+    }
     if (card.fresh) delete card.fresh;        // the sync has spoken for it
     if ((row.updated_at || "") <= (card.updated_at || "")) continue;
-    const st = row.state || {};
-    card.stage = st.stage; card.box = st.box; card.mbox = st.meaning_box;
-    card.marks = st.meaning_marks; card.flags = st.dir_flags; card.due = st.due;
-    card.reviews = st.reviews; card.correct = st.correct; card.lapses = st.lapses;
-    card.prod = st.prod_passes; card.updated_at = row.updated_at;
-    if (st.suspended !== undefined) card.suspended = st.suspended ? 1 : 0;
-    if (st.cloze_passes !== undefined) card.cloze = st.cloze_passes;
-    if (st.senses && card.senses)
-      for (const s of card.senses) {
-        const inc = st.senses[s.gloss];
-        if (inc && (inc.last_review || "") > (s.last_review || "")) Object.assign(s, inc);
-      }
+    takeState(card, row);
     took++;
   }
 
@@ -3022,10 +3248,109 @@ async function syncCollection(target) {
                    reviews_sent: mine.reduce((m, r) => r.ts > m ? r.ts : m, sentBefore),
                    last: nowStr() };
   await save(target);
-  const summary = `Sent ${rows.length}, took in ${took}.`;
+  // the cards are safe by now, so reading has its own try: a database
+  // without the reading table yet still syncs every card
+  let readingNote = "";
+  try {
+    const r = await syncReading(target, cfg);
+    target.cloud = { ...target.cloud, reading_missing: "" };
+    if (r.took) readingNote = ` Reading: took in ${r.took}.`;
+  } catch (e) {
+    const missing = e.status === 404 || e.code === "PGRST205" || e.code === "42P01";
+    target.cloud = { ...target.cloud, reading_missing: missing ? nowStr() : "" };
+    if (!missing) readingNote = ` Reading not synced: ${e.message}`;
+  }
+  await save(target);
+  const summary = `Sent ${rows.length}, took in ${took}.` + readingNote;
   lastSync = { sent: rows.length, took, seen: remote.length,
                pulledFrom: cutoffPull || "(everything)" };
   return summary;
+}
+
+/* ------------------------------------------------------------ reading sync
+   What happened in the Read tab travels too, one row per item in the
+   `reading` table (supabase-upgrade.sql): each finished text with its score
+   and answers ("text:<id>"), and each reading word ("word:<word>") with the
+   text it came from and what it takes to make the card on a device that has
+   never seen it. The later of two copies of an item wins. */
+function readingOf(s) {
+  if (!s.reading) s.reading = {};
+  if (!s.reading.done) s.reading.done = {};
+  if (!s.reading.words) s.reading.words = {};
+  return s.reading;
+}
+const keyIn = s => w => (w || "").trim().toLocaleLowerCase(speechLang(s) || undefined);
+const cardData = c => c && { w: c.w, en: c.en, pos: c.pos || "", spos: c.spos || "", art: c.art || "",
+  coll: c.coll || "", ex: c.ex || "", topic: "reading", cefr: c.cefr || "", sentences: c.sentences || [] };
+
+async function syncReading(target, cfg) {
+  const r = readingOf(target);
+  const key = keyIn(target);
+  const index = new Map(target.cards.map(c => [key(c.w), c]));
+  // what to send is settled before the pull, so what comes in is not sent back
+  const cutoff = cfg.reading_sent || "";
+  let sentTo = cutoff;
+  const out = [];
+  const add = (item, at, state) => {
+    if (cutoff && at && at <= cutoff) return;
+    const stamp = at || nowStr();
+    if (stamp > sentTo) sentTo = stamp;
+    out.push({ collection: cfg.collection, item, updated_at: stamp, state });
+  };
+  for (const [id, d] of Object.entries(r.done)) add("text:" + id, d.at, d);
+  for (const [k, w] of Object.entries(r.words))
+    add("word:" + k, w.at, { ...w, card: cardData(index.get(k)) || undefined });
+
+  const pulled = await pullChanged(cfg, "reading", "item,updated_at,state", "updated_at",
+                                   "reading_seq", "reading_to", "", "item");
+  let latest = cfg.reading_to || "", took = 0;
+  const wanted = [];                   // words this device has never had
+  for (const row of pulled.rows) {
+    if ((row.updated_at || "") > latest) latest = row.updated_at;
+    const cut = row.item.indexOf(":");
+    const kind = row.item.slice(0, cut), id = row.item.slice(cut + 1);
+    const st = row.state || {};
+    if (kind === "text") {
+      const mine = r.done[id];
+      if (!mine || (st.at || "") > (mine.at || "")) {
+        r.done[id] = { score: st.score, total: st.total, at: st.at || row.updated_at,
+                       ...(Array.isArray(st.answers) ? { answers: st.answers } : {}) };
+        took++;
+      }
+    } else if (kind === "word") {
+      if (!r.words[id]) { r.words[id] = { text: st.text || "", at: st.at || row.updated_at }; took++; }
+      const card = index.get(id);
+      if (!card && st.card && st.card.w) wanted.push(st.card);
+      else if (card && st.card) {
+        // made here from the bare word: the sentence from the text is better
+        if (!(card.sentences || []).length && (st.card.sentences || []).length)
+          card.sentences = st.card.sentences;
+        if (!card.cefr && st.card.cefr) card.cefr = st.card.cefr;
+        // only a word made on a phone; the desktop's own words keep their topic
+        if (card.manual && (!card.topic || card.topic === "general")) card.topic = "reading";
+      }
+    }
+  }
+  // a reading word made on another device: its card, with that card's
+  // progress from the database where there is a row for it
+  for (let i = 0; i < wanted.length; i += 40) {
+    const batch = wanted.slice(i, i + 40);
+    const rows = await cloudRequest("GET", `cards?collection=eq.${encodeURIComponent(cfg.collection)}` +
+      `&select=word,updated_at,state&word=in.(${encodeURIComponent(batch.map(d => pgQuote(d.w)).join(","))})`,
+      undefined, cfg);
+    const byWord = new Map(rows.map(x => [x.word, x]));
+    for (const data of batch)
+      if (!index.has(key(data.w))) index.set(key(data.w), adoptCard(target, data, byWord.get(data.w)));
+  }
+  // a finished text that just came in newer than this device's copy is not
+  // sent back over itself
+  const send = out.filter(row => !row.item.startsWith("text:") ||
+    (r.done[row.item.slice(5)] || {}).at === row.state.at);
+  for (let i = 0; i < send.length; i += 300)
+    await cloudRequest("POST", "reading", send.slice(i, i + 300), cfg);
+  target.cloud = { ...target.cloud, reading_sent: sentTo, reading_to: latest, reading_seq: pulled.seq };
+  if (target === state && readSession && readSession.refresh) readSession.refresh();
+  return { sent: send.length, took };
 }
 
 async function forcePull() {
@@ -3350,6 +3675,341 @@ function sortingScreen() {
   show([head, row, note, list, more], [button("Back", "back", home), go]);
 }
 
+/* ---------------------------------------------------------------- settings
+   Kept on this device for every language on it: how long a session is, and
+   how words are said. Voices belong to each device, so does the choice. */
+let voicesChanged = null;
+if (speech && speech.addEventListener)
+  speech.addEventListener("voiceschanged", () => { if (voicesChanged) voicesChanged(); });
+
+function settingsScreen() {
+  chrome(false);
+  const lang = speechLang();
+  const nodes = [pageHead("Settings", "Kept on this phone, for every language on it.")];
+
+  nodes.push(sectionHead("Sessions"));
+  const sizes = el("div", "card");
+  sizes.appendChild(el("h2", "", "Words in a session"));
+  sizes.appendChild(el("div", "muted", "How many cards a session, a sorting round or free " +
+    "practice holds. Up to half of a session can be words you have not studied yet."));
+  const seg = el("div", "segment");
+  seg.style.margin = "14px 0 0";
+  const sizeButtons = SESSION_SIZES.map(n => button(String(n), n === sessionSize() ? "on" : "", () => {
+    prefs.size = n;
+    savePrefs();
+    sizeButtons.forEach(b => b.classList.toggle("on", b.textContent === String(n)));
+    flash(`${n} words a session.`);
+  }));
+  sizeButtons.forEach(b => { b.setAttribute("aria-label", `${b.textContent} words`); seg.appendChild(b); });
+  sizes.appendChild(seg);
+  nodes.push(sizes);
+
+  if (speech) {
+    nodes.push(sectionHead("Listening"));
+    const card = el("div", "card");
+    const check = document.createElement("input");
+    check.type = "checkbox"; check.checked = autoSay;
+    const sw = el("label", "switch");
+    sw.append(el("span", "", "Say words aloud by themselves during a session"), check);
+    check.addEventListener("change", () => { autoSay = check.checked; paintSound(); savePrefs(); });
+    card.appendChild(sw);
+    nodes.push(card);
+
+    const name = languageName(lang);
+    nodes.push(sectionHead(`${name} voice`));
+    const list = el("div", "list voices");
+    const help = el("div", "muted read-note");
+    // a sentence from the words themselves, the same each time so the
+    // voices can be compared
+    const sample = state.cards.find(c => c.ex && c.ex.length >= 18 && c.ex.length <= 70);
+    const sampleText = sample ? sample.ex : state.cards.length ? wordText(state.cards[0]) : "";
+    const paintVoices = () => {
+      if (!list.isConnected && list.childElementCount) { voicesChanged = null; return; }
+      if (!voices.length) loadVoices();
+      const mine = lang ? voicesFor(lang) : [];
+      const picked = (prefs.voices || {})[lang];
+      const current = mine.length ? voiceFor(lang) : null;
+      const isAuto = !picked || !mine.some(v => v.voiceURI === picked || v.name === picked);
+      list.innerHTML = "";
+      list.classList.toggle("hidden", !mine.length);
+      const choose = (uri, v, row) => {
+        if (uri) prefs.voices = { ...prefs.voices, [lang]: uri };
+        else { prefs.voices = { ...prefs.voices }; delete prefs.voices[lang]; }
+        savePrefs();
+        paintVoices();
+        if (sampleText) say(sampleText, null, { auto: false });
+      };
+      const tick = on => on ? `<span class="badge" style="--c:var(--primary)">${icon("check")}Chosen</span>` : "";
+      list.appendChild(listItem({ lead: icobox("bolt", "var(--s1)"), title: "Automatic",
+        detail: mine[0] ? `The best one here: ${esc(mine[0].name)}` : "",
+        end: tick(isAuto), onTap: () => choose("", null) }));
+      for (const v of mine) {
+        const kind = /premium/i.test(v.name) ? "Premium" : /enhanced|neural|natural/i.test(v.name) ? "Enhanced" : "";
+        list.appendChild(listItem({ lead: icobox("speaker"), title: esc(v.name),
+          detail: [esc(v.lang), kind, v.localService === false ? "needs a connection" : ""]
+            .filter(Boolean).join(" · "),
+          end: tick(!isAuto && current === v), onTap: () => choose(v.voiceURI || v.name, v) }));
+      }
+      help.innerHTML = mine.length
+        ? `${icon("info")}<span>Tap a voice to choose it and hear it. ${mine.length === 1
+            ? "This device has only one for " + esc(name) + ". " : ""}More can be added: ${esc(voiceHelp())}</span>`
+        : `${icon("alert")}<span>This device has no ${esc(name)} voice yet. ${esc(voiceHelp())}</span>`;
+    };
+    voicesChanged = paintVoices;
+    paintVoices();
+    nodes.push(list, help);
+  }
+  show(nodes, [button("Back", "back", home)]);
+}
+
+/* ----------------------------------------------------------- free practice
+   Any words, picked by level, kind and topic, in three small games. Nothing
+   here is graded: no card moves, nothing becomes due and nothing is logged,
+   so it can be played as often as you like. */
+let play = null;
+const SPOS_NAME = { noun: "Nouns", verb: "Verbs", adj: "Adjectives", adv: "Adverbs", phrase: "Phrases",
+                    func: "Small words", num: "Numbers", other: "Other" };
+const posOf = card => sposFor(card.spos) || sposFor(card.pos);
+const topicName = v => {
+  const s = (v || "").replace(/_/g, " & ");
+  return s.charAt(0).toUpperCase() + s.slice(1);
+};
+/* A word's level: the one the desktop gave it, or else the level of the
+   first reading text that uses it. */
+function levelOf(card, book) {
+  if (card.cefr) return card.cefr;
+  if (!book) return "";
+  if (!book.levelOf) {
+    book.levelOf = new Map();
+    for (const [lemma, t] of Object.entries(book.firstIn)) book.levelOf.set(wordKey(lemma), t.level);
+  }
+  return book.levelOf.get(wordKey(card.w)) || "";
+}
+const WHICH = [["", "All words"], ["met", "Words I've met"], ["new", "Not met yet"],
+               ["reading", "Reading words"]];
+const GAMES = [["flip", "Flip", "See the card, think of the answer, then turn it."],
+               ["choose", "Choose", "Pick the right one of four."],
+               ["type", "Type", "See the English and type the word."]];
+const DIRECTIONS = [["out", "Word → English"], ["in", "English → word"], ["mixed", "Mixed"]];
+
+async function practiceScreen() {
+  chrome(false); setProgress("", 0);
+  play = null; quitTo = null;
+  const book = await loadBook();
+  const p = { level: "", pos: "", topic: "", which: "", mode: "flip", dir: "out", ...(prefs.practice || {}) };
+  const words = state.cards.filter(c => !c.suspended);
+  const facet = (get, name) => {
+    const counts = new Map();
+    for (const c of words) { const v = get(c); if (v) counts.set(v, (counts.get(v) || 0) + 1); }
+    return [...counts].sort((a, b) => a[0] === "other" ? 1 : b[0] === "other" ? -1 : b[1] - a[1])
+      .map(([v, n]) => [v, `${name(v)} (${n})`]);
+  };
+  const levels = facet(c => levelOf(c, book), v => v).sort((a, b) => a[0].localeCompare(b[0]));
+  const kinds = facet(posOf, v => SPOS_NAME[v] || v);
+  const topics = facet(c => c.topic, topicName);
+  const matching = () => words.filter(c =>
+    (!p.level || levelOf(c, book) === p.level) && (!p.pos || posOf(c) === p.pos) &&
+    (!p.topic || c.topic === p.topic) &&
+    (!p.which || (p.which === "met" ? met(c) : p.which === "new" ? !met(c) : isReadingWord(c))));
+  const remember = () => { prefs.practice = { ...p }; savePrefs(); };
+
+  const row = el("div", "filters");
+  for (const [field, caption, values] of [["level", "Any level", levels], ["pos", "Any kind of word", kinds],
+                                           ["topic", "Any topic", topics], ["which", "", WHICH.slice(1)]]) {
+    if (!values.length) { p[field] = ""; continue; }
+    if (p[field] && !values.some(([v]) => v === p[field])) p[field] = "";
+    const sel = selectFrom([["", caption || WHICH[0][1]], ...values], v => { p[field] = v; remember(); paint(); });
+    sel.value = p[field];
+    row.appendChild(sel);
+  }
+  const note = el("div", "muted");
+  note.style.margin = "0 4px 4px";
+
+  const games = el("div", "segment");
+  const dirs = el("div", "segment");
+  const about = el("div", "muted");
+  about.style.margin = "-6px 4px 0";
+  const gameButtons = GAMES.map(([id, label]) => button(label, "", () => { p.mode = id; remember(); paint(); }));
+  const dirButtons = DIRECTIONS.map(([id, label]) => button(label, "", () => { p.dir = id; remember(); paint(); }));
+  games.append(...gameButtons);
+  dirs.append(...dirButtons);
+  const go = button("Play", "primary grow", () => {
+    const pool = matching();
+    startPlay(shuffle(pool).slice(0, sessionSize()), p.mode, p.dir, pool);
+  });
+
+  function paint() {
+    const n = matching().length;
+    note.textContent = n ? `${n} word${n === 1 ? "" : "s"} match. Each round takes ` +
+      `${Math.min(n, sessionSize())} of them at random.` : "No words match. Loosen a filter.";
+    GAMES.forEach(([id], i) => gameButtons[i].classList.toggle("on", p.mode === id));
+    DIRECTIONS.forEach(([id], i) => dirButtons[i].classList.toggle("on", p.dir === id));
+    dirs.classList.toggle("hidden", p.mode === "type");
+    about.textContent = GAMES.find(([id]) => id === p.mode)[2];
+    go.disabled = !n;
+    go.innerHTML = n ? `Play ${Math.min(n, sessionSize())} words` : "Play";
+  }
+  paint();
+  show([pageHead("Free practice", "Play with any of your words. Nothing here changes a card: " +
+          "no box moves, nothing becomes due and nothing counts as a review."),
+        row, note, sectionHead("Game"), games, dirs, about], [button("Back", "back", home), go]);
+}
+
+function startPlay(list, mode, dir, pool) {
+  play = { list, mode, dir, pool: pool || list, i: 0, right: 0, missed: [] };
+  quitTo = practiceScreen;
+  chrome(true);
+  playNext();
+}
+function playNext() {
+  if (!play) return;
+  if (play.i >= play.list.length) return playSummary();
+  const card = play.list[play.i];
+  setProgress(`${play.i + 1} of ${play.list.length}`, play.i / play.list.length);
+  const out = play.dir === "mixed" ? Math.random() < 0.5 : play.dir === "out";
+  if (play.mode === "choose") return playChoose(card, out);
+  if (play.mode === "type") return playType(card);
+  playFlip(card, out);
+}
+function playScore(card, right) {
+  if (right) play.right++; else play.missed.push(card);
+  play.i++;
+  playNext();
+}
+const playMeta = text => metaLine(`Free practice · ${text}`);
+
+function playFlip(card, out) {
+  const prompt = el("div", "prompt", out ? withArticle(card) : esc(card.en));
+  const answer = el("div", "reveal hidden",
+    `<div class="prompt">${out ? esc(card.en) : withArticle(card)}</div>` +
+    (card.ex ? `<div class="sentence">${esc(card.ex)}</div>` : ""));
+  const face = faceCard([prompt, el("div", "sub", esc(card.pos || ""))]);
+  const turn = button("Turn the card", "primary grow", () => {
+    answer.classList.remove("hidden");
+    if (!out) sayAnswer(wordText(card));
+    offerDetails(card);
+    foot.innerHTML = "";
+    foot.append(button("Not yet", "grow", () => playScore(card, false)),
+                button("Knew it", "primary grow", () => playScore(card, true)));
+    primaryButton = foot.querySelector("button.primary");
+  });
+  show([playMeta(out ? "word → English" : "English → word"),
+        out ? withSay(face, wordText(card)) : face, answer], [turn]);
+  if (out) sayAuto(wordText(card));
+}
+
+function playChoose(card, out) {
+  const text = c => out ? (c.en || "") : wordText(c);
+  const right = text(card);
+  // the wrong answers come from the same kind of word where there are enough
+  const others = (pool => {
+    const same = pool.filter(c => c !== card && posOf(c) === posOf(card));
+    return shuffle(same.length >= 3 ? same : pool.filter(c => c !== card));
+  })(play.pool.length >= 4 ? play.pool : state.cards);
+  const options = [right];
+  for (const c of others) {
+    const t = text(c);
+    if (t && !options.some(o => o.toLowerCase() === t.toLowerCase())) options.push(t);
+    if (options.length === 4) break;
+  }
+  const prompt = el("div", "prompt", out ? withArticle(card) : esc(card.en));
+  const face = faceCard([prompt, el("div", "sub", esc(card.pos || ""))], "compact");
+  const opts = el("div", "opts");
+  const feedback = el("div", "feedback left hidden");
+  let chosen = null;
+  const nextBtn = button("Next", "primary grow", () => playScore(card, chosen === right));
+  nextBtn.disabled = true;
+  const buttons = shuffle(options).map(o => {
+    const b = button(esc(o), "", () => {
+      if (chosen !== null) return;
+      chosen = o;
+      b.classList.add(o === right ? "right" : "wrong");
+      buttons.forEach(x => { x.disabled = true; if (x.dataset.o === right) x.classList.add("right"); });
+      feedback.innerHTML = o === right ? '<b class="good">Right.</b>'
+        : `<b class="bad">Not quite.</b> It is <b>${out ? esc(card.en) : withArticle(card)}</b>.`;
+      if (card.ex) feedback.innerHTML += `<br><span class="muted">${esc(card.ex)}</span>`;
+      feedback.classList.remove("hidden");
+      if (!out) sayAnswer(wordText(card));
+      offerDetails(card);
+      nextBtn.disabled = false;
+      primaryButton = nextBtn;
+    });
+    b.dataset.o = o;
+    opts.appendChild(b);
+    return b;
+  });
+  show([playMeta(out ? "choose the meaning" : "choose the word"),
+        out ? withSay(face, wordText(card)) : face, opts, feedback], [nextBtn]);
+  if (out) sayAuto(wordText(card));
+}
+
+function playType(card) {
+  const prompt = el("div", "prompt", esc(card.en));
+  const input = el("input");
+  input.placeholder = "type the word";
+  input.autocapitalize = "none"; input.autocomplete = "off"; input.autocorrect = "off";
+  input.spellcheck = false; input.enterKeyHint = "go";
+  const feedback = el("div", "feedback");
+  let right = null;
+  function check() {
+    if (right !== null) return;
+    const typed = input.value.trim();
+    if (!typed) return;
+    right = looseEq(typed, card.w) || looseEq(typed, wordText(card));
+    input.disabled = true;
+    const { verdict } = closeness(typed, [card.w]);
+    feedback.innerHTML = (right ? `<b class="good">Right.</b> ${withArticle(card)}`
+      : `<b class="bad">Not quite</b> (${esc(verdict)}). The word is <b>${withArticle(card)}</b>.`) +
+      (card.ex ? `<br><span class="muted">${esc(card.ex)}</span>` : "");
+    sayAnswer(wordText(card));
+    offerDetails(card);
+    foot.innerHTML = "";
+    foot.appendChild(button("Next", "primary grow", () => playScore(card, right)));
+    primaryButton = foot.querySelector("button.primary");
+  }
+  input.addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); check(); } });
+  show([playMeta("type the word"), faceCard([prompt, el("div", "sub", esc(card.pos || ""))], "compact"),
+        input, feedback], [
+    button("Show it", "ghost", () => { if (right === null) { input.value = ""; right = false;
+      input.disabled = true;
+      feedback.innerHTML = `The word is <b>${withArticle(card)}</b>.` +
+        (card.ex ? `<br><span class="muted">${esc(card.ex)}</span>` : "");
+      sayAnswer(wordText(card)); offerDetails(card);
+      foot.innerHTML = "";
+      foot.appendChild(button("Next", "primary grow", () => playScore(card, false)));
+      primaryButton = foot.querySelector("button.primary"); } }),
+    button("Check", "primary grow", check)
+  ]);
+  setTimeout(() => input.focus(), 60);
+}
+
+function playSummary() {
+  const done = play;
+  play = null; quitTo = null;
+  setProgress("", 1); chrome(false);
+  const head = el("div", "center");
+  head.appendChild(el("div", "done-mark", icon("play")));
+  head.appendChild(el("h1", "", "Round over"));
+  head.appendChild(el("div", "muted", `${done.right} of ${done.list.length} right. ` +
+    "Your cards are just as they were."));
+  const nodes = [head];
+  if (done.missed.length) {
+    nodes.push(sectionHead("Missed"));
+    const list = el("div", "list");
+    for (const card of done.missed)
+      list.appendChild(listItem({ title: withArticle(card), detail: esc(card.en),
+        end: icon("chevron"), onTap: () => wordSheet(card) }));
+    nodes.push(list);
+  }
+  show(nodes, [
+    button("Menu", "back", practiceScreen),
+    done.missed.length ? button(`Again with the ${done.missed.length} missed`, "",
+      () => startPlay(shuffle(done.missed), done.mode, done.dir, done.pool)) : null,
+    button(icon("turn") + "New round", "primary grow",
+      () => startPlay(shuffle(done.pool).slice(0, sessionSize()), done.mode, done.dir, done.pool))
+  ]);
+}
+
 function addWordScreen() {
   chrome(false);
   const head = pageHead("Add a word",
@@ -3506,6 +4166,12 @@ function cloudScreen() {
     detail: cfg.url && cfg.collection ? `Collection \u201c${esc(cfg.collection)}\u201d`
       : "Paste the three values from the desktop\u2019s Phone sync dialog."
   }));
+  if (cfg.url && cfg.reading_missing)
+    status.appendChild(listItem({
+      lead: icobox("read", "var(--warn)"), title: "Reading stays on this phone for now",
+      detail: "The database has no reading table yet. Run supabase-upgrade.sql once in " +
+        "Supabase\u2019s SQL editor, and finished texts and reading words sync too."
+    }));
 
   const conn = el("div", "card");
   if (hasWords) {
@@ -3763,6 +4429,9 @@ async function importFile(payload, quiet) {
     state = { id: base ? base.id : undefined,
               language: payload.language, language_name: payload.language_name,
               cards: payload.cards, reviews: (base && base.reviews) || [],
+              // what was read here, and the words made here that the desktop
+              // has not taken in yet, survive downloading the words again
+              ...(base && base.reading ? { reading: base.reading } : {}),
               cloud };
     // a re-imported collection must not undo progress made here
     let kept = 0;
@@ -3789,6 +4458,9 @@ async function importFile(payload, quiet) {
         kept++;
       }
     }
+    const inSnapshot = new Set(state.cards.map(c => c.w));
+    for (const mine of keep.values())
+      if (mine.manual && !inSnapshot.has(mine.w)) state.cards.push(mine);
     await save();
     if (!quiet)
       notify(`Loaded ${state.cards.length} ${state.language_name || ""} words.` +
@@ -3879,7 +4551,13 @@ function setup() {
   }).catch(() => {});
 }
 
-quitBtn.addEventListener("click", () => { if (speech) speech.cancel(); save(); home(); });
+quitBtn.addEventListener("click", () => {
+  if (speech) speech.cancel();
+  if (!play) save();                 // free practice changes nothing to save
+  const to = quitTo || home;
+  quitTo = null; play = null;
+  to();
+});
 soundBtn.addEventListener("mousedown", event => {
   if (isField(document.activeElement)) event.preventDefault();
 });
@@ -3893,8 +4571,10 @@ soundBtn.addEventListener("mousedown", event => {
   // records saved before keys were fixed keep the key they were found under
   if (state && state.cards && state.cards.length) state.id = opened ? key : stateKey(state);
   const known = state && state.cloud;
-  const prefs = await idbGet("prefs");
-  if (prefs && prefs.autoSay === false) autoSay = false;
+  const kept = await idbGet("prefs");
+  if (kept) prefs = { ...prefs, ...kept, voices: { ...(kept.voices || {}) },
+                      practice: { ...(kept.practice || {}) } };
+  autoSay = prefs.autoSay !== false;
   paintSound();
   connection = (await idbGet("connection")) ||
     (known && known.url && known.key

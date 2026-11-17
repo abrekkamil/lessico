@@ -155,9 +155,16 @@ explanations and the common phrases. Tapping a word in the **Words** tab
 opens the same sheet.
 
 The speaker buttons say the word or sentence aloud with the phone's own
-voices. That costs nothing, needs no key and works offline. Tap again within a
-few seconds to hear it slower. During a session the speaker appears only where
-hearing the word would not give the answer away. If the device has no voice
+voices. That costs nothing, needs no key and works offline. Next to a word's
+speaker is a turtle that says it slowly, to catch every sound and repeat it.
+Tap the speaker again within a few seconds and it is slower too.
+
+During a session the word is said by itself. When the card shows it (the word
+to give the meaning of, a sentence to translate), you hear it as the card
+appears. When the card shows the English and you type the word, it is said
+once you have answered, and the card's own speakers then say it again at
+either speed. The speaker in the session bar turns this off and on; the phone
+remembers the choice, and the buttons still work while it is off. If the device has no voice
 for the language, it says so and where to add one. On an iPhone, voices are
 added under Settings › Accessibility › Spoken Content › Voices, and the
 *Enhanced* ones sound much better. On a Windows computer, Microsoft Edge has
@@ -172,8 +179,11 @@ easy to hard. They are original texts written for the app (in
 `reading/it.json` and `reading/tr.json`), each with its English translation.
 A1 has 40 texts per language. They start with a few sentences about one
 person and work up to ads, menus, timetables, messages, a diary, short
-biographies and a survey with percentages. The same people come back from
-text to text, so their words do too.
+biographies and a survey with percentages. A2 has 40 more, a little longer and
+with past tenses, some in short series that follow one story over two or
+three texts. The same people come back from text to text, so their words do
+too. A phrase the text explains as one, such as *öğleden sonra* or *fare la
+spesa*, is tapped and added as one.
 The method follows exam-style reading books such as METU's *Reader at Work*:
 - **Before you read**, a question gets you thinking about the topic.
 - **Recycled words:** the words you met in earlier texts come back. They are

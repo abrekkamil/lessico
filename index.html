@@ -67,8 +67,11 @@
   /* the bar along the top only appears during a session */
   #top { display:none; align-items:center; gap:12px; padding:10px var(--gutter) 6px; }
   body.session #top { display:flex; }
-  #quit { width:42px; height:42px; min-height:0; padding:0; border-radius:13px; flex:none;
+  #quit, #sound { width:42px; height:42px; min-height:0; padding:0; border-radius:13px; flex:none;
     background:var(--surface2); border:none; box-shadow:none; color:var(--muted); }
+  #sound { color:var(--primary-text); }
+  #sound.off { color:var(--faint); }
+  #sound svg { width:21px; height:21px; }
   #bar { flex:1; height:10px; background:var(--surface2); border-radius:99px; overflow:hidden; }
   #bar i { display:block; height:100%; width:0; border-radius:99px;
     background:linear-gradient(90deg,var(--primary),var(--primary-2));
@@ -387,8 +390,11 @@
   .say svg { width:20px; height:20px; }
   .say.speaking { color:var(--on-primary);
     background:linear-gradient(135deg,var(--primary),var(--primary-2)); }
-  .face > .say { position:absolute; top:12px; right:12px; }
-  .face.text:has(> .say) { padding-right:58px; }
+  /* the word at its own pace and slowly, one above the other */
+  .says { display:flex; flex-direction:column; gap:8px; flex:none; }
+  .say.slow svg { width:22px; height:22px; }
+  .face > .says { position:absolute; top:12px; right:12px; }
+  .face.text:has(> .says) { padding-right:58px; }
   .face.tap { cursor:pointer; }
   .face .more { display:inline-flex; align-items:center; gap:6px; align-self:center; margin-top:12px;
     padding:6px 12px 6px 10px; border-radius:99px; background:var(--primary-soft);
@@ -399,6 +405,7 @@
     overflow-y:auto; overscroll-behavior:contain; padding-bottom:0; text-align:left; }
   .details .head { display:flex; align-items:flex-start; gap:12px; }
   .details .head .prompt { flex:1; margin:0; font-size:clamp(28px,8vw,36px); }
+  .details .head .says { flex-direction:row; }
   .details .tags { color:var(--muted); font-size:13.5px; font-weight:600; margin-top:6px; }
   .details .gloss { font-size:18px; font-weight:650; margin-top:12px; line-height:1.4; }
   .details .label { margin:22px 2px 8px; font-size:12.5px; font-weight:800; text-transform:uppercase;
@@ -474,13 +481,16 @@
      sentence, four meanings) can push it under the keyboard. */
   input, textarea { scroll-margin:12px 0 64px; }
   body.typing #top { padding-top:4px; padding-bottom:2px; }
-  body.typing #quit { width:34px; height:34px; border-radius:11px; }
+  body.typing #quit, body.typing #sound { width:34px; height:34px; border-radius:11px; }
+  body.typing #sound svg { width:18px; height:18px; }
   body.typing #main { padding-top:4px; padding-bottom:10px; }
   body.typing #main .eyebrow { display:none; }
   body.typing #main .face { min-height:0; padding:12px 14px 10px; margin-bottom:8px; border-radius:20px; }
   body.typing #main .face::before { height:4px; }
-  body.typing #main .face > .say { top:8px; right:8px; width:32px; height:32px; }
-  body.typing #main .face > .say svg { width:17px; height:17px; }
+  body.typing #main .face > .says { top:8px; right:8px; gap:6px; }
+  body.typing #main .face:has(> .says) { min-height:82px; }
+  body.typing #main .face .say { width:32px; height:32px; }
+  body.typing #main .face .say svg { width:17px; height:17px; }
   body.typing #main .prompt { font-size:clamp(24px,7vw,28px); margin-bottom:2px; }
   body.typing #main .sub { font-size:13px; }
   body.typing #main .sentence { font-size:18px; line-height:1.45; }
@@ -533,6 +543,7 @@
   <button id="quit" aria-label="End the session"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
   <span id="bar"><i></i></span>
   <span class="meta" id="counter"></span>
+  <button id="sound" type="button"></button>
 </div>
 
 <div id="main"></div>
@@ -982,6 +993,9 @@ const ICONS = {
        '<path d="M9 3.5v2.5M13 3.5v2.5"/>',
   speaker: '<path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6"/>' +
            '<path d="M18.2 6.3a8 8 0 0 1 0 11.4"/>',
+  slow: '<path d="M3 15.5a6.5 6 0 0 1 13 0z"/><path d="M6.8 10.6 9.5 13l2.7-2.4"/>' +
+        '<path d="M15.6 14.2l1.6-.9"/><circle cx="19.2" cy="12.2" r="2.1"/><path d="M5.5 15.5v3M13.5 15.5v3"/>',
+  mute: '<path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M16 9.5l5 5M21 9.5l-5 5"/>',
   info: '<circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5"/><path d="M12 7.5h.01"/>',
   read: '<path d="M6 3.5h8.5L19 8v12.5H6z"/><path d="M14 3.5V8h5"/><path d="M9 12h7M9 15.5h7M9 8.5h3"/>'
 };
@@ -1440,8 +1454,9 @@ function wordText(card) {
 
 /* --------------------------------------------------------------- listening
    Pronunciation comes from the phone's own voices (the Web Speech API): no
-   cost, no key, and it works offline once the voice is on the phone. A second
-   tap on the same thing within a few seconds says it again, slower. */
+   cost, no key, and it works offline once the voice is on the phone. Words
+   have a second button, the turtle, that says them slowly, and a second tap
+   on any speaker within a few seconds says it again, slower. */
 const speech = window.speechSynthesis || null;
 let voices = [];
 function loadVoices() {
@@ -1514,22 +1529,28 @@ function voiceHelp() {
   return "Add a voice for it in the device's speech settings, then close and reopen the browser.";
 }
 let lastSaid = { text: "", at: 0 };
-function say(text, from) {
+const SLOW_RATE = 0.5;
+/* `how.slow` is the turtle; `how.auto` is the app speaking by itself, which
+   stays quiet where there is no voice rather than asking on every card. */
+function say(text, from, how = {}) {
   if (!speech || !text) return;
   if (!voices.length) loadVoices();
   const lang = speechLang();
   const voice = lang ? voiceFor(lang) : null;
   if (voices.length && !voice) {
+    if (how.auto) return;
     const name = languageName(lang);
     return notify(`This browser has no ${name} voice yet. ${voiceHelp()}`, `No ${name} voice here`);
   }
-  const slower = lastSaid.text === text && Date.now() - lastSaid.at < 6000;
+  const plainTap = !how.slow && !how.auto;
+  const slower = how.slow || (plainTap && lastSaid.text === text && Date.now() - lastSaid.at < 6000);
   speech.cancel();
   const line = new SpeechSynthesisUtterance(text);
   if (voice) line.voice = voice;
   line.lang = voice ? voice.lang : lang;
-  line.rate = slower ? 0.6 : 0.92;
-  lastSaid = { text, at: Date.now() };
+  line.rate = slower ? SLOW_RATE : 0.92;
+  // only a tap on the speaker counts towards "again, slower"
+  lastSaid = plainTap ? { text, at: Date.now() } : { text: "", at: 0 };
   document.querySelectorAll(".say.speaking").forEach(b => b.classList.remove("speaking"));
   if (from) {
     from.classList.add("speaking");
@@ -1537,21 +1558,64 @@ function say(text, from) {
   }
   speech.speak(line);
 }
-/* A round button that says `text`; nothing at all where the phone cannot speak. */
-function sayButton(text) {
+/* A round button that says `text`, or with `slow` the turtle that says it
+   slowly; nothing at all where the phone cannot speak. */
+function sayButton(text, slow) {
   text = (text || "").trim();
   if (!speech || !text) return null;
-  const b = el("button", "say", icon("speaker"));
+  const b = el("button", "say" + (slow ? " slow" : ""), icon(slow ? "slow" : "speaker"));
   b.type = "button";
-  b.setAttribute("aria-label", "Listen");
-  b.title = "Listen. Tap again to hear it slower.";
-  b.addEventListener("click", event => { event.stopPropagation(); say(text, b); });
+  b.setAttribute("aria-label", slow ? "Listen slowly" : "Listen");
+  b.title = slow ? "Listen slowly, to repeat it" : "Listen. Tap again to hear it slower.";
+  b.addEventListener("click", event => { event.stopPropagation(); say(text, b, { slow: !!slow }); });
   return b;
 }
+/* Both speeds together: as it is said, and slowly enough to repeat. */
+function sayPair(text) {
+  const normal = sayButton(text);
+  if (!normal) return null;
+  const pair = el("span", "says");
+  pair.append(normal, sayButton(text, true));
+  return pair;
+}
 function withSay(face, text) {
-  const b = sayButton(text);
-  if (b) face.appendChild(b);
+  const pair = sayPair(text);
+  if (pair) face.appendChild(pair);
   return face;
+}
+
+/* In a session the word is said by itself: when the card shows it, and when
+   it was the answer, once it has been answered. The speaker in the session
+   bar turns this off for the whole phone, for a quiet train, say. */
+let autoSay = true;
+const soundBtn = document.getElementById("sound");
+function paintSound() {
+  soundBtn.classList.toggle("hidden", !speech);
+  soundBtn.innerHTML = icon(autoSay ? "speaker" : "mute");
+  soundBtn.classList.toggle("off", !autoSay);
+  soundBtn.setAttribute("aria-pressed", String(autoSay));
+  soundBtn.setAttribute("aria-label", "Say words aloud by themselves");
+  soundBtn.title = autoSay ? "Words are said aloud. Tap to stop." : "Words are not said aloud. Tap to hear them.";
+}
+soundBtn.addEventListener("click", () => {
+  autoSay = !autoSay;
+  paintSound();
+  idbSet("prefs", { autoSay }).catch(() => {});
+  if (!autoSay && speech) speech.cancel();
+  flash(autoSay ? "Words will be said aloud." : "Words won't be said aloud. The speakers still work.");
+});
+paintSound();
+function sayAuto(text) {
+  if (!autoSay) return;
+  const face = main.querySelector(".face");
+  say(text, face && face.querySelector(".says > .say:not(.slow)"), { auto: true });
+}
+/* Once answered, the answer can be heard: said by itself, and from the
+   card's own speakers for as long as the card is up. */
+function sayAnswer(text) {
+  const face = main.querySelector(".face");
+  if (face && !face.querySelector(":scope > .says")) withSay(face, text);
+  sayAuto(text);
 }
 
 /* ------------------------------------------------------------ word details
@@ -1569,7 +1633,7 @@ function wordSheet(card) {
 
   const head = el("div", "head");
   head.appendChild(el("div", "prompt", withArticle(card)));
-  const sayWord = sayButton(wordText(card));
+  const sayWord = sayPair(wordText(card));
   if (sayWord) head.appendChild(sayWord);
   box.appendChild(head);
   const tags = [card.pos || card.spos, card.cefr,
@@ -1701,6 +1765,7 @@ function prepareBook(data, lang) {
     t.fresh.forEach(l => { firstIn[l] = t; });
     t.again = lemmas.filter(l => firstIn[l] !== t);
     t.size = t.p.flat().reduce((n, [s]) => n + (s.match(WORD_RE) || []).length, 0);
+    t.longest = Math.max(1, ...Object.keys(t.words || {}).map(k => k.split(" ").length));
   }
   return { lang, dict: data.dict || {}, texts, firstIn };
 }
@@ -1749,6 +1814,27 @@ function lookupToken(book, t, token) {
     if (t.words[form]) return { lemma: t.words[form], base: form, off, len: form.length };
   const [base, off] = tries[1] || tries[0];
   return { lemma: null, base, off, len: base.length };
+}
+/* The words of a sentence as the reader taps them. A phrase the text glosses
+   as one ("öğleden sonra", "fare la spesa") stays one piece, so tapping it
+   gives the phrase rather than half of it. Longest phrase first. */
+function pieces(book, t, sentence) {
+  const words = [...sentence.matchAll(WORD_RE)];
+  const end = k => words[k].index + words[k][0].length;
+  const out = [];
+  for (let i = 0; i < words.length; i++) {
+    let last = i;
+    for (let j = Math.min(i + t.longest - 1, words.length - 1); j > i; j--) {
+      let joined = true;
+      for (let k = i + 1; k <= j && joined; k++) joined = sentence.slice(end(k - 1), words[k].index) === " ";
+      if (!joined) continue;
+      const hit = lookupToken(book, t, sentence.slice(words[i].index, end(j)));
+      if (hit.lemma && hit.base.includes(" ")) { last = j; break; }
+    }
+    out.push({ index: words[i].index, text: sentence.slice(words[i].index, end(last)) });
+    i = last;
+  }
+  return out;
 }
 function markToken(book, t, span, index) {
   const { lemma, base } = lookupToken(book, t, span.textContent);
@@ -1861,21 +1947,22 @@ function readText(book, t) {
     const text = el("div", "ptext");
     para.forEach(([sentence], j) => {
       let last = 0;
-      for (const m of sentence.matchAll(WORD_RE)) {
+      for (const m of pieces(book, t, sentence)) {
         if (m.index > last) text.appendChild(document.createTextNode(sentence.slice(last, m.index)));
         const span = el("span", "w");
-        span.textContent = m[0];
+        span.textContent = m.text;
         Object.assign(span.dataset, { i, j, a: m.index });
         markToken(book, t, span, index);
         text.appendChild(span);
-        last = m.index + m[0].length;
+        last = m.index + m.text.length;
       }
       text.appendChild(document.createTextNode(sentence.slice(last) + " "));
     });
     block.appendChild(text);
     const tools = el("div", "ptools");
-    const play = sayButton(para.map(([s]) => s).join(" "));
-    if (play) tools.appendChild(play);
+    const said = para.map(([s]) => s).join(" ");
+    const play = sayButton(said);
+    if (play) tools.append(play, sayButton(said, true));
     const english = el("div", "ptrans hidden", esc(para.map(([, en]) => en).join(" ")));
     tools.appendChild(button("English", "small soft", () => english.classList.toggle("hidden")));
     block.append(tools, english);
@@ -1926,7 +2013,7 @@ function openSheet(nodes) {
 function sheetHead(text) {
   const head = el("div", "head");
   head.appendChild(el("div", "prompt", esc(text)));
-  const play = sayButton(text);
+  const play = sayPair(text);
   if (play) head.appendChild(play);
   return head;
 }
@@ -2068,8 +2155,8 @@ function vocabQuestions(book, t) {
     const same = pool.filter(([, v]) => v[1] === pos);
     const o = shuffle([right, ...shuffle(same.length >= 3 ? same : pool).slice(0, 3).map(([, v]) => v[0])]);
     let ctx = "";
-    search: for (const para of t.p) for (const [s] of para) for (const m of s.matchAll(WORD_RE)) {
-      const hit = lookupToken(book, t, m[0]);
+    search: for (const para of t.p) for (const [s] of para) for (const m of pieces(book, t, s)) {
+      const hit = lookupToken(book, t, m.text);
       if (hit.lemma === lemma) { ctx = markIn(s, m.index + hit.off, hit.len); break search; }
     }
     return { t: "vocab", kind, lemma, q: dictWord(book, lemma), en: "What does it mean here?", o,
@@ -2259,6 +2346,7 @@ function viewTriage(card) {
     }),
     knew
   ]);
+  sayAuto(wordText(card));
 }
 
 function viewFlash(card, mode) {
@@ -2276,6 +2364,7 @@ function viewFlash(card, mode) {
 
   const reveal = button("Show answer", "primary grow", () => {
     answer.classList.remove("hidden");
+    if (!itEn) sayAnswer(wordText(card));
     offerDetails(card);
     foot.innerHTML = "";
     foot.appendChild(button("Didn't know", "grow", () => grade(false)));
@@ -2301,6 +2390,7 @@ function viewFlash(card, mode) {
   // the word can be heard when it is the question, not when it is the answer
   const face = faceCard([prompt, sub]);
   show([meta, itEn ? withSay(face, wordText(card)) : face, answer], [tip, reveal]);
+  if (itEn) sayAuto(wordText(card));
 }
 
 function viewMeanings(card) {
@@ -2404,6 +2494,7 @@ function viewMeanings(card) {
     button("Show the rest", "ghost", revealRest),
     button("Check", "primary grow", submit)
   ]);
+  sayAuto(wordText(card));
   setTimeout(() => input.focus(), 60);
 }
 
@@ -2458,6 +2549,7 @@ function viewReverse(card) {
     feedback.innerHTML = message +
       (card.ex ? `<br><span class="muted">${esc(card.ex)}</span>` : "") +
       `<br><span class="accent">${esc(applied)}</span>`;
+    sayAnswer(wordText(card));
     offerDetails(card);
     foot.innerHTML = "";
     foot.appendChild(button("Next", "primary grow", () =>
@@ -2522,6 +2614,7 @@ function viewCloze(card, blind) {
       ? `<b class="good">Correct.</b> ${esc(row.it)}`
       : `<b class="bad">Not this time.</b> The answer is <b>${esc(row.surface)}</b>.<br>${esc(row.it)}`) +
       `<br><span class="accent">${esc(message)}</span>`;
+    sayAnswer(row.surface);
     offerDetails(card);
     foot.innerHTML = "";
     foot.appendChild(button("Next", "primary grow", () =>
@@ -2577,6 +2670,7 @@ function viewTranslate(card, intoNative) {
       `<span class="${verdict[1]}">${verdict[0]}</span> (${Math.round(score * 100)}% of the key words)` +
       (missing.length ? `<br>Not found: ${esc(missing.slice(0, 6).join(", "))}` : "") +
       `<br><br>Reference: <b>${esc(target)}</b>`;
+    if (intoNative) sayAnswer(row.it);
     offerDetails(card);
     foot.innerHTML = "";
     foot.appendChild(button("Not quite", "grow", () => settle(false)));
@@ -2600,6 +2694,7 @@ function viewTranslate(card, intoNative) {
     }),
     button("Check", "primary grow", check)
   ]);
+  if (!intoNative) sayAuto(row.it);
 }
 
 function viewProduce(card) {
@@ -2646,6 +2741,7 @@ function viewProduce(card) {
   }
   show([meta, withSay(faceCard([prompt, sub], "compact"), wordText(card)), editor, report],
        [button("Check", "primary grow", check)]);
+  sayAuto(wordText(card));
 }
 
 /* ------------------------------------------------------------- cloud sync
@@ -3783,7 +3879,10 @@ function setup() {
   }).catch(() => {});
 }
 
-quitBtn.addEventListener("click", () => { save(); home(); });
+quitBtn.addEventListener("click", () => { if (speech) speech.cancel(); save(); home(); });
+soundBtn.addEventListener("mousedown", event => {
+  if (isField(document.activeElement)) event.preventDefault();
+});
 
 (async function boot() {
   await openDB();
@@ -3794,6 +3893,9 @@ quitBtn.addEventListener("click", () => { save(); home(); });
   // records saved before keys were fixed keep the key they were found under
   if (state && state.cards && state.cards.length) state.id = opened ? key : stateKey(state);
   const known = state && state.cloud;
+  const prefs = await idbGet("prefs");
+  if (prefs && prefs.autoSay === false) autoSay = false;
+  paintSound();
   connection = (await idbGet("connection")) ||
     (known && known.url && known.key
       ? { url: known.url, key: known.key, auto: !!known.auto } : connection);

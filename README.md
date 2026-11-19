@@ -216,18 +216,19 @@ Flip and Choose go from the word to English, from English to the word, or
 mixed. A round takes words at random, and at the end you can play the ones
 you missed again. The phone remembers the last set-up.
 
-A word's level is the one the desktop gave it. The Italian workbook has no
-levels yet, so there a word takes the level of the first reading text that
-uses it, and words no text uses have none.
+A word's level is the reviewed CEFR level stored in its collection. When a
+manually added word has no level yet, the first reading text that uses it can
+provide one.
 
 ## Reading
 
 The **Read** tab has short texts from A1 to B2 in Italian and Turkish, from
 easy to hard. They are original texts written for the app (in
 `reading/it.json` and `reading/tr.json`), each with its English translation.
-A1 has 40 texts per language. They start with a few sentences about one
-person and work up to ads, menus, timetables, messages, a diary, short
-biographies and a survey with percentages. A2 has 40 more, a little longer and
+They start with a few sentences about one person and work up to ads, menus,
+timetables, messages, a diary, short biographies and a survey with
+percentages. Italian now has 140 A1 texts and Turkish has 100; both languages
+have 40 A2 texts, a little longer and
 with past tenses, some in short series that follow one story over two or
 three texts. The same people come back from text to text, so their words do
 too. A phrase the text explains as one, such as *öğleden sonra* or *fare la

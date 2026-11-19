@@ -334,10 +334,43 @@
   .chart i.on { background:linear-gradient(180deg,var(--primary-2),var(--primary)); }
   .chart span { font-size:10.5px; font-weight:700; color:var(--faint); }
   .chart .today span { color:var(--primary-text); }
-  .boxes { display:grid; grid-template-columns:repeat(6,1fr); gap:6px; margin-top:12px; }
-  .boxes div { text-align:center; padding:10px 0 8px; border-radius:12px; background:var(--surface2); }
+  .boxes { display:grid; grid-template-columns:repeat(auto-fit,minmax(52px,1fr)); gap:6px; margin-top:12px; }
+  .boxes button { min-width:0; min-height:0; text-align:center; padding:10px 2px 8px; border:0;
+    border-radius:12px; background:var(--surface2); box-shadow:none; flex-direction:column; gap:0; }
+  .boxes button:hover { background:var(--primary-soft); }
   .boxes b { display:block; font-family:var(--display); font-size:20px; font-weight:800; }
   .boxes span { font-size:11px; font-weight:700; color:var(--faint); }
+
+  /* ------------------------------------------------------------ guide */
+  .guide-steps { counter-reset:guide; }
+  .guide-step { display:flex; gap:13px; align-items:flex-start; padding:13px 0;
+    border-bottom:1px solid var(--border); }
+  .guide-step:last-child { border-bottom:0; padding-bottom:0; }
+  .guide-step:first-child { padding-top:0; }
+  .guide-step::before { counter-increment:guide; content:counter(guide); width:30px; height:30px;
+    flex:none; display:grid; place-items:center; border-radius:10px; color:var(--primary-text);
+    background:var(--primary-soft); font-family:var(--display); font-weight:800; }
+  .guide-step b { display:block; margin-bottom:3px; }
+  .guide-step span { display:block; color:var(--muted); font-size:14px; line-height:1.5; }
+  .schedule { margin:14px -18px -18px; overflow:hidden; border-top:1px solid var(--border); }
+  .schedule-row { display:grid; grid-template-columns:minmax(62px,.65fr) minmax(130px,1.7fr) minmax(92px,1fr);
+    gap:10px; align-items:center; padding:11px 18px; border-bottom:1px solid var(--border);
+    font-size:13.5px; line-height:1.35; }
+  .schedule-row:last-child { border-bottom:0; }
+  .schedule-row.head { color:var(--faint); background:var(--surface2); font-size:11px;
+    font-weight:800; text-transform:uppercase; letter-spacing:.05em; }
+  .schedule-row > b { color:var(--text); }
+  .schedule-row > span { color:var(--muted); }
+  .schedule-row > small { color:var(--primary-text); font-size:12.5px; text-align:right; }
+  .guide-note { display:flex; gap:10px; align-items:flex-start; padding:14px 16px; margin-bottom:14px;
+    border-radius:var(--radius); color:var(--muted); background:var(--primary-soft);
+    font-size:14px; line-height:1.5; }
+  .guide-note svg { width:19px; height:19px; flex:none; color:var(--primary-text); margin-top:1px; }
+  @media (max-width:390px) {
+    .schedule-row { grid-template-columns:58px 1fr; }
+    .schedule-row > small { grid-column:2; text-align:left; margin-top:-5px; }
+    .schedule-row.head > small { display:none; }
+  }
 
   /* ------------------------------------------------------------ welcome */
   .welcome { text-align:center; padding-top:18px; }
@@ -1362,6 +1395,9 @@ function home() {
     syncRow.appendChild(now);
   }
   more.appendChild(syncRow);
+  more.appendChild(listItem({ lead: icobox("info", "var(--s2)"), title: "How Lessico works",
+    detail: "Getting started, box dates, readings and word lists",
+    end: icon("chevron"), onTap: infoScreen }));
   more.appendChild(listItem({ lead: icobox("gear"), title: "Settings",
     detail: `${sessionSize()} words a session · ${speech ? "voice and listening" : "sessions"}`,
     end: icon("chevron"), onTap: settingsScreen }));
@@ -2974,7 +3010,7 @@ function viewProduce(card) {
     } else {
       card.prod = (card.prod || 0) + 1;
       if (card.prod >= 3) { card.stage = 4; card.due = plusDays(45); card.prod = 0;
-        message = "Mastered. Spot-checked in 45 days."; }
+        message = "Mastered. It leaves the due queue; use Free practice anytime."; }
       else { card.due = plusDays(2);
         message = `Accepted: ${card.prod} of 3 towards mastered.`; }
     }
@@ -3536,36 +3572,67 @@ function selectFrom(values, onPick) {
   return sel;
 }
 
-function wordsScreen() {
+function wordsScreen(options) {
+  options = options || {};
   chrome(false);
-  let query = "", stageFilter = "", cefrFilter = "", dueFilter = "",
-      sourceFilter = "", coverageFilter = "";
+  let query = "", stageFilter = options.stage || "", boxFilter = options.box || "",
+      cefrFilter = "", dueFilter = "", sourceFilter = "", coverageFilter = "", limit = 150;
+  if (!stageFilter && boxFilter) stageFilter = boxFilter.startsWith("flash:") ? "1" : "2";
   const search = el("input");
   search.type = "search";
   search.placeholder = "Search words or meanings";
   search.autocapitalize = "none"; search.spellcheck = false;
-  search.addEventListener("input", () => { query = search.value.trim().toLowerCase(); paint(); });
+  search.addEventListener("input", () => { query = search.value.trim().toLowerCase(); limit = 150; paint(); });
   const searchBox = el("div", "search", icon("search"));
   searchBox.appendChild(search);
 
   const filters = el("div", "filters");
-  filters.appendChild(selectFrom([["", "Every level"],
-    ...LADDER.map(([stage, name]) => [String(stage), name])], v => { stageFilter = v; paint(); }));
+  let boxSelect;
+  const stageSelect = selectFrom([["", "Every level"],
+    ...LADDER.map(([stage, name]) => [String(stage), name])], v => {
+      stageFilter = v;
+      if (boxFilter && ((boxFilter.startsWith("flash:") && v !== "1") ||
+                        (boxFilter.startsWith("level2:") && v !== "2"))) {
+        boxFilter = ""; boxSelect.value = "";
+      }
+      limit = 150; paint();
+    });
+  stageSelect.value = stageFilter;
+  filters.appendChild(stageSelect);
+  const boxOptions = [["", "Any box"]];
+  for (let n = 1; n <= 7; n++) {
+    const count = state.cards.filter(card => stageOf(card).stage === 1 && stageOf(card).box === n).length;
+    boxOptions.push([`flash:${n}`, `Flashcards · box ${n} (${count})`]);
+  }
+  for (let n = 1; n <= LEVEL2_TOP; n++) {
+    const count = state.cards.filter(card => stageOf(card).stage === 2 && stageOf(card).box === n).length;
+    boxOptions.push([`level2:${n}`, `Level 2 · box ${n} (${count})`]);
+  }
+  boxSelect = selectFrom(boxOptions, v => {
+    boxFilter = v;
+    if (v) {
+      stageFilter = v.startsWith("flash:") ? "1" : "2";
+      stageSelect.value = stageFilter;
+    }
+    limit = 150; paint();
+  });
+  boxSelect.value = boxFilter;
+  filters.appendChild(boxSelect);
   const cefrValues = [...new Set(state.cards.map(c => c.cefr).filter(Boolean))].sort();
   if (cefrValues.length)
     filters.appendChild(selectFrom([["", "Any CEFR"], ...cefrValues.map(v => [v, v])],
-                                   v => { cefrFilter = v; paint(); }));
+                                   v => { cefrFilter = v; limit = 150; paint(); }));
   filters.appendChild(selectFrom([["", "Any schedule"], ["due", "Due"],
                                   ["not_due", "Not due"]],
-                                 v => { dueFilter = v; paint(); }));
+                                 v => { dueFilter = v; limit = 150; paint(); }));
   if (state.cards.some(isReadingWord))
     filters.appendChild(selectFrom([["", "All words"], ["reading", "From reading"]],
-                                   v => { sourceFilter = v; paint(); }));
+                                   v => { sourceFilter = v; limit = 150; paint(); }));
   const hasCoverageIndex = state.cards.some(card => Array.isArray(card.reading_texts));
   if (hasCoverageIndex)
     filters.appendChild(selectFrom([["", "Any text coverage"], ["covered", "In reading texts"],
                                     ["uncovered", "Not in reading texts"]],
-                                   v => { coverageFilter = v; paint(); }));
+                                   v => { coverageFilter = v; limit = 150; paint(); }));
   const note = el("div", "muted");
   note.style.margin = "0 4px 10px";
   const list = el("div", "list");
@@ -3576,6 +3643,14 @@ function wordsScreen() {
     if (query) rows = rows.filter(c =>
       c.w.toLowerCase().includes(query) || (c.en || "").toLowerCase().includes(query));
     if (stageFilter !== "") rows = rows.filter(c => String(c.stage ?? 1) === stageFilter);
+    if (boxFilter) {
+      const [kind, rawBox] = boxFilter.split(":");
+      const box = Number(rawBox);
+      rows = rows.filter(card => {
+        const place = stageOf(card);
+        return place.box === box && place.stage === (kind === "flash" ? 1 : 2);
+      });
+    }
     if (cefrFilter) rows = rows.filter(c => c.cefr === cefrFilter);
     if (dueFilter === "due") rows = rows.filter(due);
     if (dueFilter === "not_due") rows = rows.filter(card => !due(card));
@@ -3588,7 +3663,8 @@ function wordsScreen() {
       (hasCoverageIndex ? ` · ${covered} covered by texts · ${state.cards.length - covered} not covered` : "");
     list.innerHTML = "";
     list.classList.toggle("hidden", !rows.length);
-    for (const card of rows.slice(0, 150)) {
+    const shown = boxFilter ? rows : rows.slice(0, limit);
+    for (const card of shown) {
       const s = stageOf(card);
       const when = s.stage > 0 && s.stage < 4 && !card.suspended ? dueText(card.due) : "";
       const textRefs = readingTextRefs(card);
@@ -3605,9 +3681,14 @@ function wordsScreen() {
         onTap: () => wordSheet(card)
       }));
     }
-    more.textContent = rows.length > 150
-      ? `… and ${rows.length - 150} more. Search to narrow it down.`
-      : rows.length ? "" : "No words match.";
+    more.innerHTML = "";
+    if (!rows.length) more.textContent = "No words match.";
+    else if (!boxFilter && rows.length > limit) {
+      const left = rows.length - limit;
+      more.appendChild(button(`Show ${Math.min(150, left)} more · ${left} remaining`, "soft small", () => {
+        limit += 150; paint();
+      }));
+    }
   }
   paint();
   show([pageHead("Words"), searchBox, filters, note, list, more], tabBar("words"));
@@ -3642,15 +3723,30 @@ function progressScreen() {
       `<div class="meter"><i style="--c:${colour};width:${pct}%"></i></div>`));
   }
 
+  const flashBoxes = el("div", "card");
+  flashBoxes.appendChild(el("h2", "", "Flashcard boxes"));
+  flashBoxes.appendChild(el("div", "muted",
+    "Each box is practised in both directions. Tap a box to see every word in it."));
+  const flashGrid = el("div", "boxes");
+  for (let i = 1; i <= 7; i++) {
+    const count = state.cards.filter(card => stageOf(card).stage === 1 && stageOf(card).box === i).length;
+    const cell = button(`<b>${count}</b><span>Box ${i}</span>`, "", () => wordsScreen({ box: `flash:${i}` }));
+    cell.title = `Show the ${count} word${count === 1 ? "" : "s"} in flashcard box ${i}`;
+    cell.setAttribute("aria-label", cell.title);
+    flashGrid.appendChild(cell);
+  }
+  flashBoxes.appendChild(flashGrid);
+
   const boxes = el("div", "card");
   boxes.appendChild(el("h2", "", "Level 2 boxes"));
   boxes.appendChild(el("div", "muted",
     "Boxes 1–2 write meanings and words, 3–4 fill sentence gaps, 5–6 translate whole sentences."));
   const grid = el("div", "boxes");
   for (let i = 1; i <= LEVEL2_TOP; i++) {
-    const cell = el("div", "", `<b>${state.cards.filter(x => x.stage === 2 && mbox(x) === i).length}</b>` +
-      `<span>Box ${i}</span>`);
+    const count = state.cards.filter(card => stageOf(card).stage === 2 && stageOf(card).box === i).length;
+    const cell = button(`<b>${count}</b><span>Box ${i}</span>`, "", () => wordsScreen({ box: `level2:${i}` }));
     cell.title = BOX_NAME[i];
+    cell.setAttribute("aria-label", `${BOX_NAME[i]}. Show ${count} word${count === 1 ? "" : "s"}.`);
     grid.appendChild(cell);
   }
   boxes.appendChild(grid);
@@ -3675,7 +3771,7 @@ function progressScreen() {
   }
   activity.appendChild(chart);
 
-  show([pageHead("Progress"), stats, ladder, boxes, activity], tabBar("progress"));
+  show([pageHead("Progress"), stats, ladder, flashBoxes, boxes, activity], tabBar("progress"));
 }
 
 function sortingScreen() {
@@ -3830,6 +3926,122 @@ function settingsScreen() {
     nodes.push(list, help);
   }
   show(nodes, [button("Back", "back", home)]);
+}
+
+/* --------------------------------------------------------------- guide
+   The schedule is generated from the same intervals as the exercises, so
+   the dates shown here cannot drift away from the actual box rules. */
+function guideDate(days) {
+  const [year, month, day] = plusDays(days).split("-").map(Number);
+  return new Date(year, month - 1, day).toLocaleDateString(undefined,
+    { day: "numeric", month: "short", year: "numeric" });
+}
+function scheduleCard(title, detail, rows) {
+  const card = el("div", "card");
+  card.appendChild(el("h2", "", title));
+  card.appendChild(el("div", "muted", detail));
+  const table = el("div", "schedule");
+  table.appendChild(el("div", "schedule-row head", "<b>Place</b><span>Clean pass</span><small>If cleared today</small>"));
+  for (const [place, exercise, days] of rows) {
+    const wait = `${days} day${days === 1 ? "" : "s"}`;
+    table.appendChild(el("div", "schedule-row",
+      `<b>${esc(place)}</b><span>${esc(exercise)}</span><small>${wait} · ${esc(guideDate(days))}</small>`));
+  }
+  card.appendChild(table);
+  return card;
+}
+function infoScreen() {
+  chrome(false); setProgress("", 0);
+  const hasCollection = !!(state && state.cards && state.cards.length);
+  const nodes = [pageHead("How Lessico works",
+    "A practical guide to starting, review dates, boxes, readings and word lists.")];
+
+  if (hasCollection) {
+    const c = counts();
+    const status = el("div", "guide-note", icon(c.due ? "bolt" : c.s0 ? "sort" : "check") +
+      `<span><b>${c.due ? `${c.due} word${c.due === 1 ? " is" : "s are"} due now.` :
+        c.s0 ? `${c.s0} word${c.s0 === 1 ? " is" : "s are"} waiting to be sorted.` : "You are caught up."}</b> ` +
+      `${c.due ? "Start with the due queue; it mixes the exercises each card needs." :
+        c.s0 ? "Sort a small batch, then review only when the app brings it back." :
+        "Reading or Free practice is a good next step."}</span>`);
+    nodes.push(status);
+  }
+
+  nodes.push(sectionHead("Start here"));
+  const start = el("div", "card guide-steps");
+  for (const [title, detail] of [
+    ["Get one collection", "Download it from Sync or load an exported file. Each language keeps its own words and progress."],
+    ["Sort a small batch", "Choose before seeing the meaning: known words go to Level 2, nearly known words to flashcard box 5, and new words to flashcard box 1."],
+    ["Do what is due", "A due date is a local calendar date. Review the queue shown on Home; words not due are deliberately left alone."],
+    ["Read when a text opens", "A text opens after you have met 80% of its mapped words. Meeting a word once is enough; it does not need to be mastered."],
+    ["Sync after studying", "Sync merges card by card. The state with the newest update time wins, including its box and next date."]
+  ]) start.appendChild(el("div", "guide-step", `<div><b>${title}</b><span>${detail}</span></div>`));
+  nodes.push(start);
+
+  nodes.push(sectionHead("The ladder"));
+  const ladder = el("div", "list");
+  for (const [name, colour, title, detail] of [
+    ["sort", "var(--s0)", "To sort", "Decide whether the word is new, nearly known or already known."],
+    ["flash", "var(--s1)", "Flashcards · 7 boxes", "Recall both word → meaning and meaning → word."],
+    ["meanings", "var(--s2)", "Level 2 · 6 boxes", "Write meanings and words, fill gaps, then translate complete sentences."],
+    ["write", "var(--s3)", "Writing", "Write three accepted sentences of your own, with two days between clean passes."],
+    ["star", "var(--s4)", "Mastered", "Leaves the normal due queue. You can still use it at any time in Free practice."]
+  ]) ladder.appendChild(listItem({ lead: icobox(name, colour), title, detail }));
+  nodes.push(ladder);
+
+  nodes.push(sectionHead("Flashcard dates"));
+  nodes.push(el("div", "guide-note", `${icon("info")}<span>Each flashcard box needs both directions. ` +
+    "After the first direction is correct, the other direction returns tomorrow. The table shows the wait after both are correct.</span>"));
+  nodes.push(scheduleCard("Flashcard boxes 1–7", "A wrong answer returns the word to box 1, due today.",
+    Array.from({ length: 7 }, (_, index) => {
+      const box = index + 1;
+      return [`Box ${box}`, box < 7 ? `Both directions → box ${box + 1}`
+        : "Both directions → Level 2 box 1",
+        box < 7 ? (INTERVALS[Math.min(box + 1, INTERVALS.length - 1)] || 1) : 1];
+    })));
+
+  nodes.push(sectionHead("Level 2 dates"));
+  const level2Exercises = ["Write the meaning", "Write the word", "Gap with translation",
+    "Gap without translation", "Translate into English", "Translate into the target language"];
+  nodes.push(scheduleCard("Level 2 boxes 1–6",
+    "One or two revealed letters keep the word in the same box until tomorrow. Larger help or a wrong answer moves it back for more practice.",
+    Array.from({ length: LEVEL2_TOP }, (_, index) => {
+      const box = index + 1;
+      return [`Box ${box}`, `${level2Exercises[index]} → ${box < LEVEL2_TOP ? `box ${box + 1}` : "Writing"}`,
+        box < LEVEL2_TOP ? (INTERVALS[Math.min(box, INTERVALS.length - 1)] || 1) : 1];
+    })));
+
+  nodes.push(sectionHead("Readings and reading lists"));
+  const readingLists = el("div", "list");
+  for (const [name, colour, title, detail] of [
+    ["read", "var(--warn)", "Reading › Texts", "The complete graded library, grouped A1–B2. Closed texts offer the words needed to reach the 80% opening point."],
+    ["plus", "var(--primary)", "Reading › My reading words", "Only words you personally tapped or added while reading. Practising this list uses their normal due dates."],
+    ["search", "var(--s2)", "Words › In reading texts", "The coverage index: words that occur in at least one supplied text. This is different from words you personally added while reading."],
+    ["words", "var(--s1)", "Word details", "Open a word to see the exact reading titles that contain it. Use Not in reading texts to find gaps for future texts."]
+  ]) readingLists.appendChild(listItem({ lead: icobox(name, colour), title, detail }));
+  nodes.push(readingLists);
+  nodes.push(el("div", "guide-note", `${icon("info")}<span>Italian and English are aligned sentence by sentence. ` +
+    "English under paragraphs and questions stays hidden until you ask for it. Finishing a text saves its score and answers.</span>"));
+
+  nodes.push(sectionHead("Find words by box"));
+  const find = el("div", "card");
+  find.appendChild(el("h2", "", "Every box is a word list"));
+  find.appendChild(el("div", "muted", "Open Words and choose a specific Flashcards or Level 2 box. " +
+    "Progress also shows live counts; tap any box there to open all of its words. Paused words stay visible and are labelled paused."));
+  if (hasCollection) {
+    const actions = el("div", "row"); actions.style.marginTop = "14px";
+    actions.append(button("Open Words", "soft grow", () => wordsScreen()),
+                   button("View box counts", "soft grow", progressScreen));
+    find.appendChild(actions);
+  }
+  nodes.push(find);
+
+  nodes.push(sectionHead("Practice without moving boxes"));
+  const free = el("div", "guide-note", `${icon("play")}<span><b>Free practice is safe to repeat.</b> ` +
+    "Flip, Choose and Type do not move a card, change a due date or count as a review. Graded sessions from Home do.</span>");
+  nodes.push(free);
+
+  show(nodes, [button("Back", "back", hasCollection ? home : setup)]);
 }
 
 /* ----------------------------------------------------------- free practice
@@ -4605,6 +4817,8 @@ function setup() {
     "If sync is set up on the desktop", begin));
   choose.appendChild(option("", "file", "Load a file",
     "Exported with \u201cExport collection for phone\u201d", () => pick(importFile)));
+  choose.appendChild(option("", "info", "See how Lessico works",
+    "Start here: boxes, review dates, readings and word lists", infoScreen));
 
   const others = el("div");
   show([intro, perks, choose, others], []);

@@ -136,8 +136,15 @@ has not taken in yet, and keeps everything done in the Read tab.
 
 **Words** and **Progress** are tabs along the bottom. Words lists everything
 with a search box and filters, showing where each word sits: which level,
-which box, and when it is next due. Progress shows the same breakdown the
-desktop does, plus a streak and the last fortnight's activity.
+which box, and when it is next due. Its box filter opens a complete list for
+any of the seven flashcard boxes or six Level 2 boxes. The box counts in
+Progress are tappable too. Progress also shows a streak and the last
+fortnight's activity.
+
+**How Lessico works** on the Home screen is the in-app guide. It explains the
+recommended first steps, every box exercise and interval, the actual dates a
+clean pass would produce today, reading unlocks, the three different reading
+lists, and the difference between graded sessions and Free practice.
 
 **Sort** on the home screen opens the waiting list rather than showing words
 at random. Filter by part of speech, level or topic, tap anything you already

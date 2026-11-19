@@ -2389,13 +2389,16 @@ function askQuestion(book, t, list, i) {
   } else {
     card.appendChild(el("div", "qtext", esc(q.q)));
   }
-  const english = el("div", "muted qen", esc(q.en));
-  // from B1 the question is read in the language, with English on request
-  const hideEnglish = ["B1", "B2"].includes(t.level) && q.t !== "vocab";
-  if (hideEnglish) english.classList.add("hidden");
-  card.appendChild(english);
-  if (hideEnglish) {
-    const show_ = button("English", "small soft", () => { english.classList.remove("hidden"); show_.remove(); });
+  // Keep every question in the language being learned. Its English helper is
+  // available on request, but never gives the translation away on first view.
+  const englishText = String(q.en || "").trim();
+  if (englishText) {
+    const english = el("div", "muted qen hidden", esc(englishText));
+    card.appendChild(english);
+    const show_ = button("Show English", "small soft", () => {
+      english.classList.remove("hidden");
+      show_.remove();
+    });
     show_.style.marginTop = "10px";
     card.appendChild(show_);
   }

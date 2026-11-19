@@ -1,6 +1,6 @@
 // Cache the shell so the app opens with no signal. The collection itself
 // lives in IndexedDB, not here.
-const CACHE = 'lessico-v5';
+const CACHE = 'lessico-v6';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icon.svg',
                './reading/it.json', './reading/tr.json'];
 

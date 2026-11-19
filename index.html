@@ -676,7 +676,7 @@ async function storedCollections() {
    These constants mirror the desktop app. If one changes, both change. */
 const LEVEL2_TOP = 6, LETTER_LIMIT = 3, WRONG_LIMIT = 3, MARK_LIMIT = 3;
 const BOX_NAME = {
-  1: "the word, native \u2192 English", 2: "the word, English \u2192 native",
+  1: "write the meaning, native \u2192 English", 2: "write the word, English \u2192 native",
   3: "sentence gap, with the translation", 4: "sentence gap, without the translation",
   5: "translate the sentence into English", 6: "translate the sentence into native"
 };
@@ -716,7 +716,7 @@ function planLevel2(card, letters, opts) {
               `Back to flashcards at box 5: ${MARK_LIMIT} times now with a meaning missing.`];
     if (box > 1)
       return [{ mbox: 1, marks, due: plusDays(1) },
-              `A meaning was missing, so back to box 1 of ${LEVEL2_TOP}. Mark ${marks} of ${MARK_LIMIT}.`];
+              `A meaning was missing, so back to meaning writing (box 1 of ${LEVEL2_TOP}). Mark ${marks} of ${MARK_LIMIT}.`];
     return [{ marks, due: plusDays(1) },
             `A meaning was missing, so box 1 again. Mark ${marks} of ${MARK_LIMIT}.`];
   }
@@ -726,7 +726,7 @@ function planLevel2(card, letters, opts) {
     const marks = (card.marks || 0) + 1;
     if (box > 2 && marks < MARK_LIMIT)
       return [{ mbox: 1, marks, lapses: (card.lapses || 0) + 1, due: plusDays(1) },
-              `Back to box 1 of ${LEVEL2_TOP}: ${why}. Mark ${marks} of ${MARK_LIMIT}.`];
+              `Back to meaning writing (box 1 of ${LEVEL2_TOP}): ${why}. Mark ${marks} of ${MARK_LIMIT}.`];
     return [{ stage: 1, box: 5, mbox: 1, marks: 0, flags: 0,
               lapses: (card.lapses || 0) + 1, due: todayStr() },
             `Back to flashcards at box 5: ${why}.`];
@@ -1301,7 +1301,7 @@ function home() {
   const kinds = [
     ["sort", "Sort", c.s0, "waiting", "var(--s0)", sortingScreen],
     ["flash", "Flashcards", c.flashcards[1], "due", "var(--s1)", () => start("flashcards")],
-    ["meanings", "Meanings", c.meanings[1], "due", "var(--s2)", () => start("meanings")],
+    ["meanings", "Meaning writing", c.meanings[1], "due", "var(--s2)", () => start("meanings")],
     ["gaps", "Gaps", c.gaps[1], "due", "var(--k-gaps)", () => start("gaps")],
     ["translate", "Translation", c.translate[1], "due", "var(--k-translate)", () => start("translate")],
     ["write", "Writing", c.writing[1], "due", "var(--s3)", () => start("writing")]
@@ -2613,7 +2613,7 @@ function viewMeanings(card) {
   const hint = makeHint(remaining[0] || "");
 
   const meta = metaLine(
-    `Meanings \u00b7 box 1 of ${LEVEL2_TOP} \u00b7 native \u2192 English \u00b7 ` +
+    `Meaning writing \u00b7 box 1 of ${LEVEL2_TOP} \u00b7 native \u2192 English \u00b7 ` +
     `${senses.length} meaning${senses.length === 1 ? "" : "s"}` +
     (card.marks ? ` \u00b7 ${card.marks} mark(s)` : ""));
   const prompt = el("div", "prompt", withArticle(card));
@@ -2796,7 +2796,7 @@ function viewCloze(card, blind) {
   if (!row) { card.mbox = Math.min(mbox(card) + 1, LEVEL2_TOP); card.updated_at = nowStr();
               return advance(); }
   const hint = makeHint(row.surface);
-  let letters = 0, done = false, correct = false;
+  let letters = 0, wrongs = 0, done = false, correct = false;
 
   const meta = metaLine(
     `Gaps \u00b7 box ${blind ? 4 : 3} of ${LEVEL2_TOP} \u00b7 ` +
@@ -2817,13 +2817,43 @@ function viewCloze(card, blind) {
     if (done) return;
     const typed = input.value.trim();
     if (!typed) return;
-    correct = looseEq(typed, row.surface);
+    if (looseEq(typed, row.surface)) {
+      correct = true;
+      return settle();
+    }
+    wrongs++;
+    input.value = "";
+    const left = WRONG_LIMIT - wrongs;
+    if (left > 0) {
+      if (hint.more()) {
+        letters++;
+        shape.textContent = hint.pattern();
+        shape.classList.remove("hidden");
+      }
+      const dictionaryForm = looseEq(typed, card.w) && !looseEq(card.w, row.surface);
+      const { score } = closeness(typed, [row.surface]);
+      const isVerb = /verb/i.test(card.pos || "");
+      const advice = dictionaryForm
+        ? `Right dictionary word, but this sentence needs a different ${isVerb ? "form or conjugation" : "form or ending"}.`
+        : score >= 0.55
+          ? (isVerb ? "Close — check the spelling or conjugation."
+                    : "Close — check the spelling, ending, number or agreement.")
+          : `Not that form. A letter has been opened for you.`;
+      feedback.textContent = `${advice} ${left} ${left === 1 ? "try" : "tries"} left.`;
+      return;
+    }
+    settle(`${WRONG_LIMIT} wrong tries`);
+  }
+  function settle(reason) {
     done = true;
     input.disabled = true;
     const before = card.stage, beforeBox = mbox(card);
-    const message = applyLevel2(card, letters, { wrong: !correct });
+    const message = applyLevel2(card, letters, {
+      wrong: !correct,
+      reason: reason || ""
+    });
     feedback.innerHTML = (correct
-      ? `<b class="good">Correct.</b> ${esc(row.it)}`
+      ? `<b class="good">Correct${wrongs ? ` after ${wrongs + 1} tries` : ""}.</b> ${esc(row.it)}`
       : `<b class="bad">Not this time.</b> The answer is <b>${esc(row.surface)}</b>.<br>${esc(row.it)}`) +
       `<br><span class="accent">${esc(message)}</span>`;
     sayAnswer(row.surface);
@@ -3508,7 +3538,8 @@ function selectFrom(values, onPick) {
 
 function wordsScreen() {
   chrome(false);
-  let query = "", stageFilter = "", cefrFilter = "", sourceFilter = "", coverageFilter = "";
+  let query = "", stageFilter = "", cefrFilter = "", dueFilter = "",
+      sourceFilter = "", coverageFilter = "";
   const search = el("input");
   search.type = "search";
   search.placeholder = "Search words or meanings";
@@ -3524,6 +3555,9 @@ function wordsScreen() {
   if (cefrValues.length)
     filters.appendChild(selectFrom([["", "Any CEFR"], ...cefrValues.map(v => [v, v])],
                                    v => { cefrFilter = v; paint(); }));
+  filters.appendChild(selectFrom([["", "Any schedule"], ["due", "Due"],
+                                  ["not_due", "Not due"]],
+                                 v => { dueFilter = v; paint(); }));
   if (state.cards.some(isReadingWord))
     filters.appendChild(selectFrom([["", "All words"], ["reading", "From reading"]],
                                    v => { sourceFilter = v; paint(); }));
@@ -3543,6 +3577,8 @@ function wordsScreen() {
       c.w.toLowerCase().includes(query) || (c.en || "").toLowerCase().includes(query));
     if (stageFilter !== "") rows = rows.filter(c => String(c.stage ?? 1) === stageFilter);
     if (cefrFilter) rows = rows.filter(c => c.cefr === cefrFilter);
+    if (dueFilter === "due") rows = rows.filter(due);
+    if (dueFilter === "not_due") rows = rows.filter(card => !due(card));
     if (sourceFilter) rows = rows.filter(isReadingWord);
     if (coverageFilter === "covered") rows = rows.filter(c => readingTextRefs(c).length);
     if (coverageFilter === "uncovered") rows = rows.filter(c => !readingTextRefs(c).length);
@@ -3609,7 +3645,7 @@ function progressScreen() {
   const boxes = el("div", "card");
   boxes.appendChild(el("h2", "", "Level 2 boxes"));
   boxes.appendChild(el("div", "muted",
-    "Boxes 1–2 recall the meanings, 3–4 fill sentence gaps, 5–6 translate whole sentences."));
+    "Boxes 1–2 write meanings and words, 3–4 fill sentence gaps, 5–6 translate whole sentences."));
   const grid = el("div", "boxes");
   for (let i = 1; i <= LEVEL2_TOP; i++) {
     const cell = el("div", "", `<b>${state.cards.filter(x => x.stage === 2 && mbox(x) === i).length}</b>` +

@@ -1,0 +1,1827 @@
+{
+  "schema_version": "lessico-grammar-v1",
+  "content_version": "1.0.0",
+  "status": "ready",
+  "mode": "topic_pack",
+  "language": "tr",
+  "vocabulary_manifest_id": "tr-reviewed-a6bc562da7a2",
+  "topic": {
+    "id": "tr.a1.harmony.major",
+    "cefr": "A1",
+    "sequence": 2,
+    "module_id": "tr.a1.harmony",
+    "title_target": "İki Yönlü Ünlü Uyumu",
+    "title_en": "Two-way vowel harmony",
+    "estimated_minutes": 15,
+    "prerequisite_ids": [
+      "tr.a1.sounds.vowels"
+    ],
+    "learning_objectives": [
+      "Understand and use two-way vowel harmony."
+    ],
+    "scope_included": [
+      "choose e or a in transparent practice forms, using -lAr only as a declared carrier for suffix choice"
+    ],
+    "scope_excluded": [
+      "four-way harmony, lexical exceptions and full plural use"
+    ],
+    "new_terms": [],
+    "reading_links": [],
+    "references": [
+      {
+        "title": "Türk Dil Kurumu: Sesler ve Ses Uyumları",
+        "url": "https://yazim.tdk.gov.tr/content/02-sesler-ve-ses-uyumlari.html"
+      },
+      {
+        "title": "Türkiye Maarif Vakfı: Türkçenin Yabancı Dil Olarak Öğretimi Programı",
+        "url": "https://turkiyemaarif.org/uploads/168b69b2349aed.pdf"
+      }
+    ]
+  },
+  "skills": [
+    {
+      "id": "tr.a1.harmony.major.recognize",
+      "description_en": "Recognise whether a familiar vowel-harmony practice form uses a or e in its ending.",
+      "capability": "recognition",
+      "critical": true
+    },
+    {
+      "id": "tr.a1.harmony.major.last_vowel",
+      "description_en": "Find the last vowel of an A1 noun and classify it as back or front.",
+      "capability": "recognition",
+      "critical": true
+    },
+    {
+      "id": "tr.a1.harmony.major.suffix_choice",
+      "description_en": "Choose -lar or -ler for a transparent noun ending based on its final stem vowel.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "tr.a1.harmony.major.write_form",
+      "description_en": "Write a complete correctly spelt noun + -lar/-ler practice form.",
+      "capability": "production",
+      "critical": true
+    }
+  ],
+  "lesson": {
+    "short_explanation_en": "In Turkish, a two-way vowel-harmony ending uses either a or e. Find the final vowel of the word: after a, ı, o or u (back vowels), the ending uses a; after e, i, ö or ü (front vowels), it uses e. Here -lar/-ler is simply a visible pattern for practising that choice: kitaplar but defterler. The full meaning and use of plural forms is taught in a later topic.",
+    "rule_blocks": [
+      {
+        "id": "tr.a1.harmony.major.rule.01",
+        "heading_en": "Use the last vowel to choose a or e",
+        "explanation_en": "Turkish has a back group (a, ı, o, u) and a front group (e, i, ö, ü). In a two-way vowel-harmony ending, a back last vowel selects a and a front last vowel selects e. Look at the last vowel of the stem, not just the first vowel.",
+        "pattern": "last vowel a / ı / o / u → -lAr = -lar | last vowel e / i / ö / ü → -lAr = -ler",
+        "usage_notes_en": [
+          "-lAr is a label for this vowel-choice practice; it is not a learner-facing word.",
+          "For a longer word, locate its final vowel before choosing the ending.",
+          "These examples use regular, transparent words; lexical exceptions are not covered."
+        ],
+        "common_errors_en": [
+          "şehirlar is wrong: the final vowel of şehir is i, so write şehirler.",
+          "okuller is wrong: the last vowel in okul is u, so write okullar."
+        ],
+        "example_ids": [
+          "tr.a1.harmony.major.example.01",
+          "tr.a1.harmony.major.example.02",
+          "tr.a1.harmony.major.example.03",
+          "tr.a1.harmony.major.example.04",
+          "tr.a1.harmony.major.example.05",
+          "tr.a1.harmony.major.example.06",
+          "tr.a1.harmony.major.example.07",
+          "tr.a1.harmony.major.example.08"
+        ]
+      },
+      {
+        "id": "tr.a1.harmony.major.rule.02",
+        "heading_en": "Attach the ending directly to the word",
+        "explanation_en": "For this exercise, -lar/-ler provides a simple visible carrier for the a/e decision. The completed word is written without a space. This lesson tests the spelling choice; the wider uses of plural nouns come later.",
+        "pattern": "kitap + -lAr → kitaplar | defter + -lAr → defterler",
+        "usage_notes_en": [
+          "Write kitaplar, not kitap lar.",
+          "Do not use a four-way ı/i/u/ü choice here.",
+          "Meaning and usage of plurality, including expressions with numbers, are outside this micro-lesson."
+        ],
+        "common_errors_en": [
+          "elma ler is wrong because the ending is both detached and the wrong vowel choice.",
+          "biberlar is wrong because the last vowel is e, which selects -ler."
+        ],
+        "example_ids": [
+          "tr.a1.harmony.major.example.09",
+          "tr.a1.harmony.major.example.10"
+        ]
+      }
+    ],
+    "form_tables": [
+      {
+        "id": "tr.a1.harmony.major.table.rule",
+        "title_en": "Two-way choice from the last vowel",
+        "columns": [
+          "Last stem vowel",
+          "Vowel group",
+          "Selected ending",
+          "Full practice form"
+        ],
+        "rows": [
+          [
+            "a, ı, o, u",
+            "back",
+            "-lar",
+            "kitaplar"
+          ],
+          [
+            "e, i, ö, ü",
+            "front",
+            "-ler",
+            "defterler"
+          ]
+        ]
+      },
+      {
+        "id": "tr.a1.harmony.major.table.vowels",
+        "title_en": "Eight transparent examples",
+        "columns": [
+          "Final vowel",
+          "A1 noun",
+          "Correct practice form"
+        ],
+        "rows": [
+          [
+            "a",
+            "kitap",
+            "kitaplar"
+          ],
+          [
+            "e",
+            "defter",
+            "defterler"
+          ],
+          [
+            "ı",
+            "kız",
+            "kızlar"
+          ],
+          [
+            "i",
+            "şehir",
+            "şehirler"
+          ],
+          [
+            "o",
+            "doktor",
+            "doktorlar"
+          ],
+          [
+            "ö",
+            "göz",
+            "gözler"
+          ],
+          [
+            "u",
+            "okul",
+            "okullar"
+          ],
+          [
+            "ü",
+            "köprü",
+            "köprüler"
+          ]
+        ]
+      }
+    ]
+  },
+  "contexts": [
+    {
+      "id": "tr.a1.harmony.major.context.01",
+      "type": "dialogue",
+      "setting_en": "Ayşe and Mehmet are checking spelling cards during a beginner Turkish lesson; the words are read aloud as labels.",
+      "lines": [
+        {
+          "speaker": "Ayşe",
+          "target": "Merhaba, Mehmet.",
+          "translation_en": "Hello, Mehmet."
+        },
+        {
+          "speaker": "Mehmet",
+          "target": "Merhaba, Ayşe.",
+          "translation_en": "Hello, Ayşe."
+        },
+        {
+          "speaker": "Ayşe",
+          "target": "Kitaplar, defterler.",
+          "translation_en": "Books and notebooks."
+        },
+        {
+          "speaker": "Mehmet",
+          "target": "Kitaplar: a. Defterler: e.",
+          "translation_en": "“Kitaplar” takes a; “defterler” takes e."
+        },
+        {
+          "speaker": "Ayşe",
+          "target": "Evet, doğru.",
+          "translation_en": "Yes, correct."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "merhaba",
+          "kitap",
+          "defter",
+          "evet",
+          "doğru"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.context.02",
+      "type": "note",
+      "setting_en": "A learner writes a short shopping list and marks the vowel used in each ending.",
+      "lines": [
+        {
+          "speaker": "Zeynep",
+          "target": "Alışveriş: elmalar, biberler, üzümler.",
+          "translation_en": "Shopping: apples, peppers and grapes."
+        },
+        {
+          "speaker": "Zeynep",
+          "target": "Elmalar: a. Biberler: e. Üzümler: e.",
+          "translation_en": "The endings are a in “elmalar”, e in “biberler” and e in “üzümler”."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "alışveriş",
+          "elma",
+          "biber",
+          "üzüm"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "tr.a1.harmony.major.example.01",
+      "target": "kitap → kitaplar",
+      "translation_en": "book → books",
+      "note_en": "The last vowel of kitap is a, so the practice ending is -lar.",
+      "skill_ids": [
+        "tr.a1.harmony.major.recognize",
+        "tr.a1.harmony.major.suffix_choice"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kitap"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.example.02",
+      "target": "defter → defterler",
+      "translation_en": "notebook → notebooks",
+      "note_en": "The last vowel is e, so the ending is -ler.",
+      "skill_ids": [
+        "tr.a1.harmony.major.recognize",
+        "tr.a1.harmony.major.suffix_choice"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "defter"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.example.03",
+      "target": "kız → kızlar",
+      "translation_en": "girl → girls",
+      "note_en": "Dotless ı is a back vowel, so the ending uses a.",
+      "skill_ids": [
+        "tr.a1.harmony.major.last_vowel",
+        "tr.a1.harmony.major.suffix_choice"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kız"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.example.04",
+      "target": "şehir → şehirler",
+      "translation_en": "city → cities",
+      "note_en": "The last vowel is i; this front vowel takes the e-ending.",
+      "skill_ids": [
+        "tr.a1.harmony.major.last_vowel",
+        "tr.a1.harmony.major.suffix_choice"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "şehir"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.example.05",
+      "target": "doktor → doktorlar",
+      "translation_en": "doctor → doctors",
+      "note_en": "The last vowel is o, a back vowel, so the ending uses a.",
+      "skill_ids": [
+        "tr.a1.harmony.major.last_vowel",
+        "tr.a1.harmony.major.suffix_choice"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "doktor"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.example.06",
+      "target": "göz → gözler",
+      "translation_en": "eye → eyes",
+      "note_en": "Ö is a front vowel; the ending uses e.",
+      "skill_ids": [
+        "tr.a1.harmony.major.last_vowel",
+        "tr.a1.harmony.major.suffix_choice"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "göz"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.example.07",
+      "target": "okul → okullar",
+      "translation_en": "school → schools",
+      "note_en": "The last vowel is u, a back vowel; the ending uses a.",
+      "skill_ids": [
+        "tr.a1.harmony.major.last_vowel",
+        "tr.a1.harmony.major.suffix_choice"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "okul"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.example.08",
+      "target": "köprü → köprüler",
+      "translation_en": "bridge → bridges",
+      "note_en": "The final ü is a front vowel, so the ending uses e.",
+      "skill_ids": [
+        "tr.a1.harmony.major.last_vowel",
+        "tr.a1.harmony.major.suffix_choice"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "köprü"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.example.09",
+      "target": "elma → elmalar",
+      "translation_en": "apple → apples",
+      "note_en": "The final a is back, so choose -lar.",
+      "skill_ids": [
+        "tr.a1.harmony.major.suffix_choice",
+        "tr.a1.harmony.major.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "elma"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.example.10",
+      "target": "biber → biberler",
+      "translation_en": "pepper → peppers",
+      "note_en": "The final e is front, so choose -ler.",
+      "skill_ids": [
+        "tr.a1.harmony.major.suffix_choice",
+        "tr.a1.harmony.major.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "biber"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "id": "tr.a1.harmony.major.exercise.01",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_target": "Doğru kelime",
+      "instruction_en": "Choose the correct form.",
+      "context_target": "Kelime",
+      "prompt_target": "kitaplar",
+      "prompt_en": "Which vowel appears in the added ending of kitaplar?",
+      "options": [
+        {
+          "id": "opt1",
+          "text": "a",
+          "correct": true,
+          "error_type": null,
+          "explanation_en": "a is the vowel in -lar after the back vowel of kitap."
+        },
+        {
+          "id": "opt2",
+          "text": "e",
+          "correct": false,
+          "error_type": "front_back_confusion",
+          "explanation_en": "e would be used after a front vowel."
+        },
+        {
+          "id": "opt3",
+          "text": "ı",
+          "correct": false,
+          "error_type": "four_way_confusion",
+          "explanation_en": "ı is not a choice in this two-way pattern."
+        },
+        {
+          "id": "opt4",
+          "text": "i",
+          "correct": false,
+          "error_type": "four_way_confusion",
+          "explanation_en": "i is not a choice in this two-way pattern."
+        }
+      ],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the vowel at the end, not at the beginning of the word.",
+        "The final part is lar."
+      ],
+      "feedback_correct_en": "Correct. The final stem vowel determines a or e in this practice ending.",
+      "feedback_wrong_en": "The ending in kitaplar contains a, not e.",
+      "explanation_en": "The last vowel in kitap is a, so the added ending uses a.",
+      "skill_ids": [
+        "tr.a1.harmony.major.recognize"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "kitap"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.exercise.02",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_target": "Doğru kelime",
+      "instruction_en": "Choose the correct form.",
+      "context_target": "Kelime",
+      "prompt_target": "defterler",
+      "prompt_en": "Which vowel appears in the added ending of defterler?",
+      "options": [
+        {
+          "id": "opt1",
+          "text": "a",
+          "correct": false,
+          "error_type": "front_back_confusion",
+          "explanation_en": "a would match a back last vowel."
+        },
+        {
+          "id": "opt2",
+          "text": "e",
+          "correct": true,
+          "error_type": null,
+          "explanation_en": "e is selected after the final front vowel in defter."
+        },
+        {
+          "id": "opt3",
+          "text": "ı",
+          "correct": false,
+          "error_type": "four_way_confusion",
+          "explanation_en": "ı belongs to the four-way pattern, not here."
+        },
+        {
+          "id": "opt4",
+          "text": "ü",
+          "correct": false,
+          "error_type": "four_way_confusion",
+          "explanation_en": "ü belongs to the four-way pattern, not here."
+        }
+      ],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Find the letters after defter.",
+        "The ending is ler."
+      ],
+      "feedback_correct_en": "Correct. The final stem vowel determines a or e in this practice ending.",
+      "feedback_wrong_en": "The suffix vowel in defterler is e.",
+      "explanation_en": "defter ends in the front vowel e; its ending is -ler.",
+      "skill_ids": [
+        "tr.a1.harmony.major.recognize"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "defter"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.exercise.03",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_target": "Doğru kelime",
+      "instruction_en": "Choose the correct form.",
+      "context_target": "Kelime",
+      "prompt_target": "kız / şehir / göz / köprü",
+      "prompt_en": "Which noun has a back final vowel?",
+      "options": [
+        {
+          "id": "opt1",
+          "text": "şehir",
+          "correct": false,
+          "error_type": "wrong_group",
+          "explanation_en": "The last vowel of şehir is i, which is front."
+        },
+        {
+          "id": "opt2",
+          "text": "köprü",
+          "correct": false,
+          "error_type": "wrong_group",
+          "explanation_en": "The last vowel of köprü is ü, which is front."
+        },
+        {
+          "id": "opt3",
+          "text": "kız",
+          "correct": true,
+          "error_type": null,
+          "explanation_en": "The last vowel of kız is dotless ı, which is back."
+        },
+        {
+          "id": "opt4",
+          "text": "göz",
+          "correct": false,
+          "error_type": "wrong_group",
+          "explanation_en": "The only vowel in göz is ö, which is front."
+        }
+      ],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First find the vowel nearest the end of each word.",
+        "Remember that dotless ı is a back vowel."
+      ],
+      "feedback_correct_en": "Correct. The final stem vowel determines a or e in this practice ending.",
+      "feedback_wrong_en": "Only kız has a back final vowel among these four words.",
+      "explanation_en": "kız has ı, while şehir, göz and köprü end in front vowels.",
+      "skill_ids": [
+        "tr.a1.harmony.major.last_vowel"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "kız",
+          "şehir",
+          "göz",
+          "köprü"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.exercise.04",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_target": "Doğru kelime",
+      "instruction_en": "Choose the correct form.",
+      "context_target": "Kelime",
+      "prompt_target": "kitaplar / defterler / okullar / kızlar",
+      "prompt_en": "Which word uses the front-vowel form of the practice ending?",
+      "options": [
+        {
+          "id": "opt1",
+          "text": "kitaplar",
+          "correct": false,
+          "error_type": "wrong_group",
+          "explanation_en": "The last vowel in kitap is a, so the ending uses -lar."
+        },
+        {
+          "id": "opt2",
+          "text": "okullar",
+          "correct": false,
+          "error_type": "wrong_group",
+          "explanation_en": "The last vowel in okul is u, so the ending uses -lar."
+        },
+        {
+          "id": "opt3",
+          "text": "kızlar",
+          "correct": false,
+          "error_type": "wrong_group",
+          "explanation_en": "The last vowel in kız is ı, so the ending uses -lar."
+        },
+        {
+          "id": "opt4",
+          "text": "defterler",
+          "correct": true,
+          "error_type": null,
+          "explanation_en": "defter ends with front vowel e and takes -ler."
+        }
+      ],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Compare the ending vowels in the four words.",
+        "Look for a word ending in ler."
+      ],
+      "feedback_correct_en": "Correct. The final stem vowel determines a or e in this practice ending.",
+      "feedback_wrong_en": "defterler is the only form here with the front-vowel ending -ler.",
+      "explanation_en": "defter ends in front vowel e, so it takes -ler.",
+      "skill_ids": [
+        "tr.a1.harmony.major.recognize",
+        "tr.a1.harmony.major.suffix_choice"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "kitap",
+          "defter",
+          "okul",
+          "kız"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.exercise.05",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_target": "Kelime",
+      "instruction_en": "Type the correct form or missing vowel as instructed.",
+      "context_target": "Kelime",
+      "prompt_target": "kitap + l_r",
+      "prompt_en": "Type only the missing letter in the ending for kitap.",
+      "options": [],
+      "accepted_answers": [
+        "a"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Which group contains the final vowel of kitap?",
+        "Its final vowel is a."
+      ],
+      "feedback_correct_en": "Correct. The final stem vowel determines a or e in this practice ending.",
+      "feedback_wrong_en": "The last vowel of kitap is back, so choose a, not e.",
+      "explanation_en": "kitap + -lar becomes kitaplar.",
+      "skill_ids": [
+        "tr.a1.harmony.major.suffix_choice"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "kitap"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.exercise.06",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_target": "Kelime",
+      "instruction_en": "Type the correct form or missing vowel as instructed.",
+      "context_target": "Kelime",
+      "prompt_target": "defter + l_r",
+      "prompt_en": "Type only the missing letter in the ending for defter.",
+      "options": [],
+      "accepted_answers": [
+        "e"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Find the final vowel in defter.",
+        "It is e, a front vowel."
+      ],
+      "feedback_correct_en": "Correct. The final stem vowel determines a or e in this practice ending.",
+      "feedback_wrong_en": "The last vowel of defter is front, so select e.",
+      "explanation_en": "defter + -ler becomes defterler.",
+      "skill_ids": [
+        "tr.a1.harmony.major.suffix_choice"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "defter"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.exercise.07",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_target": "Kelime",
+      "instruction_en": "Type the correct form or missing vowel as instructed.",
+      "context_target": "Kelime",
+      "prompt_target": "göz",
+      "prompt_en": "Write the whole practice form for göz with the correct -lar/-ler ending.",
+      "options": [],
+      "accepted_answers": [
+        "gözler"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The vowel has two dots; identify its group.",
+        "ö belongs to the front group."
+      ],
+      "feedback_correct_en": "Correct. The final stem vowel determines a or e in this practice ending.",
+      "feedback_wrong_en": "Write gözler, not gözlar: ö requires -ler.",
+      "explanation_en": "göz → gözler.",
+      "skill_ids": [
+        "tr.a1.harmony.major.last_vowel",
+        "tr.a1.harmony.major.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "göz"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.exercise.08",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_target": "Kelime",
+      "instruction_en": "Type the correct form or missing vowel as instructed.",
+      "context_target": "Kelime",
+      "prompt_target": "okul",
+      "prompt_en": "Write the whole practice form for okul with the correct -lar/-ler ending.",
+      "options": [],
+      "accepted_answers": [
+        "okullar"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the last vowel, not the first.",
+        "The final u is a back vowel."
+      ],
+      "feedback_correct_en": "Correct. The final stem vowel determines a or e in this practice ending.",
+      "feedback_wrong_en": "Write okullar, not okuller: the last vowel u requires -lar.",
+      "explanation_en": "okul → okullar.",
+      "skill_ids": [
+        "tr.a1.harmony.major.last_vowel",
+        "tr.a1.harmony.major.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "okul"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.exercise.09",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_target": "Kelime",
+      "instruction_en": "Type the correct form or missing vowel as instructed.",
+      "context_target": "Kelime",
+      "prompt_target": "köprü",
+      "prompt_en": "Write the whole practice form for köprü with the correct -lar/-ler ending.",
+      "options": [],
+      "accepted_answers": [
+        "köprüler"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The final vowel has two dots.",
+        "The final ü belongs to the front group."
+      ],
+      "feedback_correct_en": "Correct. The final stem vowel determines a or e in this practice ending.",
+      "feedback_wrong_en": "Write köprüler, not köprülar: ü requires -ler.",
+      "explanation_en": "köprü → köprüler.",
+      "skill_ids": [
+        "tr.a1.harmony.major.last_vowel",
+        "tr.a1.harmony.major.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "köprü"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.exercise.10",
+      "type": "fill_gap",
+      "stage": "contextual",
+      "difficulty": 1,
+      "instruction_target": "Kelime",
+      "instruction_en": "Type the correct form or missing vowel as instructed.",
+      "context_target": "Alışveriş",
+      "prompt_target": "elma",
+      "prompt_en": "On a shopping word card, write the whole practice form for elma.",
+      "options": [],
+      "accepted_answers": [
+        "elmalar"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Which group contains the last vowel of elma?",
+        "It ends in back vowel a."
+      ],
+      "feedback_correct_en": "Correct. The final stem vowel determines a or e in this practice ending.",
+      "feedback_wrong_en": "elmalar uses a in the ending, not e.",
+      "explanation_en": "elma → elmalar.",
+      "skill_ids": [
+        "tr.a1.harmony.major.suffix_choice",
+        "tr.a1.harmony.major.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "alışveriş",
+          "elma"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.exercise.11",
+      "type": "multiple_choice",
+      "stage": "contextual",
+      "difficulty": 1,
+      "instruction_target": "Doğru kelime",
+      "instruction_en": "Choose the correct form.",
+      "context_target": "Alışveriş",
+      "prompt_target": "biber",
+      "prompt_en": "Choose the correctly written practice form for biber.",
+      "options": [
+        {
+          "id": "opt1",
+          "text": "biberler",
+          "correct": true,
+          "error_type": null,
+          "explanation_en": "The last vowel e takes -ler."
+        },
+        {
+          "id": "opt2",
+          "text": "biberlar",
+          "correct": false,
+          "error_type": "wrong_harmony",
+          "explanation_en": "The last vowel is front e, so -lar does not fit."
+        }
+      ],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the vowel in the last syllable of biber.",
+        "It is e, a front vowel."
+      ],
+      "feedback_correct_en": "Correct. The final stem vowel determines a or e in this practice ending.",
+      "feedback_wrong_en": "Choose biberler; biberlar has the wrong vowel harmony.",
+      "explanation_en": "biber → biberler.",
+      "skill_ids": [
+        "tr.a1.harmony.major.suffix_choice",
+        "tr.a1.harmony.major.recognize"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "alışveriş",
+          "biber"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.exercise.12",
+      "type": "fill_gap",
+      "stage": "contextual",
+      "difficulty": 1,
+      "instruction_target": "Kelime",
+      "instruction_en": "Type the correct form or missing vowel as instructed.",
+      "context_target": "Alışveriş",
+      "prompt_target": "üzüm",
+      "prompt_en": "Write the complete practice form for üzüm as on the shopping list.",
+      "options": [],
+      "accepted_answers": [
+        "üzümler"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The final vowel is ü.",
+        "ü belongs to the front group."
+      ],
+      "feedback_correct_en": "Correct. The final stem vowel determines a or e in this practice ending.",
+      "feedback_wrong_en": "The correct form is üzümler, not üzümlar.",
+      "explanation_en": "üzüm → üzümler.",
+      "skill_ids": [
+        "tr.a1.harmony.major.last_vowel",
+        "tr.a1.harmony.major.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "alışveriş",
+          "üzüm"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.exercise.13",
+      "type": "multiple_choice",
+      "stage": "contextual",
+      "difficulty": 1,
+      "instruction_target": "Doğru kelime",
+      "instruction_en": "Choose the correct form.",
+      "context_target": "Aile",
+      "prompt_target": "anne",
+      "prompt_en": "Which practice form is spelt correctly for anne?",
+      "options": [
+        {
+          "id": "opt1",
+          "text": "annelar",
+          "correct": false,
+          "error_type": "wrong_harmony",
+          "explanation_en": "The final e is front, so use -ler."
+        },
+        {
+          "id": "opt2",
+          "text": "anneler",
+          "correct": true,
+          "error_type": null,
+          "explanation_en": "The final vowel e correctly selects -ler."
+        }
+      ],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Consider the last vowel of anne.",
+        "The last vowel is e."
+      ],
+      "feedback_correct_en": "Correct. The final stem vowel determines a or e in this practice ending.",
+      "feedback_wrong_en": "Write anneler; annelar is the wrong vowel choice.",
+      "explanation_en": "anne → anneler.",
+      "skill_ids": [
+        "tr.a1.harmony.major.suffix_choice",
+        "tr.a1.harmony.major.recognize"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "aile",
+          "anne"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.exercise.14",
+      "type": "transform",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Type the correct form or missing vowel as instructed.",
+      "context_target": "Aile",
+      "prompt_target": "baba",
+      "prompt_en": "Transform baba into a complete practice form with the correct -lar/-ler ending. Type only the result.",
+      "options": [],
+      "accepted_answers": [
+        "babalar"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The last vowel is the second a.",
+        "a belongs to the back group."
+      ],
+      "feedback_correct_en": "Correct. The final stem vowel determines a or e in this practice ending.",
+      "feedback_wrong_en": "babalar is correct; babeler or babaler does not follow the last vowel.",
+      "explanation_en": "baba → babalar.",
+      "skill_ids": [
+        "tr.a1.harmony.major.suffix_choice",
+        "tr.a1.harmony.major.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "aile",
+          "baba"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.exercise.15",
+      "type": "transform",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Type the correct form or missing vowel as instructed.",
+      "context_target": "Kelime",
+      "prompt_target": "şehir",
+      "prompt_en": "Transform şehir into the complete practice form with the correct ending. Type only the result.",
+      "options": [],
+      "accepted_answers": [
+        "şehirler"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Do not choose based on the first vowel.",
+        "The last vowel is i, which is front."
+      ],
+      "feedback_correct_en": "Correct. The final stem vowel determines a or e in this practice ending.",
+      "feedback_wrong_en": "Write şehirler, not şehirlar: i selects -ler.",
+      "explanation_en": "şehir → şehirler.",
+      "skill_ids": [
+        "tr.a1.harmony.major.last_vowel",
+        "tr.a1.harmony.major.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "şehir"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.exercise.16",
+      "type": "transform",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Type the correct form or missing vowel as instructed.",
+      "context_target": "Kelime",
+      "prompt_target": "çocuk",
+      "prompt_en": "Transform çocuk into the complete practice form with the correct ending. Type only the result.",
+      "options": [],
+      "accepted_answers": [
+        "çocuklar"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The last vowel of çocuk is not o.",
+        "The last vowel is back vowel u."
+      ],
+      "feedback_correct_en": "Correct. The final stem vowel determines a or e in this practice ending.",
+      "feedback_wrong_en": "Write çocuklar: the final u selects -lar.",
+      "explanation_en": "çocuk → çocuklar.",
+      "skill_ids": [
+        "tr.a1.harmony.major.last_vowel",
+        "tr.a1.harmony.major.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "çocuk"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.exercise.17",
+      "type": "fill_gap",
+      "stage": "transfer",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Type the correct form or missing vowel as instructed.",
+      "context_target": "Kelime",
+      "prompt_target": "kuş",
+      "prompt_en": "New word card: write the complete form of kuş with the correct two-way ending.",
+      "options": [],
+      "accepted_answers": [
+        "kuşlar"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Find the word’s only vowel and its group.",
+        "u belongs to the back group."
+      ],
+      "feedback_correct_en": "Correct. The final stem vowel determines a or e in this practice ending.",
+      "feedback_wrong_en": "kuşlar is correct; kuşler would use the wrong vowel.",
+      "explanation_en": "kuş → kuşlar.",
+      "skill_ids": [
+        "tr.a1.harmony.major.suffix_choice",
+        "tr.a1.harmony.major.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "kuş"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.exercise.18",
+      "type": "fill_gap",
+      "stage": "transfer",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Type the correct form or missing vowel as instructed.",
+      "context_target": "Kelime",
+      "prompt_target": "köy",
+      "prompt_en": "New word card: write the complete form of köy with the correct two-way ending.",
+      "options": [],
+      "accepted_answers": [
+        "köyler"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The word has one vowel, with two dots.",
+        "ö is a front vowel."
+      ],
+      "feedback_correct_en": "Correct. The final stem vowel determines a or e in this practice ending.",
+      "feedback_wrong_en": "köyler is correct; köylar would use the back-vowel ending.",
+      "explanation_en": "köy → köyler.",
+      "skill_ids": [
+        "tr.a1.harmony.major.suffix_choice",
+        "tr.a1.harmony.major.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "köy"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.exercise.19",
+      "type": "fill_gap",
+      "stage": "transfer",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Type the correct form or missing vowel as instructed.",
+      "context_target": "Alışveriş",
+      "prompt_target": "armut",
+      "prompt_en": "On a new shopping card, write the complete form of armut with the correct ending.",
+      "options": [],
+      "accepted_answers": [
+        "armutlar"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "There are two vowels; use the final one.",
+        "The last vowel is u, a back vowel."
+      ],
+      "feedback_correct_en": "Correct. The final stem vowel determines a or e in this practice ending.",
+      "feedback_wrong_en": "armutlar is correct; armutler would not match the final u.",
+      "explanation_en": "armut → armutlar.",
+      "skill_ids": [
+        "tr.a1.harmony.major.suffix_choice",
+        "tr.a1.harmony.major.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "alışveriş",
+          "armut"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.exercise.20",
+      "type": "fill_gap",
+      "stage": "transfer",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Type the correct form or missing vowel as instructed.",
+      "context_target": "Kelime",
+      "prompt_target": "çiçek",
+      "prompt_en": "New word card: write the complete form of çiçek with the correct ending.",
+      "options": [],
+      "accepted_answers": [
+        "çiçekler"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The last vowel is e, a front vowel.",
+        "The ending must therefore contain e."
+      ],
+      "feedback_correct_en": "Correct. The final stem vowel determines a or e in this practice ending.",
+      "feedback_wrong_en": "çiçekler is correct; çiçeklar does not follow the last vowel.",
+      "explanation_en": "çiçek → çiçekler.",
+      "skill_ids": [
+        "tr.a1.harmony.major.suffix_choice",
+        "tr.a1.harmony.major.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "çiçek"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.exercise.21",
+      "type": "guided_production",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write from memory and self-check.",
+      "context_target": "Kelime",
+      "prompt_target": "kitap / defter / okul / göz",
+      "prompt_en": "Without the table, write the correctly suffixed practice forms for these four familiar nouns. Then check your spelling.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Find the last vowel in each noun.",
+        "Two forms take -lar and two take -ler."
+      ],
+      "feedback_correct_en": "Correct. The final stem vowel determines a or e in this practice ending.",
+      "feedback_wrong_en": "Compare your spellings and choices with the self-check criteria.",
+      "explanation_en": "Reference forms: kitaplar, defterler, okullar, gözler.",
+      "skill_ids": [
+        "tr.a1.harmony.major.suffix_choice",
+        "tr.a1.harmony.major.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "kitap",
+          "defter",
+          "okul",
+          "göz"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      },
+      "rubric": {
+        "criteria_en": [
+          "All four words receive a directly attached ending.",
+          "kitaplar and okullar use -lar.",
+          "defterler and gözler use -ler.",
+          "All four stems keep their original letters."
+        ]
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major.exercise.22",
+      "type": "guided_production",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write from memory and self-check.",
+      "context_target": "Alışveriş",
+      "prompt_target": "elma / biber / üzüm / armut",
+      "prompt_en": "From memory, write the four completed shopping-list practice forms, then explain which final stem vowel led to a or e. Check your answers.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Find the last vowel in each noun; do not translate English plurals mechanically.",
+        "Back-vowel nouns take a; front-vowel nouns take e."
+      ],
+      "feedback_correct_en": "Correct. The final stem vowel determines a or e in this practice ending.",
+      "feedback_wrong_en": "Compare your spellings and choices with the self-check criteria.",
+      "explanation_en": "Reference forms: elmalar, biberler, üzümler, armutlar.",
+      "skill_ids": [
+        "tr.a1.harmony.major.last_vowel",
+        "tr.a1.harmony.major.suffix_choice",
+        "tr.a1.harmony.major.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "alışveriş",
+          "elma",
+          "biber",
+          "üzüm",
+          "armut"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      },
+      "rubric": {
+        "criteria_en": [
+          "All four complete forms are spelt correctly.",
+          "The two back-vowel stems select -lar.",
+          "The two front-vowel stems select -ler.",
+          "The explanation points to the final vowel of each stem."
+        ]
+      }
+    }
+  ],
+  "verb_application": {
+    "applicable": false,
+    "required_form_keys": [],
+    "verbs": []
+  },
+  "mastery": {
+    "required_score": 0.8,
+    "minimum_unaided_production_items": 2,
+    "required_stages": [
+      "notice",
+      "controlled",
+      "contextual",
+      "production",
+      "transfer"
+    ],
+    "review_intervals_days": [
+      1,
+      3,
+      7,
+      14,
+      30,
+      60
+    ]
+  },
+  "answer_normalization": {
+    "locale": "tr-TR",
+    "unicode": "NFC",
+    "case_sensitive": false,
+    "accent_sensitive": true
+  },
+  "vocabulary_audit": {
+    "status": "pass",
+    "manifest_id": "tr-reviewed-a6bc562da7a2",
+    "allowed_cefr": [
+      "A1"
+    ],
+    "used_headwords": [
+      "aile",
+      "alışveriş",
+      "anne",
+      "armut",
+      "baba",
+      "biber",
+      "defter",
+      "doktor",
+      "doğru",
+      "elma",
+      "evet",
+      "göz",
+      "kelime",
+      "kitap",
+      "kuş",
+      "köprü",
+      "köy",
+      "kız",
+      "merhaba",
+      "okul",
+      "çiçek",
+      "çocuk",
+      "üzüm",
+      "şehir"
+    ],
+    "target_headwords": [
+      "aile",
+      "alışveriş",
+      "anne",
+      "armut",
+      "baba",
+      "biber",
+      "defter",
+      "doktor",
+      "doğru",
+      "elma",
+      "evet",
+      "göz",
+      "kelime",
+      "kitap",
+      "kuş",
+      "köprü",
+      "köy",
+      "kız",
+      "merhaba",
+      "okul",
+      "çiçek",
+      "çocuk",
+      "üzüm",
+      "şehir"
+    ],
+    "outside_allowlist_words": [],
+    "introduced_terms": [],
+    "proper_names": [
+      "Ayşe",
+      "Mehmet",
+      "Zeynep"
+    ],
+    "grammar_only_tokens": [],
+    "above_level_words": [],
+    "tests_with_unknown_vocabulary": [],
+    "note": "All vocabulary annotations use reviewed A1 dictionary headwords. Attached -lar/-ler endings are grammar rather than vocabulary lemmas. Single vowel options are letters, not lexical terms."
+  },
+  "level_audit": {
+    "status": "pass",
+    "target_cefr": "A1",
+    "maximum_sentence_length_observed": 6,
+    "unapproved_grammar_features": [],
+    "unmet_prerequisites": [],
+    "scope_violations": [],
+    "note": "The prior vowel/casing topic supplies the prerequisite. This lesson uses written -lar/-ler forms solely to test a/e selection; plural usage, four-way vowel harmony and exceptions are not taught."
+  },
+  "quality_audit": {
+    "status": "pass",
+    "unique_id_check": "pass",
+    "cross_reference_check": "pass",
+    "prerequisite_check": "pass",
+    "scope_check": "pass",
+    "answer_check": "pass",
+    "single_best_answer_check": "pass",
+    "turkish_casing_and_diacritic_check": "pass",
+    "harmony_check": "pass_regular_transparent_forms",
+    "suffix_order_check": "pass_single_attached_suffix",
+    "stem_change_check": "pass_no_stem_change_required",
+    "question_particle_check": "not_applicable",
+    "apostrophe_check": "not_applicable",
+    "conjugation_form_check": "not_applicable",
+    "naturalness_and_translation_check": "pass",
+    "requested_count_check": "pass",
+    "counts": {
+      "contexts": 2,
+      "teaching_examples": 10,
+      "scored_exercises": 20,
+      "transfer_exercises": 4,
+      "unaided_production_self_checks": 2,
+      "full_written_form_tests": 14
+    },
+    "authoritative_sources_consulted": [
+      {
+        "publisher": "Türk Dil Kurumu",
+        "title": "Sesler ve Ses Uyumları",
+        "url": "https://yazim.tdk.gov.tr/content/02-sesler-ve-ses-uyumlari.html",
+        "verified_rule": "Back vowels a/ı/o/u and front vowels e/i/ö/ü determine the corresponding regular two-way suffix vowel; word-final vowel governs regular suffix harmony."
+      },
+      {
+        "publisher": "Türkiye Maarif Vakfı",
+        "title": "Türkçenin Yabancı Dil Olarak Öğretimi Programı",
+        "url": "https://turkiyemaarif.org/uploads/168b69b2349aed.pdf",
+        "verified_rule": "A1 teaching includes vowel harmony and elementary plural-affix practice."
+      }
+    ],
+    "requires_human_review": [],
+    "notes": [
+      "The user requested the next topic after receiving Topic 1, so Topic 1 is treated as the single prerequisite for this generation. The unmodified original ZIP request still lists no completed topics.",
+      "Do not automatically mark a lesson as approved in the website until it has been checked in the application.",
+      "Two open exercises are unscored self-checks; twenty exercises are scored."
+    ]
+  },
+  "explanation_language": "en"
+}

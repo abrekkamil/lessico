@@ -1,0 +1,2250 @@
+{
+  "schema_version": "lessico-grammar-v1",
+  "content_version": "1.0.0",
+  "status": "ready",
+  "mode": "topic_pack",
+  "language": "it",
+  "explanation_language": "en",
+  "vocabulary_manifest_id": "it-reviewed-9d35be468e23",
+  "topic": {
+    "id": "it.a1.negation.non",
+    "cefr": "A1",
+    "sequence": 11,
+    "module_id": "it.a1.sentences",
+    "title_target": "La negazione di base con non",
+    "title_en": "Basic negation with non",
+    "estimated_minutes": 8,
+    "prerequisite_ids": [
+      "it.a1.essere.forms",
+      "it.a1.avere.forms_uses"
+    ],
+    "learning_objectives": [
+      "Place non correctly before a simple finite verb.",
+      "Turn familiar affirmative clauses with essere and avere into negative clauses without changing person or number.",
+      "Distinguish standalone no from pre-verbal non in simple answers."
+    ],
+    "scope_included": [
+      "non before a finite verb",
+      "affirmative-negative transformation",
+      "simple answers"
+    ],
+    "scope_excluded": [
+      "double negatives",
+      "mica",
+      "negative imperatives"
+    ],
+    "new_terms": [],
+    "reading_links": []
+  },
+  "skills": [
+    {
+      "id": "it.a1.negation.non.placement",
+      "description_en": "Place non immediately before a simple finite verb to negate an A1 clause.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "it.a1.negation.non.contrast",
+      "description_en": "Distinguish sentence negation with non from the standalone negative answer no.",
+      "capability": "recognition",
+      "critical": true
+    },
+    {
+      "id": "it.a1.negation.non.transform",
+      "description_en": "Transform a simple affirmative clause with essere or avere into a negative clause without changing the verb person.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "it.a1.negation.non.forms",
+      "description_en": "Produce negative present forms of previously learned essere and avere.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "it.a1.negation.non.context",
+      "description_en": "Use basic negation naturally to correct simple personal information or state what someone does not have.",
+      "capability": "contextual",
+      "critical": true
+    },
+    {
+      "id": "it.a1.negation.non.produce",
+      "description_en": "Produce short natural A1 negative sentences with non.",
+      "capability": "production",
+      "critical": true
+    }
+  ],
+  "lesson": {
+    "short_explanation_en": "To make a simple Italian clause negative, put non before the finite verb: sono → non sono, ha → non ha. The verb still agrees with the same subject; non changes the polarity, not the person or number. Use no as a standalone negative answer. If you continue with a full negative clause, use non before the verb: No, non ho un cane. This lesson uses only previously learned present forms of essere and avere.",
+    "rule_blocks": [
+      {
+        "id": "it.a1.negation.non.rule1",
+        "heading_en": "Put non before the finite verb",
+        "explanation_en": "In the simple clauses practised here, non comes immediately before the conjugated verb. The verb itself keeps the form required by the subject.",
+        "pattern": "subject + non + finite verb + ...",
+        "usage_notes_en": [
+          "Sono stanco → Non sono stanco.",
+          "Anna ha una bicicletta → Anna non ha una bicicletta."
+        ],
+        "common_errors_en": [
+          "Incorrect: Sono non stanco. Correct: Non sono stanco.",
+          "Incorrect: Anna no ha una bicicletta. Correct: Anna non ha una bicicletta."
+        ],
+        "example_ids": [
+          "it.a1.negation.non.ex01",
+          "it.a1.negation.non.ex02",
+          "it.a1.negation.non.ex03",
+          "it.a1.negation.non.ex04",
+          "it.a1.negation.non.ex05",
+          "it.a1.negation.non.ex06",
+          "it.a1.negation.non.ex07",
+          "it.a1.negation.non.ex08"
+        ]
+      },
+      {
+        "id": "it.a1.negation.non.rule2",
+        "heading_en": "No versus non",
+        "explanation_en": "No can stand alone as a negative answer. Non negates a verb. In a complete negative reply, the two can appear together because they have different jobs.",
+        "pattern": "No. / No, non + verb ...",
+        "usage_notes_en": [
+          "No is a complete short negative answer.",
+          "In No, non ho sete, no answers negatively and non negates ho."
+        ],
+        "common_errors_en": [
+          "Do not replace pre-verbal non with no: *No sono di Roma* is not the standard form taught here."
+        ],
+        "example_ids": [
+          "it.a1.negation.non.ex10"
+        ]
+      },
+      {
+        "id": "it.a1.negation.non.rule3",
+        "heading_en": "Affirmative to negative",
+        "explanation_en": "When changing a simple affirmative sentence to a negative one, keep the same subject and finite verb form and insert non before that verb.",
+        "pattern": "ha → non ha; siamo → non siamo",
+        "usage_notes_en": [
+          "The person and number of the verb do not change just because the sentence becomes negative."
+        ],
+        "common_errors_en": [
+          "Incorrect transformation: Abbiamo una macchina → Non hanno una macchina. Correct: Non abbiamo una macchina."
+        ],
+        "example_ids": [
+          "it.a1.negation.non.ex09"
+        ]
+      }
+    ],
+    "form_tables": [
+      {
+        "id": "it.a1.negation.non.table1",
+        "title_en": "Negative present forms already available from essere and avere",
+        "columns": [
+          "Person",
+          "essere",
+          "avere"
+        ],
+        "rows": [
+          [
+            "io",
+            "non sono",
+            "non ho"
+          ],
+          [
+            "tu",
+            "non sei",
+            "non hai"
+          ],
+          [
+            "lui / lei",
+            "non è",
+            "non ha"
+          ],
+          [
+            "noi",
+            "non siamo",
+            "non abbiamo"
+          ],
+          [
+            "voi",
+            "non siete",
+            "non avete"
+          ],
+          [
+            "loro",
+            "non sono",
+            "non hanno"
+          ]
+        ]
+      },
+      {
+        "id": "it.a1.negation.non.table2",
+        "title_en": "No and non",
+        "columns": [
+          "Form",
+          "Job",
+          "Example"
+        ],
+        "rows": [
+          [
+            "no",
+            "standalone negative answer",
+            "No."
+          ],
+          [
+            "non",
+            "negates a verb",
+            "Non ho un cane."
+          ],
+          [
+            "no + non",
+            "negative answer + full negative clause",
+            "No, non ho un cane."
+          ]
+        ]
+      }
+    ]
+  },
+  "contexts": [
+    {
+      "id": "it.a1.negation.non.ctx1",
+      "type": "dialogue",
+      "setting_en": "Anna reads simple information about Marco, and Marco corrects what is not true.",
+      "lines": [
+        {
+          "speaker": "Anna",
+          "target": "Marco è di Roma.",
+          "translation_en": "Marco is from Rome."
+        },
+        {
+          "speaker": "Marco",
+          "target": "No, non sono di Roma. Sono di Milano.",
+          "translation_en": "No, I’m not from Rome. I’m from Milan."
+        },
+        {
+          "speaker": "Anna",
+          "target": "Marco ha un gatto.",
+          "translation_en": "Marco has a cat."
+        },
+        {
+          "speaker": "Marco",
+          "target": "No, non ho un gatto. Ho un cane.",
+          "translation_en": "No, I don’t have a cat. I have a dog."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "non sono",
+          "lemma": "essere",
+          "skill_id": "it.a1.negation.non.context",
+          "form_key": "indicative.present.1sg.negative",
+          "explanation_en": "Non comes before the finite verb sono to correct the origin statement."
+        },
+        {
+          "surface": "non ho",
+          "lemma": "avere",
+          "skill_id": "it.a1.negation.non.context",
+          "form_key": "indicative.present.1sg.negative",
+          "explanation_en": "Non comes before ho to state that the possession is not true."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "di",
+          "avere",
+          "un",
+          "gatto",
+          "cane"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "no",
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.ctx2",
+      "type": "narrative",
+      "setting_en": "A short description of things a family does not have and states that are not true.",
+      "lines": [
+        {
+          "speaker": "Narrator",
+          "target": "La famiglia non ha una macchina.",
+          "translation_en": "The family does not have a car."
+        },
+        {
+          "speaker": "Narrator",
+          "target": "Anna non ha una bicicletta.",
+          "translation_en": "Anna does not have a bicycle."
+        },
+        {
+          "speaker": "Narrator",
+          "target": "Marco non è stanco.",
+          "translation_en": "Marco is not tired."
+        },
+        {
+          "speaker": "Narrator",
+          "target": "Anna e Marco non hanno fame.",
+          "translation_en": "Anna and Marco are not hungry."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "non ha",
+          "lemma": "avere",
+          "skill_id": "it.a1.negation.non.placement",
+          "form_key": "indicative.present.3sg.negative",
+          "explanation_en": "For a singular subject, non precedes ha."
+        },
+        {
+          "surface": "non ha",
+          "lemma": "avere",
+          "skill_id": "it.a1.negation.non.placement",
+          "form_key": "indicative.present.3sg.negative",
+          "explanation_en": "The negative marker stays directly before the finite verb."
+        },
+        {
+          "surface": "non è",
+          "lemma": "essere",
+          "skill_id": "it.a1.negation.non.placement",
+          "form_key": "indicative.present.3sg.negative",
+          "explanation_en": "Non precedes the third-person singular form è."
+        },
+        {
+          "surface": "non hanno",
+          "lemma": "avere",
+          "skill_id": "it.a1.negation.non.placement",
+          "form_key": "indicative.present.3pl.negative",
+          "explanation_en": "A plural subject keeps hanno and places non before it."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "la",
+          "famiglia",
+          "avere",
+          "una",
+          "macchina",
+          "bicicletta",
+          "essere",
+          "stanco",
+          "e",
+          "fame"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "it.a1.negation.non.ex01",
+      "target": "Non sono Marco.",
+      "translation_en": "I am not Marco.",
+      "focus_surface": "Non sono",
+      "skill_ids": [
+        "it.a1.negation.non.placement"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.negative"
+      ],
+      "register": "neutral",
+      "note_en": "Non is placed before the finite verb sono.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.ex02",
+      "target": "Anna non è di Roma.",
+      "translation_en": "Anna is not from Rome.",
+      "focus_surface": "non è",
+      "skill_ids": [
+        "it.a1.negation.non.placement"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.negative"
+      ],
+      "register": "neutral",
+      "note_en": "With a named singular subject, non comes before è.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "di"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.ex03",
+      "target": "Non siamo studenti.",
+      "translation_en": "We are not students.",
+      "focus_surface": "Non siamo",
+      "skill_ids": [
+        "it.a1.negation.non.forms"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.negative"
+      ],
+      "register": "neutral",
+      "note_en": "The affirmative siamo keeps its person and number; non adds negative polarity.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "studente"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.ex04",
+      "target": "Marco non è stanco.",
+      "translation_en": "Marco is not tired.",
+      "focus_surface": "non è",
+      "skill_ids": [
+        "it.a1.negation.non.context"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.negative"
+      ],
+      "register": "neutral",
+      "note_en": "A simple description becomes negative with non before è.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "stanco"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.ex05",
+      "target": "Non ho un cane.",
+      "translation_en": "I do not have a dog.",
+      "focus_surface": "Non ho",
+      "skill_ids": [
+        "it.a1.negation.non.placement"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.negative"
+      ],
+      "register": "neutral",
+      "note_en": "Place non before ho.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "un",
+          "cane"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.ex06",
+      "target": "Anna non ha una bicicletta.",
+      "translation_en": "Anna does not have a bicycle.",
+      "focus_surface": "non ha",
+      "skill_ids": [
+        "it.a1.negation.non.context"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.negative"
+      ],
+      "register": "neutral",
+      "note_en": "The verb form ha does not change; non makes the clause negative.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "una",
+          "bicicletta"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.ex07",
+      "target": "Non abbiamo una macchina.",
+      "translation_en": "We do not have a car.",
+      "focus_surface": "Non abbiamo",
+      "skill_ids": [
+        "it.a1.negation.non.forms"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.negative"
+      ],
+      "register": "neutral",
+      "note_en": "Non precedes abbiamo for first-person plural.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "una",
+          "macchina"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.ex08",
+      "target": "I ragazzi non hanno fame.",
+      "translation_en": "The boys are not hungry.",
+      "focus_surface": "non hanno",
+      "skill_ids": [
+        "it.a1.negation.non.context"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.negative"
+      ],
+      "register": "neutral",
+      "note_en": "The expression avere fame is negated with non before hanno.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "i",
+          "ragazzo",
+          "avere",
+          "fame"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.ex09",
+      "target": "Sono di Roma. Non sono di Milano.",
+      "translation_en": "I am from Rome. I am not from Milan.",
+      "focus_surface": "Non sono",
+      "skill_ids": [
+        "it.a1.negation.non.transform"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative",
+        "indicative.present.1sg.negative"
+      ],
+      "register": "neutral",
+      "note_en": "Affirmative and negative clauses keep the same person; the negative adds non.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "di"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.ex10",
+      "target": "No, non ho sete.",
+      "translation_en": "No, I am not thirsty.",
+      "focus_surface": "No, non ho",
+      "skill_ids": [
+        "it.a1.negation.non.contrast"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.negative"
+      ],
+      "register": "neutral",
+      "note_en": "No can answer negatively; non is still required before the verb in the full negative clause.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "sete"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "no",
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "id": "it.a1.negation.non.q01",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the word that makes the sentence negative.",
+      "context_target": "",
+      "prompt_target": "Marco ___ è di Roma.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.negation.non.q01.opt1",
+          "text": "non",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct in this context."
+        },
+        {
+          "id": "it.a1.negation.non.q01.opt2",
+          "text": "no",
+          "correct": false,
+          "error_type": "no_vs_non",
+          "explanation_en": "No is a standalone negative answer, not the pre-verbal negator here."
+        },
+        {
+          "id": "it.a1.negation.non.q01.opt3",
+          "text": "sono",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Sono is first-person singular or third-person plural, not the negative marker."
+        },
+        {
+          "id": "it.a1.negation.non.q01.opt4",
+          "text": "ha",
+          "correct": false,
+          "error_type": "wrong_verb",
+          "explanation_en": "Ha is a form of avere, not the negative marker."
+        }
+      ],
+      "accepted_answers": [
+        "non"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Keep the same subject and verb person.",
+        "Put non immediately before the finite verb."
+      ],
+      "feedback_correct_en": "Correct: non.",
+      "feedback_wrong_en": "Expected: non. The negative marker non is placed before the finite verb è.",
+      "explanation_en": "The negative marker non is placed before the finite verb è.",
+      "skill_ids": [
+        "it.a1.negation.non.placement"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.negative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "di",
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non",
+          "no"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.q02",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the correct verb form.",
+      "context_target": "",
+      "prompt_target": "Anna non ___ una bicicletta.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.negation.non.q02.opt1",
+          "text": "ho",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Ho is first-person singular."
+        },
+        {
+          "id": "it.a1.negation.non.q02.opt2",
+          "text": "ha",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct in this context."
+        },
+        {
+          "id": "it.a1.negation.non.q02.opt3",
+          "text": "hanno",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "Hanno is third-person plural."
+        },
+        {
+          "id": "it.a1.negation.non.q02.opt4",
+          "text": "abbiamo",
+          "correct": false,
+          "error_type": "wrong_person_number",
+          "explanation_en": "Abbiamo is first-person plural."
+        }
+      ],
+      "accepted_answers": [
+        "ha"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Keep the same subject and verb person.",
+        "Put non immediately before the finite verb."
+      ],
+      "feedback_correct_en": "Correct: ha.",
+      "feedback_wrong_en": "Expected: ha. Anna is third-person singular, so the verb remains ha after non.",
+      "explanation_en": "Anna is third-person singular, so the verb remains ha after non.",
+      "skill_ids": [
+        "it.a1.negation.non.forms"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.negative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "una",
+          "bicicletta",
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.q03",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Choose the natural word for the short negative answer.",
+      "context_target": "",
+      "prompt_target": "___, non ho un gatto.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.negation.non.q03.opt1",
+          "text": "Non",
+          "correct": false,
+          "error_type": "wrong_function",
+          "explanation_en": "Non needs to negate a verb; the clause already has non before ho."
+        },
+        {
+          "id": "it.a1.negation.non.q03.opt2",
+          "text": "Ha",
+          "correct": false,
+          "error_type": "wrong_word_class",
+          "explanation_en": "Ha is a verb form, not a negative answer."
+        },
+        {
+          "id": "it.a1.negation.non.q03.opt3",
+          "text": "No",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct in this context."
+        },
+        {
+          "id": "it.a1.negation.non.q03.opt4",
+          "text": "Sono",
+          "correct": false,
+          "error_type": "wrong_verb",
+          "explanation_en": "Sono is a form of essere, not a negative answer."
+        }
+      ],
+      "accepted_answers": [
+        "No"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Keep the same subject and verb person.",
+        "Put non immediately before the finite verb."
+      ],
+      "feedback_correct_en": "Correct: No.",
+      "feedback_wrong_en": "Expected: No. No can stand as the negative answer before the full clause non ho un gatto.",
+      "explanation_en": "No can stand as the negative answer before the full clause non ho un gatto.",
+      "skill_ids": [
+        "it.a1.negation.non.contrast"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.negative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "un",
+          "gatto",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non",
+          "no"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.q04",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Choose the word that negates the verb in the full answer.",
+      "context_target": "",
+      "prompt_target": "No, ___ sono di Roma.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.negation.non.q04.opt1",
+          "text": "no",
+          "correct": false,
+          "error_type": "no_vs_non",
+          "explanation_en": "No answers negatively, but non negates the following verb."
+        },
+        {
+          "id": "it.a1.negation.non.q04.opt2",
+          "text": "sono",
+          "correct": false,
+          "error_type": "duplicate_verb",
+          "explanation_en": "This would repeat the verb and leave the clause ungrammatical."
+        },
+        {
+          "id": "it.a1.negation.non.q04.opt3",
+          "text": "ho",
+          "correct": false,
+          "error_type": "wrong_verb",
+          "explanation_en": "Ho is a form of avere and does not fit before sono."
+        },
+        {
+          "id": "it.a1.negation.non.q04.opt4",
+          "text": "non",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct in this context."
+        }
+      ],
+      "accepted_answers": [
+        "non"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Keep the same subject and verb person.",
+        "Put non immediately before the finite verb."
+      ],
+      "feedback_correct_en": "Correct: non.",
+      "feedback_wrong_en": "Expected: non. In the full clause, non must appear before sono.",
+      "explanation_en": "In the full clause, non must appear before sono.",
+      "skill_ids": [
+        "it.a1.negation.non.contrast"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.negative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "di",
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "no",
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.q05",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Write the single word that makes the sentence negative.",
+      "context_target": "",
+      "prompt_target": "Io ___ sono stanco.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "non"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Keep the same subject and verb person.",
+        "Put non immediately before the finite verb."
+      ],
+      "feedback_correct_en": "Correct: non.",
+      "feedback_wrong_en": "Expected: non. Non precedes sono; the explicit io is retained because the exercise supplies it.",
+      "explanation_en": "Non precedes sono; the explicit io is retained because the exercise supplies it.",
+      "skill_ids": [
+        "it.a1.negation.non.placement"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.negative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "io",
+          "essere",
+          "stanco"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.q06",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Write the single negative word.",
+      "context_target": "",
+      "prompt_target": "Noi ___ abbiamo una macchina.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "non"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Keep the same subject and verb person.",
+        "Put non immediately before the finite verb."
+      ],
+      "feedback_correct_en": "Correct: non.",
+      "feedback_wrong_en": "Expected: non. Non comes before abbiamo.",
+      "explanation_en": "Non comes before abbiamo.",
+      "skill_ids": [
+        "it.a1.negation.non.placement"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.negative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "noi",
+          "avere",
+          "una",
+          "macchina"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.q07",
+      "type": "transform",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Make the sentence negative. Change only what is necessary.",
+      "context_target": "",
+      "prompt_target": "Anna è di Roma.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "Anna non è di Roma."
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Keep the same subject and verb person.",
+        "Put non immediately before the finite verb."
+      ],
+      "feedback_correct_en": "Correct: Anna non è di Roma.",
+      "feedback_wrong_en": "Expected: Anna non è di Roma. Keep Anna and è, and insert non before the finite verb.",
+      "explanation_en": "Keep Anna and è, and insert non before the finite verb.",
+      "skill_ids": [
+        "it.a1.negation.non.transform"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.negative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "di"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.q08",
+      "type": "transform",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Make the sentence negative. Change only what is necessary.",
+      "context_target": "",
+      "prompt_target": "Marco ha un gatto.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "Marco non ha un gatto."
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Keep the same subject and verb person.",
+        "Put non immediately before the finite verb."
+      ],
+      "feedback_correct_en": "Correct: Marco non ha un gatto.",
+      "feedback_wrong_en": "Expected: Marco non ha un gatto. Keep ha because the subject is still Marco; add non before it.",
+      "explanation_en": "Keep ha because the subject is still Marco; add non before it.",
+      "skill_ids": [
+        "it.a1.negation.non.transform"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.negative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "un",
+          "gatto"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.q09",
+      "type": "error_correction",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_en": "Correct the position of non.",
+      "context_target": "",
+      "prompt_target": "Anna ha non una bicicletta.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "Anna non ha una bicicletta."
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Keep the same subject and verb person.",
+        "Put non immediately before the finite verb."
+      ],
+      "feedback_correct_en": "Correct: Anna non ha una bicicletta.",
+      "feedback_wrong_en": "Expected: Anna non ha una bicicletta. For basic sentence negation, non precedes the finite verb ha.",
+      "explanation_en": "For basic sentence negation, non precedes the finite verb ha.",
+      "skill_ids": [
+        "it.a1.negation.non.placement"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.negative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "una",
+          "bicicletta"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.q10",
+      "type": "error_correction",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_en": "Correct the negative word. Keep the rest of the sentence unchanged.",
+      "context_target": "",
+      "prompt_target": "Marco no è stanco.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "Marco non è stanco."
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Keep the same subject and verb person.",
+        "Put non immediately before the finite verb."
+      ],
+      "feedback_correct_en": "Correct: Marco non è stanco.",
+      "feedback_wrong_en": "Expected: Marco non è stanco. Use non, not no, directly before a finite verb.",
+      "explanation_en": "Use non, not no, directly before a finite verb.",
+      "skill_ids": [
+        "it.a1.negation.non.contrast"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.negative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "stanco"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "no",
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.q11",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 3,
+      "instruction_en": "Write the complete negative verb form only.",
+      "context_target": "",
+      "prompt_target": "essere",
+      "prompt_en": "Present indicative, 1st person singular, negative.",
+      "options": [],
+      "accepted_answers": [
+        "non sono"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct: non sono.",
+      "feedback_wrong_en": "Expected: non sono. The first-person singular of essere is sono; negative polarity is non sono.",
+      "explanation_en": "The first-person singular of essere is sono; negative polarity is non sono.",
+      "skill_ids": [
+        "it.a1.negation.non.forms"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.negative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.q12",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 3,
+      "instruction_en": "Write the complete negative verb form only.",
+      "context_target": "",
+      "prompt_target": "essere",
+      "prompt_en": "Present indicative, 2nd person singular, negative.",
+      "options": [],
+      "accepted_answers": [
+        "non sei"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct: non sei.",
+      "feedback_wrong_en": "Expected: non sei. The second-person singular is sei; add non before it.",
+      "explanation_en": "The second-person singular is sei; add non before it.",
+      "skill_ids": [
+        "it.a1.negation.non.forms"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.negative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.q13",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 3,
+      "instruction_en": "Write the complete negative verb form only.",
+      "context_target": "",
+      "prompt_target": "essere",
+      "prompt_en": "Present indicative, 3rd person singular, negative.",
+      "options": [],
+      "accepted_answers": [
+        "non è"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct: non è.",
+      "feedback_wrong_en": "Expected: non è. The third-person singular is è; the negative form is non è.",
+      "explanation_en": "The third-person singular is è; the negative form is non è.",
+      "skill_ids": [
+        "it.a1.negation.non.forms"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.negative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.q14",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 3,
+      "instruction_en": "Write the complete negative verb form only.",
+      "context_target": "",
+      "prompt_target": "essere",
+      "prompt_en": "Present indicative, 1st person plural, negative.",
+      "options": [],
+      "accepted_answers": [
+        "non siamo"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct: non siamo.",
+      "feedback_wrong_en": "Expected: non siamo. The first-person plural is siamo; the negative form is non siamo.",
+      "explanation_en": "The first-person plural is siamo; the negative form is non siamo.",
+      "skill_ids": [
+        "it.a1.negation.non.forms"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.negative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.q15",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 3,
+      "instruction_en": "Write the complete negative verb form only.",
+      "context_target": "",
+      "prompt_target": "avere",
+      "prompt_en": "Present indicative, 1st person singular, negative.",
+      "options": [],
+      "accepted_answers": [
+        "non ho"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct: non ho.",
+      "feedback_wrong_en": "Expected: non ho. The first-person singular is ho; the negative form is non ho.",
+      "explanation_en": "The first-person singular is ho; the negative form is non ho.",
+      "skill_ids": [
+        "it.a1.negation.non.forms"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.negative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.q16",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 3,
+      "instruction_en": "Write the complete negative verb form only.",
+      "context_target": "",
+      "prompt_target": "avere",
+      "prompt_en": "Present indicative, 2nd person singular, negative.",
+      "options": [],
+      "accepted_answers": [
+        "non hai"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct: non hai.",
+      "feedback_wrong_en": "Expected: non hai. The second-person singular is hai; the negative form is non hai.",
+      "explanation_en": "The second-person singular is hai; the negative form is non hai.",
+      "skill_ids": [
+        "it.a1.negation.non.forms"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.negative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.q17",
+      "type": "conjugate",
+      "stage": "production",
+      "difficulty": 3,
+      "instruction_en": "Write the complete negative verb form only.",
+      "context_target": "",
+      "prompt_target": "avere",
+      "prompt_en": "Present indicative, 1st person plural, negative.",
+      "options": [],
+      "accepted_answers": [
+        "non abbiamo"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct: non abbiamo.",
+      "feedback_wrong_en": "Expected: non abbiamo. The first-person plural is abbiamo; the negative form is non abbiamo.",
+      "explanation_en": "The first-person plural is abbiamo; the negative form is non abbiamo.",
+      "skill_ids": [
+        "it.a1.negation.non.forms"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.negative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.q18",
+      "type": "conjugate",
+      "stage": "production",
+      "difficulty": 3,
+      "instruction_en": "Write the complete negative verb form only.",
+      "context_target": "",
+      "prompt_target": "avere",
+      "prompt_en": "Present indicative, 3rd person plural, negative.",
+      "options": [],
+      "accepted_answers": [
+        "non hanno"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct: non hanno.",
+      "feedback_wrong_en": "Expected: non hanno. The third-person plural is hanno; the negative form is non hanno.",
+      "explanation_en": "The third-person plural is hanno; the negative form is non hanno.",
+      "skill_ids": [
+        "it.a1.negation.non.forms"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.negative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.q19",
+      "type": "multiple_choice",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Choose the complete negative verb form.",
+      "context_target": "",
+      "prompt_target": "Anna e Marco ___ studenti.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.negation.non.q19.opt1",
+          "text": "non è",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "Non è is third-person singular."
+        },
+        {
+          "id": "it.a1.negation.non.q19.opt2",
+          "text": "non sono",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct in this context."
+        },
+        {
+          "id": "it.a1.negation.non.q19.opt3",
+          "text": "sono non",
+          "correct": false,
+          "error_type": "wrong_order",
+          "explanation_en": "Non must precede the finite verb."
+        },
+        {
+          "id": "it.a1.negation.non.q19.opt4",
+          "text": "non siamo",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Non siamo is first-person plural."
+        }
+      ],
+      "accepted_answers": [
+        "non sono"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Keep the same subject and verb person.",
+        "Put non immediately before the finite verb."
+      ],
+      "feedback_correct_en": "Correct: non sono.",
+      "feedback_wrong_en": "Expected: non sono. Anna e Marco is a third-person plural subject, so the negative form is non sono.",
+      "explanation_en": "Anna e Marco is a third-person plural subject, so the negative form is non sono.",
+      "skill_ids": [
+        "it.a1.negation.non.context"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.negative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "e",
+          "studente",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.q20",
+      "type": "fill_gap",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Write the complete negative verb form.",
+      "context_target": "",
+      "prompt_target": "La famiglia ___ una macchina.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "non ha"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The subject is grammatically singular.",
+        "Use the third-person singular of avere with non."
+      ],
+      "feedback_correct_en": "Correct: non ha.",
+      "feedback_wrong_en": "Expected: non ha. Famiglia is grammatically singular, so the complete negative form is non ha.",
+      "explanation_en": "Famiglia is grammatically singular, so the complete negative form is non ha.",
+      "skill_ids": [
+        "it.a1.negation.non.context"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.negative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "la",
+          "famiglia",
+          "una",
+          "macchina",
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.q21",
+      "type": "guided_production",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Write one or two short Italian sentences correcting the information about Marco.",
+      "context_target": "",
+      "prompt_target": "Marco: di Milano; non di Roma",
+      "prompt_en": "Say that Marco is from Milan, not Rome.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the position of non and keep the verb form matched to the subject.",
+      "explanation_en": "A natural correction states the true origin and negates the incorrect one.",
+      "skill_ids": [
+        "it.a1.negation.non.produce"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.negative"
+      ],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "Clearly says that Marco is not from Rome using non before a correct form of essere.",
+          "Clearly says that Marco is from Milan.",
+          "Uses only short A1 structures."
+        ],
+        "example_response": "Marco non è di Roma. È di Milano."
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "di",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.q22",
+      "type": "guided_production",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Write one or two short Italian sentences about Anna.",
+      "context_target": "",
+      "prompt_target": "Anna: un gatto; non un cane",
+      "prompt_en": "Say that Anna has a cat and does not have a dog.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the position of non and keep the verb form matched to the subject.",
+      "explanation_en": "A natural correction can contrast what Anna does and does not have.",
+      "skill_ids": [
+        "it.a1.negation.non.produce"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.negative"
+      ],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "Uses Anna ha un gatto or an equivalent natural A1 statement.",
+          "Uses non directly before ha when saying she does not have a dog.",
+          "Keeps third-person singular agreement."
+        ],
+        "example_response": "Anna ha un gatto. Non ha un cane."
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "un",
+          "gatto",
+          "cane",
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.negation.non.q23",
+      "type": "guided_production",
+      "stage": "review",
+      "difficulty": 3,
+      "instruction_en": "Write two short negative Italian sentences: one with essere and one with avere.",
+      "context_target": "",
+      "prompt_target": "essere + avere + non",
+      "prompt_en": "Use familiar A1 vocabulary and put non in the correct position.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the position of non and keep the verb form matched to the subject.",
+      "explanation_en": "The review asks for independent use of the same basic negation pattern with both previously learned verbs.",
+      "skill_ids": [
+        "it.a1.negation.non.produce"
+      ],
+      "verb_ids": [
+        "it:essere",
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.negative",
+        "indicative.present.3sg.negative"
+      ],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "One complete negative sentence uses essere with non before the finite verb.",
+          "One complete negative sentence uses avere with non before the finite verb.",
+          "Both sentences are natural A1 Italian."
+        ],
+        "example_response": "Non sono stanco. Non ho una bicicletta."
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "avere",
+          "stanco",
+          "una",
+          "bicicletta"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "non"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "verb_application": {
+    "applicable": true,
+    "required_form_keys": [
+      "indicative.present.1sg.negative",
+      "indicative.present.2sg.negative",
+      "indicative.present.3sg.negative",
+      "indicative.present.1pl.negative",
+      "indicative.present.2pl.negative",
+      "indicative.present.3pl.negative"
+    ],
+    "verbs": [
+      {
+        "id": "it:essere",
+        "lemma": "essere",
+        "meaning_en": "to be",
+        "regularity": "irregular",
+        "conjugation_class": "irregular",
+        "auxiliary": "essere",
+        "governed_cases_or_prepositions": [],
+        "forms": [
+          {
+            "form_key": "indicative.present.1sg.negative",
+            "surface": "non sono",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "singular",
+              "polarity": "negative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2sg.negative",
+            "surface": "non sei",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "singular",
+              "polarity": "negative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3sg.negative",
+            "surface": "non è",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "singular",
+              "polarity": "negative"
+            }
+          },
+          {
+            "form_key": "indicative.present.1pl.negative",
+            "surface": "non siamo",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "plural",
+              "polarity": "negative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2pl.negative",
+            "surface": "non siete",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "plural",
+              "polarity": "negative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3pl.negative",
+            "surface": "non sono",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "plural",
+              "polarity": "negative"
+            }
+          }
+        ],
+        "exercise_ids": [
+          "it.a1.negation.non.q01",
+          "it.a1.negation.non.q04",
+          "it.a1.negation.non.q05",
+          "it.a1.negation.non.q07",
+          "it.a1.negation.non.q10",
+          "it.a1.negation.non.q11",
+          "it.a1.negation.non.q12",
+          "it.a1.negation.non.q13",
+          "it.a1.negation.non.q14",
+          "it.a1.negation.non.q19",
+          "it.a1.negation.non.q21",
+          "it.a1.negation.non.q23"
+        ]
+      },
+      {
+        "id": "it:avere",
+        "lemma": "avere",
+        "meaning_en": "to have",
+        "regularity": "irregular",
+        "conjugation_class": "irregular; second-conjugation infinitive",
+        "auxiliary": "avere",
+        "governed_cases_or_prepositions": [],
+        "forms": [
+          {
+            "form_key": "indicative.present.1sg.negative",
+            "surface": "non ho",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "singular",
+              "polarity": "negative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2sg.negative",
+            "surface": "non hai",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "singular",
+              "polarity": "negative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3sg.negative",
+            "surface": "non ha",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "singular",
+              "polarity": "negative"
+            }
+          },
+          {
+            "form_key": "indicative.present.1pl.negative",
+            "surface": "non abbiamo",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "plural",
+              "polarity": "negative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2pl.negative",
+            "surface": "non avete",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "plural",
+              "polarity": "negative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3pl.negative",
+            "surface": "non hanno",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "plural",
+              "polarity": "negative"
+            }
+          }
+        ],
+        "exercise_ids": [
+          "it.a1.negation.non.q02",
+          "it.a1.negation.non.q03",
+          "it.a1.negation.non.q06",
+          "it.a1.negation.non.q08",
+          "it.a1.negation.non.q09",
+          "it.a1.negation.non.q15",
+          "it.a1.negation.non.q16",
+          "it.a1.negation.non.q17",
+          "it.a1.negation.non.q18",
+          "it.a1.negation.non.q20",
+          "it.a1.negation.non.q22",
+          "it.a1.negation.non.q23"
+        ]
+      }
+    ]
+  },
+  "mastery": {
+    "minimum_scored_items": 12,
+    "required_score": 0.8,
+    "minimum_production_score": 0.7,
+    "minimum_unaided_production_items": 2,
+    "required_stages": [
+      "notice",
+      "controlled",
+      "contextual",
+      "production",
+      "transfer"
+    ],
+    "review_intervals_days": [
+      1,
+      3,
+      7,
+      14,
+      30,
+      60
+    ]
+  },
+  "vocabulary_audit": {
+    "status": "pass",
+    "manifest_id": "it-reviewed-9d35be468e23",
+    "used_lemmas": [
+      "avere",
+      "bicicletta",
+      "cane",
+      "di",
+      "e",
+      "essere",
+      "fame",
+      "famiglia",
+      "gatto",
+      "i",
+      "io",
+      "la",
+      "macchina",
+      "noi",
+      "ragazzo",
+      "sete",
+      "stanco",
+      "studente",
+      "un",
+      "una"
+    ],
+    "target_lemmas": [
+      "non",
+      "no"
+    ],
+    "out_of_list_lemmas": [],
+    "introduced_lemmas": [],
+    "proper_names": [
+      "Anna",
+      "Marco",
+      "Milano",
+      "Roma"
+    ],
+    "grammar_only_tokens": [
+      "no",
+      "non"
+    ],
+    "above_level_lemmas": [],
+    "tests_with_unknown_vocabulary": []
+  },
+  "level_audit": {
+    "status": "pass",
+    "cefr": "A1",
+    "maximum_sentence_length_words": 8,
+    "unapproved_grammar_features": [],
+    "scope_violations": []
+  },
+  "quality_audit": {
+    "status": "pass",
+    "issues": [],
+    "needs_human_review": [],
+    "sources": [
+      {
+        "name": "Treccani, Enciclopedia dell’Italiano — Negazione",
+        "url": "https://www.treccani.it/enciclopedia/negazione_%28Enciclopedia-dell%27Italiano%29/"
+      },
+      {
+        "name": "Zanichelli Aula di lingue — No o non?",
+        "url": "https://int-aulalingue.scuola.zanichelli.it/benvenuti/2018/01/11/no-o-non/"
+      }
+    ],
+    "checks": {
+      "unique_ids": true,
+      "prerequisites_resolve": true,
+      "answers_verified": true,
+      "forms_verified": true,
+      "single_best_answers": true,
+      "naturalness_checked": true,
+      "cefr_checked": true,
+      "translations_checked": true,
+      "requested_counts_met": true
+    }
+  },
+  "audit": {
+    "status": "pass",
+    "issues": [],
+    "needs_human_review": [],
+    "sources": [
+      {
+        "name": "Treccani, Enciclopedia dell’Italiano — Negazione",
+        "url": "https://www.treccani.it/enciclopedia/negazione_%28Enciclopedia-dell%27Italiano%29/"
+      },
+      {
+        "name": "Zanichelli Aula di lingue — No o non?",
+        "url": "https://int-aulalingue.scuola.zanichelli.it/benvenuti/2018/01/11/no-o-non/"
+      }
+    ],
+    "checks": {
+      "unique_ids": true,
+      "prerequisites_resolve": true,
+      "answers_verified": true,
+      "forms_verified": true,
+      "single_best_answers": true,
+      "naturalness_checked": true,
+      "cefr_checked": true,
+      "translations_checked": true,
+      "requested_counts_met": true
+    }
+  }
+}

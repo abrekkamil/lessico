@@ -1,0 +1,2177 @@
+{
+  "schema_version": "lessico-grammar-v1",
+  "content_version": "1.0.0",
+  "status": "ready",
+  "mode": "topic_pack",
+  "language": "it",
+  "explanation_language": "en",
+  "vocabulary_manifest_id": "it-reviewed-9d35be468e23",
+  "topic": {
+    "id": "it.a1.nouns.plural",
+    "cefr": "A1",
+    "sequence": 4,
+    "module_id": "it.a1.nouns",
+    "title_target": "Il plurale regolare dei nomi",
+    "title_en": "Regular noun plurals",
+    "estimated_minutes": 8,
+    "prerequisite_ids": [
+      "it.a1.nouns.gender"
+    ],
+    "learning_objectives": [
+      "Form and recognize regular plural nouns ending in -i or -e."
+    ],
+    "scope_included": [
+      "regular -o to -i",
+      "regular -a to -e",
+      "regular -e to -i"
+    ],
+    "scope_excluded": [
+      "irregular plurals",
+      "invariable nouns",
+      "spelling-change detail beyond supplied words"
+    ],
+    "new_terms": [],
+    "reading_links": []
+  },
+  "skills": [
+    {
+      "id": "it.a1.nouns.plural.o_i",
+      "description_en": "Recognise and form -i plurals of regular nouns ending in -o.",
+      "capability": "recognition",
+      "critical": true
+    },
+    {
+      "id": "it.a1.nouns.plural.a_e",
+      "description_en": "Recognise and form -e plurals of regular feminine nouns ending in -a.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "it.a1.nouns.plural.e_i",
+      "description_en": "Form -i plurals of regular masculine and feminine nouns ending in -e.",
+      "capability": "contextual",
+      "critical": true
+    },
+    {
+      "id": "it.a1.nouns.plural.production",
+      "description_en": "Select, correct and produce regular plural nouns in short, meaningful A1 sentences.",
+      "capability": "production",
+      "critical": true
+    }
+  ],
+  "lesson": {
+    "short_explanation_en": "Italian generally forms regular noun plurals by changing the final vowel rather than adding -s: -o becomes -i, feminine -a becomes -e, and -e becomes -i for both genders. This lesson uses familiar nouns after numbers such as due and tre; plural articles come in the next lesson.",
+    "form_tables": [
+      {
+        "id": "it.a1.nouns.plural.table1",
+        "title_en": "Three regular noun-plural patterns",
+        "columns": [
+          "Singular ending",
+          "Typical noun gender",
+          "Plural ending",
+          "Singular → plural"
+        ],
+        "rows": [
+          [
+            "-o",
+            "normally masculine",
+            "-i",
+            "libro → libri"
+          ],
+          [
+            "-o",
+            "normally masculine",
+            "-i",
+            "piatto → piatti"
+          ],
+          [
+            "-a",
+            "feminine",
+            "-e",
+            "penna → penne"
+          ],
+          [
+            "-a",
+            "feminine",
+            "-e",
+            "torta → torte"
+          ],
+          [
+            "-e",
+            "masculine",
+            "-i",
+            "fiore → fiori"
+          ],
+          [
+            "-e",
+            "feminine",
+            "-i",
+            "chiave → chiavi"
+          ]
+        ]
+      }
+    ],
+    "rule_blocks": [
+      {
+        "id": "it.a1.nouns.plural.rule1",
+        "heading_en": "Regular nouns ending in -o: change to -i",
+        "explanation_en": "For the common regular pattern, a singular noun ending in -o changes its final -o to -i in the plural. The noun keeps its gender.",
+        "pattern": "-o → -i: libro → libri; piatto → piatti",
+        "usage_notes_en": [
+          "The plural noun describes two or more books, plates, people, etc.",
+          "Italian normally changes the ending instead of simply adding an English -s.",
+          "This lesson covers regular nouns only; not every -o noun behaves this way."
+        ],
+        "common_errors_en": [
+          "Wrong: due libro. Correct: due libri.",
+          "Wrong: tre libros. Correct: tre libri."
+        ],
+        "example_ids": [
+          "it.a1.nouns.plural.ex01",
+          "it.a1.nouns.plural.ex05",
+          "it.a1.nouns.plural.ex09"
+        ]
+      },
+      {
+        "id": "it.a1.nouns.plural.rule2",
+        "heading_en": "Regular feminine nouns ending in -a: change to -e",
+        "explanation_en": "A regular feminine singular noun ending in -a changes its final -a to -e in the plural.",
+        "pattern": "-a → -e: penna → penne; torta → torte",
+        "usage_notes_en": [
+          "Remember the noun’s gender from the previous lesson: not every noun in -a is feminine.",
+          "Use a number such as due or tre to make the plural meaning clear."
+        ],
+        "common_errors_en": [
+          "Wrong: due penni. Correct: due penne.",
+          "Wrong: tre torta. Correct: tre torte."
+        ],
+        "example_ids": [
+          "it.a1.nouns.plural.ex02",
+          "it.a1.nouns.plural.ex06",
+          "it.a1.nouns.plural.ex08"
+        ]
+      },
+      {
+        "id": "it.a1.nouns.plural.rule3",
+        "heading_en": "Nouns ending in -e: change to -i",
+        "explanation_en": "Many regular nouns ending in -e have the plural ending -i. This applies to both masculine and feminine nouns.",
+        "pattern": "-e → -i: fiore → fiori (masculine); chiave → chiavi (feminine)",
+        "usage_notes_en": [
+          "Gender still matters, but both genders use the same -e to -i plural pattern.",
+          "This is noun plural formation, not a lesson on plural definite articles."
+        ],
+        "common_errors_en": [
+          "Wrong: due fiore. Correct: due fiori.",
+          "Wrong: tre chiave. Correct: tre chiavi."
+        ],
+        "example_ids": [
+          "it.a1.nouns.plural.ex03",
+          "it.a1.nouns.plural.ex04",
+          "it.a1.nouns.plural.ex07",
+          "it.a1.nouns.plural.ex10"
+        ]
+      }
+    ]
+  },
+  "contexts": [
+    {
+      "id": "it.a1.nouns.plural.ctx1",
+      "type": "dialogue",
+      "setting_en": "Anna asks Marco, who works in a stationery shop, for several school supplies.",
+      "lines": [
+        {
+          "speaker": "Anna",
+          "target": "Buongiorno! Vorrei due quaderni e tre penne, per favore.",
+          "translation_en": "Good morning! I would like two notebooks and three pens, please."
+        },
+        {
+          "speaker": "Marco",
+          "target": "Certo. Vuole anche due matite?",
+          "translation_en": "Certainly. Would you also like two pencils?"
+        },
+        {
+          "speaker": "Anna",
+          "target": "Sì, grazie. E tre libri.",
+          "translation_en": "Yes, thanks. And three books."
+        },
+        {
+          "speaker": "Marco",
+          "target": "Ecco: due quaderni, tre penne, due matite e tre libri.",
+          "translation_en": "Here you are: two notebooks, three pens, two pencils and three books."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "due quaderni",
+          "lemma": "quaderno",
+          "skill_id": "it.a1.nouns.plural.o_i",
+          "form_key": "noun.plural.o_to_i",
+          "explanation_en": "Quaderno ends in -o and changes to -i with a plural number."
+        },
+        {
+          "surface": "tre penne",
+          "lemma": "penna",
+          "skill_id": "it.a1.nouns.plural.a_e",
+          "form_key": "noun.plural.a_to_e",
+          "explanation_en": "Feminine penna ends in -a; the plural ends in -e."
+        },
+        {
+          "surface": "due matite",
+          "lemma": "matita",
+          "skill_id": "it.a1.nouns.plural.a_e",
+          "form_key": "noun.plural.a_to_e",
+          "explanation_en": "Matita becomes matite, using the regular feminine pattern."
+        },
+        {
+          "surface": "tre libri",
+          "lemma": "libro",
+          "skill_id": "it.a1.nouns.plural.o_i",
+          "form_key": "noun.plural.o_to_i",
+          "explanation_en": "Libri is the regular plural of libro."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "anche",
+          "buongiorno",
+          "certo",
+          "due",
+          "e",
+          "ecco",
+          "grazie",
+          "libro",
+          "matita",
+          "penna",
+          "per favore",
+          "quaderno",
+          "sì",
+          "tre",
+          "volere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.ctx2",
+      "type": "narrative",
+      "setting_en": "Two people get the kitchen ready and bring food for a small gathering.",
+      "lines": [
+        {
+          "speaker": "Narrator",
+          "target": "In cucina Anna mette due piatti e due bicchieri.",
+          "translation_en": "In the kitchen, Anna puts out two plates and two glasses."
+        },
+        {
+          "speaker": "Narrator",
+          "target": "Marco porta tre mele e quattro panini.",
+          "translation_en": "Marco brings three apples and four bread rolls."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "due piatti",
+          "lemma": "piatto",
+          "skill_id": "it.a1.nouns.plural.o_i",
+          "form_key": "noun.plural.o_to_i",
+          "explanation_en": "The regular plural of piatto is piatti."
+        },
+        {
+          "surface": "due bicchieri",
+          "lemma": "bicchiere",
+          "skill_id": "it.a1.nouns.plural.e_i",
+          "form_key": "noun.plural.e_to_i",
+          "explanation_en": "The masculine noun bicchiere takes -i."
+        },
+        {
+          "surface": "tre mele",
+          "lemma": "mela",
+          "skill_id": "it.a1.nouns.plural.a_e",
+          "form_key": "noun.plural.a_to_e",
+          "explanation_en": "The feminine noun mela takes -e."
+        },
+        {
+          "surface": "quattro panini",
+          "lemma": "panino",
+          "skill_id": "it.a1.nouns.plural.o_i",
+          "form_key": "noun.plural.o_to_i",
+          "explanation_en": "Panino becomes panini."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "bicchiere",
+          "cucina",
+          "due",
+          "e",
+          "in",
+          "mela",
+          "mettere",
+          "panino",
+          "piatto",
+          "portare",
+          "quattro",
+          "tre"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "it.a1.nouns.plural.ex01",
+      "target": "Ho due libri.",
+      "translation_en": "I have two books.",
+      "focus_surface": "libri",
+      "skill_ids": [
+        "it.a1.nouns.plural.o_i"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.o_to_i"
+      ],
+      "register": "neutral",
+      "note_en": "Libri replaces the singular ending -o with -i.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "due",
+          "libro"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.ex02",
+      "target": "Anna compra tre penne.",
+      "translation_en": "Anna buys three pens.",
+      "focus_surface": "penne",
+      "skill_ids": [
+        "it.a1.nouns.plural.a_e"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.a_to_e"
+      ],
+      "register": "neutral",
+      "note_en": "Penna is feminine: the regular plural ends in -e.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "comprare",
+          "penna",
+          "tre"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.ex03",
+      "target": "Marco porta due fiori.",
+      "translation_en": "Marco is bringing two flowers.",
+      "focus_surface": "fiori",
+      "skill_ids": [
+        "it.a1.nouns.plural.e_i"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.e_to_i"
+      ],
+      "register": "neutral",
+      "note_en": "The masculine noun fiore takes -i in the plural.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "due",
+          "fiore",
+          "portare"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.ex04",
+      "target": "Cerco tre chiavi.",
+      "translation_en": "I am looking for three keys.",
+      "focus_surface": "chiavi",
+      "skill_ids": [
+        "it.a1.nouns.plural.e_i"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.e_to_i"
+      ],
+      "register": "neutral",
+      "note_en": "The feminine noun chiave takes -i in the plural too.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "cercare",
+          "chiave",
+          "tre"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.ex05",
+      "target": "Metto quattro piatti in cucina.",
+      "translation_en": "I put four plates in the kitchen.",
+      "focus_surface": "piatti",
+      "skill_ids": [
+        "it.a1.nouns.plural.o_i"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.o_to_i"
+      ],
+      "register": "neutral",
+      "note_en": "Piatto follows the regular -o to -i pattern.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "cucina",
+          "in",
+          "mettere",
+          "piatto",
+          "quattro"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.ex06",
+      "target": "Anna prepara due torte.",
+      "translation_en": "Anna prepares two cakes.",
+      "focus_surface": "torte",
+      "skill_ids": [
+        "it.a1.nouns.plural.a_e"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.a_to_e"
+      ],
+      "register": "neutral",
+      "note_en": "Torta is feminine: torta becomes torte.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "due",
+          "preparare",
+          "torta"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.ex07",
+      "target": "Aspetto tre studenti.",
+      "translation_en": "I am waiting for three students.",
+      "focus_surface": "studenti",
+      "skill_ids": [
+        "it.a1.nouns.plural.e_i"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.e_to_i"
+      ],
+      "register": "neutral",
+      "note_en": "Studente is masculine and takes -i in the plural.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "aspettare",
+          "studente",
+          "tre"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.ex08",
+      "target": "Scrivo due lettere.",
+      "translation_en": "I am writing two letters.",
+      "focus_surface": "lettere",
+      "skill_ids": [
+        "it.a1.nouns.plural.a_e"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.a_to_e"
+      ],
+      "register": "neutral",
+      "note_en": "Lettera becomes lettere.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "due",
+          "lettera",
+          "scrivere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.ex09",
+      "target": "In giardino vedo tre gatti.",
+      "translation_en": "I can see three cats in the garden.",
+      "focus_surface": "gatti",
+      "skill_ids": [
+        "it.a1.nouns.plural.o_i"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.o_to_i"
+      ],
+      "register": "neutral",
+      "note_en": "Gatto becomes gatti.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "gatto",
+          "giardino",
+          "in",
+          "tre",
+          "vedere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.ex10",
+      "target": "Porto due bicchieri.",
+      "translation_en": "I am bringing two glasses.",
+      "focus_surface": "bicchieri",
+      "skill_ids": [
+        "it.a1.nouns.plural.e_i"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.e_to_i"
+      ],
+      "register": "neutral",
+      "note_en": "Bicchiere becomes bicchieri.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "bicchiere",
+          "due",
+          "portare"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "id": "it.a1.nouns.plural.q01",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the regular plural of the noun.",
+      "context_target": "",
+      "prompt_target": "libro → ___",
+      "prompt_en": "What is the plural of libro?",
+      "options": [
+        {
+          "id": "it.a1.nouns.plural.q01.opt1",
+          "text": "libri",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Libro follows -o → -i."
+        },
+        {
+          "id": "it.a1.nouns.plural.q01.opt2",
+          "text": "libre",
+          "correct": false,
+          "error_type": "wrong_ending",
+          "explanation_en": "The regular plural of this -o noun ends in -i, not -e."
+        },
+        {
+          "id": "it.a1.nouns.plural.q01.opt3",
+          "text": "libro",
+          "correct": false,
+          "error_type": "unchanged_singular",
+          "explanation_en": "This is the singular form."
+        },
+        {
+          "id": "it.a1.nouns.plural.q01.opt4",
+          "text": "libros",
+          "correct": false,
+          "error_type": "foreign_s_plural",
+          "explanation_en": "Standard Italian does not add -s here."
+        }
+      ],
+      "accepted_answers": [
+        "libri"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about whether the noun is singular or plural and look at its ending.",
+        "Match the noun to one of the regular patterns: -o → -i, feminine -a → -e, or -e → -i."
+      ],
+      "feedback_correct_en": "Good work. Libro follows -o → -i.",
+      "feedback_wrong_en": "The expected form is libri. Libro follows -o → -i.",
+      "explanation_en": "Libro follows -o → -i.",
+      "skill_ids": [
+        "it.a1.nouns.plural.o_i"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.o_to_i"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "libro"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.q02",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the regular plural of the noun.",
+      "context_target": "",
+      "prompt_target": "penna → ___",
+      "prompt_en": "What is the plural of penna?",
+      "options": [
+        {
+          "id": "it.a1.nouns.plural.q02.opt1",
+          "text": "penni",
+          "correct": false,
+          "error_type": "wrong_gender_ending",
+          "explanation_en": "A regular feminine -a noun uses -e, not -i."
+        },
+        {
+          "id": "it.a1.nouns.plural.q02.opt2",
+          "text": "penne",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Feminine penna changes -a to -e."
+        },
+        {
+          "id": "it.a1.nouns.plural.q02.opt3",
+          "text": "penna",
+          "correct": false,
+          "error_type": "unchanged_singular",
+          "explanation_en": "Penna is singular."
+        },
+        {
+          "id": "it.a1.nouns.plural.q02.opt4",
+          "text": "pennas",
+          "correct": false,
+          "error_type": "foreign_s_plural",
+          "explanation_en": "Do not add -s to form this Italian plural."
+        }
+      ],
+      "accepted_answers": [
+        "penne"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about whether the noun is singular or plural and look at its ending.",
+        "Match the noun to one of the regular patterns: -o → -i, feminine -a → -e, or -e → -i."
+      ],
+      "feedback_correct_en": "Good work. Feminine penna changes -a to -e.",
+      "feedback_wrong_en": "The expected form is penne. Feminine penna changes -a to -e.",
+      "explanation_en": "Feminine penna changes -a to -e.",
+      "skill_ids": [
+        "it.a1.nouns.plural.a_e"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.a_to_e"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "penna"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.q03",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the regular plural of the noun.",
+      "context_target": "",
+      "prompt_target": "fiore → ___",
+      "prompt_en": "What is the plural of fiore?",
+      "options": [
+        {
+          "id": "it.a1.nouns.plural.q03.opt1",
+          "text": "fiora",
+          "correct": false,
+          "error_type": "wrong_ending",
+          "explanation_en": "The plural of a regular -e noun ends in -i, not -a."
+        },
+        {
+          "id": "it.a1.nouns.plural.q03.opt2",
+          "text": "fiore",
+          "correct": false,
+          "error_type": "unchanged_singular",
+          "explanation_en": "This is the singular form."
+        },
+        {
+          "id": "it.a1.nouns.plural.q03.opt3",
+          "text": "fiori",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Fiore is a regular -e noun; its plural ends in -i."
+        },
+        {
+          "id": "it.a1.nouns.plural.q03.opt4",
+          "text": "fiores",
+          "correct": false,
+          "error_type": "foreign_s_plural",
+          "explanation_en": "This plural is not made by adding -s."
+        }
+      ],
+      "accepted_answers": [
+        "fiori"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about whether the noun is singular or plural and look at its ending.",
+        "Match the noun to one of the regular patterns: -o → -i, feminine -a → -e, or -e → -i."
+      ],
+      "feedback_correct_en": "Good work. Fiore is a regular -e noun; its plural ends in -i.",
+      "feedback_wrong_en": "The expected form is fiori. Fiore is a regular -e noun; its plural ends in -i.",
+      "explanation_en": "Fiore is a regular -e noun; its plural ends in -i.",
+      "skill_ids": [
+        "it.a1.nouns.plural.e_i"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.e_to_i"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "fiore"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.q04",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the regular plural of the noun.",
+      "context_target": "",
+      "prompt_target": "chiave → ___",
+      "prompt_en": "What is the plural of chiave?",
+      "options": [
+        {
+          "id": "it.a1.nouns.plural.q04.opt1",
+          "text": "chiava",
+          "correct": false,
+          "error_type": "wrong_ending",
+          "explanation_en": "Changing -e to -a is not the plural rule."
+        },
+        {
+          "id": "it.a1.nouns.plural.q04.opt2",
+          "text": "chiave",
+          "correct": false,
+          "error_type": "unchanged_singular",
+          "explanation_en": "Chiave is singular."
+        },
+        {
+          "id": "it.a1.nouns.plural.q04.opt3",
+          "text": "chiaves",
+          "correct": false,
+          "error_type": "foreign_s_plural",
+          "explanation_en": "This is an English-style -s ending, not Italian."
+        },
+        {
+          "id": "it.a1.nouns.plural.q04.opt4",
+          "text": "chiavi",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Chiave is feminine, but -e still changes to -i."
+        }
+      ],
+      "accepted_answers": [
+        "chiavi"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about whether the noun is singular or plural and look at its ending.",
+        "Match the noun to one of the regular patterns: -o → -i, feminine -a → -e, or -e → -i."
+      ],
+      "feedback_correct_en": "Good work. Chiave is feminine, but -e still changes to -i.",
+      "feedback_wrong_en": "The expected form is chiavi. Chiave is feminine, but -e still changes to -i.",
+      "explanation_en": "Chiave is feminine, but -e still changes to -i.",
+      "skill_ids": [
+        "it.a1.nouns.plural.e_i"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.e_to_i"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "chiave"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.q05",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Select the regular plural.",
+      "context_target": "",
+      "prompt_target": "gatto → ___",
+      "prompt_en": "Choose the plural noun.",
+      "options": [
+        {
+          "id": "it.a1.nouns.plural.q05.opt1",
+          "text": "gatte",
+          "correct": false,
+          "error_type": "wrong_ending",
+          "explanation_en": "This is not the regular masculine plural of gatto."
+        },
+        {
+          "id": "it.a1.nouns.plural.q05.opt2",
+          "text": "gatti",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Gatto is a regular -o noun and becomes gatti."
+        },
+        {
+          "id": "it.a1.nouns.plural.q05.opt3",
+          "text": "gattos",
+          "correct": false,
+          "error_type": "foreign_s_plural",
+          "explanation_en": "Adding -s is not the correct Italian plural."
+        },
+        {
+          "id": "it.a1.nouns.plural.q05.opt4",
+          "text": "gatto",
+          "correct": false,
+          "error_type": "unchanged_singular",
+          "explanation_en": "Gatto is singular."
+        }
+      ],
+      "accepted_answers": [
+        "gatti"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about whether the noun is singular or plural and look at its ending.",
+        "Match the noun to one of the regular patterns: -o → -i, feminine -a → -e, or -e → -i."
+      ],
+      "feedback_correct_en": "Good work. Gatto is a regular -o noun and becomes gatti.",
+      "feedback_wrong_en": "The expected form is gatti. Gatto is a regular -o noun and becomes gatti.",
+      "explanation_en": "Gatto is a regular -o noun and becomes gatti.",
+      "skill_ids": [
+        "it.a1.nouns.plural.o_i"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.o_to_i"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "gatto"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.q06",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Select the regular plural.",
+      "context_target": "",
+      "prompt_target": "casa → ___",
+      "prompt_en": "Choose the plural noun.",
+      "options": [
+        {
+          "id": "it.a1.nouns.plural.q06.opt1",
+          "text": "casi",
+          "correct": false,
+          "error_type": "wrong_ending",
+          "explanation_en": "For the feminine noun casa use -e, not -i."
+        },
+        {
+          "id": "it.a1.nouns.plural.q06.opt2",
+          "text": "casas",
+          "correct": false,
+          "error_type": "foreign_s_plural",
+          "explanation_en": "Standard Italian changes the ending instead of adding -s."
+        },
+        {
+          "id": "it.a1.nouns.plural.q06.opt3",
+          "text": "case",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Casa is feminine and becomes case."
+        },
+        {
+          "id": "it.a1.nouns.plural.q06.opt4",
+          "text": "casa",
+          "correct": false,
+          "error_type": "unchanged_singular",
+          "explanation_en": "Casa is singular."
+        }
+      ],
+      "accepted_answers": [
+        "case"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about whether the noun is singular or plural and look at its ending.",
+        "Match the noun to one of the regular patterns: -o → -i, feminine -a → -e, or -e → -i."
+      ],
+      "feedback_correct_en": "Good work. Casa is feminine and becomes case.",
+      "feedback_wrong_en": "The expected form is case. Casa is feminine and becomes case.",
+      "explanation_en": "Casa is feminine and becomes case.",
+      "skill_ids": [
+        "it.a1.nouns.plural.a_e"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.a_to_e"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "casa"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.q07",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Select the regular plural.",
+      "context_target": "",
+      "prompt_target": "mese → ___",
+      "prompt_en": "Choose the plural noun.",
+      "options": [
+        {
+          "id": "it.a1.nouns.plural.q07.opt1",
+          "text": "mesa",
+          "correct": false,
+          "error_type": "wrong_ending",
+          "explanation_en": "-a is not the regular plural ending for mese."
+        },
+        {
+          "id": "it.a1.nouns.plural.q07.opt2",
+          "text": "meses",
+          "correct": false,
+          "error_type": "foreign_s_plural",
+          "explanation_en": "This is not the regular Italian plural."
+        },
+        {
+          "id": "it.a1.nouns.plural.q07.opt3",
+          "text": "mese",
+          "correct": false,
+          "error_type": "unchanged_singular",
+          "explanation_en": "Mese is singular."
+        },
+        {
+          "id": "it.a1.nouns.plural.q07.opt4",
+          "text": "mesi",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Mese ends in -e and its plural is mesi."
+        }
+      ],
+      "accepted_answers": [
+        "mesi"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about whether the noun is singular or plural and look at its ending.",
+        "Match the noun to one of the regular patterns: -o → -i, feminine -a → -e, or -e → -i."
+      ],
+      "feedback_correct_en": "Good work. Mese ends in -e and its plural is mesi.",
+      "feedback_wrong_en": "The expected form is mesi. Mese ends in -e and its plural is mesi.",
+      "explanation_en": "Mese ends in -e and its plural is mesi.",
+      "skill_ids": [
+        "it.a1.nouns.plural.e_i"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.e_to_i"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "mese"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.q08",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Select the regular plural.",
+      "context_target": "",
+      "prompt_target": "notte → ___",
+      "prompt_en": "Choose the plural noun.",
+      "options": [
+        {
+          "id": "it.a1.nouns.plural.q08.opt1",
+          "text": "notti",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Notte is feminine, but -e changes to -i in the plural."
+        },
+        {
+          "id": "it.a1.nouns.plural.q08.opt2",
+          "text": "notte",
+          "correct": false,
+          "error_type": "unchanged_singular",
+          "explanation_en": "Notte is the singular form."
+        },
+        {
+          "id": "it.a1.nouns.plural.q08.opt3",
+          "text": "notta",
+          "correct": false,
+          "error_type": "wrong_ending",
+          "explanation_en": "-a is not the regular plural ending for notte."
+        },
+        {
+          "id": "it.a1.nouns.plural.q08.opt4",
+          "text": "nottes",
+          "correct": false,
+          "error_type": "foreign_s_plural",
+          "explanation_en": "Do not add -s for this Italian plural."
+        }
+      ],
+      "accepted_answers": [
+        "notti"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about whether the noun is singular or plural and look at its ending.",
+        "Match the noun to one of the regular patterns: -o → -i, feminine -a → -e, or -e → -i."
+      ],
+      "feedback_correct_en": "Good work. Notte is feminine, but -e changes to -i in the plural.",
+      "feedback_wrong_en": "The expected form is notti. Notte is feminine, but -e changes to -i in the plural.",
+      "explanation_en": "Notte is feminine, but -e changes to -i in the plural.",
+      "skill_ids": [
+        "it.a1.nouns.plural.e_i"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.e_to_i"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "notte"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.q09",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the missing plural noun, not the complete sentence.",
+      "context_target": "",
+      "prompt_target": "Ho due ___ (quaderno).",
+      "prompt_en": "Supply the plural form of quaderno.",
+      "options": [],
+      "accepted_answers": [
+        "quaderni"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about whether the noun is singular or plural and look at its ending.",
+        "Match the noun to one of the regular patterns: -o → -i, feminine -a → -e, or -e → -i."
+      ],
+      "feedback_correct_en": "Good work. Quaderno ends in -o: quaderni.",
+      "feedback_wrong_en": "The expected form is quaderni. Quaderno ends in -o: quaderni.",
+      "explanation_en": "Quaderno ends in -o: quaderni.",
+      "skill_ids": [
+        "it.a1.nouns.plural.o_i"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.o_to_i"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "due",
+          "quaderno"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.q10",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the missing plural noun, not the complete sentence.",
+      "context_target": "",
+      "prompt_target": "Anna compra tre ___ (mela).",
+      "prompt_en": "Supply the plural form of mela.",
+      "options": [],
+      "accepted_answers": [
+        "mele"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about whether the noun is singular or plural and look at its ending.",
+        "Match the noun to one of the regular patterns: -o → -i, feminine -a → -e, or -e → -i."
+      ],
+      "feedback_correct_en": "Good work. Mela is feminine: mele.",
+      "feedback_wrong_en": "The expected form is mele. Mela is feminine: mele.",
+      "explanation_en": "Mela is feminine: mele.",
+      "skill_ids": [
+        "it.a1.nouns.plural.a_e"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.a_to_e"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "comprare",
+          "mela",
+          "tre"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.q11",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the missing plural noun, not the complete sentence.",
+      "context_target": "",
+      "prompt_target": "Cerco due ___ (cane).",
+      "prompt_en": "Supply the plural form of cane.",
+      "options": [],
+      "accepted_answers": [
+        "cani"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about whether the noun is singular or plural and look at its ending.",
+        "Match the noun to one of the regular patterns: -o → -i, feminine -a → -e, or -e → -i."
+      ],
+      "feedback_correct_en": "Good work. Cane is a regular -e noun: cani.",
+      "feedback_wrong_en": "The expected form is cani. Cane is a regular -e noun: cani.",
+      "explanation_en": "Cane is a regular -e noun: cani.",
+      "skill_ids": [
+        "it.a1.nouns.plural.e_i"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.e_to_i"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "cane",
+          "cercare",
+          "due"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.q12",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the missing plural noun, not the complete sentence.",
+      "context_target": "",
+      "prompt_target": "Marco porta quattro ___ (tazza).",
+      "prompt_en": "Supply the plural form of tazza.",
+      "options": [],
+      "accepted_answers": [
+        "tazze"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about whether the noun is singular or plural and look at its ending.",
+        "Match the noun to one of the regular patterns: -o → -i, feminine -a → -e, or -e → -i."
+      ],
+      "feedback_correct_en": "Good work. Tazza is a regular feminine -a noun: tazze.",
+      "feedback_wrong_en": "The expected form is tazze. Tazza is a regular feminine -a noun: tazze.",
+      "explanation_en": "Tazza is a regular feminine -a noun: tazze.",
+      "skill_ids": [
+        "it.a1.nouns.plural.a_e"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.a_to_e"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "portare",
+          "quattro",
+          "tazza"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.q13",
+      "type": "fill_gap",
+      "stage": "contextual",
+      "difficulty": 3,
+      "instruction_en": "Write only the missing plural noun.",
+      "context_target": "",
+      "prompt_target": "Per la festa, Anna prepara due ___ (torta).",
+      "prompt_en": "Complete the sentence with the plural of torta.",
+      "options": [],
+      "accepted_answers": [
+        "torte"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about whether the noun is singular or plural and look at its ending.",
+        "Match the noun to one of the regular patterns: -o → -i, feminine -a → -e, or -e → -i."
+      ],
+      "feedback_correct_en": "Good work. Two cakes are torte; this is -a → -e.",
+      "feedback_wrong_en": "The expected form is torte. Two cakes are torte; this is -a → -e.",
+      "explanation_en": "Two cakes are torte; this is -a → -e.",
+      "skill_ids": [
+        "it.a1.nouns.plural.a_e"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.a_to_e"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "due",
+          "festa",
+          "la",
+          "per",
+          "preparare",
+          "torta"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.q14",
+      "type": "multiple_choice",
+      "stage": "contextual",
+      "difficulty": 3,
+      "instruction_en": "Choose the plural noun that makes the sentence correct.",
+      "context_target": "",
+      "prompt_target": "Marco porta tre ___ (bicchiere).",
+      "prompt_en": "Choose the plural of bicchiere in context.",
+      "options": [
+        {
+          "id": "it.a1.nouns.plural.q14.opt1",
+          "text": "bicchieri",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Bicchiere ends in -e and forms bicchieri."
+        },
+        {
+          "id": "it.a1.nouns.plural.q14.opt2",
+          "text": "bicchiere",
+          "correct": false,
+          "error_type": "unchanged_singular",
+          "explanation_en": "Three requires a plural noun."
+        },
+        {
+          "id": "it.a1.nouns.plural.q14.opt3",
+          "text": "bicchieres",
+          "correct": false,
+          "error_type": "foreign_s_plural",
+          "explanation_en": "Adding -s does not give the correct Italian plural."
+        },
+        {
+          "id": "it.a1.nouns.plural.q14.opt4",
+          "text": "bicchiera",
+          "correct": false,
+          "error_type": "wrong_ending",
+          "explanation_en": "This does not follow the -e → -i pattern."
+        }
+      ],
+      "accepted_answers": [
+        "bicchieri"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about whether the noun is singular or plural and look at its ending.",
+        "Match the noun to one of the regular patterns: -o → -i, feminine -a → -e, or -e → -i."
+      ],
+      "feedback_correct_en": "Good work. Bicchiere ends in -e and forms bicchieri.",
+      "feedback_wrong_en": "The expected form is bicchieri. Bicchiere ends in -e and forms bicchieri.",
+      "explanation_en": "Bicchiere ends in -e and forms bicchieri.",
+      "skill_ids": [
+        "it.a1.nouns.plural.e_i"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.e_to_i"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "bicchiere",
+          "portare",
+          "tre"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.q15",
+      "type": "transform",
+      "stage": "production",
+      "difficulty": 3,
+      "instruction_en": "Change this singular noun to plural. Write only the plural noun.",
+      "context_target": "",
+      "prompt_target": "treno",
+      "prompt_en": "Make the regular plural of treno.",
+      "options": [],
+      "accepted_answers": [
+        "treni"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about whether the noun is singular or plural and look at its ending.",
+        "Match the noun to one of the regular patterns: -o → -i, feminine -a → -e, or -e → -i."
+      ],
+      "feedback_correct_en": "Good work. Treno becomes treni.",
+      "feedback_wrong_en": "The expected form is treni. Treno becomes treni.",
+      "explanation_en": "Treno becomes treni.",
+      "skill_ids": [
+        "it.a1.nouns.plural.o_i"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.o_to_i"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "treno"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.q16",
+      "type": "error_correction",
+      "stage": "production",
+      "difficulty": 3,
+      "instruction_en": "Correct the plural noun and rewrite the entire sentence. Do not change any other words.",
+      "context_target": "",
+      "prompt_target": "Anna cerca due penni.",
+      "prompt_en": "Correct the plural of penna.",
+      "options": [],
+      "accepted_answers": [
+        "Anna cerca due penne."
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about whether the noun is singular or plural and look at its ending.",
+        "Match the noun to one of the regular patterns: -o → -i, feminine -a → -e, or -e → -i."
+      ],
+      "feedback_correct_en": "Good work. The feminine noun penna becomes penne, not penni.",
+      "feedback_wrong_en": "The expected form is Anna cerca due penne.. The feminine noun penna becomes penne, not penni.",
+      "explanation_en": "The feminine noun penna becomes penne, not penni.",
+      "skill_ids": [
+        "it.a1.nouns.plural.a_e"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.a_to_e"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "cercare",
+          "due",
+          "penna"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.q17",
+      "type": "guided_production",
+      "stage": "production",
+      "difficulty": 3,
+      "instruction_en": "Write two short, natural Italian sentences: use libro in the plural in one and casa in the plural in the other. Include a number in each sentence.",
+      "context_target": "",
+      "prompt_target": "libro; casa",
+      "prompt_en": "Use these singular prompts to produce plural noun phrases in two complete sentences.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Which ending does libro use? Which ending does feminine casa use?",
+        "Use -i for libro and -e for casa, then add a suitable number."
+      ],
+      "feedback_correct_en": "Use the rubric to assess your noun forms, numbers and naturalness.",
+      "feedback_wrong_en": "Check the plural forms and compare your sentences with the rubric.",
+      "explanation_en": "Open production assesses both noun plural endings and clear A1 sentences.",
+      "skill_ids": [
+        "it.a1.nouns.plural.production"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "casa",
+          "due",
+          "libro",
+          "portare",
+          "tre",
+          "vedere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      },
+      "rubric": {
+        "criteria_en": [
+          "Write two short, meaningful Italian sentences, one using libri and one using case.",
+          "Use a number such as due or tre with each plural noun.",
+          "Avoid plural definite articles, which belong to a later lesson.",
+          "Evaluate for noun form and naturalness, not exact sentence matching."
+        ],
+        "example_response": "Porto due libri. Vedo tre case."
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.q18",
+      "type": "fill_gap",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Write only the missing plural noun.",
+      "context_target": "",
+      "prompt_target": "Lavoro due ___ (giorno).",
+      "prompt_en": "Produce the plural of giorno in a new sentence.",
+      "options": [],
+      "accepted_answers": [
+        "giorni"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about whether the noun is singular or plural and look at its ending.",
+        "Match the noun to one of the regular patterns: -o → -i, feminine -a → -e, or -e → -i."
+      ],
+      "feedback_correct_en": "Good work. Giorno follows -o → -i: giorni.",
+      "feedback_wrong_en": "The expected form is giorni. Giorno follows -o → -i: giorni.",
+      "explanation_en": "Giorno follows -o → -i: giorni.",
+      "skill_ids": [
+        "it.a1.nouns.plural.o_i"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.o_to_i"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "due",
+          "giorno",
+          "lavorare"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.q19",
+      "type": "multiple_choice",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Choose the correct plural noun.",
+      "context_target": "",
+      "prompt_target": "Marco porta tre ___ (borsa).",
+      "prompt_en": "Choose the plural of borsa in a new context.",
+      "options": [
+        {
+          "id": "it.a1.nouns.plural.q19.opt1",
+          "text": "borsi",
+          "correct": false,
+          "error_type": "wrong_ending",
+          "explanation_en": "Borsa is a feminine -a noun, so the plural ends in -e."
+        },
+        {
+          "id": "it.a1.nouns.plural.q19.opt2",
+          "text": "borse",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Borsa is feminine: borse."
+        },
+        {
+          "id": "it.a1.nouns.plural.q19.opt3",
+          "text": "borsa",
+          "correct": false,
+          "error_type": "unchanged_singular",
+          "explanation_en": "Tre needs the plural."
+        },
+        {
+          "id": "it.a1.nouns.plural.q19.opt4",
+          "text": "borsas",
+          "correct": false,
+          "error_type": "foreign_s_plural",
+          "explanation_en": "Adding -s is not the regular Italian form."
+        }
+      ],
+      "accepted_answers": [
+        "borse"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about whether the noun is singular or plural and look at its ending.",
+        "Match the noun to one of the regular patterns: -o → -i, feminine -a → -e, or -e → -i."
+      ],
+      "feedback_correct_en": "Good work. Borsa is feminine: borse.",
+      "feedback_wrong_en": "The expected form is borse. Borsa is feminine: borse.",
+      "explanation_en": "Borsa is feminine: borse.",
+      "skill_ids": [
+        "it.a1.nouns.plural.a_e"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.a_to_e"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "borsa",
+          "portare",
+          "tre"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.q20",
+      "type": "fill_gap",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Write only the missing plural noun.",
+      "context_target": "",
+      "prompt_target": "Anna compra due ___ (regalo).",
+      "prompt_en": "Produce the plural of regalo in a new sentence.",
+      "options": [],
+      "accepted_answers": [
+        "regali"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about whether the noun is singular or plural and look at its ending.",
+        "Match the noun to one of the regular patterns: -o → -i, feminine -a → -e, or -e → -i."
+      ],
+      "feedback_correct_en": "Good work. Regalo becomes regali with -o → -i.",
+      "feedback_wrong_en": "The expected form is regali. Regalo becomes regali with -o → -i.",
+      "explanation_en": "Regalo becomes regali with -o → -i.",
+      "skill_ids": [
+        "it.a1.nouns.plural.o_i"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.o_to_i"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "comprare",
+          "due",
+          "regalo"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.q21",
+      "type": "guided_production",
+      "stage": "transfer",
+      "difficulty": 4,
+      "instruction_en": "Write two new short sentences, one using mese in the plural and one using ristorante in the plural; include a number with each.",
+      "context_target": "",
+      "prompt_target": "mese; ristorante",
+      "prompt_en": "Show that you can use two unfamiliar sentence contexts with regular -e plurals.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Both singular nouns end in -e.",
+        "Change both final -e endings to -i and add a number."
+      ],
+      "feedback_correct_en": "Use the rubric to assess your noun forms, numbers and naturalness.",
+      "feedback_wrong_en": "Check the plural forms and compare your sentences with the rubric.",
+      "explanation_en": "Both masculine -e nouns take -i in the plural; accept other natural A1 sentences.",
+      "skill_ids": [
+        "it.a1.nouns.plural.production"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "a",
+          "cercare",
+          "due",
+          "lavorare",
+          "mese",
+          "per",
+          "ristorante",
+          "tre"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      },
+      "rubric": {
+        "criteria_en": [
+          "Correctly use mesi and ristoranti.",
+          "Use an explicit number with each plural noun.",
+          "Write two sensible, short sentences and check the verb and preposition if present.",
+          "Do not exact-match free production; assess with this rubric."
+        ],
+        "example_response": "Lavoro a Roma per due mesi. Cerco tre ristoranti."
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.q22",
+      "type": "multiple_choice",
+      "stage": "review",
+      "difficulty": 2,
+      "instruction_en": "Choose the regular plural noun.",
+      "context_target": "",
+      "prompt_target": "porta → ___",
+      "prompt_en": "Review feminine -a → -e.",
+      "options": [
+        {
+          "id": "it.a1.nouns.plural.q22.opt1",
+          "text": "porta",
+          "correct": false,
+          "error_type": "unchanged_singular",
+          "explanation_en": "Porta is singular."
+        },
+        {
+          "id": "it.a1.nouns.plural.q22.opt2",
+          "text": "porti",
+          "correct": false,
+          "error_type": "wrong_ending",
+          "explanation_en": "A regular feminine -a noun takes -e here."
+        },
+        {
+          "id": "it.a1.nouns.plural.q22.opt3",
+          "text": "porte",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Porta is feminine and its regular plural is porte."
+        },
+        {
+          "id": "it.a1.nouns.plural.q22.opt4",
+          "text": "portas",
+          "correct": false,
+          "error_type": "foreign_s_plural",
+          "explanation_en": "Do not add -s here."
+        }
+      ],
+      "accepted_answers": [
+        "porte"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about whether the noun is singular or plural and look at its ending.",
+        "Match the noun to one of the regular patterns: -o → -i, feminine -a → -e, or -e → -i."
+      ],
+      "feedback_correct_en": "Good work. Porta is feminine and its regular plural is porte.",
+      "feedback_wrong_en": "The expected form is porte. Porta is feminine and its regular plural is porte.",
+      "explanation_en": "Porta is feminine and its regular plural is porte.",
+      "skill_ids": [
+        "it.a1.nouns.plural.a_e"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "noun.plural.a_to_e"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "porta"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural.q23",
+      "type": "guided_production",
+      "stage": "review",
+      "difficulty": 3,
+      "instruction_en": "Write three short sentences, one each with the plural of gatto, finestra and cane. Include a number with each.",
+      "context_target": "",
+      "prompt_target": "gatto; finestra; cane",
+      "prompt_en": "Mix and apply all three regular ending patterns without a model sentence.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at each singular ending before choosing the plural.",
+        "Gatto uses -i, finestra uses -e and cane uses -i."
+      ],
+      "feedback_correct_en": "Use the rubric to assess your noun forms, numbers and naturalness.",
+      "feedback_wrong_en": "Check the plural forms and compare your sentences with the rubric.",
+      "explanation_en": "Mixed review targets gatti, finestre and cani; accept any natural original sentences with those forms.",
+      "skill_ids": [
+        "it.a1.nouns.plural.production"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "cane",
+          "casa",
+          "due",
+          "finestra",
+          "gatto",
+          "la",
+          "tre",
+          "vedere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      },
+      "rubric": {
+        "criteria_en": [
+          "Use the regular forms gatti, finestre and cani.",
+          "Use a number with each plural noun.",
+          "Produce three short, natural sentences.",
+          "Evaluate against the criteria, not a fixed translation."
+        ],
+        "example_response": "Vedo due gatti. La casa ha tre finestre. Ho due cani."
+      }
+    }
+  ],
+  "verb_application": {
+    "applicable": false,
+    "required_form_keys": [],
+    "verbs": []
+  },
+  "mastery": {
+    "minimum_scored_items": 12,
+    "required_score": 0.8,
+    "minimum_production_score": 0.7,
+    "minimum_unaided_production_items": 2,
+    "required_stages": [
+      "notice",
+      "controlled",
+      "contextual",
+      "production",
+      "transfer"
+    ],
+    "review_intervals_days": [
+      1,
+      3,
+      7,
+      14,
+      30,
+      60
+    ]
+  },
+  "vocabulary_audit": {
+    "manifest_id": "it-reviewed-9d35be468e23",
+    "used_lemmas": [
+      "a",
+      "anche",
+      "aspettare",
+      "avere",
+      "bicchiere",
+      "borsa",
+      "buongiorno",
+      "cane",
+      "casa",
+      "cercare",
+      "certo",
+      "chiave",
+      "comprare",
+      "cucina",
+      "due",
+      "e",
+      "ecco",
+      "festa",
+      "finestra",
+      "fiore",
+      "gatto",
+      "giardino",
+      "giorno",
+      "grazie",
+      "in",
+      "la",
+      "lavorare",
+      "lettera",
+      "libro",
+      "matita",
+      "mela",
+      "mese",
+      "mettere",
+      "notte",
+      "panino",
+      "penna",
+      "per",
+      "per favore",
+      "piatto",
+      "porta",
+      "portare",
+      "preparare",
+      "quaderno",
+      "quattro",
+      "regalo",
+      "ristorante",
+      "scrivere",
+      "studente",
+      "sì",
+      "tazza",
+      "torta",
+      "tre",
+      "treno",
+      "vedere",
+      "volere"
+    ],
+    "target_lemmas": [
+      "bicchiere",
+      "borsa",
+      "cane",
+      "casa",
+      "chiave",
+      "fiore",
+      "gatto",
+      "giorno",
+      "libro",
+      "matita",
+      "mela",
+      "mese",
+      "notte",
+      "panino",
+      "penna",
+      "piatto",
+      "porta",
+      "quaderno",
+      "regalo",
+      "torta",
+      "treno"
+    ],
+    "outside_allowlist_lemmas": [],
+    "introduced_lemmas": [],
+    "proper_names": [
+      "Anna",
+      "Marco",
+      "Roma"
+    ],
+    "grammar_only_tokens": [],
+    "above_level_lemmas": [],
+    "tests_with_unknown_vocabulary": [],
+    "status": "pass"
+  },
+  "level_audit": {
+    "target_cefr": "A1",
+    "max_sentence_length_words": 10,
+    "unapproved_grammar_features": [],
+    "scope_violations": [],
+    "status": "pass"
+  },
+  "quality_audit": {
+    "status": "pass",
+    "checks": {
+      "unique_ids": true,
+      "prerequisites_resolve": true,
+      "answers_verified": true,
+      "forms_verified": true,
+      "single_best_answers": true,
+      "naturalness_checked": true,
+      "cefr_checked": true,
+      "translations_checked": true,
+      "requested_counts_met": true
+    },
+    "issues": [],
+    "needs_human_review": [],
+    "sources": [
+      {
+        "name": "Treccani — Plurale dei nomi (La grammatica italiana)",
+        "url": "https://www.treccani.it/enciclopedia/plurale-dei-nomi_%28La-grammatica-italiana%29/"
+      },
+      {
+        "name": "Zanichelli Aula di Lingue — La formazione del plurale 2",
+        "url": "https://aulalingue.scuola.zanichelli.it/benvenuti/2013/05/02/la-formazione-del-plurale-2-approfondimento/"
+      },
+      {
+        "name": "Treccani — Plurale (Enciclopedia)",
+        "url": "https://www.treccani.it/enciclopedia/plurale/"
+      }
+    ],
+    "counts": {
+      "contexts": 2,
+      "examples": 10,
+      "exercise_bank": 23,
+      "scored_exercises": 20,
+      "transfer_exercises": 4,
+      "inflection_form_tests": 8
+    }
+  },
+  "audit": {
+    "status": "pass",
+    "issues": [],
+    "needs_human_review": [],
+    "sources": [
+      {
+        "name": "Treccani — Plurale dei nomi (La grammatica italiana)",
+        "url": "https://www.treccani.it/enciclopedia/plurale-dei-nomi_%28La-grammatica-italiana%29/"
+      },
+      {
+        "name": "Zanichelli Aula di Lingue — La formazione del plurale 2",
+        "url": "https://aulalingue.scuola.zanichelli.it/benvenuti/2013/05/02/la-formazione-del-plurale-2-approfondimento/"
+      },
+      {
+        "name": "Treccani — Plurale (Enciclopedia)",
+        "url": "https://www.treccani.it/enciclopedia/plurale/"
+      }
+    ],
+    "checks": {
+      "unique_ids": true,
+      "prerequisites_resolve": true,
+      "answers_verified": true,
+      "forms_verified": true,
+      "single_best_answers": true,
+      "naturalness_checked": true,
+      "cefr_checked": true,
+      "translations_checked": true,
+      "requested_counts_met": true
+    }
+  }
+}

@@ -1,0 +1,2327 @@
+{
+  "schema_version": "lessico-grammar-v1",
+  "content_version": "1.0.0",
+  "status": "ready",
+  "mode": "topic_pack",
+  "language": "it",
+  "explanation_language": "en",
+  "vocabulary_manifest_id": "it-reviewed-9d35be468e23",
+  "topic": {
+    "id": "it.a1.avere.forms_uses",
+    "cefr": "A1",
+    "sequence": 10,
+    "module_id": "it.a1.essere_avere",
+    "title_target": "Il presente e gli usi di base di avere",
+    "title_en": "Present forms and basic uses of avere",
+    "estimated_minutes": 8,
+    "prerequisite_ids": [
+      "it.a1.subjects.pro_drop"
+    ],
+    "learning_objectives": [
+      "Recognise and produce all six present indicative forms of avere.",
+      "Use avere for simple possession and family relationships.",
+      "Express age with avere + number + anni.",
+      "Use checked A1 expressions such as avere fame, sete, freddo, caldo and paura."
+    ],
+    "scope_included": [
+      "six present forms",
+      "possession",
+      "age",
+      "checked common avere expressions"
+    ],
+    "scope_excluded": [
+      "perfect-tense auxiliary",
+      "subjunctive",
+      "advanced idioms"
+    ],
+    "new_terms": [],
+    "reading_links": []
+  },
+  "skills": [
+    {
+      "id": "it.a1.avere.forms_uses.forms",
+      "description_en": "Recognise and produce the six present indicative forms of avere.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "it.a1.avere.forms_uses.possession",
+      "description_en": "Use avere to say that a person has or possesses a person, animal or thing.",
+      "capability": "contextual",
+      "critical": true
+    },
+    {
+      "id": "it.a1.avere.forms_uses.age",
+      "description_en": "Express age with avere + number + anni.",
+      "capability": "contextual",
+      "critical": true
+    },
+    {
+      "id": "it.a1.avere.forms_uses.expressions",
+      "description_en": "Use checked beginner expressions with avere, including fame, sete, freddo, caldo and paura.",
+      "capability": "contextual",
+      "critical": true
+    },
+    {
+      "id": "it.a1.avere.forms_uses.context",
+      "description_en": "Choose the correct form and basic meaning of avere from a short context.",
+      "capability": "contextual",
+      "critical": true
+    },
+    {
+      "id": "it.a1.avere.forms_uses.produce",
+      "description_en": "Produce short natural A1 sentences with avere for possession, age and common physical or emotional states.",
+      "capability": "production",
+      "critical": true
+    }
+  ],
+  "lesson": {
+    "short_explanation_en": "Avere means “to have”, but at A1 it does more than express possession. Its present forms are ho, hai, ha, abbiamo, avete and hanno. Use avere for things or relationships (Ho un fratello), for age (Ho diciotto anni), and in common expressions such as avere fame, sete, freddo, caldo and paura. Italian normally omits a clear subject pronoun, so Ho un libro is more neutral than Io ho un libro unless io is contrastive.",
+    "rule_blocks": [
+      {
+        "id": "it.a1.avere.forms_uses.rule1",
+        "heading_en": "Present forms of avere",
+        "explanation_en": "Avere is irregular in the present. The six forms must be learned individually. The initial h in ho, hai, ha and hanno is written but not pronounced.",
+        "pattern": "ho · hai · ha · abbiamo · avete · hanno",
+        "usage_notes_en": [
+          "Match the verb form to the grammatical subject.",
+          "As with other Italian verbs, omit a clear subject pronoun unless it is useful for contrast or clarity."
+        ],
+        "common_errors_en": [
+          "Incorrect: Io ha un libro. Correct: Ho un libro.",
+          "Incorrect: Marco ho una macchina. Correct: Marco ha una macchina."
+        ],
+        "example_ids": [
+          "it.a1.avere.forms_uses.ex01",
+          "it.a1.avere.forms_uses.ex02",
+          "it.a1.avere.forms_uses.ex03",
+          "it.a1.avere.forms_uses.ex04",
+          "it.a1.avere.forms_uses.ex05",
+          "it.a1.avere.forms_uses.ex06"
+        ]
+      },
+      {
+        "id": "it.a1.avere.forms_uses.rule2",
+        "heading_en": "Possession and relationships",
+        "explanation_en": "Use avere + noun phrase to say that someone has a thing, animal or family relationship.",
+        "pattern": "subject + avere + noun phrase",
+        "usage_notes_en": [
+          "Ho un libro means I have a book.",
+          "Ho un fratello is the normal way to say that you have a brother."
+        ],
+        "common_errors_en": [
+          "Do not replace avere with essere when the meaning is possession."
+        ],
+        "example_ids": [
+          "it.a1.avere.forms_uses.ex01",
+          "it.a1.avere.forms_uses.ex02",
+          "it.a1.avere.forms_uses.ex03",
+          "it.a1.avere.forms_uses.ex04",
+          "it.a1.avere.forms_uses.ex05",
+          "it.a1.avere.forms_uses.ex06"
+        ]
+      },
+      {
+        "id": "it.a1.avere.forms_uses.rule3",
+        "heading_en": "Age with avere",
+        "explanation_en": "Italian states age with avere, followed by a number and anni. English uses “be”, so this pattern needs to be learned as an Italian construction.",
+        "pattern": "avere + number + anni",
+        "usage_notes_en": [
+          "Ho diciotto anni = I am eighteen years old.",
+          "For one third-person subject: Marco ha diciannove anni."
+        ],
+        "common_errors_en": [
+          "Incorrect: Sono diciotto anni. Correct: Ho diciotto anni."
+        ],
+        "example_ids": [
+          "it.a1.avere.forms_uses.ex07",
+          "it.a1.avere.forms_uses.ex08"
+        ]
+      },
+      {
+        "id": "it.a1.avere.forms_uses.rule4",
+        "heading_en": "Common expressions with avere",
+        "explanation_en": "Several frequent physical and emotional states use avere in Italian. This lesson practises only checked A1 expressions.",
+        "pattern": "avere + fame / sete / freddo / caldo / paura",
+        "usage_notes_en": [
+          "Ho fame = I am hungry; ho sete = I am thirsty.",
+          "Ha freddo = he/she is cold; ha caldo = he/she is warm/hot.",
+          "Avere paura expresses being afraid."
+        ],
+        "common_errors_en": [
+          "Incorrect for the physical sensation: Anna è freddo. Correct: Anna ha freddo."
+        ],
+        "example_ids": [
+          "it.a1.avere.forms_uses.ex09",
+          "it.a1.avere.forms_uses.ex10"
+        ]
+      }
+    ],
+    "form_tables": [
+      {
+        "id": "it.a1.avere.forms_uses.table1",
+        "title_en": "Present indicative of avere",
+        "columns": [
+          "Person",
+          "Italian",
+          "English"
+        ],
+        "rows": [
+          [
+            "io",
+            "ho",
+            "I have"
+          ],
+          [
+            "tu",
+            "hai",
+            "you have"
+          ],
+          [
+            "lui / lei",
+            "ha",
+            "he / she has"
+          ],
+          [
+            "noi",
+            "abbiamo",
+            "we have"
+          ],
+          [
+            "voi",
+            "avete",
+            "you have (plural)"
+          ],
+          [
+            "loro",
+            "hanno",
+            "they have"
+          ]
+        ]
+      },
+      {
+        "id": "it.a1.avere.forms_uses.table2",
+        "title_en": "Three basic uses",
+        "columns": [
+          "Use",
+          "Pattern",
+          "Example",
+          "Natural English"
+        ],
+        "rows": [
+          [
+            "Possession",
+            "avere + noun",
+            "Ho un libro.",
+            "I have a book."
+          ],
+          [
+            "Age",
+            "avere + number + anni",
+            "Ho diciotto anni.",
+            "I am eighteen years old."
+          ],
+          [
+            "Common state",
+            "avere + noun/adjective expression",
+            "Ho fame.",
+            "I am hungry."
+          ]
+        ]
+      }
+    ]
+  },
+  "contexts": [
+    {
+      "id": "it.a1.avere.forms_uses.ctx1",
+      "type": "dialogue",
+      "setting_en": "Two young people introduce themselves and mention their age and family.",
+      "lines": [
+        {
+          "speaker": "Anna",
+          "target": "Ciao, sono Anna. Ho diciotto anni. Ho un fratello.",
+          "translation_en": "Hi, I’m Anna. I’m eighteen years old. I have a brother."
+        },
+        {
+          "speaker": "Marco",
+          "target": "Ciao, sono Marco. Ho diciannove anni. Ho una sorella.",
+          "translation_en": "Hi, I’m Marco. I’m nineteen years old. I have a sister."
+        },
+        {
+          "speaker": "Anna",
+          "target": "Io ho anche un gatto.",
+          "translation_en": "I also have a cat."
+        },
+        {
+          "speaker": "Marco",
+          "target": "Io ho un cane.",
+          "translation_en": "I have a dog."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "Ho",
+          "lemma": "avere",
+          "skill_id": "it.a1.avere.forms_uses.age",
+          "form_key": "indicative.present.1sg.affirmative",
+          "explanation_en": "Italian expresses age with avere: ho diciotto anni."
+        },
+        {
+          "surface": "Ho",
+          "lemma": "avere",
+          "skill_id": "it.a1.avere.forms_uses.possession",
+          "form_key": "indicative.present.1sg.affirmative",
+          "explanation_en": "The same present form expresses possession or family relationships."
+        },
+        {
+          "surface": "Ho",
+          "lemma": "avere",
+          "skill_id": "it.a1.avere.forms_uses.age",
+          "form_key": "indicative.present.1sg.affirmative",
+          "explanation_en": "Marco also uses first-person singular ho for his age."
+        },
+        {
+          "surface": "ho",
+          "lemma": "avere",
+          "skill_id": "it.a1.avere.forms_uses.possession",
+          "form_key": "indicative.present.1sg.affirmative",
+          "explanation_en": "Io is explicit here for contrast, but the verb form remains ho."
+        },
+        {
+          "surface": "ho",
+          "lemma": "avere",
+          "skill_id": "it.a1.avere.forms_uses.possession",
+          "form_key": "indicative.present.1sg.affirmative",
+          "explanation_en": "The first-person singular form is ho."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ciao",
+          "essere",
+          "avere",
+          "diciotto",
+          "anno",
+          "un",
+          "fratello",
+          "diciannove",
+          "una",
+          "sorella",
+          "io",
+          "anche",
+          "gatto",
+          "cane"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.ctx2",
+      "type": "narrative",
+      "setting_en": "A short description of how members of a family feel at home.",
+      "lines": [
+        {
+          "speaker": "Narrator",
+          "target": "La famiglia è a casa.",
+          "translation_en": "The family is at home."
+        },
+        {
+          "speaker": "Narrator",
+          "target": "Anna ha fame e Marco ha sete.",
+          "translation_en": "Anna is hungry and Marco is thirsty."
+        },
+        {
+          "speaker": "Narrator",
+          "target": "La mamma ha freddo. Il papà ha caldo.",
+          "translation_en": "Mum is cold. Dad is warm."
+        },
+        {
+          "speaker": "Narrator",
+          "target": "Il bambino ha paura.",
+          "translation_en": "The child is afraid."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "ha",
+          "lemma": "avere",
+          "skill_id": "it.a1.avere.forms_uses.expressions",
+          "form_key": "indicative.present.3sg.affirmative",
+          "explanation_en": "Avere fame is the standard beginner expression for being hungry."
+        },
+        {
+          "surface": "ha",
+          "lemma": "avere",
+          "skill_id": "it.a1.avere.forms_uses.expressions",
+          "form_key": "indicative.present.3sg.affirmative",
+          "explanation_en": "Avere sete is used for being thirsty."
+        },
+        {
+          "surface": "ha",
+          "lemma": "avere",
+          "skill_id": "it.a1.avere.forms_uses.expressions",
+          "form_key": "indicative.present.3sg.affirmative",
+          "explanation_en": "Avere freddo uses avere, not essere."
+        },
+        {
+          "surface": "ha",
+          "lemma": "avere",
+          "skill_id": "it.a1.avere.forms_uses.expressions",
+          "form_key": "indicative.present.3sg.affirmative",
+          "explanation_en": "Avere caldo uses avere, not essere."
+        },
+        {
+          "surface": "ha",
+          "lemma": "avere",
+          "skill_id": "it.a1.avere.forms_uses.expressions",
+          "form_key": "indicative.present.3sg.affirmative",
+          "explanation_en": "Avere paura is used to express fear."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "la",
+          "famiglia",
+          "essere",
+          "a",
+          "casa",
+          "avere",
+          "fame",
+          "e",
+          "sete",
+          "mamma",
+          "freddo",
+          "il",
+          "papà",
+          "caldo",
+          "bambino",
+          "paura"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "it.a1.avere.forms_uses.ex01",
+      "target": "Ho un libro.",
+      "translation_en": "I have a book.",
+      "focus_surface": "Ho",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.possession"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Ho is first-person singular; Italian normally omits io when it is clear.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "un",
+          "libro"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.ex02",
+      "target": "Hai una bicicletta.",
+      "translation_en": "You have a bicycle.",
+      "focus_surface": "Hai",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.possession"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Hai is the second-person singular present form.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "una",
+          "bicicletta"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.ex03",
+      "target": "Marco ha una macchina.",
+      "translation_en": "Marco has a car.",
+      "focus_surface": "ha",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.possession"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "A named singular person takes ha.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "una",
+          "macchina"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.ex04",
+      "target": "Abbiamo due gatti.",
+      "translation_en": "We have two cats.",
+      "focus_surface": "Abbiamo",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.possession"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Abbiamo is the first-person plural form.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "due",
+          "gatto"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.ex05",
+      "target": "Avete una casa.",
+      "translation_en": "You have a house.",
+      "focus_surface": "Avete",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.possession"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.2pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Avete is the second-person plural form.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "una",
+          "casa"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.ex06",
+      "target": "Anna e Marco hanno un cane.",
+      "translation_en": "Anna and Marco have a dog.",
+      "focus_surface": "hanno",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.possession"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "A plural third-person subject takes hanno.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "e",
+          "avere",
+          "un",
+          "cane"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.ex07",
+      "target": "Ho diciotto anni.",
+      "translation_en": "I am eighteen years old.",
+      "focus_surface": "Ho diciotto anni",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.age"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Italian uses avere, literally “to have years”, to state age.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "diciotto",
+          "anno"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.ex08",
+      "target": "Marco ha diciannove anni.",
+      "translation_en": "Marco is nineteen years old.",
+      "focus_surface": "ha diciannove anni",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.age"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Use ha + number + anni for one third-person subject.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "diciannove",
+          "anno"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.ex09",
+      "target": "Ho fame e ho sete.",
+      "translation_en": "I am hungry and thirsty.",
+      "focus_surface": "Ho fame; ho sete",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.expressions"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Fame and sete are common nouns used with avere.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "fame",
+          "e",
+          "sete"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.ex10",
+      "target": "Anna ha freddo e Marco ha caldo.",
+      "translation_en": "Anna is cold and Marco is warm.",
+      "focus_surface": "ha freddo; ha caldo",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.expressions"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Italian uses avere for these physical sensations.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "freddo",
+          "e",
+          "caldo"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "id": "it.a1.avere.forms_uses.q01",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the correct present form of avere.",
+      "context_target": "",
+      "prompt_target": "Io ___ un libro.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.avere.forms_uses.q01.opt1",
+          "text": "ho",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct form and use in this context."
+        },
+        {
+          "id": "it.a1.avere.forms_uses.q01.opt2",
+          "text": "hai",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Hai is the tu form."
+        },
+        {
+          "id": "it.a1.avere.forms_uses.q01.opt3",
+          "text": "ha",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Ha is third-person singular."
+        },
+        {
+          "id": "it.a1.avere.forms_uses.q01.opt4",
+          "text": "hanno",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "Hanno is third-person plural."
+        }
+      ],
+      "accepted_answers": [
+        "ho"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the subject and the meaning: possession, age or a common avere expression.",
+        "Choose the present form of avere that matches the subject."
+      ],
+      "feedback_correct_en": "Correct: ho.",
+      "feedback_wrong_en": "Expected: ho. Io takes ho in the present indicative.",
+      "explanation_en": "Io takes ho in the present indicative.",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.forms"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "io",
+          "un",
+          "libro",
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.q02",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the correct form for a statement about Marco’s age.",
+      "context_target": "",
+      "prompt_target": "Marco ___ diciannove anni.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.avere.forms_uses.q02.opt1",
+          "text": "ho",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Ho is first-person singular."
+        },
+        {
+          "id": "it.a1.avere.forms_uses.q02.opt2",
+          "text": "ha",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct form and use in this context."
+        },
+        {
+          "id": "it.a1.avere.forms_uses.q02.opt3",
+          "text": "hai",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Hai is second-person singular."
+        },
+        {
+          "id": "it.a1.avere.forms_uses.q02.opt4",
+          "text": "hanno",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "Hanno is plural."
+        }
+      ],
+      "accepted_answers": [
+        "ha"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the subject and the meaning: possession, age or a common avere expression.",
+        "Choose the present form of avere that matches the subject."
+      ],
+      "feedback_correct_en": "Correct: ha.",
+      "feedback_wrong_en": "Expected: ha. Italian uses avere for age, and Marco is third-person singular.",
+      "explanation_en": "Italian uses avere for age, and Marco is third-person singular.",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.age"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "diciannove",
+          "anno",
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.q03",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Complete the standard expression for being hungry.",
+      "context_target": "",
+      "prompt_target": "Anna ___ fame.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.avere.forms_uses.q03.opt1",
+          "text": "è",
+          "correct": false,
+          "error_type": "wrong_verb",
+          "explanation_en": "Italian uses avere, not essere, with fame."
+        },
+        {
+          "id": "it.a1.avere.forms_uses.q03.opt2",
+          "text": "hai",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Hai is for tu."
+        },
+        {
+          "id": "it.a1.avere.forms_uses.q03.opt3",
+          "text": "ha",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct form and use in this context."
+        },
+        {
+          "id": "it.a1.avere.forms_uses.q03.opt4",
+          "text": "hanno",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "Hanno is for a plural subject."
+        }
+      ],
+      "accepted_answers": [
+        "ha"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the subject and the meaning: possession, age or a common avere expression.",
+        "Choose the present form of avere that matches the subject."
+      ],
+      "feedback_correct_en": "Correct: ha.",
+      "feedback_wrong_en": "Expected: ha. Avere fame is the natural expression; Anna takes ha.",
+      "explanation_en": "Avere fame is the natural expression; Anna takes ha.",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.expressions"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "fame",
+          "avere",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.q04",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Choose the correct present form for possession with noi.",
+      "context_target": "",
+      "prompt_target": "Noi ___ due gatti.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.avere.forms_uses.q04.opt1",
+          "text": "avete",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Avete is for voi."
+        },
+        {
+          "id": "it.a1.avere.forms_uses.q04.opt2",
+          "text": "hanno",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Hanno is for loro."
+        },
+        {
+          "id": "it.a1.avere.forms_uses.q04.opt3",
+          "text": "ha",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "Ha is singular."
+        },
+        {
+          "id": "it.a1.avere.forms_uses.q04.opt4",
+          "text": "abbiamo",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct form and use in this context."
+        }
+      ],
+      "accepted_answers": [
+        "abbiamo"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the subject and the meaning: possession, age or a common avere expression.",
+        "Choose the present form of avere that matches the subject."
+      ],
+      "feedback_correct_en": "Correct: abbiamo.",
+      "feedback_wrong_en": "Expected: abbiamo. Noi takes abbiamo.",
+      "explanation_en": "Noi takes abbiamo.",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.possession"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "noi",
+          "due",
+          "gatto",
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.q05",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Choose the correct present form for voi.",
+      "context_target": "",
+      "prompt_target": "Voi ___ una casa.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.avere.forms_uses.q05.opt1",
+          "text": "avete",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct form and use in this context."
+        },
+        {
+          "id": "it.a1.avere.forms_uses.q05.opt2",
+          "text": "abbiamo",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Abbiamo is for noi."
+        },
+        {
+          "id": "it.a1.avere.forms_uses.q05.opt3",
+          "text": "ha",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "Ha is third-person singular."
+        },
+        {
+          "id": "it.a1.avere.forms_uses.q05.opt4",
+          "text": "hanno",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Hanno is third-person plural."
+        }
+      ],
+      "accepted_answers": [
+        "avete"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the subject and the meaning: possession, age or a common avere expression.",
+        "Choose the present form of avere that matches the subject."
+      ],
+      "feedback_correct_en": "Correct: avete.",
+      "feedback_wrong_en": "Expected: avete. Voi takes avete.",
+      "explanation_en": "Voi takes avete.",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.possession"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.2pl.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "voi",
+          "una",
+          "casa",
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.q06",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Choose the correct form for the two named people.",
+      "context_target": "",
+      "prompt_target": "Anna e Marco ___ un cane.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.avere.forms_uses.q06.opt1",
+          "text": "ha",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "Ha is singular."
+        },
+        {
+          "id": "it.a1.avere.forms_uses.q06.opt2",
+          "text": "hanno",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct form and use in this context."
+        },
+        {
+          "id": "it.a1.avere.forms_uses.q06.opt3",
+          "text": "avete",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Avete is for voi."
+        },
+        {
+          "id": "it.a1.avere.forms_uses.q06.opt4",
+          "text": "abbiamo",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Abbiamo is for noi."
+        }
+      ],
+      "accepted_answers": [
+        "hanno"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the subject and the meaning: possession, age or a common avere expression.",
+        "Choose the present form of avere that matches the subject."
+      ],
+      "feedback_correct_en": "Correct: hanno.",
+      "feedback_wrong_en": "Expected: hanno. Anna e Marco is a plural third-person subject, so the form is hanno.",
+      "explanation_en": "Anna e Marco is a plural third-person subject, so the form is hanno.",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.possession"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "e",
+          "un",
+          "cane",
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.q07",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the affirmative present of avere: first person singular (io).",
+      "context_target": "",
+      "prompt_target": "Io ___ una bicicletta.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "ho"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The subject is io.",
+        "The first-person singular form begins with h."
+      ],
+      "feedback_correct_en": "Correct: ho.",
+      "feedback_wrong_en": "Expected: ho. First-person singular present of avere is ho.",
+      "explanation_en": "First-person singular present of avere is ho.",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.forms"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "io",
+          "una",
+          "bicicletta",
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.q08",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the affirmative present of avere: second person singular (tu).",
+      "context_target": "",
+      "prompt_target": "Tu ___ un libro.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "hai"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The subject is tu.",
+        "Use the form ending in -ai."
+      ],
+      "feedback_correct_en": "Correct: hai.",
+      "feedback_wrong_en": "Expected: hai. Second-person singular present of avere is hai.",
+      "explanation_en": "Second-person singular present of avere is hai.",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.forms"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "tu",
+          "un",
+          "libro",
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.q09",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the affirmative present of avere: third person singular (lui / lei).",
+      "context_target": "",
+      "prompt_target": "Marco ___ diciannove anni.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "ha"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Marco is one third person.",
+        "Use the one-syllable form with h."
+      ],
+      "feedback_correct_en": "Correct: ha.",
+      "feedback_wrong_en": "Expected: ha. Third-person singular present of avere is ha.",
+      "explanation_en": "Third-person singular present of avere is ha.",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.forms"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "diciannove",
+          "anno",
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.q10",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the affirmative present of avere: first person plural (noi).",
+      "context_target": "",
+      "prompt_target": "Noi ___ due gatti.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "abbiamo"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The subject is noi.",
+        "The form begins abb-."
+      ],
+      "feedback_correct_en": "Correct: abbiamo.",
+      "feedback_wrong_en": "Expected: abbiamo. First-person plural present of avere is abbiamo.",
+      "explanation_en": "First-person plural present of avere is abbiamo.",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.forms"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "noi",
+          "due",
+          "gatto",
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.q11",
+      "type": "conjugate",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_en": "Without hints, write only the affirmative present of avere: second person plural (voi).",
+      "context_target": "",
+      "prompt_target": "Voi ___ fame.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "avete"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct: avete.",
+      "feedback_wrong_en": "Expected: avete. Second-person plural present of avere is avete.",
+      "explanation_en": "Second-person plural present of avere is avete.",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.forms"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.2pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "voi",
+          "fame",
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.q12",
+      "type": "conjugate",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_en": "Without hints, write only the affirmative present of avere: third person plural (loro / i ragazzi).",
+      "context_target": "",
+      "prompt_target": "I ragazzi ___ sete.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "hanno"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct: hanno.",
+      "feedback_wrong_en": "Expected: hanno. Third-person plural present of avere is hanno.",
+      "explanation_en": "Third-person plural present of avere is hanno.",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.forms"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "i",
+          "ragazzo",
+          "sete",
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.q13",
+      "type": "conjugate",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_en": "Without hints, write only the affirmative present of avere: first person singular (io).",
+      "context_target": "",
+      "prompt_target": "Io ___ diciotto anni.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "ho"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct: ho.",
+      "feedback_wrong_en": "Expected: ho. First-person singular present of avere is ho.",
+      "explanation_en": "First-person singular present of avere is ho.",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.forms"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "io",
+          "diciotto",
+          "anno",
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.q14",
+      "type": "conjugate",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_en": "Without hints, write only the affirmative present of avere: third person plural (loro).",
+      "context_target": "",
+      "prompt_target": "Anna e Marco ___ una casa.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "hanno"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct: hanno.",
+      "feedback_wrong_en": "Expected: hanno. The two named people form a third-person plural subject and take hanno.",
+      "explanation_en": "The two named people form a third-person plural subject and take hanno.",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.forms"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "e",
+          "una",
+          "casa",
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.q15",
+      "type": "multiple_choice",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_en": "Anna feels cold. Choose the natural Italian completion.",
+      "context_target": "",
+      "prompt_target": "Anna ___ freddo.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.avere.forms_uses.q15.opt1",
+          "text": "è",
+          "correct": false,
+          "error_type": "wrong_verb",
+          "explanation_en": "With freddo as this physical sensation, Italian uses avere."
+        },
+        {
+          "id": "it.a1.avere.forms_uses.q15.opt2",
+          "text": "hai",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Hai is for tu."
+        },
+        {
+          "id": "it.a1.avere.forms_uses.q15.opt3",
+          "text": "ha",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct form and use in this context."
+        },
+        {
+          "id": "it.a1.avere.forms_uses.q15.opt4",
+          "text": "hanno",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "Hanno is plural."
+        }
+      ],
+      "accepted_answers": [
+        "ha"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the subject and the meaning: possession, age or a common avere expression.",
+        "Choose the present form of avere that matches the subject."
+      ],
+      "feedback_correct_en": "Correct: ha.",
+      "feedback_wrong_en": "Expected: ha. Italian uses avere freddo; Anna is third-person singular.",
+      "explanation_en": "Italian uses avere freddo; Anna is third-person singular.",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.expressions"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "freddo",
+          "avere",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.q16",
+      "type": "fill_gap",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_en": "Write only the correct present form of avere.",
+      "context_target": "",
+      "prompt_target": "Il bambino ___ otto anni.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "ha"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Italian uses avere for age.",
+        "A singular third-person subject takes ha."
+      ],
+      "feedback_correct_en": "Correct: ha.",
+      "feedback_wrong_en": "Expected: ha. Age is expressed with avere + number + anni; il bambino takes ha.",
+      "explanation_en": "Age is expressed with avere + number + anni; il bambino takes ha.",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.age"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "il",
+          "bambino",
+          "otto",
+          "anno",
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.q17",
+      "type": "transform",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_en": "Rewrite the sentence with noi instead of io. Change only what grammar requires.",
+      "context_target": "",
+      "prompt_target": "Io ho una bicicletta.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "Noi abbiamo una bicicletta."
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The new subject is noi.",
+        "Use the first-person plural form of avere."
+      ],
+      "feedback_correct_en": "Correct: Noi abbiamo una bicicletta.",
+      "feedback_wrong_en": "Expected: Noi abbiamo una bicicletta. Changing the subject from io to noi changes ho to abbiamo.",
+      "explanation_en": "Changing the subject from io to noi changes ho to abbiamo.",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.possession"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "io",
+          "avere",
+          "una",
+          "bicicletta",
+          "noi"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.q18",
+      "type": "error_correction",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_en": "Correct only the form of avere. Keep the other words unchanged.",
+      "context_target": "",
+      "prompt_target": "Marco ho una macchina.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "Marco ha una macchina."
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Marco is not io.",
+        "Use the third-person singular form."
+      ],
+      "feedback_correct_en": "Correct: Marco ha una macchina.",
+      "feedback_wrong_en": "Expected: Marco ha una macchina. Marco is third-person singular, so ho must become ha.",
+      "explanation_en": "Marco is third-person singular, so ho must become ha.",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.forms"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "una",
+          "macchina"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.q19",
+      "type": "multiple_choice",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Choose the correct present form for this new plural subject.",
+      "context_target": "",
+      "prompt_target": "La mamma e il papà ___ una casa.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.avere.forms_uses.q19.opt1",
+          "text": "ha",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "Ha is singular."
+        },
+        {
+          "id": "it.a1.avere.forms_uses.q19.opt2",
+          "text": "abbiamo",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Abbiamo means we have."
+        },
+        {
+          "id": "it.a1.avere.forms_uses.q19.opt3",
+          "text": "avete",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Avete is for voi."
+        },
+        {
+          "id": "it.a1.avere.forms_uses.q19.opt4",
+          "text": "hanno",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct form and use in this context."
+        }
+      ],
+      "accepted_answers": [
+        "hanno"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the subject and the meaning: possession, age or a common avere expression.",
+        "Choose the present form of avere that matches the subject."
+      ],
+      "feedback_correct_en": "Correct: hanno.",
+      "feedback_wrong_en": "Expected: hanno. Two named family members form a third-person plural subject and take hanno.",
+      "explanation_en": "Two named family members form a third-person plural subject and take hanno.",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.possession"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "la",
+          "mamma",
+          "e",
+          "il",
+          "papà",
+          "una",
+          "casa",
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.q20",
+      "type": "fill_gap",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Write only the form of avere that completes the expression.",
+      "context_target": "",
+      "prompt_target": "Io ___ paura.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "ho"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The expression is avere paura.",
+        "The subject is io."
+      ],
+      "feedback_correct_en": "Correct: ho.",
+      "feedback_wrong_en": "Expected: ho. Avere paura is the checked expression, and io takes ho.",
+      "explanation_en": "Avere paura is the checked expression, and io takes ho.",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.expressions"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "io",
+          "paura",
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.q21",
+      "type": "guided_production",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Write two short Italian sentences about Anna: give her age and say that she has a cat.",
+      "context_target": "",
+      "prompt_target": "Anna: diciotto anni; un gatto",
+      "prompt_en": "Use avere naturally; do not simply list the words.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Check your sentences against the meaning and the rubric.",
+      "feedback_wrong_en": "Check the subject, the avere form and the intended meaning.",
+      "explanation_en": "A short profile can combine age and possession with ha.",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.produce"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "Uses third-person singular ha correctly in both statements.",
+          "Expresses age as ha diciotto anni.",
+          "Expresses possession with un gatto in a natural complete sentence."
+        ],
+        "example_response": "Anna ha diciotto anni. Ha un gatto."
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "diciotto",
+          "anno",
+          "un",
+          "gatto",
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.q22",
+      "type": "guided_production",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Write two short Italian sentences saying that Marco is thirsty and cold.",
+      "context_target": "",
+      "prompt_target": "Marco: sete; freddo",
+      "prompt_en": "Use the checked avere expressions; exact wording is not required beyond the target meanings.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Check your sentences against the meaning and the rubric.",
+      "feedback_wrong_en": "Check the subject, the avere form and the intended meaning.",
+      "explanation_en": "The two physical-state expressions both use ha.",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.produce"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "Uses third-person singular ha with sete.",
+          "Uses third-person singular ha with freddo.",
+          "Produces two natural complete A1 sentences."
+        ],
+        "example_response": "Marco ha sete. Ha freddo."
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "sete",
+          "freddo",
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses.q23",
+      "type": "guided_production",
+      "stage": "review",
+      "difficulty": 3,
+      "instruction_en": "Write three short Italian sentences: one about possession, one about age, and one with avere fame. Use at least two different subjects.",
+      "context_target": "",
+      "prompt_target": "avere: un libro; diciotto anni; fame",
+      "prompt_en": "Use only familiar A1 vocabulary and present forms of avere.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Check your sentences against the meaning and the rubric.",
+      "feedback_wrong_en": "Check the subject, the avere form and the intended meaning.",
+      "explanation_en": "Review combines the three taught uses without requiring a single fixed answer.",
+      "skill_ids": [
+        "it.a1.avere.forms_uses.produce"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative",
+        "indicative.present.3sg.affirmative",
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "Includes one natural possession sentence with avere.",
+          "Includes one age sentence with avere + number + anni.",
+          "Includes one natural sentence with avere fame.",
+          "Uses at least two different subjects and matching present forms."
+        ],
+        "example_response": "Ho un libro. Marco ha diciannove anni. I ragazzi hanno fame."
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "un",
+          "libro",
+          "diciotto",
+          "anno",
+          "fame",
+          "diciannove",
+          "i",
+          "ragazzo"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "verb_application": {
+    "applicable": true,
+    "required_form_keys": [
+      "indicative.present.1sg.affirmative",
+      "indicative.present.2sg.affirmative",
+      "indicative.present.3sg.affirmative",
+      "indicative.present.1pl.affirmative",
+      "indicative.present.2pl.affirmative",
+      "indicative.present.3pl.affirmative"
+    ],
+    "verbs": [
+      {
+        "id": "it:avere",
+        "lemma": "avere",
+        "meaning_en": "to have",
+        "regularity": "irregular",
+        "conjugation_class": "irregular; second-conjugation infinitive",
+        "auxiliary": "avere",
+        "governed_cases_or_prepositions": [],
+        "forms": [
+          {
+            "form_key": "indicative.present.1sg.affirmative",
+            "surface": "ho",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2sg.affirmative",
+            "surface": "hai",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3sg.affirmative",
+            "surface": "ha",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.1pl.affirmative",
+            "surface": "abbiamo",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2pl.affirmative",
+            "surface": "avete",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3pl.affirmative",
+            "surface": "hanno",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          }
+        ],
+        "exercise_ids": [
+          "it.a1.avere.forms_uses.q01",
+          "it.a1.avere.forms_uses.q02",
+          "it.a1.avere.forms_uses.q03",
+          "it.a1.avere.forms_uses.q04",
+          "it.a1.avere.forms_uses.q05",
+          "it.a1.avere.forms_uses.q06",
+          "it.a1.avere.forms_uses.q07",
+          "it.a1.avere.forms_uses.q08",
+          "it.a1.avere.forms_uses.q09",
+          "it.a1.avere.forms_uses.q10",
+          "it.a1.avere.forms_uses.q11",
+          "it.a1.avere.forms_uses.q12",
+          "it.a1.avere.forms_uses.q13",
+          "it.a1.avere.forms_uses.q14",
+          "it.a1.avere.forms_uses.q15",
+          "it.a1.avere.forms_uses.q16",
+          "it.a1.avere.forms_uses.q17",
+          "it.a1.avere.forms_uses.q18",
+          "it.a1.avere.forms_uses.q19",
+          "it.a1.avere.forms_uses.q20",
+          "it.a1.avere.forms_uses.q21",
+          "it.a1.avere.forms_uses.q22",
+          "it.a1.avere.forms_uses.q23"
+        ]
+      }
+    ]
+  },
+  "mastery": {
+    "minimum_scored_items": 12,
+    "required_score": 0.8,
+    "minimum_production_score": 0.7,
+    "minimum_unaided_production_items": 2,
+    "required_stages": [
+      "notice",
+      "controlled",
+      "contextual",
+      "production",
+      "transfer"
+    ],
+    "review_intervals_days": [
+      1,
+      3,
+      7,
+      14,
+      30,
+      60
+    ]
+  },
+  "vocabulary_audit": {
+    "status": "pass",
+    "manifest_id": "it-reviewed-9d35be468e23",
+    "used_lemmas": [
+      "a",
+      "anche",
+      "anno",
+      "avere",
+      "bambino",
+      "bicicletta",
+      "caldo",
+      "cane",
+      "casa",
+      "ciao",
+      "diciannove",
+      "diciotto",
+      "due",
+      "e",
+      "essere",
+      "fame",
+      "famiglia",
+      "fratello",
+      "freddo",
+      "gatto",
+      "i",
+      "il",
+      "io",
+      "la",
+      "libro",
+      "macchina",
+      "mamma",
+      "noi",
+      "otto",
+      "papà",
+      "paura",
+      "ragazzo",
+      "sete",
+      "sorella",
+      "tu",
+      "un",
+      "una",
+      "voi"
+    ],
+    "target_lemmas": [
+      "avere"
+    ],
+    "out_of_list_lemmas": [],
+    "introduced_lemmas": [],
+    "proper_names": [
+      "Anna",
+      "Marco",
+      "Milano",
+      "Roma"
+    ],
+    "grammar_only_tokens": [],
+    "above_level_lemmas": [],
+    "tests_with_unknown_vocabulary": []
+  },
+  "level_audit": {
+    "status": "pass",
+    "cefr": "A1",
+    "maximum_sentence_length_words": 9,
+    "unapproved_grammar_features": [],
+    "scope_violations": []
+  },
+  "quality_audit": {
+    "status": "pass",
+    "issues": [],
+    "needs_human_review": [],
+    "sources": [
+      {
+        "name": "Treccani Vocabolario — avere (present forms and common physical-sensation expressions)",
+        "url": "https://www.treccani.it/vocabolario/ricerca/avere%2Bfame/"
+      },
+      {
+        "name": "Collins Italian Verbs — Coniugazione di avere",
+        "url": "https://www.collinsdictionary.com/it/coniugazione/italiano/avere"
+      },
+      {
+        "name": "Italiano Bello — Essere e avere (A1 forms and common expressions)",
+        "url": "https://italiano-bello.com/grammatik/essere-und-avere-im-italienischen/"
+      }
+    ],
+    "checks": {
+      "unique_ids": true,
+      "prerequisites_resolve": true,
+      "answers_verified": true,
+      "forms_verified": true,
+      "single_best_answers": true,
+      "naturalness_checked": true,
+      "cefr_checked": true,
+      "translations_checked": true,
+      "requested_counts_met": true
+    }
+  },
+  "audit": {
+    "status": "pass",
+    "issues": [],
+    "needs_human_review": [],
+    "sources": [
+      {
+        "name": "Treccani Vocabolario — avere (present forms and common physical-sensation expressions)",
+        "url": "https://www.treccani.it/vocabolario/ricerca/avere%2Bfame/"
+      },
+      {
+        "name": "Collins Italian Verbs — Coniugazione di avere",
+        "url": "https://www.collinsdictionary.com/it/coniugazione/italiano/avere"
+      },
+      {
+        "name": "Italiano Bello — Essere e avere (A1 forms and common expressions)",
+        "url": "https://italiano-bello.com/grammatik/essere-und-avere-im-italienischen/"
+      }
+    ],
+    "checks": {
+      "unique_ids": true,
+      "prerequisites_resolve": true,
+      "answers_verified": true,
+      "forms_verified": true,
+      "single_best_answers": true,
+      "naturalness_checked": true,
+      "cefr_checked": true,
+      "translations_checked": true,
+      "requested_counts_met": true
+    }
+  }
+}

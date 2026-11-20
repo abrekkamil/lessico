@@ -1,0 +1,2502 @@
+{
+  "schema_version": "lessico-grammar-v1",
+  "content_version": "1.0.0",
+  "status": "ready",
+  "mode": "topic_pack",
+  "language": "it",
+  "explanation_language": "en",
+  "vocabulary_manifest_id": "it-reviewed-9d35be468e23",
+  "topic": {
+    "id": "it.a1.questions.basic",
+    "cefr": "A1",
+    "sequence": 12,
+    "module_id": "it.a1.sentences",
+    "title_target": "Le domande di base",
+    "title_en": "Basic questions",
+    "estimated_minutes": 8,
+    "prerequisite_ids": [
+      "it.a1.subjects.pro_drop",
+      "it.a1.essere.forms",
+      "it.a1.avere.forms_uses"
+    ],
+    "learning_objectives": [
+      "Form simple yes/no questions with familiar present forms of essere and avere.",
+      "Choose a basic interrogative word according to the information requested.",
+      "Ask and answer short A1 questions with natural Italian word order."
+    ],
+    "scope_included": [
+      "intonation questions",
+      "chi, che cosa, dove, quando, come, perché, quanto",
+      "short contextual answers"
+    ],
+    "scope_excluded": [
+      "indirect questions",
+      "formal inversion",
+      "complex embedded questions"
+    ],
+    "new_terms": [],
+    "reading_links": []
+  },
+  "skills": [
+    {
+      "id": "it.a1.questions.basic.yesno",
+      "description_en": "Form simple yes/no questions with familiar present-tense clauses and natural Italian word order.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "it.a1.questions.basic.qwords",
+      "description_en": "Select chi, che cosa, dove, quando, come, perché or quanto according to the information requested.",
+      "capability": "recognition",
+      "critical": true
+    },
+    {
+      "id": "it.a1.questions.basic.wordorder",
+      "description_en": "Place an interrogative word naturally before a simple clause without English-style auxiliary inversion.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "it.a1.questions.basic.answers",
+      "description_en": "Give short contextual answers to basic yes/no and question-word questions.",
+      "capability": "contextual",
+      "critical": true
+    },
+    {
+      "id": "it.a1.questions.basic.forms",
+      "description_en": "Use the correct previously learned present forms of essere and avere inside basic questions.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "it.a1.questions.basic.produce",
+      "description_en": "Produce short natural A1 questions for basic personal and practical information.",
+      "capability": "production",
+      "critical": true
+    }
+  ],
+  "lesson": {
+    "short_explanation_en": "Italian basic questions are usually simpler than English ones. A familiar present-tense clause can become a yes/no question without adding do/does and without a required subject–verb inversion: Hai fame? Use an interrogative word when you need one specific piece of information: chi (who), che cosa (what), dove (where), quando (when), come (how / what ... like), perché (why), and quanto (how much/how many). Keep the verb in the form required by its subject. In speech, intonation signals a yes/no question; in writing, use a question mark.",
+    "rule_blocks": [
+      {
+        "id": "it.a1.questions.basic.rule1",
+        "heading_en": "Yes/no questions",
+        "explanation_en": "With the simple present forms already learned, Italian does not need an extra auxiliary equivalent to English do/does. A familiar clause can be used directly as a question.",
+        "pattern": "finite verb + ... ? / subject + finite verb + ... ?",
+        "usage_notes_en": [
+          "Sei uno studente?",
+          "Anna ha un gatto?",
+          "Explicit subject pronouns are still usually omitted unless needed for contrast or clarity."
+        ],
+        "common_errors_en": [
+          "Do not add an invented equivalent of English do/does.",
+          "Do not change sei to è or hai to ha when you are asking tu."
+        ],
+        "example_ids": [
+          "it.a1.questions.basic.ex01",
+          "it.a1.questions.basic.ex02",
+          "it.a1.questions.basic.ex10"
+        ]
+      },
+      {
+        "id": "it.a1.questions.basic.rule2",
+        "heading_en": "Question words",
+        "explanation_en": "Choose the interrogative word according to the missing information.",
+        "pattern": "question word + simple clause + ?",
+        "usage_notes_en": [
+          "chi = person",
+          "che cosa = thing / what",
+          "dove = place",
+          "quando = time",
+          "come = manner or description",
+          "perché = reason",
+          "quanto = quantity"
+        ],
+        "common_errors_en": [
+          "Use chi for people, not dove.",
+          "Use dove for a place and quando for a time.",
+          "Use perché when asking for a reason."
+        ],
+        "example_ids": [
+          "it.a1.questions.basic.ex03",
+          "it.a1.questions.basic.ex04",
+          "it.a1.questions.basic.ex05",
+          "it.a1.questions.basic.ex06",
+          "it.a1.questions.basic.ex07",
+          "it.a1.questions.basic.ex08",
+          "it.a1.questions.basic.ex09"
+        ]
+      },
+      {
+        "id": "it.a1.questions.basic.rule3",
+        "heading_en": "Natural word order and short answers",
+        "explanation_en": "A question word commonly comes before the simple clause. The finite verb keeps its normal person and number. Answers can be short when the context makes the missing information clear.",
+        "pattern": "Dove + sono + ... ? → Sono qui.",
+        "usage_notes_en": [
+          "Italian does not require the English pattern do + subject + verb.",
+          "A yes/no answer can begin with sì or no."
+        ],
+        "common_errors_en": [
+          "Avoid mechanically copying English do-support: *Dove do...* is not Italian.",
+          "Keep agreement: Dove sono i libri?, not *Dove è i libri?*."
+        ],
+        "example_ids": [
+          "it.a1.questions.basic.ex05",
+          "it.a1.questions.basic.ex06",
+          "it.a1.questions.basic.ex10"
+        ]
+      }
+    ],
+    "form_tables": [
+      {
+        "id": "it.a1.questions.basic.table1",
+        "title_en": "Basic interrogative words",
+        "columns": [
+          "Italian",
+          "Meaning",
+          "Asks about"
+        ],
+        "rows": [
+          [
+            "chi",
+            "who",
+            "a person"
+          ],
+          [
+            "che cosa",
+            "what",
+            "a thing or information"
+          ],
+          [
+            "dove",
+            "where",
+            "a place"
+          ],
+          [
+            "quando",
+            "when",
+            "a time"
+          ],
+          [
+            "come",
+            "how / what ... like",
+            "manner or description"
+          ],
+          [
+            "perché",
+            "why",
+            "a reason"
+          ],
+          [
+            "quanto",
+            "how much / how many",
+            "quantity"
+          ]
+        ]
+      },
+      {
+        "id": "it.a1.questions.basic.table2",
+        "title_en": "Familiar present forms inside questions",
+        "columns": [
+          "Person",
+          "essere",
+          "avere",
+          "Example question"
+        ],
+        "rows": [
+          [
+            "1st singular",
+            "sono",
+            "ho",
+            "—"
+          ],
+          [
+            "2nd singular",
+            "sei",
+            "hai",
+            "Sei stanco? / Hai fame?"
+          ],
+          [
+            "3rd singular",
+            "è",
+            "ha",
+            "Anna è a casa? / Marco ha un cane?"
+          ],
+          [
+            "1st plural",
+            "siamo",
+            "abbiamo",
+            "Siamo studenti? / Abbiamo un libro?"
+          ],
+          [
+            "2nd plural",
+            "siete",
+            "avete",
+            "Siete stanchi? / Avete fame?"
+          ],
+          [
+            "3rd plural",
+            "sono",
+            "hanno",
+            "Sono studenti? / Hanno una macchina?"
+          ]
+        ]
+      }
+    ]
+  },
+  "contexts": [
+    {
+      "id": "it.a1.questions.basic.ctx1",
+      "type": "dialogue",
+      "setting_en": "Anna asks Marco a few basic questions when they meet.",
+      "lines": [
+        {
+          "speaker": "Anna",
+          "target": "Sei uno studente?",
+          "translation_en": "Are you a student?"
+        },
+        {
+          "speaker": "Marco",
+          "target": "Sì, sono uno studente.",
+          "translation_en": "Yes, I am a student."
+        },
+        {
+          "speaker": "Anna",
+          "target": "Sei di Roma?",
+          "translation_en": "Are you from Rome?"
+        },
+        {
+          "speaker": "Marco",
+          "target": "No, sono di Milano.",
+          "translation_en": "No, I am from Milan."
+        },
+        {
+          "speaker": "Anna",
+          "target": "Hai una bicicletta?",
+          "translation_en": "Do you have a bicycle?"
+        },
+        {
+          "speaker": "Marco",
+          "target": "Sì, ho una bicicletta.",
+          "translation_en": "Yes, I have a bicycle."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "Sei uno studente?",
+          "lemma": "essere",
+          "skill_id": "it.a1.questions.basic.yesno",
+          "form_key": "indicative.present.2sg.affirmative",
+          "explanation_en": "A familiar statement pattern can be used as a yes/no question; Italian does not require a separate do-support auxiliary."
+        },
+        {
+          "surface": "Sei di Roma?",
+          "lemma": "essere",
+          "skill_id": "it.a1.questions.basic.yesno",
+          "form_key": "indicative.present.2sg.affirmative",
+          "explanation_en": "The present form sei remains the same inside the question."
+        },
+        {
+          "surface": "Hai una bicicletta?",
+          "lemma": "avere",
+          "skill_id": "it.a1.questions.basic.yesno",
+          "form_key": "indicative.present.2sg.affirmative",
+          "explanation_en": "Hai keeps its normal second-person singular form in a yes/no question."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "uno",
+          "studente",
+          "sì",
+          "di",
+          "no",
+          "avere",
+          "una",
+          "bicicletta"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.ctx2",
+      "type": "situation",
+      "setting_en": "In a classroom, simple questions ask for a person, an object, a place, a time and a quantity.",
+      "lines": [
+        {
+          "speaker": "Teacher",
+          "target": "Chi è Marco?",
+          "translation_en": "Who is Marco?"
+        },
+        {
+          "speaker": "Anna",
+          "target": "È un insegnante.",
+          "translation_en": "He is a teacher."
+        },
+        {
+          "speaker": "Teacher",
+          "target": "Che cosa hai?",
+          "translation_en": "What do you have?"
+        },
+        {
+          "speaker": "Anna",
+          "target": "Ho un libro.",
+          "translation_en": "I have a book."
+        },
+        {
+          "speaker": "Teacher",
+          "target": "Dove sono le chiavi?",
+          "translation_en": "Where are the keys?"
+        },
+        {
+          "speaker": "Anna",
+          "target": "Sono qui.",
+          "translation_en": "They are here."
+        },
+        {
+          "speaker": "Teacher",
+          "target": "Quando è la festa?",
+          "translation_en": "When is the party?"
+        },
+        {
+          "speaker": "Anna",
+          "target": "È domani.",
+          "translation_en": "It is tomorrow."
+        },
+        {
+          "speaker": "Teacher",
+          "target": "Quanto pane hai?",
+          "translation_en": "How much bread do you have?"
+        },
+        {
+          "speaker": "Anna",
+          "target": "Ho poco pane.",
+          "translation_en": "I have a little bread."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "Chi",
+          "lemma": "chi",
+          "skill_id": "it.a1.questions.basic.qwords",
+          "form_key": "",
+          "explanation_en": "Chi asks about a person."
+        },
+        {
+          "surface": "Che cosa",
+          "lemma": "cosa",
+          "skill_id": "it.a1.questions.basic.qwords",
+          "form_key": "indicative.present.2sg.affirmative",
+          "explanation_en": "Che cosa asks what thing or information is involved."
+        },
+        {
+          "surface": "Dove",
+          "lemma": "dove",
+          "skill_id": "it.a1.questions.basic.qwords",
+          "form_key": "indicative.present.3pl.affirmative",
+          "explanation_en": "Dove asks about place."
+        },
+        {
+          "surface": "Quando",
+          "lemma": "quando",
+          "skill_id": "it.a1.questions.basic.qwords",
+          "form_key": "indicative.present.3sg.affirmative",
+          "explanation_en": "Quando asks about time."
+        },
+        {
+          "surface": "Quanto",
+          "lemma": "quanto",
+          "skill_id": "it.a1.questions.basic.qwords",
+          "form_key": "indicative.present.2sg.affirmative",
+          "explanation_en": "Quanto asks about quantity here."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "chi",
+          "essere",
+          "un",
+          "insegnante",
+          "che",
+          "cosa",
+          "avere",
+          "libro",
+          "dove",
+          "le",
+          "chiave",
+          "qui",
+          "quando",
+          "la",
+          "festa",
+          "domani",
+          "quanto",
+          "pane",
+          "poco"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "it.a1.questions.basic.ex01",
+      "target": "Sei uno studente?",
+      "translation_en": "Are you a student?",
+      "focus_surface": "Sei uno studente?",
+      "skill_ids": [
+        "it.a1.questions.basic.yesno",
+        "it.a1.questions.basic.forms"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Italian can make a yes/no question without adding an equivalent of English do.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "uno",
+          "studente"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.ex02",
+      "target": "Anna ha un gatto?",
+      "translation_en": "Does Anna have a cat?",
+      "focus_surface": "Anna ha un gatto?",
+      "skill_ids": [
+        "it.a1.questions.basic.yesno",
+        "it.a1.questions.basic.forms"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "The statement word order can remain unchanged; the clause is understood as a question in context and speech intonation.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "un",
+          "gatto"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.ex03",
+      "target": "Chi è Marco?",
+      "translation_en": "Who is Marco?",
+      "focus_surface": "Chi",
+      "skill_ids": [
+        "it.a1.questions.basic.qwords"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Chi asks about a person.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "chi",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.ex04",
+      "target": "Che cosa hai?",
+      "translation_en": "What do you have?",
+      "focus_surface": "Che cosa",
+      "skill_ids": [
+        "it.a1.questions.basic.qwords",
+        "it.a1.questions.basic.forms"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Che cosa asks about a thing or information.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "che",
+          "cosa",
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.ex05",
+      "target": "Dove sono le chiavi?",
+      "translation_en": "Where are the keys?",
+      "focus_surface": "Dove",
+      "skill_ids": [
+        "it.a1.questions.basic.qwords",
+        "it.a1.questions.basic.wordorder"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Dove asks about place and precedes the simple clause here.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "dove",
+          "essere",
+          "le",
+          "chiave"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.ex06",
+      "target": "Quando è la festa?",
+      "translation_en": "When is the party?",
+      "focus_surface": "Quando",
+      "skill_ids": [
+        "it.a1.questions.basic.qwords",
+        "it.a1.questions.basic.wordorder"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Quando asks about time.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "quando",
+          "essere",
+          "la",
+          "festa"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.ex07",
+      "target": "Come sono Anna e Marco?",
+      "translation_en": "What are Anna and Marco like?",
+      "focus_surface": "Come",
+      "skill_ids": [
+        "it.a1.questions.basic.qwords",
+        "it.a1.questions.basic.wordorder"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Come can ask how someone or something is, including a simple description.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "come",
+          "essere",
+          "e"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.ex08",
+      "target": "Perché Anna è a casa?",
+      "translation_en": "Why is Anna at home?",
+      "focus_surface": "Perché",
+      "skill_ids": [
+        "it.a1.questions.basic.qwords",
+        "it.a1.questions.basic.wordorder"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Perché asks for a reason.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "perché",
+          "essere",
+          "a",
+          "casa"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.ex09",
+      "target": "Quanto pane hai?",
+      "translation_en": "How much bread do you have?",
+      "focus_surface": "Quanto",
+      "skill_ids": [
+        "it.a1.questions.basic.qwords",
+        "it.a1.questions.basic.forms"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Quanto asks about quantity here.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "quanto",
+          "pane",
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.ex10",
+      "target": "Hai fame? Sì, ho fame.",
+      "translation_en": "Are you hungry? Yes, I am.",
+      "focus_surface": "Hai fame?",
+      "skill_ids": [
+        "it.a1.questions.basic.yesno",
+        "it.a1.questions.basic.answers"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.affirmative",
+        "indicative.present.1sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "A yes/no question can receive a short sì or no answer, optionally followed by a full clause.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "fame",
+          "sì"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "id": "it.a1.questions.basic.q01",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the natural informal-tu question asking Marco whether he is tired.",
+      "context_target": "",
+      "prompt_target": "",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.questions.basic.q01.opt1",
+          "text": "Sei stanco?",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct in this context."
+        },
+        {
+          "id": "it.a1.questions.basic.q01.opt2",
+          "text": "È stanco?",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "È is third-person singular, not the tu form."
+        },
+        {
+          "id": "it.a1.questions.basic.q01.opt3",
+          "text": "Sono stanco?",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Sono is not the tu form."
+        },
+        {
+          "id": "it.a1.questions.basic.q01.opt4",
+          "text": "Hai stanco?",
+          "correct": false,
+          "error_type": "wrong_verb",
+          "explanation_en": "Italian uses essere with stanco, not avere."
+        }
+      ],
+      "accepted_answers": [
+        "Sei stanco?"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the question type, interrogative word and verb form.",
+      "explanation_en": "For tu, sei is the correct present form of essere; no extra auxiliary is needed.",
+      "skill_ids": [
+        "it.a1.questions.basic.yesno"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "stanco",
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.q02",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the question word that asks about a person.",
+      "context_target": "",
+      "prompt_target": "___ è Marco?",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.questions.basic.q02.opt1",
+          "text": "Dove",
+          "correct": false,
+          "error_type": "wrong_question_word",
+          "explanation_en": "Dove asks about place."
+        },
+        {
+          "id": "it.a1.questions.basic.q02.opt2",
+          "text": "Chi",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Chi asks about a person."
+        },
+        {
+          "id": "it.a1.questions.basic.q02.opt3",
+          "text": "Quando",
+          "correct": false,
+          "error_type": "wrong_question_word",
+          "explanation_en": "Quando asks about time."
+        },
+        {
+          "id": "it.a1.questions.basic.q02.opt4",
+          "text": "Quanto",
+          "correct": false,
+          "error_type": "wrong_question_word",
+          "explanation_en": "Quanto asks about quantity."
+        }
+      ],
+      "accepted_answers": [
+        "Chi"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the question type, interrogative word and verb form.",
+      "explanation_en": "Chi asks about a person.",
+      "skill_ids": [
+        "it.a1.questions.basic.qwords"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "dove",
+          "chi",
+          "quando",
+          "quanto"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.q03",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Choose the question word that asks about a place.",
+      "context_target": "",
+      "prompt_target": "___ sono i libri?",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.questions.basic.q03.opt1",
+          "text": "Come",
+          "correct": false,
+          "error_type": "wrong_question_word",
+          "explanation_en": "Come asks about manner or description."
+        },
+        {
+          "id": "it.a1.questions.basic.q03.opt2",
+          "text": "Perché",
+          "correct": false,
+          "error_type": "wrong_question_word",
+          "explanation_en": "Perché asks for a reason."
+        },
+        {
+          "id": "it.a1.questions.basic.q03.opt3",
+          "text": "Dove",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Dove asks about place."
+        },
+        {
+          "id": "it.a1.questions.basic.q03.opt4",
+          "text": "Chi",
+          "correct": false,
+          "error_type": "wrong_question_word",
+          "explanation_en": "Chi asks about a person."
+        }
+      ],
+      "accepted_answers": [
+        "Dove"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the question type, interrogative word and verb form.",
+      "explanation_en": "Dove asks where something is.",
+      "skill_ids": [
+        "it.a1.questions.basic.qwords"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "i",
+          "libro",
+          "come",
+          "perché",
+          "dove",
+          "chi"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.q04",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Choose the question word that asks about a time.",
+      "context_target": "",
+      "prompt_target": "___ è la festa?",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.questions.basic.q04.opt1",
+          "text": "Quando",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Quando asks about time."
+        },
+        {
+          "id": "it.a1.questions.basic.q04.opt2",
+          "text": "Dove",
+          "correct": false,
+          "error_type": "wrong_question_word",
+          "explanation_en": "Dove asks about place."
+        },
+        {
+          "id": "it.a1.questions.basic.q04.opt3",
+          "text": "Chi",
+          "correct": false,
+          "error_type": "wrong_question_word",
+          "explanation_en": "Chi asks about a person."
+        },
+        {
+          "id": "it.a1.questions.basic.q04.opt4",
+          "text": "Come",
+          "correct": false,
+          "error_type": "wrong_question_word",
+          "explanation_en": "Come asks about manner or description."
+        }
+      ],
+      "accepted_answers": [
+        "Quando"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the question type, interrogative word and verb form.",
+      "explanation_en": "Quando asks about time.",
+      "skill_ids": [
+        "it.a1.questions.basic.qwords"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "la",
+          "festa",
+          "quando",
+          "dove",
+          "chi",
+          "come"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.q05",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Choose the correct question word.",
+      "context_target": "",
+      "prompt_target": "___ Anna è a casa?",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.questions.basic.q05.opt1",
+          "text": "Quanto",
+          "correct": false,
+          "error_type": "wrong_question_word",
+          "explanation_en": "Quanto asks about quantity."
+        },
+        {
+          "id": "it.a1.questions.basic.q05.opt2",
+          "text": "Dove",
+          "correct": false,
+          "error_type": "wrong_question_word",
+          "explanation_en": "Dove asks about place."
+        },
+        {
+          "id": "it.a1.questions.basic.q05.opt3",
+          "text": "Come",
+          "correct": false,
+          "error_type": "wrong_question_word",
+          "explanation_en": "Come asks how or what something is like."
+        },
+        {
+          "id": "it.a1.questions.basic.q05.opt4",
+          "text": "Perché",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Perché asks for a reason."
+        }
+      ],
+      "accepted_answers": [
+        "Perché"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the question type, interrogative word and verb form.",
+      "explanation_en": "Perché asks for a reason.",
+      "skill_ids": [
+        "it.a1.questions.basic.qwords"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "a",
+          "casa",
+          "quanto",
+          "dove",
+          "come",
+          "perché"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.q06",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Choose the question word that asks for a description.",
+      "context_target": "",
+      "prompt_target": "___ sono i ragazzi?",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.questions.basic.q06.opt1",
+          "text": "Chi",
+          "correct": false,
+          "error_type": "wrong_question_word",
+          "explanation_en": "Chi asks who the people are."
+        },
+        {
+          "id": "it.a1.questions.basic.q06.opt2",
+          "text": "Come",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Come can ask for a description here."
+        },
+        {
+          "id": "it.a1.questions.basic.q06.opt3",
+          "text": "Quando",
+          "correct": false,
+          "error_type": "wrong_question_word",
+          "explanation_en": "Quando asks about time."
+        },
+        {
+          "id": "it.a1.questions.basic.q06.opt4",
+          "text": "Quanto",
+          "correct": false,
+          "error_type": "wrong_question_word",
+          "explanation_en": "Quanto asks about quantity."
+        }
+      ],
+      "accepted_answers": [
+        "Come"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the question type, interrogative word and verb form.",
+      "explanation_en": "Come can ask what people are like.",
+      "skill_ids": [
+        "it.a1.questions.basic.qwords"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "i",
+          "ragazzo",
+          "chi",
+          "come",
+          "quando",
+          "quanto"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.q07",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Choose the natural question word.",
+      "context_target": "",
+      "prompt_target": "___ hai?",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.questions.basic.q07.opt1",
+          "text": "Che cosa",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Che cosa means what in this question."
+        },
+        {
+          "id": "it.a1.questions.basic.q07.opt2",
+          "text": "Chi",
+          "correct": false,
+          "error_type": "wrong_question_word",
+          "explanation_en": "Chi asks about a person."
+        },
+        {
+          "id": "it.a1.questions.basic.q07.opt3",
+          "text": "Dove",
+          "correct": false,
+          "error_type": "wrong_question_word",
+          "explanation_en": "Dove asks about place."
+        },
+        {
+          "id": "it.a1.questions.basic.q07.opt4",
+          "text": "Perché",
+          "correct": false,
+          "error_type": "wrong_question_word",
+          "explanation_en": "Perché asks for a reason."
+        }
+      ],
+      "accepted_answers": [
+        "Che cosa"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the question type, interrogative word and verb form.",
+      "explanation_en": "Che cosa asks what thing or information is involved.",
+      "skill_ids": [
+        "it.a1.questions.basic.qwords"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "che",
+          "cosa",
+          "chi",
+          "dove",
+          "perché"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.q08",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Choose the correct question word.",
+      "context_target": "",
+      "prompt_target": "___ pane hai?",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.questions.basic.q08.opt1",
+          "text": "Quando",
+          "correct": false,
+          "error_type": "wrong_question_word",
+          "explanation_en": "Quando asks about time."
+        },
+        {
+          "id": "it.a1.questions.basic.q08.opt2",
+          "text": "Quanto",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Quanto asks how much."
+        },
+        {
+          "id": "it.a1.questions.basic.q08.opt3",
+          "text": "Come",
+          "correct": false,
+          "error_type": "wrong_question_word",
+          "explanation_en": "Come asks how."
+        },
+        {
+          "id": "it.a1.questions.basic.q08.opt4",
+          "text": "Dove",
+          "correct": false,
+          "error_type": "wrong_question_word",
+          "explanation_en": "Dove asks where."
+        }
+      ],
+      "accepted_answers": [
+        "Quanto"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the question type, interrogative word and verb form.",
+      "explanation_en": "Quanto asks about quantity.",
+      "skill_ids": [
+        "it.a1.questions.basic.qwords"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "pane",
+          "avere",
+          "quando",
+          "quanto",
+          "come",
+          "dove"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.q09",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Complete the question with the present indicative of essere for tu.",
+      "context_target": "",
+      "prompt_target": "___ stanco?",
+      "prompt_en": "Person: 2nd singular; polarity: affirmative.",
+      "options": [],
+      "accepted_answers": [
+        "Sei"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Use the tu form of essere.",
+        "The form begins with s."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the question type, interrogative word and verb form.",
+      "explanation_en": "The second-person singular present of essere is sei.",
+      "skill_ids": [
+        "it.a1.questions.basic.forms"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "stanco"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.q10",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Complete the question with the present indicative of essere for Marco.",
+      "context_target": "",
+      "prompt_target": "Marco ___ uno studente?",
+      "prompt_en": "Person: 3rd singular; polarity: affirmative.",
+      "options": [],
+      "accepted_answers": [
+        "è"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Marco is third-person singular.",
+        "Remember the accent on è."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the question type, interrogative word and verb form.",
+      "explanation_en": "The third-person singular present of essere is è.",
+      "skill_ids": [
+        "it.a1.questions.basic.forms"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "uno",
+          "studente"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.q11",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Complete the question with the present indicative of essere for noi.",
+      "context_target": "",
+      "prompt_target": "___ studenti?",
+      "prompt_en": "Person: 1st plural; polarity: affirmative.",
+      "options": [],
+      "accepted_answers": [
+        "Siamo"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Use the noi form of essere.",
+        "It begins with sia-."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the question type, interrogative word and verb form.",
+      "explanation_en": "The first-person plural present of essere is siamo.",
+      "skill_ids": [
+        "it.a1.questions.basic.forms"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "studente"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.q12",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Complete the question with the present indicative of essere.",
+      "context_target": "",
+      "prompt_target": "I ragazzi ___ stanchi?",
+      "prompt_en": "Subject: i ragazzi; person: 3rd plural; polarity: affirmative.",
+      "options": [],
+      "accepted_answers": [
+        "sono"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The subject is plural.",
+        "Use the 3rd-person plural of essere."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the question type, interrogative word and verb form.",
+      "explanation_en": "The third-person plural present of essere is sono.",
+      "skill_ids": [
+        "it.a1.questions.basic.forms"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "i",
+          "ragazzo",
+          "stanco"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.q13",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Complete the question with the present indicative of avere for tu.",
+      "context_target": "",
+      "prompt_target": "___ fame?",
+      "prompt_en": "Person: 2nd singular; polarity: affirmative.",
+      "options": [],
+      "accepted_answers": [
+        "Hai"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Use the tu form of avere.",
+        "It begins with h."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the question type, interrogative word and verb form.",
+      "explanation_en": "The second-person singular present of avere is hai.",
+      "skill_ids": [
+        "it.a1.questions.basic.forms"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "fame"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.q14",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Complete the question with the present indicative of avere.",
+      "context_target": "",
+      "prompt_target": "Anna ___ una bicicletta?",
+      "prompt_en": "Subject: Anna; person: 3rd singular; polarity: affirmative.",
+      "options": [],
+      "accepted_answers": [
+        "ha"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Anna is third-person singular.",
+        "The form is two letters."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the question type, interrogative word and verb form.",
+      "explanation_en": "The third-person singular present of avere is ha.",
+      "skill_ids": [
+        "it.a1.questions.basic.forms"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "una",
+          "bicicletta"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.q15",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Complete the question with the present indicative of avere for noi.",
+      "context_target": "",
+      "prompt_target": "___ un cane?",
+      "prompt_en": "Person: 1st plural; polarity: affirmative.",
+      "options": [],
+      "accepted_answers": [
+        "Abbiamo"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Use the noi form of avere.",
+        "It begins with abb-."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the question type, interrogative word and verb form.",
+      "explanation_en": "The first-person plural present of avere is abbiamo.",
+      "skill_ids": [
+        "it.a1.questions.basic.forms"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "un",
+          "cane"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.q16",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Complete the question with the present indicative of avere.",
+      "context_target": "",
+      "prompt_target": "Anna e Marco ___ una macchina?",
+      "prompt_en": "Subject: Anna e Marco; person: 3rd plural; polarity: affirmative.",
+      "options": [],
+      "accepted_answers": [
+        "hanno"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Two people make a plural subject.",
+        "The form begins with h."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the question type, interrogative word and verb form.",
+      "explanation_en": "The third-person plural present of avere is hanno.",
+      "skill_ids": [
+        "it.a1.questions.basic.forms"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "e",
+          "una",
+          "macchina"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.q17",
+      "type": "reorder",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_en": "Put the words in a natural order to ask where the keys are.",
+      "context_target": "",
+      "prompt_target": "dove / sono / le chiavi",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "Dove sono le chiavi"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Start with the word that asks about place.",
+        "Then use sono before le chiavi."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the question type, interrogative word and verb form.",
+      "explanation_en": "The interrogative word comes first, followed by the finite verb and the subject phrase in this neutral A1 question.",
+      "skill_ids": [
+        "it.a1.questions.basic.wordorder"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "dove",
+          "essere",
+          "le",
+          "chiave"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.q18",
+      "type": "error_correction",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_en": "Correct the question so that it matches the answer.",
+      "context_target": "",
+      "prompt_target": "Quando sono i libri? Sono qui.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "Dove sono i libri"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The answer gives a place.",
+        "Use the question word meaning where."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the question type, interrogative word and verb form.",
+      "explanation_en": "The answer Sono qui gives a place, so the question must use dove, not quando.",
+      "skill_ids": [
+        "it.a1.questions.basic.qwords"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "quando",
+          "essere",
+          "i",
+          "libro",
+          "qui"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.q19",
+      "type": "transform",
+      "stage": "transfer",
+      "difficulty": 2,
+      "instruction_en": "Turn the statement into a natural direct yes/no question to the same person.",
+      "context_target": "",
+      "prompt_target": "Tu hai sete.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "Hai sete"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Keep the tu verb form.",
+        "The subject pronoun can be omitted naturally."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the question type, interrogative word and verb form.",
+      "explanation_en": "When directly asking someone with informal tu, Italian normally omits the subject pronoun and keeps the same finite verb form.",
+      "skill_ids": [
+        "it.a1.questions.basic.yesno"
+      ],
+      "verb_ids": [
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "tu",
+          "avere",
+          "sete"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.q20",
+      "type": "multiple_choice",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Choose the question that best matches the answer.",
+      "context_target": "È domani.",
+      "prompt_target": "È domani.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.questions.basic.q20.opt1",
+          "text": "Dove è la cena?",
+          "correct": false,
+          "error_type": "wrong_question_word",
+          "explanation_en": "Dove asks about place, but domani gives a time."
+        },
+        {
+          "id": "it.a1.questions.basic.q20.opt2",
+          "text": "Quando è la cena?",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Quando asks about time."
+        },
+        {
+          "id": "it.a1.questions.basic.q20.opt3",
+          "text": "Chi è la cena?",
+          "correct": false,
+          "error_type": "wrong_question_word",
+          "explanation_en": "Chi asks about a person."
+        },
+        {
+          "id": "it.a1.questions.basic.q20.opt4",
+          "text": "Quanto è la cena?",
+          "correct": false,
+          "error_type": "wrong_question_word",
+          "explanation_en": "Quanto asks about quantity or amount."
+        }
+      ],
+      "accepted_answers": [
+        "Quando è la cena?"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the question type, interrogative word and verb form.",
+      "explanation_en": "È domani answers a question about time, so quando is required.",
+      "skill_ids": [
+        "it.a1.questions.basic.qwords"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "domani",
+          "dove",
+          "la",
+          "cena",
+          "quando",
+          "chi",
+          "quanto"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.q21",
+      "type": "guided_production",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Write two short questions to Marco.",
+      "context_target": "",
+      "prompt_target": "felice + freddo",
+      "prompt_en": "Ask whether he is happy and whether he is cold.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the question type, interrogative word and verb form.",
+      "explanation_en": "This transfer task requires two independent yes/no questions with familiar forms.",
+      "skill_ids": [
+        "it.a1.questions.basic.produce"
+      ],
+      "verb_ids": [
+        "it:essere",
+        "it:avere"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.affirmative"
+      ],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "Uses a natural second-person singular question with essere and felice.",
+          "Uses a natural second-person singular question with avere freddo.",
+          "Does not add an English-style auxiliary."
+        ],
+        "example_response": "Sei felice? Hai freddo?"
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "felice",
+          "freddo",
+          "essere",
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.q22",
+      "type": "guided_production",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Write two Italian questions.",
+      "context_target": "",
+      "prompt_target": "Anna + biciclette",
+      "prompt_en": "Ask who Anna is and where the bicycles are.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the question type, interrogative word and verb form.",
+      "explanation_en": "The learner must independently select chi for a person and dove for a place.",
+      "skill_ids": [
+        "it.a1.questions.basic.produce"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative",
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "Uses chi to ask about Anna’s identity.",
+          "Uses dove to ask where the bicycles are.",
+          "Uses correct present forms of essere."
+        ],
+        "example_response": "Chi è Anna? Dove sono le biciclette?"
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "bicicletta",
+          "chi",
+          "essere",
+          "dove",
+          "le"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.questions.basic.q23",
+      "type": "guided_production",
+      "stage": "review",
+      "difficulty": 4,
+      "instruction_en": "Write three short Italian questions.",
+      "context_target": "",
+      "prompt_target": "che cosa + perché + quanto",
+      "prompt_en": "Ask what Anna has, why Marco is at home, and how much bread Anna and Marco have.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the question type, interrogative word and verb form.",
+      "explanation_en": "This mixed transfer task checks independent selection of three different interrogative words.",
+      "skill_ids": [
+        "it.a1.questions.basic.produce"
+      ],
+      "verb_ids": [
+        "it:avere",
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative",
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "Uses che cosa for what Anna has.",
+          "Uses perché for the reason Marco is at home.",
+          "Uses quanto for the quantity of bread.",
+          "Uses correct forms of avere and essere."
+        ],
+        "example_response": "Che cosa ha Anna? Perché Marco è a casa? Quanto pane hanno Anna e Marco?"
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "che",
+          "cosa",
+          "perché",
+          "quanto",
+          "avere",
+          "essere",
+          "a",
+          "casa",
+          "pane",
+          "e"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "verb_application": {
+    "applicable": true,
+    "required_form_keys": [
+      "indicative.present.1sg.affirmative",
+      "indicative.present.2sg.affirmative",
+      "indicative.present.3sg.affirmative",
+      "indicative.present.1pl.affirmative",
+      "indicative.present.2pl.affirmative",
+      "indicative.present.3pl.affirmative"
+    ],
+    "verbs": [
+      {
+        "id": "it:essere",
+        "lemma": "essere",
+        "meaning_en": "to be",
+        "regularity": "irregular",
+        "conjugation_class": "irregular",
+        "auxiliary": "essere",
+        "governed_cases_or_prepositions": [],
+        "forms": [
+          {
+            "form_key": "indicative.present.1sg.affirmative",
+            "surface": "sono",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2sg.affirmative",
+            "surface": "sei",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3sg.affirmative",
+            "surface": "è",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.1pl.affirmative",
+            "surface": "siamo",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2pl.affirmative",
+            "surface": "siete",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3pl.affirmative",
+            "surface": "sono",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          }
+        ],
+        "exercise_ids": [
+          "it.a1.questions.basic.q01",
+          "it.a1.questions.basic.q02",
+          "it.a1.questions.basic.q03",
+          "it.a1.questions.basic.q04",
+          "it.a1.questions.basic.q05",
+          "it.a1.questions.basic.q06",
+          "it.a1.questions.basic.q09",
+          "it.a1.questions.basic.q10",
+          "it.a1.questions.basic.q11",
+          "it.a1.questions.basic.q12",
+          "it.a1.questions.basic.q17",
+          "it.a1.questions.basic.q18",
+          "it.a1.questions.basic.q20",
+          "it.a1.questions.basic.q21",
+          "it.a1.questions.basic.q22",
+          "it.a1.questions.basic.q23"
+        ]
+      },
+      {
+        "id": "it:avere",
+        "lemma": "avere",
+        "meaning_en": "to have",
+        "regularity": "irregular",
+        "conjugation_class": "irregular; second-conjugation infinitive",
+        "auxiliary": "avere",
+        "governed_cases_or_prepositions": [],
+        "forms": [
+          {
+            "form_key": "indicative.present.1sg.affirmative",
+            "surface": "ho",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2sg.affirmative",
+            "surface": "hai",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3sg.affirmative",
+            "surface": "ha",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.1pl.affirmative",
+            "surface": "abbiamo",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2pl.affirmative",
+            "surface": "avete",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3pl.affirmative",
+            "surface": "hanno",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          }
+        ],
+        "exercise_ids": [
+          "it.a1.questions.basic.q07",
+          "it.a1.questions.basic.q08",
+          "it.a1.questions.basic.q13",
+          "it.a1.questions.basic.q14",
+          "it.a1.questions.basic.q15",
+          "it.a1.questions.basic.q16",
+          "it.a1.questions.basic.q19",
+          "it.a1.questions.basic.q21",
+          "it.a1.questions.basic.q23"
+        ]
+      }
+    ]
+  },
+  "mastery": {
+    "minimum_scored_items": 12,
+    "required_score": 0.8,
+    "minimum_production_score": 0.7,
+    "minimum_unaided_production_items": 2,
+    "required_stages": [
+      "notice",
+      "controlled",
+      "contextual",
+      "production",
+      "transfer"
+    ],
+    "review_intervals_days": [
+      1,
+      3,
+      7,
+      14,
+      30,
+      60
+    ]
+  },
+  "vocabulary_audit": {
+    "status": "pass",
+    "manifest_id": "it-reviewed-9d35be468e23",
+    "used_lemmas": [
+      "a",
+      "avere",
+      "bicicletta",
+      "cane",
+      "casa",
+      "cena",
+      "che",
+      "chi",
+      "chiave",
+      "come",
+      "cosa",
+      "di",
+      "domani",
+      "dove",
+      "e",
+      "essere",
+      "fame",
+      "felice",
+      "festa",
+      "freddo",
+      "gatto",
+      "i",
+      "insegnante",
+      "la",
+      "le",
+      "libro",
+      "macchina",
+      "no",
+      "pane",
+      "perché",
+      "poco",
+      "quando",
+      "quanto",
+      "qui",
+      "ragazzo",
+      "sete",
+      "stanco",
+      "studente",
+      "sì",
+      "tu",
+      "un",
+      "una",
+      "uno"
+    ],
+    "target_lemmas": [
+      "chi",
+      "che",
+      "cosa",
+      "dove",
+      "quando",
+      "come",
+      "perché",
+      "quanto"
+    ],
+    "out_of_list_lemmas": [],
+    "introduced_lemmas": [],
+    "proper_names": [
+      "Anna",
+      "Marco",
+      "Milano",
+      "Roma"
+    ],
+    "grammar_only_tokens": [],
+    "above_level_lemmas": [],
+    "tests_with_unknown_vocabulary": []
+  },
+  "level_audit": {
+    "status": "pass",
+    "cefr": "A1",
+    "maximum_sentence_length_words": 6,
+    "unapproved_grammar_features": [],
+    "scope_violations": []
+  },
+  "quality_audit": {
+    "status": "pass",
+    "issues": [],
+    "needs_human_review": [],
+    "sources": [
+      {
+        "name": "Treccani, Enciclopedia on line — Interrogativo",
+        "url": "https://www.treccani.it/enciclopedia/interrogativo/"
+      },
+      {
+        "name": "Treccani, La grammatica italiana — Interrogative dirette, proposizioni",
+        "url": "https://www.treccani.it/enciclopedia/proposizioni-interrogative-dirette_%28La-grammatica-italiana%29/"
+      },
+      {
+        "name": "Zanichelli Aula di lingue — Gli interrogativi",
+        "url": "https://aulalingue.scuola.zanichelli.it/benvenuti/2010/01/14/gli-interrogativi/"
+      },
+      {
+        "name": "Zanichelli Aula di lingue — Le proposizioni interrogative dirette",
+        "url": "https://aulalingue.scuola.zanichelli.it/benvenuti/2015/01/15/la-frase-complessa-le-proposizioni-interrogative-dirette/"
+      }
+    ],
+    "checks": {
+      "unique_ids": true,
+      "prerequisites_resolve": true,
+      "answers_verified": true,
+      "forms_verified": true,
+      "single_best_answers": true,
+      "naturalness_checked": true,
+      "cefr_checked": true,
+      "translations_checked": true,
+      "requested_counts_met": true
+    }
+  },
+  "audit": {
+    "status": "pass",
+    "issues": [],
+    "needs_human_review": [],
+    "sources": [
+      {
+        "name": "Treccani, Enciclopedia on line — Interrogativo",
+        "url": "https://www.treccani.it/enciclopedia/interrogativo/"
+      },
+      {
+        "name": "Treccani, La grammatica italiana — Interrogative dirette, proposizioni",
+        "url": "https://www.treccani.it/enciclopedia/proposizioni-interrogative-dirette_%28La-grammatica-italiana%29/"
+      },
+      {
+        "name": "Zanichelli Aula di lingue — Gli interrogativi",
+        "url": "https://aulalingue.scuola.zanichelli.it/benvenuti/2010/01/14/gli-interrogativi/"
+      },
+      {
+        "name": "Zanichelli Aula di lingue — Le proposizioni interrogative dirette",
+        "url": "https://aulalingue.scuola.zanichelli.it/benvenuti/2015/01/15/la-frase-complessa-le-proposizioni-interrogative-dirette/"
+      }
+    ],
+    "checks": {
+      "unique_ids": true,
+      "prerequisites_resolve": true,
+      "answers_verified": true,
+      "forms_verified": true,
+      "single_best_answers": true,
+      "naturalness_checked": true,
+      "cefr_checked": true,
+      "translations_checked": true,
+      "requested_counts_met": true
+    }
+  }
+}

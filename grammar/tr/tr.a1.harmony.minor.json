@@ -1,0 +1,1867 @@
+{
+  "schema_version": "lessico-grammar-v1",
+  "content_version": "1.0.0",
+  "status": "ready",
+  "mode": "topic_pack",
+  "language": "tr",
+  "vocabulary_manifest_id": "tr-reviewed-a6bc562da7a2",
+  "topic": {
+    "id": "tr.a1.harmony.minor",
+    "cefr": "A1",
+    "sequence": 3,
+    "module_id": "tr.a1.harmony",
+    "title_target": "Dört Yönlü Ünlü Uyumu",
+    "title_en": "Four-way vowel harmony",
+    "estimated_minutes": 15,
+    "prerequisite_ids": [
+      "tr.a1.harmony.major"
+    ],
+    "learning_objectives": [
+      "Understand and use four-way vowel harmony."
+    ],
+    "scope_included": [
+      "choose ı, i, u or ü in transparent practice forms, using -(I)m only as a declared carrier for form recognition"
+    ],
+    "scope_excluded": [
+      "possession syntax, consonant alternations and lexical exceptions"
+    ],
+    "new_terms": [],
+    "reading_links": [],
+    "references": [
+      {
+        "title": "Türk Dil Kurumu: 2026 Yazım Kılavuzu – Sesler ve Ses Uyumları",
+        "url": "https://yazim.tdk.gov.tr/content/02-sesler-ve-ses-uyumlari.html"
+      },
+      {
+        "title": "Karadeniz Teknik Üniversitesi, Türk Dili Bölümü: Güz Dönemi Ders İçerikleri – Türkçenin Ses Bilgisi ve İyelik Ekleri",
+        "url": "https://www.ktu.edu.tr/turkdili/guzdonemidersicerikleri"
+      }
+    ]
+  },
+  "skills": [
+    {
+      "id": "tr.a1.harmony.minor.recognize",
+      "description_en": "Recognise the narrow vowel ı/i/u/ü in a four-way harmony practice form.",
+      "capability": "recognition",
+      "critical": true
+    },
+    {
+      "id": "tr.a1.harmony.minor.last_vowel",
+      "description_en": "Identify the final vowel of an A1 noun and use both back/front and rounded/unrounded information.",
+      "capability": "recognition",
+      "critical": true
+    },
+    {
+      "id": "tr.a1.harmony.minor.suffix_choice",
+      "description_en": "Choose the correct vowel in the declared -(I)m practice carrier for a regular consonant-final noun.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "tr.a1.harmony.minor.write_form",
+      "description_en": "Write a complete regular noun form with ım/im/um/üm according to the final stem vowel.",
+      "capability": "production",
+      "critical": true
+    }
+  ],
+  "lesson": {
+    "short_explanation_en": "The earlier lesson chose between a and e. Now a four-way pattern chooses between ı, i, u and ü. Look at the last vowel of a word: a or ı selects ı; e or i selects i; o or u selects u; ö or ü selects ü. We practise this in regular consonant-ending noun forms with the ending -(I)m: balım, evim, yolum, gözüm. These forms can be translated as “my honey”, “my home”, “my road” and “my eye”, but this micro-lesson focuses on the written vowel, not on possession syntax.",
+    "rule_blocks": [
+      {
+        "id": "tr.a1.harmony.minor.rule.01",
+        "heading_en": "Four choices from the final vowel",
+        "explanation_en": "Four-way vowel harmony selects one of four narrow vowels: ı, i, u or ü. The last stem vowel determines the choice: a/ı → ı; e/i → i; o/u → u; ö/ü → ü. First find the final vowel, then match both its back/front quality and its rounded/unrounded quality.",
+        "pattern": "a, ı → ı | e, i → i | o, u → u | ö, ü → ü",
+        "usage_notes_en": [
+          "This is a four-way choice, unlike the earlier two-way a/e harmony.",
+          "For this lesson, the narrow vowel appears only in the declared -(I)m pattern.",
+          "We use consonant-ending words without consonant changes or vowel loss; ownership grammar and complete possessive constructions are taught later."
+        ],
+        "common_errors_en": [
+          "balim is incorrect for this practice form: after a, choose dotless ı, giving balım.",
+          "gözum is incorrect: ö selects ü, so write gözüm."
+        ],
+        "example_ids": [
+          "tr.a1.harmony.minor.example.01",
+          "tr.a1.harmony.minor.example.02",
+          "tr.a1.harmony.minor.example.03",
+          "tr.a1.harmony.minor.example.04",
+          "tr.a1.harmony.minor.example.05",
+          "tr.a1.harmony.minor.example.06",
+          "tr.a1.harmony.minor.example.07",
+          "tr.a1.harmony.minor.example.08"
+        ]
+      },
+      {
+        "id": "tr.a1.harmony.minor.rule.02",
+        "heading_en": "Keep the stem and attach the practice ending",
+        "explanation_en": "Here -(I)m is a declared carrier for seeing the ı/i/u/ü distinction. For a regular consonant-final noun, attach the chosen vowel plus m with no space: ev → evim and okul → okulum. These forms can be glossed “my …”, but the lesson tests only vowel choice, not possessive syntax.",
+        "pattern": "consonant-final noun + -(I)m → balım / evim / yolum / gözüm",
+        "usage_notes_en": [
+          "Write the complete form as one word.",
+          "The I in -(I)m is a pattern label, never a literal capital I in the written word.",
+          "Avoid vowel-final nouns, changes to the noun stem, and exceptions in this lesson."
+        ],
+        "common_errors_en": [
+          "kalemım is not the form: the last vowel e requires i, making kalemim.",
+          "üzümim uses the wrong vowel: final ü requires ü, giving üzümüm."
+        ],
+        "example_ids": [
+          "tr.a1.harmony.minor.example.09",
+          "tr.a1.harmony.minor.example.10"
+        ]
+      }
+    ],
+    "form_tables": [
+      {
+        "id": "tr.a1.harmony.minor.table.vowel_choice",
+        "title_en": "Four-way vowel choice",
+        "columns": [
+          "Final vowel of stem",
+          "Vowel choice (I)",
+          "Pattern ending",
+          "A1 written example"
+        ],
+        "rows": [
+          [
+            "a, ı",
+            "ı",
+            "-ım",
+            "balım"
+          ],
+          [
+            "e, i",
+            "i",
+            "-im",
+            "evim"
+          ],
+          [
+            "o, u",
+            "u",
+            "-um",
+            "yolum"
+          ],
+          [
+            "ö, ü",
+            "ü",
+            "-üm",
+            "gözüm"
+          ]
+        ]
+      },
+      {
+        "id": "tr.a1.harmony.minor.table.eight_vowels",
+        "title_en": "All eight final vowels",
+        "columns": [
+          "Final stem vowel",
+          "Reviewed A1 noun",
+          "Checked practice form"
+        ],
+        "rows": [
+          [
+            "a",
+            "bal",
+            "balım"
+          ],
+          [
+            "e",
+            "ev",
+            "evim"
+          ],
+          [
+            "ı",
+            "kız",
+            "kızım"
+          ],
+          [
+            "i",
+            "iş",
+            "işim"
+          ],
+          [
+            "o",
+            "yol",
+            "yolum"
+          ],
+          [
+            "ö",
+            "göz",
+            "gözüm"
+          ],
+          [
+            "u",
+            "okul",
+            "okulum"
+          ],
+          [
+            "ü",
+            "süt",
+            "sütüm"
+          ]
+        ]
+      }
+    ]
+  },
+  "contexts": [
+    {
+      "id": "tr.a1.harmony.minor.context.01",
+      "type": "dialogue",
+      "setting_en": "In a Turkish classroom, Ayşe and Mehmet compare their written word labels and isolate the narrow vowel in each ending.",
+      "lines": [
+        {
+          "speaker": "Ayşe",
+          "target": "Merhaba, Mehmet.",
+          "translation_en": "Hello, Mehmet."
+        },
+        {
+          "speaker": "Mehmet",
+          "target": "Merhaba, Ayşe.",
+          "translation_en": "Hello, Ayşe."
+        },
+        {
+          "speaker": "Ayşe",
+          "target": "Kalemim, defterim.",
+          "translation_en": "My pen and my notebook."
+        },
+        {
+          "speaker": "Mehmet",
+          "target": "Kalemim: i. Defterim: i.",
+          "translation_en": "“Kalemim” and “defterim” both have i in the ending."
+        },
+        {
+          "speaker": "Ayşe",
+          "target": "Okulum: u. Sınıfım: ı.",
+          "translation_en": "“Okulum” uses u in the ending, while “sınıfım” uses ı."
+        },
+        {
+          "speaker": "Mehmet",
+          "target": "Evet, doğru.",
+          "translation_en": "Yes, that is right."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "merhaba",
+          "kalem",
+          "defter",
+          "okul",
+          "sınıf",
+          "evet",
+          "doğru"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.context.02",
+      "type": "note",
+      "setting_en": "In a shared kitchen, Zeynep writes short ownership labels on food containers and checks the vowels.",
+      "lines": [
+        {
+          "speaker": "Zeynep",
+          "target": "Sütüm, balım, tuzum.",
+          "translation_en": "My milk, my honey and my salt."
+        },
+        {
+          "speaker": "Zeynep",
+          "target": "Sütüm: ü. Balım: ı. Tuzum: u.",
+          "translation_en": "The added vowels are ü in “sütüm”, ı in “balım” and u in “tuzum”."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "süt",
+          "bal",
+          "tuz"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "tr.a1.harmony.minor.example.01",
+      "target": "bal → balım",
+      "translation_en": "honey → my honey",
+      "note_en": "The final a is back and unrounded: choose ı.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.recognize",
+        "tr.a1.harmony.minor.suffix_choice"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "bal"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.example.02",
+      "target": "kız → kızım",
+      "translation_en": "daughter → my daughter",
+      "note_en": "The final dotless ı selects ı.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.last_vowel",
+        "tr.a1.harmony.minor.suffix_choice"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kız"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.example.03",
+      "target": "yol → yolum",
+      "translation_en": "road → my road",
+      "note_en": "The final o is back and rounded: choose u.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.last_vowel",
+        "tr.a1.harmony.minor.suffix_choice"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "yol"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.example.04",
+      "target": "okul → okulum",
+      "translation_en": "school → my school",
+      "note_en": "The final u selects u.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.last_vowel",
+        "tr.a1.harmony.minor.suffix_choice"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "okul"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.example.05",
+      "target": "ev → evim",
+      "translation_en": "home → my home",
+      "note_en": "The final e is front and unrounded: choose i.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.last_vowel",
+        "tr.a1.harmony.minor.suffix_choice"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ev"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.example.06",
+      "target": "iş → işim",
+      "translation_en": "work → my work",
+      "note_en": "The final i selects i.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.last_vowel",
+        "tr.a1.harmony.minor.suffix_choice"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "iş"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.example.07",
+      "target": "göz → gözüm",
+      "translation_en": "eye → my eye",
+      "note_en": "The final ö is front and rounded: choose ü.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.last_vowel",
+        "tr.a1.harmony.minor.suffix_choice"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "göz"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.example.08",
+      "target": "süt → sütüm",
+      "translation_en": "milk → my milk",
+      "note_en": "The final ü selects ü.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.last_vowel",
+        "tr.a1.harmony.minor.suffix_choice"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "süt"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.example.09",
+      "target": "kalem → kalemim",
+      "translation_en": "pen → my pen",
+      "note_en": "The last vowel is e, so the written form uses im.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.suffix_choice",
+        "tr.a1.harmony.minor.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kalem"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.example.10",
+      "target": "üzüm → üzümüm",
+      "translation_en": "grapes → my grapes",
+      "note_en": "The last vowel is ü, so add üm: üzümüm.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.suffix_choice",
+        "tr.a1.harmony.minor.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "üzüm"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "id": "tr.a1.harmony.minor.exercise.01",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_target": "Doğru kelime",
+      "instruction_en": "Choose the correct option.",
+      "context_target": "Kelime",
+      "prompt_target": "balım",
+      "prompt_en": "Which vowel is inserted immediately before m in balım?",
+      "options": [
+        {
+          "id": "opt1",
+          "text": "ı",
+          "correct": true,
+          "error_type": null,
+          "explanation_en": "Final a selects dotless ı."
+        },
+        {
+          "id": "opt2",
+          "text": "i",
+          "correct": false,
+          "error_type": "dotted_dotless_confusion",
+          "explanation_en": "i is front and cannot match a."
+        },
+        {
+          "id": "opt3",
+          "text": "u",
+          "correct": false,
+          "error_type": "rounding_confusion",
+          "explanation_en": "u would match o or u."
+        },
+        {
+          "id": "opt4",
+          "text": "ü",
+          "correct": false,
+          "error_type": "front_rounding_confusion",
+          "explanation_en": "ü would match ö or ü."
+        }
+      ],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Locate the added vowel before m.",
+        "Final stem vowel a is back and unrounded."
+      ],
+      "feedback_correct_en": "Correct. You matched the final stem vowel to the four-way ending.",
+      "feedback_wrong_en": "balım contains dotless ı before m, not i, u or ü.",
+      "explanation_en": "a → ı in this four-way ending.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.recognize"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "bal",
+          "doğru"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.exercise.02",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_target": "Doğru kelime",
+      "instruction_en": "Choose the correct option.",
+      "context_target": "Kelime",
+      "prompt_target": "evim",
+      "prompt_en": "Which vowel is inserted immediately before m in evim?",
+      "options": [
+        {
+          "id": "opt1",
+          "text": "ı",
+          "correct": false,
+          "error_type": "front_back_confusion",
+          "explanation_en": "ı goes with a or ı."
+        },
+        {
+          "id": "opt2",
+          "text": "i",
+          "correct": true,
+          "error_type": null,
+          "explanation_en": "Final e selects i."
+        },
+        {
+          "id": "opt3",
+          "text": "u",
+          "correct": false,
+          "error_type": "front_back_confusion",
+          "explanation_en": "u goes with o or u."
+        },
+        {
+          "id": "opt4",
+          "text": "ü",
+          "correct": false,
+          "error_type": "rounding_confusion",
+          "explanation_en": "ü goes with ö or ü."
+        }
+      ],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look immediately before final m.",
+        "Final stem vowel e is front and unrounded."
+      ],
+      "feedback_correct_en": "Correct. You matched the final stem vowel to the four-way ending.",
+      "feedback_wrong_en": "evim has i before m; the form evım would be wrong.",
+      "explanation_en": "e → i in this four-way ending.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.recognize"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "ev",
+          "doğru"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.exercise.03",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_target": "Doğru kelime",
+      "instruction_en": "Choose the correct option.",
+      "context_target": "Kelime",
+      "prompt_target": "yolum",
+      "prompt_en": "Which vowel is inserted immediately before m in yolum?",
+      "options": [
+        {
+          "id": "opt1",
+          "text": "ı",
+          "correct": false,
+          "error_type": "rounding_confusion",
+          "explanation_en": "ı matches a or ı."
+        },
+        {
+          "id": "opt2",
+          "text": "ü",
+          "correct": false,
+          "error_type": "front_back_confusion",
+          "explanation_en": "ü matches ö or ü."
+        },
+        {
+          "id": "opt3",
+          "text": "u",
+          "correct": true,
+          "error_type": null,
+          "explanation_en": "Final o selects u."
+        },
+        {
+          "id": "opt4",
+          "text": "i",
+          "correct": false,
+          "error_type": "front_back_confusion",
+          "explanation_en": "i matches e or i."
+        }
+      ],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the final stem vowel, not the first consonant.",
+        "The rounded back vowel o selects u."
+      ],
+      "feedback_correct_en": "Correct. You matched the final stem vowel to the four-way ending.",
+      "feedback_wrong_en": "yolum has u; yolım would ignore rounding.",
+      "explanation_en": "o → u in this four-way ending.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.recognize"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "yol",
+          "doğru"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.exercise.04",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_target": "Doğru kelime",
+      "instruction_en": "Choose the correct option.",
+      "context_target": "Kelime",
+      "prompt_target": "gözüm",
+      "prompt_en": "Which vowel is inserted immediately before m in gözüm?",
+      "options": [
+        {
+          "id": "opt1",
+          "text": "u",
+          "correct": false,
+          "error_type": "front_back_confusion",
+          "explanation_en": "u is the rounded back choice."
+        },
+        {
+          "id": "opt2",
+          "text": "i",
+          "correct": false,
+          "error_type": "rounding_confusion",
+          "explanation_en": "i is the unrounded front choice."
+        },
+        {
+          "id": "opt3",
+          "text": "ı",
+          "correct": false,
+          "error_type": "front_back_confusion",
+          "explanation_en": "ı is unrounded and back."
+        },
+        {
+          "id": "opt4",
+          "text": "ü",
+          "correct": true,
+          "error_type": null,
+          "explanation_en": "Final ö selects ü."
+        }
+      ],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Compare ö with the four groups.",
+        "Rounded front ö pairs with ü."
+      ],
+      "feedback_correct_en": "Correct. You matched the final stem vowel to the four-way ending.",
+      "feedback_wrong_en": "The ending in gözüm contains ü, not u.",
+      "explanation_en": "ö → ü in this four-way ending.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.recognize"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "göz",
+          "doğru"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.exercise.05",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write the requested vowel or complete word.",
+      "context_target": "Kelime",
+      "prompt_target": "kız",
+      "prompt_en": "After the final vowel of kız, which vowel belongs immediately before m? Write only that vowel.",
+      "options": [],
+      "accepted_answers": [
+        "ı"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Consider the last written vowel and whether it is rounded.",
+        "The last vowel is dotless ı."
+      ],
+      "feedback_correct_en": "Correct. You matched the final stem vowel to the four-way ending.",
+      "feedback_wrong_en": "kız takes dotless ı in this practice ending.",
+      "explanation_en": "kız → kızım.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.last_vowel",
+        "tr.a1.harmony.minor.suffix_choice"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "kız"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.exercise.06",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write the requested vowel or complete word.",
+      "context_target": "Kelime",
+      "prompt_target": "süt",
+      "prompt_en": "After the final vowel of süt, which vowel belongs immediately before m? Write only that vowel.",
+      "options": [],
+      "accepted_answers": [
+        "ü"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The stem vowel is front and rounded.",
+        "The ending vowel matches ü."
+      ],
+      "feedback_correct_en": "Correct. You matched the final stem vowel to the four-way ending.",
+      "feedback_wrong_en": "süt takes ü, not u or i.",
+      "explanation_en": "süt → sütüm.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.last_vowel",
+        "tr.a1.harmony.minor.suffix_choice"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "süt"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.exercise.07",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write the requested vowel or complete word.",
+      "context_target": "Kelime",
+      "prompt_target": "bal",
+      "prompt_en": "Write the complete labelled form of bal with the correct four-way ending.",
+      "options": [],
+      "accepted_answers": [
+        "balım"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Find the only vowel of the stem.",
+        "a requires dotless ı."
+      ],
+      "feedback_correct_en": "Correct. You matched the final stem vowel to the four-way ending.",
+      "feedback_wrong_en": "Write balım, not balim.",
+      "explanation_en": "bal + ım → balım.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.suffix_choice",
+        "tr.a1.harmony.minor.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "bal"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.exercise.08",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write the requested vowel or complete word.",
+      "context_target": "Kelime",
+      "prompt_target": "ev",
+      "prompt_en": "Write the complete labelled form of ev with the correct four-way ending.",
+      "options": [],
+      "accepted_answers": [
+        "evim"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The word has one front vowel.",
+        "e selects i."
+      ],
+      "feedback_correct_en": "Correct. You matched the final stem vowel to the four-way ending.",
+      "feedback_wrong_en": "Write evim, not evım.",
+      "explanation_en": "ev + im → evim.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.suffix_choice",
+        "tr.a1.harmony.minor.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "ev"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.exercise.09",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write the requested vowel or complete word.",
+      "context_target": "Kelime",
+      "prompt_target": "yol",
+      "prompt_en": "Write the complete labelled form of yol with the correct four-way ending.",
+      "options": [],
+      "accepted_answers": [
+        "yolum"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The only vowel is rounded and back.",
+        "o selects u."
+      ],
+      "feedback_correct_en": "Correct. You matched the final stem vowel to the four-way ending.",
+      "feedback_wrong_en": "Write yolum, not yolım.",
+      "explanation_en": "yol + um → yolum.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.suffix_choice",
+        "tr.a1.harmony.minor.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "yol"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.exercise.10",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write the requested vowel or complete word.",
+      "context_target": "Kelime",
+      "prompt_target": "göz",
+      "prompt_en": "Write the complete labelled form of göz with the correct four-way ending.",
+      "options": [],
+      "accepted_answers": [
+        "gözüm"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Check the dots on the only vowel.",
+        "ö selects ü."
+      ],
+      "feedback_correct_en": "Correct. You matched the final stem vowel to the four-way ending.",
+      "feedback_wrong_en": "Write gözüm, not gözum.",
+      "explanation_en": "göz + üm → gözüm.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.suffix_choice",
+        "tr.a1.harmony.minor.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "göz"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.exercise.11",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write the requested vowel or complete word.",
+      "context_target": "Kelime",
+      "prompt_target": "okul",
+      "prompt_en": "Write the complete labelled form of okul with the correct four-way ending.",
+      "options": [],
+      "accepted_answers": [
+        "okulum"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Use the last vowel, not the first.",
+        "The last vowel is u, which selects u."
+      ],
+      "feedback_correct_en": "Correct. You matched the final stem vowel to the four-way ending.",
+      "feedback_wrong_en": "Write okulum, not okılım.",
+      "explanation_en": "okul + um → okulum.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.last_vowel",
+        "tr.a1.harmony.minor.suffix_choice",
+        "tr.a1.harmony.minor.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "okul"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.exercise.12",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write the requested vowel or complete word.",
+      "context_target": "Kelime",
+      "prompt_target": "iş",
+      "prompt_en": "Write the complete labelled form of iş with the correct four-way ending.",
+      "options": [],
+      "accepted_answers": [
+        "işim"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the dot on the vowel.",
+        "i selects i."
+      ],
+      "feedback_correct_en": "Correct. You matched the final stem vowel to the four-way ending.",
+      "feedback_wrong_en": "Write işim, not işım.",
+      "explanation_en": "iş + im → işim.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.last_vowel",
+        "tr.a1.harmony.minor.suffix_choice",
+        "tr.a1.harmony.minor.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "iş"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.exercise.13",
+      "type": "multiple_choice",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_target": "Doğru kelime",
+      "instruction_en": "Choose the correct option.",
+      "context_target": "Ders",
+      "prompt_target": "kalem",
+      "prompt_en": "Ayşe is checking her classroom word card. Which complete written form matches kalem?",
+      "options": [
+        {
+          "id": "opt1",
+          "text": "kalemım",
+          "correct": false,
+          "error_type": "front_back_confusion",
+          "explanation_en": "The last vowel e does not select ı."
+        },
+        {
+          "id": "opt2",
+          "text": "kalemum",
+          "correct": false,
+          "error_type": "back_rounding_confusion",
+          "explanation_en": "u belongs after o or u."
+        },
+        {
+          "id": "opt3",
+          "text": "kalemim",
+          "correct": true,
+          "error_type": null,
+          "explanation_en": "The final e selects i."
+        },
+        {
+          "id": "opt4",
+          "text": "kalemüm",
+          "correct": false,
+          "error_type": "rounding_confusion",
+          "explanation_en": "ü belongs after ö or ü."
+        }
+      ],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Find the last vowel of kalem.",
+        "The last vowel is e."
+      ],
+      "feedback_correct_en": "Correct. You matched the final stem vowel to the four-way ending.",
+      "feedback_wrong_en": "kalemim is correct, not kalemım.",
+      "explanation_en": "kalem → kalemim.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.suffix_choice",
+        "tr.a1.harmony.minor.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ders",
+          "kalem",
+          "kelime",
+          "doğru"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.exercise.14",
+      "type": "fill_gap",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write the requested vowel or complete word.",
+      "context_target": "Ders",
+      "prompt_target": "sınıf",
+      "prompt_en": "Mehmet writes a classroom label. Complete sınıf with the matching ending.",
+      "options": [],
+      "accepted_answers": [
+        "sınıfım"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Find the last vowel in sınıf.",
+        "The final vowel is dotless ı."
+      ],
+      "feedback_correct_en": "Correct. You matched the final stem vowel to the four-way ending.",
+      "feedback_wrong_en": "Write sınıfım, not sınıfim.",
+      "explanation_en": "sınıf → sınıfım.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.suffix_choice",
+        "tr.a1.harmony.minor.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ders",
+          "sınıf",
+          "kelime"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.exercise.15",
+      "type": "fill_gap",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write the requested vowel or complete word.",
+      "context_target": "Alışveriş",
+      "prompt_target": "tuz",
+      "prompt_en": "Zeynep labels her salt container. Write the complete form of tuz with the matching ending.",
+      "options": [],
+      "accepted_answers": [
+        "tuzum"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think of the final u and whether it is rounded.",
+        "Final u selects u."
+      ],
+      "feedback_correct_en": "Correct. You matched the final stem vowel to the four-way ending.",
+      "feedback_wrong_en": "Write tuzum; tuzım does not match the final vowel.",
+      "explanation_en": "tuz → tuzum.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.suffix_choice",
+        "tr.a1.harmony.minor.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "alışveriş",
+          "tuz",
+          "kelime"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.exercise.16",
+      "type": "fill_gap",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write the requested vowel or complete word.",
+      "context_target": "Alışveriş",
+      "prompt_target": "üzüm",
+      "prompt_en": "Zeynep labels her grapes. Write the complete form of üzüm with the matching ending.",
+      "options": [],
+      "accepted_answers": [
+        "üzümüm"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Find the last vowel before final m.",
+        "The final stem vowel is ü, so add üm."
+      ],
+      "feedback_correct_en": "Correct. You matched the final stem vowel to the four-way ending.",
+      "feedback_wrong_en": "Write üzümüm; üzümim uses the wrong vowel.",
+      "explanation_en": "üzüm → üzümüm.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.suffix_choice",
+        "tr.a1.harmony.minor.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "alışveriş",
+          "üzüm",
+          "kelime"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.exercise.17",
+      "type": "fill_gap",
+      "stage": "transfer",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write the requested vowel or complete word.",
+      "context_target": "Kelime",
+      "prompt_target": "anahtar",
+      "prompt_en": "New word card: add the matching four-way ending to anahtar and write the whole word.",
+      "options": [],
+      "accepted_answers": [
+        "anahtarım"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Use the last vowel, not the first.",
+        "The last vowel a selects dotless ı."
+      ],
+      "feedback_correct_en": "Correct. You matched the final stem vowel to the four-way ending.",
+      "feedback_wrong_en": "Write anahtarım, not anahtarim.",
+      "explanation_en": "anahtar → anahtarım.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.last_vowel",
+        "tr.a1.harmony.minor.suffix_choice",
+        "tr.a1.harmony.minor.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "anahtar"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.exercise.18",
+      "type": "fill_gap",
+      "stage": "transfer",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write the requested vowel or complete word.",
+      "context_target": "Kelime",
+      "prompt_target": "dil",
+      "prompt_en": "New word card: add the matching four-way ending to dil and write the whole word.",
+      "options": [],
+      "accepted_answers": [
+        "dilim"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the word’s only vowel.",
+        "The front unrounded i selects i."
+      ],
+      "feedback_correct_en": "Correct. You matched the final stem vowel to the four-way ending.",
+      "feedback_wrong_en": "Write dilim, not dılım.",
+      "explanation_en": "dil → dilim.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.last_vowel",
+        "tr.a1.harmony.minor.suffix_choice",
+        "tr.a1.harmony.minor.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "dil"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.exercise.19",
+      "type": "fill_gap",
+      "stage": "transfer",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write the requested vowel or complete word.",
+      "context_target": "Kelime",
+      "prompt_target": "telefon",
+      "prompt_en": "New word card: add the matching four-way ending to telefon and write the whole word.",
+      "options": [],
+      "accepted_answers": [
+        "telefonum"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The first vowel is not the important one.",
+        "The last vowel is o, which selects u."
+      ],
+      "feedback_correct_en": "Correct. You matched the final stem vowel to the four-way ending.",
+      "feedback_wrong_en": "Write telefonum, not telefonım.",
+      "explanation_en": "telefon → telefonum.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.last_vowel",
+        "tr.a1.harmony.minor.suffix_choice",
+        "tr.a1.harmony.minor.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "telefon"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.exercise.20",
+      "type": "fill_gap",
+      "stage": "transfer",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write the requested vowel or complete word.",
+      "context_target": "Kelime",
+      "prompt_target": "köy",
+      "prompt_en": "New word card: add the matching four-way ending to köy and write the whole word.",
+      "options": [],
+      "accepted_answers": [
+        "köyüm"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look for dots on the single vowel.",
+        "The front rounded ö selects ü."
+      ],
+      "feedback_correct_en": "Correct. You matched the final stem vowel to the four-way ending.",
+      "feedback_wrong_en": "Write köyüm, not köyum.",
+      "explanation_en": "köy → köyüm.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.last_vowel",
+        "tr.a1.harmony.minor.suffix_choice",
+        "tr.a1.harmony.minor.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "köy"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.exercise.21",
+      "type": "guided_production",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write from memory and check your work.",
+      "context_target": "Kelime",
+      "prompt_target": "bal / ev / kız / iş / yol / göz / okul / süt",
+      "prompt_en": "Without looking at the vowel table, write all eight complete practice forms and check them yourself.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Find each stem’s final vowel.",
+        "Check each of the four pairs: a/ı, e/i, o/u, ö/ü."
+      ],
+      "feedback_correct_en": "Correct. You matched the final stem vowel to the four-way ending.",
+      "feedback_wrong_en": "Compare each answer against the self-check criteria.",
+      "explanation_en": "Reference forms: balım, evim, kızım, işim, yolum, gözüm, okulum, sütüm.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.last_vowel",
+        "tr.a1.harmony.minor.suffix_choice",
+        "tr.a1.harmony.minor.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "bal",
+          "ev",
+          "kız",
+          "iş",
+          "yol",
+          "göz",
+          "okul",
+          "süt"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      },
+      "rubric": {
+        "criteria_en": [
+          "Eight full words are spelt correctly, with no spaces before the ending.",
+          "a/ı stems take ı and e/i stems take i.",
+          "o/u stems take u and ö/ü stems take ü.",
+          "Every original stem remains unchanged."
+        ]
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor.exercise.22",
+      "type": "guided_production",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write from memory and check your work.",
+      "context_target": "Alışveriş",
+      "prompt_target": "bal / biber / muz / göl",
+      "prompt_en": "From memory, write the four complete forms with the four-way ending; explain how each final vowel controls your choice. Then self-check.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Find the last vowel of each noun first.",
+        "The four forms use all four narrow vowels."
+      ],
+      "feedback_correct_en": "Correct. You matched the final stem vowel to the four-way ending.",
+      "feedback_wrong_en": "Compare each answer against the self-check criteria.",
+      "explanation_en": "Reference forms: balım, biberim, muzum, gölüm.",
+      "skill_ids": [
+        "tr.a1.harmony.minor.last_vowel",
+        "tr.a1.harmony.minor.suffix_choice",
+        "tr.a1.harmony.minor.write_form"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "alışveriş",
+          "bal",
+          "biber",
+          "muz",
+          "göl",
+          "kelime"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      },
+      "rubric": {
+        "criteria_en": [
+          "All four forms are written in a single word.",
+          "balım uses ı, biberim uses i, muzum uses u and gölüm uses ü.",
+          "Each choice is explained from the last stem vowel, not English spelling.",
+          "No stem softening or vowel loss is introduced."
+        ]
+      }
+    }
+  ],
+  "verb_application": {
+    "applicable": false,
+    "required_form_keys": [],
+    "verbs": []
+  },
+  "mastery": {
+    "required_score": 0.8,
+    "minimum_unaided_production_items": 2,
+    "required_stages": [
+      "notice",
+      "controlled",
+      "contextual",
+      "production",
+      "transfer"
+    ],
+    "review_intervals_days": [
+      1,
+      3,
+      7,
+      14,
+      30,
+      60
+    ]
+  },
+  "answer_normalization": {
+    "locale": "tr-TR",
+    "unicode": "NFC",
+    "case_sensitive": false,
+    "accent_sensitive": true
+  },
+  "vocabulary_audit": {
+    "status": "pass",
+    "manifest_id": "tr-reviewed-a6bc562da7a2",
+    "allowed_cefr": [
+      "A1"
+    ],
+    "used_headwords": [
+      "alışveriş",
+      "anahtar",
+      "bal",
+      "biber",
+      "defter",
+      "ders",
+      "dil",
+      "doğru",
+      "ev",
+      "evet",
+      "göl",
+      "göz",
+      "iş",
+      "kalem",
+      "kelime",
+      "köy",
+      "kız",
+      "merhaba",
+      "muz",
+      "okul",
+      "süt",
+      "sınıf",
+      "telefon",
+      "tuz",
+      "yol",
+      "üzüm"
+    ],
+    "target_headwords": [
+      "alışveriş",
+      "anahtar",
+      "bal",
+      "biber",
+      "defter",
+      "ders",
+      "dil",
+      "doğru",
+      "ev",
+      "evet",
+      "göl",
+      "göz",
+      "iş",
+      "kalem",
+      "kelime",
+      "köy",
+      "kız",
+      "merhaba",
+      "muz",
+      "okul",
+      "süt",
+      "sınıf",
+      "telefon",
+      "tuz",
+      "yol",
+      "üzüm"
+    ],
+    "outside_allowlist_words": [],
+    "introduced_terms": [],
+    "proper_names": [
+      "Ayşe",
+      "Mehmet",
+      "Zeynep"
+    ],
+    "grammar_only_tokens": [],
+    "above_level_words": [],
+    "tests_with_unknown_vocabulary": [],
+    "note": "All annotations use reviewed A1 dictionary headwords. The bound endings -ım/-im/-um/-üm are grammar, not vocabulary entries. Isolated vowels and isolated letter names are not counted as lemmas."
+  },
+  "level_audit": {
+    "status": "pass",
+    "target_cefr": "A1",
+    "maximum_sentence_length_observed": 6,
+    "unapproved_grammar_features": [],
+    "unmet_prerequisites": [],
+    "scope_violations": [],
+    "note": "A1 writing and recognition: four-way vowel choice only, using -(I)m as a declared form carrier. All graded stems end in a consonant; no alternations, exceptions or possessive syntax are taught. The prerequisite topics were delivered in previous turns."
+  },
+  "quality_audit": {
+    "status": "pass",
+    "unique_id_check": "pass",
+    "cross_reference_check": "pass",
+    "prerequisite_check": "pass",
+    "scope_check": "pass",
+    "answer_check": "pass",
+    "single_best_answer_check": "pass",
+    "turkish_casing_and_diacritic_check": "pass",
+    "harmony_check": "pass_regular_consonant_final_forms",
+    "suffix_order_check": "pass_single_suffix_carrier",
+    "stem_change_check": "pass_no_stem_change_required",
+    "question_particle_check": "not_applicable",
+    "apostrophe_check": "not_applicable",
+    "conjugation_form_check": "not_applicable",
+    "naturalness_and_translation_check": "pass",
+    "requested_count_check": "pass",
+    "counts": {
+      "contexts": 2,
+      "teaching_examples": 10,
+      "scored_exercises": 20,
+      "transfer_exercises": 4,
+      "unaided_production_self_checks": 2,
+      "full_written_form_tests": 14
+    },
+    "authoritative_sources_consulted": [
+      {
+        "publisher": "Türk Dil Kurumu",
+        "title": "2026 Yazım Kılavuzu – Sesler ve Ses Uyumları",
+        "url": "https://yazim.tdk.gov.tr/content/02-sesler-ve-ses-uyumlari.html",
+        "verified_rule": "For four-way narrow-vowel selection: a/ı → ı; e/i → i; o/u → u; ö/ü → ü; selected suffix vowel follows the final stem vowel in transparent regular forms."
+      },
+      {
+        "publisher": "Karadeniz Teknik Üniversitesi, Türk Dili Bölümü",
+        "title": "Güz Dönemi Ders İçerikleri – Türkçenin Ses Bilgisi ve İyelik Ekleri",
+        "url": "https://www.ktu.edu.tr/turkdili/guzdonemidersicerikleri",
+        "verified_rule": "Consonant-ending words take a narrow vowel ı/i/u/ü in the first-person singular possessive ending, in agreement with vowel harmony."
+      }
+    ],
+    "requires_human_review": [],
+    "notes": [
+      "This is Topic 3 because Topics 1 and 2 have been delivered in previous turns; the source ZIP still contains its original unadvanced NEXT request with an empty completed_topic_ids field.",
+      "All counted transfer nouns (anahtar, dil, telefon and köy) are absent from the teaching examples and contexts.",
+      "Four-way endings are practised with the first-person possessive form only as a carrier, while ownership constructions are not taught.",
+      "The two unaided production exercises are self-checked and not automatically scored."
+    ]
+  },
+  "explanation_language": "en"
+}

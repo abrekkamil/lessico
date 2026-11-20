@@ -1,0 +1,2159 @@
+{
+  "schema_version": "lessico-grammar-v1",
+  "content_version": "1.0.0",
+  "status": "ready",
+  "mode": "topic_pack",
+  "language": "it",
+  "explanation_language": "en",
+  "vocabulary_manifest_id": "it-reviewed-9d35be468e23",
+  "topic": {
+    "id": "it.a1.articles.definite_singular",
+    "cefr": "A1",
+    "sequence": 3,
+    "module_id": "it.a1.articles",
+    "title_target": "Gli articoli determinativi singolari",
+    "title_en": "Singular definite articles",
+    "estimated_minutes": 8,
+    "prerequisite_ids": [
+      "it.a1.nouns.gender"
+    ],
+    "learning_objectives": [
+      "Select il, lo, la or l’ before familiar singular nouns, taking account of gender and initial sound.",
+      "Recognise l’ as the elided form of both lo and la when the following noun begins with a vowel."
+    ],
+    "scope_included": [
+      "gender choice",
+      "initial-sound choice",
+      "elision before vowels"
+    ],
+    "scope_excluded": [
+      "plural articles",
+      "articulated prepositions",
+      "regional variants"
+    ],
+    "new_terms": [],
+    "reading_links": []
+  },
+  "skills": [
+    {
+      "id": "it.a1.articles.definite_singular.gender",
+      "description_en": "Choose a singular definite article from the noun’s grammatical gender.",
+      "capability": "recognition",
+      "critical": true
+    },
+    {
+      "id": "it.a1.articles.definite_singular.initial_sound",
+      "description_en": "Choose il or lo before a masculine consonant-initial noun.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "it.a1.articles.definite_singular.elision",
+      "description_en": "Use l’ before familiar vowel-initial singular nouns of either gender.",
+      "capability": "contextual",
+      "critical": true
+    },
+    {
+      "id": "it.a1.articles.definite_singular.production",
+      "description_en": "Produce and correct singular definite noun phrases in short natural messages.",
+      "capability": "production",
+      "critical": true
+    }
+  ],
+  "lesson": {
+    "short_explanation_en": "Italian uses a definite article like English ‘the’ for a specific person or thing. The article changes with the noun’s gender and initial sound: il, lo, la or l’. Unlike English ‘the’, there is more than one singular form.",
+    "rule_blocks": [
+      {
+        "id": "it.a1.articles.definite_singular.rule1",
+        "heading_en": "The usual masculine and feminine forms",
+        "explanation_en": "Use il with most masculine singular nouns beginning with a consonant, and la with feminine singular nouns beginning with a consonant.",
+        "pattern": "il + masculine noun (most consonants); la + feminine noun (consonant)",
+        "usage_notes_en": [
+          "First identify the noun’s gender; then check how the next word begins.",
+          "Definite articles usually refer to someone or something identifiable from the situation."
+        ],
+        "common_errors_en": [
+          "Wrong: la libro. Correct: il libro (libro is masculine).",
+          "Wrong: il mela. Correct: la mela (mela is feminine)."
+        ],
+        "example_ids": [
+          "it.a1.articles.definite_singular.ex01",
+          "it.a1.articles.definite_singular.ex03",
+          "it.a1.articles.definite_singular.ex07",
+          "it.a1.articles.definite_singular.ex08"
+        ]
+      },
+      {
+        "id": "it.a1.articles.definite_singular.rule2",
+        "heading_en": "When masculine nouns take lo",
+        "explanation_en": "Use lo with masculine singular nouns beginning with z or s + consonant, and also before gn, ps and certain other initial sound groups. Common A1 examples are lo zaino, lo studente and lo specchio. The everyday loanword yogurt is pronounced with initial /j/, so we say lo yogurt.",
+        "pattern": "lo + masculine noun starting with z, s + consonant, gn, ps, or selected /j/ sounds",
+        "usage_notes_en": [
+          "The choice is based on sound, not gender alone.",
+          "A feminine noun beginning with s + consonant still takes la: la scuola."
+        ],
+        "common_errors_en": [
+          "Wrong: il zaino. Correct: lo zaino.",
+          "Wrong: il studente. Correct: lo studente."
+        ],
+        "example_ids": [
+          "it.a1.articles.definite_singular.ex02",
+          "it.a1.articles.definite_singular.ex06",
+          "it.a1.articles.definite_singular.ex10"
+        ]
+      },
+      {
+        "id": "it.a1.articles.definite_singular.rule3",
+        "heading_en": "Elision before a vowel: l’",
+        "explanation_en": "Before a vowel sound, both masculine lo and feminine la normally shorten to l’ (an apostrophe). The written form is the same for either gender: l’amico and l’amica. Write the noun immediately after the apostrophe.",
+        "pattern": "l’ + masculine or feminine vowel-initial singular noun",
+        "usage_notes_en": [
+          "Both l'amico and l'amica are correct: the noun determines the gender.",
+          "Keep the apostrophe: l'ombrello, not lo ombrello or il ombrello."
+        ],
+        "common_errors_en": [
+          "Wrong: la arancia. Correct: l'arancia.",
+          "Wrong: il ombrello. Correct: l'ombrello."
+        ],
+        "example_ids": [
+          "it.a1.articles.definite_singular.ex04",
+          "it.a1.articles.definite_singular.ex05",
+          "it.a1.articles.definite_singular.ex09"
+        ]
+      }
+    ],
+    "form_tables": [
+      {
+        "id": "it.a1.articles.definite_singular.table1",
+        "title_en": "Choosing a singular definite article",
+        "columns": [
+          "Noun",
+          "Initial sound",
+          "Article",
+          "Example"
+        ],
+        "rows": [
+          [
+            "masculine",
+            "most consonants",
+            "il",
+            "il libro"
+          ],
+          [
+            "masculine",
+            "z, s + consonant, gn, ps, etc.",
+            "lo",
+            "lo zaino"
+          ],
+          [
+            "feminine",
+            "consonant",
+            "la",
+            "la mela"
+          ],
+          [
+            "masculine or feminine",
+            "vowel",
+            "l’",
+            "l'amico / l'amica"
+          ]
+        ]
+      }
+    ]
+  },
+  "contexts": [
+    {
+      "id": "it.a1.articles.definite_singular.ctx1",
+      "type": "dialogue",
+      "setting_en": "Anna is checking where the things she needs for the day are.",
+      "lines": [
+        {
+          "speaker": "Anna",
+          "target": "Marco, cerco il libro e lo zaino.",
+          "translation_en": "Marco, I’m looking for the book and the rucksack."
+        },
+        {
+          "speaker": "Marco",
+          "target": "Il libro è qui. Lo zaino è in camera.",
+          "translation_en": "The book is here. The rucksack is in the bedroom."
+        },
+        {
+          "speaker": "Anna",
+          "target": "E l'ombrello?",
+          "translation_en": "And the umbrella?"
+        },
+        {
+          "speaker": "Marco",
+          "target": "L'ombrello è con lo zaino.",
+          "translation_en": "The umbrella is with the rucksack."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "il libro",
+          "lemma": "libro",
+          "skill_id": "it.a1.articles.definite_singular.gender",
+          "form_key": "definite.singular.masculine.default",
+          "explanation_en": "Libro is masculine and begins with an ordinary consonant, so it takes il."
+        },
+        {
+          "surface": "lo zaino",
+          "lemma": "zaino",
+          "skill_id": "it.a1.articles.definite_singular.initial_sound",
+          "form_key": "definite.singular.masculine.special",
+          "explanation_en": "The masculine word zaino begins with z, so it takes lo."
+        },
+        {
+          "surface": "l'ombrello",
+          "lemma": "ombrello",
+          "skill_id": "it.a1.articles.definite_singular.elision",
+          "form_key": "definite.singular.masculine.vowel_elided",
+          "explanation_en": "The masculine noun ombrello begins with a vowel, so the article elides to l’."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "cercare",
+          "il",
+          "libro",
+          "e",
+          "lo",
+          "zaino",
+          "essere",
+          "qui",
+          "in",
+          "camera",
+          "l'",
+          "ombrello",
+          "con"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.ctx2",
+      "type": "message",
+      "setting_en": "Marco and Anna exchange messages about breakfast at home.",
+      "lines": [
+        {
+          "speaker": "Marco",
+          "target": "Ciao, Anna! La colazione è pronta: il pane, lo yogurt e la mela.",
+          "translation_en": "Hi, Anna! Breakfast is ready: the bread, the yoghurt and the apple."
+        },
+        {
+          "speaker": "Anna",
+          "target": "Grazie! Prendo l'acqua.",
+          "translation_en": "Thanks! I’ll get the water."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "la colazione",
+          "lemma": "colazione",
+          "skill_id": "it.a1.articles.definite_singular.gender",
+          "form_key": "definite.singular.feminine.consonant",
+          "explanation_en": "Colazione is feminine and begins with a consonant."
+        },
+        {
+          "surface": "lo yogurt",
+          "lemma": "yogurt",
+          "skill_id": "it.a1.articles.definite_singular.initial_sound",
+          "form_key": "definite.singular.masculine.special",
+          "explanation_en": "Yogurt is masculine and begins with the consonant sound /j/."
+        },
+        {
+          "surface": "la mela",
+          "lemma": "mela",
+          "skill_id": "it.a1.articles.definite_singular.gender",
+          "form_key": "definite.singular.feminine.consonant",
+          "explanation_en": "Mela is feminine and starts with m."
+        },
+        {
+          "surface": "l'acqua",
+          "lemma": "acqua",
+          "skill_id": "it.a1.articles.definite_singular.elision",
+          "form_key": "definite.singular.feminine.vowel_elided",
+          "explanation_en": "Acqua is feminine and begins with a vowel; use l’."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ciao",
+          "la",
+          "colazione",
+          "essere",
+          "pronto",
+          "il",
+          "pane",
+          "lo",
+          "yogurt",
+          "e",
+          "mela",
+          "grazie",
+          "prendere",
+          "l'",
+          "acqua"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "it.a1.articles.definite_singular.ex01",
+      "target": "Il libro è in camera.",
+      "translation_en": "The book is in the bedroom.",
+      "focus_surface": "il libro",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.gender"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.masculine.default"
+      ],
+      "register": "neutral",
+      "note_en": "Libro is masculine and begins with l.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "il",
+          "libro",
+          "essere",
+          "in",
+          "camera"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.ex02",
+      "target": "Lo zaino è qui.",
+      "translation_en": "The rucksack is here.",
+      "focus_surface": "Lo zaino",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.initial_sound"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.masculine.special"
+      ],
+      "register": "neutral",
+      "note_en": "The masculine z- noun takes lo.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "lo",
+          "zaino",
+          "essere",
+          "qui"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.ex03",
+      "target": "La chiave è in borsa.",
+      "translation_en": "The key is in the bag.",
+      "focus_surface": "La chiave",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.gender"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.feminine.consonant"
+      ],
+      "register": "neutral",
+      "note_en": "Chiave is feminine and begins with a consonant.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "la",
+          "chiave",
+          "essere",
+          "in",
+          "borsa"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.ex04",
+      "target": "L'ombrello è in casa.",
+      "translation_en": "The umbrella is at home.",
+      "focus_surface": "L'ombrello",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.elision"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.masculine.vowel_elided"
+      ],
+      "register": "neutral",
+      "note_en": "Ombrello is masculine; l’ is used before its initial vowel.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "l'",
+          "ombrello",
+          "essere",
+          "in",
+          "casa"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.ex05",
+      "target": "L'amica di Anna è a Roma.",
+      "translation_en": "Anna's friend is in Rome.",
+      "focus_surface": "L'amica",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.elision"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.feminine.vowel_elided"
+      ],
+      "register": "neutral",
+      "note_en": "Amica is feminine; the same l’ spelling applies.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "l'",
+          "amica",
+          "di",
+          "essere",
+          "a"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.ex06",
+      "target": "Lo specchio è in camera.",
+      "translation_en": "The mirror is in the bedroom.",
+      "focus_surface": "Lo specchio",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.initial_sound"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.masculine.special"
+      ],
+      "register": "neutral",
+      "note_en": "Specchio begins with sp-, so masculine lo is used.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "lo",
+          "specchio",
+          "essere",
+          "in",
+          "camera"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.ex07",
+      "target": "Il pane è buono.",
+      "translation_en": "The bread is good.",
+      "focus_surface": "Il pane",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.gender"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.masculine.default"
+      ],
+      "register": "neutral",
+      "note_en": "Pane is masculine and begins with p.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "il",
+          "pane",
+          "essere",
+          "buono"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.ex08",
+      "target": "La mela è buona.",
+      "translation_en": "The apple is good.",
+      "focus_surface": "La mela",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.gender"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.feminine.consonant"
+      ],
+      "register": "neutral",
+      "note_en": "Mela is feminine; buono also agrees as buona.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "la",
+          "mela",
+          "essere",
+          "buono"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.ex09",
+      "target": "L'arancia è buona.",
+      "translation_en": "The orange is good.",
+      "focus_surface": "L'arancia",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.elision"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.feminine.vowel_elided"
+      ],
+      "register": "neutral",
+      "note_en": "Arancia is feminine and starts with a vowel.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "l'",
+          "arancia",
+          "essere",
+          "buono"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.ex10",
+      "target": "Lo studente cerca il quaderno.",
+      "translation_en": "The student is looking for the notebook.",
+      "focus_surface": "Lo studente",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.initial_sound"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.masculine.special"
+      ],
+      "register": "neutral",
+      "note_en": "Studente begins with st-, requiring lo.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "lo",
+          "studente",
+          "cercare",
+          "il",
+          "quaderno"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "id": "it.a1.articles.definite_singular.q01",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the correct singular definite article.",
+      "context_target": "",
+      "prompt_target": "___ libro è qui.",
+      "prompt_en": "Choose the definite article.",
+      "options": [
+        {
+          "id": "it.a1.articles.definite_singular.q01.opt1",
+          "text": "il",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct: il fits the gender and initial sound."
+        },
+        {
+          "id": "it.a1.articles.definite_singular.q01.opt2",
+          "text": "lo",
+          "correct": false,
+          "error_type": "initial_sound",
+          "explanation_en": "This masculine noun begins with an ordinary consonant and takes il."
+        },
+        {
+          "id": "it.a1.articles.definite_singular.q01.opt3",
+          "text": "la",
+          "correct": false,
+          "error_type": "wrong_gender",
+          "explanation_en": "Libro is masculine; la is feminine."
+        },
+        {
+          "id": "it.a1.articles.definite_singular.q01.opt4",
+          "text": "l'",
+          "correct": false,
+          "error_type": "incorrect_elision",
+          "explanation_en": "The noun begins with a consonant, so l’ is not correct here."
+        }
+      ],
+      "accepted_answers": [
+        "il"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the noun’s gender, then listen to its first sound.",
+        "Recall the matching singular article; check whether elision is needed."
+      ],
+      "feedback_correct_en": "Correct: il.",
+      "feedback_wrong_en": "Expected answer: il.",
+      "explanation_en": "Libro is masculine and begins with l.",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.gender"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.masculine.default"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "libro",
+          "essere",
+          "qui",
+          "il",
+          "lo",
+          "la",
+          "l'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.q02",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the correct singular definite article.",
+      "context_target": "",
+      "prompt_target": "___ zaino è in camera.",
+      "prompt_en": "Choose the definite article.",
+      "options": [
+        {
+          "id": "it.a1.articles.definite_singular.q02.opt1",
+          "text": "il",
+          "correct": false,
+          "error_type": "initial_sound",
+          "explanation_en": "Masculine nouns beginning with z or s + consonant require lo, not il."
+        },
+        {
+          "id": "it.a1.articles.definite_singular.q02.opt2",
+          "text": "lo",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct: lo fits the gender and initial sound."
+        },
+        {
+          "id": "it.a1.articles.definite_singular.q02.opt3",
+          "text": "la",
+          "correct": false,
+          "error_type": "wrong_gender",
+          "explanation_en": "Zaino is masculine; la is feminine."
+        },
+        {
+          "id": "it.a1.articles.definite_singular.q02.opt4",
+          "text": "l'",
+          "correct": false,
+          "error_type": "incorrect_elision",
+          "explanation_en": "The noun begins with a consonant, so l’ is not correct here."
+        }
+      ],
+      "accepted_answers": [
+        "lo"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the noun’s gender, then listen to its first sound.",
+        "Recall the matching singular article; check whether elision is needed."
+      ],
+      "feedback_correct_en": "Correct: lo.",
+      "feedback_wrong_en": "Expected answer: lo.",
+      "explanation_en": "Zaino is masculine and starts with z.",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.initial_sound"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.masculine.special"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "zaino",
+          "essere",
+          "in",
+          "camera",
+          "il",
+          "lo",
+          "la",
+          "l'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.q03",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Choose the correct singular definite article.",
+      "context_target": "",
+      "prompt_target": "___ mela è buona.",
+      "prompt_en": "Choose the definite article.",
+      "options": [
+        {
+          "id": "it.a1.articles.definite_singular.q03.opt1",
+          "text": "il",
+          "correct": false,
+          "error_type": "wrong_gender",
+          "explanation_en": "Mela is feminine and takes la before a consonant."
+        },
+        {
+          "id": "it.a1.articles.definite_singular.q03.opt2",
+          "text": "lo",
+          "correct": false,
+          "error_type": "wrong_gender",
+          "explanation_en": "Mela is feminine and takes la before a consonant."
+        },
+        {
+          "id": "it.a1.articles.definite_singular.q03.opt3",
+          "text": "la",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct: la fits the gender and initial sound."
+        },
+        {
+          "id": "it.a1.articles.definite_singular.q03.opt4",
+          "text": "l'",
+          "correct": false,
+          "error_type": "incorrect_elision",
+          "explanation_en": "The noun begins with a consonant, so l’ is not correct here."
+        }
+      ],
+      "accepted_answers": [
+        "la"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the noun’s gender, then listen to its first sound.",
+        "Recall the matching singular article; check whether elision is needed."
+      ],
+      "feedback_correct_en": "Correct: la.",
+      "feedback_wrong_en": "Expected answer: la.",
+      "explanation_en": "Mela is feminine and begins with m.",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.gender"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.feminine.consonant"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "mela",
+          "essere",
+          "buono",
+          "il",
+          "lo",
+          "la",
+          "l'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.q04",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Choose the correct singular definite article.",
+      "context_target": "",
+      "prompt_target": "___ amico di Marco è qui.",
+      "prompt_en": "Choose the definite article.",
+      "options": [
+        {
+          "id": "it.a1.articles.definite_singular.q04.opt1",
+          "text": "il",
+          "correct": false,
+          "error_type": "missing_elision",
+          "explanation_en": "Amico begins with a vowel, so use l’ rather than an unelided article."
+        },
+        {
+          "id": "it.a1.articles.definite_singular.q04.opt2",
+          "text": "lo",
+          "correct": false,
+          "error_type": "missing_elision",
+          "explanation_en": "Amico begins with a vowel, so use l’ rather than an unelided article."
+        },
+        {
+          "id": "it.a1.articles.definite_singular.q04.opt3",
+          "text": "la",
+          "correct": false,
+          "error_type": "missing_elision",
+          "explanation_en": "Amico begins with a vowel, so use l’ rather than an unelided article."
+        },
+        {
+          "id": "it.a1.articles.definite_singular.q04.opt4",
+          "text": "l'",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct: l' fits the gender and initial sound."
+        }
+      ],
+      "accepted_answers": [
+        "l'",
+        "l’"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the noun’s gender, then listen to its first sound.",
+        "Recall the matching singular article; check whether elision is needed."
+      ],
+      "feedback_correct_en": "Correct: l'.",
+      "feedback_wrong_en": "Expected answer: l'.",
+      "explanation_en": "Amico is masculine and begins with a vowel.",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.elision"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.masculine.vowel_elided"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "amico",
+          "di",
+          "essere",
+          "qui",
+          "il",
+          "lo",
+          "la",
+          "l'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.q05",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the missing singular definite article.",
+      "context_target": "",
+      "prompt_target": "Marco cerca ___ telefono.",
+      "prompt_en": "Supply the singular definite article.",
+      "options": [],
+      "accepted_answers": [
+        "il"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the noun’s gender, then listen to its first sound.",
+        "Recall the matching singular article; check whether elision is needed."
+      ],
+      "feedback_correct_en": "Correct: il.",
+      "feedback_wrong_en": "Expected answer: il.",
+      "explanation_en": "Telefono is masculine and begins with t.",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.gender"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.masculine.default"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "cercare",
+          "telefono",
+          "il"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.q06",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the missing singular definite article.",
+      "context_target": "",
+      "prompt_target": "Anna porta ___ zaino.",
+      "prompt_en": "Supply the singular definite article.",
+      "options": [],
+      "accepted_answers": [
+        "lo"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the noun’s gender, then listen to its first sound.",
+        "Recall the matching singular article; check whether elision is needed."
+      ],
+      "feedback_correct_en": "Correct: lo.",
+      "feedback_wrong_en": "Expected answer: lo.",
+      "explanation_en": "Zaino is masculine and begins with z.",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.initial_sound"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.masculine.special"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "portare",
+          "zaino",
+          "lo"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.q07",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the missing singular definite article.",
+      "context_target": "",
+      "prompt_target": "Cerco ___ chiave.",
+      "prompt_en": "Supply the singular definite article.",
+      "options": [],
+      "accepted_answers": [
+        "la"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the noun’s gender, then listen to its first sound.",
+        "Recall the matching singular article; check whether elision is needed."
+      ],
+      "feedback_correct_en": "Correct: la.",
+      "feedback_wrong_en": "Expected answer: la.",
+      "explanation_en": "Chiave is feminine and begins with a consonant.",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.gender"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.feminine.consonant"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "cercare",
+          "chiave",
+          "la"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.q08",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the missing singular definite article.",
+      "context_target": "",
+      "prompt_target": "___ amica di Anna è qui.",
+      "prompt_en": "Supply the singular definite article.",
+      "options": [],
+      "accepted_answers": [
+        "l'",
+        "l’"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the noun’s gender, then listen to its first sound.",
+        "Recall the matching singular article; check whether elision is needed."
+      ],
+      "feedback_correct_en": "Correct: l'.",
+      "feedback_wrong_en": "Expected answer: l'.",
+      "explanation_en": "Amica is feminine and begins with a vowel.",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.elision"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.feminine.vowel_elided"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "amica",
+          "di",
+          "essere",
+          "qui",
+          "l'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.q09",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the missing singular definite article.",
+      "context_target": "",
+      "prompt_target": "Prendo ___ pane.",
+      "prompt_en": "Supply the singular definite article.",
+      "options": [],
+      "accepted_answers": [
+        "il"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the noun’s gender, then listen to its first sound.",
+        "Recall the matching singular article; check whether elision is needed."
+      ],
+      "feedback_correct_en": "Correct: il.",
+      "feedback_wrong_en": "Expected answer: il.",
+      "explanation_en": "Pane is masculine and begins with p.",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.gender"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.masculine.default"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "prendere",
+          "pane",
+          "il"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.q10",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the missing singular definite article.",
+      "context_target": "",
+      "prompt_target": "___ studente è a scuola.",
+      "prompt_en": "Supply the singular definite article.",
+      "options": [],
+      "accepted_answers": [
+        "lo"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the noun’s gender, then listen to its first sound.",
+        "Recall the matching singular article; check whether elision is needed."
+      ],
+      "feedback_correct_en": "Correct: lo.",
+      "feedback_wrong_en": "Expected answer: lo.",
+      "explanation_en": "Studente begins with st-, so the masculine form is lo.",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.initial_sound"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.masculine.special"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "studente",
+          "essere",
+          "a",
+          "scuola",
+          "lo"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.q11",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the missing singular definite article.",
+      "context_target": "",
+      "prompt_target": "Cerco ___ penna.",
+      "prompt_en": "Supply the singular definite article.",
+      "options": [],
+      "accepted_answers": [
+        "la"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the noun’s gender, then listen to its first sound.",
+        "Recall the matching singular article; check whether elision is needed."
+      ],
+      "feedback_correct_en": "Correct: la.",
+      "feedback_wrong_en": "Expected answer: la.",
+      "explanation_en": "Penna is feminine and begins with p.",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.gender"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.feminine.consonant"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "cercare",
+          "penna",
+          "la"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.q12",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the missing singular definite article.",
+      "context_target": "",
+      "prompt_target": "___ ombrello è in camera.",
+      "prompt_en": "Supply the singular definite article.",
+      "options": [],
+      "accepted_answers": [
+        "l'",
+        "l’"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the noun’s gender, then listen to its first sound.",
+        "Recall the matching singular article; check whether elision is needed."
+      ],
+      "feedback_correct_en": "Correct: l'.",
+      "feedback_wrong_en": "Expected answer: l'.",
+      "explanation_en": "Ombrello is masculine and vowel-initial.",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.elision"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.masculine.vowel_elided"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ombrello",
+          "essere",
+          "in",
+          "camera",
+          "l'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.q13",
+      "type": "multiple_choice",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_en": "Choose the correct singular definite article.",
+      "context_target": "",
+      "prompt_target": "Anna cerca ___ quaderno a scuola.",
+      "prompt_en": "Choose the definite article.",
+      "options": [
+        {
+          "id": "it.a1.articles.definite_singular.q13.opt1",
+          "text": "lo",
+          "correct": false,
+          "error_type": "initial_sound",
+          "explanation_en": "This masculine noun begins with an ordinary consonant and takes il."
+        },
+        {
+          "id": "it.a1.articles.definite_singular.q13.opt2",
+          "text": "la",
+          "correct": false,
+          "error_type": "wrong_gender",
+          "explanation_en": "Quaderno is masculine; la is feminine."
+        },
+        {
+          "id": "it.a1.articles.definite_singular.q13.opt3",
+          "text": "il",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct: il fits the gender and initial sound."
+        },
+        {
+          "id": "it.a1.articles.definite_singular.q13.opt4",
+          "text": "l'",
+          "correct": false,
+          "error_type": "incorrect_elision",
+          "explanation_en": "The noun begins with a consonant, so l’ is not correct here."
+        }
+      ],
+      "accepted_answers": [
+        "il"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the noun’s gender, then listen to its first sound.",
+        "Recall the matching singular article; check whether elision is needed."
+      ],
+      "feedback_correct_en": "Correct: il.",
+      "feedback_wrong_en": "Expected answer: il.",
+      "explanation_en": "Quaderno is masculine and begins with q.",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.gender"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.masculine.default"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "cercare",
+          "quaderno",
+          "a",
+          "scuola",
+          "il",
+          "lo",
+          "la",
+          "l'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.q14",
+      "type": "multiple_choice",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_en": "Choose the correct singular definite article.",
+      "context_target": "",
+      "prompt_target": "Per la colazione, Marco prende ___ yogurt.",
+      "prompt_en": "Choose the definite article.",
+      "options": [
+        {
+          "id": "it.a1.articles.definite_singular.q14.opt1",
+          "text": "il",
+          "correct": false,
+          "error_type": "initial_sound",
+          "explanation_en": "Masculine nouns beginning with z or s + consonant require lo, not il."
+        },
+        {
+          "id": "it.a1.articles.definite_singular.q14.opt2",
+          "text": "lo",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct: lo fits the gender and initial sound."
+        },
+        {
+          "id": "it.a1.articles.definite_singular.q14.opt3",
+          "text": "la",
+          "correct": false,
+          "error_type": "wrong_gender",
+          "explanation_en": "Yogurt is masculine; la is feminine."
+        },
+        {
+          "id": "it.a1.articles.definite_singular.q14.opt4",
+          "text": "l'",
+          "correct": false,
+          "error_type": "incorrect_elision",
+          "explanation_en": "The noun begins with a consonant, so l’ is not correct here."
+        }
+      ],
+      "accepted_answers": [
+        "lo"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the noun’s gender, then listen to its first sound.",
+        "Recall the matching singular article; check whether elision is needed."
+      ],
+      "feedback_correct_en": "Correct: lo.",
+      "feedback_wrong_en": "Expected answer: lo.",
+      "explanation_en": "Yogurt starts with the consonant sound /j/; use lo.",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.initial_sound"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.masculine.special"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "per",
+          "la",
+          "colazione",
+          "prendere",
+          "yogurt",
+          "il",
+          "lo",
+          "l'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.q15",
+      "type": "transform",
+      "stage": "production",
+      "difficulty": 3,
+      "instruction_en": "Replace the article and write the corrected two-word phrase.",
+      "context_target": "",
+      "prompt_target": "il specchio",
+      "prompt_en": "Correct the noun phrase.",
+      "options": [],
+      "accepted_answers": [
+        "lo specchio"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the noun’s gender and its initial sound.",
+        "Check if the initial sound requires lo or l’."
+      ],
+      "feedback_correct_en": "Correct: lo specchio.",
+      "feedback_wrong_en": "Expected answer: lo specchio.",
+      "explanation_en": "Specchio begins with sp-, so the correct article is lo.",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.production"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.masculine.special"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "il",
+          "specchio",
+          "lo"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.q16",
+      "type": "error_correction",
+      "stage": "production",
+      "difficulty": 3,
+      "instruction_en": "Replace the article and write the corrected two-word phrase.",
+      "context_target": "",
+      "prompt_target": "la arancia",
+      "prompt_en": "Correct the noun phrase.",
+      "options": [],
+      "accepted_answers": [
+        "l'arancia",
+        "l’arancia"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the noun’s gender and its initial sound.",
+        "Check if the initial sound requires lo or l’."
+      ],
+      "feedback_correct_en": "Correct: l'arancia.",
+      "feedback_wrong_en": "Expected answer: l'arancia.",
+      "explanation_en": "The feminine definite article elides before the vowel in arancia: l'arancia.",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.production"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.feminine.vowel_elided"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "la",
+          "arancia",
+          "l'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.q17",
+      "type": "guided_production",
+      "stage": "production",
+      "difficulty": 3,
+      "instruction_en": "Write two short Italian sentences using the indicated noun phrases.",
+      "context_target": "",
+      "prompt_target": "porta; acqua",
+      "prompt_en": "Create two short natural sentences.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Use a singular definite article with each noun.",
+        "Decide whether each noun needs il, lo, la or l’. "
+      ],
+      "feedback_correct_en": "Check your sentences against the rubric.",
+      "feedback_wrong_en": "Review the article before each noun.",
+      "explanation_en": "Both definite articles must match the nouns in two natural sentences.",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.production"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "porta",
+          "acqua",
+          "la",
+          "l'",
+          "essere",
+          "qui",
+          "in",
+          "casa"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      },
+      "rubric": {
+        "criteria_en": [
+          "Use la porta with porta, which begins with a consonant.",
+          "Use l’acqua with acqua, which begins with a vowel.",
+          "Write two complete natural A1 sentences; no exact-match scoring."
+        ],
+        "example_response": "La porta è qui. L'acqua è in casa."
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.q18",
+      "type": "multiple_choice",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Choose the correct singular definite article.",
+      "context_target": "",
+      "prompt_target": "___ zio è a Roma.",
+      "prompt_en": "Choose the definite article.",
+      "options": [
+        {
+          "id": "it.a1.articles.definite_singular.q18.opt1",
+          "text": "il",
+          "correct": false,
+          "error_type": "initial_sound",
+          "explanation_en": "Masculine nouns beginning with z or s + consonant require lo, not il."
+        },
+        {
+          "id": "it.a1.articles.definite_singular.q18.opt2",
+          "text": "la",
+          "correct": false,
+          "error_type": "wrong_gender",
+          "explanation_en": "Zio is masculine; la is feminine."
+        },
+        {
+          "id": "it.a1.articles.definite_singular.q18.opt3",
+          "text": "l'",
+          "correct": false,
+          "error_type": "incorrect_elision",
+          "explanation_en": "The noun begins with a consonant, so l’ is not correct here."
+        },
+        {
+          "id": "it.a1.articles.definite_singular.q18.opt4",
+          "text": "lo",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct: lo fits the gender and initial sound."
+        }
+      ],
+      "accepted_answers": [
+        "lo"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the noun’s gender, then listen to its first sound.",
+        "Recall the matching singular article; check whether elision is needed."
+      ],
+      "feedback_correct_en": "Correct: lo.",
+      "feedback_wrong_en": "Expected answer: lo.",
+      "explanation_en": "Zio begins with z, so the masculine article is lo.",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.initial_sound"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.masculine.special"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "zio",
+          "essere",
+          "a",
+          "il",
+          "lo",
+          "la",
+          "l'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.q19",
+      "type": "multiple_choice",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Choose the correct singular definite article.",
+      "context_target": "",
+      "prompt_target": "___ idea è buona.",
+      "prompt_en": "Choose the definite article.",
+      "options": [
+        {
+          "id": "it.a1.articles.definite_singular.q19.opt1",
+          "text": "l'",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct: l' fits the gender and initial sound."
+        },
+        {
+          "id": "it.a1.articles.definite_singular.q19.opt2",
+          "text": "il",
+          "correct": false,
+          "error_type": "missing_elision",
+          "explanation_en": "Idea begins with a vowel, so use l’ rather than an unelided article."
+        },
+        {
+          "id": "it.a1.articles.definite_singular.q19.opt3",
+          "text": "lo",
+          "correct": false,
+          "error_type": "missing_elision",
+          "explanation_en": "Idea begins with a vowel, so use l’ rather than an unelided article."
+        },
+        {
+          "id": "it.a1.articles.definite_singular.q19.opt4",
+          "text": "la",
+          "correct": false,
+          "error_type": "missing_elision",
+          "explanation_en": "Idea begins with a vowel, so use l’ rather than an unelided article."
+        }
+      ],
+      "accepted_answers": [
+        "l'",
+        "l’"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the noun’s gender, then listen to its first sound.",
+        "Recall the matching singular article; check whether elision is needed."
+      ],
+      "feedback_correct_en": "Correct: l'.",
+      "feedback_wrong_en": "Expected answer: l'.",
+      "explanation_en": "Idea is feminine and begins with a vowel; use l’.",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.elision"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.feminine.vowel_elided"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "idea",
+          "essere",
+          "buono",
+          "il",
+          "lo",
+          "la",
+          "l'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.q20",
+      "type": "fill_gap",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Write only the missing singular definite article.",
+      "context_target": "",
+      "prompt_target": "___ cane è in casa.",
+      "prompt_en": "Supply the singular definite article.",
+      "options": [],
+      "accepted_answers": [
+        "il"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the noun’s gender, then listen to its first sound.",
+        "Recall the matching singular article; check whether elision is needed."
+      ],
+      "feedback_correct_en": "Correct: il.",
+      "feedback_wrong_en": "Expected answer: il.",
+      "explanation_en": "Cane is masculine and begins with the ordinary consonant c; use il.",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.gender"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.masculine.default"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "cane",
+          "essere",
+          "in",
+          "casa",
+          "il"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.q21",
+      "type": "guided_production",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Write two short Italian sentences using the indicated noun phrases.",
+      "context_target": "",
+      "prompt_target": "zucchero; orologio",
+      "prompt_en": "Create two short natural sentences.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Use a singular definite article with each noun.",
+        "Decide whether each noun needs il, lo, la or l’. "
+      ],
+      "feedback_correct_en": "Check your sentences against the rubric.",
+      "feedback_wrong_en": "Review the article before each noun.",
+      "explanation_en": "Use the correct article with two new nouns, neither present in the teaching examples.",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.production"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "zucchero",
+          "orologio",
+          "lo",
+          "l'",
+          "essere",
+          "qui",
+          "in",
+          "cucina"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      },
+      "rubric": {
+        "criteria_en": [
+          "Use lo zucchero with z.",
+          "Use l’orologio with the vowel-initial masculine noun.",
+          "Produce two short complete sentences, assessed by rubric rather than exact match."
+        ],
+        "example_response": "Lo zucchero è in cucina. L'orologio è qui."
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.q22",
+      "type": "multiple_choice",
+      "stage": "review",
+      "difficulty": 2,
+      "instruction_en": "Choose the correct singular definite article.",
+      "context_target": "",
+      "prompt_target": "___ pasta è buona.",
+      "prompt_en": "Choose the definite article.",
+      "options": [
+        {
+          "id": "it.a1.articles.definite_singular.q22.opt1",
+          "text": "il",
+          "correct": false,
+          "error_type": "wrong_gender",
+          "explanation_en": "Pasta is feminine and takes la before a consonant."
+        },
+        {
+          "id": "it.a1.articles.definite_singular.q22.opt2",
+          "text": "lo",
+          "correct": false,
+          "error_type": "wrong_gender",
+          "explanation_en": "Pasta is feminine and takes la before a consonant."
+        },
+        {
+          "id": "it.a1.articles.definite_singular.q22.opt3",
+          "text": "la",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct: la fits the gender and initial sound."
+        },
+        {
+          "id": "it.a1.articles.definite_singular.q22.opt4",
+          "text": "l'",
+          "correct": false,
+          "error_type": "incorrect_elision",
+          "explanation_en": "The noun begins with a consonant, so l’ is not correct here."
+        }
+      ],
+      "accepted_answers": [
+        "la"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the noun’s gender, then listen to its first sound.",
+        "Recall the matching singular article; check whether elision is needed."
+      ],
+      "feedback_correct_en": "Correct: la.",
+      "feedback_wrong_en": "Expected answer: la.",
+      "explanation_en": "Pasta is feminine and starts with p; choose la.",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.gender"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.singular.feminine.consonant"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "pasta",
+          "essere",
+          "buono",
+          "il",
+          "lo",
+          "la",
+          "l'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular.q23",
+      "type": "guided_production",
+      "stage": "review",
+      "difficulty": 2,
+      "instruction_en": "Write two short Italian sentences using the indicated noun phrases.",
+      "context_target": "",
+      "prompt_target": "biscotto; ospedale",
+      "prompt_en": "Create two short natural sentences.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Use a singular definite article with each noun.",
+        "Decide whether each noun needs il, lo, la or l’. "
+      ],
+      "feedback_correct_en": "Check your sentences against the rubric.",
+      "feedback_wrong_en": "Review the article before each noun.",
+      "explanation_en": "Use articles in two new sentences for delayed mixed review.",
+      "skill_ids": [
+        "it.a1.articles.definite_singular.production"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "biscotto",
+          "ospedale",
+          "il",
+          "l'",
+          "essere",
+          "buono",
+          "a"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      },
+      "rubric": {
+        "criteria_en": [
+          "Use il biscotto (masculine before b).",
+          "Use l'ospedale (masculine before vowel).",
+          "Write two meaningful short A1 sentences; no exact-match scoring."
+        ],
+        "example_response": "Il biscotto è buono. L'ospedale è a Roma."
+      }
+    }
+  ],
+  "verb_application": {
+    "applicable": false,
+    "required_form_keys": [],
+    "verbs": []
+  },
+  "mastery": {
+    "minimum_scored_items": 12,
+    "required_score": 0.8,
+    "minimum_production_score": 0.7,
+    "minimum_unaided_production_items": 2,
+    "required_stages": [
+      "notice",
+      "controlled",
+      "contextual",
+      "production",
+      "transfer"
+    ],
+    "review_intervals_days": [
+      1,
+      3,
+      7,
+      14,
+      30,
+      60
+    ]
+  },
+  "vocabulary_audit": {
+    "manifest_id": "it-reviewed-9d35be468e23",
+    "used_lemmas": [
+      "a",
+      "acqua",
+      "amica",
+      "amico",
+      "arancia",
+      "biscotto",
+      "borsa",
+      "buono",
+      "camera",
+      "cane",
+      "casa",
+      "cercare",
+      "chiave",
+      "ciao",
+      "colazione",
+      "con",
+      "cucina",
+      "di",
+      "e",
+      "essere",
+      "grazie",
+      "idea",
+      "il",
+      "in",
+      "l'",
+      "la",
+      "libro",
+      "lo",
+      "mela",
+      "ombrello",
+      "orologio",
+      "ospedale",
+      "pane",
+      "pasta",
+      "penna",
+      "per",
+      "porta",
+      "portare",
+      "prendere",
+      "pronto",
+      "quaderno",
+      "qui",
+      "scuola",
+      "specchio",
+      "studente",
+      "telefono",
+      "yogurt",
+      "zaino",
+      "zio",
+      "zucchero"
+    ],
+    "target_lemmas": [
+      "il",
+      "lo",
+      "la",
+      "l'"
+    ],
+    "outside_allowlist_lemmas": [],
+    "introduced_lemmas": [],
+    "proper_names": [
+      "Anna",
+      "Marco",
+      "Milano",
+      "Roma"
+    ],
+    "grammar_only_tokens": [],
+    "above_level_lemmas": [],
+    "tests_with_unknown_vocabulary": [],
+    "status": "pass"
+  },
+  "level_audit": {
+    "target_cefr": "A1",
+    "max_sentence_length_words": 13,
+    "unapproved_grammar_features": [],
+    "scope_violations": [],
+    "status": "pass"
+  },
+  "quality_audit": {
+    "status": "pass",
+    "checks": {
+      "unique_ids": true,
+      "prerequisites_resolve": true,
+      "answers_verified": true,
+      "forms_verified": true,
+      "single_best_answers": true,
+      "naturalness_checked": true,
+      "cefr_checked": true,
+      "translations_checked": true,
+      "requested_counts_met": true
+    },
+    "issues": [],
+    "needs_human_review": [],
+    "sources": [
+      {
+        "name": "Treccani — Articoli determinativi (La grammatica italiana)",
+        "url": "https://www.treccani.it/enciclopedia/articoli-determinativi_%28La-grammatica-italiana%29/"
+      },
+      {
+        "name": "Zanichelli — Le forme dell’articolo determinativo",
+        "url": "https://aulalingue.scuola.zanichelli.it/uso-dell-articolo-determinativo/"
+      },
+      {
+        "name": "Treccani — Lo, Vocabolario",
+        "url": "https://www.treccani.it/vocabolario/lo1/"
+      }
+    ],
+    "counts": {
+      "contexts": 2,
+      "examples": 10,
+      "exercise_bank": 23,
+      "scored_exercises": 20,
+      "transfer_exercises": 4,
+      "article_form_tests": 8
+    }
+  },
+  "audit": {
+    "status": "pass",
+    "issues": [],
+    "needs_human_review": [],
+    "sources": [
+      {
+        "name": "Treccani — Articoli determinativi (La grammatica italiana)",
+        "url": "https://www.treccani.it/enciclopedia/articoli-determinativi_%28La-grammatica-italiana%29/"
+      },
+      {
+        "name": "Zanichelli — Le forme dell’articolo determinativo",
+        "url": "https://aulalingue.scuola.zanichelli.it/uso-dell-articolo-determinativo/"
+      },
+      {
+        "name": "Treccani — Lo, Vocabolario",
+        "url": "https://www.treccani.it/vocabolario/lo1/"
+      }
+    ],
+    "checks": {
+      "unique_ids": true,
+      "prerequisites_resolve": true,
+      "answers_verified": true,
+      "forms_verified": true,
+      "single_best_answers": true,
+      "naturalness_checked": true,
+      "cefr_checked": true,
+      "translations_checked": true,
+      "requested_counts_met": true
+    }
+  }
+}

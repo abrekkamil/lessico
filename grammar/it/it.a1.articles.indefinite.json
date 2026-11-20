@@ -1,0 +1,2120 @@
+{
+  "schema_version": "lessico-grammar-v1",
+  "content_version": "1.0.0",
+  "status": "ready",
+  "mode": "topic_pack",
+  "language": "it",
+  "explanation_language": "en",
+  "vocabulary_manifest_id": "it-reviewed-9d35be468e23",
+  "topic": {
+    "id": "it.a1.articles.indefinite",
+    "cefr": "A1",
+    "sequence": 2,
+    "module_id": "it.a1.articles",
+    "title_target": "Gli articoli indeterminativi",
+    "title_en": "Indefinite articles",
+    "estimated_minutes": 8,
+    "prerequisite_ids": [
+      "it.a1.nouns.gender"
+    ],
+    "learning_objectives": [
+      "Choose un, uno, una or un’ for a familiar singular noun."
+    ],
+    "scope_included": [
+      "gender choice",
+      "initial-sound choice",
+      "apostrophe with feminine vowel-initial nouns"
+    ],
+    "scope_excluded": [
+      "definite articles",
+      "partitive articles",
+      "plural indefiniteness"
+    ],
+    "new_terms": [],
+    "reading_links": []
+  },
+  "skills": [
+    {
+      "id": "it.a1.articles.indefinite.gender",
+      "description_en": "Choose masculine or feminine singular indefinite article families according to the noun’s gender.",
+      "capability": "recognition",
+      "critical": true
+    },
+    {
+      "id": "it.a1.articles.indefinite.initial_sound",
+      "description_en": "Select un versus uno for familiar masculine nouns according to their initial sound.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "it.a1.articles.indefinite.apostrophe",
+      "description_en": "Distinguish masculine un before a vowel from usual feminine un' and write the apostrophe.",
+      "capability": "contextual",
+      "critical": true
+    },
+    {
+      "id": "it.a1.articles.indefinite.production",
+      "description_en": "Produce the natural indefinite article in an original request or short sentence.",
+      "capability": "production",
+      "critical": true
+    }
+  ],
+  "lesson": {
+    "short_explanation_en": "Italian singular nouns use four common spellings of the indefinite article (‘a/an’): un, uno, una and un'. Choose the noun’s gender first, then its first sound. Un is masculine before a vowel and most consonants; uno is masculine before z, s + consonant and certain other initial sounds (for example, yogurt). Una is feminine before consonants; un' is the usual elided feminine spelling before vowels. Never add an apostrophe to masculine un. Some formal written usage keeps una before a vowel, so tests of un' explicitly ask for the usual elided form.",
+    "rule_blocks": [
+      {
+        "id": "it.a1.articles.indefinite.rule1",
+        "heading_en": "Start with the noun’s gender",
+        "explanation_en": "Use a masculine article for a masculine noun and a feminine article for a feminine noun. Spelling alone is not enough: uno studente but una studentessa.",
+        "pattern": "masculine noun → un / uno; feminine noun → una / un'",
+        "usage_notes_en": [
+          "The lesson covers only singular indefinite articles.",
+          "A feminine noun beginning with s + consonant still takes una, not uno."
+        ],
+        "common_errors_en": [
+          "Incorrect: uno studentessa. Correct: una studentessa, because studentessa is feminine."
+        ],
+        "example_ids": [
+          "it.a1.articles.indefinite.ex02",
+          "it.a1.articles.indefinite.ex05",
+          "it.a1.articles.indefinite.ex06"
+        ]
+      },
+      {
+        "id": "it.a1.articles.indefinite.rule2",
+        "heading_en": "Masculine: un or uno",
+        "explanation_en": "Use un before a vowel or a normal consonant. Use uno before z, s + another consonant, and certain special sounds, including the initial y in yogurt.",
+        "pattern": "un libro; un amico; uno zaino; uno studente; uno yogurt",
+        "usage_notes_en": [
+          "The sound at the start of the noun matters.",
+          "This lesson concentrates on common A1 words; other uncommon initial groups are covered later."
+        ],
+        "common_errors_en": [
+          "Incorrect: un zaino. Correct: uno zaino.",
+          "Incorrect: uno amico. Correct: un amico."
+        ],
+        "example_ids": [
+          "it.a1.articles.indefinite.ex01",
+          "it.a1.articles.indefinite.ex03",
+          "it.a1.articles.indefinite.ex04",
+          "it.a1.articles.indefinite.ex09"
+        ]
+      },
+      {
+        "id": "it.a1.articles.indefinite.rule3",
+        "heading_en": "Feminine: una or un'",
+        "explanation_en": "Use una before a consonant and the usual elided spelling un' before a vowel. The apostrophe belongs to feminine un', not masculine un.",
+        "pattern": "una mela; una studentessa; un'amica; un'arancia; un amico",
+        "usage_notes_en": [
+          "In the exercises, “elided form” means to write un' before the feminine vowel-initial noun.",
+          "The full form una before a vowel also occurs in some written contexts; it is not universally ungrammatical."
+        ],
+        "common_errors_en": [
+          "Incorrect: un'amico. Correct: un amico, because amico is masculine.",
+          "Incorrect: uno mela. Correct: una mela, because mela is feminine."
+        ],
+        "example_ids": [
+          "it.a1.articles.indefinite.ex05",
+          "it.a1.articles.indefinite.ex07",
+          "it.a1.articles.indefinite.ex08",
+          "it.a1.articles.indefinite.ex10"
+        ]
+      }
+    ],
+    "form_tables": [
+      {
+        "id": "it.a1.articles.indefinite.table1",
+        "title_en": "Singular indefinite article selection",
+        "columns": [
+          "Gender",
+          "Beginning of noun",
+          "Usual form",
+          "Example"
+        ],
+        "rows": [
+          [
+            "Masculine",
+            "Vowel or ordinary consonant",
+            "un",
+            "un amico; un libro"
+          ],
+          [
+            "Masculine",
+            "z, s + consonant, consonantal y (and similar sounds)",
+            "uno",
+            "uno zaino; uno studente; uno yogurt"
+          ],
+          [
+            "Feminine",
+            "Consonant",
+            "una",
+            "una mela; una studentessa"
+          ],
+          [
+            "Feminine",
+            "Vowel (usual elided form)",
+            "un'",
+            "un'amica; un'arancia"
+          ]
+        ]
+      }
+    ]
+  },
+  "contexts": [
+    {
+      "id": "it.a1.articles.indefinite.ctx1",
+      "type": "dialogue",
+      "setting_en": "Anna orders a light breakfast at a neighbourhood café.",
+      "lines": [
+        {
+          "speaker": "Anna",
+          "target": "Buongiorno! Un cappuccino e una spremuta, per favore.",
+          "translation_en": "Good morning! A cappuccino and a freshly squeezed juice, please."
+        },
+        {
+          "speaker": "Marco",
+          "target": "Certo. Anche uno yogurt?",
+          "translation_en": "Of course. A yoghurt too?"
+        },
+        {
+          "speaker": "Anna",
+          "target": "No, grazie. Un biscotto.",
+          "translation_en": "No, thanks. A biscuit."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "Un cappuccino",
+          "lemma": "cappuccino",
+          "skill_id": "it.a1.articles.indefinite.gender",
+          "form_key": "indefinite.singular.masculine.default",
+          "explanation_en": "A masculine noun starting with an ordinary consonant takes un."
+        },
+        {
+          "surface": "una spremuta",
+          "lemma": "spremuta",
+          "skill_id": "it.a1.articles.indefinite.gender",
+          "form_key": "indefinite.singular.feminine.consonant",
+          "explanation_en": "Spremuta is feminine, so the s + consonant does not call for uno."
+        },
+        {
+          "surface": "uno yogurt",
+          "lemma": "yogurt",
+          "skill_id": "it.a1.articles.indefinite.initial_sound",
+          "form_key": "indefinite.singular.masculine.special",
+          "explanation_en": "A masculine loanword beginning with a consonantal /j/ sound uses uno."
+        },
+        {
+          "surface": "Un biscotto",
+          "lemma": "biscotto",
+          "skill_id": "it.a1.articles.indefinite.gender",
+          "form_key": "indefinite.singular.masculine.default",
+          "explanation_en": "The masculine word biscotto takes un."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "buongiorno",
+          "un",
+          "cappuccino",
+          "e",
+          "una",
+          "spremuta",
+          "per favore",
+          "certo",
+          "anche",
+          "uno",
+          "yogurt",
+          "no",
+          "grazie",
+          "biscotto"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.ctx2",
+      "type": "message",
+      "setting_en": "Marco sends Anna a short message about things to bring for a picnic.",
+      "lines": [
+        {
+          "speaker": "Marco",
+          "target": "Ciao, Anna! Domani: un panino, una mela, un'arancia e un ombrello.",
+          "translation_en": "Hi, Anna! For tomorrow: a sandwich, an apple, an orange and an umbrella."
+        },
+        {
+          "speaker": "Marco",
+          "target": "Porto uno zaino.",
+          "translation_en": "I’m bringing a rucksack."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "un'arancia",
+          "lemma": "arancia",
+          "skill_id": "it.a1.articles.indefinite.apostrophe",
+          "form_key": "indefinite.singular.feminine.vowel_elided",
+          "explanation_en": "Arancia is feminine and starts with a vowel, so the usual form is un'."
+        },
+        {
+          "surface": "un ombrello",
+          "lemma": "ombrello",
+          "skill_id": "it.a1.articles.indefinite.apostrophe",
+          "form_key": "indefinite.singular.masculine.default",
+          "explanation_en": "Ombrello is masculine; un never takes an apostrophe."
+        },
+        {
+          "surface": "una mela",
+          "lemma": "mela",
+          "skill_id": "it.a1.articles.indefinite.gender",
+          "form_key": "indefinite.singular.feminine.consonant",
+          "explanation_en": "A feminine noun beginning with m takes una."
+        },
+        {
+          "surface": "uno zaino",
+          "lemma": "zaino",
+          "skill_id": "it.a1.articles.indefinite.initial_sound",
+          "form_key": "indefinite.singular.masculine.special",
+          "explanation_en": "Zaino is masculine and begins with z, so it takes uno."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ciao",
+          "domani",
+          "un",
+          "panino",
+          "una",
+          "mela",
+          "un'",
+          "arancia",
+          "e",
+          "ombrello",
+          "portare",
+          "uno",
+          "zaino"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "it.a1.articles.indefinite.ex01",
+      "target": "Cerco un libro.",
+      "translation_en": "I’m looking for a book.",
+      "focus_surface": "un libro",
+      "skill_ids": [
+        "it.a1.articles.indefinite.initial_sound"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "indefinite.singular.masculine.default"
+      ],
+      "register": "neutral",
+      "note_en": "Common masculine noun: un before l.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "cercare",
+          "un",
+          "libro"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.ex02",
+      "target": "Una spremuta, per favore.",
+      "translation_en": "A freshly squeezed juice, please.",
+      "focus_surface": "una spremuta",
+      "skill_ids": [
+        "it.a1.articles.indefinite.gender"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "indefinite.singular.feminine.consonant"
+      ],
+      "register": "neutral",
+      "note_en": "A natural order: feminine takes una even before sp-.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "una",
+          "spremuta",
+          "per favore"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.ex03",
+      "target": "Marco cerca uno zaino.",
+      "translation_en": "Marco is looking for a rucksack.",
+      "focus_surface": "uno zaino",
+      "skill_ids": [
+        "it.a1.articles.indefinite.initial_sound"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "indefinite.singular.masculine.special"
+      ],
+      "register": "neutral",
+      "note_en": "Masculine z- takes uno.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "cercare",
+          "uno",
+          "zaino"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.ex04",
+      "target": "Ho un amico a Milano.",
+      "translation_en": "I have a friend in Milan.",
+      "focus_surface": "un amico",
+      "skill_ids": [
+        "it.a1.articles.indefinite.apostrophe"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "indefinite.singular.masculine.default"
+      ],
+      "register": "neutral",
+      "note_en": "Masculine un before a vowel has no apostrophe.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "un",
+          "amico",
+          "a"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.ex05",
+      "target": "Anna compra una penna.",
+      "translation_en": "Anna buys a pen.",
+      "focus_surface": "una penna",
+      "skill_ids": [
+        "it.a1.articles.indefinite.gender"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "indefinite.singular.feminine.consonant"
+      ],
+      "register": "neutral",
+      "note_en": "Feminine noun beginning with an ordinary consonant.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "comprare",
+          "una",
+          "penna"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.ex06",
+      "target": "Una studentessa arriva.",
+      "translation_en": "A female student arrives.",
+      "focus_surface": "una studentessa",
+      "skill_ids": [
+        "it.a1.articles.indefinite.gender"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "indefinite.singular.feminine.consonant"
+      ],
+      "register": "neutral",
+      "note_en": "The s + consonant rule for uno applies only to masculine nouns.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "una",
+          "studentessa",
+          "arrivare"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.ex07",
+      "target": "Un'amica arriva domani.",
+      "translation_en": "A female friend is arriving tomorrow.",
+      "focus_surface": "un'amica",
+      "skill_ids": [
+        "it.a1.articles.indefinite.apostrophe"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "indefinite.singular.feminine.vowel_elided"
+      ],
+      "register": "neutral",
+      "note_en": "The usual elided feminine spelling before a vowel.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "un'",
+          "amica",
+          "arrivare",
+          "domani"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.ex08",
+      "target": "Prendo un ombrello.",
+      "translation_en": "I’ll take an umbrella.",
+      "focus_surface": "un ombrello",
+      "skill_ids": [
+        "it.a1.articles.indefinite.apostrophe"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "indefinite.singular.masculine.default"
+      ],
+      "register": "neutral",
+      "note_en": "Masculine un does not take an apostrophe.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "prendere",
+          "un",
+          "ombrello"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.ex09",
+      "target": "Marco prende uno yogurt.",
+      "translation_en": "Marco has a yoghurt.",
+      "focus_surface": "uno yogurt",
+      "skill_ids": [
+        "it.a1.articles.indefinite.initial_sound"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "indefinite.singular.masculine.special"
+      ],
+      "register": "neutral",
+      "note_en": "Before consonantal y, standard Italian uses uno.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "prendere",
+          "uno",
+          "yogurt"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.ex10",
+      "target": "Cerco un'idea.",
+      "translation_en": "I’m looking for an idea.",
+      "focus_surface": "un'idea",
+      "skill_ids": [
+        "it.a1.articles.indefinite.apostrophe"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "indefinite.singular.feminine.vowel_elided"
+      ],
+      "register": "neutral",
+      "note_en": "The usual feminine elision is written with an apostrophe.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "cercare",
+          "un'",
+          "idea"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "id": "it.a1.articles.indefinite.q01",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the indefinite article that fits the sentence.",
+      "context_target": "",
+      "prompt_target": "Cerco ___ libro.",
+      "prompt_en": "Select the indefinite article.",
+      "options": [
+        {
+          "id": "it.a1.articles.indefinite.q01.opt1",
+          "text": "un",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "un is the expected article in this context."
+        },
+        {
+          "id": "it.a1.articles.indefinite.q01.opt2",
+          "text": "uno",
+          "correct": false,
+          "error_type": "initial_sound",
+          "explanation_en": "This masculine noun takes un, not uno."
+        },
+        {
+          "id": "it.a1.articles.indefinite.q01.opt3",
+          "text": "una",
+          "correct": false,
+          "error_type": "wrong_gender",
+          "explanation_en": "Una is feminine, but the noun here is masculine."
+        },
+        {
+          "id": "it.a1.articles.indefinite.q01.opt4",
+          "text": "un'",
+          "correct": false,
+          "error_type": "false_masculine_apostrophe",
+          "explanation_en": "Masculine un before a vowel never takes an apostrophe."
+        }
+      ],
+      "accepted_answers": [
+        "un"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the noun’s gender and its initial sound.",
+        "Apply the article pattern for this noun’s beginning."
+      ],
+      "feedback_correct_en": "Correct: un is the natural choice.",
+      "feedback_wrong_en": "The expected article is un.",
+      "explanation_en": "This masculine noun begins with l; the expected article is un.",
+      "skill_ids": [
+        "it.a1.articles.indefinite.gender"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "indefinite.singular.masculine.default"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "cercare",
+          "libro",
+          "un",
+          "uno",
+          "una",
+          "un'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.q02",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the indefinite article that fits the sentence.",
+      "context_target": "",
+      "prompt_target": "Cerco ___ zaino.",
+      "prompt_en": "Select the indefinite article.",
+      "options": [
+        {
+          "id": "it.a1.articles.indefinite.q02.opt1",
+          "text": "un",
+          "correct": false,
+          "error_type": "initial_sound",
+          "explanation_en": "This masculine noun begins with a sound that requires uno."
+        },
+        {
+          "id": "it.a1.articles.indefinite.q02.opt2",
+          "text": "uno",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "uno is the expected article in this context."
+        },
+        {
+          "id": "it.a1.articles.indefinite.q02.opt3",
+          "text": "una",
+          "correct": false,
+          "error_type": "gender_overgeneralisation",
+          "explanation_en": "Una is feminine; this noun is masculine and needs uno."
+        },
+        {
+          "id": "it.a1.articles.indefinite.q02.opt4",
+          "text": "un'",
+          "correct": false,
+          "error_type": "incorrect_elision",
+          "explanation_en": "The apostrophe form is normally used before a vowel-initial feminine noun."
+        }
+      ],
+      "accepted_answers": [
+        "uno"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the noun’s gender and its initial sound.",
+        "Apply the article pattern for this noun’s beginning."
+      ],
+      "feedback_correct_en": "Correct: uno is the natural choice.",
+      "feedback_wrong_en": "The expected article is uno.",
+      "explanation_en": "This masculine noun begins with z; the expected article is uno.",
+      "skill_ids": [
+        "it.a1.articles.indefinite.initial_sound"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "indefinite.singular.masculine.special"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "cercare",
+          "zaino",
+          "un",
+          "uno",
+          "una",
+          "un'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.q03",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Choose the indefinite article that fits the sentence.",
+      "context_target": "",
+      "prompt_target": "Prendo ___ banana.",
+      "prompt_en": "Select the indefinite article.",
+      "options": [
+        {
+          "id": "it.a1.articles.indefinite.q03.opt1",
+          "text": "un",
+          "correct": false,
+          "error_type": "wrong_article",
+          "explanation_en": "Check the noun’s gender and initial sound before choosing the article."
+        },
+        {
+          "id": "it.a1.articles.indefinite.q03.opt2",
+          "text": "uno",
+          "correct": false,
+          "error_type": "gender_overgeneralisation",
+          "explanation_en": "Uno is masculine; a feminine noun needs una before a consonant."
+        },
+        {
+          "id": "it.a1.articles.indefinite.q03.opt3",
+          "text": "una",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "una is the expected article in this context."
+        },
+        {
+          "id": "it.a1.articles.indefinite.q03.opt4",
+          "text": "un'",
+          "correct": false,
+          "error_type": "incorrect_elision",
+          "explanation_en": "The apostrophe form is normally used before a vowel-initial feminine noun."
+        }
+      ],
+      "accepted_answers": [
+        "una"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the noun’s gender and its initial sound.",
+        "Apply the article pattern for this noun’s beginning."
+      ],
+      "feedback_correct_en": "Correct: una is the natural choice.",
+      "feedback_wrong_en": "The expected article is una.",
+      "explanation_en": "This feminine noun begins with b; the expected article is una.",
+      "skill_ids": [
+        "it.a1.articles.indefinite.gender"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "indefinite.singular.feminine.consonant"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "prendere",
+          "banana",
+          "un",
+          "uno",
+          "una",
+          "un'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.q04",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Choose the standard elided feminine article for the blank.",
+      "context_target": "",
+      "prompt_target": "Ho ___amica a Roma.",
+      "prompt_en": "Select the indefinite article.",
+      "options": [
+        {
+          "id": "it.a1.articles.indefinite.q04.opt1",
+          "text": "un'",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "un' is the expected article in this context."
+        },
+        {
+          "id": "it.a1.articles.indefinite.q04.opt2",
+          "text": "un",
+          "correct": false,
+          "error_type": "missing_feminine_elision",
+          "explanation_en": "Un without an apostrophe is masculine here; the noun is feminine. Write the usual elided form un'."
+        },
+        {
+          "id": "it.a1.articles.indefinite.q04.opt3",
+          "text": "uno",
+          "correct": false,
+          "error_type": "wrong_article",
+          "explanation_en": "Check the noun’s gender and initial sound before choosing the article."
+        }
+      ],
+      "accepted_answers": [
+        "un'"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the noun’s gender and its initial sound.",
+        "For a feminine noun starting with a vowel, use the usual elided spelling."
+      ],
+      "feedback_correct_en": "Correct: un' is the natural choice.",
+      "feedback_wrong_en": "The expected article is un'.",
+      "explanation_en": "This feminine noun begins with a; the expected article is un'.",
+      "skill_ids": [
+        "it.a1.articles.indefinite.apostrophe"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "indefinite.singular.feminine.vowel_elided"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "amica",
+          "a",
+          "un'",
+          "un",
+          "uno"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.q05",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write the correct singular indefinite article in the blank.",
+      "context_target": "",
+      "prompt_target": "Marco prende ___ biscotto.",
+      "prompt_en": "Enter only the missing article.",
+      "options": [],
+      "accepted_answers": [
+        "un"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Decide whether the noun is masculine or feminine.",
+        "Check its first sound; use the matching singular article."
+      ],
+      "feedback_correct_en": "Correct: un.",
+      "feedback_wrong_en": "The expected article here is un.",
+      "explanation_en": "Masculine noun beginning with b takes un in the requested form.",
+      "skill_ids": [
+        "it.a1.articles.indefinite.gender"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "indefinite.singular.masculine.default"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "prendere",
+          "biscotto",
+          "un"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.q06",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write the correct singular indefinite article in the blank.",
+      "context_target": "",
+      "prompt_target": "Anna compra ___ specchio.",
+      "prompt_en": "Enter only the missing article.",
+      "options": [],
+      "accepted_answers": [
+        "uno"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Decide whether the noun is masculine or feminine.",
+        "Check its first sound; use the matching singular article."
+      ],
+      "feedback_correct_en": "Correct: uno.",
+      "feedback_wrong_en": "The expected article here is uno.",
+      "explanation_en": "Masculine noun beginning with sp takes uno in the requested form.",
+      "skill_ids": [
+        "it.a1.articles.indefinite.initial_sound"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "indefinite.singular.masculine.special"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "comprare",
+          "specchio",
+          "uno"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.q07",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write the correct singular indefinite article in the blank.",
+      "context_target": "",
+      "prompt_target": "Voglio ___ torta.",
+      "prompt_en": "Enter only the missing article.",
+      "options": [],
+      "accepted_answers": [
+        "una"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Decide whether the noun is masculine or feminine.",
+        "Check its first sound; use the matching singular article."
+      ],
+      "feedback_correct_en": "Correct: una.",
+      "feedback_wrong_en": "The expected article here is una.",
+      "explanation_en": "Feminine noun beginning with t takes una in the requested form.",
+      "skill_ids": [
+        "it.a1.articles.indefinite.gender"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "indefinite.singular.feminine.consonant"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "volere",
+          "torta",
+          "una"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.q08",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write the usual elided feminine article in the blank (include the apostrophe).",
+      "context_target": "",
+      "prompt_target": "Cerco ___idea.",
+      "prompt_en": "Enter only the missing article.",
+      "options": [],
+      "accepted_answers": [
+        "un'",
+        "un’"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Decide whether the noun is masculine or feminine.",
+        "Check its first sound; use the matching singular article."
+      ],
+      "feedback_correct_en": "Correct: un'.",
+      "feedback_wrong_en": "The expected article here is un'.",
+      "explanation_en": "Feminine noun beginning with i takes un' in the requested form.",
+      "skill_ids": [
+        "it.a1.articles.indefinite.apostrophe"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "indefinite.singular.feminine.vowel_elided"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "cercare",
+          "idea",
+          "un'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.q09",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write the correct singular indefinite article in the blank.",
+      "context_target": "",
+      "prompt_target": "Ho ___ ombrello.",
+      "prompt_en": "Enter only the missing article.",
+      "options": [],
+      "accepted_answers": [
+        "un"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Decide whether the noun is masculine or feminine.",
+        "Check its first sound; use the matching singular article."
+      ],
+      "feedback_correct_en": "Correct: un.",
+      "feedback_wrong_en": "The expected article here is un.",
+      "explanation_en": "Masculine noun beginning with o takes un in the requested form.",
+      "skill_ids": [
+        "it.a1.articles.indefinite.apostrophe"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "indefinite.singular.masculine.default"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "ombrello",
+          "un"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.q10",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write the correct singular indefinite article in the blank.",
+      "context_target": "",
+      "prompt_target": "Marco compra ___ spazzolino.",
+      "prompt_en": "Enter only the missing article.",
+      "options": [],
+      "accepted_answers": [
+        "uno"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Decide whether the noun is masculine or feminine.",
+        "Check its first sound; use the matching singular article."
+      ],
+      "feedback_correct_en": "Correct: uno.",
+      "feedback_wrong_en": "The expected article here is uno.",
+      "explanation_en": "Masculine noun beginning with sp takes uno in the requested form.",
+      "skill_ids": [
+        "it.a1.articles.indefinite.initial_sound"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "indefinite.singular.masculine.special"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "comprare",
+          "spazzolino",
+          "uno"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.q11",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write the correct singular indefinite article in the blank.",
+      "context_target": "",
+      "prompt_target": "Prendo ___ zuppa.",
+      "prompt_en": "Enter only the missing article.",
+      "options": [],
+      "accepted_answers": [
+        "una"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Decide whether the noun is masculine or feminine.",
+        "Check its first sound; use the matching singular article."
+      ],
+      "feedback_correct_en": "Correct: una.",
+      "feedback_wrong_en": "The expected article here is una.",
+      "explanation_en": "Feminine noun beginning with z takes una in the requested form.",
+      "skill_ids": [
+        "it.a1.articles.indefinite.gender"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "indefinite.singular.feminine.consonant"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "prendere",
+          "zuppa",
+          "una"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.q12",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write the usual elided feminine article in the blank (include the apostrophe).",
+      "context_target": "",
+      "prompt_target": "Marco ha ___amica a Milano.",
+      "prompt_en": "Enter only the missing article.",
+      "options": [],
+      "accepted_answers": [
+        "un'",
+        "un’"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Decide whether the noun is masculine or feminine.",
+        "Check its first sound; use the matching singular article."
+      ],
+      "feedback_correct_en": "Correct: un'.",
+      "feedback_wrong_en": "The expected article here is un'.",
+      "explanation_en": "Feminine noun beginning with a takes un' in the requested form.",
+      "skill_ids": [
+        "it.a1.articles.indefinite.apostrophe"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "indefinite.singular.feminine.vowel_elided"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "amica",
+          "a",
+          "un'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.q13",
+      "type": "multiple_choice",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_en": "Choose the indefinite article that fits the sentence.",
+      "context_target": "",
+      "prompt_target": "A scuola, Marco è ___ studente.",
+      "prompt_en": "Select the indefinite article.",
+      "options": [
+        {
+          "id": "it.a1.articles.indefinite.q13.opt1",
+          "text": "un",
+          "correct": false,
+          "error_type": "initial_sound",
+          "explanation_en": "This masculine noun begins with a sound that requires uno."
+        },
+        {
+          "id": "it.a1.articles.indefinite.q13.opt2",
+          "text": "una",
+          "correct": false,
+          "error_type": "gender_overgeneralisation",
+          "explanation_en": "Una is feminine; this noun is masculine and needs uno."
+        },
+        {
+          "id": "it.a1.articles.indefinite.q13.opt3",
+          "text": "un'",
+          "correct": false,
+          "error_type": "incorrect_elision",
+          "explanation_en": "The apostrophe form is normally used before a vowel-initial feminine noun."
+        },
+        {
+          "id": "it.a1.articles.indefinite.q13.opt4",
+          "text": "uno",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "uno is the expected article in this context."
+        }
+      ],
+      "accepted_answers": [
+        "uno"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the noun’s gender and its initial sound.",
+        "Apply the article pattern for this noun’s beginning."
+      ],
+      "feedback_correct_en": "Correct: uno is the natural choice.",
+      "feedback_wrong_en": "The expected article is uno.",
+      "explanation_en": "This masculine noun begins with st; the expected article is uno.",
+      "skill_ids": [
+        "it.a1.articles.indefinite.initial_sound"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "indefinite.singular.masculine.special"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "a",
+          "scuola",
+          "essere",
+          "studente",
+          "un",
+          "uno",
+          "una",
+          "un'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.q14",
+      "type": "multiple_choice",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_en": "Choose the indefinite article that fits the sentence.",
+      "context_target": "",
+      "prompt_target": "Anna è ___ studentessa.",
+      "prompt_en": "Select the indefinite article.",
+      "options": [
+        {
+          "id": "it.a1.articles.indefinite.q14.opt1",
+          "text": "un",
+          "correct": false,
+          "error_type": "wrong_article",
+          "explanation_en": "Check the noun’s gender and initial sound before choosing the article."
+        },
+        {
+          "id": "it.a1.articles.indefinite.q14.opt2",
+          "text": "una",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "una is the expected article in this context."
+        },
+        {
+          "id": "it.a1.articles.indefinite.q14.opt3",
+          "text": "uno",
+          "correct": false,
+          "error_type": "gender_overgeneralisation",
+          "explanation_en": "Uno is masculine; a feminine noun needs una before a consonant."
+        },
+        {
+          "id": "it.a1.articles.indefinite.q14.opt4",
+          "text": "un'",
+          "correct": false,
+          "error_type": "incorrect_elision",
+          "explanation_en": "The apostrophe form is normally used before a vowel-initial feminine noun."
+        }
+      ],
+      "accepted_answers": [
+        "una"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the noun’s gender and its initial sound.",
+        "Apply the article pattern for this noun’s beginning."
+      ],
+      "feedback_correct_en": "Correct: una is the natural choice.",
+      "feedback_wrong_en": "The expected article is una.",
+      "explanation_en": "This feminine noun begins with st; the expected article is una.",
+      "skill_ids": [
+        "it.a1.articles.indefinite.gender"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "indefinite.singular.feminine.consonant"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "studentessa",
+          "un",
+          "uno",
+          "una",
+          "un'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.q15",
+      "type": "transform",
+      "stage": "production",
+      "difficulty": 3,
+      "instruction_en": "Rewrite the expression using the usual elided feminine spelling.",
+      "context_target": "",
+      "prompt_target": "una arancia",
+      "prompt_en": "Write the complete corrected expression.",
+      "options": [],
+      "accepted_answers": [
+        "un'arancia",
+        "un’arancia"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the noun’s gender, then at its initial sound.",
+        "Check whether an apostrophe is needed."
+      ],
+      "feedback_correct_en": "Correct: un'arancia.",
+      "feedback_wrong_en": "The expected form is un'arancia.",
+      "explanation_en": "Una may remain full in some registers, but the question explicitly asks for the usual elided form un'arancia.",
+      "skill_ids": [
+        "it.a1.articles.indefinite.apostrophe",
+        "it.a1.articles.indefinite.production"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "una",
+          "un'",
+          "arancia"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.q16",
+      "type": "error_correction",
+      "stage": "production",
+      "difficulty": 3,
+      "instruction_en": "Correct the apostrophe error. Write the complete expression.",
+      "context_target": "",
+      "prompt_target": "un'amico",
+      "prompt_en": "Write the complete corrected expression.",
+      "options": [],
+      "accepted_answers": [
+        "un amico"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the noun’s gender, then at its initial sound.",
+        "Check whether an apostrophe is needed."
+      ],
+      "feedback_correct_en": "Correct: un amico.",
+      "feedback_wrong_en": "The expected form is un amico.",
+      "explanation_en": "Amico is masculine, and masculine un never takes an apostrophe.",
+      "skill_ids": [
+        "it.a1.articles.indefinite.apostrophe",
+        "it.a1.articles.indefinite.production"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "un'",
+          "un",
+          "amico"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.q17",
+      "type": "guided_production",
+      "stage": "production",
+      "difficulty": 4,
+      "instruction_en": "Write one short natural sentence with quaderno and one with studentessa, using an indefinite article in each.",
+      "context_target": "",
+      "prompt_target": "quaderno; studentessa",
+      "prompt_en": "Write your own short Italian text, then check it against the criteria.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Find the gender and starting sound of each noun.",
+        "Use two different article forms if the task asks for two."
+      ],
+      "feedback_correct_en": "Your short text matches the grammar criteria.",
+      "feedback_wrong_en": "Compare your articles with the reference and check the apostrophe.",
+      "explanation_en": "Cerco un quaderno. Anna è una studentessa.",
+      "skill_ids": [
+        "it.a1.articles.indefinite.production"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "Use un quaderno.",
+          "Use una studentessa.",
+          "Write two short grammatical sentences without unnecessary advanced structures."
+        ],
+        "example_response": "Cerco un quaderno. Anna è una studentessa."
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "quaderno",
+          "studentessa",
+          "un",
+          "una",
+          "cercare",
+          "prendere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.q18",
+      "type": "multiple_choice",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Choose the indefinite article that fits the sentence.",
+      "context_target": "",
+      "prompt_target": "Marco cerca ___ cappello.",
+      "prompt_en": "Select the indefinite article.",
+      "options": [
+        {
+          "id": "it.a1.articles.indefinite.q18.opt1",
+          "text": "uno",
+          "correct": false,
+          "error_type": "initial_sound",
+          "explanation_en": "This masculine noun takes un, not uno."
+        },
+        {
+          "id": "it.a1.articles.indefinite.q18.opt2",
+          "text": "una",
+          "correct": false,
+          "error_type": "wrong_gender",
+          "explanation_en": "Una is feminine, but the noun here is masculine."
+        },
+        {
+          "id": "it.a1.articles.indefinite.q18.opt3",
+          "text": "un",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "un is the expected article in this context."
+        },
+        {
+          "id": "it.a1.articles.indefinite.q18.opt4",
+          "text": "un'",
+          "correct": false,
+          "error_type": "false_masculine_apostrophe",
+          "explanation_en": "Masculine un before a vowel never takes an apostrophe."
+        }
+      ],
+      "accepted_answers": [
+        "un"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the noun’s gender and its initial sound.",
+        "Apply the article pattern for this noun’s beginning."
+      ],
+      "feedback_correct_en": "Correct: un is the natural choice.",
+      "feedback_wrong_en": "The expected article is un.",
+      "explanation_en": "This masculine noun begins with c; the expected article is un.",
+      "skill_ids": [
+        "it.a1.articles.indefinite.gender"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "indefinite.singular.masculine.default"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "cercare",
+          "cappello",
+          "un",
+          "uno",
+          "una",
+          "un'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.q19",
+      "type": "multiple_choice",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Choose the indefinite article that fits the sentence.",
+      "context_target": "",
+      "prompt_target": "Anna compra ___ giacca.",
+      "prompt_en": "Select the indefinite article.",
+      "options": [
+        {
+          "id": "it.a1.articles.indefinite.q19.opt1",
+          "text": "un",
+          "correct": false,
+          "error_type": "wrong_article",
+          "explanation_en": "Check the noun’s gender and initial sound before choosing the article."
+        },
+        {
+          "id": "it.a1.articles.indefinite.q19.opt2",
+          "text": "uno",
+          "correct": false,
+          "error_type": "gender_overgeneralisation",
+          "explanation_en": "Uno is masculine; a feminine noun needs una before a consonant."
+        },
+        {
+          "id": "it.a1.articles.indefinite.q19.opt3",
+          "text": "un'",
+          "correct": false,
+          "error_type": "incorrect_elision",
+          "explanation_en": "The apostrophe form is normally used before a vowel-initial feminine noun."
+        },
+        {
+          "id": "it.a1.articles.indefinite.q19.opt4",
+          "text": "una",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "una is the expected article in this context."
+        }
+      ],
+      "accepted_answers": [
+        "una"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the noun’s gender and its initial sound.",
+        "Apply the article pattern for this noun’s beginning."
+      ],
+      "feedback_correct_en": "Correct: una is the natural choice.",
+      "feedback_wrong_en": "The expected article is una.",
+      "explanation_en": "This feminine noun begins with g; the expected article is una.",
+      "skill_ids": [
+        "it.a1.articles.indefinite.gender"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "indefinite.singular.feminine.consonant"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "comprare",
+          "giacca",
+          "un",
+          "uno",
+          "una",
+          "un'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.q20",
+      "type": "fill_gap",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Write the correct singular indefinite article in the blank.",
+      "context_target": "",
+      "prompt_target": "Ho ___ zio a Roma.",
+      "prompt_en": "Enter only the missing article.",
+      "options": [],
+      "accepted_answers": [
+        "uno"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Decide whether the noun is masculine or feminine.",
+        "Check its first sound; use the matching singular article."
+      ],
+      "feedback_correct_en": "Correct: uno.",
+      "feedback_wrong_en": "The expected article here is uno.",
+      "explanation_en": "Masculine noun beginning with z takes uno in the requested form.",
+      "skill_ids": [
+        "it.a1.articles.indefinite.initial_sound"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "indefinite.singular.masculine.special"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "zio",
+          "a",
+          "uno"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.q21",
+      "type": "guided_production",
+      "stage": "transfer",
+      "difficulty": 4,
+      "instruction_en": "Write two original short Italian sentences: use the correct indefinite article with ospedale and università, including the usual elided form.",
+      "context_target": "",
+      "prompt_target": "ospedale; università",
+      "prompt_en": "Write your own short Italian text, then check it against the criteria.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Find the gender and starting sound of each noun.",
+        "Use two different article forms if the task asks for two."
+      ],
+      "feedback_correct_en": "Your short text matches the grammar criteria.",
+      "feedback_wrong_en": "Compare your articles with the reference and check the apostrophe.",
+      "explanation_en": "Cerco un ospedale. Cerco un'università.",
+      "skill_ids": [
+        "it.a1.articles.indefinite.production"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "Write un ospedale: the noun is masculine.",
+          "Write un'università: the noun is feminine and begins with a vowel.",
+          "Keep the sentences natural and short."
+        ],
+        "example_response": "Cerco un ospedale. Cerco un'università."
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ospedale",
+          "università",
+          "cercare",
+          "un",
+          "un'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.q22",
+      "type": "multiple_choice",
+      "stage": "review",
+      "difficulty": 2,
+      "instruction_en": "Choose the indefinite article that fits the sentence.",
+      "context_target": "",
+      "prompt_target": "Anna compra ___ penna.",
+      "prompt_en": "Select the indefinite article.",
+      "options": [
+        {
+          "id": "it.a1.articles.indefinite.q22.opt1",
+          "text": "una",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "una is the expected article in this context."
+        },
+        {
+          "id": "it.a1.articles.indefinite.q22.opt2",
+          "text": "un",
+          "correct": false,
+          "error_type": "wrong_article",
+          "explanation_en": "Check the noun’s gender and initial sound before choosing the article."
+        },
+        {
+          "id": "it.a1.articles.indefinite.q22.opt3",
+          "text": "uno",
+          "correct": false,
+          "error_type": "gender_overgeneralisation",
+          "explanation_en": "Uno is masculine; a feminine noun needs una before a consonant."
+        },
+        {
+          "id": "it.a1.articles.indefinite.q22.opt4",
+          "text": "un'",
+          "correct": false,
+          "error_type": "incorrect_elision",
+          "explanation_en": "The apostrophe form is normally used before a vowel-initial feminine noun."
+        }
+      ],
+      "accepted_answers": [
+        "una"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the noun’s gender and its initial sound.",
+        "Apply the article pattern for this noun’s beginning."
+      ],
+      "feedback_correct_en": "Correct: una is the natural choice.",
+      "feedback_wrong_en": "The expected article is una.",
+      "explanation_en": "This feminine noun begins with p; the expected article is una.",
+      "skill_ids": [
+        "it.a1.articles.indefinite.gender"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "indefinite.singular.feminine.consonant"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "comprare",
+          "penna",
+          "un",
+          "uno",
+          "una",
+          "un'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite.q23",
+      "type": "guided_production",
+      "stage": "review",
+      "difficulty": 4,
+      "instruction_en": "Delayed mixed review: write two natural short sentences using an indefinite article with each noun.",
+      "context_target": "",
+      "prompt_target": "orologio; amica",
+      "prompt_en": "Write your own short Italian text, then check it against the criteria.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Find the gender and starting sound of each noun.",
+        "Use two different article forms if the task asks for two."
+      ],
+      "feedback_correct_en": "Your short text matches the grammar criteria.",
+      "feedback_wrong_en": "Compare your articles with the reference and check the apostrophe.",
+      "explanation_en": "Cerco un orologio. Ho un'amica.",
+      "skill_ids": [
+        "it.a1.articles.indefinite.production"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "Use un (without apostrophe) with orologio.",
+          "Use the usual elided un' with amica.",
+          "Use a natural short sentence with each noun."
+        ],
+        "example_response": "Cerco un orologio. Ho un'amica."
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "orologio",
+          "amica",
+          "un",
+          "un'",
+          "cercare",
+          "avere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "verb_application": {
+    "applicable": false,
+    "required_form_keys": [],
+    "verbs": []
+  },
+  "mastery": {
+    "minimum_scored_items": 12,
+    "required_score": 0.8,
+    "minimum_production_score": 0.7,
+    "minimum_unaided_production_items": 2,
+    "required_stages": [
+      "notice",
+      "controlled",
+      "contextual",
+      "production",
+      "transfer"
+    ],
+    "review_intervals_days": [
+      1,
+      3,
+      7,
+      14,
+      30,
+      60
+    ]
+  },
+  "vocabulary_audit": {
+    "manifest_id": "it-reviewed-9d35be468e23",
+    "used_lemmas": [
+      "a",
+      "amica",
+      "amico",
+      "anche",
+      "arancia",
+      "arrivare",
+      "avere",
+      "banana",
+      "biscotto",
+      "buongiorno",
+      "cappello",
+      "cappuccino",
+      "cercare",
+      "certo",
+      "ciao",
+      "comprare",
+      "domani",
+      "e",
+      "essere",
+      "giacca",
+      "grazie",
+      "idea",
+      "libro",
+      "mela",
+      "no",
+      "ombrello",
+      "orologio",
+      "ospedale",
+      "panino",
+      "penna",
+      "per favore",
+      "portare",
+      "prendere",
+      "quaderno",
+      "scuola",
+      "spazzolino",
+      "specchio",
+      "spremuta",
+      "studente",
+      "studentessa",
+      "torta",
+      "un",
+      "un'",
+      "una",
+      "università",
+      "uno",
+      "volere",
+      "yogurt",
+      "zaino",
+      "zio",
+      "zuppa"
+    ],
+    "target_lemmas": [
+      "un",
+      "uno",
+      "una",
+      "un'"
+    ],
+    "outside_allowlist_lemmas": [],
+    "introduced_lemmas": [],
+    "proper_names": [
+      "Anna",
+      "Marco",
+      "Roma",
+      "Milano"
+    ],
+    "grammar_only_tokens": [],
+    "above_level_lemmas": [],
+    "tests_with_unknown_vocabulary": [],
+    "status": "pass"
+  },
+  "level_audit": {
+    "target_cefr": "A1",
+    "max_sentence_length_words": 12,
+    "unapproved_grammar_features": [],
+    "scope_violations": [],
+    "status": "pass"
+  },
+  "quality_audit": {
+    "status": "pass",
+    "checks": {
+      "unique_ids": true,
+      "prerequisites_resolve": true,
+      "answers_verified": true,
+      "forms_verified": true,
+      "single_best_answers": true,
+      "naturalness_checked": true,
+      "cefr_checked": true,
+      "translations_checked": true,
+      "requested_counts_met": true
+    },
+    "issues": [],
+    "needs_human_review": [],
+    "sources": [
+      {
+        "name": "Treccani — Articoli indeterminativi",
+        "url": "https://www.treccani.it/enciclopedia/articoli-indeterminativi_%28La-grammatica-italiana%29/"
+      },
+      {
+        "name": "Accademia della Crusca — L’articolo indeterminativo",
+        "url": "https://accademiadellacrusca.it/it/consulenza/larticolo-indeterminativo/82"
+      },
+      {
+        "name": "Treccani — Un o un'?",
+        "url": "https://www.treccani.it/enciclopedia/un-o-un_%28La-grammatica-italiana%29/"
+      },
+      {
+        "name": "Zanichelli — L’articolo indeterminativo e partitivo",
+        "url": "https://int-aulalingue.scuola.zanichelli.it/benvenuti/2014/10/02/larticolo-indeterminativo-e-partitivo/"
+      }
+    ],
+    "counts": {
+      "contexts": 2,
+      "examples": 10,
+      "exercise_bank": 23,
+      "scored_exercises": 20,
+      "transfer_exercises": 4,
+      "article_form_tests": 8
+    }
+  },
+  "audit": {
+    "status": "pass",
+    "issues": [],
+    "needs_human_review": [],
+    "sources": [
+      {
+        "name": "Treccani — Articoli indeterminativi",
+        "url": "https://www.treccani.it/enciclopedia/articoli-indeterminativi_%28La-grammatica-italiana%29/"
+      },
+      {
+        "name": "Accademia della Crusca — L’articolo indeterminativo",
+        "url": "https://accademiadellacrusca.it/it/consulenza/larticolo-indeterminativo/82"
+      },
+      {
+        "name": "Treccani — Un o un'?",
+        "url": "https://www.treccani.it/enciclopedia/un-o-un_%28La-grammatica-italiana%29/"
+      },
+      {
+        "name": "Zanichelli — L’articolo indeterminativo e partitivo",
+        "url": "https://int-aulalingue.scuola.zanichelli.it/benvenuti/2014/10/02/larticolo-indeterminativo-e-partitivo/"
+      }
+    ],
+    "checks": {
+      "unique_ids": true,
+      "prerequisites_resolve": true,
+      "answers_verified": true,
+      "forms_verified": true,
+      "single_best_answers": true,
+      "naturalness_checked": true,
+      "cefr_checked": true,
+      "translations_checked": true,
+      "requested_counts_met": true
+    }
+  }
+}

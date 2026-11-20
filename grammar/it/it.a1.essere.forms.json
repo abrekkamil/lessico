@@ -1,0 +1,2243 @@
+{
+  "schema_version": "lessico-grammar-v1",
+  "content_version": "1.0.0",
+  "status": "ready",
+  "mode": "topic_pack",
+  "language": "it",
+  "explanation_language": "en",
+  "vocabulary_manifest_id": "it-reviewed-9d35be468e23",
+  "topic": {
+    "id": "it.a1.essere.forms",
+    "cefr": "A1",
+    "sequence": 8,
+    "module_id": "it.a1.essere_avere",
+    "title_target": "Il presente indicativo del verbo essere",
+    "title_en": "Present forms of essere",
+    "estimated_minutes": 8,
+    "prerequisite_ids": [
+      "it.a1.subjects.pro_drop"
+    ],
+    "learning_objectives": [
+      "Recognize and produce all six present indicative forms of essere.",
+      "Distinguish first-person singular sono from third-person plural sono using the subject.",
+      "Write è with the required accent and match siamo/siete to noi/voi."
+    ],
+    "scope_included": [
+      "sono, sei, è, siamo, siete, sono",
+      "person-form matching",
+      "affirmative forms"
+    ],
+    "scope_excluded": [
+      "compound tenses",
+      "subjunctive forms",
+      "stare contrast"
+    ],
+    "new_terms": [],
+    "reading_links": []
+  },
+  "skills": [
+    {
+      "id": "it.a1.essere.forms.recognise",
+      "description_en": "Recognise all six present indicative forms of essere, including the accented è.",
+      "capability": "recognition",
+      "critical": true
+    },
+    {
+      "id": "it.a1.essere.forms.match",
+      "description_en": "Match a present form of essere to grammatical person and number.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "it.a1.essere.forms.form",
+      "description_en": "Recall and produce the affirmative present form of essere from an explicitly given person and number.",
+      "capability": "production",
+      "critical": true
+    },
+    {
+      "id": "it.a1.essere.forms.context",
+      "description_en": "Select the present form of essere for a speaker, listener, named person or plural group in context.",
+      "capability": "contextual",
+      "critical": true
+    },
+    {
+      "id": "it.a1.essere.forms.repair",
+      "description_en": "Correct person/number mistakes in a present form of essere without changing the meaning.",
+      "capability": "production",
+      "critical": true
+    },
+    {
+      "id": "it.a1.essere.forms.produce",
+      "description_en": "Write natural short affirmative sentences using context-appropriate forms of essere.",
+      "capability": "production",
+      "critical": true
+    }
+  ],
+  "lesson": {
+    "short_explanation_en": "Essere means “to be”. Its affirmative present indicative forms are irregular: (io) sono, (tu) sei, (lui/lei) è, (noi) siamo, (voi) siete, (loro) sono. Usually the subject pronoun can be omitted when the person is clear. Notice that sono has two uses (I am / they are), and è (is) always has an accent, unlike e (and).",
+    "rule_blocks": [
+      {
+        "id": "it.a1.essere.forms.rule1",
+        "heading_en": "Singular forms",
+        "explanation_en": "Use sono for the speaker alone, sei when talking to one person, and è for one other person or thing.",
+        "pattern": "(io) sono · (tu) sei · (lui/lei) è",
+        "usage_notes_en": [
+          "An omitted subject is natural: Sono a casa. / Sei a casa?",
+          "The form è has a grave accent; e without the accent is the conjunction and."
+        ],
+        "common_errors_en": [
+          "Incorrect: Anna e a casa. Correct: Anna è a casa. (e means and.)",
+          "Incorrect: Tu è qui. Correct: Tu sei qui."
+        ],
+        "example_ids": [
+          "it.a1.essere.forms.ex01",
+          "it.a1.essere.forms.ex02",
+          "it.a1.essere.forms.ex03",
+          "it.a1.essere.forms.ex07",
+          "it.a1.essere.forms.ex09"
+        ]
+      },
+      {
+        "id": "it.a1.essere.forms.rule2",
+        "heading_en": "Plural forms",
+        "explanation_en": "Use siamo for a group including the speaker, siete for a group being addressed, and sono for a third-person group.",
+        "pattern": "(noi) siamo · (voi) siete · (loro) sono",
+        "usage_notes_en": [
+          "Noi, voi and loro can be omitted when the context identifies the group.",
+          "Choose the form from the actual subject, not from a nearby word."
+        ],
+        "common_errors_en": [
+          "Incorrect: Voi siamo qui. Correct: Voi siete qui.",
+          "Incorrect: I libri è nuovi. Correct: I libri sono nuovi."
+        ],
+        "example_ids": [
+          "it.a1.essere.forms.ex04",
+          "it.a1.essere.forms.ex05",
+          "it.a1.essere.forms.ex06",
+          "it.a1.essere.forms.ex08"
+        ]
+      },
+      {
+        "id": "it.a1.essere.forms.rule3",
+        "heading_en": "One spelling, two persons: sono",
+        "explanation_en": "The written form sono is used for both io (first-person singular) and loro (third-person plural). The subject or wider context tells you which meaning is intended.",
+        "pattern": "(io) sono → I am; (loro) sono → they are",
+        "usage_notes_en": [
+          "In an introduction, Sono Anna means I am Anna.",
+          "With a plural named subject, Anna e Marco sono means Anna and Marco are."
+        ],
+        "common_errors_en": [
+          "Do not change loro sono to loro siamo: siamo belongs to noi."
+        ],
+        "example_ids": [
+          "it.a1.essere.forms.ex01",
+          "it.a1.essere.forms.ex06",
+          "it.a1.essere.forms.ex10"
+        ]
+      }
+    ],
+    "form_tables": [
+      {
+        "id": "it.a1.essere.forms.table1",
+        "title_en": "Essere — present indicative, affirmative",
+        "columns": [
+          "Person",
+          "Italian form",
+          "Meaning"
+        ],
+        "rows": [
+          [
+            "io",
+            "sono",
+            "I am"
+          ],
+          [
+            "tu",
+            "sei",
+            "you are (one person)"
+          ],
+          [
+            "lui / lei",
+            "è",
+            "he/she is"
+          ],
+          [
+            "noi",
+            "siamo",
+            "we are"
+          ],
+          [
+            "voi",
+            "siete",
+            "you are (plural)"
+          ],
+          [
+            "loro",
+            "sono",
+            "they are"
+          ]
+        ]
+      }
+    ]
+  },
+  "contexts": [
+    {
+      "id": "it.a1.essere.forms.ctx1",
+      "type": "dialogue",
+      "setting_en": "Anna and Marco speak by phone; Anna is with her mother at a café.",
+      "lines": [
+        {
+          "speaker": "Anna",
+          "target": "Ciao, Marco! Sei a casa?",
+          "translation_en": "Hi Marco! Are you at home?"
+        },
+        {
+          "speaker": "Marco",
+          "target": "Sì, sono a casa. E tu?",
+          "translation_en": "Yes, I’m at home. And you?"
+        },
+        {
+          "speaker": "Anna",
+          "target": "Sono al bar con la mamma.",
+          "translation_en": "I’m at the café with Mum."
+        },
+        {
+          "speaker": "Marco",
+          "target": "Siete al bar?",
+          "translation_en": "Are you both at the café?"
+        },
+        {
+          "speaker": "Anna",
+          "target": "Sì, siamo al bar.",
+          "translation_en": "Yes, we’re at the café."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "Sei",
+          "lemma": "essere",
+          "skill_id": "it.a1.essere.forms.match",
+          "form_key": "indicative.present.2sg.affirmative",
+          "explanation_en": "Marco is one person being addressed: tu → sei."
+        },
+        {
+          "surface": "sono",
+          "lemma": "essere",
+          "skill_id": "it.a1.essere.forms.form",
+          "form_key": "indicative.present.1sg.affirmative",
+          "explanation_en": "Marco is speaking about himself: (io) sono."
+        },
+        {
+          "surface": "Siete",
+          "lemma": "essere",
+          "skill_id": "it.a1.essere.forms.context",
+          "form_key": "indicative.present.2pl.affirmative",
+          "explanation_en": "Marco is asking about Anna and her mother together: voi → siete."
+        },
+        {
+          "surface": "siamo",
+          "lemma": "essere",
+          "skill_id": "it.a1.essere.forms.context",
+          "form_key": "indicative.present.1pl.affirmative",
+          "explanation_en": "Anna replies on behalf of herself and her mother: noi → siamo."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ciao",
+          "essere",
+          "a",
+          "casa",
+          "sì",
+          "e",
+          "tu",
+          "al",
+          "bar",
+          "con",
+          "la",
+          "mamma"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.ctx2",
+      "type": "narrative",
+      "setting_en": "A short update about where people are during the day.",
+      "lines": [
+        {
+          "speaker": "Narrator",
+          "target": "Oggi Anna e Marco sono a Roma.",
+          "translation_en": "Today Anna and Marco are in Rome."
+        },
+        {
+          "speaker": "Narrator",
+          "target": "La mamma è a casa.",
+          "translation_en": "Mum is at home."
+        },
+        {
+          "speaker": "Narrator",
+          "target": "I bambini sono a scuola.",
+          "translation_en": "The children are at school."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "sono",
+          "lemma": "essere",
+          "skill_id": "it.a1.essere.forms.match",
+          "form_key": "indicative.present.3pl.affirmative",
+          "explanation_en": "Anna and Marco form a third-person plural subject: loro → sono."
+        },
+        {
+          "surface": "è",
+          "lemma": "essere",
+          "skill_id": "it.a1.essere.forms.recognise",
+          "form_key": "indicative.present.3sg.affirmative",
+          "explanation_en": "La mamma is singular: lei → è, with an accent."
+        },
+        {
+          "surface": "sono",
+          "lemma": "essere",
+          "skill_id": "it.a1.essere.forms.context",
+          "form_key": "indicative.present.3pl.affirmative",
+          "explanation_en": "I bambini is plural: loro → sono."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "oggi",
+          "e",
+          "essere",
+          "a",
+          "la",
+          "mamma",
+          "casa",
+          "i",
+          "bambino",
+          "scuola"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "it.a1.essere.forms.ex01",
+      "target": "Sono Anna.",
+      "translation_en": "I’m Anna.",
+      "focus_surface": "Sono",
+      "skill_ids": [
+        "it.a1.essere.forms.form"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "The speaker usually omits io; sono is first-person singular here.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.ex02",
+      "target": "Sei a scuola?",
+      "translation_en": "Are you at school?",
+      "focus_surface": "Sei",
+      "skill_ids": [
+        "it.a1.essere.forms.match"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Sei goes with one person addressed as tu.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "a",
+          "scuola"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.ex03",
+      "target": "Marco è qui.",
+      "translation_en": "Marco is here.",
+      "focus_surface": "è",
+      "skill_ids": [
+        "it.a1.essere.forms.recognise"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "È is third-person singular and needs an accent.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "qui"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.ex04",
+      "target": "Siamo in biblioteca.",
+      "translation_en": "We are in the library.",
+      "focus_surface": "Siamo",
+      "skill_ids": [
+        "it.a1.essere.forms.form"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Siamo identifies the speaker plus at least one other person.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "in",
+          "biblioteca"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.ex05",
+      "target": "Siete a casa?",
+      "translation_en": "Are you all at home?",
+      "focus_surface": "Siete",
+      "skill_ids": [
+        "it.a1.essere.forms.match"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.2pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Siete addresses more than one person.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "a",
+          "casa"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.ex06",
+      "target": "Anna e Marco sono al parco.",
+      "translation_en": "Anna and Marco are at the park.",
+      "focus_surface": "sono",
+      "skill_ids": [
+        "it.a1.essere.forms.match"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Sono is third-person plural here because two named people are the subject.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "e",
+          "essere",
+          "al",
+          "parco"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.ex07",
+      "target": "La casa è grande.",
+      "translation_en": "The house is big.",
+      "focus_surface": "è",
+      "skill_ids": [
+        "it.a1.essere.forms.context"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "A single house takes è, not sono.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "la",
+          "casa",
+          "essere",
+          "grande"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.ex08",
+      "target": "I libri sono nuovi.",
+      "translation_en": "The books are new.",
+      "focus_surface": "sono",
+      "skill_ids": [
+        "it.a1.essere.forms.context"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "The plural subject i libri takes sono.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "i",
+          "libro",
+          "essere",
+          "nuovo"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.ex09",
+      "target": "Il bambino è felice.",
+      "translation_en": "The child is happy.",
+      "focus_surface": "è",
+      "skill_ids": [
+        "it.a1.essere.forms.context"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "The singular subject il bambino takes è.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "il",
+          "bambino",
+          "essere",
+          "felice"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.ex10",
+      "target": "Io sono a Roma, loro sono a Milano.",
+      "translation_en": "I am in Rome; they are in Milan.",
+      "focus_surface": "sono",
+      "skill_ids": [
+        "it.a1.essere.forms.context"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative",
+        "indicative.present.3pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "The identical surface form sono works with io and loro; the contrasting pronouns make the distinction explicit.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "io",
+          "essere",
+          "a",
+          "loro"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "id": "it.a1.essere.forms.q01",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the affirmative present indicative form of essere for io.",
+      "context_target": "",
+      "prompt_target": "Io ___ qui.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.essere.forms.q01.opt1",
+          "text": "sono",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct person, number and present indicative form."
+        },
+        {
+          "id": "it.a1.essere.forms.q01.opt2",
+          "text": "sei",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Sei is second-person singular."
+        },
+        {
+          "id": "it.a1.essere.forms.q01.opt3",
+          "text": "è",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "È is third-person singular."
+        },
+        {
+          "id": "it.a1.essere.forms.q01.opt4",
+          "text": "siamo",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "Siamo is first-person plural."
+        }
+      ],
+      "accepted_answers": [
+        "sono"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Find the person and number of the subject first.",
+        "Use the matching present-indicative form of essere from the table."
+      ],
+      "feedback_correct_en": "Correct: sono.",
+      "feedback_wrong_en": "Expected: sono. Io is first-person singular and takes sono.",
+      "explanation_en": "Io is first-person singular and takes sono.",
+      "skill_ids": [
+        "it.a1.essere.forms.recognise"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "io",
+          "qui",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.q02",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the correct form of essere for Anna.",
+      "context_target": "",
+      "prompt_target": "Anna ___ a casa.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.essere.forms.q02.opt1",
+          "text": "e",
+          "correct": false,
+          "error_type": "missing_accent_or_conjunction",
+          "explanation_en": "E without an accent means and, not is."
+        },
+        {
+          "id": "it.a1.essere.forms.q02.opt2",
+          "text": "è",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct person, number and present indicative form."
+        },
+        {
+          "id": "it.a1.essere.forms.q02.opt3",
+          "text": "sono",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "Sono is for io or a third-person plural subject."
+        },
+        {
+          "id": "it.a1.essere.forms.q02.opt4",
+          "text": "sei",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Sei is for tu."
+        }
+      ],
+      "accepted_answers": [
+        "è"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Find the person and number of the subject first.",
+        "Use the matching present-indicative form of essere from the table."
+      ],
+      "feedback_correct_en": "Correct: è.",
+      "feedback_wrong_en": "Expected: è. Anna is one person, so the correct form is è with a written accent.",
+      "explanation_en": "Anna is one person, so the correct form is è with a written accent.",
+      "skill_ids": [
+        "it.a1.essere.forms.recognise"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "a",
+          "casa",
+          "essere",
+          "e"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.q03",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the affirmative present form of essere for Anna e Marco.",
+      "context_target": "",
+      "prompt_target": "Anna e Marco ___ in città.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.essere.forms.q03.opt1",
+          "text": "siamo",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Siamo is for noi."
+        },
+        {
+          "id": "it.a1.essere.forms.q03.opt2",
+          "text": "siete",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Siete is for voi."
+        },
+        {
+          "id": "it.a1.essere.forms.q03.opt3",
+          "text": "sono",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct person, number and present indicative form."
+        },
+        {
+          "id": "it.a1.essere.forms.q03.opt4",
+          "text": "è",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "È is singular."
+        }
+      ],
+      "accepted_answers": [
+        "sono"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Find the person and number of the subject first.",
+        "Use the matching present-indicative form of essere from the table."
+      ],
+      "feedback_correct_en": "Correct: sono.",
+      "feedback_wrong_en": "Expected: sono. Anna e Marco are two people: their third-person plural form is sono.",
+      "explanation_en": "Anna e Marco are two people: their third-person plural form is sono.",
+      "skill_ids": [
+        "it.a1.essere.forms.match"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "e",
+          "in",
+          "città",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.q04",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Select the correct present form of essere.",
+      "context_target": "",
+      "prompt_target": "Tu ___ al bar?",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.essere.forms.q04.opt1",
+          "text": "sono",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Sono is for io or loro, not tu."
+        },
+        {
+          "id": "it.a1.essere.forms.q04.opt2",
+          "text": "siete",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "Siete refers to voi (plural)."
+        },
+        {
+          "id": "it.a1.essere.forms.q04.opt3",
+          "text": "è",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "È is for lui, lei or a singular named subject."
+        },
+        {
+          "id": "it.a1.essere.forms.q04.opt4",
+          "text": "sei",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct person, number and present indicative form."
+        }
+      ],
+      "accepted_answers": [
+        "sei"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Find the person and number of the subject first.",
+        "Use the matching present-indicative form of essere from the table."
+      ],
+      "feedback_correct_en": "Correct: sei.",
+      "feedback_wrong_en": "Expected: sei. Tu is second-person singular and takes sei.",
+      "explanation_en": "Tu is second-person singular and takes sei.",
+      "skill_ids": [
+        "it.a1.essere.forms.match"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "tu",
+          "al",
+          "bar",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.q05",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Choose the form of essere for noi.",
+      "context_target": "",
+      "prompt_target": "Noi ___ al parco.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.essere.forms.q05.opt1",
+          "text": "siamo",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct person, number and present indicative form."
+        },
+        {
+          "id": "it.a1.essere.forms.q05.opt2",
+          "text": "sono",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Sono is for io or loro, not noi."
+        },
+        {
+          "id": "it.a1.essere.forms.q05.opt3",
+          "text": "sei",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Sei is for tu."
+        },
+        {
+          "id": "it.a1.essere.forms.q05.opt4",
+          "text": "siete",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Siete is for voi."
+        }
+      ],
+      "accepted_answers": [
+        "siamo"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Find the person and number of the subject first.",
+        "Use the matching present-indicative form of essere from the table."
+      ],
+      "feedback_correct_en": "Correct: siamo.",
+      "feedback_wrong_en": "Expected: siamo. Noi takes siamo.",
+      "explanation_en": "Noi takes siamo.",
+      "skill_ids": [
+        "it.a1.essere.forms.match"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "noi",
+          "al",
+          "parco",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.q06",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Choose the present form for people addressed as voi.",
+      "context_target": "",
+      "prompt_target": "Voi ___ in biblioteca?",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.essere.forms.q06.opt1",
+          "text": "siamo",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Siamo is for noi."
+        },
+        {
+          "id": "it.a1.essere.forms.q06.opt2",
+          "text": "siete",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct person, number and present indicative form."
+        },
+        {
+          "id": "it.a1.essere.forms.q06.opt3",
+          "text": "sono",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Sono is for io or loro."
+        },
+        {
+          "id": "it.a1.essere.forms.q06.opt4",
+          "text": "sei",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "Sei is for one person addressed as tu."
+        }
+      ],
+      "accepted_answers": [
+        "siete"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Find the person and number of the subject first.",
+        "Use the matching present-indicative form of essere from the table."
+      ],
+      "feedback_correct_en": "Correct: siete.",
+      "feedback_wrong_en": "Expected: siete. Voi takes siete.",
+      "explanation_en": "Voi takes siete.",
+      "skill_ids": [
+        "it.a1.essere.forms.match"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.2pl.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "voi",
+          "in",
+          "biblioteca",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.q07",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the affirmative present indicative form of essere: first person singular (io).",
+      "context_target": "",
+      "prompt_target": "___ a casa.",
+      "prompt_en": "Complete the short sentence using the specified verb form.",
+      "options": [],
+      "accepted_answers": [
+        "sono"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The subject is the single speaker.",
+        "The first-person singular present form begins with s."
+      ],
+      "feedback_correct_en": "Correct: sono.",
+      "feedback_wrong_en": "Expected: sono. First-person singular is sono.",
+      "explanation_en": "First-person singular is sono.",
+      "skill_ids": [
+        "it.a1.essere.forms.form"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "a",
+          "casa",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.q08",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the affirmative present indicative form of essere: second person singular (tu).",
+      "context_target": "",
+      "prompt_target": "___ al parco?",
+      "prompt_en": "This question addresses one person.",
+      "options": [],
+      "accepted_answers": [
+        "sei"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The person addressed is singular.",
+        "The present form has three letters."
+      ],
+      "feedback_correct_en": "Correct: sei.",
+      "feedback_wrong_en": "Expected: sei. Second-person singular is sei.",
+      "explanation_en": "Second-person singular is sei.",
+      "skill_ids": [
+        "it.a1.essere.forms.form"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "al",
+          "parco",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.q09",
+      "type": "conjugate",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_en": "Write only the affirmative present indicative form of essere: third person singular (lei / Anna).",
+      "context_target": "",
+      "prompt_target": "Anna ___ in biblioteca.",
+      "prompt_en": "Supply the verb only; preserve the accent.",
+      "options": [],
+      "accepted_answers": [
+        "è"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct: è.",
+      "feedback_wrong_en": "Expected: è. Third-person singular is è, with its accent.",
+      "explanation_en": "Third-person singular is è, with its accent.",
+      "skill_ids": [
+        "it.a1.essere.forms.form"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "in",
+          "biblioteca",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.q10",
+      "type": "conjugate",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_en": "Write only the affirmative present indicative form of essere: first person plural (noi).",
+      "context_target": "",
+      "prompt_target": "___ al bar.",
+      "prompt_en": "The speaker includes themselves and other people.",
+      "options": [],
+      "accepted_answers": [
+        "siamo"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct: siamo.",
+      "feedback_wrong_en": "Expected: siamo. First-person plural is siamo.",
+      "explanation_en": "First-person plural is siamo.",
+      "skill_ids": [
+        "it.a1.essere.forms.form"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "al",
+          "bar",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.q11",
+      "type": "conjugate",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_en": "Write only the affirmative present indicative form of essere: second person plural (voi).",
+      "context_target": "",
+      "prompt_target": "___ a scuola?",
+      "prompt_en": "This addresses a group.",
+      "options": [],
+      "accepted_answers": [
+        "siete"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct: siete.",
+      "feedback_wrong_en": "Expected: siete. Second-person plural is siete.",
+      "explanation_en": "Second-person plural is siete.",
+      "skill_ids": [
+        "it.a1.essere.forms.form"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.2pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "a",
+          "scuola",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.q12",
+      "type": "conjugate",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_en": "Write only the affirmative present indicative form of essere: third person plural (loro / i bambini).",
+      "context_target": "",
+      "prompt_target": "I bambini ___ in città.",
+      "prompt_en": "The subject is a plural group not including the speaker or listener.",
+      "options": [],
+      "accepted_answers": [
+        "sono"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct: sono.",
+      "feedback_wrong_en": "Expected: sono. Third-person plural is sono, the same surface form as io.",
+      "explanation_en": "Third-person plural is sono, the same surface form as io.",
+      "skill_ids": [
+        "it.a1.essere.forms.form"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "i",
+          "bambino",
+          "in",
+          "città",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.q13",
+      "type": "conjugate",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_en": "Write only the affirmative present indicative form of essere: first person singular (io).",
+      "context_target": "",
+      "prompt_target": "Io ___ qui.",
+      "prompt_en": "This is a fresh recall test without hints.",
+      "options": [],
+      "accepted_answers": [
+        "sono"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct: sono.",
+      "feedback_wrong_en": "Expected: sono. The first-person singular present form is sono.",
+      "explanation_en": "The first-person singular present form is sono.",
+      "skill_ids": [
+        "it.a1.essere.forms.form"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "io",
+          "qui",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.q14",
+      "type": "conjugate",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_en": "Write only the affirmative present indicative form of essere: second person singular (tu).",
+      "context_target": "",
+      "prompt_target": "Tu ___ a casa?",
+      "prompt_en": "This is a fresh recall test without hints.",
+      "options": [],
+      "accepted_answers": [
+        "sei"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct: sei.",
+      "feedback_wrong_en": "Expected: sei. The second-person singular present form is sei.",
+      "explanation_en": "The second-person singular present form is sei.",
+      "skill_ids": [
+        "it.a1.essere.forms.form"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "tu",
+          "a",
+          "casa",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.q15",
+      "type": "fill_gap",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_en": "A mother asks Anna whether she and Marco are at school. Write the appropriate present form of essere only.",
+      "context_target": "Anna e Marco sono a scuola. La mamma parla con Anna.",
+      "prompt_target": "___ a scuola?",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "siete"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The question addresses Anna and Marco together, not just Anna.",
+        "Use the voi form of essere."
+      ],
+      "feedback_correct_en": "Correct: siete.",
+      "feedback_wrong_en": "Expected: siete. The mother addresses Anna and Marco as a group: voi → siete.",
+      "explanation_en": "The mother addresses Anna and Marco as a group: voi → siete.",
+      "skill_ids": [
+        "it.a1.essere.forms.context"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.2pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "a",
+          "scuola",
+          "e",
+          "essere",
+          "la",
+          "mamma",
+          "parlare",
+          "con"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.q16",
+      "type": "multiple_choice",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_en": "Choose the present form of essere that completes the second sentence.",
+      "context_target": "Anna e Marco sono a Roma.",
+      "prompt_target": "La mamma ___ a Milano.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.essere.forms.q16.opt1",
+          "text": "sono",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "Sono does not agree with the singular la mamma."
+        },
+        {
+          "id": "it.a1.essere.forms.q16.opt2",
+          "text": "siamo",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Siamo is for noi."
+        },
+        {
+          "id": "it.a1.essere.forms.q16.opt3",
+          "text": "è",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct person, number and present indicative form."
+        },
+        {
+          "id": "it.a1.essere.forms.q16.opt4",
+          "text": "siete",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Siete is for voi."
+        }
+      ],
+      "accepted_answers": [
+        "è"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Find the person and number of the subject first.",
+        "Use the matching present-indicative form of essere from the table."
+      ],
+      "feedback_correct_en": "Correct: è.",
+      "feedback_wrong_en": "Expected: è. La mamma refers to one person and takes è.",
+      "explanation_en": "La mamma refers to one person and takes è.",
+      "skill_ids": [
+        "it.a1.essere.forms.context"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "la",
+          "mamma",
+          "a",
+          "e",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.q17",
+      "type": "transform",
+      "stage": "production",
+      "difficulty": 3,
+      "instruction_en": "Change the grammatical subject from noi to voi; make the corresponding verb change and change nothing else.",
+      "context_target": "",
+      "prompt_target": "Noi siamo al parco.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "Voi siete al parco."
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Noi is first-person plural, but voi is second-person plural.",
+        "Keep al parco unchanged; use the voi form of essere."
+      ],
+      "feedback_correct_en": "Correct: Voi siete al parco.",
+      "feedback_wrong_en": "Expected: Voi siete al parco. Changing noi to voi requires changing siamo to siete; the remaining words are unchanged.",
+      "explanation_en": "Changing noi to voi requires changing siamo to siete; the remaining words are unchanged.",
+      "skill_ids": [
+        "it.a1.essere.forms.repair"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.2pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "noi",
+          "essere",
+          "al",
+          "parco",
+          "voi"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.q18",
+      "type": "error_correction",
+      "stage": "production",
+      "difficulty": 3,
+      "instruction_en": "Correct only the form of essere. Keep all the other words exactly the same.",
+      "context_target": "",
+      "prompt_target": "Il bambino sono qui.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "Il bambino è qui."
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Il bambino refers to one child.",
+        "Use the third-person singular form with an accent."
+      ],
+      "feedback_correct_en": "Correct: Il bambino è qui.",
+      "feedback_wrong_en": "Expected: Il bambino è qui. Il bambino is singular and requires è, not sono.",
+      "explanation_en": "Il bambino is singular and requires è, not sono.",
+      "skill_ids": [
+        "it.a1.essere.forms.repair"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "il",
+          "bambino",
+          "essere",
+          "qui"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.q19",
+      "type": "multiple_choice",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Choose the present form of essere that agrees with the new plural subject.",
+      "context_target": "",
+      "prompt_target": "Le studentesse ___ al parco.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.essere.forms.q19.opt1",
+          "text": "è",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "È is third-person singular."
+        },
+        {
+          "id": "it.a1.essere.forms.q19.opt2",
+          "text": "siamo",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Siamo is for noi."
+        },
+        {
+          "id": "it.a1.essere.forms.q19.opt3",
+          "text": "siete",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Siete is for voi."
+        },
+        {
+          "id": "it.a1.essere.forms.q19.opt4",
+          "text": "sono",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct person, number and present indicative form."
+        }
+      ],
+      "accepted_answers": [
+        "sono"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Find the person and number of the subject first.",
+        "Use the matching present-indicative form of essere from the table."
+      ],
+      "feedback_correct_en": "Correct: sono.",
+      "feedback_wrong_en": "Expected: sono. Le studentesse is plural, so the correct third-person plural form is sono.",
+      "explanation_en": "Le studentesse is plural, so the correct third-person plural form is sono.",
+      "skill_ids": [
+        "it.a1.essere.forms.context"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "le",
+          "studentessa",
+          "al",
+          "parco",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.q20",
+      "type": "fill_gap",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Write only the present indicative form of essere for the singular subject.",
+      "context_target": "",
+      "prompt_target": "Il ristorante ___ a Roma.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "è"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The subject names a single place.",
+        "The third-person singular form takes a written accent."
+      ],
+      "feedback_correct_en": "Correct: è.",
+      "feedback_wrong_en": "Expected: è. Il ristorante is singular: è.",
+      "explanation_en": "Il ristorante is singular: è.",
+      "skill_ids": [
+        "it.a1.essere.forms.context"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "il",
+          "ristorante",
+          "a",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.q21",
+      "type": "guided_production",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Write two short affirmative sentences about these people and places, choosing the correct form of essere for each subject.",
+      "context_target": "",
+      "prompt_target": "Marco; biblioteca / Anna e la mamma; casa",
+      "prompt_en": "You may use different natural word order. Do not merely list verb forms.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Use the rubric to check your answer.",
+      "feedback_wrong_en": "Check the person and the matching verb form, then compare your answer with the rubric.",
+      "explanation_en": "The singular subject Marco takes è; the plural pair Anna e la mamma takes sono.",
+      "skill_ids": [
+        "it.a1.essere.forms.produce"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative",
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "Both sentences express the supplied people and locations.",
+          "The singular subject takes è and the plural subject takes sono.",
+          "The sentences use standard A1 Italian; minor acceptable variations are not exact-matched."
+        ],
+        "example_response": "Marco è in biblioteca. Anna e la mamma sono a casa."
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "biblioteca",
+          "e",
+          "la",
+          "mamma",
+          "casa",
+          "essere",
+          "in",
+          "a"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.q22",
+      "type": "guided_production",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Write a natural message asking a group whether they are at the park and saying your group is at the café. Use the present of essere.",
+      "context_target": "",
+      "prompt_target": "voi; parco / noi; bar",
+      "prompt_en": "Use two short sentences and the appropriate question mark.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Use the rubric to check your answer.",
+      "feedback_wrong_en": "Check the person and the matching verb form, then compare your answer with the rubric.",
+      "explanation_en": "Siete is the form for voi; siamo is the form for noi.",
+      "skill_ids": [
+        "it.a1.essere.forms.produce"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.2pl.affirmative",
+        "indicative.present.1pl.affirmative"
+      ],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "The question addresses voi and uses siete.",
+          "The statement refers to noi and uses siamo.",
+          "Both sentences are affirmative present-indicative forms (the question is not a negative); punctuation is natural."
+        ],
+        "example_response": "Siete al parco? Noi siamo al bar."
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "voi",
+          "parco",
+          "noi",
+          "bar",
+          "essere",
+          "al"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.forms.q23",
+      "type": "guided_production",
+      "stage": "review",
+      "difficulty": 3,
+      "instruction_en": "Delayed review: write two short affirmative sentences using sono once for the speaker and once for Anna and Marco.",
+      "context_target": "",
+      "prompt_target": "io; casa / Anna e Marco; biblioteca",
+      "prompt_en": "Do not change the two subjects or places. You may omit io in the first sentence.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Use the rubric to check your answer.",
+      "feedback_wrong_en": "Check the person and the matching verb form, then compare your answer with the rubric.",
+      "explanation_en": "Sono must fit both first-person singular and third-person plural, without confusing their subjects.",
+      "skill_ids": [
+        "it.a1.essere.forms.produce"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative",
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "The first sentence refers to io and uses sono.",
+          "The second sentence refers to Anna e Marco and also uses sono.",
+          "Both full sentences make grammatical sense, with standard capitalisation and punctuation."
+        ],
+        "example_response": "Sono a casa. Anna e Marco sono in biblioteca."
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "io",
+          "casa",
+          "e",
+          "biblioteca",
+          "essere",
+          "a",
+          "in"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "verb_application": {
+    "applicable": true,
+    "required_form_keys": [
+      "indicative.present.1sg.affirmative",
+      "indicative.present.2sg.affirmative",
+      "indicative.present.3sg.affirmative",
+      "indicative.present.1pl.affirmative",
+      "indicative.present.2pl.affirmative",
+      "indicative.present.3pl.affirmative"
+    ],
+    "verbs": [
+      {
+        "id": "it:essere",
+        "lemma": "essere",
+        "meaning_en": "to be",
+        "regularity": "irregular",
+        "conjugation_class": "irregular; second-conjugation infinitive",
+        "auxiliary": "essere",
+        "governed_cases_or_prepositions": [],
+        "forms": [
+          {
+            "form_key": "indicative.present.1sg.affirmative",
+            "surface": "sono",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2sg.affirmative",
+            "surface": "sei",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3sg.affirmative",
+            "surface": "è",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.1pl.affirmative",
+            "surface": "siamo",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2pl.affirmative",
+            "surface": "siete",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3pl.affirmative",
+            "surface": "sono",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          }
+        ],
+        "exercise_ids": [
+          "it.a1.essere.forms.q01",
+          "it.a1.essere.forms.q02",
+          "it.a1.essere.forms.q03",
+          "it.a1.essere.forms.q04",
+          "it.a1.essere.forms.q05",
+          "it.a1.essere.forms.q06",
+          "it.a1.essere.forms.q07",
+          "it.a1.essere.forms.q08",
+          "it.a1.essere.forms.q09",
+          "it.a1.essere.forms.q10",
+          "it.a1.essere.forms.q11",
+          "it.a1.essere.forms.q12",
+          "it.a1.essere.forms.q13",
+          "it.a1.essere.forms.q14",
+          "it.a1.essere.forms.q15",
+          "it.a1.essere.forms.q16",
+          "it.a1.essere.forms.q17",
+          "it.a1.essere.forms.q18",
+          "it.a1.essere.forms.q19",
+          "it.a1.essere.forms.q20",
+          "it.a1.essere.forms.q21",
+          "it.a1.essere.forms.q22",
+          "it.a1.essere.forms.q23"
+        ]
+      }
+    ]
+  },
+  "mastery": {
+    "minimum_scored_items": 12,
+    "required_score": 0.8,
+    "minimum_production_score": 0.7,
+    "minimum_unaided_production_items": 2,
+    "required_stages": [
+      "notice",
+      "controlled",
+      "contextual",
+      "production",
+      "transfer"
+    ],
+    "review_intervals_days": [
+      1,
+      3,
+      7,
+      14,
+      30,
+      60
+    ]
+  },
+  "vocabulary_audit": {
+    "status": "pass",
+    "manifest_id": "it-reviewed-9d35be468e23",
+    "used_lemmas": [
+      "a",
+      "al",
+      "bambino",
+      "bar",
+      "biblioteca",
+      "casa",
+      "ciao",
+      "città",
+      "con",
+      "e",
+      "essere",
+      "felice",
+      "grande",
+      "i",
+      "il",
+      "in",
+      "io",
+      "la",
+      "le",
+      "libro",
+      "loro",
+      "mamma",
+      "noi",
+      "nuovo",
+      "oggi",
+      "parco",
+      "parlare",
+      "qui",
+      "ristorante",
+      "scuola",
+      "studentessa",
+      "sì",
+      "tu",
+      "voi"
+    ],
+    "target_lemmas": [
+      "essere"
+    ],
+    "out_of_list_lemmas": [],
+    "introduced_lemmas": [],
+    "proper_names": [
+      "Anna",
+      "Marco",
+      "Milano",
+      "Roma"
+    ],
+    "grammar_only_tokens": [],
+    "above_level_lemmas": [],
+    "tests_with_unknown_vocabulary": []
+  },
+  "level_audit": {
+    "status": "pass",
+    "cefr": "A1",
+    "maximum_sentence_length_words": 8,
+    "unapproved_grammar_features": [],
+    "scope_violations": []
+  },
+  "quality_audit": {
+    "status": "pass",
+    "issues": [],
+    "needs_human_review": [],
+    "sources": [
+      {
+        "name": "PONS Italian conjugation table — essere",
+        "url": "https://it.pons.com/tabelle-dei-verbi/italiano/essere"
+      },
+      {
+        "name": "Zanichelli Aula di lingue — Il presente indicativo",
+        "url": "https://aulalingue.scuola.zanichelli.it/benvenuti/2009/10/15/il-presente-indicativo/"
+      },
+      {
+        "name": "Coniugazione.it — Essere (indicativo presente)",
+        "url": "https://www.coniugazione.it/verbo/essere.php"
+      }
+    ],
+    "checks": {
+      "unique_ids": true,
+      "prerequisites_resolve": true,
+      "answers_verified": true,
+      "forms_verified": true,
+      "single_best_answers": true,
+      "naturalness_checked": true,
+      "cefr_checked": true,
+      "translations_checked": true,
+      "requested_counts_met": true
+    }
+  },
+  "audit": {
+    "status": "pass",
+    "issues": [],
+    "needs_human_review": [],
+    "sources": [
+      {
+        "name": "PONS Italian conjugation table — essere",
+        "url": "https://it.pons.com/tabelle-dei-verbi/italiano/essere"
+      },
+      {
+        "name": "Zanichelli Aula di lingue — Il presente indicativo",
+        "url": "https://aulalingue.scuola.zanichelli.it/benvenuti/2009/10/15/il-presente-indicativo/"
+      },
+      {
+        "name": "Coniugazione.it — Essere (indicativo presente)",
+        "url": "https://www.coniugazione.it/verbo/essere.php"
+      }
+    ],
+    "checks": {
+      "unique_ids": true,
+      "prerequisites_resolve": true,
+      "answers_verified": true,
+      "forms_verified": true,
+      "single_best_answers": true,
+      "naturalness_checked": true,
+      "cefr_checked": true,
+      "translations_checked": true,
+      "requested_counts_met": true
+    }
+  }
+}

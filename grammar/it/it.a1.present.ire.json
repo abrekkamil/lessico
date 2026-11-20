@@ -1,0 +1,2512 @@
+{
+  "schema_version": "lessico-grammar-v1",
+  "content_version": "1.0.0",
+  "status": "ready",
+  "mode": "topic_pack",
+  "language": "it",
+  "explanation_language": "en",
+  "vocabulary_manifest_id": "it-reviewed-9d35be468e23",
+  "topic": {
+    "id": "it.a1.present.ire",
+    "cefr": "A1",
+    "sequence": 16,
+    "module_id": "it.a1.present",
+    "title_target": "Verbi regolari in -ire al presente",
+    "title_en": "Regular -ire verbs in the present",
+    "estimated_minutes": 8,
+    "prerequisite_ids": [
+      "it.a1.present.are"
+    ],
+    "learning_objectives": [
+      "Identify the stem of a regular non-isc -ire verb by removing -ire.",
+      "Produce the six affirmative present indicative endings -o, -i, -e, -iamo, -ite and -ono.",
+      "Use checked non-isc -ire verbs in short present-time statements."
+    ],
+    "scope_included": [
+      "regular -ire endings",
+      "person-form matching",
+      "checked non-isc verbs"
+    ],
+    "scope_excluded": [
+      "-isc verbs",
+      "irregular -ire verbs",
+      "other tenses"
+    ],
+    "new_terms": [],
+    "reading_links": []
+  },
+  "skills": [
+    {
+      "id": "it.a1.present.ire.stem",
+      "description_en": "Identify the stem of a regular non-isc -ire verb by removing -ire.",
+      "capability": "recognition",
+      "critical": true
+    },
+    {
+      "id": "it.a1.present.ire.endings",
+      "description_en": "Recognise the six regular present indicative endings for non-isc -ire verbs.",
+      "capability": "recognition",
+      "critical": true
+    },
+    {
+      "id": "it.a1.present.ire.forms",
+      "description_en": "Produce the correct regular non-isc -ire present form for a stated person and number.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "it.a1.present.ire.use",
+      "description_en": "Use regular non-isc -ire present forms in short present-time statements.",
+      "capability": "contextual",
+      "critical": true
+    },
+    {
+      "id": "it.a1.present.ire.production",
+      "description_en": "Produce short present-tense sentences with regular non-isc -ire verbs.",
+      "capability": "production",
+      "critical": false
+    }
+  ],
+  "lesson": {
+    "short_explanation_en": "Regular non-isc -ire verbs form the present indicative by removing -ire and adding -o, -i, -e, -iamo, -ite or -ono. Not all -ire verbs follow this pattern: some use -isc- in selected persons, which is taught separately in the next topic.",
+    "rule_blocks": [
+      {
+        "id": "it.a1.present.ire.rule1",
+        "heading_en": "Build a non-isc -ire present form",
+        "explanation_en": "Remove -ire from the infinitive and add the ending that matches the subject.",
+        "pattern": "stem + (-o / -i / -e / -iamo / -ite / -ono)",
+        "usage_notes_en": [
+          "The first three singular endings are -o, -i and -e.",
+          "Noi uses -iamo, voi uses -ite and loro uses -ono.",
+          "The checked verbs in this lesson do not insert -isc-."
+        ],
+        "common_errors_en": [
+          "Do not use -ete for voi; non-isc -ire verbs use -ite.",
+          "Do not use -iscono for these verbs; that pattern belongs to the -isc- class.",
+          "Do not assume every -ire verb is non-isc."
+        ],
+        "example_ids": [
+          "it.a1.present.ire.ex01",
+          "it.a1.present.ire.ex02",
+          "it.a1.present.ire.ex03",
+          "it.a1.present.ire.ex04",
+          "it.a1.present.ire.ex05",
+          "it.a1.present.ire.ex06"
+        ]
+      },
+      {
+        "id": "it.a1.present.ire.rule2",
+        "heading_en": "Use the pattern with checked verbs",
+        "explanation_en": "Sentire, aprire, partire and dormire follow the non-isc pattern in the present indicative.",
+        "pattern": "sent-o, apr-e, part-iamo, dorm-ono",
+        "usage_notes_en": [
+          "The subject is often omitted because the ending identifies the person.",
+          "This lesson only covers the present indicative forms shown here."
+        ],
+        "common_errors_en": [
+          "Do not add -isc- to sentire, aprire, partire or dormire in these present forms."
+        ],
+        "example_ids": [
+          "it.a1.present.ire.ex07",
+          "it.a1.present.ire.ex08",
+          "it.a1.present.ire.ex09",
+          "it.a1.present.ire.ex10"
+        ]
+      }
+    ],
+    "form_tables": [
+      {
+        "id": "it.a1.present.ire.table1",
+        "title_en": "Regular non-isc -ire present endings",
+        "columns": [
+          "Person",
+          "Ending",
+          "sentire"
+        ],
+        "rows": [
+          [
+            "io",
+            "-o",
+            "sento"
+          ],
+          [
+            "tu",
+            "-i",
+            "senti"
+          ],
+          [
+            "lui / lei",
+            "-e",
+            "sente"
+          ],
+          [
+            "noi",
+            "-iamo",
+            "sentiamo"
+          ],
+          [
+            "voi",
+            "-ite",
+            "sentite"
+          ],
+          [
+            "loro",
+            "-ono",
+            "sentono"
+          ]
+        ]
+      }
+    ]
+  },
+  "contexts": [
+    {
+      "id": "it.a1.present.ire.ctx1",
+      "type": "dialogue",
+      "setting_en": "Anna and Marco talk at home about their morning and evening routines.",
+      "lines": [
+        {
+          "speaker": "Anna",
+          "target": "Dormi bene?",
+          "translation_en": "Do you sleep well?"
+        },
+        {
+          "speaker": "Marco",
+          "target": "Sì, dormo bene. E tu?",
+          "translation_en": "Yes, I sleep well. And you?"
+        },
+        {
+          "speaker": "Anna",
+          "target": "Dormo bene. La mattina apro la finestra.",
+          "translation_en": "I sleep well. In the morning I open the window."
+        },
+        {
+          "speaker": "Marco",
+          "target": "Io apro la porta e poi parto.",
+          "translation_en": "I open the door and then I leave."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "Dormi",
+          "lemma": "dormire",
+          "skill_id": "it.a1.present.ire.forms",
+          "form_key": "indicative.present.2sg.affirmative",
+          "explanation_en": "Dormi is dorm- plus the second-person singular ending -i."
+        },
+        {
+          "surface": "dormo",
+          "lemma": "dormire",
+          "skill_id": "it.a1.present.ire.forms",
+          "form_key": "indicative.present.1sg.affirmative",
+          "explanation_en": "Dormo is dorm- plus -o."
+        },
+        {
+          "surface": "apro",
+          "lemma": "aprire",
+          "skill_id": "it.a1.present.ire.forms",
+          "form_key": "indicative.present.1sg.affirmative",
+          "explanation_en": "Apro is apr- plus -o."
+        },
+        {
+          "surface": "parto",
+          "lemma": "partire",
+          "skill_id": "it.a1.present.ire.forms",
+          "form_key": "indicative.present.1sg.affirmative",
+          "explanation_en": "Parto is part- plus -o."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "dormire",
+          "bene",
+          "sì",
+          "e",
+          "tu",
+          "la",
+          "mattina",
+          "aprire",
+          "finestra",
+          "io",
+          "porta",
+          "poi",
+          "partire"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.ctx2",
+      "type": "narrative",
+      "setting_en": "A short description of Anna and Marco before they leave home.",
+      "lines": [
+        {
+          "speaker": "Narrator",
+          "target": "Marco sente la musica in casa.",
+          "translation_en": "Marco hears the music at home."
+        },
+        {
+          "speaker": "Narrator",
+          "target": "Anna apre la porta.",
+          "translation_en": "Anna opens the door."
+        },
+        {
+          "speaker": "Narrator",
+          "target": "Poi partono.",
+          "translation_en": "Then they leave."
+        },
+        {
+          "speaker": "Narrator",
+          "target": "La sera dormono bene.",
+          "translation_en": "In the evening they sleep well."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "sente",
+          "lemma": "sentire",
+          "skill_id": "it.a1.present.ire.forms",
+          "form_key": "indicative.present.3sg.affirmative",
+          "explanation_en": "Sente uses the regular third-person singular ending -e."
+        },
+        {
+          "surface": "apre",
+          "lemma": "aprire",
+          "skill_id": "it.a1.present.ire.forms",
+          "form_key": "indicative.present.3sg.affirmative",
+          "explanation_en": "Apre uses -e."
+        },
+        {
+          "surface": "partono",
+          "lemma": "partire",
+          "skill_id": "it.a1.present.ire.forms",
+          "form_key": "indicative.present.3pl.affirmative",
+          "explanation_en": "Partono uses the third-person plural ending -ono."
+        },
+        {
+          "surface": "dormono",
+          "lemma": "dormire",
+          "skill_id": "it.a1.present.ire.forms",
+          "form_key": "indicative.present.3pl.affirmative",
+          "explanation_en": "Dormono uses -ono."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "sentire",
+          "la",
+          "musica",
+          "in",
+          "casa",
+          "aprire",
+          "porta",
+          "poi",
+          "partire",
+          "sera",
+          "dormire",
+          "bene"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "it.a1.present.ire.ex01",
+      "target": "Sento la musica.",
+      "translation_en": "I hear the music.",
+      "focus_surface": "Sento",
+      "skill_ids": [
+        "it.a1.present.ire.forms",
+        "it.a1.present.ire.use"
+      ],
+      "verb_ids": [
+        "it:sentire"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "sent- + -o.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "sentire",
+          "la",
+          "musica"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.ex02",
+      "target": "Senti la radio.",
+      "translation_en": "You hear the radio.",
+      "focus_surface": "Senti",
+      "skill_ids": [
+        "it.a1.present.ire.forms",
+        "it.a1.present.ire.use"
+      ],
+      "verb_ids": [
+        "it:sentire"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "sent- + -i.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "sentire",
+          "la",
+          "radio"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.ex03",
+      "target": "Anna sente la musica.",
+      "translation_en": "Anna hears the music.",
+      "focus_surface": "sente",
+      "skill_ids": [
+        "it.a1.present.ire.forms",
+        "it.a1.present.ire.use"
+      ],
+      "verb_ids": [
+        "it:sentire"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "sent- + -e.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "sentire",
+          "la",
+          "musica"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.ex04",
+      "target": "Sentiamo la radio.",
+      "translation_en": "We hear the radio.",
+      "focus_surface": "Sentiamo",
+      "skill_ids": [
+        "it.a1.present.ire.forms",
+        "it.a1.present.ire.use"
+      ],
+      "verb_ids": [
+        "it:sentire"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "sent- + -iamo.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "sentire",
+          "la",
+          "radio"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.ex05",
+      "target": "Sentite la musica.",
+      "translation_en": "You all hear the music.",
+      "focus_surface": "Sentite",
+      "skill_ids": [
+        "it.a1.present.ire.forms",
+        "it.a1.present.ire.use"
+      ],
+      "verb_ids": [
+        "it:sentire"
+      ],
+      "form_keys": [
+        "indicative.present.2pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "sent- + -ite.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "sentire",
+          "la",
+          "musica"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.ex06",
+      "target": "Sentono la radio.",
+      "translation_en": "They hear the radio.",
+      "focus_surface": "Sentono",
+      "skill_ids": [
+        "it.a1.present.ire.forms",
+        "it.a1.present.ire.use"
+      ],
+      "verb_ids": [
+        "it:sentire"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "sent- + -ono.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "sentire",
+          "la",
+          "radio"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.ex07",
+      "target": "Apro la porta.",
+      "translation_en": "I open the door.",
+      "focus_surface": "Apro",
+      "skill_ids": [
+        "it.a1.present.ire.forms",
+        "it.a1.present.ire.use"
+      ],
+      "verb_ids": [
+        "it:aprire"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "apr- + -o.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "aprire",
+          "la",
+          "porta"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.ex08",
+      "target": "Apriamo la finestra.",
+      "translation_en": "We open the window.",
+      "focus_surface": "Apriamo",
+      "skill_ids": [
+        "it.a1.present.ire.forms",
+        "it.a1.present.ire.use"
+      ],
+      "verb_ids": [
+        "it:aprire"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "apr- + -iamo.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "aprire",
+          "la",
+          "finestra"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.ex09",
+      "target": "Marco parte domani.",
+      "translation_en": "Marco leaves tomorrow.",
+      "focus_surface": "parte",
+      "skill_ids": [
+        "it.a1.present.ire.forms",
+        "it.a1.present.ire.use"
+      ],
+      "verb_ids": [
+        "it:partire"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "part- + -e.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "partire",
+          "domani"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.ex10",
+      "target": "Dormono bene.",
+      "translation_en": "They sleep well.",
+      "focus_surface": "Dormono",
+      "skill_ids": [
+        "it.a1.present.ire.forms",
+        "it.a1.present.ire.use"
+      ],
+      "verb_ids": [
+        "it:dormire"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "dorm- + -ono.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "dormire",
+          "bene"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "id": "it.a1.present.ire.q01",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Which ending marks voi in the regular non-isc -ire present?",
+      "context_target": "",
+      "prompt_target": "sentite",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.present.ire.q01.o1",
+          "text": "-ete",
+          "correct": false,
+          "error_type": "wrong_form",
+          "explanation_en": "This option uses the wrong person, number, ending, or verb-class pattern."
+        },
+        {
+          "id": "it.a1.present.ire.q01.o2",
+          "text": "-ono",
+          "correct": false,
+          "error_type": "wrong_form",
+          "explanation_en": "This option uses the wrong person, number, ending, or verb-class pattern."
+        },
+        {
+          "id": "it.a1.present.ire.q01.o3",
+          "text": "-ite",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct for the stated person and verb class."
+        },
+        {
+          "id": "it.a1.present.ire.q01.o4",
+          "text": "-iamo",
+          "correct": false,
+          "error_type": "wrong_form",
+          "explanation_en": "This option uses the wrong person, number, ending, or verb-class pattern."
+        }
+      ],
+      "accepted_answers": [
+        "-ite"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the subject person and number first.",
+        "For a non-isc -ire verb, match it to -o, -i, -e, -iamo, -ite or -ono."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the subject and the non-isc -ire ending.",
+      "explanation_en": "The voi ending is -ite.",
+      "skill_ids": [
+        "it.a1.present.ire.endings"
+      ],
+      "verb_ids": [
+        "it:sentire"
+      ],
+      "form_keys": [
+        "indicative.present.2pl.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "sentire"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "-ite"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.q02",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the stem of the verb.",
+      "context_target": "",
+      "prompt_target": "dormire",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.present.ire.q02.o1",
+          "text": "dorm-",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct for the stated person and verb class."
+        },
+        {
+          "id": "it.a1.present.ire.q02.o2",
+          "text": "dormi-",
+          "correct": false,
+          "error_type": "wrong_form",
+          "explanation_en": "This option uses the wrong person, number, ending, or verb-class pattern."
+        },
+        {
+          "id": "it.a1.present.ire.q02.o3",
+          "text": "dormir-",
+          "correct": false,
+          "error_type": "wrong_form",
+          "explanation_en": "This option uses the wrong person, number, ending, or verb-class pattern."
+        },
+        {
+          "id": "it.a1.present.ire.q02.o4",
+          "text": "dor-",
+          "correct": false,
+          "error_type": "wrong_form",
+          "explanation_en": "This option uses the wrong person, number, ending, or verb-class pattern."
+        }
+      ],
+      "accepted_answers": [
+        "dorm-"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the subject person and number first.",
+        "For a non-isc -ire verb, match it to -o, -i, -e, -iamo, -ite or -ono."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the subject and the non-isc -ire ending.",
+      "explanation_en": "Removing -ire from dormire leaves dorm-.",
+      "skill_ids": [
+        "it.a1.present.ire.stem"
+      ],
+      "verb_ids": [
+        "it:dormire"
+      ],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "dormire"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "dorm"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.q03",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Choose the correct form.",
+      "context_target": "",
+      "prompt_target": "Anna ___ la porta.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.present.ire.q03.o1",
+          "text": "aprono",
+          "correct": false,
+          "error_type": "wrong_form",
+          "explanation_en": "This option uses the wrong person, number, ending, or verb-class pattern."
+        },
+        {
+          "id": "it.a1.present.ire.q03.o2",
+          "text": "apri",
+          "correct": false,
+          "error_type": "wrong_form",
+          "explanation_en": "This option uses the wrong person, number, ending, or verb-class pattern."
+        },
+        {
+          "id": "it.a1.present.ire.q03.o3",
+          "text": "apriamo",
+          "correct": false,
+          "error_type": "wrong_form",
+          "explanation_en": "This option uses the wrong person, number, ending, or verb-class pattern."
+        },
+        {
+          "id": "it.a1.present.ire.q03.o4",
+          "text": "apre",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct for the stated person and verb class."
+        }
+      ],
+      "accepted_answers": [
+        "apre"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the subject person and number first.",
+        "For a non-isc -ire verb, match it to -o, -i, -e, -iamo, -ite or -ono."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the subject and the non-isc -ire ending.",
+      "explanation_en": "Anna is third-person singular, so aprire becomes apre.",
+      "skill_ids": [
+        "it.a1.present.ire.forms"
+      ],
+      "verb_ids": [
+        "it:aprire"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "aprire",
+          "la",
+          "porta"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.q04",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Choose the correct form.",
+      "context_target": "",
+      "prompt_target": "Noi ___ la musica.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.present.ire.q04.o1",
+          "text": "sentono",
+          "correct": false,
+          "error_type": "wrong_form",
+          "explanation_en": "This option uses the wrong person, number, ending, or verb-class pattern."
+        },
+        {
+          "id": "it.a1.present.ire.q04.o2",
+          "text": "sentiamo",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct for the stated person and verb class."
+        },
+        {
+          "id": "it.a1.present.ire.q04.o3",
+          "text": "sentite",
+          "correct": false,
+          "error_type": "wrong_form",
+          "explanation_en": "This option uses the wrong person, number, ending, or verb-class pattern."
+        },
+        {
+          "id": "it.a1.present.ire.q04.o4",
+          "text": "sento",
+          "correct": false,
+          "error_type": "wrong_form",
+          "explanation_en": "This option uses the wrong person, number, ending, or verb-class pattern."
+        }
+      ],
+      "accepted_answers": [
+        "sentiamo"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the subject person and number first.",
+        "For a non-isc -ire verb, match it to -o, -i, -e, -iamo, -ite or -ono."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the subject and the non-isc -ire ending.",
+      "explanation_en": "Noi takes -iamo: sentiamo.",
+      "skill_ids": [
+        "it.a1.present.ire.forms"
+      ],
+      "verb_ids": [
+        "it:sentire"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "noi",
+          "sentire",
+          "la",
+          "musica"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.q05",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Choose the correct form.",
+      "context_target": "",
+      "prompt_target": "Voi ___ domani.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.present.ire.q05.o1",
+          "text": "partono",
+          "correct": false,
+          "error_type": "wrong_form",
+          "explanation_en": "This option uses the wrong person, number, ending, or verb-class pattern."
+        },
+        {
+          "id": "it.a1.present.ire.q05.o2",
+          "text": "partiamo",
+          "correct": false,
+          "error_type": "wrong_form",
+          "explanation_en": "This option uses the wrong person, number, ending, or verb-class pattern."
+        },
+        {
+          "id": "it.a1.present.ire.q05.o3",
+          "text": "partite",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct for the stated person and verb class."
+        },
+        {
+          "id": "it.a1.present.ire.q05.o4",
+          "text": "parti",
+          "correct": false,
+          "error_type": "wrong_form",
+          "explanation_en": "This option uses the wrong person, number, ending, or verb-class pattern."
+        }
+      ],
+      "accepted_answers": [
+        "partite"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the subject person and number first.",
+        "For a non-isc -ire verb, match it to -o, -i, -e, -iamo, -ite or -ono."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the subject and the non-isc -ire ending.",
+      "explanation_en": "Voi takes -ite: partite.",
+      "skill_ids": [
+        "it.a1.present.ire.forms"
+      ],
+      "verb_ids": [
+        "it:partire"
+      ],
+      "form_keys": [
+        "indicative.present.2pl.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "voi",
+          "partire",
+          "domani"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.q06",
+      "type": "multiple_choice",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_en": "Choose the form that completes the sentence.",
+      "context_target": "",
+      "prompt_target": "La sera Marco ___ bene.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.present.ire.q06.o1",
+          "text": "dorme",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct for the stated person and verb class."
+        },
+        {
+          "id": "it.a1.present.ire.q06.o2",
+          "text": "dormo",
+          "correct": false,
+          "error_type": "wrong_form",
+          "explanation_en": "This option uses the wrong person, number, ending, or verb-class pattern."
+        },
+        {
+          "id": "it.a1.present.ire.q06.o3",
+          "text": "dormite",
+          "correct": false,
+          "error_type": "wrong_form",
+          "explanation_en": "This option uses the wrong person, number, ending, or verb-class pattern."
+        },
+        {
+          "id": "it.a1.present.ire.q06.o4",
+          "text": "dormono",
+          "correct": false,
+          "error_type": "wrong_form",
+          "explanation_en": "This option uses the wrong person, number, ending, or verb-class pattern."
+        }
+      ],
+      "accepted_answers": [
+        "dorme"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the subject person and number first.",
+        "For a non-isc -ire verb, match it to -o, -i, -e, -iamo, -ite or -ono."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the subject and the non-isc -ire ending.",
+      "explanation_en": "Marco is third-person singular: dorme.",
+      "skill_ids": [
+        "it.a1.present.ire.forms",
+        "it.a1.present.ire.use"
+      ],
+      "verb_ids": [
+        "it:dormire"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "la",
+          "sera",
+          "dormire",
+          "bene"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.q07",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write the affirmative present indicative form of sentire for io.",
+      "context_target": "",
+      "prompt_target": "sentire — io",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "sento"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Remove -ire to find the stem.",
+        "Use the present ending for the stated person and number."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the stem and the regular non-isc -ire ending.",
+      "explanation_en": "The correct form is sento.",
+      "skill_ids": [
+        "it.a1.present.ire.forms"
+      ],
+      "verb_ids": [
+        "it:sentire"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "sentire",
+          "io"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.q08",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write the affirmative present indicative form of sentire for voi.",
+      "context_target": "",
+      "prompt_target": "sentire — voi",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "sentite"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Remove -ire to find the stem.",
+        "Use the present ending for the stated person and number."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the stem and the regular non-isc -ire ending.",
+      "explanation_en": "The correct form is sentite.",
+      "skill_ids": [
+        "it.a1.present.ire.forms"
+      ],
+      "verb_ids": [
+        "it:sentire"
+      ],
+      "form_keys": [
+        "indicative.present.2pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "sentire",
+          "voi"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.q09",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write the affirmative present indicative form of aprire for tu.",
+      "context_target": "",
+      "prompt_target": "aprire — tu",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "apri"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Remove -ire to find the stem.",
+        "Use the present ending for the stated person and number."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the stem and the regular non-isc -ire ending.",
+      "explanation_en": "The correct form is apri.",
+      "skill_ids": [
+        "it.a1.present.ire.forms"
+      ],
+      "verb_ids": [
+        "it:aprire"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "aprire",
+          "tu"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.q10",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write the affirmative present indicative form of aprire for loro.",
+      "context_target": "",
+      "prompt_target": "aprire — loro",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "aprono"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Remove -ire to find the stem.",
+        "Use the present ending for the stated person and number."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the stem and the regular non-isc -ire ending.",
+      "explanation_en": "The correct form is aprono.",
+      "skill_ids": [
+        "it.a1.present.ire.forms"
+      ],
+      "verb_ids": [
+        "it:aprire"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "aprire",
+          "loro"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.q11",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write the affirmative present indicative form of partire for noi.",
+      "context_target": "",
+      "prompt_target": "partire — noi",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "partiamo"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Remove -ire to find the stem.",
+        "Use the present ending for the stated person and number."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the stem and the regular non-isc -ire ending.",
+      "explanation_en": "The correct form is partiamo.",
+      "skill_ids": [
+        "it.a1.present.ire.forms"
+      ],
+      "verb_ids": [
+        "it:partire"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "partire",
+          "noi"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.q12",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write the affirmative present indicative form of partire for lei.",
+      "context_target": "",
+      "prompt_target": "partire — lei",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "parte"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Remove -ire to find the stem.",
+        "Use the present ending for the stated person and number."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the stem and the regular non-isc -ire ending.",
+      "explanation_en": "The correct form is parte.",
+      "skill_ids": [
+        "it.a1.present.ire.forms"
+      ],
+      "verb_ids": [
+        "it:partire"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "partire",
+          "lei"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.q13",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write the affirmative present indicative form of dormire for voi.",
+      "context_target": "",
+      "prompt_target": "dormire — voi",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "dormite"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Remove -ire to find the stem.",
+        "Use the present ending for the stated person and number."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the stem and the regular non-isc -ire ending.",
+      "explanation_en": "The correct form is dormite.",
+      "skill_ids": [
+        "it.a1.present.ire.forms"
+      ],
+      "verb_ids": [
+        "it:dormire"
+      ],
+      "form_keys": [
+        "indicative.present.2pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "dormire",
+          "voi"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.q14",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write the affirmative present indicative form of dormire for io.",
+      "context_target": "",
+      "prompt_target": "dormire — io",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "dormo"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Remove -ire to find the stem.",
+        "Use the present ending for the stated person and number."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the stem and the regular non-isc -ire ending.",
+      "explanation_en": "The correct form is dormo.",
+      "skill_ids": [
+        "it.a1.present.ire.forms"
+      ],
+      "verb_ids": [
+        "it:dormire"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "dormire",
+          "io"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.q15",
+      "type": "fill_gap",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_en": "Complete the sentence with the correct present form of sentire.",
+      "context_target": "",
+      "prompt_target": "Noi ___ la radio.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "sentiamo"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The subject is noi.",
+        "The noi ending is -iamo."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Use the noi form of sentire.",
+      "explanation_en": "Noi + sentire gives sentiamo.",
+      "skill_ids": [
+        "it.a1.present.ire.forms",
+        "it.a1.present.ire.use"
+      ],
+      "verb_ids": [
+        "it:sentire"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "noi",
+          "sentire",
+          "la",
+          "radio"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.q16",
+      "type": "transform",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_en": "Change the subject from Marco to Anna e Marco and change the verb form.",
+      "context_target": "",
+      "prompt_target": "Marco parte domani.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "Anna e Marco partono domani"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The new subject is plural.",
+        "For loro, the non-isc -ire ending is -ono."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Change parte to the third-person plural form.",
+      "explanation_en": "Anna e Marco corresponds to loro, so parte becomes partono.",
+      "skill_ids": [
+        "it.a1.present.ire.forms",
+        "it.a1.present.ire.use"
+      ],
+      "verb_ids": [
+        "it:partire"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "e",
+          "partire",
+          "domani"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.q17",
+      "type": "multiple_choice",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Choose the correct form in this new sentence.",
+      "context_target": "",
+      "prompt_target": "A casa Anna ___ la finestra.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.present.ire.q17.o1",
+          "text": "apro",
+          "correct": false,
+          "error_type": "wrong_form",
+          "explanation_en": "This option uses the wrong person, number, ending, or verb-class pattern."
+        },
+        {
+          "id": "it.a1.present.ire.q17.o2",
+          "text": "apriamo",
+          "correct": false,
+          "error_type": "wrong_form",
+          "explanation_en": "This option uses the wrong person, number, ending, or verb-class pattern."
+        },
+        {
+          "id": "it.a1.present.ire.q17.o3",
+          "text": "aprite",
+          "correct": false,
+          "error_type": "wrong_form",
+          "explanation_en": "This option uses the wrong person, number, ending, or verb-class pattern."
+        },
+        {
+          "id": "it.a1.present.ire.q17.o4",
+          "text": "apre",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct for the stated person and verb class."
+        }
+      ],
+      "accepted_answers": [
+        "apre"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the subject person and number first.",
+        "For a non-isc -ire verb, match it to -o, -i, -e, -iamo, -ite or -ono."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the subject and the non-isc -ire ending.",
+      "explanation_en": "Anna is third-person singular: apre.",
+      "skill_ids": [
+        "it.a1.present.ire.forms",
+        "it.a1.present.ire.use"
+      ],
+      "verb_ids": [
+        "it:aprire"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "a",
+          "casa",
+          "aprire",
+          "la",
+          "finestra"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.q18",
+      "type": "multiple_choice",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Choose the correct form in this new sentence.",
+      "context_target": "",
+      "prompt_target": "Io ___ la radio.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.present.ire.q18.o1",
+          "text": "sentite",
+          "correct": false,
+          "error_type": "wrong_form",
+          "explanation_en": "This option uses the wrong person, number, ending, or verb-class pattern."
+        },
+        {
+          "id": "it.a1.present.ire.q18.o2",
+          "text": "sento",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct for the stated person and verb class."
+        },
+        {
+          "id": "it.a1.present.ire.q18.o3",
+          "text": "sentono",
+          "correct": false,
+          "error_type": "wrong_form",
+          "explanation_en": "This option uses the wrong person, number, ending, or verb-class pattern."
+        },
+        {
+          "id": "it.a1.present.ire.q18.o4",
+          "text": "sente",
+          "correct": false,
+          "error_type": "wrong_form",
+          "explanation_en": "This option uses the wrong person, number, ending, or verb-class pattern."
+        }
+      ],
+      "accepted_answers": [
+        "sento"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the subject person and number first.",
+        "For a non-isc -ire verb, match it to -o, -i, -e, -iamo, -ite or -ono."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check the subject and the non-isc -ire ending.",
+      "explanation_en": "Io takes -o: sento.",
+      "skill_ids": [
+        "it.a1.present.ire.forms",
+        "it.a1.present.ire.use"
+      ],
+      "verb_ids": [
+        "it:sentire"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "io",
+          "sentire",
+          "la",
+          "radio"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.q19",
+      "type": "error_correction",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Correct the verb form.",
+      "context_target": "",
+      "prompt_target": "Voi dormono bene.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "Voi dormite bene"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The subject is voi.",
+        "The voi ending for this verb class is -ite."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Use the voi form of dormire.",
+      "explanation_en": "Voi + dormire gives dormite.",
+      "skill_ids": [
+        "it.a1.present.ire.forms"
+      ],
+      "verb_ids": [
+        "it:dormire"
+      ],
+      "form_keys": [
+        "indicative.present.2pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "voi",
+          "dormire",
+          "bene"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.q20",
+      "type": "reorder",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Put the words in a natural order.",
+      "context_target": "",
+      "prompt_target": "domani / noi / partiamo",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "Noi partiamo domani",
+        "Partiamo domani"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The verb already shows first-person plural.",
+        "Italian can omit noi when it is clear."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Place partiamo as the finite verb; noi may be omitted.",
+      "explanation_en": "Both Noi partiamo domani and Partiamo domani are natural.",
+      "skill_ids": [
+        "it.a1.present.ire.use"
+      ],
+      "verb_ids": [
+        "it:partire"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "domani",
+          "noi",
+          "partire"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.q21",
+      "type": "guided_production",
+      "stage": "production",
+      "difficulty": 3,
+      "instruction_en": "Write one short sentence about yourself using dormire in the present.",
+      "context_target": "",
+      "prompt_target": "",
+      "prompt_en": "Use dormire with an appropriate first-person singular present form.",
+      "options": [],
+      "accepted_answers": [],
+      "rubric": {
+        "criteria": [
+          "Uses dormo as the first-person singular present form.",
+          "Produces a natural short sentence."
+        ]
+      },
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about how you sleep.",
+        "The io form ends in -o."
+      ],
+      "feedback_correct_en": "Compare your sentence with the rubric.",
+      "feedback_wrong_en": "Check the verb form and meaning.",
+      "explanation_en": "A suitable response uses dormo in a natural present-time statement.",
+      "skill_ids": [
+        "it.a1.present.ire.production"
+      ],
+      "verb_ids": [
+        "it:dormire"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "dormire"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.q22",
+      "type": "guided_production",
+      "stage": "production",
+      "difficulty": 3,
+      "instruction_en": "Write one short sentence using aprire in the present.",
+      "context_target": "",
+      "prompt_target": "",
+      "prompt_en": "Choose a subject and use the matching present form.",
+      "options": [],
+      "accepted_answers": [],
+      "rubric": {
+        "criteria": [
+          "Uses a correct present form of aprire.",
+          "The subject and verb agree.",
+          "The sentence is natural and understandable."
+        ]
+      },
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Choose the subject first.",
+        "Match it to -o, -i, -e, -iamo, -ite or -ono."
+      ],
+      "feedback_correct_en": "Compare your sentence with the rubric.",
+      "feedback_wrong_en": "Check person-number agreement.",
+      "explanation_en": "Any natural sentence with a correct present form of aprire can satisfy the task.",
+      "skill_ids": [
+        "it.a1.present.ire.production"
+      ],
+      "verb_ids": [
+        "it:aprire"
+      ],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "aprire"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.q23",
+      "type": "translate_to_target",
+      "stage": "production",
+      "difficulty": 3,
+      "instruction_en": "Translate naturally into Italian.",
+      "context_target": "",
+      "prompt_target": "",
+      "prompt_en": "They hear the music.",
+      "options": [],
+      "accepted_answers": [],
+      "rubric": {
+        "criteria": [
+          "Uses sentono for they hear.",
+          "Uses la musica.",
+          "Produces a natural Italian sentence."
+        ]
+      },
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The subject is loro, but it can be omitted.",
+        "The third-person plural ending is -ono."
+      ],
+      "feedback_correct_en": "Compare your sentence with the rubric.",
+      "feedback_wrong_en": "Check the loro form of sentire.",
+      "explanation_en": "A natural answer is Sentono la musica.",
+      "skill_ids": [
+        "it.a1.present.ire.production",
+        "it.a1.present.ire.use"
+      ],
+      "verb_ids": [
+        "it:sentire"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "sentire",
+          "la",
+          "musica"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.ire.q24",
+      "type": "guided_production",
+      "stage": "review",
+      "difficulty": 3,
+      "instruction_en": "Mixed review: write two short present-tense sentences using two different non-isc -ire verbs from this lesson.",
+      "context_target": "",
+      "prompt_target": "",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [],
+      "rubric": {
+        "criteria": [
+          "Uses two different verbs from sentire, aprire, partire, dormire.",
+          "Both verb forms agree with their subjects.",
+          "Neither verb uses -isc-."
+        ]
+      },
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Choose two verbs and two subjects.",
+        "Check each ending before finishing."
+      ],
+      "feedback_correct_en": "Compare both sentences with the rubric.",
+      "feedback_wrong_en": "Recheck the verb class and person-number endings.",
+      "explanation_en": "This delayed mixed review combines class recognition with form production.",
+      "skill_ids": [
+        "it.a1.present.ire.production",
+        "it.a1.present.ire.forms"
+      ],
+      "verb_ids": [
+        "it:sentire",
+        "it:aprire",
+        "it:partire",
+        "it:dormire"
+      ],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "sentire",
+          "aprire",
+          "partire",
+          "dormire"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "verb_application": {
+    "applicable": true,
+    "required_form_keys": [
+      "indicative.present.1sg.affirmative",
+      "indicative.present.2sg.affirmative",
+      "indicative.present.3sg.affirmative",
+      "indicative.present.1pl.affirmative",
+      "indicative.present.2pl.affirmative",
+      "indicative.present.3pl.affirmative"
+    ],
+    "verbs": [
+      {
+        "id": "it:sentire",
+        "lemma": "sentire",
+        "meaning_en": "to hear; to feel",
+        "regularity": "regular",
+        "conjugation_class": "third conjugation (-ire), non-isc regular present",
+        "auxiliary": "avere",
+        "governed_cases_or_prepositions": [],
+        "forms": [
+          {
+            "form_key": "indicative.present.1sg.affirmative",
+            "surface": "sento",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2sg.affirmative",
+            "surface": "senti",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3sg.affirmative",
+            "surface": "sente",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.1pl.affirmative",
+            "surface": "sentiamo",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2pl.affirmative",
+            "surface": "sentite",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3pl.affirmative",
+            "surface": "sentono",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          }
+        ],
+        "exercise_ids": [
+          "it.a1.present.ire.q01",
+          "it.a1.present.ire.q04",
+          "it.a1.present.ire.q07",
+          "it.a1.present.ire.q08",
+          "it.a1.present.ire.q15",
+          "it.a1.present.ire.q18",
+          "it.a1.present.ire.q23",
+          "it.a1.present.ire.q24"
+        ],
+        "note_en": "This entry is regular for the non-isc present indicative pattern taught here."
+      },
+      {
+        "id": "it:aprire",
+        "lemma": "aprire",
+        "meaning_en": "to open",
+        "regularity": "regular",
+        "conjugation_class": "third conjugation (-ire), non-isc regular present",
+        "auxiliary": "avere",
+        "governed_cases_or_prepositions": [],
+        "forms": [
+          {
+            "form_key": "indicative.present.1sg.affirmative",
+            "surface": "apro",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2sg.affirmative",
+            "surface": "apri",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3sg.affirmative",
+            "surface": "apre",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.1pl.affirmative",
+            "surface": "apriamo",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2pl.affirmative",
+            "surface": "aprite",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3pl.affirmative",
+            "surface": "aprono",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          }
+        ],
+        "exercise_ids": [
+          "it.a1.present.ire.q03",
+          "it.a1.present.ire.q09",
+          "it.a1.present.ire.q10",
+          "it.a1.present.ire.q17",
+          "it.a1.present.ire.q22",
+          "it.a1.present.ire.q24"
+        ],
+        "note_en": "This entry is regular for the non-isc present indicative pattern taught here."
+      },
+      {
+        "id": "it:partire",
+        "lemma": "partire",
+        "meaning_en": "to leave; to depart",
+        "regularity": "regular",
+        "conjugation_class": "third conjugation (-ire), non-isc regular present",
+        "auxiliary": "essere",
+        "governed_cases_or_prepositions": [],
+        "forms": [
+          {
+            "form_key": "indicative.present.1sg.affirmative",
+            "surface": "parto",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2sg.affirmative",
+            "surface": "parti",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3sg.affirmative",
+            "surface": "parte",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.1pl.affirmative",
+            "surface": "partiamo",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2pl.affirmative",
+            "surface": "partite",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3pl.affirmative",
+            "surface": "partono",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          }
+        ],
+        "exercise_ids": [
+          "it.a1.present.ire.q05",
+          "it.a1.present.ire.q11",
+          "it.a1.present.ire.q12",
+          "it.a1.present.ire.q16",
+          "it.a1.present.ire.q20",
+          "it.a1.present.ire.q24"
+        ],
+        "note_en": "This entry is regular for the non-isc present indicative pattern taught here."
+      },
+      {
+        "id": "it:dormire",
+        "lemma": "dormire",
+        "meaning_en": "to sleep",
+        "regularity": "regular",
+        "conjugation_class": "third conjugation (-ire), non-isc regular present",
+        "auxiliary": "avere",
+        "governed_cases_or_prepositions": [],
+        "forms": [
+          {
+            "form_key": "indicative.present.1sg.affirmative",
+            "surface": "dormo",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2sg.affirmative",
+            "surface": "dormi",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3sg.affirmative",
+            "surface": "dorme",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.1pl.affirmative",
+            "surface": "dormiamo",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2pl.affirmative",
+            "surface": "dormite",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3pl.affirmative",
+            "surface": "dormono",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          }
+        ],
+        "exercise_ids": [
+          "it.a1.present.ire.q02",
+          "it.a1.present.ire.q06",
+          "it.a1.present.ire.q13",
+          "it.a1.present.ire.q14",
+          "it.a1.present.ire.q19",
+          "it.a1.present.ire.q21",
+          "it.a1.present.ire.q24"
+        ],
+        "note_en": "This entry is regular for the non-isc present indicative pattern taught here."
+      }
+    ]
+  },
+  "mastery": {
+    "minimum_scored_items": 12,
+    "required_score": 0.8,
+    "minimum_production_score": 0.7,
+    "minimum_unaided_production_items": 2,
+    "required_stages": [
+      "notice",
+      "controlled",
+      "contextual",
+      "production",
+      "transfer"
+    ],
+    "review_intervals_days": [
+      1,
+      3,
+      7,
+      14,
+      30,
+      60
+    ]
+  },
+  "vocabulary_audit": {
+    "status": "pass",
+    "manifest_id": "it-reviewed-9d35be468e23",
+    "used_lemmas": [
+      "a",
+      "aprire",
+      "bene",
+      "casa",
+      "domani",
+      "dormire",
+      "e",
+      "finestra",
+      "in",
+      "io",
+      "la",
+      "lei",
+      "loro",
+      "mattina",
+      "musica",
+      "noi",
+      "partire",
+      "poi",
+      "porta",
+      "radio",
+      "sentire",
+      "sera",
+      "sì",
+      "tu",
+      "voi"
+    ],
+    "target_lemmas": [
+      "sentire",
+      "aprire",
+      "partire",
+      "dormire"
+    ],
+    "outside_allowlist_lemmas": [],
+    "introduced_lemmas": [],
+    "proper_names": [
+      "Anna",
+      "Marco"
+    ],
+    "grammar_only_tokens": [
+      "-ite",
+      "dorm"
+    ],
+    "above_level_lemmas": [],
+    "tests_with_unknown_vocabulary": []
+  },
+  "level_audit": {
+    "status": "pass",
+    "target_cefr": "A1",
+    "maximum_sentence_length_observed": 7,
+    "unapproved_grammar_features": [],
+    "scope_violations": []
+  },
+  "quality_audit": {
+    "status": "pass",
+    "checks": {
+      "unique_ids": true,
+      "prerequisites_resolve": true,
+      "answers_verified": true,
+      "conjugations_verified": true,
+      "single_best_answers": true,
+      "naturalness_checked": true,
+      "translations_checked": true,
+      "requested_counts_met": true,
+      "vocabulary_annotations_checked": true,
+      "schema_valid": true
+    },
+    "counts": {
+      "contexts": 2,
+      "teaching_examples": 10,
+      "exercises_total": 24,
+      "scored_exercises": 20,
+      "transfer_exercises": 4,
+      "conjugation_tests": 8
+    },
+    "authoritative_sources": [
+      {
+        "name": "Treccani — Terza coniugazione",
+        "url": "https://www.treccani.it/enciclopedia/terza-coniugazione_%28La-grammatica-italiana%29/"
+      },
+      {
+        "name": "Treccani — Coniugazione verbale",
+        "url": "https://www.treccani.it/enciclopedia/coniugazione-verbale_%28Enciclopedia-dell%27Italiano%29/"
+      },
+      {
+        "name": "Zanichelli Aula di lingue — Il presente indicativo",
+        "url": "https://aulalingue.scuola.zanichelli.it/benvenuti/2009/10/15/il-presente-indicativo/"
+      }
+    ],
+    "needs_human_review": []
+  }
+}

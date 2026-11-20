@@ -1,0 +1,2458 @@
+{
+  "schema_version": "lessico-grammar-v1",
+  "content_version": "1.0.0",
+  "status": "ready",
+  "mode": "topic_pack",
+  "language": "it",
+  "explanation_language": "en",
+  "vocabulary_manifest_id": "it-reviewed-9d35be468e23",
+  "topic": {
+    "id": "it.a1.present.are",
+    "cefr": "A1",
+    "sequence": 14,
+    "module_id": "it.a1.present",
+    "title_target": "Verbi regolari in -are al presente",
+    "title_en": "Regular -are verbs in the present",
+    "estimated_minutes": 8,
+    "prerequisite_ids": [
+      "it.a1.subjects.pro_drop"
+    ],
+    "learning_objectives": [
+      "Identify the stem of a regular -are verb by removing -are.",
+      "Produce all six affirmative present indicative forms with the endings -o, -i, -a, -iamo, -ate and -ano.",
+      "Use regular -are present forms in short statements about current activities and routines."
+    ],
+    "scope_included": [
+      "stem identification",
+      "six present endings",
+      "simple present-time use"
+    ],
+    "scope_excluded": [
+      "negation",
+      "questions",
+      "irregular verbs",
+      "past and future meanings"
+    ],
+    "new_terms": [],
+    "reading_links": []
+  },
+  "skills": [
+    {
+      "id": "it.a1.present.are.stem",
+      "description_en": "Identify the stem of a regular -are infinitive by removing -are.",
+      "capability": "recognition",
+      "critical": true
+    },
+    {
+      "id": "it.a1.present.are.endings",
+      "description_en": "Recall the six present indicative endings for regular -are verbs.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "it.a1.present.are.agreement",
+      "description_en": "Choose the present form that agrees with the subject in person and number.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "it.a1.present.are.use",
+      "description_en": "Use regular -are present forms for simple current activities and routines.",
+      "capability": "contextual",
+      "critical": true
+    },
+    {
+      "id": "it.a1.present.are.produce",
+      "description_en": "Produce short affirmative A1 sentences with regular -are verbs in the present indicative.",
+      "capability": "production",
+      "critical": true
+    }
+  ],
+  "lesson": {
+    "short_explanation_en": "Regular Italian verbs ending in -are belong to the first conjugation. To build the present indicative, remove -are to find the stem, then add the ending for the subject: -o, -i, -a, -iamo, -ate, -ano. For example, parlare → parl- → parlo, parli, parla, parliamo, parlate, parlano. Italian often omits the subject pronoun because the verb ending already shows the person. This lesson uses the present for simple current activities and routines only.",
+    "rule_blocks": [
+      {
+        "id": "it.a1.present.are.rule1",
+        "heading_en": "Find the stem",
+        "explanation_en": "For a straightforward regular -are verb, remove the infinitive ending -are. The part that remains is the stem used in this lesson.",
+        "pattern": "parlare → parl-; lavorare → lavor-",
+        "usage_notes_en": [
+          "Use simple regular examples here so spelling-change rules do not distract from the core pattern."
+        ],
+        "common_errors_en": [
+          "Do not keep -are before adding the present ending: *parlareo is not a form.",
+          "Do not treat irregular verbs such as fare or andare as if they followed this pattern."
+        ],
+        "example_ids": [
+          "it.a1.present.are.ex01",
+          "it.a1.present.are.ex07"
+        ]
+      },
+      {
+        "id": "it.a1.present.are.rule2",
+        "heading_en": "Add the six present endings",
+        "explanation_en": "Add -o, -i, -a, -iamo, -ate or -ano according to person and number.",
+        "pattern": "io -o | tu -i | lui/lei -a | noi -iamo | voi -ate | loro -ano",
+        "usage_notes_en": [
+          "The third-person singular ending is -a.",
+          "The third-person plural ending is -ano.",
+          "Subject pronouns are often omitted when the verb ending makes the subject clear."
+        ],
+        "common_errors_en": [
+          "Do not use -ate for noi; noi takes -iamo.",
+          "Do not use -a for a plural subject; loro takes -ano."
+        ],
+        "example_ids": [
+          "it.a1.present.are.ex01",
+          "it.a1.present.are.ex02",
+          "it.a1.present.are.ex03",
+          "it.a1.present.are.ex04",
+          "it.a1.present.are.ex05",
+          "it.a1.present.are.ex06"
+        ]
+      },
+      {
+        "id": "it.a1.present.are.rule3",
+        "heading_en": "Use the present for simple current activities and routines",
+        "explanation_en": "At this stage, use these forms for actions or situations that are current, regular or habitual.",
+        "pattern": "Lavoro in ufficio. / La sera ascoltano la radio.",
+        "usage_notes_en": [
+          "Time expressions such as ogni giorno, la mattina and la sera can make a routine clear."
+        ],
+        "common_errors_en": [
+          "Do not introduce past or future meanings in this lesson."
+        ],
+        "example_ids": [
+          "it.a1.present.are.ex07",
+          "it.a1.present.are.ex08",
+          "it.a1.present.are.ex09",
+          "it.a1.present.are.ex10"
+        ]
+      }
+    ],
+    "form_tables": [
+      {
+        "id": "it.a1.present.are.table1",
+        "title_en": "Regular -are present endings",
+        "columns": [
+          "Person",
+          "Subject",
+          "Ending",
+          "parlare"
+        ],
+        "rows": [
+          [
+            "1st singular",
+            "io",
+            "-o",
+            "parlo"
+          ],
+          [
+            "2nd singular",
+            "tu",
+            "-i",
+            "parli"
+          ],
+          [
+            "3rd singular",
+            "lui / lei",
+            "-a",
+            "parla"
+          ],
+          [
+            "1st plural",
+            "noi",
+            "-iamo",
+            "parliamo"
+          ],
+          [
+            "2nd plural",
+            "voi",
+            "-ate",
+            "parlate"
+          ],
+          [
+            "3rd plural",
+            "loro",
+            "-ano",
+            "parlano"
+          ]
+        ]
+      },
+      {
+        "id": "it.a1.present.are.table2",
+        "title_en": "Finding the stem",
+        "columns": [
+          "Infinitive",
+          "Remove",
+          "Stem"
+        ],
+        "rows": [
+          [
+            "parlare",
+            "-are",
+            "parl-"
+          ],
+          [
+            "lavorare",
+            "-are",
+            "lavor-"
+          ],
+          [
+            "abitare",
+            "-are",
+            "abit-"
+          ],
+          [
+            "ascoltare",
+            "-are",
+            "ascolt-"
+          ]
+        ]
+      }
+    ]
+  },
+  "contexts": [
+    {
+      "id": "it.a1.present.are.ctx1",
+      "type": "dialogue",
+      "setting_en": "Anna and Marco talk about their everyday work and language habits.",
+      "lines": [
+        {
+          "speaker": "Anna",
+          "target": "Lavoro in ufficio e abito in città.",
+          "translation_en": "I work in an office and live in the city."
+        },
+        {
+          "speaker": "Marco",
+          "target": "Io lavoro a casa e parlo italiano ogni giorno.",
+          "translation_en": "I work at home and speak Italian every day."
+        },
+        {
+          "speaker": "Anna",
+          "target": "Parlo italiano con un amico.",
+          "translation_en": "I speak Italian with a friend."
+        },
+        {
+          "speaker": "Marco",
+          "target": "Ascolto la radio la mattina.",
+          "translation_en": "I listen to the radio in the morning."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "Lavoro",
+          "lemma": "lavorare",
+          "skill_id": "it.a1.present.are.agreement",
+          "form_key": "indicative.present.1sg.affirmative",
+          "explanation_en": "Lavoro has the regular first-person singular ending -o."
+        },
+        {
+          "surface": "abito",
+          "lemma": "abitare",
+          "skill_id": "it.a1.present.are.agreement",
+          "form_key": "indicative.present.1sg.affirmative",
+          "explanation_en": "Abito has the regular first-person singular ending -o."
+        },
+        {
+          "surface": "parlo",
+          "lemma": "parlare",
+          "skill_id": "it.a1.present.are.agreement",
+          "form_key": "indicative.present.1sg.affirmative",
+          "explanation_en": "Parlo is formed from parl- plus -o."
+        },
+        {
+          "surface": "Ascolto",
+          "lemma": "ascoltare",
+          "skill_id": "it.a1.present.are.agreement",
+          "form_key": "indicative.present.1sg.affirmative",
+          "explanation_en": "Ascolto is formed from ascolt- plus -o."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "lavorare",
+          "in",
+          "ufficio",
+          "e",
+          "abitare",
+          "città",
+          "io",
+          "a",
+          "casa",
+          "parlare",
+          "italiano",
+          "ogni",
+          "giorno",
+          "con",
+          "un",
+          "amico",
+          "ascoltare",
+          "la",
+          "radio",
+          "mattina"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.ctx2",
+      "type": "narrative",
+      "setting_en": "A short description of two people during a normal day.",
+      "lines": [
+        {
+          "speaker": "Narrator",
+          "target": "Anna lavora in ufficio.",
+          "translation_en": "Anna works in an office."
+        },
+        {
+          "speaker": "Narrator",
+          "target": "Marco lavora a casa.",
+          "translation_en": "Marco works at home."
+        },
+        {
+          "speaker": "Narrator",
+          "target": "Abitano in città.",
+          "translation_en": "They live in the city."
+        },
+        {
+          "speaker": "Narrator",
+          "target": "Parlano italiano ogni giorno.",
+          "translation_en": "They speak Italian every day."
+        },
+        {
+          "speaker": "Narrator",
+          "target": "La sera ascoltano la radio.",
+          "translation_en": "In the evening they listen to the radio."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "lavora",
+          "lemma": "lavorare",
+          "skill_id": "it.a1.present.are.agreement",
+          "form_key": "indicative.present.3sg.affirmative",
+          "explanation_en": "Lavora uses the third-person singular ending -a."
+        },
+        {
+          "surface": "Abitano",
+          "lemma": "abitare",
+          "skill_id": "it.a1.present.are.agreement",
+          "form_key": "indicative.present.3pl.affirmative",
+          "explanation_en": "Abitano uses the third-person plural ending -ano."
+        },
+        {
+          "surface": "Parlano",
+          "lemma": "parlare",
+          "skill_id": "it.a1.present.are.agreement",
+          "form_key": "indicative.present.3pl.affirmative",
+          "explanation_en": "Parlano uses the third-person plural ending -ano."
+        },
+        {
+          "surface": "ascoltano",
+          "lemma": "ascoltare",
+          "skill_id": "it.a1.present.are.agreement",
+          "form_key": "indicative.present.3pl.affirmative",
+          "explanation_en": "Ascoltano uses the third-person plural ending -ano."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "lavorare",
+          "in",
+          "ufficio",
+          "a",
+          "casa",
+          "abitare",
+          "città",
+          "parlare",
+          "italiano",
+          "ogni",
+          "giorno",
+          "la",
+          "sera",
+          "ascoltare",
+          "radio"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "it.a1.present.are.ex01",
+      "target": "Parlo italiano.",
+      "translation_en": "I speak Italian.",
+      "focus_surface": "Parlo",
+      "skill_ids": [
+        "it.a1.present.are.agreement",
+        "it.a1.present.are.use"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "parl- + -o gives parlo.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "parlare",
+          "italiano"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.ex02",
+      "target": "Parli italiano.",
+      "translation_en": "You speak Italian.",
+      "focus_surface": "Parli",
+      "skill_ids": [
+        "it.a1.present.are.agreement"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "parl- + -i gives parli.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "parlare",
+          "italiano"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.ex03",
+      "target": "Anna parla italiano.",
+      "translation_en": "Anna speaks Italian.",
+      "focus_surface": "parla",
+      "skill_ids": [
+        "it.a1.present.are.agreement"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "parl- + -a gives parla.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "parlare",
+          "italiano"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.ex04",
+      "target": "Parliamo italiano.",
+      "translation_en": "We speak Italian.",
+      "focus_surface": "Parliamo",
+      "skill_ids": [
+        "it.a1.present.are.agreement"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "parl- + -iamo gives parliamo.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "parlare",
+          "italiano"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.ex05",
+      "target": "Parlate italiano.",
+      "translation_en": "You all speak Italian.",
+      "focus_surface": "Parlate",
+      "skill_ids": [
+        "it.a1.present.are.agreement"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.2pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "parl- + -ate gives parlate.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "parlare",
+          "italiano"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.ex06",
+      "target": "Anna e Marco parlano italiano.",
+      "translation_en": "Anna and Marco speak Italian.",
+      "focus_surface": "parlano",
+      "skill_ids": [
+        "it.a1.present.are.agreement"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "parl- + -ano gives parlano.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "e",
+          "parlare",
+          "italiano"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.ex07",
+      "target": "Lavoro in ufficio.",
+      "translation_en": "I work in an office.",
+      "focus_surface": "Lavoro",
+      "skill_ids": [
+        "it.a1.present.are.use"
+      ],
+      "verb_ids": [
+        "it:lavorare"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "The regular present can describe a current routine or normal activity.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "lavorare",
+          "in",
+          "ufficio"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.ex08",
+      "target": "Abitiamo in città.",
+      "translation_en": "We live in the city.",
+      "focus_surface": "Abitiamo",
+      "skill_ids": [
+        "it.a1.present.are.use"
+      ],
+      "verb_ids": [
+        "it:abitare"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "abit- takes the first-person plural ending -iamo.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "abitare",
+          "in",
+          "città"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.ex09",
+      "target": "Ascoltate la radio.",
+      "translation_en": "You all listen to the radio.",
+      "focus_surface": "Ascoltate",
+      "skill_ids": [
+        "it.a1.present.are.agreement"
+      ],
+      "verb_ids": [
+        "it:ascoltare"
+      ],
+      "form_keys": [
+        "indicative.present.2pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "ascolt- takes the second-person plural ending -ate.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ascoltare",
+          "la",
+          "radio"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.ex10",
+      "target": "Marco ascolta musica.",
+      "translation_en": "Marco listens to music.",
+      "focus_surface": "ascolta",
+      "skill_ids": [
+        "it.a1.present.are.use"
+      ],
+      "verb_ids": [
+        "it:ascoltare"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "ascolt- takes the third-person singular ending -a.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ascoltare",
+          "musica"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "id": "it.a1.present.are.q01",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Which ending marks the first-person singular form?",
+      "context_target": "",
+      "prompt_target": "Parlo italiano.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.present.are.q01.o1",
+          "text": "-o",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "-o is the regular first-person singular ending."
+        },
+        {
+          "id": "it.a1.present.are.q01.o2",
+          "text": "-i",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "-i marks the second-person singular."
+        },
+        {
+          "id": "it.a1.present.are.q01.o3",
+          "text": "-a",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "-a marks the third-person singular."
+        },
+        {
+          "id": "it.a1.present.are.q01.o4",
+          "text": "-ano",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "-ano marks the third-person plural."
+        }
+      ],
+      "accepted_answers": [
+        "-o"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Try the subject and the regular -are ending again.",
+      "explanation_en": "Parlo is the first-person singular form; the regular ending is -o.",
+      "skill_ids": [
+        "it.a1.present.are.endings"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "parlare",
+          "italiano",
+          "o"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.q02",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the stem of the verb.",
+      "context_target": "",
+      "prompt_target": "lavorare",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.present.are.q02.o1",
+          "text": "lavor-",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Removing -are leaves lavor-."
+        },
+        {
+          "id": "it.a1.present.are.q02.o2",
+          "text": "lavora-",
+          "correct": false,
+          "error_type": "kept_infinitive_vowel",
+          "explanation_en": "This keeps the a from -are."
+        },
+        {
+          "id": "it.a1.present.are.q02.o3",
+          "text": "lavorare-",
+          "correct": false,
+          "error_type": "infinitive_not_removed",
+          "explanation_en": "This keeps the full infinitive."
+        },
+        {
+          "id": "it.a1.present.are.q02.o4",
+          "text": "lavo-",
+          "correct": false,
+          "error_type": "wrong_stem",
+          "explanation_en": "This removes part of the lexical stem."
+        }
+      ],
+      "accepted_answers": [
+        "lavor-"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Try the subject and the regular -are ending again.",
+      "explanation_en": "Remove -are from lavorare to get the stem lavor-.",
+      "skill_ids": [
+        "it.a1.present.are.stem"
+      ],
+      "verb_ids": [
+        "it:lavorare"
+      ],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "lavorare"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "lavor"
+        ],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.q03",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Choose the correct present form.",
+      "context_target": "",
+      "prompt_target": "Anna ___ italiano.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.present.are.q03.o1",
+          "text": "parli",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Parli is second-person singular."
+        },
+        {
+          "id": "it.a1.present.are.q03.o2",
+          "text": "parla",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Parla is third-person singular."
+        },
+        {
+          "id": "it.a1.present.are.q03.o3",
+          "text": "parlate",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "Parlate is second-person plural."
+        },
+        {
+          "id": "it.a1.present.are.q03.o4",
+          "text": "parlano",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "Parlano is third-person plural."
+        }
+      ],
+      "accepted_answers": [
+        "parla"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Try the subject and the regular -are ending again.",
+      "explanation_en": "Anna is third-person singular, so parlare takes -a: parla.",
+      "skill_ids": [
+        "it.a1.present.are.agreement"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "italiano",
+          "parlare"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.q04",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Choose the correct present form.",
+      "context_target": "",
+      "prompt_target": "Noi ___ in città.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.present.are.q04.o1",
+          "text": "abito",
+          "correct": false,
+          "error_type": "wrong_person_number",
+          "explanation_en": "Abito is first-person singular."
+        },
+        {
+          "id": "it.a1.present.are.q04.o2",
+          "text": "abitate",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Abitate is second-person plural."
+        },
+        {
+          "id": "it.a1.present.are.q04.o3",
+          "text": "abitiamo",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Abitiamo is first-person plural."
+        },
+        {
+          "id": "it.a1.present.are.q04.o4",
+          "text": "abitano",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Abitano is third-person plural."
+        }
+      ],
+      "accepted_answers": [
+        "abitiamo"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Try the subject and the regular -are ending again.",
+      "explanation_en": "Noi requires the first-person plural ending -iamo.",
+      "skill_ids": [
+        "it.a1.present.are.agreement"
+      ],
+      "verb_ids": [
+        "it:abitare"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "noi",
+          "in",
+          "città",
+          "abitare"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.q05",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Choose the correct present form.",
+      "context_target": "",
+      "prompt_target": "Voi ___ la radio.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.present.are.q05.o1",
+          "text": "ascoltano",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Ascoltano is third-person plural."
+        },
+        {
+          "id": "it.a1.present.are.q05.o2",
+          "text": "ascolta",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "Ascolta is third-person singular."
+        },
+        {
+          "id": "it.a1.present.are.q05.o3",
+          "text": "ascoltate",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Ascoltate is second-person plural."
+        },
+        {
+          "id": "it.a1.present.are.q05.o4",
+          "text": "ascoltiamo",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Ascoltiamo is first-person plural."
+        }
+      ],
+      "accepted_answers": [
+        "ascoltate"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Try the subject and the regular -are ending again.",
+      "explanation_en": "Voi requires the second-person plural ending -ate.",
+      "skill_ids": [
+        "it.a1.present.are.agreement"
+      ],
+      "verb_ids": [
+        "it:ascoltare"
+      ],
+      "form_keys": [
+        "indicative.present.2pl.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "voi",
+          "la",
+          "radio",
+          "ascoltare"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.q06",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Complete the sentence with the present form of lavorare.",
+      "context_target": "",
+      "prompt_target": "Io ___ in ufficio.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "lavoro"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Use the first-person singular ending.",
+        "The ending is -o."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Try the subject and the regular -are ending again.",
+      "explanation_en": "Io takes the ending -o: lavoro.",
+      "skill_ids": [
+        "it.a1.present.are.agreement"
+      ],
+      "verb_ids": [
+        "it:lavorare"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "io",
+          "in",
+          "ufficio",
+          "lavorare"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.q07",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Complete the sentence with the present form of parlare.",
+      "context_target": "",
+      "prompt_target": "Tu ___ italiano.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "parli"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Use the second-person singular ending.",
+        "The ending is -i."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Try the subject and the regular -are ending again.",
+      "explanation_en": "Tu takes the ending -i: parli.",
+      "skill_ids": [
+        "it.a1.present.are.agreement"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "tu",
+          "italiano",
+          "parlare"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.q08",
+      "type": "fill_gap",
+      "stage": "contextual",
+      "difficulty": 1,
+      "instruction_en": "Complete the sentence with the present form of lavorare.",
+      "context_target": "",
+      "prompt_target": "Anna e Marco ___ a casa.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "lavorano"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The subject is plural.",
+        "Use the loro ending -ano."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Try the subject and the regular -are ending again.",
+      "explanation_en": "Two named people form a third-person plural subject, so the ending is -ano.",
+      "skill_ids": [
+        "it.a1.present.are.agreement"
+      ],
+      "verb_ids": [
+        "it:lavorare"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "e",
+          "a",
+          "casa",
+          "lavorare"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.q09",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Write the present indicative form of parlare.",
+      "context_target": "",
+      "prompt_target": "parlare — io",
+      "prompt_en": "Person: 1st person; number: singular; polarity: affirmative.",
+      "options": [],
+      "accepted_answers": [
+        "parlo"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Remove -are to find the stem, then choose the ending for the subject.",
+        "The required ending is -o."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Try the subject and the regular -are ending again.",
+      "explanation_en": "The correct affirmative present indicative form is parlo.",
+      "skill_ids": [
+        "it.a1.present.are.agreement"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "parlare",
+          "io"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.q10",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Write the present indicative form of parlare.",
+      "context_target": "",
+      "prompt_target": "parlare — tu",
+      "prompt_en": "Person: 2nd person; number: singular; polarity: affirmative.",
+      "options": [],
+      "accepted_answers": [
+        "parli"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Remove -are to find the stem, then choose the ending for the subject.",
+        "The required ending is -i."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Try the subject and the regular -are ending again.",
+      "explanation_en": "The correct affirmative present indicative form is parli.",
+      "skill_ids": [
+        "it.a1.present.are.agreement"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "parlare",
+          "tu"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.q11",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Write the present indicative form of parlare.",
+      "context_target": "",
+      "prompt_target": "parlare — Anna",
+      "prompt_en": "Person: 3rd person; number: singular; polarity: affirmative.",
+      "options": [],
+      "accepted_answers": [
+        "parla"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Remove -are to find the stem, then choose the ending for the subject.",
+        "The required ending is -a."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Try the subject and the regular -are ending again.",
+      "explanation_en": "The correct affirmative present indicative form is parla.",
+      "skill_ids": [
+        "it.a1.present.are.agreement"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "parlare"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.q12",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Write the present indicative form of parlare.",
+      "context_target": "",
+      "prompt_target": "parlare — noi",
+      "prompt_en": "Person: 1st person; number: plural; polarity: affirmative.",
+      "options": [],
+      "accepted_answers": [
+        "parliamo"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Remove -are to find the stem, then choose the ending for the subject.",
+        "The required ending is -iamo."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Try the subject and the regular -are ending again.",
+      "explanation_en": "The correct affirmative present indicative form is parliamo.",
+      "skill_ids": [
+        "it.a1.present.are.agreement"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "parlare",
+          "noi"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.q13",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Write the present indicative form of parlare.",
+      "context_target": "",
+      "prompt_target": "parlare — voi",
+      "prompt_en": "Person: 2nd person; number: plural; polarity: affirmative.",
+      "options": [],
+      "accepted_answers": [
+        "parlate"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Remove -are to find the stem, then choose the ending for the subject.",
+        "The required ending is -ate."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Try the subject and the regular -are ending again.",
+      "explanation_en": "The correct affirmative present indicative form is parlate.",
+      "skill_ids": [
+        "it.a1.present.are.agreement"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.2pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "parlare",
+          "voi"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.q14",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Write the present indicative form of parlare.",
+      "context_target": "",
+      "prompt_target": "parlare — Anna e Marco",
+      "prompt_en": "Person: 3rd person; number: plural; polarity: affirmative.",
+      "options": [],
+      "accepted_answers": [
+        "parlano"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Remove -are to find the stem, then choose the ending for the subject.",
+        "The required ending is -ano."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Try the subject and the regular -are ending again.",
+      "explanation_en": "The correct affirmative present indicative form is parlano.",
+      "skill_ids": [
+        "it.a1.present.are.agreement"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "parlare",
+          "e"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.q15",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Write the present indicative form of abitare.",
+      "context_target": "",
+      "prompt_target": "abitare — noi",
+      "prompt_en": "Person: 1st person; number: plural; polarity: affirmative.",
+      "options": [],
+      "accepted_answers": [
+        "abitiamo"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Remove -are to find the stem, then choose the ending for the subject.",
+        "The required ending is -iamo."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Try the subject and the regular -are ending again.",
+      "explanation_en": "The correct affirmative present indicative form is abitiamo.",
+      "skill_ids": [
+        "it.a1.present.are.agreement"
+      ],
+      "verb_ids": [
+        "it:abitare"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "abitare",
+          "noi"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.q16",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Write the present indicative form of ascoltare.",
+      "context_target": "",
+      "prompt_target": "ascoltare — loro",
+      "prompt_en": "Person: 3rd person; number: plural; polarity: affirmative.",
+      "options": [],
+      "accepted_answers": [
+        "ascoltano"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Remove -are to find the stem, then choose the ending for the subject.",
+        "The required ending is -ano."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Try the subject and the regular -are ending again.",
+      "explanation_en": "The correct affirmative present indicative form is ascoltano.",
+      "skill_ids": [
+        "it.a1.present.are.agreement"
+      ],
+      "verb_ids": [
+        "it:ascoltare"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ascoltare",
+          "loro"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.q17",
+      "type": "reorder",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_en": "Put the words in a natural sentence.",
+      "context_target": "",
+      "prompt_target": "italiano / parliamo / insieme",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "Parliamo italiano insieme"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Use parliamo as the finite verb.",
+        "Place italiano after the verb."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Try the subject and the regular -are ending again.",
+      "explanation_en": "The finite verb can begin this simple sentence; parliamo already marks noi.",
+      "skill_ids": [
+        "it.a1.present.are.produce"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "italiano",
+          "parlare",
+          "insieme"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.q18",
+      "type": "transform",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_en": "Rewrite the sentence for noi.",
+      "context_target": "",
+      "prompt_target": "Io lavoro in ufficio.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "Lavoriamo in ufficio",
+        "Noi lavoriamo in ufficio"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Change only the subject person and the verb form.",
+        "Noi takes -iamo."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Try the subject and the regular -are ending again.",
+      "explanation_en": "Changing the subject from io to noi changes lavoro to lavoriamo.",
+      "skill_ids": [
+        "it.a1.present.are.produce"
+      ],
+      "verb_ids": [
+        "it:lavorare"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "io",
+          "lavorare",
+          "in",
+          "ufficio"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.q19",
+      "type": "error_correction",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Correct the verb form.",
+      "context_target": "",
+      "prompt_target": "Anna e Marco abita in città.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "Anna e Marco abitano in città"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The subject contains two people.",
+        "Use the third-person plural ending -ano."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Try the subject and the regular -are ending again.",
+      "explanation_en": "Anna e Marco is third-person plural, so abitare must be abitano.",
+      "skill_ids": [
+        "it.a1.present.are.agreement"
+      ],
+      "verb_ids": [
+        "it:abitare"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "e",
+          "abitare",
+          "in",
+          "città"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.q20",
+      "type": "multiple_choice",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Choose the sentence with the correct verb form for two students.",
+      "context_target": "",
+      "prompt_target": "Due studenti ___ a scuola.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.present.are.q20.o1",
+          "text": "Due studenti lavora a scuola.",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "Lavora is singular."
+        },
+        {
+          "id": "it.a1.present.are.q20.o2",
+          "text": "Due studenti lavorate a scuola.",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Lavorate is second-person plural."
+        },
+        {
+          "id": "it.a1.present.are.q20.o3",
+          "text": "Due studenti lavorano a scuola.",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Lavorano is third-person plural."
+        },
+        {
+          "id": "it.a1.present.are.q20.o4",
+          "text": "Due studenti lavoriamo a scuola.",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Lavoriamo is first-person plural."
+        }
+      ],
+      "accepted_answers": [
+        "Due studenti lavorano a scuola."
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Try the subject and the regular -are ending again.",
+      "explanation_en": "Due studenti is third-person plural, so lavorano is the matching form.",
+      "skill_ids": [
+        "it.a1.present.are.agreement"
+      ],
+      "verb_ids": [
+        "it:lavorare"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "due",
+          "studente",
+          "lavorare",
+          "a",
+          "scuola"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.q21",
+      "type": "guided_production",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Write one short Italian sentence.",
+      "context_target": "",
+      "prompt_target": "ascoltare + musica + sera",
+      "prompt_en": "Say that you listen to music in the evening.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Try the subject and the regular -are ending again.",
+      "explanation_en": "This transfer task requires independent production of the first-person singular form ascolto.",
+      "skill_ids": [
+        "it.a1.present.are.produce"
+      ],
+      "verb_ids": [
+        "it:ascoltare"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "Uses ascolto for first-person singular.",
+          "Includes musica and a natural expression with la sera.",
+          "Produces an affirmative present-time sentence."
+        ],
+        "example_response": "Ascolto musica la sera."
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ascoltare",
+          "musica",
+          "sera"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.q22",
+      "type": "guided_production",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Write one short Italian sentence.",
+      "context_target": "",
+      "prompt_target": "Anna + Marco + parlare + italiano + casa",
+      "prompt_en": "Say that Anna and Marco speak Italian at home.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Try the subject and the regular -are ending again.",
+      "explanation_en": "This transfer task combines a new subject phrase with a familiar regular -are verb.",
+      "skill_ids": [
+        "it.a1.present.are.produce"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "Uses parlano for the third-person plural subject.",
+          "Includes italiano and a casa.",
+          "Keeps the sentence affirmative and in the present."
+        ],
+        "example_response": "Anna e Marco parlano italiano a casa."
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "parlare",
+          "italiano",
+          "casa"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.present.are.q23",
+      "type": "guided_production",
+      "stage": "review",
+      "difficulty": 4,
+      "instruction_en": "Write three short present-tense sentences from memory.",
+      "context_target": "",
+      "prompt_target": "io + lavorare; noi + abitare; loro + ascoltare",
+      "prompt_en": "Use io + lavorare, noi + abitare, and loro + ascoltare.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Try the subject and the regular -are ending again.",
+      "explanation_en": "This mixed review checks recall of three different regular -are endings without options.",
+      "skill_ids": [
+        "it.a1.present.are.produce"
+      ],
+      "verb_ids": [
+        "it:lavorare",
+        "it:abitare",
+        "it:ascoltare"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative",
+        "indicative.present.1pl.affirmative",
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "Uses lavoro for io.",
+          "Uses abitiamo for noi.",
+          "Uses ascoltano for loro.",
+          "All three sentences are affirmative present forms."
+        ],
+        "example_response": "Lavoro in ufficio. Abitiamo in città. Ascoltano la radio."
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "io",
+          "lavorare",
+          "noi",
+          "abitare",
+          "loro",
+          "ascoltare"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "verb_application": {
+    "applicable": true,
+    "required_form_keys": [
+      "indicative.present.1sg.affirmative",
+      "indicative.present.2sg.affirmative",
+      "indicative.present.3sg.affirmative",
+      "indicative.present.1pl.affirmative",
+      "indicative.present.2pl.affirmative",
+      "indicative.present.3pl.affirmative"
+    ],
+    "verbs": [
+      {
+        "id": "it:parlare",
+        "lemma": "parlare",
+        "meaning_en": "to speak; to talk",
+        "regularity": "regular",
+        "conjugation_class": "first conjugation (-are)",
+        "auxiliary": "avere",
+        "governed_cases_or_prepositions": [],
+        "forms": [
+          {
+            "form_key": "indicative.present.1sg.affirmative",
+            "surface": "parlo",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2sg.affirmative",
+            "surface": "parli",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3sg.affirmative",
+            "surface": "parla",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.1pl.affirmative",
+            "surface": "parliamo",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2pl.affirmative",
+            "surface": "parlate",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3pl.affirmative",
+            "surface": "parlano",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          }
+        ],
+        "exercise_ids": [
+          "it.a1.present.are.q01",
+          "it.a1.present.are.q03",
+          "it.a1.present.are.q07",
+          "it.a1.present.are.q09",
+          "it.a1.present.are.q10",
+          "it.a1.present.are.q11",
+          "it.a1.present.are.q12",
+          "it.a1.present.are.q13",
+          "it.a1.present.are.q14",
+          "it.a1.present.are.q17",
+          "it.a1.present.are.q22"
+        ]
+      },
+      {
+        "id": "it:lavorare",
+        "lemma": "lavorare",
+        "meaning_en": "to work",
+        "regularity": "regular",
+        "conjugation_class": "first conjugation (-are)",
+        "auxiliary": "avere",
+        "governed_cases_or_prepositions": [],
+        "forms": [
+          {
+            "form_key": "indicative.present.1sg.affirmative",
+            "surface": "lavoro",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2sg.affirmative",
+            "surface": "lavori",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3sg.affirmative",
+            "surface": "lavora",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.1pl.affirmative",
+            "surface": "lavoriamo",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2pl.affirmative",
+            "surface": "lavorate",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3pl.affirmative",
+            "surface": "lavorano",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          }
+        ],
+        "exercise_ids": [
+          "it.a1.present.are.q02",
+          "it.a1.present.are.q06",
+          "it.a1.present.are.q08",
+          "it.a1.present.are.q18",
+          "it.a1.present.are.q20",
+          "it.a1.present.are.q23"
+        ]
+      },
+      {
+        "id": "it:abitare",
+        "lemma": "abitare",
+        "meaning_en": "to live; to reside",
+        "regularity": "regular",
+        "conjugation_class": "first conjugation (-are)",
+        "auxiliary": "avere",
+        "governed_cases_or_prepositions": [],
+        "forms": [
+          {
+            "form_key": "indicative.present.1sg.affirmative",
+            "surface": "abito",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2sg.affirmative",
+            "surface": "abiti",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3sg.affirmative",
+            "surface": "abita",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.1pl.affirmative",
+            "surface": "abitiamo",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2pl.affirmative",
+            "surface": "abitate",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3pl.affirmative",
+            "surface": "abitano",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          }
+        ],
+        "exercise_ids": [
+          "it.a1.present.are.q04",
+          "it.a1.present.are.q15",
+          "it.a1.present.are.q19",
+          "it.a1.present.are.q23"
+        ]
+      },
+      {
+        "id": "it:ascoltare",
+        "lemma": "ascoltare",
+        "meaning_en": "to listen to",
+        "regularity": "regular",
+        "conjugation_class": "first conjugation (-are)",
+        "auxiliary": "avere",
+        "governed_cases_or_prepositions": [],
+        "forms": [
+          {
+            "form_key": "indicative.present.1sg.affirmative",
+            "surface": "ascolto",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2sg.affirmative",
+            "surface": "ascolti",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3sg.affirmative",
+            "surface": "ascolta",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.1pl.affirmative",
+            "surface": "ascoltiamo",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2pl.affirmative",
+            "surface": "ascoltate",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3pl.affirmative",
+            "surface": "ascoltano",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          }
+        ],
+        "exercise_ids": [
+          "it.a1.present.are.q05",
+          "it.a1.present.are.q16",
+          "it.a1.present.are.q21",
+          "it.a1.present.are.q23"
+        ]
+      }
+    ]
+  },
+  "mastery": {
+    "minimum_scored_items": 12,
+    "required_score": 0.8,
+    "minimum_production_score": 0.7,
+    "minimum_unaided_production_items": 2,
+    "required_stages": [
+      "notice",
+      "controlled",
+      "contextual",
+      "production",
+      "transfer"
+    ],
+    "review_intervals_days": [
+      1,
+      3,
+      7,
+      14,
+      30,
+      60
+    ]
+  },
+  "vocabulary_audit": {
+    "status": "pass",
+    "manifest_id": "it-reviewed-9d35be468e23",
+    "used_lemmas": [
+      "a",
+      "abitare",
+      "amico",
+      "ascoltare",
+      "casa",
+      "città",
+      "con",
+      "due",
+      "e",
+      "giorno",
+      "in",
+      "insieme",
+      "io",
+      "italiano",
+      "la",
+      "lavorare",
+      "loro",
+      "mattina",
+      "musica",
+      "noi",
+      "o",
+      "ogni",
+      "parlare",
+      "radio",
+      "scuola",
+      "sera",
+      "studente",
+      "tu",
+      "ufficio",
+      "un",
+      "voi"
+    ],
+    "target_lemmas": [
+      "parlare",
+      "lavorare",
+      "abitare",
+      "ascoltare"
+    ],
+    "out_of_list_lemmas": [],
+    "introduced_lemmas": [],
+    "proper_names": [
+      "Anna",
+      "Marco"
+    ],
+    "grammar_only_tokens": [],
+    "above_level_lemmas": [],
+    "tests_with_unknown_vocabulary": []
+  },
+  "level_audit": {
+    "status": "pass",
+    "cefr": "A1",
+    "maximum_sentence_length_words": 9,
+    "unapproved_grammar_features": [],
+    "scope_violations": []
+  },
+  "quality_audit": {
+    "status": "pass",
+    "issues": [],
+    "needs_human_review": [],
+    "sources": [
+      {
+        "name": "Treccani — Prima coniugazione",
+        "url": "https://www.treccani.it/enciclopedia/prima-coniugazione_%28La-grammatica-italiana%29/"
+      },
+      {
+        "name": "Accademia della Crusca — Su decimare (present paradigm of a regular -are verb)",
+        "url": "https://accademiadellacrusca.it/it/consulenza/su-decimare/46951"
+      },
+      {
+        "name": "Treccani — Presente",
+        "url": "https://www.treccani.it/enciclopedia/presente_%28Enciclopedia-dell%27Italiano%29/"
+      }
+    ],
+    "checks": {
+      "unique_ids": true,
+      "prerequisites_resolve": true,
+      "answers_verified": true,
+      "forms_verified": true,
+      "single_best_answers": true,
+      "naturalness_checked": true,
+      "cefr_checked": true,
+      "translations_checked": true,
+      "requested_counts_met": true
+    }
+  },
+  "audit": {
+    "status": "pass",
+    "issues": [],
+    "needs_human_review": [],
+    "sources": [
+      {
+        "name": "Treccani — Prima coniugazione",
+        "url": "https://www.treccani.it/enciclopedia/prima-coniugazione_%28La-grammatica-italiana%29/"
+      },
+      {
+        "name": "Accademia della Crusca — Su decimare (present paradigm of a regular -are verb)",
+        "url": "https://accademiadellacrusca.it/it/consulenza/su-decimare/46951"
+      },
+      {
+        "name": "Treccani — Presente",
+        "url": "https://www.treccani.it/enciclopedia/presente_%28Enciclopedia-dell%27Italiano%29/"
+      }
+    ],
+    "checks": {
+      "unique_ids": true,
+      "prerequisites_resolve": true,
+      "answers_verified": true,
+      "forms_verified": true,
+      "single_best_answers": true,
+      "naturalness_checked": true,
+      "cefr_checked": true,
+      "translations_checked": true,
+      "requested_counts_met": true
+    }
+  }
+}

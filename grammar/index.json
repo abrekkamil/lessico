@@ -1,6 +1,6 @@
 {
   "schema_version": "lessico-grammar-index-v1",
-  "content_version": "2026-11-19",
+  "content_version": "2026-11-20",
   "topics": [
     {
       "id": "it.a1.nouns.gender",
@@ -11,10 +11,496 @@
       "title_target": "Il genere dei nomi",
       "title_en": "Noun gender",
       "estimated_minutes": 15,
+      "prerequisite_ids": [],
       "status": "ready",
       "exercise_count": 23,
       "scored_exercise_count": 20,
-      "file": "it/it.a1.nouns.gender.json"
+      "file": "it/it.a1.nouns.gender.json",
+      "reading": {
+        "pos": [
+          "noun"
+        ],
+        "min": 6
+      }
+    },
+    {
+      "id": "it.a1.articles.indefinite",
+      "language": "it",
+      "cefr": "A1",
+      "sequence": 2,
+      "module_id": "it.a1.articles",
+      "title_target": "Gli articoli indeterminativi",
+      "title_en": "Indefinite articles",
+      "estimated_minutes": 8,
+      "prerequisite_ids": [
+        "it.a1.nouns.gender"
+      ],
+      "status": "ready",
+      "exercise_count": 23,
+      "scored_exercise_count": 20,
+      "file": "it/it.a1.articles.indefinite.json",
+      "reading": {
+        "words": [
+          "un",
+          "uno",
+          "una"
+        ],
+        "prefixes": [
+          "un'"
+        ],
+        "min": 2
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_singular",
+      "language": "it",
+      "cefr": "A1",
+      "sequence": 3,
+      "module_id": "it.a1.articles",
+      "title_target": "Gli articoli determinativi singolari",
+      "title_en": "Singular definite articles",
+      "estimated_minutes": 8,
+      "prerequisite_ids": [
+        "it.a1.nouns.gender"
+      ],
+      "status": "ready",
+      "exercise_count": 23,
+      "scored_exercise_count": 20,
+      "file": "it/it.a1.articles.definite_singular.json",
+      "reading": {
+        "words": [
+          "il",
+          "lo",
+          "la"
+        ],
+        "prefixes": [
+          "l'"
+        ],
+        "min": 3
+      }
+    },
+    {
+      "id": "it.a1.nouns.plural",
+      "language": "it",
+      "cefr": "A1",
+      "sequence": 4,
+      "module_id": "it.a1.nouns",
+      "title_target": "Il plurale regolare dei nomi",
+      "title_en": "Regular noun plurals",
+      "estimated_minutes": 8,
+      "prerequisite_ids": [
+        "it.a1.nouns.gender"
+      ],
+      "status": "ready",
+      "exercise_count": 23,
+      "scored_exercise_count": 20,
+      "file": "it/it.a1.nouns.plural.json",
+      "reading": {
+        "pos": [
+          "noun"
+        ],
+        "inflected": true,
+        "form_endings": [
+          "i",
+          "e"
+        ],
+        "min": 2
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural",
+      "language": "it",
+      "cefr": "A1",
+      "sequence": 5,
+      "module_id": "it.a1.articles",
+      "title_target": "Gli articoli determinativi plurali",
+      "title_en": "Plural definite articles",
+      "estimated_minutes": 8,
+      "prerequisite_ids": [
+        "it.a1.articles.definite_singular",
+        "it.a1.nouns.plural"
+      ],
+      "status": "ready",
+      "exercise_count": 23,
+      "scored_exercise_count": 20,
+      "file": "it/it.a1.articles.definite_plural.json",
+      "reading": {
+        "words": [
+          "i",
+          "gli",
+          "le"
+        ],
+        "min": 2
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement",
+      "language": "it",
+      "cefr": "A1",
+      "sequence": 6,
+      "module_id": "it.a1.adjectives",
+      "title_target": "La concordanza degli aggettivi",
+      "title_en": "Basic adjective agreement",
+      "estimated_minutes": 8,
+      "prerequisite_ids": [
+        "it.a1.nouns.plural"
+      ],
+      "status": "ready",
+      "exercise_count": 23,
+      "scored_exercise_count": 20,
+      "file": "it/it.a1.adjectives.agreement.json",
+      "reading": {
+        "pos": [
+          "adjective"
+        ],
+        "min": 3
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop",
+      "language": "it",
+      "cefr": "A1",
+      "sequence": 7,
+      "module_id": "it.a1.sentences",
+      "title_target": "I pronomi personali soggetto e la loro omissione",
+      "title_en": "Subject pronouns and natural omission",
+      "estimated_minutes": 8,
+      "prerequisite_ids": [],
+      "status": "ready",
+      "exercise_count": 23,
+      "scored_exercise_count": 20,
+      "file": "it/it.a1.subjects.pro_drop.json",
+      "reading": {
+        "words": [
+          "io",
+          "tu",
+          "lui",
+          "lei",
+          "noi",
+          "voi",
+          "loro"
+        ],
+        "min": 2
+      }
+    },
+    {
+      "id": "it.a1.essere.forms",
+      "language": "it",
+      "cefr": "A1",
+      "sequence": 8,
+      "module_id": "it.a1.essere_avere",
+      "title_target": "Il presente indicativo del verbo essere",
+      "title_en": "Present forms of essere",
+      "estimated_minutes": 8,
+      "prerequisite_ids": [
+        "it.a1.subjects.pro_drop"
+      ],
+      "status": "ready",
+      "exercise_count": 23,
+      "scored_exercise_count": 20,
+      "file": "it/it.a1.essere.forms.json",
+      "reading": {
+        "words": [
+          "sono",
+          "sei",
+          "è",
+          "siamo",
+          "siete"
+        ],
+        "min": 3
+      }
+    },
+    {
+      "id": "it.a1.essere.uses",
+      "language": "it",
+      "cefr": "A1",
+      "sequence": 9,
+      "module_id": "it.a1.essere_avere",
+      "title_target": "Identità, provenienza e descrizione con essere",
+      "title_en": "Identity, origin and description with essere",
+      "estimated_minutes": 8,
+      "prerequisite_ids": [
+        "it.a1.adjectives.agreement",
+        "it.a1.essere.forms"
+      ],
+      "status": "ready",
+      "exercise_count": 23,
+      "scored_exercise_count": 20,
+      "file": "it/it.a1.essere.uses.json",
+      "reading": {
+        "phrases": [
+          "è di",
+          "sono di",
+          "sei di",
+          "siamo di",
+          "siete di"
+        ],
+        "min": 1
+      }
+    },
+    {
+      "id": "it.a1.avere.forms_uses",
+      "language": "it",
+      "cefr": "A1",
+      "sequence": 10,
+      "module_id": "it.a1.essere_avere",
+      "title_target": "Il presente e gli usi di base di avere",
+      "title_en": "Present forms and basic uses of avere",
+      "estimated_minutes": 8,
+      "prerequisite_ids": [
+        "it.a1.subjects.pro_drop"
+      ],
+      "status": "ready",
+      "exercise_count": 23,
+      "scored_exercise_count": 20,
+      "file": "it/it.a1.avere.forms_uses.json",
+      "reading": {
+        "words": [
+          "ho",
+          "hai",
+          "ha",
+          "abbiamo",
+          "avete",
+          "hanno"
+        ],
+        "min": 2
+      }
+    },
+    {
+      "id": "it.a1.negation.non",
+      "language": "it",
+      "cefr": "A1",
+      "sequence": 11,
+      "module_id": "it.a1.sentences",
+      "title_target": "La negazione di base con non",
+      "title_en": "Basic negation with non",
+      "estimated_minutes": 8,
+      "prerequisite_ids": [
+        "it.a1.essere.forms",
+        "it.a1.avere.forms_uses"
+      ],
+      "status": "ready",
+      "exercise_count": 23,
+      "scored_exercise_count": 20,
+      "file": "it/it.a1.negation.non.json",
+      "reading": {
+        "words": [
+          "non"
+        ],
+        "min": 2
+      }
+    },
+    {
+      "id": "it.a1.questions.basic",
+      "language": "it",
+      "cefr": "A1",
+      "sequence": 12,
+      "module_id": "it.a1.sentences",
+      "title_target": "Le domande di base",
+      "title_en": "Basic questions",
+      "estimated_minutes": 8,
+      "prerequisite_ids": [
+        "it.a1.subjects.pro_drop",
+        "it.a1.essere.forms",
+        "it.a1.avere.forms_uses"
+      ],
+      "status": "ready",
+      "exercise_count": 23,
+      "scored_exercise_count": 20,
+      "file": "it/it.a1.questions.basic.json",
+      "reading": {
+        "words": [
+          "chi",
+          "dove",
+          "quando",
+          "come",
+          "perché",
+          "quanto",
+          "quanta",
+          "quanti",
+          "quante",
+          "cosa"
+        ],
+        "question": true,
+        "min": 1
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono",
+      "language": "it",
+      "cefr": "A1",
+      "sequence": 13,
+      "module_id": "it.a1.essere_avere",
+      "title_target": "C’è e ci sono",
+      "title_en": "C’è and ci sono",
+      "estimated_minutes": 8,
+      "prerequisite_ids": [
+        "it.a1.essere.forms",
+        "it.a1.nouns.plural"
+      ],
+      "status": "ready",
+      "exercise_count": 23,
+      "scored_exercise_count": 20,
+      "file": "it/it.a1.exists.ce_ci_sono.json",
+      "reading": {
+        "words": [
+          "c'è"
+        ],
+        "phrases": [
+          "ci sono"
+        ],
+        "min": 1
+      }
+    },
+    {
+      "id": "it.a1.present.are",
+      "language": "it",
+      "cefr": "A1",
+      "sequence": 14,
+      "module_id": "it.a1.present",
+      "title_target": "Verbi regolari in -are al presente",
+      "title_en": "Regular -are verbs in the present",
+      "estimated_minutes": 8,
+      "prerequisite_ids": [
+        "it.a1.subjects.pro_drop"
+      ],
+      "status": "ready",
+      "exercise_count": 23,
+      "scored_exercise_count": 20,
+      "file": "it/it.a1.present.are.json",
+      "reading": {
+        "pos": [
+          "verb"
+        ],
+        "lemma_endings": [
+          "are"
+        ],
+        "inflected": true,
+        "min": 2
+      }
+    },
+    {
+      "id": "it.a1.present.ire",
+      "language": "it",
+      "cefr": "A1",
+      "sequence": 16,
+      "module_id": "it.a1.present",
+      "title_target": "Verbi regolari in -ire al presente",
+      "title_en": "Regular -ire verbs in the present",
+      "estimated_minutes": 8,
+      "prerequisite_ids": [
+        "it.a1.present.are"
+      ],
+      "status": "ready",
+      "exercise_count": 24,
+      "scored_exercise_count": 20,
+      "file": "it/it.a1.present.ire.json",
+      "reading": {
+        "pos": [
+          "verb"
+        ],
+        "lemma_endings": [
+          "ire"
+        ],
+        "inflected": true,
+        "min": 1
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels",
+      "language": "tr",
+      "cefr": "A1",
+      "sequence": 1,
+      "module_id": "tr.a1.sounds",
+      "title_target": "Türkçe Ünlüler ve Büyük–Küçük Harfler",
+      "title_en": "Turkish vowels and casing",
+      "estimated_minutes": 15,
+      "prerequisite_ids": [],
+      "status": "ready",
+      "exercise_count": 22,
+      "scored_exercise_count": 20,
+      "file": "tr/tr.a1.sounds.vowels.json",
+      "reading": {
+        "first": 4
+      }
+    },
+    {
+      "id": "tr.a1.harmony.major",
+      "language": "tr",
+      "cefr": "A1",
+      "sequence": 2,
+      "module_id": "tr.a1.harmony",
+      "title_target": "İki Yönlü Ünlü Uyumu",
+      "title_en": "Two-way vowel harmony",
+      "estimated_minutes": 15,
+      "prerequisite_ids": [
+        "tr.a1.sounds.vowels"
+      ],
+      "status": "ready",
+      "exercise_count": 22,
+      "scored_exercise_count": 20,
+      "file": "tr/tr.a1.harmony.major.json",
+      "reading": {
+        "infixes": [
+          "lar",
+          "ler"
+        ],
+        "min": 3
+      }
+    },
+    {
+      "id": "tr.a1.harmony.minor",
+      "language": "tr",
+      "cefr": "A1",
+      "sequence": 3,
+      "module_id": "tr.a1.harmony",
+      "title_target": "Dört Yönlü Ünlü Uyumu",
+      "title_en": "Four-way vowel harmony",
+      "estimated_minutes": 15,
+      "prerequisite_ids": [
+        "tr.a1.harmony.major"
+      ],
+      "status": "ready",
+      "exercise_count": 22,
+      "scored_exercise_count": 20,
+      "file": "tr/tr.a1.harmony.minor.json",
+      "reading": {
+        "pos": [
+          "noun"
+        ],
+        "inflected": true,
+        "form_endings": [
+          "ım",
+          "im",
+          "um",
+          "üm"
+        ],
+        "min": 1
+      }
+    },
+    {
+      "id": "tr.a1.plural",
+      "language": "tr",
+      "cefr": "A1",
+      "sequence": 4,
+      "module_id": "tr.a1.plural",
+      "title_target": "Çoğul Eki: -lar ve -ler",
+      "title_en": "Plural -lar and -ler",
+      "estimated_minutes": 15,
+      "prerequisite_ids": [
+        "tr.a1.harmony.major"
+      ],
+      "status": "ready",
+      "exercise_count": 22,
+      "scored_exercise_count": 20,
+      "file": "tr/tr.a1.plural.json",
+      "reading": {
+        "infixes": [
+          "lar",
+          "ler"
+        ],
+        "min": 3
+      }
     }
   ]
 }

@@ -1,0 +1,2128 @@
+{
+  "schema_version": "lessico-grammar-v1",
+  "content_version": "1.0.0",
+  "status": "ready",
+  "mode": "topic_pack",
+  "language": "it",
+  "explanation_language": "en",
+  "vocabulary_manifest_id": "it-reviewed-9d35be468e23",
+  "topic": {
+    "id": "it.a1.exists.ce_ci_sono",
+    "cefr": "A1",
+    "sequence": 13,
+    "module_id": "it.a1.essere_avere",
+    "title_target": "C’è e ci sono",
+    "title_en": "C’è and ci sono",
+    "estimated_minutes": 8,
+    "prerequisite_ids": [
+      "it.a1.essere.forms",
+      "it.a1.nouns.plural"
+    ],
+    "learning_objectives": [
+      "Choose c’è for singular existence and ci sono for plural existence.",
+      "Form basic negative and yes/no existence sentences.",
+      "Describe what is present in a familiar place with short A1 sentences."
+    ],
+    "scope_included": [
+      "singular and plural existence",
+      "basic location phrases",
+      "questions and negation"
+    ],
+    "scope_excluded": [
+      "past and future existence",
+      "pronominal ci",
+      "advanced presentational structures"
+    ],
+    "new_terms": [],
+    "reading_links": []
+  },
+  "skills": [
+    {
+      "id": "it.a1.exists.ce_ci_sono.singular",
+      "description_en": "Use c’è when one person or thing exists or is present.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.plural",
+      "description_en": "Use ci sono when more than one person or thing exists or is present.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.negative",
+      "description_en": "Form basic negative existential statements with non c’è and non ci sono.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.question",
+      "description_en": "Form basic existence questions with C’è...? and Ci sono...?.",
+      "capability": "contextual",
+      "critical": true
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.location",
+      "description_en": "Use c’è and ci sono in short familiar location phrases.",
+      "capability": "contextual",
+      "critical": true
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.production",
+      "description_en": "Produce short A1 sentences describing what is or is not present in a place.",
+      "capability": "production",
+      "critical": true
+    }
+  ],
+  "lesson": {
+    "short_explanation_en": "Use c’è to say that one person or thing exists or is present, and ci sono for more than one: C’è un letto; Ci sono due sedie. For negation, put non before the form: non c’è, non ci sono. For yes/no questions, the form stays the same and the question mark/intonation marks the question: C’è un bagno? Ci sono due camere? C’è is written with an apostrophe and the accented verb form è. In this lesson, ci is part of the existential construction; its later pronominal uses are not introduced yet.",
+    "rule_blocks": [
+      {
+        "id": "it.a1.exists.ce_ci_sono.rule1",
+        "heading_en": "Singular versus plural",
+        "explanation_en": "The number of the person or thing presented determines the form.",
+        "pattern": "c’è + singular noun phrase / ci sono + plural noun phrase",
+        "usage_notes_en": [
+          "Use c’è with one person or thing.",
+          "Use ci sono with two or more people or things.",
+          "The location phrase can come before or after the existential expression."
+        ],
+        "common_errors_en": [
+          "Do not use c’è with a plural noun phrase.",
+          "Do not use ci sono with a singular noun phrase."
+        ],
+        "example_ids": [
+          "it.a1.exists.ce_ci_sono.ex01",
+          "it.a1.exists.ce_ci_sono.ex02",
+          "it.a1.exists.ce_ci_sono.ex03",
+          "it.a1.exists.ce_ci_sono.ex04"
+        ]
+      },
+      {
+        "id": "it.a1.exists.ce_ci_sono.rule2",
+        "heading_en": "Negatives and questions",
+        "explanation_en": "Put non before the existential form to make a negative. A yes/no question uses the same c’è or ci sono form, with question intonation in speech and a question mark in writing.",
+        "pattern": "non c’è / non ci sono; C’è ...? / Ci sono ...?",
+        "usage_notes_en": [
+          "Non c’è is singular negative.",
+          "Non ci sono is plural negative.",
+          "Do not add an English-style do/does auxiliary."
+        ],
+        "common_errors_en": [
+          "Non follows neither c’è nor ci sono; it comes before them.",
+          "A plural question still uses ci sono."
+        ],
+        "example_ids": [
+          "it.a1.exists.ce_ci_sono.ex05",
+          "it.a1.exists.ce_ci_sono.ex06",
+          "it.a1.exists.ce_ci_sono.ex07",
+          "it.a1.exists.ce_ci_sono.ex08",
+          "it.a1.exists.ce_ci_sono.ex09",
+          "it.a1.exists.ce_ci_sono.ex10"
+        ]
+      },
+      {
+        "id": "it.a1.exists.ce_ci_sono.rule3",
+        "heading_en": "Spelling of c’è",
+        "explanation_en": "The singular form is written c’è, representing ci + è. It has an apostrophe after c and a grave accent on è.",
+        "pattern": "ci + è → c’è",
+        "usage_notes_en": [
+          "Write c’è, not ce or cè.",
+          "Ci sono is written as two words."
+        ],
+        "common_errors_en": [
+          "Ce is a different form and is not the existential verb phrase c’è.",
+          "The verb è requires its accent."
+        ],
+        "example_ids": [
+          "it.a1.exists.ce_ci_sono.ex01",
+          "it.a1.exists.ce_ci_sono.ex03",
+          "it.a1.exists.ce_ci_sono.ex07"
+        ]
+      }
+    ],
+    "form_tables": [
+      {
+        "id": "it.a1.exists.ce_ci_sono.table1",
+        "title_en": "Present existential forms",
+        "columns": [
+          "Number",
+          "Affirmative",
+          "Negative",
+          "Question"
+        ],
+        "rows": [
+          [
+            "singular",
+            "c’è",
+            "non c’è",
+            "C’è ...?"
+          ],
+          [
+            "plural",
+            "ci sono",
+            "non ci sono",
+            "Ci sono ...?"
+          ]
+        ]
+      }
+    ]
+  },
+  "contexts": [
+    {
+      "id": "it.a1.exists.ce_ci_sono.ctx1",
+      "type": "dialogue",
+      "setting_en": "Anna and Marco look at a hotel room.",
+      "lines": [
+        {
+          "speaker": "Anna",
+          "target": "C’è un letto in camera?",
+          "translation_en": "Is there a bed in the room?"
+        },
+        {
+          "speaker": "Marco",
+          "target": "Sì, c’è un letto.",
+          "translation_en": "Yes, there is a bed."
+        },
+        {
+          "speaker": "Anna",
+          "target": "Ci sono due sedie?",
+          "translation_en": "Are there two chairs?"
+        },
+        {
+          "speaker": "Marco",
+          "target": "No, c’è una sedia.",
+          "translation_en": "No, there is one chair."
+        },
+        {
+          "speaker": "Anna",
+          "target": "C’è una finestra?",
+          "translation_en": "Is there a window?"
+        },
+        {
+          "speaker": "Marco",
+          "target": "No, non c’è una finestra.",
+          "translation_en": "No, there is no window."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "C’è un letto",
+          "lemma": "essere",
+          "skill_id": "it.a1.exists.ce_ci_sono.singular",
+          "form_key": "indicative.present.3sg.affirmative",
+          "explanation_en": "Use c’è because the thing presented is singular."
+        },
+        {
+          "surface": "Ci sono due sedie",
+          "lemma": "essere",
+          "skill_id": "it.a1.exists.ce_ci_sono.plural",
+          "form_key": "indicative.present.3pl.affirmative",
+          "explanation_en": "Use ci sono because the noun phrase is plural."
+        },
+        {
+          "surface": "non c’è una finestra",
+          "lemma": "essere",
+          "skill_id": "it.a1.exists.ce_ci_sono.negative",
+          "form_key": "indicative.present.3sg.negative",
+          "explanation_en": "Non goes before c’è to make the singular existential negative."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ci",
+          "essere",
+          "un",
+          "letto",
+          "in",
+          "camera",
+          "sì",
+          "due",
+          "sedia",
+          "no",
+          "una",
+          "finestra",
+          "non"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.ctx2",
+      "type": "situation",
+      "setting_en": "A short description of what is available in a town.",
+      "lines": [
+        {
+          "speaker": "",
+          "target": "In città c’è una stazione.",
+          "translation_en": "There is a station in town."
+        },
+        {
+          "speaker": "",
+          "target": "Ci sono due bar e tre ristoranti.",
+          "translation_en": "There are two cafés and three restaurants."
+        },
+        {
+          "speaker": "",
+          "target": "C’è un parco.",
+          "translation_en": "There is a park."
+        },
+        {
+          "speaker": "",
+          "target": "Non ci sono negozi.",
+          "translation_en": "There are no shops."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "c’è una stazione",
+          "lemma": "essere",
+          "skill_id": "it.a1.exists.ce_ci_sono.location",
+          "form_key": "indicative.present.3sg.affirmative",
+          "explanation_en": "The singular existential form introduces one station in the town."
+        },
+        {
+          "surface": "Ci sono due bar e tre ristoranti",
+          "lemma": "essere",
+          "skill_id": "it.a1.exists.ce_ci_sono.plural",
+          "form_key": "indicative.present.3pl.affirmative",
+          "explanation_en": "Ci sono introduces plural things that are present."
+        },
+        {
+          "surface": "Non ci sono negozi",
+          "lemma": "essere",
+          "skill_id": "it.a1.exists.ce_ci_sono.negative",
+          "form_key": "indicative.present.3pl.negative",
+          "explanation_en": "Non ci sono is the plural negative form."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "in",
+          "città",
+          "ci",
+          "essere",
+          "una",
+          "stazione",
+          "due",
+          "bar",
+          "e",
+          "tre",
+          "ristorante",
+          "un",
+          "parco",
+          "non",
+          "negozio"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "it.a1.exists.ce_ci_sono.ex01",
+      "target": "C’è un letto in camera.",
+      "translation_en": "There is a bed in the room.",
+      "focus_surface": "C’è",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.singular",
+        "it.a1.exists.ce_ci_sono.location"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Use c’è with one thing.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ci",
+          "essere",
+          "un",
+          "letto",
+          "in",
+          "camera"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.ex02",
+      "target": "Ci sono due sedie in cucina.",
+      "translation_en": "There are two chairs in the kitchen.",
+      "focus_surface": "Ci sono",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.plural",
+        "it.a1.exists.ce_ci_sono.location"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Use ci sono with a plural noun phrase.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ci",
+          "essere",
+          "due",
+          "sedia",
+          "in",
+          "cucina"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.ex03",
+      "target": "In città c’è una stazione.",
+      "translation_en": "There is a station in town.",
+      "focus_surface": "c’è",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.singular",
+        "it.a1.exists.ce_ci_sono.location"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "The location phrase can come before the existential form.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "in",
+          "città",
+          "ci",
+          "essere",
+          "una",
+          "stazione"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.ex04",
+      "target": "In città ci sono tre ristoranti.",
+      "translation_en": "There are three restaurants in town.",
+      "focus_surface": "ci sono",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.plural",
+        "it.a1.exists.ce_ci_sono.location"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "The presented noun phrase is plural.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "in",
+          "città",
+          "ci",
+          "essere",
+          "tre",
+          "ristorante"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.ex05",
+      "target": "Non c’è una macchina qui.",
+      "translation_en": "There is no car here.",
+      "focus_surface": "Non c’è",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.negative",
+        "it.a1.exists.ce_ci_sono.singular"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.negative"
+      ],
+      "register": "neutral",
+      "note_en": "Put non before c’è for a singular negative.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "non",
+          "ci",
+          "essere",
+          "una",
+          "macchina",
+          "qui"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.ex06",
+      "target": "Non ci sono biciclette qui.",
+      "translation_en": "There are no bicycles here.",
+      "focus_surface": "Non ci sono",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.negative",
+        "it.a1.exists.ce_ci_sono.plural"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.negative"
+      ],
+      "register": "neutral",
+      "note_en": "Put non before ci sono for a plural negative.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "non",
+          "ci",
+          "essere",
+          "bicicletta",
+          "qui"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.ex07",
+      "target": "C’è un bagno?",
+      "translation_en": "Is there a bathroom?",
+      "focus_surface": "C’è",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.question",
+        "it.a1.exists.ce_ci_sono.singular"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "The same singular form is used in a yes/no question.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ci",
+          "essere",
+          "un",
+          "bagno"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.ex08",
+      "target": "Ci sono due camere?",
+      "translation_en": "Are there two rooms?",
+      "focus_surface": "Ci sono",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.question",
+        "it.a1.exists.ce_ci_sono.plural"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "The plural form stays ci sono in a question.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ci",
+          "essere",
+          "due",
+          "camera"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.ex09",
+      "target": "C’è una chiave in camera?",
+      "translation_en": "Is there a key in the room?",
+      "focus_surface": "C’è",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.question",
+        "it.a1.exists.ce_ci_sono.location"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "One key requires c’è.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ci",
+          "essere",
+          "una",
+          "chiave",
+          "in",
+          "camera"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.ex10",
+      "target": "Ci sono libri in camera?",
+      "translation_en": "Are there books in the room?",
+      "focus_surface": "Ci sono",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.question",
+        "it.a1.exists.ce_ci_sono.plural"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "A plural noun requires ci sono.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ci",
+          "essere",
+          "libro",
+          "in",
+          "camera"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "id": "it.a1.exists.ce_ci_sono.q01",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the form that completes the sentence.",
+      "context_target": "In camera ___ un letto.",
+      "prompt_target": "",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.exists.ce_ci_sono.q01.opt1",
+          "text": "C’è",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct in this context."
+        },
+        {
+          "id": "it.a1.exists.ce_ci_sono.q01.opt2",
+          "text": "Ci sono",
+          "correct": false,
+          "error_type": "number_mismatch",
+          "explanation_en": "Ci sono is plural, but un letto is singular."
+        },
+        {
+          "id": "it.a1.exists.ce_ci_sono.q01.opt3",
+          "text": "Sono",
+          "correct": false,
+          "error_type": "missing_existential_ci",
+          "explanation_en": "Sono alone is not the existential form taught here."
+        },
+        {
+          "id": "it.a1.exists.ce_ci_sono.q01.opt4",
+          "text": "Non c’è",
+          "correct": false,
+          "error_type": "wrong_polarity",
+          "explanation_en": "The sentence is affirmative, not negative."
+        }
+      ],
+      "accepted_answers": [
+        "C’è"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check singular/plural number and whether the sentence is affirmative, negative or a question.",
+      "explanation_en": "Un letto is singular, so use c’è.",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.singular"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "in",
+          "camera",
+          "un",
+          "letto",
+          "ci",
+          "essere",
+          "non"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.q02",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the form that completes the sentence.",
+      "context_target": "In cucina ___ due sedie.",
+      "prompt_target": "",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.exists.ce_ci_sono.q02.opt1",
+          "text": "C’è",
+          "correct": false,
+          "error_type": "number_mismatch",
+          "explanation_en": "C’è is singular."
+        },
+        {
+          "id": "it.a1.exists.ce_ci_sono.q02.opt2",
+          "text": "Ci sono",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct in this context."
+        },
+        {
+          "id": "it.a1.exists.ce_ci_sono.q02.opt3",
+          "text": "Non ci sono",
+          "correct": false,
+          "error_type": "wrong_polarity",
+          "explanation_en": "The sentence is affirmative."
+        },
+        {
+          "id": "it.a1.exists.ce_ci_sono.q02.opt4",
+          "text": "È",
+          "correct": false,
+          "error_type": "missing_existential_ci",
+          "explanation_en": "È alone does not express the existential construction here."
+        }
+      ],
+      "accepted_answers": [
+        "Ci sono"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check singular/plural number and whether the sentence is affirmative, negative or a question.",
+      "explanation_en": "Due sedie is plural, so use ci sono.",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.plural"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "in",
+          "cucina",
+          "due",
+          "sedia",
+          "ci",
+          "essere",
+          "non"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.q03",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the sentence that means ‘There is a station in town.’",
+      "context_target": "",
+      "prompt_target": "",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.exists.ce_ci_sono.q03.opt1",
+          "text": "In città ci sono una stazione.",
+          "correct": false,
+          "error_type": "number_mismatch",
+          "explanation_en": "Una stazione is singular, so ci sono does not agree."
+        },
+        {
+          "id": "it.a1.exists.ce_ci_sono.q03.opt2",
+          "text": "In città sono una stazione.",
+          "correct": false,
+          "error_type": "missing_existential_ci",
+          "explanation_en": "The existential form needs ci."
+        },
+        {
+          "id": "it.a1.exists.ce_ci_sono.q03.opt3",
+          "text": "In città c’è una stazione.",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct in this context."
+        },
+        {
+          "id": "it.a1.exists.ce_ci_sono.q03.opt4",
+          "text": "In città non c’è una stazione.",
+          "correct": false,
+          "error_type": "wrong_polarity",
+          "explanation_en": "This says that no station is present."
+        }
+      ],
+      "accepted_answers": [
+        "In città c’è una stazione."
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check singular/plural number and whether the sentence is affirmative, negative or a question.",
+      "explanation_en": "One station takes c’è.",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.singular",
+        "it.a1.exists.ce_ci_sono.location"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "in",
+          "città",
+          "ci",
+          "essere",
+          "una",
+          "stazione",
+          "non"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.q04",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the standard written form meaning ‘there is’.",
+      "context_target": "",
+      "prompt_target": "",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.exists.ce_ci_sono.q04.opt1",
+          "text": "ce",
+          "correct": false,
+          "error_type": "spelling",
+          "explanation_en": "Ce is not the spelling of the existential form."
+        },
+        {
+          "id": "it.a1.exists.ce_ci_sono.q04.opt2",
+          "text": "cè",
+          "correct": false,
+          "error_type": "spelling",
+          "explanation_en": "The apostrophe is required before è."
+        },
+        {
+          "id": "it.a1.exists.ce_ci_sono.q04.opt3",
+          "text": "ci è",
+          "correct": false,
+          "error_type": "unelided_form",
+          "explanation_en": "In this standard existential form, ci + è is written c’è."
+        },
+        {
+          "id": "it.a1.exists.ce_ci_sono.q04.opt4",
+          "text": "c’è",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct in this context."
+        }
+      ],
+      "accepted_answers": [
+        "c’è"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check singular/plural number and whether the sentence is affirmative, negative or a question.",
+      "explanation_en": "C’è is written with an apostrophe and the accented form è.",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.singular"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ci",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.q05",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Complete with the correct existential form.",
+      "context_target": "Qui ___ una sedia.",
+      "prompt_target": "",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "c’è"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Decide whether the noun is singular or plural.",
+        "For a negative, put non before the existential form."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check singular/plural number and whether the sentence is affirmative, negative or a question.",
+      "explanation_en": "Una sedia is singular.",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.singular"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "qui",
+          "una",
+          "sedia",
+          "ci",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.q06",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Complete with the correct existential form.",
+      "context_target": "Qui ___ tre libri.",
+      "prompt_target": "",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "ci sono"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Decide whether the noun is singular or plural.",
+        "For a negative, put non before the existential form."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check singular/plural number and whether the sentence is affirmative, negative or a question.",
+      "explanation_en": "Tre libri is plural.",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.plural"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "qui",
+          "tre",
+          "libro",
+          "ci",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.q07",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Complete with the negative existential form.",
+      "context_target": "In camera ___ una finestra.",
+      "prompt_target": "",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "non c’è"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Decide whether the noun is singular or plural.",
+        "For a negative, put non before the existential form."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check singular/plural number and whether the sentence is affirmative, negative or a question.",
+      "explanation_en": "Use non c’è for a singular negative.",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.negative"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.negative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "in",
+          "camera",
+          "non",
+          "ci",
+          "essere",
+          "una",
+          "finestra"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.q08",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Complete with the negative existential form.",
+      "context_target": "In città ___ negozi.",
+      "prompt_target": "",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "non ci sono"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Decide whether the noun is singular or plural.",
+        "For a negative, put non before the existential form."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check singular/plural number and whether the sentence is affirmative, negative or a question.",
+      "explanation_en": "Use non ci sono for a plural negative.",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.negative"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.negative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "in",
+          "città",
+          "non",
+          "ci",
+          "essere",
+          "negozio"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.q09",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write the present indicative, third-person singular, affirmative existential form of esserci.",
+      "context_target": "",
+      "prompt_target": "",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "c’è"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Check number and polarity.",
+        "Singular uses c’è; plural uses ci sono."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check singular/plural number and whether the sentence is affirmative, negative or a question.",
+      "explanation_en": "The required form is c’è.",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.singular"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ci",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.q10",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write the present indicative, third-person plural, affirmative existential form of esserci.",
+      "context_target": "",
+      "prompt_target": "",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "ci sono"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Check number and polarity.",
+        "Singular uses c’è; plural uses ci sono."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check singular/plural number and whether the sentence is affirmative, negative or a question.",
+      "explanation_en": "The required form is ci sono.",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.plural"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ci",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.q11",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write the present indicative, third-person singular, negative existential form of esserci.",
+      "context_target": "",
+      "prompt_target": "",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "non c’è"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Check number and polarity.",
+        "Singular uses c’è; plural uses ci sono."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check singular/plural number and whether the sentence is affirmative, negative or a question.",
+      "explanation_en": "The required form is non c’è.",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.negative"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.negative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "non",
+          "ci",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.q12",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write the present indicative, third-person plural, negative existential form of esserci.",
+      "context_target": "",
+      "prompt_target": "",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "non ci sono"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Check number and polarity.",
+        "Singular uses c’è; plural uses ci sono."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check singular/plural number and whether the sentence is affirmative, negative or a question.",
+      "explanation_en": "The required form is non ci sono.",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.negative"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.negative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "non",
+          "ci",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.q13",
+      "type": "conjugate",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_en": "Complete with the present indicative, third-person singular, affirmative existential form.",
+      "context_target": "___ un bagno qui.",
+      "prompt_target": "",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "c’è"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Check number and polarity.",
+        "Singular uses c’è; plural uses ci sono."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check singular/plural number and whether the sentence is affirmative, negative or a question.",
+      "explanation_en": "The required form is c’è.",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.singular"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ci",
+          "essere",
+          "un",
+          "bagno",
+          "qui"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.q14",
+      "type": "conjugate",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_en": "Complete with the present indicative, third-person plural, affirmative existential form.",
+      "context_target": "___ due camere qui.",
+      "prompt_target": "",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "ci sono"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Check number and polarity.",
+        "Singular uses c’è; plural uses ci sono."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check singular/plural number and whether the sentence is affirmative, negative or a question.",
+      "explanation_en": "The required form is ci sono.",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.plural"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ci",
+          "essere",
+          "due",
+          "camera",
+          "qui"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.q15",
+      "type": "conjugate",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_en": "Complete with the present indicative, third-person singular, negative existential form.",
+      "context_target": "___ una chiave qui.",
+      "prompt_target": "",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "non c’è"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Check number and polarity.",
+        "Singular uses c’è; plural uses ci sono."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check singular/plural number and whether the sentence is affirmative, negative or a question.",
+      "explanation_en": "The required form is non c’è.",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.negative"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.negative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "non",
+          "ci",
+          "essere",
+          "una",
+          "chiave",
+          "qui"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.q16",
+      "type": "conjugate",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_en": "Complete with the present indicative, third-person plural, negative existential form.",
+      "context_target": "___ ristoranti qui.",
+      "prompt_target": "",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "non ci sono"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Check number and polarity.",
+        "Singular uses c’è; plural uses ci sono."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check singular/plural number and whether the sentence is affirmative, negative or a question.",
+      "explanation_en": "The required form is non ci sono.",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.negative"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.negative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "non",
+          "ci",
+          "essere",
+          "ristorante",
+          "qui"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.q17",
+      "type": "fill_gap",
+      "stage": "transfer",
+      "difficulty": 2,
+      "instruction_en": "Complete the new sentence with the correct form.",
+      "context_target": "In casa ___ due gatti.",
+      "prompt_target": "",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "ci sono"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the number of the noun phrase.",
+        "Due gatti is plural."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check singular/plural number and whether the sentence is affirmative, negative or a question.",
+      "explanation_en": "Due gatti requires ci sono.",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.plural",
+        "it.a1.exists.ce_ci_sono.location"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "in",
+          "casa",
+          "due",
+          "gatto",
+          "ci",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.q18",
+      "type": "transform",
+      "stage": "transfer",
+      "difficulty": 2,
+      "instruction_en": "Change the sentence so that it presents two bicycles instead of one.",
+      "context_target": "",
+      "prompt_target": "C’è una bicicletta qui.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "Ci sono due biciclette qui."
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The new noun phrase is plural.",
+        "Use ci sono with due biciclette."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check singular/plural number and whether the sentence is affirmative, negative or a question.",
+      "explanation_en": "Changing the presented noun phrase to plural requires ci sono.",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.plural"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ci",
+          "essere",
+          "una",
+          "bicicletta",
+          "qui",
+          "due"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.q19",
+      "type": "error_correction",
+      "stage": "transfer",
+      "difficulty": 2,
+      "instruction_en": "Correct the number error.",
+      "context_target": "",
+      "prompt_target": "In città c’è due negozi.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "In città ci sono due negozi."
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The noun phrase is plural.",
+        "Replace the singular existential form with the plural one."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check singular/plural number and whether the sentence is affirmative, negative or a question.",
+      "explanation_en": "Due negozi is plural, so the correct form is ci sono.",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.plural",
+        "it.a1.exists.ce_ci_sono.location"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "in",
+          "città",
+          "ci",
+          "essere",
+          "due",
+          "negozio"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.q20",
+      "type": "reorder",
+      "stage": "transfer",
+      "difficulty": 2,
+      "instruction_en": "Put the words in a natural order to make a question.",
+      "context_target": "",
+      "prompt_target": "due / ci sono / camere",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "Ci sono due camere?"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Start with the existential verb phrase.",
+        "The plural form is ci sono."
+      ],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check singular/plural number and whether the sentence is affirmative, negative or a question.",
+      "explanation_en": "For a plural yes/no existence question, use Ci sono...?",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.question",
+        "it.a1.exists.ce_ci_sono.plural"
+      ],
+      "verb_ids": [
+        "it:esserci"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "due",
+          "ci",
+          "essere",
+          "camera"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.q21",
+      "type": "guided_production",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_en": "Describe a room with two short sentences: one with c’è and one with ci sono.",
+      "context_target": "",
+      "prompt_target": "",
+      "prompt_en": "Use familiar A1 nouns such as letto, sedia, libro or chiave.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check singular/plural number and whether the sentence is affirmative, negative or a question.",
+      "explanation_en": "",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.production",
+        "it.a1.exists.ce_ci_sono.location"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria": [
+          "One sentence correctly uses c’è with a singular noun phrase.",
+          "One sentence correctly uses ci sono with a plural noun phrase.",
+          "Both sentences are natural and understandable at A1 level."
+        ]
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ci",
+          "essere",
+          "letto",
+          "sedia",
+          "libro",
+          "chiave"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.q22",
+      "type": "translate_to_target",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_en": "Translate naturally into Italian.",
+      "context_target": "",
+      "prompt_target": "",
+      "prompt_en": "There is a restaurant in town.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check singular/plural number and whether the sentence is affirmative, negative or a question.",
+      "explanation_en": "",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.production",
+        "it.a1.exists.ce_ci_sono.singular",
+        "it.a1.exists.ce_ci_sono.location"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "model_answer": "In città c’è un ristorante.",
+        "criteria": [
+          "Uses c’è for the singular noun.",
+          "Includes a natural basic location phrase.",
+          "Meaning matches the English sentence."
+        ]
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "in",
+          "città",
+          "ci",
+          "essere",
+          "un",
+          "ristorante"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.exists.ce_ci_sono.q23",
+      "type": "guided_production",
+      "stage": "review",
+      "difficulty": 2,
+      "instruction_en": "Mixed review: write two short sentences about a place—one singular negative and one plural question.",
+      "context_target": "",
+      "prompt_target": "",
+      "prompt_en": "For example, you can use familiar nouns for rooms, furniture or places in town, but do not copy the lesson examples.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct.",
+      "feedback_wrong_en": "Check singular/plural number and whether the sentence is affirmative, negative or a question.",
+      "explanation_en": "",
+      "skill_ids": [
+        "it.a1.exists.ce_ci_sono.production",
+        "it.a1.exists.ce_ci_sono.negative",
+        "it.a1.exists.ce_ci_sono.question"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria": [
+          "The singular negative uses non c’è.",
+          "The plural question uses Ci sono...?",
+          "Noun number matches the existential form."
+        ]
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ci",
+          "essere",
+          "non"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "verb_application": {
+    "applicable": true,
+    "required_form_keys": [
+      "indicative.present.3sg.affirmative",
+      "indicative.present.3pl.affirmative",
+      "indicative.present.3sg.negative",
+      "indicative.present.3pl.negative"
+    ],
+    "verbs": [
+      {
+        "id": "it:esserci",
+        "lemma": "esserci",
+        "meaning_en": "there is / there are; to be present",
+        "regularity": "mixed",
+        "conjugation_class": "ci + irregular essere",
+        "auxiliary": "essere",
+        "governed_cases_or_prepositions": [],
+        "forms": [
+          {
+            "form_key": "indicative.present.3sg.affirmative",
+            "surface": "c’è",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3pl.affirmative",
+            "surface": "ci sono",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3sg.negative",
+            "surface": "non c’è",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "singular",
+              "polarity": "negative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3pl.negative",
+            "surface": "non ci sono",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "plural",
+              "polarity": "negative"
+            }
+          }
+        ],
+        "exercise_ids": [
+          "it.a1.exists.ce_ci_sono.q01",
+          "it.a1.exists.ce_ci_sono.q02",
+          "it.a1.exists.ce_ci_sono.q03",
+          "it.a1.exists.ce_ci_sono.q04",
+          "it.a1.exists.ce_ci_sono.q05",
+          "it.a1.exists.ce_ci_sono.q06",
+          "it.a1.exists.ce_ci_sono.q07",
+          "it.a1.exists.ce_ci_sono.q08",
+          "it.a1.exists.ce_ci_sono.q09",
+          "it.a1.exists.ce_ci_sono.q10",
+          "it.a1.exists.ce_ci_sono.q11",
+          "it.a1.exists.ce_ci_sono.q12",
+          "it.a1.exists.ce_ci_sono.q13",
+          "it.a1.exists.ce_ci_sono.q14",
+          "it.a1.exists.ce_ci_sono.q15",
+          "it.a1.exists.ce_ci_sono.q16",
+          "it.a1.exists.ce_ci_sono.q17",
+          "it.a1.exists.ce_ci_sono.q18",
+          "it.a1.exists.ce_ci_sono.q19",
+          "it.a1.exists.ce_ci_sono.q20"
+        ]
+      }
+    ]
+  },
+  "mastery": {
+    "minimum_scored_items": 12,
+    "required_score": 0.8,
+    "minimum_production_score": 0.7,
+    "minimum_unaided_production_items": 2,
+    "required_stages": [
+      "notice",
+      "controlled",
+      "contextual",
+      "production",
+      "transfer"
+    ],
+    "review_intervals_days": [
+      1,
+      3,
+      7,
+      14,
+      30,
+      60
+    ]
+  },
+  "vocabulary_audit": {
+    "status": "pass",
+    "manifest_id": "it-reviewed-9d35be468e23",
+    "used_lemmas": [
+      "bagno",
+      "bar",
+      "bicicletta",
+      "camera",
+      "casa",
+      "chiave",
+      "ci",
+      "città",
+      "cucina",
+      "due",
+      "e",
+      "essere",
+      "finestra",
+      "gatto",
+      "in",
+      "letto",
+      "libro",
+      "macchina",
+      "negozio",
+      "no",
+      "non",
+      "parco",
+      "qui",
+      "ristorante",
+      "sedia",
+      "stazione",
+      "sì",
+      "tre",
+      "un",
+      "una"
+    ],
+    "target_lemmas": [
+      "ci",
+      "essere"
+    ],
+    "out_of_list_lemmas": [],
+    "introduced_lemmas": [],
+    "proper_names": [],
+    "grammar_only_tokens": [],
+    "above_level_lemmas": [],
+    "tests_with_unknown_vocabulary": []
+  },
+  "level_audit": {
+    "status": "pass",
+    "cefr": "A1",
+    "maximum_sentence_length_words": 7,
+    "unapproved_grammar_features": [],
+    "scope_violations": []
+  },
+  "quality_audit": {
+    "status": "pass",
+    "issues": [],
+    "needs_human_review": [],
+    "sources": [
+      {
+        "name": "Treccani — C'È LO o CE L'HO? (usage note on c’è / ci sono)",
+        "url": "https://www.treccani.it/magazine/lingua_italiana/domande_e_risposte/grammatica/grammatica_1579.html"
+      },
+      {
+        "name": "Zanichelli — La parola ‘ci’",
+        "url": "https://aulalingue.scuola.zanichelli.it/benvenuti/2009/02/02/la-parola-ci/"
+      },
+      {
+        "name": "Zanichelli — Livello A: c’è / ci sono (grammar summary)",
+        "url": "https://staticmy.zanichelli.it/catalogo/assets/9788808347787_04_CAP.pdf"
+      }
+    ],
+    "checks": {
+      "unique_ids": true,
+      "prerequisites_resolve": true,
+      "answers_verified": true,
+      "forms_verified": true,
+      "single_best_answers": true,
+      "naturalness_checked": true,
+      "cefr_checked": true,
+      "translations_checked": true,
+      "requested_counts_met": true
+    }
+  },
+  "audit": {
+    "status": "pass",
+    "issues": [],
+    "needs_human_review": [],
+    "sources": [
+      {
+        "name": "Treccani — C'È LO o CE L'HO? (usage note on c’è / ci sono)",
+        "url": "https://www.treccani.it/magazine/lingua_italiana/domande_e_risposte/grammatica/grammatica_1579.html"
+      },
+      {
+        "name": "Zanichelli — La parola ‘ci’",
+        "url": "https://aulalingue.scuola.zanichelli.it/benvenuti/2009/02/02/la-parola-ci/"
+      },
+      {
+        "name": "Zanichelli — Livello A: c’è / ci sono (grammar summary)",
+        "url": "https://staticmy.zanichelli.it/catalogo/assets/9788808347787_04_CAP.pdf"
+      }
+    ],
+    "checks": {
+      "unique_ids": true,
+      "prerequisites_resolve": true,
+      "answers_verified": true,
+      "forms_verified": true,
+      "single_best_answers": true,
+      "naturalness_checked": true,
+      "cefr_checked": true,
+      "translations_checked": true,
+      "requested_counts_met": true
+    }
+  }
+}

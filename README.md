@@ -90,8 +90,8 @@ files and texts, never answers from the database.
 
 **Recommended upgrade.** Run `supabase-upgrade.sql` from this repository
 once, in the same SQL editor. It does two things. It adds the `reading`
-table, so finished texts, their answers and the words added while reading
-reach your other phones (see Reading below); until then reading stays on the
+table, so finished texts, their answers, the words added while reading and
+grammar progress reach your other phones (see Reading below); until then reading stays on the
 phone it happened on, and the Sync tab says so. And it fixes a gap in how
 changes are found. Each sync only asks for what changed since the
 last one, and without this the "since" is measured by when a card was
@@ -277,6 +277,33 @@ With `supabase-upgrade.sql` run, reading syncs like the cards: each finished
 text with its score and every answer, and each reading word, which another
 phone makes into a card if it has never had it. If both phones read the same
 text, the later result wins.
+
+## Grammar
+
+The **Grammar** tab has short A1 lessons, in order. Italian has 15: noun
+gender, the articles, regular plurals, adjective agreement, subject pronouns,
+*essere* and its uses, *avere*, negation with *non*, basic questions, *c'è*
+and *ci sono*, and regular *-are* and *-ire* verbs. Turkish has 4: the vowels
+and capital letters (I/ı, İ/i), two-way and four-way vowel harmony, and the
+plural *-lar/-ler*. Each lesson explains the rule with tables, a short
+dialogue and examples you can hear, then asks about twenty scored questions
+and a few short writing self-checks. A lesson is learned at 80% with its
+writing checks done, and comes back for review after 1, 3, 7, 14, 30 and 60
+days. Answers accept either apostrophe (*c'è* or *c’è*).
+
+Grammar and reading are linked, not gated. A text shows the grammar it uses
+most under **Grammar in this text**, one tap from the lesson, and Back
+returns to the text. A lesson lists the reading texts that use it, closed
+ones with their lock, and a few of their sentences with the grammar marked.
+Grammar progress travels with reading through the `reading` table, so every
+device shows the same lessons learned and due.
+
+Lessons live in `grammar/<language>/<topic id>.json` and are listed in
+`grammar/index.json`. Each entry's `reading` field says how the topic shows up
+in a text: its words or phrases (`"words": ["c'è"]`, `"phrases": ["ci sono"]`),
+or the kind of word the text glosses (`"pos": ["verb"]`,
+`"lemma_endings": ["are"]`), and `min`, how many a text needs to count. A new
+topic needs an entry there to appear.
 
 ## What the phone does and does not do
 

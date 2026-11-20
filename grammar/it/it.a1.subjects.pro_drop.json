@@ -1,0 +1,2365 @@
+{
+  "schema_version": "lessico-grammar-v1",
+  "content_version": "1.0.0",
+  "status": "ready",
+  "mode": "topic_pack",
+  "language": "it",
+  "explanation_language": "en",
+  "vocabulary_manifest_id": "it-reviewed-9d35be468e23",
+  "topic": {
+    "id": "it.a1.subjects.pro_drop",
+    "cefr": "A1",
+    "sequence": 7,
+    "module_id": "it.a1.sentences",
+    "title_target": "I pronomi personali soggetto e la loro omissione",
+    "title_en": "Subject pronouns and natural omission",
+    "estimated_minutes": 8,
+    "prerequisite_ids": [],
+    "learning_objectives": [
+      "Identify the six grammatical persons and omit an unnecessary subject pronoun naturally.",
+      "Recognise the subject from a familiar given verb form even when the pronoun is not present.",
+      "Use an explicit subject pronoun to express a contrast or make a referent clear."
+    ],
+    "scope_included": [
+      "io, tu, lui, lei, noi, voi, loro",
+      "verb person",
+      "contrastive versus unnecessary pronouns"
+    ],
+    "scope_excluded": [
+      "object pronouns",
+      "formal register nuance",
+      "regional subject-pronoun patterns"
+    ],
+    "new_terms": [],
+    "reading_links": []
+  },
+  "skills": [
+    {
+      "id": "it.a1.subjects.pro_drop.persons",
+      "description_en": "Match io, tu, lui, lei, noi, voi and loro with the relevant grammatical person and number.",
+      "capability": "recognition",
+      "critical": true
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.verb_person",
+      "description_en": "Identify the person and number indicated by an example present-tense verb form.",
+      "capability": "recognition",
+      "critical": true
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.omit",
+      "description_en": "Omit a subject pronoun when the person and referent are already clear.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.contrast",
+      "description_en": "Use explicit subject pronouns to contrast speakers or other people.",
+      "capability": "contextual",
+      "critical": true
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.reference",
+      "description_en": "Choose a third-person pronoun to refer clearly to a known person or group.",
+      "capability": "contextual",
+      "critical": true
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.produce",
+      "description_en": "Produce short natural sentences with omitted or deliberately expressed subject pronouns.",
+      "capability": "production",
+      "critical": true
+    }
+  ],
+  "lesson": {
+    "short_explanation_en": "In Italian, the verb usually shows who is doing something, so you normally say Parlo italiano rather than Io parlo italiano. Use io, tu, lui, lei, noi, voi and loro to make the person clear or draw a contrast. Lui and lei share the same singular verb form, parla.",
+    "rule_blocks": [
+      {
+        "id": "it.a1.subjects.pro_drop.rule1",
+        "heading_en": "Seven pronouns, six grammatical persons",
+        "explanation_en": "Italian has the subject pronouns io, tu, lui, lei, noi, voi and loro. Lui and lei share the same third-person singular verb form. The verb endings normally show who is speaking or acting.",
+        "pattern": "io → parlo; tu → parli; lui/lei → parla; noi → parliamo; voi → parlate; loro → parlano",
+        "usage_notes_en": [
+          "Use tu to speak to one person and voi to speak to more than one person in familiar contexts.",
+          "Lui and lei refer to a male and a female person respectively in the examples; their verb form is the same.",
+          "The full conjugation system is not the goal of this lesson: read the given forms to identify the subject."
+        ],
+        "common_errors_en": [
+          "Incorrect: io parla italiano. Correct: parlo italiano (or io parlo italiano when emphasising the speaker).",
+          "Incorrect: loro parla italiano. Correct: loro parlano italiano."
+        ],
+        "example_ids": [
+          "it.a1.subjects.pro_drop.ex02",
+          "it.a1.subjects.pro_drop.ex06",
+          "it.a1.subjects.pro_drop.ex07"
+        ]
+      },
+      {
+        "id": "it.a1.subjects.pro_drop.rule2",
+        "heading_en": "Omit the subject when it is clear",
+        "explanation_en": "Italian usually does not need a subject pronoun. Use the verb alone when the person is already understood from the form or from the previous sentence.",
+        "pattern": "(io) parlo → Parlo.  (noi) parliamo → Parliamo.",
+        "usage_notes_en": [
+          "A dropped subject is normal and complete Italian, not a missing word.",
+          "For third-person subjects, the previous sentence often identifies who the verb refers to.",
+          "An explicit pronoun is not automatically wrong; it simply has a communicative effect."
+        ],
+        "common_errors_en": [
+          "Unnatural repetition: io parlo italiano. Io parlo inglese. Better when no contrast is intended: Parlo italiano. Parlo inglese.",
+          "Do not remove a subject if doing so makes the intended person unclear."
+        ],
+        "example_ids": [
+          "it.a1.subjects.pro_drop.ex01",
+          "it.a1.subjects.pro_drop.ex03",
+          "it.a1.subjects.pro_drop.ex08"
+        ]
+      },
+      {
+        "id": "it.a1.subjects.pro_drop.rule3",
+        "heading_en": "Keep pronouns for contrast or clarity",
+        "explanation_en": "Say io, tu, lui, lei, noi, voi or loro when you want to contrast people, emphasise a subject, or make clear who is meant. It is especially useful for lui versus lei because both use parla.",
+        "pattern": "Io parlo italiano, tu parli inglese. / Lui parla italiano, lei parla inglese.",
+        "usage_notes_en": [
+          "Pronouns may appear for deliberate emphasis even when the verb identifies the person.",
+          "Do not treat all explicit pronouns as compulsory; use them when they help the message."
+        ],
+        "common_errors_en": [
+          "Do not drop lui or lei blindly when two people are being compared and the referent could become unclear."
+        ],
+        "example_ids": [
+          "it.a1.subjects.pro_drop.ex04",
+          "it.a1.subjects.pro_drop.ex05",
+          "it.a1.subjects.pro_drop.ex09",
+          "it.a1.subjects.pro_drop.ex10"
+        ]
+      }
+    ],
+    "form_tables": [
+      {
+        "id": "it.a1.subjects.pro_drop.table1",
+        "title_en": "Subject pronouns with example present-tense forms of parlare",
+        "columns": [
+          "Person",
+          "Singular",
+          "Plural"
+        ],
+        "rows": [
+          [
+            "1st",
+            "io — parlo",
+            "noi — parliamo"
+          ],
+          [
+            "2nd",
+            "tu — parli",
+            "voi — parlate"
+          ],
+          [
+            "3rd",
+            "lui / lei — parla",
+            "loro — parlano"
+          ]
+        ]
+      },
+      {
+        "id": "it.a1.subjects.pro_drop.table2",
+        "title_en": "When to use the pronoun",
+        "columns": [
+          "Situation",
+          "Example",
+          "Why"
+        ],
+        "rows": [
+          [
+            "Subject understood",
+            "Parlo italiano.",
+            "Io is unnecessary."
+          ],
+          [
+            "Contrast",
+            "Io parlo italiano, tu parli inglese.",
+            "Makes two subjects prominent."
+          ],
+          [
+            "Clarity",
+            "Lui parla italiano, lei parla inglese.",
+            "Distinguishes two third-person subjects."
+          ]
+        ]
+      }
+    ]
+  },
+  "contexts": [
+    {
+      "id": "it.a1.subjects.pro_drop.ctx1",
+      "type": "dialogue",
+      "setting_en": "Anna and Marco meet at a language class.",
+      "lines": [
+        {
+          "speaker": "Anna",
+          "target": "Ciao, sono Anna. Parlo italiano.",
+          "translation_en": "Hi, I’m Anna. I speak Italian."
+        },
+        {
+          "speaker": "Marco",
+          "target": "Ciao, sono Marco. Io parlo inglese.",
+          "translation_en": "Hi, I’m Marco. I speak English."
+        },
+        {
+          "speaker": "Anna",
+          "target": "Tu parli inglese, io parlo italiano.",
+          "translation_en": "You speak English, and I speak Italian."
+        },
+        {
+          "speaker": "Marco",
+          "target": "Sì. Parliamo in italiano?",
+          "translation_en": "Yes. Shall we speak Italian?"
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "Parlo",
+          "lemma": "parlare",
+          "skill_id": "it.a1.subjects.pro_drop.omit",
+          "form_key": "indicative.present.1sg.affirmative",
+          "explanation_en": "The speaker is clear, so Anna does not need io."
+        },
+        {
+          "surface": "Io",
+          "lemma": "io",
+          "skill_id": "it.a1.subjects.pro_drop.contrast",
+          "form_key": "indicative.present.1sg.affirmative",
+          "explanation_en": "Marco emphasises his language in contrast to Anna’s."
+        },
+        {
+          "surface": "Tu",
+          "lemma": "tu",
+          "skill_id": "it.a1.subjects.pro_drop.contrast",
+          "form_key": "indicative.present.2sg.affirmative",
+          "explanation_en": "Anna contrasts what Marco speaks with what she speaks."
+        },
+        {
+          "surface": "parliamo",
+          "lemma": "parlare",
+          "skill_id": "it.a1.subjects.pro_drop.verb_person",
+          "form_key": "indicative.present.1pl.affirmative",
+          "explanation_en": "The form parliamo indicates noi without repeating it."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ciao",
+          "essere",
+          "parlare",
+          "italiano",
+          "io",
+          "inglese",
+          "tu",
+          "sì",
+          "in"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.ctx2",
+      "type": "narrative",
+      "setting_en": "Two friends use different languages while talking with family and friends.",
+      "lines": [
+        {
+          "speaker": "Narrator",
+          "target": "Anna è a casa. Parla con la mamma.",
+          "translation_en": "Anna is at home. She talks with her mother."
+        },
+        {
+          "speaker": "Narrator",
+          "target": "Marco è al lavoro. Lui parla con un amico.",
+          "translation_en": "Marco is at work. He talks with a friend."
+        },
+        {
+          "speaker": "Narrator",
+          "target": "Lei parla italiano, lui parla inglese.",
+          "translation_en": "She speaks Italian; he speaks English."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "Parla",
+          "lemma": "parlare",
+          "skill_id": "it.a1.subjects.pro_drop.omit",
+          "form_key": "indicative.present.3sg.affirmative",
+          "explanation_en": "The previous sentence names Anna, so the subject can be omitted."
+        },
+        {
+          "surface": "Lui",
+          "lemma": "lui",
+          "skill_id": "it.a1.subjects.pro_drop.reference",
+          "form_key": "indicative.present.3sg.affirmative",
+          "explanation_en": "Lui makes it clear that this sentence refers to Marco."
+        },
+        {
+          "surface": "Lei",
+          "lemma": "lei",
+          "skill_id": "it.a1.subjects.pro_drop.contrast",
+          "form_key": "indicative.present.3sg.affirmative",
+          "explanation_en": "Lei and lui make a clear contrast between Anna and Marco."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "a",
+          "casa",
+          "parlare",
+          "con",
+          "la",
+          "mamma",
+          "al",
+          "lavoro",
+          "lui",
+          "un",
+          "amico",
+          "lei",
+          "italiano",
+          "inglese"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "it.a1.subjects.pro_drop.ex01",
+      "target": "Sono Anna.",
+      "translation_en": "I’m Anna.",
+      "focus_surface": "Sono",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.omit"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "register": "neutral",
+      "note_en": "The speaker is clear: io is normally omitted.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.ex02",
+      "target": "Parli italiano?",
+      "translation_en": "Do you speak Italian?",
+      "focus_surface": "Parli",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.verb_person"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Parli signals tu, even without the pronoun.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "parlare",
+          "italiano"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.ex03",
+      "target": "Marco è a casa. Parla italiano.",
+      "translation_en": "Marco is at home. He speaks Italian.",
+      "focus_surface": "Parla",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.omit"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "The previous sentence names Marco, so lui is unnecessary.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "a",
+          "casa",
+          "parlare",
+          "italiano"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.ex04",
+      "target": "Io parlo italiano, tu parli inglese.",
+      "translation_en": "I speak Italian; you speak English.",
+      "focus_surface": "Io",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.contrast"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Explicit pronouns draw a contrast between two people.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "io",
+          "parlare",
+          "italiano",
+          "tu",
+          "inglese"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.ex05",
+      "target": "Lui parla italiano, lei parla inglese.",
+      "translation_en": "He speaks Italian; she speaks English.",
+      "focus_surface": "Lui",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.contrast"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Lui and lei distinguish two people whose verb forms match.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "lui",
+          "parlare",
+          "italiano",
+          "lei",
+          "inglese"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.ex06",
+      "target": "Parliamo insieme.",
+      "translation_en": "We speak together.",
+      "focus_surface": "Parliamo",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.omit"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "The -iamo form identifies noi.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "parlare",
+          "insieme"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.ex07",
+      "target": "Parlate italiano?",
+      "translation_en": "Do you (plural) speak Italian?",
+      "focus_surface": "Parlate",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.verb_person"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.2pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "The ending -ate identifies voi in this present-tense example.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "parlare",
+          "italiano"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.ex08",
+      "target": "Anna e Marco parlano italiano. Parlano ogni giorno.",
+      "translation_en": "Anna and Marco speak Italian. They speak every day.",
+      "focus_surface": "Parlano",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.omit"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Loro is omitted because the referents are already known.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "e",
+          "parlare",
+          "italiano",
+          "ogni",
+          "giorno"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.ex09",
+      "target": "Noi parliamo italiano, voi parlate inglese.",
+      "translation_en": "We speak Italian; you speak English.",
+      "focus_surface": "Noi",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.contrast"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "The explicit pronouns distinguish our group from your group.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "noi",
+          "parlare",
+          "italiano",
+          "voi",
+          "inglese"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.ex10",
+      "target": "Loro parlano italiano, noi parliamo inglese.",
+      "translation_en": "They speak Italian; we speak English.",
+      "focus_surface": "Loro",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.contrast"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Loro is helpful when two groups are contrasted.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "loro",
+          "parlare",
+          "italiano",
+          "noi",
+          "inglese"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "id": "it.a1.subjects.pro_drop.q01",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Which subject pronoun is indicated by parlo?",
+      "context_target": "",
+      "prompt_target": "Parlo italiano.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.subjects.pro_drop.q01.opt1",
+          "text": "io",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Parlo is first-person singular: the speaker is io."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q01.opt2",
+          "text": "tu",
+          "correct": false,
+          "error_type": "wrong_person_or_referent",
+          "explanation_en": "tu does not match the speaker, grammatical person or named referent in this question."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q01.opt3",
+          "text": "noi",
+          "correct": false,
+          "error_type": "wrong_person_or_referent",
+          "explanation_en": "noi does not match the speaker, grammatical person or named referent in this question."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q01.opt4",
+          "text": "voi",
+          "correct": false,
+          "error_type": "wrong_person_or_referent",
+          "explanation_en": "voi does not match the speaker, grammatical person or named referent in this question."
+        }
+      ],
+      "accepted_answers": [
+        "io"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the verb form and who is being discussed.",
+        "Decide whether the pronoun is needed for contrast or can be omitted."
+      ],
+      "feedback_correct_en": "Correct: io.",
+      "feedback_wrong_en": "Expected: io. Parlo is first-person singular: the speaker is io.",
+      "explanation_en": "Parlo is first-person singular: the speaker is io.",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.verb_person"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "parlare",
+          "italiano",
+          "io",
+          "tu",
+          "noi",
+          "voi"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.q02",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Which subject pronoun is indicated by parli?",
+      "context_target": "",
+      "prompt_target": "Parli italiano?",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.subjects.pro_drop.q02.opt1",
+          "text": "io",
+          "correct": false,
+          "error_type": "wrong_person_or_referent",
+          "explanation_en": "io does not match the speaker, grammatical person or named referent in this question."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q02.opt2",
+          "text": "tu",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Parli is second-person singular and addresses one person: tu."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q02.opt3",
+          "text": "noi",
+          "correct": false,
+          "error_type": "wrong_person_or_referent",
+          "explanation_en": "noi does not match the speaker, grammatical person or named referent in this question."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q02.opt4",
+          "text": "loro",
+          "correct": false,
+          "error_type": "wrong_person_or_referent",
+          "explanation_en": "loro does not match the speaker, grammatical person or named referent in this question."
+        }
+      ],
+      "accepted_answers": [
+        "tu"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the verb form and who is being discussed.",
+        "Decide whether the pronoun is needed for contrast or can be omitted."
+      ],
+      "feedback_correct_en": "Correct: tu.",
+      "feedback_wrong_en": "Expected: tu. Parli is second-person singular and addresses one person: tu.",
+      "explanation_en": "Parli is second-person singular and addresses one person: tu.",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.verb_person"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "parlare",
+          "italiano",
+          "tu",
+          "io",
+          "noi",
+          "loro"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.q03",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Which subject pronoun is indicated by parliamo?",
+      "context_target": "",
+      "prompt_target": "Parliamo insieme.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.subjects.pro_drop.q03.opt1",
+          "text": "voi",
+          "correct": false,
+          "error_type": "wrong_person_or_referent",
+          "explanation_en": "voi does not match the speaker, grammatical person or named referent in this question."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q03.opt2",
+          "text": "loro",
+          "correct": false,
+          "error_type": "wrong_person_or_referent",
+          "explanation_en": "loro does not match the speaker, grammatical person or named referent in this question."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q03.opt3",
+          "text": "noi",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Parliamo is first-person plural: noi."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q03.opt4",
+          "text": "tu",
+          "correct": false,
+          "error_type": "wrong_person_or_referent",
+          "explanation_en": "tu does not match the speaker, grammatical person or named referent in this question."
+        }
+      ],
+      "accepted_answers": [
+        "noi"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the verb form and who is being discussed.",
+        "Decide whether the pronoun is needed for contrast or can be omitted."
+      ],
+      "feedback_correct_en": "Correct: noi.",
+      "feedback_wrong_en": "Expected: noi. Parliamo is first-person plural: noi.",
+      "explanation_en": "Parliamo is first-person plural: noi.",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.verb_person"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "parlare",
+          "insieme",
+          "noi",
+          "voi",
+          "loro",
+          "tu"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.q04",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Which subject pronoun is indicated by parlate?",
+      "context_target": "",
+      "prompt_target": "Parlate inglese?",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.subjects.pro_drop.q04.opt1",
+          "text": "io",
+          "correct": false,
+          "error_type": "wrong_person_or_referent",
+          "explanation_en": "io does not match the speaker, grammatical person or named referent in this question."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q04.opt2",
+          "text": "tu",
+          "correct": false,
+          "error_type": "wrong_person_or_referent",
+          "explanation_en": "tu does not match the speaker, grammatical person or named referent in this question."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q04.opt3",
+          "text": "noi",
+          "correct": false,
+          "error_type": "wrong_person_or_referent",
+          "explanation_en": "noi does not match the speaker, grammatical person or named referent in this question."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q04.opt4",
+          "text": "voi",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Parlate is second-person plural: voi."
+        }
+      ],
+      "accepted_answers": [
+        "voi"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the verb form and who is being discussed.",
+        "Decide whether the pronoun is needed for contrast or can be omitted."
+      ],
+      "feedback_correct_en": "Correct: voi.",
+      "feedback_wrong_en": "Expected: voi. Parlate is second-person plural: voi.",
+      "explanation_en": "Parlate is second-person plural: voi.",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.verb_person"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.2pl.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "parlare",
+          "inglese",
+          "voi",
+          "io",
+          "tu",
+          "noi"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.q05",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Which subject pronoun could replace Anna e Marco?",
+      "context_target": "",
+      "prompt_target": "Anna e Marco parlano italiano.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.subjects.pro_drop.q05.opt1",
+          "text": "lui",
+          "correct": false,
+          "error_type": "wrong_person_or_referent",
+          "explanation_en": "lui does not match the speaker, grammatical person or named referent in this question."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q05.opt2",
+          "text": "loro",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Parlano is third-person plural and refers here to Anna and Marco: loro."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q05.opt3",
+          "text": "lei",
+          "correct": false,
+          "error_type": "wrong_person_or_referent",
+          "explanation_en": "lei does not match the speaker, grammatical person or named referent in this question."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q05.opt4",
+          "text": "noi",
+          "correct": false,
+          "error_type": "wrong_person_or_referent",
+          "explanation_en": "noi does not match the speaker, grammatical person or named referent in this question."
+        }
+      ],
+      "accepted_answers": [
+        "loro"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the verb form and who is being discussed.",
+        "Decide whether the pronoun is needed for contrast or can be omitted."
+      ],
+      "feedback_correct_en": "Correct: loro.",
+      "feedback_wrong_en": "Expected: loro. Parlano is third-person plural and refers here to Anna and Marco: loro.",
+      "explanation_en": "Parlano is third-person plural and refers here to Anna and Marco: loro.",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.verb_person"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "e",
+          "parlare",
+          "italiano",
+          "loro",
+          "lui",
+          "lei",
+          "noi"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.q06",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Which subject pronoun refers to Marco?",
+      "context_target": "",
+      "prompt_target": "Marco parla italiano.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.subjects.pro_drop.q06.opt1",
+          "text": "lei",
+          "correct": false,
+          "error_type": "wrong_person_or_referent",
+          "explanation_en": "lei does not match the speaker, grammatical person or named referent in this question."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q06.opt2",
+          "text": "noi",
+          "correct": false,
+          "error_type": "wrong_person_or_referent",
+          "explanation_en": "noi does not match the speaker, grammatical person or named referent in this question."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q06.opt3",
+          "text": "lui",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Marco is one male person: the corresponding subject pronoun is lui."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q06.opt4",
+          "text": "loro",
+          "correct": false,
+          "error_type": "wrong_person_or_referent",
+          "explanation_en": "loro does not match the speaker, grammatical person or named referent in this question."
+        }
+      ],
+      "accepted_answers": [
+        "lui"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the verb form and who is being discussed.",
+        "Decide whether the pronoun is needed for contrast or can be omitted."
+      ],
+      "feedback_correct_en": "Correct: lui.",
+      "feedback_wrong_en": "Expected: lui. Marco is one male person: the corresponding subject pronoun is lui.",
+      "explanation_en": "Marco is one male person: the corresponding subject pronoun is lui.",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.reference"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "parlare",
+          "italiano",
+          "lui",
+          "lei",
+          "noi",
+          "loro"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.q07",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Which subject pronoun refers to Anna?",
+      "context_target": "",
+      "prompt_target": "Anna parla italiano.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.subjects.pro_drop.q07.opt1",
+          "text": "lei",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Anna is one female person: the corresponding subject pronoun is lei."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q07.opt2",
+          "text": "lui",
+          "correct": false,
+          "error_type": "wrong_person_or_referent",
+          "explanation_en": "lui does not match the speaker, grammatical person or named referent in this question."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q07.opt3",
+          "text": "voi",
+          "correct": false,
+          "error_type": "wrong_person_or_referent",
+          "explanation_en": "voi does not match the speaker, grammatical person or named referent in this question."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q07.opt4",
+          "text": "loro",
+          "correct": false,
+          "error_type": "wrong_person_or_referent",
+          "explanation_en": "loro does not match the speaker, grammatical person or named referent in this question."
+        }
+      ],
+      "accepted_answers": [
+        "lei"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the verb form and who is being discussed.",
+        "Decide whether the pronoun is needed for contrast or can be omitted."
+      ],
+      "feedback_correct_en": "Correct: lei.",
+      "feedback_wrong_en": "Expected: lei. Anna is one female person: the corresponding subject pronoun is lei.",
+      "explanation_en": "Anna is one female person: the corresponding subject pronoun is lei.",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.reference"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "parlare",
+          "italiano",
+          "lei",
+          "lui",
+          "voi",
+          "loro"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.q08",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Choose the sentence that means I speak Italian and omits the subject pronoun io.",
+      "context_target": "",
+      "prompt_target": "",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.subjects.pro_drop.q08.opt1",
+          "text": "Io parlo italiano.",
+          "correct": false,
+          "error_type": "wrong_subject_choice",
+          "explanation_en": "Io parlo italiano. does not follow the specific person or omission instruction."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q08.opt2",
+          "text": "Tu parli italiano.",
+          "correct": false,
+          "error_type": "wrong_subject_choice",
+          "explanation_en": "Tu parli italiano. does not follow the specific person or omission instruction."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q08.opt3",
+          "text": "Noi parliamo italiano.",
+          "correct": false,
+          "error_type": "wrong_subject_choice",
+          "explanation_en": "Noi parliamo italiano. does not follow the specific person or omission instruction."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q08.opt4",
+          "text": "Parlo italiano.",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "The selected sentence leaves out io as requested."
+        }
+      ],
+      "accepted_answers": [
+        "Parlo italiano."
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the verb form and who is being discussed.",
+        "Decide whether the pronoun is needed for contrast or can be omitted."
+      ],
+      "feedback_correct_en": "Correct: Parlo italiano..",
+      "feedback_wrong_en": "Expected: Parlo italiano.. The selected sentence leaves out io as requested.",
+      "explanation_en": "The selected sentence leaves out io as requested.",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.omit"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "parlare",
+          "italiano",
+          "io",
+          "tu",
+          "noi"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.q09",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Fill in the contrasting subject pronoun for the speaker. Write only the pronoun.",
+      "context_target": "",
+      "prompt_target": "___ parlo italiano, ma tu parli inglese.",
+      "prompt_en": "Use the first-person singular pronoun.",
+      "options": [],
+      "accepted_answers": [
+        "io"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The clause contrasts the speaker with the person addressed.",
+        "The first-person singular subject pronoun is io."
+      ],
+      "feedback_correct_en": "Correct: io.",
+      "feedback_wrong_en": "Expected: io. Io marks the speaker in contrast with tu.",
+      "explanation_en": "Io marks the speaker in contrast with tu.",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.contrast"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "parlare",
+          "italiano",
+          "ma",
+          "tu",
+          "inglese",
+          "io"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.q10",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Complete the contrast with the subject pronoun for one person being addressed.",
+      "context_target": "",
+      "prompt_target": "Io parlo italiano, ma ___ parli inglese.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "tu"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The speaker is io; the other person is the listener.",
+        "Second-person singular is tu."
+      ],
+      "feedback_correct_en": "Correct: tu.",
+      "feedback_wrong_en": "Expected: tu. Tu explicitly contrasts the listener with the speaker.",
+      "explanation_en": "Tu explicitly contrasts the listener with the speaker.",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.contrast"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "io",
+          "parlare",
+          "italiano",
+          "ma",
+          "inglese",
+          "tu"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.q11",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Complete the contrast using the plural pronoun for people being addressed.",
+      "context_target": "",
+      "prompt_target": "Noi parliamo italiano, ma ___ parlate inglese.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "voi"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The first group is noi; the other group is being addressed.",
+        "Second-person plural is voi."
+      ],
+      "feedback_correct_en": "Correct: voi.",
+      "feedback_wrong_en": "Expected: voi. Voi is the subject for the group being addressed.",
+      "explanation_en": "Voi is the subject for the group being addressed.",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.contrast"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.2pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "noi",
+          "parlare",
+          "italiano",
+          "ma",
+          "inglese",
+          "voi"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.q12",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Complete the contrast with the subject pronoun referring to Marco.",
+      "context_target": "Anna parla italiano. Marco parla inglese.",
+      "prompt_target": "Lei parla italiano, ma ___ parla inglese.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "lui"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The missing pronoun refers to Marco, not Anna.",
+        "Use the masculine singular subject pronoun."
+      ],
+      "feedback_correct_en": "Correct: lui.",
+      "feedback_wrong_en": "Expected: lui. The contrast is between Anna (lei) and Marco (lui).",
+      "explanation_en": "The contrast is between Anna (lei) and Marco (lui).",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.reference"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "lei",
+          "parlare",
+          "italiano",
+          "ma",
+          "inglese",
+          "lui"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.q13",
+      "type": "fill_gap",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_en": "Replace the named pair with a subject pronoun. Write only the pronoun.",
+      "context_target": "Anna e Marco parlano italiano.",
+      "prompt_target": "___ parlano italiano.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "loro"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The subject is two people, neither the speaker nor the listener.",
+        "Use the third-person plural pronoun."
+      ],
+      "feedback_correct_en": "Correct: loro.",
+      "feedback_wrong_en": "Expected: loro. Loro is the third-person plural pronoun replacing Anna e Marco.",
+      "explanation_en": "Loro is the third-person plural pronoun replacing Anna e Marco.",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.reference"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "parlare",
+          "italiano",
+          "e",
+          "loro"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.q14",
+      "type": "fill_gap",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_en": "Insert the first-person plural subject pronoun as requested. Write only the pronoun.",
+      "context_target": "",
+      "prompt_target": "___ studiamo insieme.",
+      "prompt_en": "This is a pronoun-identification exercise, not a recommendation to say noi every time.",
+      "options": [],
+      "accepted_answers": [
+        "noi"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The verb refers to the speaker and at least one other person.",
+        "The first-person plural pronoun is noi."
+      ],
+      "feedback_correct_en": "Correct: noi.",
+      "feedback_wrong_en": "Expected: noi. Noi is the first-person plural subject pronoun; studiamo agrees with it.",
+      "explanation_en": "Noi is the first-person plural subject pronoun; studiamo agrees with it.",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.persons"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "subject_pronoun.1pl"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "studiare",
+          "insieme",
+          "noi"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.q15",
+      "type": "transform",
+      "stage": "production",
+      "difficulty": 3,
+      "instruction_en": "Remove only the unnecessary subject pronoun. Keep the rest of the sentence unchanged.",
+      "context_target": "",
+      "prompt_target": "Io parlo italiano.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "Parlo italiano."
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The person is already shown by parlo.",
+        "Remove io and start the sentence with Parlo."
+      ],
+      "feedback_correct_en": "Correct: Parlo italiano..",
+      "feedback_wrong_en": "Expected: Parlo italiano.. The unchanged verb already tells us the subject is io.",
+      "explanation_en": "The unchanged verb already tells us the subject is io.",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.omit"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "io",
+          "parlare",
+          "italiano"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.q16",
+      "type": "transform",
+      "stage": "production",
+      "difficulty": 3,
+      "instruction_en": "Remove only the unnecessary subject pronoun. Keep the rest of the sentence unchanged.",
+      "context_target": "",
+      "prompt_target": "Tu parli inglese.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "Parli inglese."
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The verb form already identifies tu.",
+        "Begin the rewritten sentence with Parli."
+      ],
+      "feedback_correct_en": "Correct: Parli inglese..",
+      "feedback_wrong_en": "Expected: Parli inglese.. Parli identifies the listener, so tu can be omitted here.",
+      "explanation_en": "Parli identifies the listener, so tu can be omitted here.",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.omit"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "tu",
+          "parlare",
+          "inglese"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.q17",
+      "type": "guided_production",
+      "stage": "production",
+      "difficulty": 3,
+      "instruction_en": "Write one simple sentence with an omitted io, then one sentence contrasting io and tu.",
+      "context_target": "",
+      "prompt_target": "io; parlare; italiano / tu; parlare; inglese",
+      "prompt_en": "Use parlare and the two languages. Write complete natural Italian sentences.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the verb form and who is being discussed.",
+        "Decide whether the pronoun is needed for contrast or can be omitted."
+      ],
+      "feedback_correct_en": "Compare your answer with the rubric.",
+      "feedback_wrong_en": "Check who is speaking and whether the subject needs emphasis.",
+      "explanation_en": "The first sentence should use no explicit subject; the second should contrast io and tu.",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.produce"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "The first sentence has a correct first-person singular verb and omits io.",
+          "The second sentence uses io and tu to mark a contrast.",
+          "Both sentences are idiomatic and grammatically coherent. No exact-text scoring."
+        ],
+        "example_response": "Parlo italiano. Io parlo italiano, tu parli inglese."
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "io",
+          "parlare",
+          "italiano",
+          "tu",
+          "inglese"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.q18",
+      "type": "multiple_choice",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Who is the subject indicated by parliamo?",
+      "context_target": "",
+      "prompt_target": "Domani parliamo con Marco.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.subjects.pro_drop.q18.opt1",
+          "text": "noi",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Parliamo shows first-person plural: noi, even without an explicit pronoun."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q18.opt2",
+          "text": "voi",
+          "correct": false,
+          "error_type": "wrong_person_or_referent",
+          "explanation_en": "voi does not match the speaker, grammatical person or named referent in this question."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q18.opt3",
+          "text": "loro",
+          "correct": false,
+          "error_type": "wrong_person_or_referent",
+          "explanation_en": "loro does not match the speaker, grammatical person or named referent in this question."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q18.opt4",
+          "text": "tu",
+          "correct": false,
+          "error_type": "wrong_person_or_referent",
+          "explanation_en": "tu does not match the speaker, grammatical person or named referent in this question."
+        }
+      ],
+      "accepted_answers": [
+        "noi"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the verb form and who is being discussed.",
+        "Decide whether the pronoun is needed for contrast or can be omitted."
+      ],
+      "feedback_correct_en": "Correct: noi.",
+      "feedback_wrong_en": "Expected: noi. Parliamo shows first-person plural: noi, even without an explicit pronoun.",
+      "explanation_en": "Parliamo shows first-person plural: noi, even without an explicit pronoun.",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.verb_person"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "domani",
+          "parlare",
+          "con",
+          "noi",
+          "voi",
+          "loro",
+          "tu"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.q19",
+      "type": "fill_gap",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Write the subject pronoun that replaces Marco e la mamma.",
+      "context_target": "Marco e la mamma parlano con Anna.",
+      "prompt_target": "___ parlano con Anna.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "loro"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Two people form the subject of parlano.",
+        "Use the third-person plural subject pronoun."
+      ],
+      "feedback_correct_en": "Correct: loro.",
+      "feedback_wrong_en": "Expected: loro. Use loro to replace the two named people.",
+      "explanation_en": "Use loro to replace the two named people.",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.reference"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "parlare",
+          "con",
+          "e",
+          "la",
+          "mamma",
+          "loro"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.q20",
+      "type": "transform",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Remove only the subject pronoun, keeping all other words.",
+      "context_target": "",
+      "prompt_target": "Noi parliamo al telefono.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "Parliamo al telefono."
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The verb form is enough to identify the speaker and their group.",
+        "Start the sentence with Parliamo."
+      ],
+      "feedback_correct_en": "Correct: Parliamo al telefono..",
+      "feedback_wrong_en": "Expected: Parliamo al telefono.. The verb parliamo already indicates noi.",
+      "explanation_en": "The verb parliamo already indicates noi.",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.omit"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "noi",
+          "parlare",
+          "al",
+          "telefono"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.q21",
+      "type": "guided_production",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Write two connected sentences: first say where Anna and Marco are, then contrast which language they study.",
+      "context_target": "",
+      "prompt_target": "Anna; biblioteca / Marco; casa / italiano; inglese",
+      "prompt_en": "Use lei and lui in a natural contrast; use essere and studiare.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the verb form and who is being discussed.",
+        "Decide whether the pronoun is needed for contrast or can be omitted."
+      ],
+      "feedback_correct_en": "Compare your answer with the rubric.",
+      "feedback_wrong_en": "Check who is speaking and whether the subject needs emphasis.",
+      "explanation_en": "Use lei and lui where they help contrast Anna and Marco; do not force subject pronouns in every sentence.",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.produce"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "subject_pronoun.3sg"
+      ],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "The sentences are complete and natural.",
+          "Lei clearly refers to Anna and lui to Marco.",
+          "Correct verb forms agree with each subject.",
+          "Free production is self-checked, not exact-matched."
+        ],
+        "example_response": "Anna è in biblioteca e Marco è a casa. Lei studia italiano, lui studia inglese."
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "biblioteca",
+          "casa",
+          "italiano",
+          "inglese",
+          "essere",
+          "in",
+          "e",
+          "a",
+          "lei",
+          "studiare",
+          "lui"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.q22",
+      "type": "multiple_choice",
+      "stage": "review",
+      "difficulty": 2,
+      "instruction_en": "Which pronoun corresponds to the verb form in this question?",
+      "context_target": "",
+      "prompt_target": "Parlate italiano?",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.subjects.pro_drop.q22.opt1",
+          "text": "io",
+          "correct": false,
+          "error_type": "wrong_person_or_referent",
+          "explanation_en": "io does not match the speaker, grammatical person or named referent in this question."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q22.opt2",
+          "text": "voi",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Parlate points to second-person plural: voi."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q22.opt3",
+          "text": "loro",
+          "correct": false,
+          "error_type": "wrong_person_or_referent",
+          "explanation_en": "loro does not match the speaker, grammatical person or named referent in this question."
+        },
+        {
+          "id": "it.a1.subjects.pro_drop.q22.opt4",
+          "text": "noi",
+          "correct": false,
+          "error_type": "wrong_person_or_referent",
+          "explanation_en": "noi does not match the speaker, grammatical person or named referent in this question."
+        }
+      ],
+      "accepted_answers": [
+        "voi"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the verb form and who is being discussed.",
+        "Decide whether the pronoun is needed for contrast or can be omitted."
+      ],
+      "feedback_correct_en": "Correct: voi.",
+      "feedback_wrong_en": "Expected: voi. Parlate points to second-person plural: voi.",
+      "explanation_en": "Parlate points to second-person plural: voi.",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.verb_person"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.2pl.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "parlare",
+          "italiano",
+          "voi",
+          "io",
+          "loro",
+          "noi"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.subjects.pro_drop.q23",
+      "type": "guided_production",
+      "stage": "review",
+      "difficulty": 3,
+      "instruction_en": "Write a contrast with noi and voi. Then write a second sentence that omits noi.",
+      "context_target": "",
+      "prompt_target": "noi; parlare; italiano / voi; parlare; inglese",
+      "prompt_en": "Use parlare, italiano and inglese, with natural punctuation.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the verb form and who is being discussed.",
+        "Decide whether the pronoun is needed for contrast or can be omitted."
+      ],
+      "feedback_correct_en": "Compare your answer with the rubric.",
+      "feedback_wrong_en": "Check who is speaking and whether the subject needs emphasis.",
+      "explanation_en": "Use contrastive noi and voi accurately, then write another sentence with the subject omitted.",
+      "skill_ids": [
+        "it.a1.subjects.pro_drop.produce"
+      ],
+      "verb_ids": [
+        "it:parlare"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "The contrast between noi and voi is clear.",
+          "The second sentence uses parliamo without a subject pronoun.",
+          "Grammar and word order are natural; do not exact-match the response."
+        ],
+        "example_response": "Noi parliamo italiano, voi parlate inglese. Parliamo insieme."
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "noi",
+          "parlare",
+          "italiano",
+          "voi",
+          "inglese",
+          "insieme"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "verb_application": {
+    "applicable": true,
+    "required_form_keys": [
+      "indicative.present.1sg.affirmative",
+      "indicative.present.2sg.affirmative",
+      "indicative.present.3sg.affirmative",
+      "indicative.present.1pl.affirmative",
+      "indicative.present.2pl.affirmative",
+      "indicative.present.3pl.affirmative"
+    ],
+    "verbs": [
+      {
+        "id": "it:parlare",
+        "lemma": "parlare",
+        "meaning_en": "to speak",
+        "regularity": "regular",
+        "conjugation_class": "-are",
+        "auxiliary": "avere",
+        "governed_cases_or_prepositions": [],
+        "forms": [
+          {
+            "form_key": "indicative.present.1sg.affirmative",
+            "surface": "parlo",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2sg.affirmative",
+            "surface": "parli",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3sg.affirmative",
+            "surface": "parla",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.1pl.affirmative",
+            "surface": "parliamo",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2pl.affirmative",
+            "surface": "parlate",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3pl.affirmative",
+            "surface": "parlano",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          }
+        ],
+        "exercise_ids": [
+          "it.a1.subjects.pro_drop.q01",
+          "it.a1.subjects.pro_drop.q02",
+          "it.a1.subjects.pro_drop.q03",
+          "it.a1.subjects.pro_drop.q04",
+          "it.a1.subjects.pro_drop.q05",
+          "it.a1.subjects.pro_drop.q06",
+          "it.a1.subjects.pro_drop.q07",
+          "it.a1.subjects.pro_drop.q08",
+          "it.a1.subjects.pro_drop.q09",
+          "it.a1.subjects.pro_drop.q10",
+          "it.a1.subjects.pro_drop.q11",
+          "it.a1.subjects.pro_drop.q12",
+          "it.a1.subjects.pro_drop.q13",
+          "it.a1.subjects.pro_drop.q15",
+          "it.a1.subjects.pro_drop.q16",
+          "it.a1.subjects.pro_drop.q17",
+          "it.a1.subjects.pro_drop.q18",
+          "it.a1.subjects.pro_drop.q19",
+          "it.a1.subjects.pro_drop.q20",
+          "it.a1.subjects.pro_drop.q22",
+          "it.a1.subjects.pro_drop.q23"
+        ]
+      }
+    ]
+  },
+  "mastery": {
+    "minimum_scored_items": 12,
+    "required_score": 0.8,
+    "minimum_production_score": 0.7,
+    "minimum_unaided_production_items": 2,
+    "required_stages": [
+      "notice",
+      "controlled",
+      "contextual",
+      "production",
+      "transfer"
+    ],
+    "review_intervals_days": [
+      1,
+      3,
+      7,
+      14,
+      30,
+      60
+    ]
+  },
+  "vocabulary_audit": {
+    "manifest_id": "it-reviewed-9d35be468e23",
+    "used_lemmas": [
+      "a",
+      "al",
+      "amico",
+      "biblioteca",
+      "casa",
+      "ciao",
+      "con",
+      "domani",
+      "e",
+      "essere",
+      "giorno",
+      "in",
+      "inglese",
+      "insieme",
+      "io",
+      "italiano",
+      "la",
+      "lavoro",
+      "lei",
+      "loro",
+      "lui",
+      "ma",
+      "mamma",
+      "noi",
+      "ogni",
+      "parlare",
+      "studiare",
+      "sì",
+      "telefono",
+      "tu",
+      "un",
+      "voi"
+    ],
+    "target_lemmas": [
+      "io",
+      "tu",
+      "lui",
+      "lei",
+      "noi",
+      "voi",
+      "loro",
+      "parlare"
+    ],
+    "outside_allowlist_lemmas": [],
+    "introduced_lemmas": [],
+    "proper_names": [
+      "Anna",
+      "Marco"
+    ],
+    "grammar_only_tokens": [],
+    "above_level_lemmas": [],
+    "tests_with_unknown_vocabulary": [],
+    "status": "pass"
+  },
+  "level_audit": {
+    "target_cefr": "A1",
+    "max_sentence_length_words": 9,
+    "unapproved_grammar_features": [],
+    "scope_violations": [],
+    "status": "pass"
+  },
+  "quality_audit": {
+    "status": "pass",
+    "checks": {
+      "unique_ids": true,
+      "prerequisites_resolve": true,
+      "answers_verified": true,
+      "forms_verified": true,
+      "single_best_answers": true,
+      "naturalness_checked": true,
+      "cefr_checked": true,
+      "translations_checked": true,
+      "requested_counts_met": true
+    },
+    "issues": [],
+    "needs_human_review": [],
+    "sources": [
+      {
+        "name": "Treccani — Pronomi personali (La grammatica italiana)",
+        "url": "https://www.treccani.it/enciclopedia/pronomi-personali_%28La-grammatica-italiana%29/"
+      },
+      {
+        "name": "Università di Torino — Pronomi personali, subject-pronoun reference",
+        "url": "https://elearning.unito.it/strutture_universitarie/pluginfile.php/58854/mod_resource/content/1/pronomipersonali.pdf"
+      },
+      {
+        "name": "Treccani — Perché in alcuni casi è necessario esprimere il soggetto?",
+        "url": "https://www.treccani.it/magazine/lingua_italiana/speciali/i-perche-dell-italiano/05_palermo.html"
+      }
+    ],
+    "counts": {
+      "contexts": 2,
+      "examples": 10,
+      "exercise_bank": 23,
+      "scored_exercises": 20,
+      "transfer_exercises": 4,
+      "pronoun_person_or_form_tests": 8
+    }
+  },
+  "blocking_reasons": [],
+  "missing_files_or_prerequisites": [],
+  "audit": {
+    "status": "pass",
+    "issues": [],
+    "needs_human_review": [],
+    "sources": [
+      {
+        "name": "Treccani — Pronomi personali (La grammatica italiana)",
+        "url": "https://www.treccani.it/enciclopedia/pronomi-personali_%28La-grammatica-italiana%29/"
+      },
+      {
+        "name": "Università di Torino — Pronomi personali, subject-pronoun reference",
+        "url": "https://elearning.unito.it/strutture_universitarie/pluginfile.php/58854/mod_resource/content/1/pronomipersonali.pdf"
+      },
+      {
+        "name": "Treccani — Perché in alcuni casi è necessario esprimere il soggetto?",
+        "url": "https://www.treccani.it/magazine/lingua_italiana/speciali/i-perche-dell-italiano/05_palermo.html"
+      }
+    ],
+    "checks": {
+      "unique_ids": true,
+      "prerequisites_resolve": true,
+      "answers_verified": true,
+      "forms_verified": true,
+      "single_best_answers": true,
+      "naturalness_checked": true,
+      "cefr_checked": true,
+      "translations_checked": true,
+      "requested_counts_met": true
+    }
+  }
+}

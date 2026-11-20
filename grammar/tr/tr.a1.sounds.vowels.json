@@ -1,0 +1,1911 @@
+{
+  "schema_version": "lessico-grammar-v1",
+  "content_version": "1.0.0",
+  "status": "ready",
+  "mode": "topic_pack",
+  "language": "tr",
+  "vocabulary_manifest_id": "tr-reviewed-a6bc562da7a2",
+  "topic": {
+    "id": "tr.a1.sounds.vowels",
+    "cefr": "A1",
+    "sequence": 1,
+    "module_id": "tr.a1.sounds",
+    "title_target": "Türkçe Ünlüler ve Büyük–Küçük Harfler",
+    "title_en": "Turkish vowels and casing",
+    "estimated_minutes": 15,
+    "prerequisite_ids": [],
+    "learning_objectives": [
+      "Understand and use turkish vowels and casing."
+    ],
+    "scope_included": [
+      "recognize the eight vowels, front and back groups, and the distinct I, İ, ı and i letters"
+    ],
+    "scope_excluded": [
+      "suffix choice and detailed phonetics"
+    ],
+    "new_terms": [],
+    "reading_links": [],
+    "references": [
+      {
+        "title": "Türk Dil Kurumu: Ünlülerin Nitelikleri",
+        "url": "https://tdk.gov.tr/icerik/yazim-kurallari/unlulerin-nitelikleri/"
+      },
+      {
+        "title": "Türkiye Maarif Vakfı: Türkçenin Yabancı Dil Olarak Öğretimi Programı",
+        "url": "https://turkiyemaarif.org/uploads/168b69b2349aed.pdf"
+      }
+    ]
+  },
+  "skills": [
+    {
+      "id": "tr.a1.sounds.vowels.recognition",
+      "description_en": "Recognise the eight written Turkish vowels in familiar A1 words.",
+      "capability": "recognition",
+      "critical": true
+    },
+    {
+      "id": "tr.a1.sounds.vowels.vowel_group",
+      "description_en": "Identify back vowels a, ı, o, u and front vowels e, i, ö, ü.",
+      "capability": "recognition",
+      "critical": true
+    },
+    {
+      "id": "tr.a1.sounds.vowels.letter_pair",
+      "description_en": "Distinguish dotted and dotless I/i and match uppercase and lowercase vowels.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "tr.a1.sounds.vowels.vowel_writing",
+      "description_en": "Supply the exact written vowel in an A1 word.",
+      "capability": "production",
+      "critical": true
+    }
+  ],
+  "lesson": {
+    "short_explanation_en": "Turkish has eight vowels: a, e, ı, i, o, ö, u and ü. Back vowels are a, ı, o, u; front vowels are e, i, ö, ü. The dotted and dotless letters are different: uppercase I matches lowercase ı, but uppercase İ matches lowercase i. Notice and write these letters accurately. We are not choosing suffixes yet.",
+    "rule_blocks": [
+      {
+        "id": "tr.a1.sounds.vowels.rule.01",
+        "heading_en": "Eight vowels: two groups",
+        "explanation_en": "There are eight distinct written vowels. Back: a, ı, o, u. Front: e, i, ö, ü. The group labels describe vowels; no suffix rule is introduced here.",
+        "pattern": "Back: a ı o u | Front: e i ö ü",
+        "usage_notes_en": [
+          "Look at the written vowel, not its nearest English look-alike.",
+          "A word can contain more than one vowel. Identifying them does not yet mean choosing a suffix."
+        ],
+        "common_errors_en": [
+          "Calling ı the letter i loses the dotless/dotted contrast.",
+          "Putting ö or ü in the back group confuses the two groups."
+        ],
+        "example_ids": [
+          "tr.a1.sounds.vowels.example.01",
+          "tr.a1.sounds.vowels.example.02",
+          "tr.a1.sounds.vowels.example.05",
+          "tr.a1.sounds.vowels.example.06",
+          "tr.a1.sounds.vowels.example.07",
+          "tr.a1.sounds.vowels.example.08",
+          "tr.a1.sounds.vowels.example.09",
+          "tr.a1.sounds.vowels.example.10"
+        ]
+      },
+      {
+        "id": "tr.a1.sounds.vowels.rule.02",
+        "heading_en": "Uppercase and lowercase, especially I/İ",
+        "explanation_en": "Turkish capital I has no dot and becomes ı in lowercase. Capital İ has a dot and becomes i in lowercase. Other vowel pairs are A/a, E/e, O/o, Ö/ö, U/u and Ü/ü.",
+        "pattern": "A↔a | E↔e | I↔ı | İ↔i | O↔o | Ö↔ö | U↔u | Ü↔ü",
+        "usage_notes_en": [
+          "Preserve the dot even when you capitalise a word.",
+          "Turkish-specific casing is required; English-only casing is unreliable for I/İ."
+        ],
+        "common_errors_en": [
+          "İşık is not the correct capitalised spelling of ışık; write Işık.",
+          "Inek is not the correct capitalised spelling of inek; write İnek."
+        ],
+        "example_ids": [
+          "tr.a1.sounds.vowels.example.03",
+          "tr.a1.sounds.vowels.example.04"
+        ]
+      }
+    ],
+    "form_tables": [
+      {
+        "id": "tr.a1.sounds.vowels.table.pairs",
+        "title_en": "Vowel letter pairs",
+        "columns": [
+          "Uppercase",
+          "Lowercase",
+          "Group",
+          "Familiar A1 example"
+        ],
+        "rows": [
+          [
+            "A",
+            "a",
+            "back",
+            "araba"
+          ],
+          [
+            "E",
+            "e",
+            "front",
+            "ekmek"
+          ],
+          [
+            "I",
+            "ı",
+            "back",
+            "ışık"
+          ],
+          [
+            "İ",
+            "i",
+            "front",
+            "inek"
+          ],
+          [
+            "O",
+            "o",
+            "back",
+            "okul"
+          ],
+          [
+            "Ö",
+            "ö",
+            "front",
+            "göz"
+          ],
+          [
+            "U",
+            "u",
+            "back",
+            "su"
+          ],
+          [
+            "Ü",
+            "ü",
+            "front",
+            "süt"
+          ]
+        ]
+      },
+      {
+        "id": "tr.a1.sounds.vowels.table.groups",
+        "title_en": "Vowel groups at a glance",
+        "columns": [
+          "Group",
+          "Letters"
+        ],
+        "rows": [
+          [
+            "Back",
+            "a, ı, o, u"
+          ],
+          [
+            "Front",
+            "e, i, ö, ü"
+          ]
+        ]
+      }
+    ]
+  },
+  "contexts": [
+    {
+      "id": "tr.a1.sounds.vowels.context.01",
+      "type": "dialogue",
+      "setting_en": "At school, Ayşe and Mehmet compare initial capitals on word cards.",
+      "lines": [
+        {
+          "speaker": "Ayşe",
+          "target": "Merhaba, Mehmet.",
+          "translation_en": "Hello, Mehmet."
+        },
+        {
+          "speaker": "Mehmet",
+          "target": "Merhaba, Ayşe.",
+          "translation_en": "Hello, Ayşe."
+        },
+        {
+          "speaker": "Ayşe",
+          "target": "Işık: I. İnek: İ.",
+          "translation_en": "“Işık” starts with capital I; “İnek” starts with capital İ."
+        },
+        {
+          "speaker": "Mehmet",
+          "target": "I — ı; İ — i.",
+          "translation_en": "Capital I pairs with dotless ı; capital İ pairs with dotted i."
+        },
+        {
+          "speaker": "Ayşe",
+          "target": "Evet, doğru!",
+          "translation_en": "Yes, correct!"
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "merhaba",
+          "ışık",
+          "inek",
+          "evet",
+          "doğru"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.context.02",
+      "type": "note",
+      "setting_en": "Ayşe makes a short spelling note beside her shopping list.",
+      "lines": [
+        {
+          "speaker": "Ayşe",
+          "target": "Süt, su, üzüm.",
+          "translation_en": "Milk, water and grapes."
+        },
+        {
+          "speaker": "Ayşe",
+          "target": "Süt: ü. Su: u. Üzüm: ü.",
+          "translation_en": "“Süt” has ü; “su” has u; “üzüm” has ü."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "süt",
+          "su",
+          "üzüm"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "tr.a1.sounds.vowels.example.01",
+      "target": "araba",
+      "translation_en": "car",
+      "note_en": "The three a letters are back vowels.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.recognition",
+        "tr.a1.sounds.vowels.vowel_group"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "araba"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.example.02",
+      "target": "ekmek",
+      "translation_en": "bread",
+      "note_en": "Both e letters are front vowels.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.recognition",
+        "tr.a1.sounds.vowels.vowel_group"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ekmek"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.example.03",
+      "target": "Işık — ışık",
+      "translation_en": "light (capitalised and lowercase)",
+      "note_en": "Capital I and lowercase ı belong together.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.letter_pair"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ışık"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.example.04",
+      "target": "İnek — inek",
+      "translation_en": "cow (capitalised and lowercase)",
+      "note_en": "Capital İ and lowercase i belong together.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.letter_pair"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "inek"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.example.05",
+      "target": "okul",
+      "translation_en": "school",
+      "note_en": "The vowels o and u are both back vowels.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.recognition",
+        "tr.a1.sounds.vowels.vowel_group"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "okul"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.example.06",
+      "target": "göz",
+      "translation_en": "eye",
+      "note_en": "Ö/ö is a front vowel.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.recognition",
+        "tr.a1.sounds.vowels.vowel_group"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "göz"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.example.07",
+      "target": "su",
+      "translation_en": "water",
+      "note_en": "U/u is a back vowel.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.recognition",
+        "tr.a1.sounds.vowels.vowel_group"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "su"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.example.08",
+      "target": "süt",
+      "translation_en": "milk",
+      "note_en": "Ü/ü is a front vowel; it is not u.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.recognition",
+        "tr.a1.sounds.vowels.vowel_group"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "süt"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.example.09",
+      "target": "kapı",
+      "translation_en": "door",
+      "note_en": "The vowels a and ı are both back vowels.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.recognition",
+        "tr.a1.sounds.vowels.vowel_group"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kapı"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.example.10",
+      "target": "şehir",
+      "translation_en": "city",
+      "note_en": "The vowels e and i are both front vowels.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.recognition",
+        "tr.a1.sounds.vowels.vowel_group"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "şehir"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "id": "tr.a1.sounds.vowels.exercise.01",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_target": "Doğru harf",
+      "instruction_en": "Choose the correct answer.",
+      "context_target": "Alfabe",
+      "prompt_target": "I",
+      "prompt_en": "Which lowercase letter pairs with capital I?",
+      "options": [
+        {
+          "id": "opt1",
+          "text": "ı",
+          "correct": true,
+          "error_type": null,
+          "explanation_en": "Correct letter or category."
+        },
+        {
+          "id": "opt2",
+          "text": "i",
+          "correct": false,
+          "error_type": "dot_confusion",
+          "explanation_en": "Dotted i belongs to uppercase İ, not I."
+        },
+        {
+          "id": "opt3",
+          "text": "u",
+          "correct": false,
+          "error_type": "wrong_letter",
+          "explanation_en": "u is a different back vowel."
+        },
+        {
+          "id": "opt4",
+          "text": "ü",
+          "correct": false,
+          "error_type": "wrong_letter",
+          "explanation_en": "ü is a front vowel."
+        }
+      ],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about the presence or absence of a dot.",
+        "Capital I has no dot."
+      ],
+      "feedback_correct_en": "Correct. You identified the vowel.",
+      "feedback_wrong_en": "Capital I has no dot. Its lowercase partner is ı, not i.",
+      "explanation_en": "I ↔ ı in Turkish.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.letter_pair"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "alfabe",
+          "doğru",
+          "harf"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.exercise.02",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_target": "Doğru harf",
+      "instruction_en": "Choose the correct answer.",
+      "context_target": "Alfabe",
+      "prompt_target": "i",
+      "prompt_en": "Which uppercase letter pairs with lowercase i?",
+      "options": [
+        {
+          "id": "opt1",
+          "text": "I",
+          "correct": false,
+          "error_type": "dot_confusion",
+          "explanation_en": "I is the capital of ı."
+        },
+        {
+          "id": "opt2",
+          "text": "İ",
+          "correct": true,
+          "error_type": null,
+          "explanation_en": "Correct letter or category."
+        },
+        {
+          "id": "opt3",
+          "text": "U",
+          "correct": false,
+          "error_type": "wrong_letter",
+          "explanation_en": "U is the capital of u."
+        },
+        {
+          "id": "opt4",
+          "text": "Ö",
+          "correct": false,
+          "error_type": "wrong_letter",
+          "explanation_en": "Ö is the capital of ö."
+        }
+      ],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Keep the dot in the uppercase partner.",
+        "Look for the dotted capital letter."
+      ],
+      "feedback_correct_en": "Correct. You identified the vowel.",
+      "feedback_wrong_en": "Lowercase i has a dot. Its uppercase partner is İ, not I.",
+      "explanation_en": "İ ↔ i in Turkish.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.letter_pair"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "alfabe",
+          "doğru",
+          "harf"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.exercise.03",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_target": "Doğru harf",
+      "instruction_en": "Choose the correct answer.",
+      "context_target": "Alfabe",
+      "prompt_target": "a / e / ö / ü",
+      "prompt_en": "Which option is a back vowel?",
+      "options": [
+        {
+          "id": "opt1",
+          "text": "e",
+          "correct": false,
+          "error_type": "group_confusion",
+          "explanation_en": "e is a front vowel."
+        },
+        {
+          "id": "opt2",
+          "text": "ö",
+          "correct": false,
+          "error_type": "group_confusion",
+          "explanation_en": "ö is a front vowel."
+        },
+        {
+          "id": "opt3",
+          "text": "a",
+          "correct": true,
+          "error_type": null,
+          "explanation_en": "Correct letter or category."
+        },
+        {
+          "id": "opt4",
+          "text": "ü",
+          "correct": false,
+          "error_type": "group_confusion",
+          "explanation_en": "ü is a front vowel."
+        }
+      ],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Recall the two groups of four.",
+        "Back vowels include a and ı."
+      ],
+      "feedback_correct_en": "Correct. You identified the vowel.",
+      "feedback_wrong_en": "Only a is a back vowel here; e, ö and ü are all front vowels.",
+      "explanation_en": "a, ı, o and u are back vowels.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.vowel_group"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "alfabe",
+          "doğru",
+          "harf"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.exercise.04",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_target": "Doğru harf",
+      "instruction_en": "Choose the correct answer.",
+      "context_target": "Alfabe",
+      "prompt_target": "o / u / a / ü",
+      "prompt_en": "Which option is a front vowel?",
+      "options": [
+        {
+          "id": "opt1",
+          "text": "o",
+          "correct": false,
+          "error_type": "group_confusion",
+          "explanation_en": "o is a back vowel."
+        },
+        {
+          "id": "opt2",
+          "text": "u",
+          "correct": false,
+          "error_type": "group_confusion",
+          "explanation_en": "u is a back vowel."
+        },
+        {
+          "id": "opt3",
+          "text": "a",
+          "correct": false,
+          "error_type": "group_confusion",
+          "explanation_en": "a is a back vowel."
+        },
+        {
+          "id": "opt4",
+          "text": "ü",
+          "correct": true,
+          "error_type": null,
+          "explanation_en": "Correct letter or category."
+        }
+      ],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think of the group containing e and i.",
+        "The front group also includes ö and ü."
+      ],
+      "feedback_correct_en": "Correct. You identified the vowel.",
+      "feedback_wrong_en": "Only ü is a front vowel here; o, u and a are all back vowels.",
+      "explanation_en": "e, i, ö and ü are front vowels.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.vowel_group"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "alfabe",
+          "doğru",
+          "harf"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.exercise.05",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_target": "Harf",
+      "instruction_en": "Type the vowel.",
+      "context_target": "Kelime",
+      "prompt_target": "araba",
+      "prompt_en": "Which vowel occurs three times in araba? Type the vowel.",
+      "options": [],
+      "accepted_answers": [
+        "a"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at every vowel in the word.",
+        "The repeated vowel is the first letter."
+      ],
+      "feedback_correct_en": "Correct. You identified the vowel.",
+      "feedback_wrong_en": "Read araba letter by letter: a-r-a-b-a. The repeated vowel is a.",
+      "explanation_en": "araba contains a three times.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.recognition",
+        "tr.a1.sounds.vowels.vowel_writing"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "araba",
+          "harf"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.exercise.06",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_target": "Harf",
+      "instruction_en": "Type the vowel.",
+      "context_target": "Kelime",
+      "prompt_target": "ekmek",
+      "prompt_en": "Which vowel appears twice in ekmek?",
+      "options": [],
+      "accepted_answers": [
+        "e"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Find the two syllables.",
+        "The first and fourth letters match."
+      ],
+      "feedback_correct_en": "Correct. You identified the vowel.",
+      "feedback_wrong_en": "In ekmek, the first and fourth letters are e. Keep the same vowel.",
+      "explanation_en": "ekmek has two e vowels.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.recognition",
+        "tr.a1.sounds.vowels.vowel_writing"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "ekmek",
+          "harf"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.exercise.07",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_target": "Harf",
+      "instruction_en": "Type the vowel.",
+      "context_target": "Kelime",
+      "prompt_target": "ışık",
+      "prompt_en": "Which vowel is repeated in ışık?",
+      "options": [],
+      "accepted_answers": [
+        "ı"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look for dots, not sounds.",
+        "Both vowels are dotless."
+      ],
+      "feedback_correct_en": "Correct. You identified the vowel.",
+      "feedback_wrong_en": "The two vowels in ışık are dotless ı. Dotted i would change the word.",
+      "explanation_en": "ışık uses ı twice; it is not i.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.recognition",
+        "tr.a1.sounds.vowels.vowel_writing"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "ışık",
+          "harf"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.exercise.08",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_target": "Harf",
+      "instruction_en": "Type the vowel.",
+      "context_target": "Kelime",
+      "prompt_target": "inek",
+      "prompt_en": "What is the first vowel in inek?",
+      "options": [],
+      "accepted_answers": [
+        "i"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Check the very first letter.",
+        "The opening vowel has a dot."
+      ],
+      "feedback_correct_en": "Correct. You identified the vowel.",
+      "feedback_wrong_en": "inek begins with dotted i, not dotless ı.",
+      "explanation_en": "inek starts with dotted i.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.recognition",
+        "tr.a1.sounds.vowels.vowel_writing"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "inek",
+          "harf"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.exercise.09",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_target": "Harf",
+      "instruction_en": "Type the vowel.",
+      "context_target": "Kelime",
+      "prompt_target": "okul",
+      "prompt_en": "What is the first vowel in okul?",
+      "options": [],
+      "accepted_answers": [
+        "o"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Read the first syllable.",
+        "The first vowel is rounded and is not u."
+      ],
+      "feedback_correct_en": "Correct. You identified the vowel.",
+      "feedback_wrong_en": "okul begins with o; its second vowel is u.",
+      "explanation_en": "okul starts with o and also contains u.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.recognition",
+        "tr.a1.sounds.vowels.vowel_writing"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "okul",
+          "harf"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.exercise.10",
+      "type": "multiple_choice",
+      "stage": "contextual",
+      "difficulty": 1,
+      "instruction_target": "Doğru harf",
+      "instruction_en": "Choose the correct answer.",
+      "context_target": "Kelime",
+      "prompt_target": "göz",
+      "prompt_en": "Which vowel appears in göz?",
+      "options": [
+        {
+          "id": "opt1",
+          "text": "ö",
+          "correct": true,
+          "error_type": null,
+          "explanation_en": "Correct letter or category."
+        },
+        {
+          "id": "opt2",
+          "text": "o",
+          "correct": false,
+          "error_type": "diacritic_error",
+          "explanation_en": "o lacks the two dots of ö."
+        },
+        {
+          "id": "opt3",
+          "text": "u",
+          "correct": false,
+          "error_type": "wrong_vowel",
+          "explanation_en": "u is a different back vowel."
+        },
+        {
+          "id": "opt4",
+          "text": "ü",
+          "correct": false,
+          "error_type": "wrong_vowel",
+          "explanation_en": "ü is another front vowel."
+        }
+      ],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Check the printed dots above the vowel.",
+        "The vowel is dotted and rounded."
+      ],
+      "feedback_correct_en": "Correct. You identified the vowel.",
+      "feedback_wrong_en": "göz uses ö with two dots, not undotted o or another rounded vowel.",
+      "explanation_en": "göz contains ö, a front vowel.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.recognition"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "göz",
+          "doğru",
+          "harf"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.exercise.11",
+      "type": "fill_gap",
+      "stage": "contextual",
+      "difficulty": 1,
+      "instruction_target": "Harf",
+      "instruction_en": "Type the vowel.",
+      "context_target": "Alışveriş: süt, su, üzüm.",
+      "prompt_target": "su",
+      "prompt_en": "In the shopping note, which vowel does su contain?",
+      "options": [],
+      "accepted_answers": [
+        "u"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look only at the middle item.",
+        "The word has one back vowel."
+      ],
+      "feedback_correct_en": "Correct. You identified the vowel.",
+      "feedback_wrong_en": "su contains u. The two dots belong to ü, as in süt.",
+      "explanation_en": "The only vowel in su is u.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.recognition",
+        "tr.a1.sounds.vowels.vowel_writing"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "alışveriş",
+          "süt",
+          "su",
+          "üzüm",
+          "harf"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.exercise.12",
+      "type": "multiple_choice",
+      "stage": "contextual",
+      "difficulty": 1,
+      "instruction_target": "Doğru harf",
+      "instruction_en": "Choose the correct answer.",
+      "context_target": "Alışveriş: süt, su, üzüm.",
+      "prompt_target": "süt",
+      "prompt_en": "Which vowel appears in süt?",
+      "options": [
+        {
+          "id": "opt1",
+          "text": "u",
+          "correct": false,
+          "error_type": "diacritic_error",
+          "explanation_en": "u is the undotted vowel in su, not süt."
+        },
+        {
+          "id": "opt2",
+          "text": "ü",
+          "correct": true,
+          "error_type": null,
+          "explanation_en": "Correct letter or category."
+        },
+        {
+          "id": "opt3",
+          "text": "ö",
+          "correct": false,
+          "error_type": "wrong_front_vowel",
+          "explanation_en": "ö is front but not the vowel in süt."
+        },
+        {
+          "id": "opt4",
+          "text": "ı",
+          "correct": false,
+          "error_type": "wrong_back_vowel",
+          "explanation_en": "ı is dotless, but not present in süt."
+        }
+      ],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Compare the shopping words su and süt.",
+        "The milk word has two dots above its vowel."
+      ],
+      "feedback_correct_en": "Correct. You identified the vowel.",
+      "feedback_wrong_en": "süt contains ü. Do not confuse it with the u of su.",
+      "explanation_en": "süt has the front vowel ü.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.recognition"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "alışveriş",
+          "süt",
+          "su",
+          "üzüm",
+          "doğru",
+          "harf"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.exercise.13",
+      "type": "fill_gap",
+      "stage": "contextual",
+      "difficulty": 1,
+      "instruction_target": "Harf",
+      "instruction_en": "Type the vowel.",
+      "context_target": "Kelime",
+      "prompt_target": "kapı",
+      "prompt_en": "Type the final vowel in kapı.",
+      "options": [],
+      "accepted_answers": [
+        "ı"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the ending.",
+        "The final vowel has no dot."
+      ],
+      "feedback_correct_en": "Correct. You identified the vowel.",
+      "feedback_wrong_en": "The final vowel of kapı is dotless ı, not dotted i.",
+      "explanation_en": "kapı ends in dotless ı.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.recognition",
+        "tr.a1.sounds.vowels.vowel_writing"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "kapı",
+          "harf"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.exercise.14",
+      "type": "fill_gap",
+      "stage": "contextual",
+      "difficulty": 1,
+      "instruction_target": "Harf",
+      "instruction_en": "Type the vowel.",
+      "context_target": "Kelime",
+      "prompt_target": "şehir",
+      "prompt_en": "Type the first vowel in şehir.",
+      "options": [],
+      "accepted_answers": [
+        "e"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Read the word from the start.",
+        "The first vowel appears after ş."
+      ],
+      "feedback_correct_en": "Correct. You identified the vowel.",
+      "feedback_wrong_en": "şehir contains e first and i second. Read from the beginning.",
+      "explanation_en": "şehir contains e followed by i; both are front vowels.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.recognition",
+        "tr.a1.sounds.vowels.vowel_writing"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "şehir",
+          "harf"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.exercise.15",
+      "type": "fill_gap",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_target": "Harf",
+      "instruction_en": "Type the missing vowel.",
+      "context_target": "Alışveriş",
+      "prompt_target": "s_t",
+      "prompt_en": "Complete the Turkish word for “milk” by supplying only its missing vowel.",
+      "options": [],
+      "accepted_answers": [
+        "ü"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The letter differs from the vowel in su.",
+        "Add the two dots above u."
+      ],
+      "feedback_correct_en": "Correct. You identified the vowel.",
+      "feedback_wrong_en": "The Turkish spelling of milk is süt, with ü rather than u or ö.",
+      "explanation_en": "The correct word is süt, with ü.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.vowel_writing"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "alışveriş",
+          "süt",
+          "harf"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.exercise.16",
+      "type": "fill_gap",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_target": "Harf",
+      "instruction_en": "Type the missing vowel.",
+      "context_target": "Kelime",
+      "prompt_target": "ış_k",
+      "prompt_en": "Complete the Turkish word for “light” by supplying only its missing vowel.",
+      "options": [],
+      "accepted_answers": [
+        "ı"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The missing vowel matches the first vowel.",
+        "Use the dotless i-shaped letter."
+      ],
+      "feedback_correct_en": "Correct. You identified the vowel.",
+      "feedback_wrong_en": "The word is ışık: both vowels are dotless ı, not dotted i.",
+      "explanation_en": "The correct word is ışık, with two dotless ı letters.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.vowel_writing"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "ışık",
+          "harf"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.exercise.17",
+      "type": "multiple_choice",
+      "stage": "transfer",
+      "difficulty": 2,
+      "instruction_target": "Doğru harf",
+      "instruction_en": "Choose the correct answer.",
+      "context_target": "iş",
+      "prompt_target": "iş",
+      "prompt_en": "On a spelling card for “work”, which uppercase letter corresponds to its first vowel?",
+      "options": [
+        {
+          "id": "opt1",
+          "text": "A",
+          "correct": false,
+          "error_type": "wrong_letter",
+          "explanation_en": "A is the capital of a, not i."
+        },
+        {
+          "id": "opt2",
+          "text": "E",
+          "correct": false,
+          "error_type": "wrong_letter",
+          "explanation_en": "E is the capital of e, not i."
+        },
+        {
+          "id": "opt3",
+          "text": "İ",
+          "correct": true,
+          "error_type": null,
+          "explanation_en": "Correct letter or category."
+        },
+        {
+          "id": "opt4",
+          "text": "I",
+          "correct": false,
+          "error_type": "dot_confusion",
+          "explanation_en": "I pairs with dotless ı, not dotted i."
+        }
+      ],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The first letter is dotted.",
+        "Preserve the dot in the capital letter."
+      ],
+      "feedback_correct_en": "Correct. You identified the vowel.",
+      "feedback_wrong_en": "The first vowel in iş is dotted i; uppercase it as İ, not I.",
+      "explanation_en": "iş starts with i, whose capital form is İ.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.letter_pair"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "iş",
+          "doğru",
+          "harf"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.exercise.18",
+      "type": "multiple_choice",
+      "stage": "transfer",
+      "difficulty": 2,
+      "instruction_target": "Doğru harf",
+      "instruction_en": "Choose the correct answer.",
+      "context_target": "ıslak",
+      "prompt_target": "ıslak",
+      "prompt_en": "On a spelling card for “wet”, which uppercase letter corresponds to its first vowel?",
+      "options": [
+        {
+          "id": "opt1",
+          "text": "U",
+          "correct": false,
+          "error_type": "wrong_letter",
+          "explanation_en": "U is the capital of u."
+        },
+        {
+          "id": "opt2",
+          "text": "A",
+          "correct": false,
+          "error_type": "wrong_letter",
+          "explanation_en": "A is the capital of a."
+        },
+        {
+          "id": "opt3",
+          "text": "İ",
+          "correct": false,
+          "error_type": "dot_confusion",
+          "explanation_en": "İ pairs with dotted i, not dotless ı."
+        },
+        {
+          "id": "opt4",
+          "text": "I",
+          "correct": true,
+          "error_type": null,
+          "explanation_en": "Correct letter or category."
+        }
+      ],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The first vowel has no dot.",
+        "Its uppercase form also has no dot."
+      ],
+      "feedback_correct_en": "Correct. You identified the vowel.",
+      "feedback_wrong_en": "The first vowel in ıslak is dotless ı; uppercase it as I, not İ.",
+      "explanation_en": "ıslak starts with ı, whose capital form is I.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.letter_pair"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ıslak",
+          "doğru",
+          "harf"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.exercise.19",
+      "type": "fill_gap",
+      "stage": "transfer",
+      "difficulty": 2,
+      "instruction_target": "Harf",
+      "instruction_en": "Type the vowel.",
+      "context_target": "Kelime",
+      "prompt_target": "kız",
+      "prompt_en": "Which vowel appears in kız? Type it.",
+      "options": [],
+      "accepted_answers": [
+        "ı"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "It is a back vowel.",
+        "It resembles i but has no dot."
+      ],
+      "feedback_correct_en": "Correct. You identified the vowel.",
+      "feedback_wrong_en": "The single vowel in kız is dotless ı. Do not type i.",
+      "explanation_en": "kız contains dotless ı.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.recognition",
+        "tr.a1.sounds.vowels.vowel_writing"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "kız",
+          "harf"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.exercise.20",
+      "type": "fill_gap",
+      "stage": "transfer",
+      "difficulty": 2,
+      "instruction_target": "Harf",
+      "instruction_en": "Type the vowel.",
+      "context_target": "Kelime",
+      "prompt_target": "göl",
+      "prompt_en": "Which vowel appears in göl? Type it.",
+      "options": [],
+      "accepted_answers": [
+        "ö"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "It is a front vowel.",
+        "It is o with two dots above."
+      ],
+      "feedback_correct_en": "Correct. You identified the vowel.",
+      "feedback_wrong_en": "The single vowel in göl is ö. It needs both dots.",
+      "explanation_en": "göl contains front vowel ö.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.recognition",
+        "tr.a1.sounds.vowels.vowel_writing"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kelime",
+          "göl",
+          "harf"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.exercise.21",
+      "type": "guided_production",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_target": "Alfabe",
+      "instruction_en": "Write the two groups from memory; check your work yourself.",
+      "context_target": "Alfabe",
+      "prompt_target": "a, e, ı, i, o, ö, u, ü",
+      "prompt_en": "Without looking at the table, sort all eight Turkish vowels into back and front groups. Check your own grouping afterwards.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "There are four vowels in each group.",
+        "The back set includes a and ı; the front set includes e and i."
+      ],
+      "feedback_correct_en": "Correct. You identified the vowel.",
+      "feedback_wrong_en": "Compare your work with the criteria.",
+      "explanation_en": "Back: a, ı, o, u. Front: e, i, ö, ü.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.vowel_group",
+        "tr.a1.sounds.vowels.vowel_writing"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "alfabe"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      },
+      "rubric": {
+        "criteria_en": [
+          "All eight vowels are present exactly once.",
+          "Back contains a, ı, o, u.",
+          "Front contains e, i, ö, ü.",
+          "The dots on i/ı and o/ö and u/ü are exact."
+        ]
+      }
+    },
+    {
+      "id": "tr.a1.sounds.vowels.exercise.22",
+      "type": "guided_production",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write two familiar Turkish words without help; self-check.",
+      "context_target": "Alfabe",
+      "prompt_target": "ı / i",
+      "prompt_en": "From memory, write two different familiar A1 words: one containing dotless ı and one containing dotted i. Then capitalise their first letter if it is a vowel. Self-check both words.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Choose one word for each vowel.",
+        "Remember that a starting ı takes I, while a starting i takes İ."
+      ],
+      "feedback_correct_en": "Correct. You identified the vowel.",
+      "feedback_wrong_en": "Compare your work with the criteria.",
+      "explanation_en": "Possible models include ışık / Işık and inek / İnek. Other correctly spelt reviewed A1 words also count.",
+      "skill_ids": [
+        "tr.a1.sounds.vowels.letter_pair",
+        "tr.a1.sounds.vowels.vowel_writing"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "alfabe",
+          "kelime"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      },
+      "rubric": {
+        "criteria_en": [
+          "One genuine A1 word contains dotless ı.",
+          "A different genuine A1 word contains dotted i.",
+          "Both words are spelt with the correct Turkish dots.",
+          "If a word begins with ı or i, its initial capital is I or İ respectively."
+        ]
+      }
+    }
+  ],
+  "verb_application": {
+    "applicable": false,
+    "required_form_keys": [],
+    "verbs": []
+  },
+  "mastery": {
+    "required_score": 0.8,
+    "minimum_unaided_production_items": 2,
+    "required_stages": [
+      "notice",
+      "controlled",
+      "contextual",
+      "production",
+      "transfer"
+    ],
+    "review_intervals_days": [
+      1,
+      3,
+      7,
+      14,
+      30,
+      60
+    ]
+  },
+  "answer_normalization": {
+    "locale": "tr-TR",
+    "unicode": "NFC",
+    "case_sensitive": false,
+    "accent_sensitive": true
+  },
+  "vocabulary_audit": {
+    "status": "pass",
+    "manifest_id": "tr-reviewed-a6bc562da7a2",
+    "allowed_cefr": [
+      "A1"
+    ],
+    "used_headwords": [
+      "alfabe",
+      "alışveriş",
+      "araba",
+      "doğru",
+      "ekmek",
+      "evet",
+      "göl",
+      "göz",
+      "harf",
+      "inek",
+      "iş",
+      "kapı",
+      "kelime",
+      "kız",
+      "merhaba",
+      "okul",
+      "su",
+      "süt",
+      "üzüm",
+      "ıslak",
+      "ışık",
+      "şehir"
+    ],
+    "target_headwords": [
+      "alfabe",
+      "alışveriş",
+      "araba",
+      "doğru",
+      "ekmek",
+      "evet",
+      "göl",
+      "göz",
+      "harf",
+      "inek",
+      "iş",
+      "kapı",
+      "kelime",
+      "kız",
+      "merhaba",
+      "okul",
+      "su",
+      "süt",
+      "üzüm",
+      "ıslak",
+      "ışık",
+      "şehir"
+    ],
+    "outside_allowlist_words": [],
+    "introduced_terms": [],
+    "proper_names": [
+      "Ayşe",
+      "Mehmet"
+    ],
+    "grammar_only_tokens": [],
+    "above_level_words": [],
+    "tests_with_unknown_vocabulary": [],
+    "note": "Standalone vowel glyphs are alphabet symbols rather than vocabulary lemmas. Turkish verb suffixes and question particles are not tested."
+  },
+  "level_audit": {
+    "status": "pass",
+    "target_cefr": "A1",
+    "maximum_sentence_length_observed": 8,
+    "unapproved_grammar_features": [],
+    "unmet_prerequisites": [],
+    "scope_violations": [],
+    "note": "Only alphabetic recognition, front/back grouping, and Turkish-specific upper/lowercase matching are taught. No suffix forms or detailed phonetics."
+  },
+  "quality_audit": {
+    "status": "pass",
+    "unique_id_check": "pass",
+    "cross_reference_check": "pass",
+    "prerequisite_check": "pass",
+    "scope_check": "pass",
+    "answer_check": "pass",
+    "single_best_answer_check": "pass",
+    "turkish_casing_and_diacritic_check": "pass",
+    "harmony_check": "not_applicable_no_suffixes",
+    "suffix_order_check": "not_applicable_no_suffixes",
+    "stem_change_check": "not_applicable",
+    "question_particle_check": "not_applicable",
+    "apostrophe_check": "not_applicable",
+    "conjugation_form_check": "not_applicable",
+    "naturalness_and_translation_check": "pass",
+    "requested_count_check": "pass",
+    "counts": {
+      "contexts": 2,
+      "teaching_examples": 10,
+      "scored_exercises": 20,
+      "transfer_exercises": 4,
+      "unaided_production_self_checks": 2
+    },
+    "authoritative_sources_consulted": [
+      {
+        "publisher": "Türk Dil Kurumu",
+        "title": "Ünlülerin Nitelikleri",
+        "url": "https://tdk.gov.tr/icerik/yazim-kurallari/unlulerin-nitelikleri/",
+        "verified_rule": "The eight Turkish vowels are a, e, ı, i, o, ö, u, ü."
+      },
+      {
+        "publisher": "Türk Dil Kurumu",
+        "title": "Ses, Harf ve Alfabe",
+        "url": "https://tdk.gov.tr/icerik/yazim-kurallari/ses-harf-ve-alfabe/",
+        "verified_rule": "Alphabet uses different letter pairs I/ı and İ/i."
+      },
+      {
+        "publisher": "Türkiye Maarif Vakfı",
+        "title": "Türkçenin Yabancı Dil Olarak Öğretimi Programı",
+        "url": "https://turkiyemaarif.org/uploads/168b69b2349aed.pdf",
+        "verified_rule": "A1 sound/orthography practice explicitly calls out ı–i distinction."
+      }
+    ],
+    "requires_human_review": [],
+    "notes": [
+      "Turkish locale-insensitive marking recognises vowel identity but does not enforce uppercase-only submissions; letter case pairs are therefore assessed with multiple choice rather than exact-match case conversion.",
+      "Two production questions are deliberately self-checked and unscored."
+    ]
+  },
+  "explanation_language": "en"
+}

@@ -438,6 +438,16 @@
   .grammar-feedback.bad { color:var(--bad); background:var(--bad-soft); }
   .grammar-feedback.hint { color:var(--primary-text); background:var(--primary-soft); }
   .grammar-answer { margin-top:14px; }
+  /* the question a lesson asks in English, under its instruction */
+  .grammar-ask { margin:8px 0 4px; font-size:15.5px; font-weight:650; line-height:1.45; }
+  /* links between a text and its grammar */
+  .grammar-links { margin-top:14px; }
+  .grammar-links .label { font-size:12.5px; font-weight:800; text-transform:uppercase;
+    letter-spacing:.08em; color:var(--primary-text); margin-bottom:6px; }
+  .grammar-links .recall button.learned { color:var(--good); }
+  .grammar-links .recall button svg { width:14px; height:14px; }
+  .grammar-example .target mark { background:var(--primary-soft); color:var(--primary-text);
+    border-radius:5px; padding:0 3px; }
   .grammar-answer textarea { min-height:112px; }
   .grammar-rubric { margin-top:14px; padding:14px; border-radius:14px; background:var(--surface2); }
   .grammar-rubric b { display:block; margin-bottom:6px; }
@@ -2227,6 +2237,8 @@ function learnFirst(book, t, words) {
       row.appendChild(el("span", "chip-word", esc(x.card ? wordText(x.card) : dictWord(book, x.lemma))));
     chips.appendChild(row);
   }
+  // its grammar can be looked at while the words are being met
+  grammarInText(book, t).then(node => { if (node && intro.isConnected) intro.appendChild(node); });
   // the same count the session will have once the missing words are in
   const deck = Math.min(words.unseen.length + words.due.length,
                         Math.max(sessionSize(), target - words.seen));
@@ -2347,6 +2359,9 @@ function readText(book, t) {
     line.appendChild(button("Review them first", "small soft", () => start({ learn: { book, t } })));
     before.appendChild(line);
   }
+  // the grammar this text uses most, each a tap away; the lessons load
+  // after the text, so the chips arrive a moment later
+  grammarInText(book, t).then(node => { if (node && before.isConnected) before.appendChild(node); });
   const key = el("div", "key",
     '<span><i class="k-new">new</i>key word</span><span><i class="k-old">met</i>from before</span>' +
     '<span><i class="k-mine">word</i>in your words</span><span>Tap any word</span>');
@@ -3595,6 +3610,11 @@ async function syncReading(target, cfg) {
   for (const [id, d] of Object.entries(r.done)) add("text:" + id, d.at, d);
   for (const [k, w] of Object.entries(r.words))
     add("word:" + k, w.at, { ...w, card: cardData(index.get(k)) || undefined });
+  // grammar progress travels the same way, one row per topic: the record
+  // with the later last_studied wins on every device
+  const grammarTopics = (target.grammar && target.grammar.topics) || {};
+  for (const [id, g] of Object.entries(grammarTopics))
+    if (g && g.last_studied) add("grammar:" + id, g.last_studied, g);
 
   const pulled = await pullChanged(cfg, "reading", "item,updated_at,state", "updated_at",
                                    "reading_seq", "reading_to", "", "item");
@@ -3610,6 +3630,15 @@ async function syncReading(target, cfg) {
       if (!mine || (st.at || "") > (mine.at || "")) {
         r.done[id] = { score: st.score, total: st.total, at: st.at || row.updated_at,
                        ...(Array.isArray(st.answers) ? { answers: st.answers } : {}) };
+        took++;
+      }
+    } else if (kind === "grammar") {
+      if (!id || ["__proto__", "constructor", "prototype"].includes(id) || typeof st !== "object") continue;
+      if (!target.grammar) target.grammar = { version: 1, topics: {} };
+      if (!target.grammar.topics) target.grammar.topics = {};
+      const mine = target.grammar.topics[id];
+      if (!mine || (st.last_studied || "") > (mine.last_studied || "")) {
+        target.grammar.topics[id] = { ...st };
         took++;
       }
     } else if (kind === "word") {
@@ -3639,8 +3668,11 @@ async function syncReading(target, cfg) {
   }
   // a finished text that just came in newer than this device's copy is not
   // sent back over itself
-  const send = out.filter(row => !row.item.startsWith("text:") ||
-    (r.done[row.item.slice(5)] || {}).at === row.state.at);
+  const send = out.filter(row =>
+    row.item.startsWith("text:") ? (r.done[row.item.slice(5)] || {}).at === row.state.at
+    : row.item.startsWith("grammar:")
+      ? ((target.grammar.topics || {})[row.item.slice(8)] || {}).last_studied === row.state.last_studied
+    : true);
   for (let i = 0; i < send.length; i += 300)
     await cloudRequest("POST", "reading", send.slice(i, i + 300), cfg);
   target.cloud = { ...target.cloud, reading_sent: sentTo, reading_to: latest, reading_seq: pulled.seq };
@@ -4223,8 +4255,169 @@ function grammarTranslationPanel(lines, label = "Show English") {
   return wrap;
 }
 
+/* --------------------------------------------------- grammar in the texts
+   Each topic in grammar/index.json says how it shows up in a text: its
+   words and phrases ("c'è", "ci sono"), or the kind of word the text glosses
+   (verbs in -are, used in a conjugated form). From that a text knows which
+   topics it uses most, and a topic knows the texts that use it, with a few
+   of their sentences as examples. These are links to follow, not gates. */
+const foldApos = s => s.replace(/[’‘ʼ]/gu, "'");
+function grammarHits(book, t, spec) {
+  const lang = book.lang;
+  const low = s => foldApos(s.toLocaleLowerCase(lang));
+  const words = new Set((spec.words || []).map(low));
+  const prefixes = (spec.prefixes || []).map(low);
+  const phrases = (spec.phrases || []).map(p => low(p).split(" "));
+  const infixes = spec.infixes || [];
+  const pos = spec.pos || [];
+  const hits = [];                       // [paragraph, sentence, start, end]
+  t.p.forEach((para, i) => para.forEach(([sentence], j) => {
+    const toks = [...sentence.matchAll(WORD_RE)].map(m => ({ at: m.index, text: m[0], low: low(m[0]) }));
+    const end = tok => tok.at + tok.text.length;
+    // a question word counts in a question: the next . ! or ? after it is a ?
+    // («Come stai?» chiede Anna.)
+    const asks = at => { const stop = /[.!?]/u.exec(sentence.slice(at)); return !!stop && stop[0] === "?"; };
+    toks.forEach((tok, k) => {
+      if ((words.has(tok.low) || prefixes.some(p => tok.low.startsWith(p) && tok.low.length > p.length) ||
+           infixes.some(x => tok.low.length > x.length + 2 && tok.low.slice(2).includes(x))) &&
+          (!spec.question || asks(tok.at)))
+        return hits.push([i, j, tok.at, end(tok)]);
+      for (const phrase of phrases) {
+        if (phrase.length < 2 || k + phrase.length > toks.length) continue;
+        let same = true;
+        for (let n = 0; n < phrase.length && same; n++)
+          same = toks[k + n].low === phrase[n] &&
+                 (n === 0 || sentence.slice(end(toks[k + n - 1]), toks[k + n].at) === " ");
+        if (same) hits.push([i, j, tok.at, end(toks[k + phrase.length - 1])]);
+      }
+    });
+    if (pos.length) for (const m of pieces(book, t, sentence)) {
+      const hit = lookupToken(book, t, m.text);
+      if (!hit.lemma) continue;
+      const kinds = String((book.dict[hit.lemma] || [])[1] || "").toLowerCase().split(/\s*[\/,]\s*/u);
+      if (!pos.some(p => kinds.includes(p))) continue;
+      const lemma = low(hit.lemma), form = low(hit.base);
+      if (spec.lemma_endings && !spec.lemma_endings.some(e => lemma.endsWith(e))) continue;
+      if (spec.inflected && form === lemma) continue;
+      if (spec.form_endings && !spec.form_endings.some(e => form.endsWith(e))) continue;
+      hits.push([i, j, m.index + hit.off, m.index + hit.off + hit.len]);
+    }
+  }));
+  return hits;
+}
+/* Worked out once per language and kept with its texts. */
+function grammarLinks(book, index) {
+  if (book.grammarLinks && book.grammarLinks.index === index) return book.grammarLinks;
+  const byTopic = new Map(), byText = new Map();
+  for (const entry of (index.topics || []).filter(e => e.language === book.lang && e.status === "ready")) {
+    const spec = entry.reading || {}, min = spec.min || 2;
+    const rows = spec.first
+      ? book.texts.filter(t => t.level === entry.cefr).slice(0, spec.first).map(t => ({ t, count: 0, hits: [] }))
+      : book.texts.map(t => { const hits = grammarHits(book, t, spec); return { t, count: hits.length, hits }; })
+          .filter(row => row.count >= min);
+    byTopic.set(entry.id, rows);
+    for (const row of rows) {
+      if (!byText.has(row.t.id)) byText.set(row.t.id, []);
+      // how strongly the text uses the topic, against what counts as using it
+      byText.get(row.t.id).push({ entry, weight: spec.first ? 0.5 : row.count / min });
+    }
+  }
+  book.grammarLinks = { index, byTopic, byText };
+  return book.grammarLinks;
+}
+// where a grammar topic opened from a text goes back to
+let grammarBackTo = null;
+/* The few grammar topics a text uses most, as chips that open the topic. */
+async function grammarInText(book, t) {
+  let index;
+  try { index = await loadGrammarIndex(); } catch { return null; }
+  const found = (grammarLinks(book, index).byText.get(t.id) || [])
+    .slice().sort((a, b) => b.weight - a.weight || a.entry.sequence - b.entry.sequence)
+    .slice(0, 4).sort((a, b) => a.entry.sequence - b.entry.sequence);
+  if (!found.length) return null;
+  const wrap = el("div", "grammar-links");
+  wrap.appendChild(el("div", "label", "Grammar in this text"));
+  const row = el("div", "recall");
+  for (const { entry } of found) {
+    const learned = grammarProgressOf(entry.id)?.completed_at;
+    const chip = button((learned ? icon("check") : "") + esc(entry.title_target), learned ? "learned" : "", () => {
+      grammarBackTo = () => openText(book, t);
+      grammarTopicScreen(entry);
+    });
+    chip.title = `${entry.title_en}${learned ? " · learned" : ""}`;
+    row.appendChild(chip);
+  }
+  wrap.appendChild(row);
+  return wrap;
+}
+/* A sentence with the topic's words marked. */
+function markedSentence(sentence, ranges) {
+  let html = "", at = 0;
+  for (const [a, b] of ranges.slice().sort((x, y) => x[0] - y[0])) {
+    if (a < at) continue;
+    html += esc(sentence.slice(at, a)) + `<mark>${esc(sentence.slice(a, b))}</mark>`;
+    at = b;
+  }
+  return html + esc(sentence.slice(at));
+}
+/* The texts that use a topic, and some of their sentences. */
+function grammarReadingNodes(book, entry) {
+  const rows = (book.grammarLinks && book.grammarLinks.byTopic.get(entry.id)) || [];
+  if (!rows.length) return [];
+  const nodes = [sectionHead("In your reading texts")];
+  const index = cardIndex();
+  const list = el("div", "list");
+  for (const { t, count } of rows.slice(0, 6)) {
+    const words = textWords(book, t, index);
+    const done = reading().done[t.id];
+    const colour = (LEVELS.find(([l]) => l === t.level) || [, , "var(--s1)"])[2];
+    list.appendChild(listItem({
+      lead: `<span class="lvl" style="--c:${colour}">${t.level}</span>`,
+      title: esc(t.title),
+      detail: esc(t.title_en) + (count ? ` · uses it ${count} time${count === 1 ? "" : "s"}` : ""),
+      end: done ? `<span class="badge" style="--c:var(--good)">${icon("check")}read</span>`
+        : textOpen(t, words) ? icon("chevron")
+        : `<span class="badge" style="--c:var(--muted)">${icon("lock")}${Math.round(100 * words.share)}%</span>`,
+      onTap: () => openText(book, t)
+    }));
+  }
+  nodes.push(list);
+  if (rows.length > 6)
+    nodes.push(el("div", "muted read-note", `<span>${rows.length - 6} more texts use it too.</span>`));
+  // a real sentence from each of the first texts, the topic marked in it
+  const samples = [];
+  for (const { t, hits } of rows) {
+    if (!hits.length) continue;
+    const [i, j] = hits[0];
+    const [sentence, english] = t.p[i][j];
+    samples.push({ t, sentence, english, ranges: hits.filter(h => h[0] === i && h[1] === j).map(h => [h[2], h[3]]) });
+    if (samples.length === 4) break;
+  }
+  if (samples.length) {
+    nodes.push(sectionHead("From the texts"));
+    const box = el("div", "list");
+    for (const sample of samples) {
+      const row = el("div", "item grammar-example");
+      const body = el("div", "body");
+      body.append(el("div", "target", markedSentence(sample.sentence, sample.ranges)),
+                  el("div", "note", esc(`${sample.t.title} · ${sample.t.level}`)));
+      const translation = el("div", "grammar-translation hidden", esc(sample.english || ""));
+      body.appendChild(translation);
+      const actions = el("div", "row");
+      const audio = sayButton(sample.sentence); if (audio) actions.appendChild(audio);
+      const reveal = button("English", "soft small", () => {
+        const hidden = translation.classList.toggle("hidden");
+        reveal.textContent = hidden ? "English" : "Hide";
+      });
+      actions.appendChild(reveal); row.append(body, actions); box.appendChild(row);
+    }
+    nodes.push(box);
+  }
+  return nodes;
+}
+
 async function grammarScreen() {
-  grammarRun = null; quitTo = null; chrome(false); setProgress("", 0);
+  grammarRun = null; quitTo = null; grammarBackTo = null; chrome(false); setProgress("", 0);
   const lang = speechLang();
   const loading = el("div", "card muted", "Loading grammar lessons…");
   show([pageHead("Grammar", "Small topics, studied in order and reviewed over time."), loading],
@@ -4276,8 +4469,13 @@ async function grammarScreen() {
       onTap: () => grammarTopicScreen(entry)
     }));
   }
-  nodes.push(list, el("div", "guide-note", `${icon("info")}<span>Grammar progress is saved on this ` +
-    "device with the open language collection. It is not sent to the database during this first test.</span>"));
+  const cfg = cloudSettings();
+  nodes.push(list, el("div", "guide-note", `${icon("info")}<span>` + (cfg.url && cfg.reading_missing
+    ? "Grammar progress stays on this device until supabase-upgrade.sql has been run in Supabase; " +
+      "then it syncs with your other devices, like reading."
+    : cfg.url ? "Grammar progress syncs with your other devices along with reading."
+    : "Grammar progress is saved with this collection on this device. Set up sync to share it.") +
+    "</span>"));
   show(nodes, tabBar("grammar"));
 }
 
@@ -4285,14 +4483,14 @@ async function grammarTopicScreen(entry, suppliedTopic) {
   grammarRun = null; quitTo = null; chrome(false); setProgress("", 0);
   let topic = suppliedTopic;
   if (!topic) {
-    show([pageHead(entry.title_target, "Loading lesson…")], [button("Back", "back", grammarScreen)]);
+    show([pageHead(entry.title_target, "Loading lesson…")], [button("Back", "back", grammarBackTo || grammarScreen)]);
     const view = screenVersion;
     try { topic = await loadGrammarTopic(entry); }
     catch (error) {
       if (view !== screenVersion) return;
       return show([pageHead(entry.title_target),
         el("div", "card muted", esc(error.message || "The lesson could not be opened."))],
-        [button("Back", "back", grammarScreen), button("Try again", "primary grow", () => grammarTopicScreen(entry))]);
+        [button("Back", "back", grammarBackTo || grammarScreen), button("Try again", "primary grow", () => grammarTopicScreen(entry))]);
     }
     if (view !== screenVersion) return;
   }
@@ -4362,7 +4560,9 @@ async function grammarTopicScreen(entry, suppliedTopic) {
   nodes.push(sectionHead("In context"));
   for (const context of topic.contexts || []) {
     const card = el("div", "card grammar-context");
-    card.append(el("h2", "", context.type === "dialogue" ? "Classroom dialogue" : "Vocabulary note"),
+    const kinds = { dialogue: "Dialogue", message: "Message", narrative: "Short story",
+                    situation: "Situation", note: "Note" };
+    card.append(el("h2", "", kinds[context.type] || "In context"),
       el("div", "muted setting", esc(context.setting_en)));
     const dialogue = el("div", "grammar-dialogue");
     for (const line of context.lines || []) {
@@ -4394,7 +4594,18 @@ async function grammarTopicScreen(entry, suppliedTopic) {
     actions.appendChild(reveal); row.append(body, actions); examples.appendChild(row);
   }
   nodes.push(examples);
-  show(nodes, [button("Back", "back", grammarScreen),
+  // the topic in the reading texts, when this language's texts are here
+  const view = screenVersion;
+  const book = await loadBook();
+  if (view !== screenVersion) return;
+  if (book && book.lang === entry.language) {
+    try {
+      grammarLinks(book, await loadGrammarIndex());
+      nodes.push(...grammarReadingNodes(book, entry));
+    } catch { /* the lesson works without its links */ }
+    if (view !== screenVersion) return;
+  }
+  show(nodes, [button("Back", "back", grammarBackTo || grammarScreen),
     button(icon("play") + (progress ? "Practise again" : "Start practice"), "primary grow",
       () => grammarStart(entry, topic))]);
 }
@@ -4416,6 +4627,11 @@ function grammarQuestionCard(exercise) {
   const card = el("div", "card grammar-question");
   card.appendChild(el("div", "grammar-stage", esc(exercise.stage)));
   card.appendChild(el("div", "instruction", esc(exercise.instruction_en)));
+  // the question itself when a lesson keeps it here ("Which vowel appears
+  // twice in ekmek?", or the English sentence to translate)
+  const ask = String(exercise.prompt_en || "").trim();
+  if (ask && ask !== String(exercise.instruction_en || "").trim())
+    card.appendChild(el("div", "grammar-ask", esc(ask)));
   if (exercise.context_target) card.appendChild(el("div", "context", esc(exercise.context_target)));
   const prompt = el("div", "prompt", esc(exercise.prompt_target));
   card.appendChild(prompt);
@@ -4480,7 +4696,11 @@ function grammarChoiceQuestion(exercise) {
   show([pageHead(grammarRun.topic.topic.title_target, "Practice"), card], [hintButton]);
 }
 function grammarNormalize(value, rules) {
-  let out = String(value || "");
+  // a lesson can set its rules once for every exercise
+  rules = rules || (grammarRun && grammarRun.topic && grammarRun.topic.answer_normalization) || null;
+  // one form for accented letters, and one apostrophe: a phone types ’, a
+  // laptop types ', and both mean c'è
+  let out = String(value || "").normalize("NFC").replace(/[’‘ʼ`´]/gu, "'");
   if (!rules || rules.trim !== false) out = out.trim();
   if (rules && rules.ignore_terminal_punctuation) out = out.replace(/[.!?]+$/u, "").trim();
   // the lesson's own language: Turkish lower-cases İ and I differently
@@ -4533,10 +4753,15 @@ function grammarTypedQuestion(exercise) {
       return grammarFooter([button("Next", "primary grow", () =>
         grammarAdvance({ scored: true, correct: false }))]);
     }
-    hintAt = grammarHint(exercise, feedback, hintAt);
+    // the next hint, if the exercise has one; an exercise with none just says
+    // how many tries are left, rather than repeating the last message
+    const hints = exercise.hint_steps || [];
+    const hint = hints[Math.min(hintAt, hints.length - 1)];
+    if (hint) hintAt = Math.min(hintAt + 1, hints.length);
     feedback.className = "grammar-feedback bad";
-    feedback.textContent = `Not quite — try again. ${feedback.textContent || ""} ` +
+    feedback.textContent = `Not quite — try again.${hint ? ` Hint: ${hint}` : ""} ` +
       `${3 - attempts} ${3 - attempts === 1 ? "try" : "tries"} left.`;
+    feedback.classList.remove("hidden");
     input.select();
   });
   input.addEventListener("keydown", event => {
@@ -4612,6 +4837,7 @@ function grammarSummary() {
     progress.next_due = todayStr();
   }
   save();
+  autoSync("grammar lesson");            // so the other devices see it too
   setProgress("", 1); chrome(false); quitTo = null; grammarRun = null;
 
   const head = el("div", "center");
@@ -5161,9 +5387,9 @@ function cloudScreen() {
   }));
   if (cfg.url && cfg.reading_missing)
     status.appendChild(listItem({
-      lead: icobox("read", "var(--warn)"), title: "Reading stays on this phone for now",
+      lead: icobox("read", "var(--warn)"), title: "Reading and grammar stay on this phone for now",
       detail: "The database has no reading table yet. Run supabase-upgrade.sql once in " +
-        "Supabase\u2019s SQL editor, and finished texts and reading words sync too."
+        "Supabase\u2019s SQL editor, and finished texts, reading words and grammar progress sync too."
     }));
 
   const conn = el("div", "card");

@@ -1,0 +1,2112 @@
+{
+  "schema_version": "lessico-grammar-v1",
+  "content_version": "1.0.0",
+  "status": "ready",
+  "mode": "topic_pack",
+  "language": "it",
+  "explanation_language": "en",
+  "vocabulary_manifest_id": "it-reviewed-9d35be468e23",
+  "topic": {
+    "id": "it.a1.adjectives.agreement",
+    "cefr": "A1",
+    "sequence": 6,
+    "module_id": "it.a1.adjectives",
+    "title_target": "La concordanza degli aggettivi",
+    "title_en": "Basic adjective agreement",
+    "estimated_minutes": 8,
+    "prerequisite_ids": [
+      "it.a1.nouns.plural"
+    ],
+    "learning_objectives": [
+      "Choose the correct gender and number for regular four-ending adjectives.",
+      "Use regular two-ending adjectives in singular and plural with either gender.",
+      "Keep noun–adjective agreement both after nouns and after essere."
+    ],
+    "scope_included": [
+      "regular four-ending adjectives",
+      "regular two-ending adjectives",
+      "attributive and predicate agreement"
+    ],
+    "scope_excluded": [
+      "adjective position nuance",
+      "irregular comparatives",
+      "multiple coordinated nouns"
+    ],
+    "new_terms": [],
+    "reading_links": []
+  },
+  "skills": [
+    {
+      "id": "it.a1.adjectives.agreement.four_sg",
+      "description_en": "Recognise and form masculine and feminine singular endings (-o, -a) for regular four-ending adjectives.",
+      "capability": "recognition",
+      "critical": true
+    },
+    {
+      "id": "it.a1.adjectives.agreement.four_pl",
+      "description_en": "Recognise and form masculine and feminine plural endings (-i, -e) for regular four-ending adjectives.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "it.a1.adjectives.agreement.two_sg",
+      "description_en": "Use the same -e adjective form with masculine and feminine singular nouns.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "it.a1.adjectives.agreement.two_pl",
+      "description_en": "Use -i with masculine and feminine plurals of regular two-ending adjectives.",
+      "capability": "contextual",
+      "critical": true
+    },
+    {
+      "id": "it.a1.adjectives.agreement.placement",
+      "description_en": "Match adjectives to nouns both after the noun and after essere.",
+      "capability": "contextual",
+      "critical": true
+    },
+    {
+      "id": "it.a1.adjectives.agreement.production",
+      "description_en": "Correct, transform, and independently produce adjective–noun agreement.",
+      "capability": "production",
+      "critical": true
+    }
+  ],
+  "lesson": {
+    "short_explanation_en": "In Italian, a describing adjective usually changes to agree with the noun it describes in gender (masculine/feminine) and number (singular/plural). Regular adjectives ending in -o have four forms: nuovo, nuova, nuovi, nuove. Regular adjectives ending in -e have two: grande in the singular and grandi in the plural, for both genders. Agreement also applies after essere: la casa è nuova; le case sono nuove.",
+    "rule_blocks": [
+      {
+        "id": "it.a1.adjectives.agreement.rule.four",
+        "heading_en": "Regular -o adjectives: four forms",
+        "explanation_en": "Start from the masculine singular dictionary form ending in -o. Use -a for feminine singular, -i for masculine plural and -e for feminine plural.",
+        "pattern": "nuovo → nuova / nuovi / nuove",
+        "usage_notes_en": [
+          "First find the noun’s gender and number.",
+          "Change the adjective ending to match that noun.",
+          "Examples in this lesson use regular four-ending adjectives; some other adjectives have spelling changes."
+        ],
+        "common_errors_en": [
+          "Not *la penna nuovo*: use la penna nuova.",
+          "Not *i libri nuove*: use i libri nuovi."
+        ],
+        "example_ids": [
+          "it.a1.adjectives.agreement.ex01",
+          "it.a1.adjectives.agreement.ex02",
+          "it.a1.adjectives.agreement.ex03",
+          "it.a1.adjectives.agreement.ex04"
+        ]
+      },
+      {
+        "id": "it.a1.adjectives.agreement.rule.two",
+        "heading_en": "Regular -e adjectives: two forms",
+        "explanation_en": "Adjectives such as grande and felice use the same -e form with singular masculine and singular feminine nouns. For either gender in the plural, use -i.",
+        "pattern": "il bambino felice / la bambina felice → i bambini felici / le bambine felici",
+        "usage_notes_en": [
+          "No separate masculine and feminine endings for regular -e adjectives.",
+          "The plural still changes to -i."
+        ],
+        "common_errors_en": [
+          "Not *la bambina felica*: use la bambina felice.",
+          "Not *le bambine felice*: use le bambine felici."
+        ],
+        "example_ids": [
+          "it.a1.adjectives.agreement.ex05",
+          "it.a1.adjectives.agreement.ex06",
+          "it.a1.adjectives.agreement.ex07",
+          "it.a1.adjectives.agreement.ex08"
+        ]
+      },
+      {
+        "id": "it.a1.adjectives.agreement.rule.placement",
+        "heading_en": "Agreement next to a noun or after essere",
+        "explanation_en": "An adjective agrees with its noun in a noun phrase (uno zaino piccolo) and also when linked by essere (lo zaino è piccolo). The place of the adjective does not remove agreement.",
+        "pattern": "una borsa piccola; la borsa è piccola",
+        "usage_notes_en": [
+          "For the vocabulary in this lesson, adjective-after-noun is a useful neutral pattern.",
+          "More subtle changes in meaning caused by adjective position belong to a later lesson."
+        ],
+        "common_errors_en": [
+          "Not *due borse piccolo*: use due borse piccole."
+        ],
+        "example_ids": [
+          "it.a1.adjectives.agreement.ex09",
+          "it.a1.adjectives.agreement.ex10"
+        ]
+      }
+    ],
+    "form_tables": [
+      {
+        "id": "it.a1.adjectives.agreement.table.o",
+        "title_en": "Regular four-ending adjective: nuovo",
+        "columns": [
+          "Noun gender",
+          "Singular",
+          "Plural"
+        ],
+        "rows": [
+          [
+            "Masculine",
+            "nuovo",
+            "nuovi"
+          ],
+          [
+            "Feminine",
+            "nuova",
+            "nuove"
+          ]
+        ]
+      },
+      {
+        "id": "it.a1.adjectives.agreement.table.e",
+        "title_en": "Regular two-ending adjective: grande",
+        "columns": [
+          "Noun gender",
+          "Singular",
+          "Plural"
+        ],
+        "rows": [
+          [
+            "Masculine",
+            "grande",
+            "grandi"
+          ],
+          [
+            "Feminine",
+            "grande",
+            "grandi"
+          ]
+        ]
+      }
+    ]
+  },
+  "contexts": [
+    {
+      "id": "it.a1.adjectives.agreement.ctx1",
+      "type": "dialogue",
+      "setting_en": "Anna and Marco look at the rooms in an apartment.",
+      "lines": [
+        {
+          "speaker": "Anna",
+          "target": "Marco, la cucina è piccola?",
+          "translation_en": "Marco, is the kitchen small?"
+        },
+        {
+          "speaker": "Marco",
+          "target": "Sì, ma le camere sono grandi.",
+          "translation_en": "Yes, but the bedrooms are large."
+        },
+        {
+          "speaker": "Anna",
+          "target": "E le finestre?",
+          "translation_en": "And the windows?"
+        },
+        {
+          "speaker": "Marco",
+          "target": "Le finestre sono grandi. Il balcone è piccolo.",
+          "translation_en": "The windows are large. The balcony is small."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "piccola",
+          "lemma": "piccolo",
+          "skill_id": "it.a1.adjectives.agreement.four_sg",
+          "form_key": "adjective.regular_o.feminine.singular",
+          "explanation_en": "Cucina is a feminine singular noun, so piccolo becomes piccola."
+        },
+        {
+          "surface": "grandi",
+          "lemma": "grande",
+          "skill_id": "it.a1.adjectives.agreement.two_pl",
+          "form_key": "adjective.regular_e.either_gender.plural",
+          "explanation_en": "Grande takes -i in the plural, regardless of gender."
+        },
+        {
+          "surface": "piccolo",
+          "lemma": "piccolo",
+          "skill_id": "it.a1.adjectives.agreement.four_sg",
+          "form_key": "adjective.regular_o.masculine.singular",
+          "explanation_en": "Balcone is masculine singular: piccolo."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "la",
+          "cucina",
+          "essere",
+          "piccolo",
+          "sì",
+          "ma",
+          "le",
+          "camera",
+          "grande",
+          "e",
+          "finestra",
+          "il",
+          "balcone"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.ctx2",
+      "type": "message",
+      "setting_en": "Anna messages Marco after shopping for food.",
+      "lines": [
+        {
+          "speaker": "Anna",
+          "target": "Oggi le mele sono buone. I pomodori sono rossi.",
+          "translation_en": "Today the apples are good. The tomatoes are red."
+        },
+        {
+          "speaker": "Anna",
+          "target": "Le banane sono grandi e il pane è buono.",
+          "translation_en": "The bananas are large, and the bread is good."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "buone",
+          "lemma": "buono",
+          "skill_id": "it.a1.adjectives.agreement.four_pl",
+          "form_key": "adjective.regular_o.feminine.plural",
+          "explanation_en": "Mele is feminine plural: buono becomes buone."
+        },
+        {
+          "surface": "rossi",
+          "lemma": "rosso",
+          "skill_id": "it.a1.adjectives.agreement.four_pl",
+          "form_key": "adjective.regular_o.masculine.plural",
+          "explanation_en": "Pomodori is masculine plural, so rosso changes to rossi."
+        },
+        {
+          "surface": "grandi",
+          "lemma": "grande",
+          "skill_id": "it.a1.adjectives.agreement.two_pl",
+          "form_key": "adjective.regular_e.either_gender.plural",
+          "explanation_en": "Banane is feminine plural: grande becomes grandi."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "oggi",
+          "le",
+          "mela",
+          "essere",
+          "buono",
+          "i",
+          "pomodoro",
+          "rosso",
+          "banana",
+          "grande",
+          "e",
+          "il",
+          "pane"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "it.a1.adjectives.agreement.ex01",
+      "target": "Il libro è nuovo.",
+      "translation_en": "The book is new.",
+      "focus_surface": "nuovo",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.four_sg"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_o.masculine.singular"
+      ],
+      "register": "neutral",
+      "note_en": "Libro is masculine singular: nuovo.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "il",
+          "libro",
+          "essere",
+          "nuovo"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.ex02",
+      "target": "La penna è nuova.",
+      "translation_en": "The pen is new.",
+      "focus_surface": "nuova",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.four_sg"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_o.feminine.singular"
+      ],
+      "register": "neutral",
+      "note_en": "Penna is feminine singular: nuova.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "la",
+          "penna",
+          "essere",
+          "nuovo"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.ex03",
+      "target": "I libri sono nuovi.",
+      "translation_en": "The books are new.",
+      "focus_surface": "nuovi",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.four_pl"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_o.masculine.plural"
+      ],
+      "register": "neutral",
+      "note_en": "Libri is masculine plural: nuovi.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "i",
+          "libro",
+          "essere",
+          "nuovo"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.ex04",
+      "target": "Le penne sono nuove.",
+      "translation_en": "The pens are new.",
+      "focus_surface": "nuove",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.four_pl"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_o.feminine.plural"
+      ],
+      "register": "neutral",
+      "note_en": "Penne is feminine plural: nuove.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "le",
+          "penna",
+          "essere",
+          "nuovo"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.ex05",
+      "target": "Il bambino è felice.",
+      "translation_en": "The boy is happy.",
+      "focus_surface": "felice",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.two_sg"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_e.either_gender.singular"
+      ],
+      "register": "neutral",
+      "note_en": "Felice has the same singular form for both genders.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "il",
+          "bambino",
+          "essere",
+          "felice"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.ex06",
+      "target": "La bambina è felice.",
+      "translation_en": "The girl is happy.",
+      "focus_surface": "felice",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.two_sg"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_e.either_gender.singular"
+      ],
+      "register": "neutral",
+      "note_en": "Felice does not take a separate feminine singular ending.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "la",
+          "bambina",
+          "essere",
+          "felice"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.ex07",
+      "target": "I bambini sono felici.",
+      "translation_en": "The boys are happy.",
+      "focus_surface": "felici",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.two_pl"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_e.either_gender.plural"
+      ],
+      "register": "neutral",
+      "note_en": "Felice becomes felici in the plural.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "i",
+          "bambino",
+          "essere",
+          "felice"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.ex08",
+      "target": "Le bambine sono felici.",
+      "translation_en": "The girls are happy.",
+      "focus_surface": "felici",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.two_pl"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_e.either_gender.plural"
+      ],
+      "register": "neutral",
+      "note_en": "The plural form felici works for feminine nouns too.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "le",
+          "bambina",
+          "essere",
+          "felice"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.ex09",
+      "target": "Marco ha uno zaino piccolo.",
+      "translation_en": "Marco has a small backpack.",
+      "focus_surface": "piccolo",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.placement"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_o.masculine.singular"
+      ],
+      "register": "neutral",
+      "note_en": "The adjective piccolo follows the noun and agrees with masculine singular zaino.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "uno",
+          "zaino",
+          "piccolo"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.ex10",
+      "target": "Anna ha due borse piccole.",
+      "translation_en": "Anna has two small bags.",
+      "focus_surface": "piccole",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.placement"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_o.feminine.plural"
+      ],
+      "register": "neutral",
+      "note_en": "Piccole follows feminine plural borse; the ending changes to -e.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "avere",
+          "due",
+          "borsa",
+          "piccolo"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "id": "it.a1.adjectives.agreement.q01",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Select the adjective form that agrees with the noun.",
+      "context_target": "",
+      "prompt_target": "La borsa è ___.",
+      "prompt_en": "Use the adjective rosso.",
+      "options": [
+        {
+          "id": "it.a1.adjectives.agreement.q01.opt1",
+          "text": "rossa",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Borsa is feminine singular, so rosso becomes rossa."
+        },
+        {
+          "id": "it.a1.adjectives.agreement.q01.opt2",
+          "text": "rosso",
+          "correct": false,
+          "error_type": "wrong_gender_or_declension",
+          "explanation_en": "rosso does not agree with the specified noun in the required adjective class; rossa is the correct form."
+        },
+        {
+          "id": "it.a1.adjectives.agreement.q01.opt3",
+          "text": "rossi",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "rossi does not agree with the specified noun in the required adjective class; rossa is the correct form."
+        },
+        {
+          "id": "it.a1.adjectives.agreement.q01.opt4",
+          "text": "rosse",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "rosse does not agree with the specified noun in the required adjective class; rossa is the correct form."
+        }
+      ],
+      "accepted_answers": [
+        "rossa"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the noun’s gender and number.",
+        "For regular -o adjectives use -o/-a/-i/-e; for regular -e adjectives use -e singular and -i plural."
+      ],
+      "feedback_correct_en": "Correct: rossa.",
+      "feedback_wrong_en": "Expected: rossa. Borsa is feminine singular, so rosso becomes rossa.",
+      "explanation_en": "Borsa is feminine singular, so rosso becomes rossa.",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.four_sg"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_o.feminine.singular"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "la",
+          "borsa",
+          "essere",
+          "rosso"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.q02",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Select the adjective form that agrees with the noun.",
+      "context_target": "",
+      "prompt_target": "I quaderni sono ___.",
+      "prompt_en": "Use the adjective nuovo.",
+      "options": [
+        {
+          "id": "it.a1.adjectives.agreement.q02.opt1",
+          "text": "nuova",
+          "correct": false,
+          "error_type": "wrong_gender_or_declension",
+          "explanation_en": "nuova does not agree with the specified noun in the required adjective class; nuovi is the correct form."
+        },
+        {
+          "id": "it.a1.adjectives.agreement.q02.opt2",
+          "text": "nuovi",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Quaderni is masculine plural, so nuovo becomes nuovi."
+        },
+        {
+          "id": "it.a1.adjectives.agreement.q02.opt3",
+          "text": "nuove",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "nuove does not agree with the specified noun in the required adjective class; nuovi is the correct form."
+        },
+        {
+          "id": "it.a1.adjectives.agreement.q02.opt4",
+          "text": "nuovo",
+          "correct": false,
+          "error_type": "wrong_gender_or_declension",
+          "explanation_en": "nuovo does not agree with the specified noun in the required adjective class; nuovi is the correct form."
+        }
+      ],
+      "accepted_answers": [
+        "nuovi"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the noun’s gender and number.",
+        "For regular -o adjectives use -o/-a/-i/-e; for regular -e adjectives use -e singular and -i plural."
+      ],
+      "feedback_correct_en": "Correct: nuovi.",
+      "feedback_wrong_en": "Expected: nuovi. Quaderni is masculine plural, so nuovo becomes nuovi.",
+      "explanation_en": "Quaderni is masculine plural, so nuovo becomes nuovi.",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.four_pl"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_o.masculine.plural"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "i",
+          "quaderno",
+          "essere",
+          "nuovo"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.q03",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Select the adjective form that agrees with the noun.",
+      "context_target": "",
+      "prompt_target": "La finestra è ___.",
+      "prompt_en": "Use the adjective grande.",
+      "options": [
+        {
+          "id": "it.a1.adjectives.agreement.q03.opt1",
+          "text": "grandi",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "grandi does not agree with the specified noun in the required adjective class; grande is the correct form."
+        },
+        {
+          "id": "it.a1.adjectives.agreement.q03.opt2",
+          "text": "grando",
+          "correct": false,
+          "error_type": "wrong_gender_or_declension",
+          "explanation_en": "grando does not agree with the specified noun in the required adjective class; grande is the correct form."
+        },
+        {
+          "id": "it.a1.adjectives.agreement.q03.opt3",
+          "text": "grande",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Grande keeps its -e ending for both masculine and feminine singular nouns."
+        },
+        {
+          "id": "it.a1.adjectives.agreement.q03.opt4",
+          "text": "granda",
+          "correct": false,
+          "error_type": "wrong_gender_or_declension",
+          "explanation_en": "granda does not agree with the specified noun in the required adjective class; grande is the correct form."
+        }
+      ],
+      "accepted_answers": [
+        "grande"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the noun’s gender and number.",
+        "For regular -o adjectives use -o/-a/-i/-e; for regular -e adjectives use -e singular and -i plural."
+      ],
+      "feedback_correct_en": "Correct: grande.",
+      "feedback_wrong_en": "Expected: grande. Grande keeps its -e ending for both masculine and feminine singular nouns.",
+      "explanation_en": "Grande keeps its -e ending for both masculine and feminine singular nouns.",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.two_sg"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_e.either_gender.singular"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "la",
+          "finestra",
+          "essere",
+          "grande"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.q04",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Select the adjective form that agrees with the noun.",
+      "context_target": "",
+      "prompt_target": "Le ragazze sono ___.",
+      "prompt_en": "Use the adjective contento.",
+      "options": [
+        {
+          "id": "it.a1.adjectives.agreement.q04.opt1",
+          "text": "contento",
+          "correct": false,
+          "error_type": "wrong_gender_or_declension",
+          "explanation_en": "contento does not agree with the specified noun in the required adjective class; contente is the correct form."
+        },
+        {
+          "id": "it.a1.adjectives.agreement.q04.opt2",
+          "text": "contenta",
+          "correct": false,
+          "error_type": "wrong_gender_or_declension",
+          "explanation_en": "contenta does not agree with the specified noun in the required adjective class; contente is the correct form."
+        },
+        {
+          "id": "it.a1.adjectives.agreement.q04.opt3",
+          "text": "contenti",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "contenti does not agree with the specified noun in the required adjective class; contente is the correct form."
+        },
+        {
+          "id": "it.a1.adjectives.agreement.q04.opt4",
+          "text": "contente",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Ragazze is feminine plural, so contento becomes contente."
+        }
+      ],
+      "accepted_answers": [
+        "contente"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the noun’s gender and number.",
+        "For regular -o adjectives use -o/-a/-i/-e; for regular -e adjectives use -e singular and -i plural."
+      ],
+      "feedback_correct_en": "Correct: contente.",
+      "feedback_wrong_en": "Expected: contente. Ragazze is feminine plural, so contento becomes contente.",
+      "explanation_en": "Ragazze is feminine plural, so contento becomes contente.",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.four_pl"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_o.feminine.plural"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "le",
+          "ragazza",
+          "essere",
+          "contento"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.q05",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the correct form of the adjective named in the English prompt.",
+      "context_target": "",
+      "prompt_target": "Il vestito è ___.",
+      "prompt_en": "Use the adjective bianco.",
+      "options": [],
+      "accepted_answers": [
+        "bianco"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the noun’s gender and number.",
+        "For regular -o adjectives use -o/-a/-i/-e; for regular -e adjectives use -e singular and -i plural."
+      ],
+      "feedback_correct_en": "Correct: bianco.",
+      "feedback_wrong_en": "Expected: bianco. Vestito is masculine singular; the regular adjective form is bianco.",
+      "explanation_en": "Vestito is masculine singular; the regular adjective form is bianco.",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.four_sg"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_o.masculine.singular"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "il",
+          "vestito",
+          "essere",
+          "bianco"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.q06",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the correct form of the adjective named in the English prompt.",
+      "context_target": "",
+      "prompt_target": "La porta è ___.",
+      "prompt_en": "Use the adjective bianco.",
+      "options": [],
+      "accepted_answers": [
+        "bianca"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the noun’s gender and number.",
+        "For regular -o adjectives use -o/-a/-i/-e; for regular -e adjectives use -e singular and -i plural."
+      ],
+      "feedback_correct_en": "Correct: bianca.",
+      "feedback_wrong_en": "Expected: bianca. Porta is feminine singular: bianca.",
+      "explanation_en": "Porta is feminine singular: bianca.",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.four_sg"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_o.feminine.singular"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "la",
+          "porta",
+          "essere",
+          "bianco"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.q07",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the correct form of the adjective named in the English prompt.",
+      "context_target": "",
+      "prompt_target": "I cani sono ___.",
+      "prompt_en": "Use the adjective piccolo.",
+      "options": [],
+      "accepted_answers": [
+        "piccoli"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the noun’s gender and number.",
+        "For regular -o adjectives use -o/-a/-i/-e; for regular -e adjectives use -e singular and -i plural."
+      ],
+      "feedback_correct_en": "Correct: piccoli.",
+      "feedback_wrong_en": "Expected: piccoli. Cani is masculine plural: piccoli.",
+      "explanation_en": "Cani is masculine plural: piccoli.",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.four_pl"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_o.masculine.plural"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "i",
+          "cane",
+          "essere",
+          "piccolo"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.q08",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the correct form of the adjective named in the English prompt.",
+      "context_target": "",
+      "prompt_target": "Le case sono ___.",
+      "prompt_en": "Use the adjective nuovo.",
+      "options": [],
+      "accepted_answers": [
+        "nuove"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the noun’s gender and number.",
+        "For regular -o adjectives use -o/-a/-i/-e; for regular -e adjectives use -e singular and -i plural."
+      ],
+      "feedback_correct_en": "Correct: nuove.",
+      "feedback_wrong_en": "Expected: nuove. Case is feminine plural: nuove.",
+      "explanation_en": "Case is feminine plural: nuove.",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.four_pl"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_o.feminine.plural"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "le",
+          "casa",
+          "essere",
+          "nuovo"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.q09",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the correct form of the adjective named in the English prompt.",
+      "context_target": "",
+      "prompt_target": "Il film è ___.",
+      "prompt_en": "Use the adjective interessante.",
+      "options": [],
+      "accepted_answers": [
+        "interessante"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the noun’s gender and number.",
+        "For regular -o adjectives use -o/-a/-i/-e; for regular -e adjectives use -e singular and -i plural."
+      ],
+      "feedback_correct_en": "Correct: interessante.",
+      "feedback_wrong_en": "Expected: interessante. Interessante has one singular form for both genders.",
+      "explanation_en": "Interessante has one singular form for both genders.",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.two_sg"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_e.either_gender.singular"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "il",
+          "film",
+          "essere",
+          "interessante"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.q10",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the correct form of the adjective named in the English prompt.",
+      "context_target": "",
+      "prompt_target": "La storia è ___.",
+      "prompt_en": "Use the adjective interessante.",
+      "options": [],
+      "accepted_answers": [
+        "interessante"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the noun’s gender and number.",
+        "For regular -o adjectives use -o/-a/-i/-e; for regular -e adjectives use -e singular and -i plural."
+      ],
+      "feedback_correct_en": "Correct: interessante.",
+      "feedback_wrong_en": "Expected: interessante. Storia is feminine singular, and interessante does not change gender in the singular.",
+      "explanation_en": "Storia is feminine singular, and interessante does not change gender in the singular.",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.two_sg"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_e.either_gender.singular"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "la",
+          "storia",
+          "essere",
+          "interessante"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.q11",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the correct form of the adjective named in the English prompt.",
+      "context_target": "",
+      "prompt_target": "I libri sono ___.",
+      "prompt_en": "Use the adjective interessante.",
+      "options": [],
+      "accepted_answers": [
+        "interessanti"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the noun’s gender and number.",
+        "For regular -o adjectives use -o/-a/-i/-e; for regular -e adjectives use -e singular and -i plural."
+      ],
+      "feedback_correct_en": "Correct: interessanti.",
+      "feedback_wrong_en": "Expected: interessanti. Interessante takes -i in the plural: interessanti.",
+      "explanation_en": "Interessante takes -i in the plural: interessanti.",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.two_pl"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_e.either_gender.plural"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "i",
+          "libro",
+          "essere",
+          "interessante"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.q12",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the correct form of the adjective named in the English prompt.",
+      "context_target": "",
+      "prompt_target": "Le lezioni sono ___.",
+      "prompt_en": "Use the adjective facile.",
+      "options": [],
+      "accepted_answers": [
+        "facili"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the noun’s gender and number.",
+        "For regular -o adjectives use -o/-a/-i/-e; for regular -e adjectives use -e singular and -i plural."
+      ],
+      "feedback_correct_en": "Correct: facili.",
+      "feedback_wrong_en": "Expected: facili. Facile takes -i in the plural, including with feminine nouns: facili.",
+      "explanation_en": "Facile takes -i in the plural, including with feminine nouns: facili.",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.two_pl"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_e.either_gender.plural"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "le",
+          "lezione",
+          "essere",
+          "facile"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.q13",
+      "type": "multiple_choice",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_en": "Select the adjective form that agrees with the noun.",
+      "context_target": "",
+      "prompt_target": "Marco vede due gatti ___.",
+      "prompt_en": "Use the adjective nero.",
+      "options": [
+        {
+          "id": "it.a1.adjectives.agreement.q13.opt1",
+          "text": "nera",
+          "correct": false,
+          "error_type": "wrong_gender_or_declension",
+          "explanation_en": "nera does not agree with the specified noun in the required adjective class; neri is the correct form."
+        },
+        {
+          "id": "it.a1.adjectives.agreement.q13.opt2",
+          "text": "neri",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Gatti is masculine plural and nero follows it as neri."
+        },
+        {
+          "id": "it.a1.adjectives.agreement.q13.opt3",
+          "text": "nere",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "nere does not agree with the specified noun in the required adjective class; neri is the correct form."
+        },
+        {
+          "id": "it.a1.adjectives.agreement.q13.opt4",
+          "text": "nero",
+          "correct": false,
+          "error_type": "wrong_gender_or_declension",
+          "explanation_en": "nero does not agree with the specified noun in the required adjective class; neri is the correct form."
+        }
+      ],
+      "accepted_answers": [
+        "neri"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the noun’s gender and number.",
+        "For regular -o adjectives use -o/-a/-i/-e; for regular -e adjectives use -e singular and -i plural."
+      ],
+      "feedback_correct_en": "Correct: neri.",
+      "feedback_wrong_en": "Expected: neri. Gatti is masculine plural and nero follows it as neri.",
+      "explanation_en": "Gatti is masculine plural and nero follows it as neri.",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.placement"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_o.masculine.plural"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "vedere",
+          "due",
+          "gatto",
+          "nero"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.q14",
+      "type": "multiple_choice",
+      "stage": "contextual",
+      "difficulty": 3,
+      "instruction_en": "Select the adjective form that agrees with the noun.",
+      "context_target": "",
+      "prompt_target": "Anna compra tre mele ___.",
+      "prompt_en": "Use the adjective rosso.",
+      "options": [
+        {
+          "id": "it.a1.adjectives.agreement.q14.opt1",
+          "text": "rosso",
+          "correct": false,
+          "error_type": "wrong_gender_or_declension",
+          "explanation_en": "rosso does not agree with the specified noun in the required adjective class; rosse is the correct form."
+        },
+        {
+          "id": "it.a1.adjectives.agreement.q14.opt2",
+          "text": "rossi",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "rossi does not agree with the specified noun in the required adjective class; rosse is the correct form."
+        },
+        {
+          "id": "it.a1.adjectives.agreement.q14.opt3",
+          "text": "rosse",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Mele is feminine plural: rosse."
+        },
+        {
+          "id": "it.a1.adjectives.agreement.q14.opt4",
+          "text": "rossa",
+          "correct": false,
+          "error_type": "wrong_gender_or_declension",
+          "explanation_en": "rossa does not agree with the specified noun in the required adjective class; rosse is the correct form."
+        }
+      ],
+      "accepted_answers": [
+        "rosse"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the noun’s gender and number.",
+        "For regular -o adjectives use -o/-a/-i/-e; for regular -e adjectives use -e singular and -i plural."
+      ],
+      "feedback_correct_en": "Correct: rosse.",
+      "feedback_wrong_en": "Expected: rosse. Mele is feminine plural: rosse.",
+      "explanation_en": "Mele is feminine plural: rosse.",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.placement"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_o.feminine.plural"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "comprare",
+          "tre",
+          "mela",
+          "rosso"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.q15",
+      "type": "transform",
+      "stage": "production",
+      "difficulty": 3,
+      "instruction_en": "Change the whole singular phrase to plural, keeping the meaning.",
+      "context_target": "",
+      "prompt_target": "la borsa nuova → ___",
+      "prompt_en": "Rewrite the complete phrase, including the adjective.",
+      "options": [],
+      "accepted_answers": [
+        "le borse nuove"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Check the gender and number of each noun.",
+        "Keep the adjective in the same gender-and-number pattern as its noun."
+      ],
+      "feedback_correct_en": "Correct: le borse nuove.",
+      "feedback_wrong_en": "Expected: le borse nuove. Both the article, noun, and adjective become feminine plural.",
+      "explanation_en": "Both the article, noun, and adjective become feminine plural.",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.production"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_o.feminine.plural"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "la",
+          "borsa",
+          "nuovo",
+          "le"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.q16",
+      "type": "error_correction",
+      "stage": "production",
+      "difficulty": 3,
+      "instruction_en": "Correct the adjective agreement. Write the complete phrase.",
+      "context_target": "",
+      "prompt_target": "i ragazzi simpatico → ___",
+      "prompt_en": "Rewrite the complete phrase, including the adjective.",
+      "options": [],
+      "accepted_answers": [
+        "i ragazzi simpatici"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Check the gender and number of each noun.",
+        "Keep the adjective in the same gender-and-number pattern as its noun."
+      ],
+      "feedback_correct_en": "Correct: i ragazzi simpatici.",
+      "feedback_wrong_en": "Expected: i ragazzi simpatici. Ragazzi is masculine plural, so simpatico must become simpatici.",
+      "explanation_en": "Ragazzi is masculine plural, so simpatico must become simpatici.",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.production"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_o.masculine.plural"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "i",
+          "ragazzo",
+          "simpatico"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.q17",
+      "type": "guided_production",
+      "stage": "production",
+      "difficulty": 3,
+      "instruction_en": "Write two natural Italian sentences following the prompts.",
+      "context_target": "",
+      "prompt_target": "casa; nuovo / libro; nuovo",
+      "prompt_en": "Write two complete Italian sentences; compare your answer with the rubric.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Check the gender and number of each noun.",
+        "Keep the adjective in the same gender-and-number pattern as its noun."
+      ],
+      "feedback_correct_en": "Compare your sentence with the rubric.",
+      "feedback_wrong_en": "Check the agreement and sentence structure.",
+      "explanation_en": "Make the -o adjective agree with a feminine singular noun and a masculine singular noun.",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.production"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "Write two complete and natural sentences.",
+          "Use nuova with casa.",
+          "Use nuovo with libro.",
+          "Do not score by exact wording."
+        ],
+        "example_response": "La casa è nuova. Il libro è nuovo."
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "casa",
+          "nuovo",
+          "libro",
+          "la",
+          "essere",
+          "il"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.q18",
+      "type": "multiple_choice",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Select the adjective form that agrees with the noun.",
+      "context_target": "",
+      "prompt_target": "Le patate sono ___.",
+      "prompt_en": "Use the adjective piccolo.",
+      "options": [
+        {
+          "id": "it.a1.adjectives.agreement.q18.opt1",
+          "text": "piccole",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Patate is feminine plural: piccole."
+        },
+        {
+          "id": "it.a1.adjectives.agreement.q18.opt2",
+          "text": "piccolo",
+          "correct": false,
+          "error_type": "wrong_gender_or_declension",
+          "explanation_en": "piccolo does not agree with the specified noun in the required adjective class; piccole is the correct form."
+        },
+        {
+          "id": "it.a1.adjectives.agreement.q18.opt3",
+          "text": "piccola",
+          "correct": false,
+          "error_type": "wrong_gender_or_declension",
+          "explanation_en": "piccola does not agree with the specified noun in the required adjective class; piccole is the correct form."
+        },
+        {
+          "id": "it.a1.adjectives.agreement.q18.opt4",
+          "text": "piccoli",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "piccoli does not agree with the specified noun in the required adjective class; piccole is the correct form."
+        }
+      ],
+      "accepted_answers": [
+        "piccole"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the noun’s gender and number.",
+        "For regular -o adjectives use -o/-a/-i/-e; for regular -e adjectives use -e singular and -i plural."
+      ],
+      "feedback_correct_en": "Correct: piccole.",
+      "feedback_wrong_en": "Expected: piccole. Patate is feminine plural: piccole.",
+      "explanation_en": "Patate is feminine plural: piccole.",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.four_pl"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_o.feminine.plural"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "le",
+          "patata",
+          "essere",
+          "piccolo"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.q19",
+      "type": "fill_gap",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Write only the correct form of the adjective named in the English prompt.",
+      "context_target": "",
+      "prompt_target": "Le sorelle sono ___.",
+      "prompt_en": "Use the adjective felice.",
+      "options": [],
+      "accepted_answers": [
+        "felici"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the noun’s gender and number.",
+        "For regular -o adjectives use -o/-a/-i/-e; for regular -e adjectives use -e singular and -i plural."
+      ],
+      "feedback_correct_en": "Correct: felici.",
+      "feedback_wrong_en": "Expected: felici. Felice becomes felici with any plural noun.",
+      "explanation_en": "Felice becomes felici with any plural noun.",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.two_pl"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_e.either_gender.plural"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "le",
+          "sorella",
+          "essere",
+          "felice"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.q20",
+      "type": "transform",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Rewrite the whole phrase in the plural.",
+      "context_target": "",
+      "prompt_target": "il cane tranquillo → ___",
+      "prompt_en": "Rewrite the complete phrase, including the adjective.",
+      "options": [],
+      "accepted_answers": [
+        "i cani tranquilli"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Check the gender and number of each noun.",
+        "Keep the adjective in the same gender-and-number pattern as its noun."
+      ],
+      "feedback_correct_en": "Correct: i cani tranquilli.",
+      "feedback_wrong_en": "Expected: i cani tranquilli. The article, noun and adjective all take their masculine plural forms.",
+      "explanation_en": "The article, noun and adjective all take their masculine plural forms.",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.production"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_o.masculine.plural"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "il",
+          "cane",
+          "tranquillo",
+          "i"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.q21",
+      "type": "guided_production",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Write two natural Italian sentences following the prompts.",
+      "context_target": "",
+      "prompt_target": "ragazzo; stanco / ragazza; stanco",
+      "prompt_en": "Write two complete Italian sentences; compare your answer with the rubric.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Check the gender and number of each noun.",
+        "Keep the adjective in the same gender-and-number pattern as its noun."
+      ],
+      "feedback_correct_en": "Compare your sentence with the rubric.",
+      "feedback_wrong_en": "Check the agreement and sentence structure.",
+      "explanation_en": "Use stanco and stanca with the appropriate singular nouns.",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.production"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "Write two natural full sentences.",
+          "Use stanco with ragazzo.",
+          "Use stanca with ragazza.",
+          "Do not exact-match free production."
+        ],
+        "example_response": "Il ragazzo è stanco. La ragazza è stanca."
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ragazzo",
+          "stanco",
+          "ragazza",
+          "il",
+          "essere",
+          "la"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.q22",
+      "type": "multiple_choice",
+      "stage": "review",
+      "difficulty": 2,
+      "instruction_en": "Select the adjective form that agrees with the noun.",
+      "context_target": "",
+      "prompt_target": "La bottiglia è ___.",
+      "prompt_en": "Use the adjective pieno.",
+      "options": [
+        {
+          "id": "it.a1.adjectives.agreement.q22.opt1",
+          "text": "pieno",
+          "correct": false,
+          "error_type": "wrong_gender_or_declension",
+          "explanation_en": "pieno does not agree with the specified noun in the required adjective class; piena is the correct form."
+        },
+        {
+          "id": "it.a1.adjectives.agreement.q22.opt2",
+          "text": "pieni",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "pieni does not agree with the specified noun in the required adjective class; piena is the correct form."
+        },
+        {
+          "id": "it.a1.adjectives.agreement.q22.opt3",
+          "text": "piene",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "piene does not agree with the specified noun in the required adjective class; piena is the correct form."
+        },
+        {
+          "id": "it.a1.adjectives.agreement.q22.opt4",
+          "text": "piena",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Bottiglia is feminine singular: piena."
+        }
+      ],
+      "accepted_answers": [
+        "piena"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the noun’s gender and number.",
+        "For regular -o adjectives use -o/-a/-i/-e; for regular -e adjectives use -e singular and -i plural."
+      ],
+      "feedback_correct_en": "Correct: piena.",
+      "feedback_wrong_en": "Expected: piena. Bottiglia is feminine singular: piena.",
+      "explanation_en": "Bottiglia is feminine singular: piena.",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.four_sg"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "adjective.regular_o.feminine.singular"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "la",
+          "bottiglia",
+          "essere",
+          "pieno"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.adjectives.agreement.q23",
+      "type": "guided_production",
+      "stage": "review",
+      "difficulty": 2,
+      "instruction_en": "Write two natural Italian sentences following the prompts.",
+      "context_target": "",
+      "prompt_target": "tazza; piccolo / bicchieri; grande",
+      "prompt_en": "Write two complete Italian sentences; compare your answer with the rubric.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Check the gender and number of each noun.",
+        "Keep the adjective in the same gender-and-number pattern as its noun."
+      ],
+      "feedback_correct_en": "Compare your sentence with the rubric.",
+      "feedback_wrong_en": "Check the agreement and sentence structure.",
+      "explanation_en": "Use piccola with tazza and grandi with bicchieri.",
+      "skill_ids": [
+        "it.a1.adjectives.agreement.production"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "Write two natural complete A1 sentences.",
+          "Use piccola for the feminine singular noun tazza.",
+          "Use grandi for the masculine plural noun bicchieri."
+        ],
+        "example_response": "La tazza è piccola. I bicchieri sono grandi."
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "tazza",
+          "piccolo",
+          "bicchiere",
+          "grande",
+          "la",
+          "essere",
+          "i"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "verb_application": {
+    "applicable": false,
+    "required_form_keys": [],
+    "verbs": []
+  },
+  "mastery": {
+    "minimum_scored_items": 12,
+    "required_score": 0.8,
+    "minimum_production_score": 0.7,
+    "minimum_unaided_production_items": 2,
+    "required_stages": [
+      "notice",
+      "controlled",
+      "contextual",
+      "production",
+      "transfer"
+    ],
+    "review_intervals_days": [
+      1,
+      3,
+      7,
+      14,
+      30,
+      60
+    ]
+  },
+  "vocabulary_audit": {
+    "manifest_id": "it-reviewed-9d35be468e23",
+    "used_lemmas": [
+      "avere",
+      "balcone",
+      "bambina",
+      "bambino",
+      "banana",
+      "bianco",
+      "bicchiere",
+      "borsa",
+      "bottiglia",
+      "buono",
+      "camera",
+      "cane",
+      "casa",
+      "comprare",
+      "contento",
+      "cucina",
+      "due",
+      "e",
+      "essere",
+      "facile",
+      "felice",
+      "film",
+      "finestra",
+      "gatto",
+      "grande",
+      "i",
+      "il",
+      "interessante",
+      "la",
+      "le",
+      "lezione",
+      "libro",
+      "ma",
+      "mela",
+      "nero",
+      "nuovo",
+      "oggi",
+      "pane",
+      "patata",
+      "penna",
+      "piccolo",
+      "pieno",
+      "pomodoro",
+      "porta",
+      "quaderno",
+      "ragazza",
+      "ragazzo",
+      "rosso",
+      "simpatico",
+      "sorella",
+      "stanco",
+      "storia",
+      "sì",
+      "tazza",
+      "tranquillo",
+      "tre",
+      "uno",
+      "vedere",
+      "vestito",
+      "zaino"
+    ],
+    "target_lemmas": [
+      "nuovo",
+      "grande",
+      "felice",
+      "piccolo",
+      "rosso",
+      "nero",
+      "interessante",
+      "facile"
+    ],
+    "outside_allowlist_lemmas": [],
+    "introduced_lemmas": [],
+    "proper_names": [
+      "Anna",
+      "Marco"
+    ],
+    "grammar_only_tokens": [],
+    "above_level_lemmas": [],
+    "tests_with_unknown_vocabulary": [],
+    "status": "pass"
+  },
+  "level_audit": {
+    "target_cefr": "A1",
+    "max_sentence_length_words": 9,
+    "unapproved_grammar_features": [],
+    "scope_violations": [],
+    "status": "pass"
+  },
+  "quality_audit": {
+    "status": "pass",
+    "checks": {
+      "unique_ids": true,
+      "prerequisites_resolve": true,
+      "answers_verified": true,
+      "forms_verified": true,
+      "single_best_answers": true,
+      "naturalness_checked": true,
+      "cefr_checked": true,
+      "translations_checked": true,
+      "requested_counts_met": true
+    },
+    "issues": [],
+    "needs_human_review": [],
+    "sources": [
+      {
+        "name": "Treccani — Genere e numero degli aggettivi",
+        "url": "https://www.treccani.it/enciclopedia/genere-e-numero-degli-aggettivi_%28La-grammatica-italiana%29/"
+      },
+      {
+        "name": "Treccani — Aggettivi (Enciclopedia dell’Italiano)",
+        "url": "https://www.treccani.it/enciclopedia/aggettivi_%28Enciclopedia-dell%27Italiano%29/"
+      },
+      {
+        "name": "Zanichelli — La concordanza dell’aggettivo qualificativo",
+        "url": "https://aulalingue.scuola.zanichelli.it/italiano-lingue/concordanza-aggettivo-qualificativo/"
+      }
+    ],
+    "counts": {
+      "contexts": 2,
+      "examples": 10,
+      "exercise_bank": 23,
+      "scored_exercises": 20,
+      "transfer_exercises": 4,
+      "adjective_form_tests": 8
+    }
+  },
+  "blocking_reasons": [],
+  "missing_files_or_prerequisites": [],
+  "audit": {
+    "status": "pass",
+    "issues": [],
+    "needs_human_review": [],
+    "sources": [
+      {
+        "name": "Treccani — Genere e numero degli aggettivi",
+        "url": "https://www.treccani.it/enciclopedia/genere-e-numero-degli-aggettivi_%28La-grammatica-italiana%29/"
+      },
+      {
+        "name": "Treccani — Aggettivi (Enciclopedia dell’Italiano)",
+        "url": "https://www.treccani.it/enciclopedia/aggettivi_%28Enciclopedia-dell%27Italiano%29/"
+      },
+      {
+        "name": "Zanichelli — La concordanza dell’aggettivo qualificativo",
+        "url": "https://aulalingue.scuola.zanichelli.it/italiano-lingue/concordanza-aggettivo-qualificativo/"
+      }
+    ],
+    "checks": {
+      "unique_ids": true,
+      "prerequisites_resolve": true,
+      "answers_verified": true,
+      "forms_verified": true,
+      "single_best_answers": true,
+      "naturalness_checked": true,
+      "cefr_checked": true,
+      "translations_checked": true,
+      "requested_counts_met": true
+    }
+  }
+}

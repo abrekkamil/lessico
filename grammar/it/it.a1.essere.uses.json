@@ -1,0 +1,2282 @@
+{
+  "schema_version": "lessico-grammar-v1",
+  "content_version": "1.0.0",
+  "status": "ready",
+  "mode": "topic_pack",
+  "language": "it",
+  "explanation_language": "en",
+  "vocabulary_manifest_id": "it-reviewed-9d35be468e23",
+  "topic": {
+    "id": "it.a1.essere.uses",
+    "cefr": "A1",
+    "sequence": 9,
+    "module_id": "it.a1.essere_avere",
+    "title_target": "Identità, provenienza e descrizione con essere",
+    "title_en": "Identity, origin and description with essere",
+    "estimated_minutes": 8,
+    "prerequisite_ids": [
+      "it.a1.adjectives.agreement",
+      "it.a1.essere.forms"
+    ],
+    "learning_objectives": [
+      "Use essere naturally for identity, origin, profession and simple descriptions.",
+      "Distinguish the city-of-origin pattern essere di + city from being in a city.",
+      "Use an unmodified profession naturally without an article and agree descriptive adjectives."
+    ],
+    "scope_included": [
+      "identity",
+      "nationality and origin",
+      "profession",
+      "adjective description"
+    ],
+    "scope_excluded": [
+      "stare contrast",
+      "temporary-state nuance",
+      "compound tenses"
+    ],
+    "new_terms": [],
+    "reading_links": []
+  },
+  "skills": [
+    {
+      "id": "it.a1.essere.uses.identify",
+      "description_en": "Use essere to state a person’s name or identity naturally.",
+      "capability": "recognition",
+      "critical": true
+    },
+    {
+      "id": "it.a1.essere.uses.origin",
+      "description_en": "Express a person’s city of origin using essere di + city, not a location statement.",
+      "capability": "contextual",
+      "critical": true
+    },
+    {
+      "id": "it.a1.essere.uses.profession",
+      "description_en": "State a simple profession or role with essere, normally without an article.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "it.a1.essere.uses.description",
+      "description_en": "Use essere with an adjective that agrees with the described person or group.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "it.a1.essere.uses.context",
+      "description_en": "Choose the appropriate present form of essere for a person or group in an introduction or description.",
+      "capability": "contextual",
+      "critical": true
+    },
+    {
+      "id": "it.a1.essere.uses.produce",
+      "description_en": "Produce short natural introductions and descriptions using essere, origin, role and agreed adjectives.",
+      "capability": "production",
+      "critical": true
+    }
+  ],
+  "lesson": {
+    "short_explanation_en": "Essere (“to be”) helps introduce or identify people (Sono Anna), say the city someone comes from (Sono di Roma), give an occupation or role (Marco è insegnante), and describe people with adjectives (Anna è simpatica). For a simple, unmodified profession, Italian normally omits the article even when English says “a”. Nationalities and descriptive adjectives agree in gender and number: italiano / italiana / italiani / italiane. Keep origin (di Roma = from Rome) separate from present location (a Roma = in Rome). As in the previous lesson, Italian usually omits a clear subject pronoun.",
+    "rule_blocks": [
+      {
+        "id": "it.a1.essere.uses.rule1",
+        "heading_en": "Introducing and identifying someone",
+        "explanation_en": "Use essere + name or identity, with the subject normally omitted when clear. Questo è introduces another person.",
+        "pattern": "Sono + name. / Questo è + name.",
+        "usage_notes_en": [
+          "Sono Anna is a natural first-person introduction.",
+          "Questo è Marco is a natural way to introduce another person."
+        ],
+        "common_errors_en": [
+          "Incorrect: Io è Anna. Correct: Sono Anna. (Io takes sono.)"
+        ],
+        "example_ids": [
+          "it.a1.essere.uses.ex01",
+          "it.a1.essere.uses.ex02"
+        ]
+      },
+      {
+        "id": "it.a1.essere.uses.rule2",
+        "heading_en": "Saying where someone is from",
+        "explanation_en": "Use essere + di + a city name to say where someone comes from. Contrast only with a + city, which says where someone is.",
+        "pattern": "(io) sono di Roma. / Marco è di Milano.",
+        "usage_notes_en": [
+          "Sono di Roma means I come from Rome.",
+          "Sono a Roma (previously taught location use) means I am in Rome now; the meanings differ."
+        ],
+        "common_errors_en": [
+          "Incorrect for origin: Marco è a Milano. Correct for origin: Marco è di Milano."
+        ],
+        "example_ids": [
+          "it.a1.essere.uses.ex03",
+          "it.a1.essere.uses.ex04"
+        ]
+      },
+      {
+        "id": "it.a1.essere.uses.rule3",
+        "heading_en": "Saying a role or profession",
+        "explanation_en": "For a simple, unmodified profession or role, Italian normally uses essere + profession without an article.",
+        "pattern": "Anna è studentessa. / Marco è insegnante.",
+        "usage_notes_en": [
+          "English often uses a/an here: Marco is a teacher.",
+          "A profession may also occur with an article in some contexts; this lesson practises the common bare-profession pattern, not a ban on articles."
+        ],
+        "common_errors_en": [
+          "Not the usual neutral beginner pattern: Marco è un insegnante. Prefer: Marco è insegnante. The first sentence is not inherently ungrammatical."
+        ],
+        "example_ids": [
+          "it.a1.essere.uses.ex07",
+          "it.a1.essere.uses.ex08"
+        ]
+      },
+      {
+        "id": "it.a1.essere.uses.rule4",
+        "heading_en": "Describing people and nationalities",
+        "explanation_en": "An adjective following essere must agree with the person or group being described in gender and number.",
+        "pattern": "Anna è italiana. / Marco è italiano. / Anna e Marco sono simpatici.",
+        "usage_notes_en": [
+          "Use feminine singular -a for italiana or simpatica when describing Anna.",
+          "With a male-and-female pair, use the masculine plural -i form (simpatici, italiani).",
+          "Nationality adjectives are written in lowercase in Italian."
+        ],
+        "common_errors_en": [
+          "Incorrect: Anna è italiano. Correct: Anna è italiana.",
+          "Incorrect: Anna e Marco sono simpatica. Correct: Anna e Marco sono simpatici."
+        ],
+        "example_ids": [
+          "it.a1.essere.uses.ex05",
+          "it.a1.essere.uses.ex06",
+          "it.a1.essere.uses.ex09",
+          "it.a1.essere.uses.ex10"
+        ]
+      }
+    ],
+    "form_tables": [
+      {
+        "id": "it.a1.essere.uses.table1",
+        "title_en": "Using essere for four everyday purposes",
+        "columns": [
+          "Purpose",
+          "Pattern",
+          "Example",
+          "English meaning"
+        ],
+        "rows": [
+          [
+            "Identity",
+            "essere + name",
+            "Sono Anna.",
+            "I’m Anna."
+          ],
+          [
+            "City of origin",
+            "essere + di + city",
+            "Marco è di Milano.",
+            "Marco is from Milan."
+          ],
+          [
+            "Profession or role",
+            "essere + simple profession",
+            "Marco è insegnante.",
+            "Marco is a teacher."
+          ],
+          [
+            "Description",
+            "essere + agreed adjective",
+            "Anna è simpatica.",
+            "Anna is friendly."
+          ]
+        ]
+      },
+      {
+        "id": "it.a1.essere.uses.table2",
+        "title_en": "Nationality adjective agreement: italiano",
+        "columns": [
+          "Gender and number",
+          "Form",
+          "Example"
+        ],
+        "rows": [
+          [
+            "Masculine singular",
+            "italiano",
+            "Marco è italiano."
+          ],
+          [
+            "Feminine singular",
+            "italiana",
+            "Anna è italiana."
+          ],
+          [
+            "Masculine or mixed plural",
+            "italiani",
+            "Anna e Marco sono italiani."
+          ],
+          [
+            "Feminine plural",
+            "italiane",
+            "Anna e la mamma sono italiane."
+          ]
+        ]
+      }
+    ]
+  },
+  "contexts": [
+    {
+      "id": "it.a1.essere.uses.ctx1",
+      "type": "dialogue",
+      "setting_en": "Two people introduce themselves at a small social gathering.",
+      "lines": [
+        {
+          "speaker": "Anna",
+          "target": "Ciao, sono Anna. Sono di Roma.",
+          "translation_en": "Hi, I’m Anna. I’m from Rome."
+        },
+        {
+          "speaker": "Marco",
+          "target": "Piacere, sono Marco. Sono di Milano.",
+          "translation_en": "Nice to meet you, I’m Marco. I’m from Milan."
+        },
+        {
+          "speaker": "Anna",
+          "target": "Sei insegnante?",
+          "translation_en": "Are you a teacher?"
+        },
+        {
+          "speaker": "Marco",
+          "target": "Sì, sono insegnante. E tu?",
+          "translation_en": "Yes, I’m a teacher. What about you?"
+        },
+        {
+          "speaker": "Anna",
+          "target": "Sono studentessa.",
+          "translation_en": "I’m a student."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "sono",
+          "lemma": "essere",
+          "skill_id": "it.a1.essere.uses.identify",
+          "form_key": "indicative.present.1sg.affirmative",
+          "explanation_en": "The speaker can introduce themselves with Sono + name; io is normally omitted."
+        },
+        {
+          "surface": "Sono",
+          "lemma": "essere",
+          "skill_id": "it.a1.essere.uses.origin",
+          "form_key": "indicative.present.1sg.affirmative",
+          "explanation_en": "Essere di + city identifies the speaker’s city of origin."
+        },
+        {
+          "surface": "Sei",
+          "lemma": "essere",
+          "skill_id": "it.a1.essere.uses.profession",
+          "form_key": "indicative.present.2sg.affirmative",
+          "explanation_en": "A profession with essere usually has no article in a simple statement or question."
+        },
+        {
+          "surface": "sono",
+          "lemma": "essere",
+          "skill_id": "it.a1.essere.uses.profession",
+          "form_key": "indicative.present.1sg.affirmative",
+          "explanation_en": "Sono insegnante states a profession without adding an indefinite article."
+        },
+        {
+          "surface": "Sono",
+          "lemma": "essere",
+          "skill_id": "it.a1.essere.uses.profession",
+          "form_key": "indicative.present.1sg.affirmative",
+          "explanation_en": "Sono studentessa states a role or status directly."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ciao",
+          "essere",
+          "di",
+          "piacere",
+          "insegnante",
+          "sì",
+          "e",
+          "tu",
+          "studentessa"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.ctx2",
+      "type": "narrative",
+      "setting_en": "A short introduction to two people in a class profile.",
+      "lines": [
+        {
+          "speaker": "Narrator",
+          "target": "Anna è italiana. È studentessa.",
+          "translation_en": "Anna is Italian. She is a student."
+        },
+        {
+          "speaker": "Narrator",
+          "target": "Marco è italiano. È insegnante.",
+          "translation_en": "Marco is Italian. He is a teacher."
+        },
+        {
+          "speaker": "Narrator",
+          "target": "Anna è simpatica e Marco è simpatico.",
+          "translation_en": "Anna is friendly and Marco is friendly."
+        },
+        {
+          "speaker": "Narrator",
+          "target": "Anna è di Roma. Marco è di Milano.",
+          "translation_en": "Anna is from Rome. Marco is from Milan."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "è",
+          "lemma": "essere",
+          "skill_id": "it.a1.essere.uses.description",
+          "form_key": "indicative.present.3sg.affirmative",
+          "explanation_en": "The adjective italiana agrees with Anna, who is female and singular."
+        },
+        {
+          "surface": "È",
+          "lemma": "essere",
+          "skill_id": "it.a1.essere.uses.profession",
+          "form_key": "indicative.present.3sg.affirmative",
+          "explanation_en": "The role studentessa follows è without an article."
+        },
+        {
+          "surface": "è",
+          "lemma": "essere",
+          "skill_id": "it.a1.essere.uses.description",
+          "form_key": "indicative.present.3sg.affirmative",
+          "explanation_en": "The adjective simpatico agrees with Marco, who is male and singular."
+        },
+        {
+          "surface": "è",
+          "lemma": "essere",
+          "skill_id": "it.a1.essere.uses.origin",
+          "form_key": "indicative.present.3sg.affirmative",
+          "explanation_en": "Each person’s city of origin follows è di."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "italiano",
+          "studentessa",
+          "insegnante",
+          "simpatico",
+          "e",
+          "di"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "it.a1.essere.uses.ex01",
+      "target": "Sono Anna.",
+      "translation_en": "I’m Anna.",
+      "focus_surface": "Sono",
+      "skill_ids": [
+        "it.a1.essere.uses.identify"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "A natural introduction usually omits io.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.ex02",
+      "target": "Questo è Marco.",
+      "translation_en": "This is Marco.",
+      "focus_surface": "è",
+      "skill_ids": [
+        "it.a1.essere.uses.identify"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Use è to identify someone being introduced.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "questo",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.ex03",
+      "target": "Sono di Roma.",
+      "translation_en": "I’m from Rome.",
+      "focus_surface": "Sono di",
+      "skill_ids": [
+        "it.a1.essere.uses.origin"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Di before a city states origin, not present location.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "di"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.ex04",
+      "target": "Marco è di Milano.",
+      "translation_en": "Marco is from Milan.",
+      "focus_surface": "è di",
+      "skill_ids": [
+        "it.a1.essere.uses.origin"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "The city of origin follows di.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "di"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.ex05",
+      "target": "Anna è italiana.",
+      "translation_en": "Anna is Italian.",
+      "focus_surface": "è italiana",
+      "skill_ids": [
+        "it.a1.essere.uses.description"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Nationality adjectives agree: Anna → italiana.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "italiano"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.ex06",
+      "target": "Marco è italiano.",
+      "translation_en": "Marco is Italian.",
+      "focus_surface": "è italiano",
+      "skill_ids": [
+        "it.a1.essere.uses.description"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "Nationality adjectives agree: Marco → italiano.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "italiano"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.ex07",
+      "target": "Anna è studentessa.",
+      "translation_en": "Anna is a student.",
+      "focus_surface": "è studentessa",
+      "skill_ids": [
+        "it.a1.essere.uses.profession"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "A plain role statement normally has no article in Italian.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "studentessa"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.ex08",
+      "target": "Marco è insegnante.",
+      "translation_en": "Marco is a teacher.",
+      "focus_surface": "è insegnante",
+      "skill_ids": [
+        "it.a1.essere.uses.profession"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "An unmodified profession normally follows essere without an article.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "insegnante"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.ex09",
+      "target": "La mamma è simpatica.",
+      "translation_en": "Mum is friendly.",
+      "focus_surface": "è simpatica",
+      "skill_ids": [
+        "it.a1.essere.uses.description"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "The adjective matches the feminine singular subject.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "la",
+          "mamma",
+          "essere",
+          "simpatico"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.ex10",
+      "target": "Anna e Marco sono simpatici.",
+      "translation_en": "Anna and Marco are friendly.",
+      "focus_surface": "sono simpatici",
+      "skill_ids": [
+        "it.a1.essere.uses.description"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "register": "neutral",
+      "note_en": "With this mixed-gender pair, the plural adjective is masculine.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "e",
+          "essere",
+          "simpatico"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "id": "it.a1.essere.uses.q01",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the present of essere to introduce Anna’s role.",
+      "context_target": "",
+      "prompt_target": "Anna ___ studentessa.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.essere.uses.q01.opt1",
+          "text": "è",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct usage and agreement in this context."
+        },
+        {
+          "id": "it.a1.essere.uses.q01.opt2",
+          "text": "sei",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Sei is for tu."
+        },
+        {
+          "id": "it.a1.essere.uses.q01.opt3",
+          "text": "sono",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "Sono is for io or loro."
+        },
+        {
+          "id": "it.a1.essere.uses.q01.opt4",
+          "text": "siamo",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Siamo is for noi."
+        }
+      ],
+      "accepted_answers": [
+        "è"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at who is being described and what information the sentence gives.",
+        "Use the present of essere; match the person and number or agree the adjective."
+      ],
+      "feedback_correct_en": "Correct: è.",
+      "feedback_wrong_en": "Expected: è. Anna is one person: è + profession, normally without an article.",
+      "explanation_en": "Anna is one person: è + profession, normally without an article.",
+      "skill_ids": [
+        "it.a1.essere.uses.profession"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "studentessa",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.q02",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the sentence saying that Marco is originally from Milan, rather than currently in Milan.",
+      "context_target": "",
+      "prompt_target": "Marco: Milano",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.essere.uses.q02.opt1",
+          "text": "Marco è a Milano.",
+          "correct": false,
+          "error_type": "location_not_origin",
+          "explanation_en": "A Milano indicates current location, not origin."
+        },
+        {
+          "id": "it.a1.essere.uses.q02.opt2",
+          "text": "Marco è di Milano.",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct usage and agreement in this context."
+        },
+        {
+          "id": "it.a1.essere.uses.q02.opt3",
+          "text": "Marco sei di Milano.",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Sei is used with tu, not Marco."
+        },
+        {
+          "id": "it.a1.essere.uses.q02.opt4",
+          "text": "Marco sono di Milano.",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Sono does not agree with Marco as a single third person."
+        }
+      ],
+      "accepted_answers": [
+        "Marco è di Milano."
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at who is being described and what information the sentence gives.",
+        "Use the present of essere; match the person and number or agree the adjective."
+      ],
+      "feedback_correct_en": "Correct: Marco è di Milano.",
+      "feedback_wrong_en": "Expected: Marco è di Milano. Di + city tells where Marco is from; a + city would tell where he is.",
+      "explanation_en": "Di + city tells where Marco is from; a + city would tell where he is.",
+      "skill_ids": [
+        "it.a1.essere.uses.origin"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "di",
+          "a"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.q03",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Complete the basic personal description.",
+      "context_target": "",
+      "prompt_target": "La mamma ___ simpatica.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.essere.uses.q03.opt1",
+          "text": "sono",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "Sono refers to io or a plural group."
+        },
+        {
+          "id": "it.a1.essere.uses.q03.opt2",
+          "text": "siamo",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Siamo is for noi."
+        },
+        {
+          "id": "it.a1.essere.uses.q03.opt3",
+          "text": "è",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct usage and agreement in this context."
+        },
+        {
+          "id": "it.a1.essere.uses.q03.opt4",
+          "text": "siete",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Siete is for voi."
+        }
+      ],
+      "accepted_answers": [
+        "è"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at who is being described and what information the sentence gives.",
+        "Use the present of essere; match the person and number or agree the adjective."
+      ],
+      "feedback_correct_en": "Correct: è.",
+      "feedback_wrong_en": "Expected: è. La mamma is a feminine singular person: è is the third-person singular of essere.",
+      "explanation_en": "La mamma is a feminine singular person: è is the third-person singular of essere.",
+      "skill_ids": [
+        "it.a1.essere.uses.description"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "la",
+          "mamma",
+          "simpatico",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.q04",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Choose the correct nationality adjective for Anna (one woman from Italy).",
+      "context_target": "",
+      "prompt_target": "Anna è ___.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.essere.uses.q04.opt1",
+          "text": "italiano",
+          "correct": false,
+          "error_type": "gender_agreement",
+          "explanation_en": "Italiano is masculine singular."
+        },
+        {
+          "id": "it.a1.essere.uses.q04.opt2",
+          "text": "italiani",
+          "correct": false,
+          "error_type": "gender_number_agreement",
+          "explanation_en": "Italiani is masculine plural."
+        },
+        {
+          "id": "it.a1.essere.uses.q04.opt3",
+          "text": "italiane",
+          "correct": false,
+          "error_type": "number_agreement",
+          "explanation_en": "Italiane is feminine plural."
+        },
+        {
+          "id": "it.a1.essere.uses.q04.opt4",
+          "text": "italiana",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct usage and agreement in this context."
+        }
+      ],
+      "accepted_answers": [
+        "italiana"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at who is being described and what information the sentence gives.",
+        "Use the present of essere; match the person and number or agree the adjective."
+      ],
+      "feedback_correct_en": "Correct: italiana.",
+      "feedback_wrong_en": "Expected: italiana. A nationality adjective agrees with Anna in feminine singular: italiana.",
+      "explanation_en": "A nationality adjective agrees with Anna in feminine singular: italiana.",
+      "skill_ids": [
+        "it.a1.essere.uses.description"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "italiano"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.q05",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Choose the adjective matching the mixed-gender pair.",
+      "context_target": "",
+      "prompt_target": "Anna e Marco sono ___.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.essere.uses.q05.opt1",
+          "text": "simpatici",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct usage and agreement in this context."
+        },
+        {
+          "id": "it.a1.essere.uses.q05.opt2",
+          "text": "simpatico",
+          "correct": false,
+          "error_type": "number_agreement",
+          "explanation_en": "Simpatico is masculine singular."
+        },
+        {
+          "id": "it.a1.essere.uses.q05.opt3",
+          "text": "simpatica",
+          "correct": false,
+          "error_type": "gender_number_agreement",
+          "explanation_en": "Simpatica is feminine singular."
+        },
+        {
+          "id": "it.a1.essere.uses.q05.opt4",
+          "text": "simpatiche",
+          "correct": false,
+          "error_type": "gender_agreement",
+          "explanation_en": "Simpatiche is feminine plural."
+        }
+      ],
+      "accepted_answers": [
+        "simpatici"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at who is being described and what information the sentence gives.",
+        "Use the present of essere; match the person and number or agree the adjective."
+      ],
+      "feedback_correct_en": "Correct: simpatici.",
+      "feedback_wrong_en": "Expected: simpatici. For a mixed pair, the regular adjective is masculine plural: simpatici.",
+      "explanation_en": "For a mixed pair, the regular adjective is masculine plural: simpatici.",
+      "skill_ids": [
+        "it.a1.essere.uses.description"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "e",
+          "essere",
+          "simpatico"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.q06",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Choose the correct essere form for noi in a sentence about origin.",
+      "context_target": "",
+      "prompt_target": "Noi ___ di Roma.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.essere.uses.q06.opt1",
+          "text": "sono",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Sono is used for io or loro."
+        },
+        {
+          "id": "it.a1.essere.uses.q06.opt2",
+          "text": "siamo",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct usage and agreement in this context."
+        },
+        {
+          "id": "it.a1.essere.uses.q06.opt3",
+          "text": "siete",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Siete is for voi."
+        },
+        {
+          "id": "it.a1.essere.uses.q06.opt4",
+          "text": "è",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "È is third-person singular."
+        }
+      ],
+      "accepted_answers": [
+        "siamo"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at who is being described and what information the sentence gives.",
+        "Use the present of essere; match the person and number or agree the adjective."
+      ],
+      "feedback_correct_en": "Correct: siamo.",
+      "feedback_wrong_en": "Expected: siamo. Noi is first-person plural, so siamo di Roma expresses the speakers’ shared origin.",
+      "explanation_en": "Noi is first-person plural, so siamo di Roma expresses the speakers’ shared origin.",
+      "skill_ids": [
+        "it.a1.essere.uses.origin"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "noi",
+          "di",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.q07",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the affirmative present of essere for first person singular (io), to state origin.",
+      "context_target": "",
+      "prompt_target": "Sono Marco. ___ di Milano.",
+      "prompt_en": "This is Marco speaking about himself.",
+      "options": [],
+      "accepted_answers": [
+        "sono"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The speaker has not changed since Sono Marco.",
+        "First-person singular is the form used for io."
+      ],
+      "feedback_correct_en": "Correct: sono.",
+      "feedback_wrong_en": "Expected: sono. The speaker introduces himself and continues with (io) sono di Milano.",
+      "explanation_en": "The speaker introduces himself and continues with (io) sono di Milano.",
+      "skill_ids": [
+        "it.a1.essere.uses.origin"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "di"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.q08",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the affirmative present of essere: second person singular (tu).",
+      "context_target": "",
+      "prompt_target": "Tu ___ insegnante.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "sei"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "You are speaking to one person.",
+        "Use the tu form of essere."
+      ],
+      "feedback_correct_en": "Correct: sei.",
+      "feedback_wrong_en": "Expected: sei. Tu takes sei; a plain profession follows without an article.",
+      "explanation_en": "Tu takes sei; a plain profession follows without an article.",
+      "skill_ids": [
+        "it.a1.essere.uses.profession"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.2sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "tu",
+          "insegnante",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.q09",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the affirmative present of essere: third person singular (lei).",
+      "context_target": "",
+      "prompt_target": "Anna ___ studentessa.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "è"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The sentence is about one woman.",
+        "Use the accented third-person singular form."
+      ],
+      "feedback_correct_en": "Correct: è.",
+      "feedback_wrong_en": "Expected: è. Anna is third-person singular: è with a grave accent.",
+      "explanation_en": "Anna is third-person singular: è with a grave accent.",
+      "skill_ids": [
+        "it.a1.essere.uses.profession"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "studentessa",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.q10",
+      "type": "conjugate",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the affirmative present of essere: first person plural (noi).",
+      "context_target": "",
+      "prompt_target": "Noi ___ italiani.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "siamo"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Noi means we.",
+        "Use the first-person plural present form."
+      ],
+      "feedback_correct_en": "Correct: siamo.",
+      "feedback_wrong_en": "Expected: siamo. Noi takes siamo, with a plural nationality adjective.",
+      "explanation_en": "Noi takes siamo, with a plural nationality adjective.",
+      "skill_ids": [
+        "it.a1.essere.uses.description"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.1pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "noi",
+          "italiano",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.q11",
+      "type": "conjugate",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_en": "Without hints, write only the affirmative present of essere: second person plural (voi).",
+      "context_target": "",
+      "prompt_target": "Voi ___ di Roma.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "siete"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct: siete.",
+      "feedback_wrong_en": "Expected: siete. Voi takes siete.",
+      "explanation_en": "Voi takes siete.",
+      "skill_ids": [
+        "it.a1.essere.uses.origin"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.2pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "voi",
+          "di",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.q12",
+      "type": "conjugate",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_en": "Without hints, write only the affirmative present of essere: third person plural (loro / i ragazzi).",
+      "context_target": "",
+      "prompt_target": "I ragazzi ___ felici.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "sono"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct: sono.",
+      "feedback_wrong_en": "Expected: sono. The boys are third-person plural and take sono.",
+      "explanation_en": "The boys are third-person plural and take sono.",
+      "skill_ids": [
+        "it.a1.essere.uses.description"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "i",
+          "ragazzo",
+          "felice",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.q13",
+      "type": "conjugate",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_en": "Without hints, write only the affirmative present of essere: first person singular (io).",
+      "context_target": "",
+      "prompt_target": "Io ___ studente.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "sono"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct: sono.",
+      "feedback_wrong_en": "Expected: sono. Io takes sono, even though sono also occurs with loro.",
+      "explanation_en": "Io takes sono, even though sono also occurs with loro.",
+      "skill_ids": [
+        "it.a1.essere.uses.profession"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "io",
+          "studente",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.q14",
+      "type": "conjugate",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_en": "Without hints, write only the affirmative present of essere: third person plural (loro).",
+      "context_target": "",
+      "prompt_target": "Le ragazze ___ italiane.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "sono"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Correct: sono.",
+      "feedback_wrong_en": "Expected: sono. Le ragazze is a feminine plural group and the verb is sono.",
+      "explanation_en": "Le ragazze is a feminine plural group and the verb is sono.",
+      "skill_ids": [
+        "it.a1.essere.uses.description"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "le",
+          "ragazza",
+          "italiano",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.q15",
+      "type": "multiple_choice",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_en": "Anna comes from Rome but is now in Milan. Select the sentence telling her origin.",
+      "context_target": "",
+      "prompt_target": "Anna: Roma",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.essere.uses.q15.opt1",
+          "text": "Anna è a Milano.",
+          "correct": false,
+          "error_type": "location_not_origin",
+          "explanation_en": "This states where Anna is now."
+        },
+        {
+          "id": "it.a1.essere.uses.q15.opt2",
+          "text": "Anna è Roma.",
+          "correct": false,
+          "error_type": "missing_preposition",
+          "explanation_en": "A city of origin requires di."
+        },
+        {
+          "id": "it.a1.essere.uses.q15.opt3",
+          "text": "Anna è di Roma.",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct usage and agreement in this context."
+        },
+        {
+          "id": "it.a1.essere.uses.q15.opt4",
+          "text": "Anna sono di Roma.",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Anna is third-person singular, which takes è."
+        }
+      ],
+      "accepted_answers": [
+        "Anna è di Roma."
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at who is being described and what information the sentence gives.",
+        "Use the present of essere; match the person and number or agree the adjective."
+      ],
+      "feedback_correct_en": "Correct: Anna è di Roma.",
+      "feedback_wrong_en": "Expected: Anna è di Roma. The question is about where Anna is from: è di Roma is the origin pattern.",
+      "explanation_en": "The question is about where Anna is from: è di Roma is the origin pattern.",
+      "skill_ids": [
+        "it.a1.essere.uses.origin"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "di",
+          "a"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.q16",
+      "type": "multiple_choice",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_en": "Choose the nationality adjective for Anna and Marco, both from Italy.",
+      "context_target": "",
+      "prompt_target": "Anna e Marco sono ___.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.essere.uses.q16.opt1",
+          "text": "italiana",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "Italiana is feminine singular."
+        },
+        {
+          "id": "it.a1.essere.uses.q16.opt2",
+          "text": "italiano",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "Italiano is masculine singular."
+        },
+        {
+          "id": "it.a1.essere.uses.q16.opt3",
+          "text": "italiane",
+          "correct": false,
+          "error_type": "wrong_gender_agreement",
+          "explanation_en": "Italiane is feminine plural, not mixed-gender plural."
+        },
+        {
+          "id": "it.a1.essere.uses.q16.opt4",
+          "text": "italiani",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct usage and agreement in this context."
+        }
+      ],
+      "accepted_answers": [
+        "italiani"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at who is being described and what information the sentence gives.",
+        "Use the present of essere; match the person and number or agree the adjective."
+      ],
+      "feedback_correct_en": "Correct: italiani.",
+      "feedback_wrong_en": "Expected: italiani. Italiani agrees with the mixed-gender plural Anna e Marco.",
+      "explanation_en": "Italiani agrees with the mixed-gender plural Anna e Marco.",
+      "skill_ids": [
+        "it.a1.essere.uses.description"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "e",
+          "essere",
+          "italiano"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.q17",
+      "type": "transform",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_en": "Rewrite this sentence about Anna instead of Marco; keep the nationality but adjust its ending.",
+      "context_target": "",
+      "prompt_target": "Marco è italiano.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "Anna è italiana."
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Anna is feminine singular.",
+        "Keep è, and change the ending of italiano to feminine singular."
+      ],
+      "feedback_correct_en": "Correct: Anna è italiana.",
+      "feedback_wrong_en": "Expected: Anna è italiana. Changing Marco to Anna requires the feminine nationality adjective italiana; è remains third-person singular.",
+      "explanation_en": "Changing Marco to Anna requires the feminine nationality adjective italiana; è remains third-person singular.",
+      "skill_ids": [
+        "it.a1.essere.uses.description"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "essere",
+          "italiano"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.q18",
+      "type": "error_correction",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_en": "Correct only the form of essere in the sentence. Keep every other word unchanged.",
+      "context_target": "",
+      "prompt_target": "Anna e Marco è simpatici.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "Anna e Marco sono simpatici."
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Anna e Marco is a plural subject.",
+        "The third-person plural form of essere is needed."
+      ],
+      "feedback_correct_en": "Correct: Anna e Marco sono simpatici.",
+      "feedback_wrong_en": "Expected: Anna e Marco sono simpatici. The plural pair Anna e Marco takes sono. The plural adjective simpatici is already correct.",
+      "explanation_en": "The plural pair Anna e Marco takes sono. The plural adjective simpatici is already correct.",
+      "skill_ids": [
+        "it.a1.essere.uses.description"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "e",
+          "essere",
+          "simpatico"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.q19",
+      "type": "multiple_choice",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Choose the correct present form of essere for the new subject.",
+      "context_target": "",
+      "prompt_target": "La sorella di Marco ___ studentessa.",
+      "prompt_en": "",
+      "options": [
+        {
+          "id": "it.a1.essere.uses.q19.opt1",
+          "text": "è",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct usage and agreement in this context."
+        },
+        {
+          "id": "it.a1.essere.uses.q19.opt2",
+          "text": "sono",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "Sono would not agree with a third-person singular sister."
+        },
+        {
+          "id": "it.a1.essere.uses.q19.opt3",
+          "text": "sei",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Sei refers to tu."
+        },
+        {
+          "id": "it.a1.essere.uses.q19.opt4",
+          "text": "siamo",
+          "correct": false,
+          "error_type": "wrong_person",
+          "explanation_en": "Siamo is first-person plural."
+        }
+      ],
+      "accepted_answers": [
+        "è"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at who is being described and what information the sentence gives.",
+        "Use the present of essere; match the person and number or agree the adjective."
+      ],
+      "feedback_correct_en": "Correct: è.",
+      "feedback_wrong_en": "Expected: è. La sorella di Marco is a singular female subject and takes è before a role.",
+      "explanation_en": "La sorella di Marco is a singular female subject and takes è before a role.",
+      "skill_ids": [
+        "it.a1.essere.uses.profession"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "la",
+          "sorella",
+          "di",
+          "studentessa",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.q20",
+      "type": "fill_gap",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Write only the present form of essere that agrees with the two people.",
+      "context_target": "",
+      "prompt_target": "Anna e la mamma ___ italiane.",
+      "prompt_en": "",
+      "options": [],
+      "accepted_answers": [
+        "sono"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Anna and her mother are two people.",
+        "Use the third-person plural form of essere."
+      ],
+      "feedback_correct_en": "Correct: sono.",
+      "feedback_wrong_en": "Expected: sono. Two women form a plural subject and use sono; italiane is already correctly feminine plural.",
+      "explanation_en": "Two women form a plural subject and use sono; italiane is already correctly feminine plural.",
+      "skill_ids": [
+        "it.a1.essere.uses.description"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "e",
+          "la",
+          "mamma",
+          "italiano",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.q21",
+      "type": "guided_production",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Imagine that you are Marco. Introduce yourself by name, say you are from Milan, and say you are a teacher. Write three short Italian sentences.",
+      "context_target": "",
+      "prompt_target": "Marco; Milano; insegnante",
+      "prompt_en": "Do not simply list words; use essere naturally.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Check your sentences against the meaning and the rubric.",
+      "feedback_wrong_en": "Check the origin, role or agreed description in each sentence.",
+      "explanation_en": "A first-person introduction can state a name, city of origin and profession.",
+      "skill_ids": [
+        "it.a1.essere.uses.produce"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.1sg.affirmative"
+      ],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "Uses first-person singular forms of essere correctly.",
+          "States the name Marco, origin with di Milano and profession insegnante.",
+          "The profession may appear without an indefinite article; standard punctuation and natural A1 Italian."
+        ],
+        "example_response": "Sono Marco. Sono di Milano. Sono insegnante."
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "insegnante",
+          "essere",
+          "di"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.q22",
+      "type": "guided_production",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Write a short class introduction describing Anna’s role and personality, and Marco’s role and personality.",
+      "context_target": "",
+      "prompt_target": "Anna: studentessa, simpatica. Marco: insegnante, simpatico.",
+      "prompt_en": "Write natural complete Italian sentences; do not exact-match the model.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Check your sentences against the meaning and the rubric.",
+      "feedback_wrong_en": "Check the origin, role or agreed description in each sentence.",
+      "explanation_en": "Two short profiles should use è for each named person, with appropriately agreed adjectives.",
+      "skill_ids": [
+        "it.a1.essere.uses.produce"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3sg.affirmative"
+      ],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "Anna is described as a student and friendly, using è and simpatica.",
+          "Marco is described as a teacher and friendly, using è and simpatico.",
+          "Omitting an article before a simple profession is natural; other idiomatic formulations may be accepted."
+        ],
+        "example_response": "Anna è studentessa. È simpatica. Marco è insegnante. È simpatico."
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "studentessa",
+          "simpatico",
+          "insegnante",
+          "essere"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.essere.uses.q23",
+      "type": "guided_production",
+      "stage": "review",
+      "difficulty": 3,
+      "instruction_en": "Delayed review: write two short sentences saying Anna and Marco are from Rome and that they are happy.",
+      "context_target": "",
+      "prompt_target": "Anna e Marco: Roma; felici",
+      "prompt_en": "Use essere di + city for origin and an agreeing adjective for the description.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [],
+      "feedback_correct_en": "Check your sentences against the meaning and the rubric.",
+      "feedback_wrong_en": "Check the origin, role or agreed description in each sentence.",
+      "explanation_en": "Anna and Marco are plural, so sono is used with both origin and a plural adjective.",
+      "skill_ids": [
+        "it.a1.essere.uses.produce"
+      ],
+      "verb_ids": [
+        "it:essere"
+      ],
+      "form_keys": [
+        "indicative.present.3pl.affirmative"
+      ],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "Origin uses Anna e Marco sono di Roma.",
+          "Description uses sono and plural felici.",
+          "The two statements are natural and agree with the plural subject."
+        ],
+        "example_response": "Anna e Marco sono di Roma. Sono felici."
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "e",
+          "felice",
+          "essere",
+          "di"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "verb_application": {
+    "applicable": true,
+    "required_form_keys": [
+      "indicative.present.1sg.affirmative",
+      "indicative.present.2sg.affirmative",
+      "indicative.present.3sg.affirmative",
+      "indicative.present.1pl.affirmative",
+      "indicative.present.2pl.affirmative",
+      "indicative.present.3pl.affirmative"
+    ],
+    "verbs": [
+      {
+        "id": "it:essere",
+        "lemma": "essere",
+        "meaning_en": "to be",
+        "regularity": "irregular",
+        "conjugation_class": "irregular; second-conjugation infinitive",
+        "auxiliary": "essere",
+        "governed_cases_or_prepositions": [
+          "di + city (origin)"
+        ],
+        "forms": [
+          {
+            "form_key": "indicative.present.1sg.affirmative",
+            "surface": "sono",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2sg.affirmative",
+            "surface": "sei",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3sg.affirmative",
+            "surface": "è",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "singular",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.1pl.affirmative",
+            "surface": "siamo",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 1,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.2pl.affirmative",
+            "surface": "siete",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 2,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          },
+          {
+            "form_key": "indicative.present.3pl.affirmative",
+            "surface": "sono",
+            "accepted_alternatives": [],
+            "features": {
+              "mood": "indicative",
+              "tense_or_aspect": "present",
+              "person": 3,
+              "number": "plural",
+              "polarity": "affirmative"
+            }
+          }
+        ],
+        "exercise_ids": [
+          "it.a1.essere.uses.q01",
+          "it.a1.essere.uses.q02",
+          "it.a1.essere.uses.q03",
+          "it.a1.essere.uses.q04",
+          "it.a1.essere.uses.q05",
+          "it.a1.essere.uses.q06",
+          "it.a1.essere.uses.q07",
+          "it.a1.essere.uses.q08",
+          "it.a1.essere.uses.q09",
+          "it.a1.essere.uses.q10",
+          "it.a1.essere.uses.q11",
+          "it.a1.essere.uses.q12",
+          "it.a1.essere.uses.q13",
+          "it.a1.essere.uses.q14",
+          "it.a1.essere.uses.q15",
+          "it.a1.essere.uses.q16",
+          "it.a1.essere.uses.q17",
+          "it.a1.essere.uses.q18",
+          "it.a1.essere.uses.q19",
+          "it.a1.essere.uses.q20",
+          "it.a1.essere.uses.q21",
+          "it.a1.essere.uses.q22",
+          "it.a1.essere.uses.q23"
+        ]
+      }
+    ]
+  },
+  "mastery": {
+    "minimum_scored_items": 12,
+    "required_score": 0.8,
+    "minimum_production_score": 0.7,
+    "minimum_unaided_production_items": 2,
+    "required_stages": [
+      "notice",
+      "controlled",
+      "contextual",
+      "production",
+      "transfer"
+    ],
+    "review_intervals_days": [
+      1,
+      3,
+      7,
+      14,
+      30,
+      60
+    ]
+  },
+  "vocabulary_audit": {
+    "status": "pass",
+    "manifest_id": "it-reviewed-9d35be468e23",
+    "used_lemmas": [
+      "a",
+      "ciao",
+      "di",
+      "e",
+      "essere",
+      "felice",
+      "i",
+      "insegnante",
+      "io",
+      "italiano",
+      "la",
+      "le",
+      "mamma",
+      "noi",
+      "piacere",
+      "questo",
+      "ragazza",
+      "ragazzo",
+      "simpatico",
+      "sorella",
+      "studente",
+      "studentessa",
+      "sì",
+      "tu",
+      "voi"
+    ],
+    "target_lemmas": [
+      "essere"
+    ],
+    "out_of_list_lemmas": [],
+    "introduced_lemmas": [],
+    "proper_names": [
+      "Anna",
+      "Marco",
+      "Milano",
+      "Roma"
+    ],
+    "grammar_only_tokens": [],
+    "above_level_lemmas": [],
+    "tests_with_unknown_vocabulary": []
+  },
+  "level_audit": {
+    "status": "pass",
+    "cefr": "A1",
+    "maximum_sentence_length_words": 7,
+    "unapproved_grammar_features": [],
+    "scope_violations": []
+  },
+  "quality_audit": {
+    "status": "pass",
+    "issues": [],
+    "needs_human_review": [],
+    "sources": [
+      {
+        "name": "Treccani — Essere (La grammatica italiana)",
+        "url": "https://www.treccani.it/enciclopedia/essere_%28La-grammatica-italiana%29/"
+      },
+      {
+        "name": "Zanichelli Aula di lingue — La nazionalità",
+        "url": "https://int-aulalingue.scuola.zanichelli.it/benvenuti/2009/10/01/la-nazionalita/"
+      },
+      {
+        "name": "LearnAmo — ESSERE o STARE? (uses of essere; professions and origin)",
+        "url": "https://learnamo.com/essere-stare-usi-differenze/"
+      }
+    ],
+    "checks": {
+      "unique_ids": true,
+      "prerequisites_resolve": true,
+      "answers_verified": true,
+      "forms_verified": true,
+      "single_best_answers": true,
+      "naturalness_checked": true,
+      "cefr_checked": true,
+      "translations_checked": true,
+      "requested_counts_met": true
+    }
+  },
+  "audit": {
+    "status": "pass",
+    "issues": [],
+    "needs_human_review": [],
+    "sources": [
+      {
+        "name": "Treccani — Essere (La grammatica italiana)",
+        "url": "https://www.treccani.it/enciclopedia/essere_%28La-grammatica-italiana%29/"
+      },
+      {
+        "name": "Zanichelli Aula di lingue — La nazionalità",
+        "url": "https://int-aulalingue.scuola.zanichelli.it/benvenuti/2009/10/01/la-nazionalita/"
+      },
+      {
+        "name": "LearnAmo — ESSERE o STARE? (uses of essere; professions and origin)",
+        "url": "https://learnamo.com/essere-stare-usi-differenze/"
+      }
+    ],
+    "checks": {
+      "unique_ids": true,
+      "prerequisites_resolve": true,
+      "answers_verified": true,
+      "forms_verified": true,
+      "single_best_answers": true,
+      "naturalness_checked": true,
+      "cefr_checked": true,
+      "translations_checked": true,
+      "requested_counts_met": true
+    }
+  }
+}

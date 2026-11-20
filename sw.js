@@ -1,12 +1,23 @@
 // Cache the shell so the app opens with no signal. The collection itself
 // lives in IndexedDB, not here.
-const CACHE = 'lessico-v11';
+const CACHE = 'lessico-v12';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icon.svg',
-               './reading/it.json', './reading/tr.json', './grammar/index.json',
-               './grammar/it/it.a1.nouns.gender.json'];
+               './reading/it.json', './reading/tr.json', './grammar/index.json'];
+
+// every grammar lesson the index lists comes too, so a lesson opens offline
+// even before it was first opened; one that fails to load does not stop the rest
+async function precache() {
+  const cache = await caches.open(CACHE);
+  await cache.addAll(SHELL);
+  try {
+    const index = await (await cache.match('./grammar/index.json')).json();
+    await Promise.all((index.topics || []).map(topic =>
+      cache.add('./grammar/' + topic.file).catch(() => {})));
+  } catch (e) { /* the lessons load when first opened instead */ }
+}
 
 self.addEventListener('install', event => {
-  event.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
+  event.waitUntil(precache().then(() => self.skipWaiting()));
 });
 
 // a new version clears the old caches, including any database answers an

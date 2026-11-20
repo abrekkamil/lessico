@@ -1,0 +1,1911 @@
+{
+  "schema_version": "lessico-grammar-v1",
+  "content_version": "1.0.0",
+  "status": "ready",
+  "mode": "topic_pack",
+  "language": "tr",
+  "vocabulary_manifest_id": "tr-reviewed-a6bc562da7a2",
+  "topic": {
+    "id": "tr.a1.plural",
+    "cefr": "A1",
+    "sequence": 4,
+    "module_id": "tr.a1.plural",
+    "title_target": "Çoğul Eki: -lar ve -ler",
+    "title_en": "Plural -lar and -ler",
+    "estimated_minutes": 15,
+    "prerequisite_ids": [
+      "tr.a1.harmony.major"
+    ],
+    "learning_objectives": [
+      "Understand and use plural -lar and -ler."
+    ],
+    "scope_included": [
+      "form regular noun plurals"
+    ],
+    "scope_excluded": [
+      "collective nuance and the numeral-plus-singular rule in depth"
+    ],
+    "new_terms": [],
+    "reading_links": [],
+    "references": [
+      {
+        "title": "Türk Dil Kurumu: Yazım Kılavuzu – Sesler ve Ses Uyumları",
+        "url": "https://yazim.tdk.gov.tr/content/02-sesler-ve-ses-uyumlari.html"
+      },
+      {
+        "title": "Türkiye Maarif Vakfı: Türkçenin Yabancı Dil Olarak Öğretimi Programı (2. Baskı), p. 125",
+        "url": "https://kutuphane.turkiyemaarif.org/uploads/Turkcenin_Yabanci_Dil_Olarak_Ogretimi_Programi_2_Baski-xpsg9.pdf"
+      }
+    ]
+  },
+  "skills": [
+    {
+      "id": "tr.a1.plural.recognise_plural",
+      "description_en": "Recognise regular plural nouns ending in -lar or -ler.",
+      "capability": "recognition",
+      "critical": true
+    },
+    {
+      "id": "tr.a1.plural.choose_harmony",
+      "description_en": "Select -lar or -ler based on the final vowel of a regular A1 noun.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "tr.a1.plural.write_plural",
+      "description_en": "Produce a complete, correctly spelt regular plural noun.",
+      "capability": "production",
+      "critical": true
+    },
+    {
+      "id": "tr.a1.plural.correct_plural",
+      "description_en": "Spot and correct a plural suffix harmony or attachment error.",
+      "capability": "controlled",
+      "critical": true
+    }
+  ],
+  "lesson": {
+    "short_explanation_en": "To talk about more than one of a regular Turkish count noun, add -lar or -ler. The last vowel of the singular noun chooses the ending. After a, ı, o or u, add -lar: kitap → kitaplar. After e, i, ö or ü, add -ler: ev → evler. Write the ending directly on the noun: kedi → kediler, çocuk → çocuklar. This lesson covers straightforward plurals; the special rule for nouns after numbers comes next.",
+    "rule_blocks": [
+      {
+        "id": "tr.a1.plural.rule.01",
+        "heading_en": "One noun, more than one: -lar or -ler",
+        "explanation_en": "The ordinary plural ending for a Turkish count noun is -lar or -ler. Use -lar after a back final vowel (a, ı, o, u) and -ler after a front final vowel (e, i, ö, ü). Only the final vowel of the noun controls the choice in these regular examples.",
+        "pattern": "noun + -lAr → kitaplar / evler / kızlar / kediler",
+        "usage_notes_en": [
+          "Use -lar or -ler to form regular plurals: kitap → kitaplar, ev → evler.",
+          "The stem stays exactly the same in the regular nouns taught here.",
+          "Look at the final vowel, not the first vowel: okul ends in u and becomes okullar."
+        ],
+        "common_errors_en": [
+          "kitapler is wrong for book plurals: the back vowel a requires -lar, so write kitaplar.",
+          "evlar is wrong: the front vowel e requires -ler, so write evler."
+        ],
+        "example_ids": [
+          "tr.a1.plural.example.01",
+          "tr.a1.plural.example.02",
+          "tr.a1.plural.example.03",
+          "tr.a1.plural.example.04",
+          "tr.a1.plural.example.05",
+          "tr.a1.plural.example.06",
+          "tr.a1.plural.example.07",
+          "tr.a1.plural.example.08"
+        ]
+      },
+      {
+        "id": "tr.a1.plural.rule.02",
+        "heading_en": "Attach the full plural suffix to the noun",
+        "explanation_en": "Write the plural as a single word. The suffix begins with l and does not cause stem softening in the regular examples here. Use the two-way harmony rule learned earlier. We are practising ordinary plurals alone; the separate rule for nouns following numbers is the next topic.",
+        "pattern": "kalem + -ler → kalemler | çocuk + -lar → çocuklar",
+        "usage_notes_en": [
+          "Write kalemler, not kalem ler.",
+          "The noun is unchanged before -lar or -ler: çocuk → çocuklar.",
+          "We are not teaching collective plurals, exceptional loanwords or the numeral-plus-noun rule in this micro-lesson."
+        ],
+        "common_errors_en": [
+          "kalem ler is incorrect as a written word: kalemler is one word.",
+          "çocuğlar is wrong: the base of the regular plural stays çocuk, giving çocuklar."
+        ],
+        "example_ids": [
+          "tr.a1.plural.example.09",
+          "tr.a1.plural.example.10"
+        ]
+      }
+    ],
+    "form_tables": [
+      {
+        "id": "tr.a1.plural.table.harmony",
+        "title_en": "Regular plural suffix by final vowel",
+        "columns": [
+          "Last vowel in noun",
+          "Vowel group",
+          "Plural ending",
+          "Checked form"
+        ],
+        "rows": [
+          [
+            "a, ı",
+            "back",
+            "-lar",
+            "kitaplar, kızlar"
+          ],
+          [
+            "o, u",
+            "back",
+            "-lar",
+            "yollar, okullar"
+          ],
+          [
+            "e, i",
+            "front",
+            "-ler",
+            "evler, kediler"
+          ],
+          [
+            "ö, ü",
+            "front",
+            "-ler",
+            "gözler, üzümler"
+          ]
+        ]
+      },
+      {
+        "id": "tr.a1.plural.table.examples",
+        "title_en": "Singular and plural",
+        "columns": [
+          "Singular",
+          "Regular plural",
+          "English meaning"
+        ],
+        "rows": [
+          [
+            "kitap",
+            "kitaplar",
+            "book → books"
+          ],
+          [
+            "kedi",
+            "kediler",
+            "cat → cats"
+          ],
+          [
+            "okul",
+            "okullar",
+            "school → schools"
+          ],
+          [
+            "göz",
+            "gözler",
+            "eye → eyes"
+          ],
+          [
+            "kalem",
+            "kalemler",
+            "pen → pens"
+          ],
+          [
+            "çocuk",
+            "çocuklar",
+            "child → children"
+          ]
+        ]
+      }
+    ]
+  },
+  "contexts": [
+    {
+      "id": "tr.a1.plural.context.01",
+      "type": "dialogue",
+      "setting_en": "Ayşe and Mehmet are checking labels for classroom supplies.",
+      "lines": [
+        {
+          "speaker": "Ayşe",
+          "target": "Merhaba, Mehmet.",
+          "translation_en": "Hello, Mehmet."
+        },
+        {
+          "speaker": "Mehmet",
+          "target": "Merhaba, Ayşe.",
+          "translation_en": "Hello, Ayşe."
+        },
+        {
+          "speaker": "Ayşe",
+          "target": "Kitaplar, defterler.",
+          "translation_en": "Books and notebooks."
+        },
+        {
+          "speaker": "Mehmet",
+          "target": "Kalemler?",
+          "translation_en": "And the pens?"
+        },
+        {
+          "speaker": "Ayşe",
+          "target": "Evet, kalemler.",
+          "translation_en": "Yes, the pens too."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "merhaba",
+          "kitap",
+          "defter",
+          "kalem",
+          "evet"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.context.02",
+      "type": "note",
+      "setting_en": "A market worker is grouping produce labels for a shopping display.",
+      "lines": [
+        {
+          "speaker": "Zeynep",
+          "target": "Market: elmalar, armutlar, muzlar.",
+          "translation_en": "Market: apples, pears and bananas."
+        },
+        {
+          "speaker": "Zeynep",
+          "target": "Domatesler, biberler.",
+          "translation_en": "Tomatoes and peppers."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "market",
+          "elma",
+          "armut",
+          "muz",
+          "domates",
+          "biber"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "tr.a1.plural.example.01",
+      "target": "kitap → kitaplar",
+      "translation_en": "book → books",
+      "note_en": "Last vowel a is back, so add -lar.",
+      "skill_ids": [
+        "tr.a1.plural.choose_harmony",
+        "tr.a1.plural.write_plural"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kitap"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.example.02",
+      "target": "ev → evler",
+      "translation_en": "house → houses",
+      "note_en": "Last vowel e is front, so add -ler.",
+      "skill_ids": [
+        "tr.a1.plural.choose_harmony",
+        "tr.a1.plural.write_plural"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ev"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.example.03",
+      "target": "kız → kızlar",
+      "translation_en": "girl → girls",
+      "note_en": "Dotless ı is back, so add -lar.",
+      "skill_ids": [
+        "tr.a1.plural.choose_harmony",
+        "tr.a1.plural.write_plural"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kız"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.example.04",
+      "target": "kedi → kediler",
+      "translation_en": "cat → cats",
+      "note_en": "Dotted i is front, so add -ler.",
+      "skill_ids": [
+        "tr.a1.plural.choose_harmony",
+        "tr.a1.plural.write_plural"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kedi"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.example.05",
+      "target": "okul → okullar",
+      "translation_en": "school → schools",
+      "note_en": "Final u is back, so add -lar.",
+      "skill_ids": [
+        "tr.a1.plural.choose_harmony",
+        "tr.a1.plural.write_plural"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "okul"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.example.06",
+      "target": "göz → gözler",
+      "translation_en": "eye → eyes",
+      "note_en": "The front vowel ö selects -ler.",
+      "skill_ids": [
+        "tr.a1.plural.choose_harmony",
+        "tr.a1.plural.write_plural"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "göz"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.example.07",
+      "target": "üzüm → üzümler",
+      "translation_en": "grape → grapes",
+      "note_en": "The front vowel ü selects -ler.",
+      "skill_ids": [
+        "tr.a1.plural.choose_harmony",
+        "tr.a1.plural.write_plural"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "üzüm"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.example.08",
+      "target": "yol → yollar",
+      "translation_en": "road → roads",
+      "note_en": "The back vowel o selects -lar.",
+      "skill_ids": [
+        "tr.a1.plural.choose_harmony",
+        "tr.a1.plural.write_plural"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "yol"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.example.09",
+      "target": "kalem → kalemler",
+      "translation_en": "pen → pens",
+      "note_en": "The last vowel is e, so write kalemler.",
+      "skill_ids": [
+        "tr.a1.plural.choose_harmony",
+        "tr.a1.plural.write_plural"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kalem"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.example.10",
+      "target": "çocuk → çocuklar",
+      "translation_en": "child → children",
+      "note_en": "The last vowel is u, so write çocuklar; the stem stays unchanged.",
+      "skill_ids": [
+        "tr.a1.plural.choose_harmony",
+        "tr.a1.plural.write_plural"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "çocuk"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "id": "tr.a1.plural.exercise.01",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_target": "Doğru kelime",
+      "instruction_en": "Choose the correct plural form.",
+      "context_target": "Kelime",
+      "prompt_target": "kitap",
+      "prompt_en": "Which word is the correct plural of kitap?",
+      "options": [
+        {
+          "id": "opt1",
+          "text": "kitaplar",
+          "correct": true,
+          "error_type": null,
+          "explanation_en": "The back vowel a calls for -lar."
+        },
+        {
+          "id": "opt2",
+          "text": "kitapler",
+          "correct": false,
+          "error_type": "wrong_harmony",
+          "explanation_en": "-ler is for front final vowels."
+        },
+        {
+          "id": "opt3",
+          "text": "kitap lar",
+          "correct": false,
+          "error_type": "separated_suffix",
+          "explanation_en": "A plural ending must be attached."
+        },
+        {
+          "id": "opt4",
+          "text": "kitaplarlar",
+          "correct": false,
+          "error_type": "duplicate_suffix",
+          "explanation_en": "Only one regular plural ending is required."
+        }
+      ],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Find the last vowel before choosing the ending.",
+        "The last vowel a belongs to the back group."
+      ],
+      "feedback_correct_en": "Correct. The complete plural matches the last vowel and is written as one word.",
+      "feedback_wrong_en": "The plural of kitap is kitaplar, written together with -lar.",
+      "explanation_en": "kitap + lar → kitaplar.",
+      "skill_ids": [
+        "tr.a1.plural.recognise_plural",
+        "tr.a1.plural.choose_harmony"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kitap",
+          "kelime",
+          "doğru"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.exercise.02",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_target": "Doğru kelime",
+      "instruction_en": "Choose the correct plural form.",
+      "context_target": "Kelime",
+      "prompt_target": "ev",
+      "prompt_en": "Which word is the correct plural of ev?",
+      "options": [
+        {
+          "id": "opt1",
+          "text": "evlar",
+          "correct": false,
+          "error_type": "wrong_harmony",
+          "explanation_en": "e requires -ler, not -lar."
+        },
+        {
+          "id": "opt2",
+          "text": "evler",
+          "correct": true,
+          "error_type": null,
+          "explanation_en": "The front vowel e calls for -ler."
+        },
+        {
+          "id": "opt3",
+          "text": "ev ler",
+          "correct": false,
+          "error_type": "separated_suffix",
+          "explanation_en": "Do not leave a space before -ler."
+        },
+        {
+          "id": "opt4",
+          "text": "evlerler",
+          "correct": false,
+          "error_type": "duplicate_suffix",
+          "explanation_en": "There is only one plural ending."
+        }
+      ],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Check the final vowel of ev.",
+        "The vowel e belongs to the front group."
+      ],
+      "feedback_correct_en": "Correct. The complete plural matches the last vowel and is written as one word.",
+      "feedback_wrong_en": "Use evler; -lar would not follow front-vowel harmony.",
+      "explanation_en": "ev + ler → evler.",
+      "skill_ids": [
+        "tr.a1.plural.recognise_plural",
+        "tr.a1.plural.choose_harmony"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ev",
+          "kelime",
+          "doğru"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.exercise.03",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_target": "Doğru kelime",
+      "instruction_en": "Choose the correct plural form.",
+      "context_target": "Kelime",
+      "prompt_target": "okul",
+      "prompt_en": "Which word is the correct plural of okul?",
+      "options": [
+        {
+          "id": "opt1",
+          "text": "okuller",
+          "correct": false,
+          "error_type": "wrong_harmony",
+          "explanation_en": "Final u is back; use -lar."
+        },
+        {
+          "id": "opt2",
+          "text": "okul lar",
+          "correct": false,
+          "error_type": "separated_suffix",
+          "explanation_en": "Attach the ending to the word."
+        },
+        {
+          "id": "opt3",
+          "text": "okullar",
+          "correct": true,
+          "error_type": null,
+          "explanation_en": "Final u selects -lar."
+        },
+        {
+          "id": "opt4",
+          "text": "okullarlar",
+          "correct": false,
+          "error_type": "duplicate_suffix",
+          "explanation_en": "The plural suffix is not repeated."
+        }
+      ],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Use the last vowel, not the first.",
+        "The last vowel is u, a back vowel."
+      ],
+      "feedback_correct_en": "Correct. The complete plural matches the last vowel and is written as one word.",
+      "feedback_wrong_en": "Write okullar, not okuller.",
+      "explanation_en": "okul + lar → okullar.",
+      "skill_ids": [
+        "tr.a1.plural.recognise_plural",
+        "tr.a1.plural.choose_harmony"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "okul",
+          "kelime",
+          "doğru"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.exercise.04",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_target": "Doğru kelime",
+      "instruction_en": "Choose the correct plural form.",
+      "context_target": "Kelime",
+      "prompt_target": "göz",
+      "prompt_en": "Which word is the correct plural of göz?",
+      "options": [
+        {
+          "id": "opt1",
+          "text": "gözlar",
+          "correct": false,
+          "error_type": "wrong_harmony",
+          "explanation_en": "ö is front, so -lar is wrong."
+        },
+        {
+          "id": "opt2",
+          "text": "göz ler",
+          "correct": false,
+          "error_type": "separated_suffix",
+          "explanation_en": "The plural ending belongs to the noun."
+        },
+        {
+          "id": "opt3",
+          "text": "gözlerler",
+          "correct": false,
+          "error_type": "duplicate_suffix",
+          "explanation_en": "Do not add the ending twice."
+        },
+        {
+          "id": "opt4",
+          "text": "gözler",
+          "correct": true,
+          "error_type": null,
+          "explanation_en": "The front vowel ö selects -ler."
+        }
+      ],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Do not ignore the dots on the vowel.",
+        "ö is a front vowel and calls for -ler."
+      ],
+      "feedback_correct_en": "Correct. The complete plural matches the last vowel and is written as one word.",
+      "feedback_wrong_en": "The plural is gözler, never gözlar.",
+      "explanation_en": "göz + ler → gözler.",
+      "skill_ids": [
+        "tr.a1.plural.recognise_plural",
+        "tr.a1.plural.choose_harmony"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "göz",
+          "kelime",
+          "doğru"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.exercise.05",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write the correct full plural form.",
+      "context_target": "Kelime",
+      "prompt_target": "kedi",
+      "prompt_en": "Write the regular plural of kedi.",
+      "options": [],
+      "accepted_answers": [
+        "kediler"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the final vowel in the singular noun.",
+        "The final vowel is dotted i, a front vowel."
+      ],
+      "feedback_correct_en": "Correct. The complete plural matches the last vowel and is written as one word.",
+      "feedback_wrong_en": "kedi has the front vowel i, so write kediler.",
+      "explanation_en": "kedi + ler → kediler.",
+      "skill_ids": [
+        "tr.a1.plural.choose_harmony",
+        "tr.a1.plural.write_plural"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kedi",
+          "kelime"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.exercise.06",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write the correct full plural form.",
+      "context_target": "Kelime",
+      "prompt_target": "kız",
+      "prompt_en": "Write the regular plural of kız.",
+      "options": [],
+      "accepted_answers": [
+        "kızlar"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Check whether the vowel is dotted or dotless.",
+        "Dotless ı is a back vowel."
+      ],
+      "feedback_correct_en": "Correct. The complete plural matches the last vowel and is written as one word.",
+      "feedback_wrong_en": "Write kızlar; a dotless ı takes -lar.",
+      "explanation_en": "kız + lar → kızlar.",
+      "skill_ids": [
+        "tr.a1.plural.choose_harmony",
+        "tr.a1.plural.write_plural"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kız",
+          "kelime"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.exercise.07",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write the correct full plural form.",
+      "context_target": "Kelime",
+      "prompt_target": "yol",
+      "prompt_en": "Write the regular plural of yol.",
+      "options": [],
+      "accepted_answers": [
+        "yollar"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Find the only vowel in yol.",
+        "The vowel o is in the back group."
+      ],
+      "feedback_correct_en": "Correct. The complete plural matches the last vowel and is written as one word.",
+      "feedback_wrong_en": "Write yollar, with -lar after o.",
+      "explanation_en": "yol + lar → yollar.",
+      "skill_ids": [
+        "tr.a1.plural.choose_harmony",
+        "tr.a1.plural.write_plural"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "yol",
+          "kelime"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.exercise.08",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write the correct full plural form.",
+      "context_target": "Kelime",
+      "prompt_target": "üzüm",
+      "prompt_en": "Write the regular plural of üzüm.",
+      "options": [],
+      "accepted_answers": [
+        "üzümler"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Pay attention to the dots above the vowels.",
+        "The final vowel ü is front."
+      ],
+      "feedback_correct_en": "Correct. The complete plural matches the last vowel and is written as one word.",
+      "feedback_wrong_en": "Write üzümler, not üzümlar.",
+      "explanation_en": "üzüm + ler → üzümler.",
+      "skill_ids": [
+        "tr.a1.plural.choose_harmony",
+        "tr.a1.plural.write_plural"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "üzüm",
+          "kelime"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.exercise.09",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write the correct full plural form.",
+      "context_target": "Kelime",
+      "prompt_target": "kalem",
+      "prompt_en": "Write the regular plural of kalem.",
+      "options": [],
+      "accepted_answers": [
+        "kalemler"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Use the last vowel of kalem.",
+        "The vowel e selects -ler."
+      ],
+      "feedback_correct_en": "Correct. The complete plural matches the last vowel and is written as one word.",
+      "feedback_wrong_en": "Write kalemler as one word, not kalemlar or kalem ler.",
+      "explanation_en": "kalem + ler → kalemler.",
+      "skill_ids": [
+        "tr.a1.plural.choose_harmony",
+        "tr.a1.plural.write_plural"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kalem",
+          "kelime"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.exercise.10",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write the correct full plural form.",
+      "context_target": "Kelime",
+      "prompt_target": "çocuk",
+      "prompt_en": "Write the regular plural of çocuk.",
+      "options": [],
+      "accepted_answers": [
+        "çocuklar"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Keep the singular noun unchanged.",
+        "The final vowel u requires -lar."
+      ],
+      "feedback_correct_en": "Correct. The complete plural matches the last vowel and is written as one word.",
+      "feedback_wrong_en": "Write çocuklar; neither çocuğlar nor çocukler is right.",
+      "explanation_en": "çocuk + lar → çocuklar.",
+      "skill_ids": [
+        "tr.a1.plural.choose_harmony",
+        "tr.a1.plural.write_plural"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "çocuk",
+          "kelime"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.exercise.11",
+      "type": "multiple_choice",
+      "stage": "contextual",
+      "difficulty": 1,
+      "instruction_target": "Doğru kelime",
+      "instruction_en": "Choose the correct plural form.",
+      "context_target": "Market: elmalar, armutlar, muzlar.",
+      "prompt_target": "elma",
+      "prompt_en": "A market label needs the plural of elma. Choose the correctly spelt label.",
+      "options": [
+        {
+          "id": "opt1",
+          "text": "elmalar",
+          "correct": true,
+          "error_type": null,
+          "explanation_en": "The final a is back, so use -lar."
+        },
+        {
+          "id": "opt2",
+          "text": "elmaler",
+          "correct": false,
+          "error_type": "wrong_harmony",
+          "explanation_en": "-ler conflicts with the back vowel a."
+        },
+        {
+          "id": "opt3",
+          "text": "elma lar",
+          "correct": false,
+          "error_type": "separated_suffix",
+          "explanation_en": "No space before the plural ending."
+        },
+        {
+          "id": "opt4",
+          "text": "elmalarlar",
+          "correct": false,
+          "error_type": "duplicate_suffix",
+          "explanation_en": "Do not repeat -lar."
+        }
+      ],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the last vowel in elma.",
+        "The final a selects -lar."
+      ],
+      "feedback_correct_en": "Correct. The complete plural matches the last vowel and is written as one word.",
+      "feedback_wrong_en": "The correct market label is elmalar.",
+      "explanation_en": "elma + lar → elmalar.",
+      "skill_ids": [
+        "tr.a1.plural.choose_harmony",
+        "tr.a1.plural.write_plural"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "market",
+          "elma",
+          "armut",
+          "muz",
+          "kelime",
+          "doğru"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.exercise.12",
+      "type": "multiple_choice",
+      "stage": "contextual",
+      "difficulty": 1,
+      "instruction_target": "Doğru kelime",
+      "instruction_en": "Choose the correct plural form.",
+      "context_target": "Market: domatesler, biberler.",
+      "prompt_target": "biber",
+      "prompt_en": "Choose the correct plural label for biber.",
+      "options": [
+        {
+          "id": "opt1",
+          "text": "biberlar",
+          "correct": false,
+          "error_type": "wrong_harmony",
+          "explanation_en": "Front vowel e requires -ler."
+        },
+        {
+          "id": "opt2",
+          "text": "biberler",
+          "correct": true,
+          "error_type": null,
+          "explanation_en": "The final e is front, so use -ler."
+        },
+        {
+          "id": "opt3",
+          "text": "biber ler",
+          "correct": false,
+          "error_type": "separated_suffix",
+          "explanation_en": "The plural is written as one word."
+        },
+        {
+          "id": "opt4",
+          "text": "biberlerler",
+          "correct": false,
+          "error_type": "duplicate_suffix",
+          "explanation_en": "Only one plural ending is needed."
+        }
+      ],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look for the last vowel in biber.",
+        "That vowel e is front."
+      ],
+      "feedback_correct_en": "Correct. The complete plural matches the last vowel and is written as one word.",
+      "feedback_wrong_en": "Use biberler, not biberlar.",
+      "explanation_en": "biber + ler → biberler.",
+      "skill_ids": [
+        "tr.a1.plural.choose_harmony",
+        "tr.a1.plural.write_plural"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "market",
+          "domates",
+          "biber",
+          "kelime",
+          "doğru"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.exercise.13",
+      "type": "transform",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Transform the singular noun into its regular plural.",
+      "context_target": "Market: elmalar, armutlar, muzlar.",
+      "prompt_target": "armut",
+      "prompt_en": "The singular market label is armut. Write its plural form.",
+      "options": [],
+      "accepted_answers": [
+        "armutlar"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Use the last vowel of armut.",
+        "The final vowel u is back."
+      ],
+      "feedback_correct_en": "Correct. The complete plural matches the last vowel and is written as one word.",
+      "feedback_wrong_en": "The correct plural label is armutlar.",
+      "explanation_en": "armut + lar → armutlar.",
+      "skill_ids": [
+        "tr.a1.plural.choose_harmony",
+        "tr.a1.plural.write_plural"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "market",
+          "elma",
+          "armut",
+          "muz",
+          "kelime"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.exercise.14",
+      "type": "transform",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Transform the singular noun into its regular plural.",
+      "context_target": "Market: domatesler, biberler.",
+      "prompt_target": "domates",
+      "prompt_en": "The singular market label is domates. Write its plural form.",
+      "options": [],
+      "accepted_answers": [
+        "domatesler"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the final vowel, not the first one.",
+        "The last vowel e is front."
+      ],
+      "feedback_correct_en": "Correct. The complete plural matches the last vowel and is written as one word.",
+      "feedback_wrong_en": "Write domatesler, with -ler.",
+      "explanation_en": "domates + ler → domatesler.",
+      "skill_ids": [
+        "tr.a1.plural.choose_harmony",
+        "tr.a1.plural.write_plural"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "market",
+          "domates",
+          "biber",
+          "kelime"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.exercise.15",
+      "type": "error_correction",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Correct the wrongly spelt plural noun.",
+      "context_target": "Kelime",
+      "prompt_target": "köpeklar",
+      "prompt_en": "A learner wrote köpeklar. Correct the complete plural word.",
+      "options": [],
+      "accepted_answers": [
+        "köpekler"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Find the final vowel in the noun köpek.",
+        "That vowel e is front."
+      ],
+      "feedback_correct_en": "Correct. The complete plural matches the last vowel and is written as one word.",
+      "feedback_wrong_en": "Change -lar to -ler: köpekler.",
+      "explanation_en": "köpek + ler → köpekler.",
+      "skill_ids": [
+        "tr.a1.plural.correct_plural",
+        "tr.a1.plural.write_plural"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "köpek",
+          "kelime"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.exercise.16",
+      "type": "error_correction",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Correct the wrongly spelt plural noun.",
+      "context_target": "Kelime",
+      "prompt_target": "portakaller",
+      "prompt_en": "A learner wrote portakaller. Correct the complete plural word.",
+      "options": [],
+      "accepted_answers": [
+        "portakallar"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Find the last vowel of portakal.",
+        "It is a, a back vowel."
+      ],
+      "feedback_correct_en": "Correct. The complete plural matches the last vowel and is written as one word.",
+      "feedback_wrong_en": "Replace -ler with -lar: portakallar.",
+      "explanation_en": "portakal + lar → portakallar.",
+      "skill_ids": [
+        "tr.a1.plural.correct_plural",
+        "tr.a1.plural.write_plural"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "portakal",
+          "kelime"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.exercise.17",
+      "type": "fill_gap",
+      "stage": "transfer",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write the correct full plural form.",
+      "context_target": "Kelime",
+      "prompt_target": "çiçek",
+      "prompt_en": "Without an example, write the regular plural of çiçek.",
+      "options": [],
+      "accepted_answers": [
+        "çiçekler"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The last vowel decides the suffix.",
+        "The last vowel e is front."
+      ],
+      "feedback_correct_en": "Correct. The complete plural matches the last vowel and is written as one word.",
+      "feedback_wrong_en": "çiçek ends in a front vowel, so write çiçekler.",
+      "explanation_en": "çiçek + ler → çiçekler.",
+      "skill_ids": [
+        "tr.a1.plural.choose_harmony",
+        "tr.a1.plural.write_plural"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "çiçek",
+          "kelime"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.exercise.18",
+      "type": "transform",
+      "stage": "transfer",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Transform the singular noun into its regular plural.",
+      "context_target": "Kelime",
+      "prompt_target": "sokak",
+      "prompt_en": "Without an example, change sokak into its regular plural.",
+      "options": [],
+      "accepted_answers": [
+        "sokaklar"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Check the final vowel in sokak.",
+        "The final vowel is a, which selects -lar."
+      ],
+      "feedback_correct_en": "Correct. The complete plural matches the last vowel and is written as one word.",
+      "feedback_wrong_en": "The correct form is sokaklar, not sokakler.",
+      "explanation_en": "sokak + lar → sokaklar.",
+      "skill_ids": [
+        "tr.a1.plural.choose_harmony",
+        "tr.a1.plural.write_plural"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "sokak",
+          "kelime"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.exercise.19",
+      "type": "multiple_choice",
+      "stage": "transfer",
+      "difficulty": 2,
+      "instruction_target": "Doğru kelime",
+      "instruction_en": "Choose the correct plural form.",
+      "context_target": "Kelime",
+      "prompt_target": "pencere",
+      "prompt_en": "Which regular plural of pencere is correctly written?",
+      "options": [
+        {
+          "id": "opt1",
+          "text": "pencerelar",
+          "correct": false,
+          "error_type": "wrong_harmony",
+          "explanation_en": "The final e requires -ler."
+        },
+        {
+          "id": "opt2",
+          "text": "pencere ler",
+          "correct": false,
+          "error_type": "separated_suffix",
+          "explanation_en": "A suffix does not stand alone."
+        },
+        {
+          "id": "opt3",
+          "text": "pencereler",
+          "correct": true,
+          "error_type": null,
+          "explanation_en": "The final e selects -ler."
+        },
+        {
+          "id": "opt4",
+          "text": "pencerelerler",
+          "correct": false,
+          "error_type": "duplicate_suffix",
+          "explanation_en": "A single plural suffix is enough."
+        }
+      ],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Identify the final vowel of pencere.",
+        "Its final e is a front vowel."
+      ],
+      "feedback_correct_en": "Correct. The complete plural matches the last vowel and is written as one word.",
+      "feedback_wrong_en": "pencere becomes pencereler with -ler.",
+      "explanation_en": "pencere + ler → pencereler.",
+      "skill_ids": [
+        "tr.a1.plural.choose_harmony",
+        "tr.a1.plural.write_plural"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "pencere",
+          "kelime",
+          "doğru"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.exercise.20",
+      "type": "fill_gap",
+      "stage": "transfer",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write the correct full plural form.",
+      "context_target": "Kelime",
+      "prompt_target": "kadın",
+      "prompt_en": "Without an example, write the regular plural of kadın.",
+      "options": [],
+      "accepted_answers": [
+        "kadınlar"
+      ],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the vowel nearest the end.",
+        "Dotless ı belongs to the back group."
+      ],
+      "feedback_correct_en": "Correct. The complete plural matches the last vowel and is written as one word.",
+      "feedback_wrong_en": "The correct form is kadınlar, with -lar.",
+      "explanation_en": "kadın + lar → kadınlar.",
+      "skill_ids": [
+        "tr.a1.plural.choose_harmony",
+        "tr.a1.plural.write_plural"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kadın",
+          "kelime"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "tr.a1.plural.exercise.21",
+      "type": "guided_production",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write from memory and check your work.",
+      "context_target": "Kelime",
+      "prompt_target": "kitap / kalem / okul / kedi",
+      "prompt_en": "From memory, write the regular plurals of these four classroom words. Then check the spelling of each.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "For each noun, find its final vowel.",
+        "Choose -lar for back vowels and -ler for front vowels."
+      ],
+      "feedback_correct_en": "Correct. The complete plural matches the last vowel and is written as one word.",
+      "feedback_wrong_en": "Compare each word with the self-check criteria.",
+      "explanation_en": "Reference answers: kitaplar, kalemler, okullar, kediler.",
+      "skill_ids": [
+        "tr.a1.plural.choose_harmony",
+        "tr.a1.plural.write_plural"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "kitap",
+          "kalem",
+          "okul",
+          "kedi",
+          "kelime"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      },
+      "rubric": {
+        "criteria_en": [
+          "All four complete nouns are written as a single word.",
+          "kitaplar and okullar use -lar.",
+          "kalemler and kediler use -ler.",
+          "No original noun stem is changed."
+        ]
+      }
+    },
+    {
+      "id": "tr.a1.plural.exercise.22",
+      "type": "guided_production",
+      "stage": "production",
+      "difficulty": 2,
+      "instruction_target": "Kelime",
+      "instruction_en": "Write from memory and check your work.",
+      "context_target": "Alışveriş",
+      "prompt_target": "elma / armut / biber / domates",
+      "prompt_en": "Without looking at the table, write four regular plural labels for these foods. Compare each with the reference forms.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "locale": "tr-TR",
+        "unicode": "NFC",
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Decide which final vowels are front and which are back.",
+        "a and u take -lar; e takes -ler."
+      ],
+      "feedback_correct_en": "Correct. The complete plural matches the last vowel and is written as one word.",
+      "feedback_wrong_en": "Compare each word with the self-check criteria.",
+      "explanation_en": "Reference answers: elmalar, armutlar, biberler, domatesler.",
+      "skill_ids": [
+        "tr.a1.plural.choose_harmony",
+        "tr.a1.plural.write_plural"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "alışveriş",
+          "elma",
+          "armut",
+          "biber",
+          "domates",
+          "kelime"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      },
+      "rubric": {
+        "criteria_en": [
+          "All four plural labels use the correct whole-word spelling.",
+          "elmalar and armutlar use -lar.",
+          "biberler and domatesler use -ler.",
+          "The ending is attached without a space."
+        ]
+      }
+    }
+  ],
+  "verb_application": {
+    "applicable": false,
+    "required_form_keys": [],
+    "verbs": []
+  },
+  "mastery": {
+    "required_score": 0.8,
+    "minimum_unaided_production_items": 2,
+    "required_stages": [
+      "notice",
+      "controlled",
+      "contextual",
+      "production",
+      "transfer"
+    ],
+    "review_intervals_days": [
+      1,
+      3,
+      7,
+      14,
+      30,
+      60
+    ]
+  },
+  "answer_normalization": {
+    "locale": "tr-TR",
+    "unicode": "NFC",
+    "case_sensitive": false,
+    "accent_sensitive": true
+  },
+  "vocabulary_audit": {
+    "status": "pass",
+    "manifest_id": "tr-reviewed-a6bc562da7a2",
+    "allowed_cefr": [
+      "A1"
+    ],
+    "used_headwords": [
+      "alışveriş",
+      "armut",
+      "biber",
+      "defter",
+      "domates",
+      "doğru",
+      "elma",
+      "ev",
+      "evet",
+      "göz",
+      "kadın",
+      "kalem",
+      "kedi",
+      "kelime",
+      "kitap",
+      "köpek",
+      "kız",
+      "market",
+      "merhaba",
+      "muz",
+      "okul",
+      "pencere",
+      "portakal",
+      "sokak",
+      "yol",
+      "çiçek",
+      "çocuk",
+      "üzüm"
+    ],
+    "target_headwords": [
+      "alışveriş",
+      "armut",
+      "biber",
+      "defter",
+      "domates",
+      "doğru",
+      "elma",
+      "ev",
+      "evet",
+      "göz",
+      "kadın",
+      "kalem",
+      "kedi",
+      "kelime",
+      "kitap",
+      "köpek",
+      "kız",
+      "market",
+      "merhaba",
+      "muz",
+      "okul",
+      "pencere",
+      "portakal",
+      "sokak",
+      "yol",
+      "çiçek",
+      "çocuk",
+      "üzüm"
+    ],
+    "outside_allowlist_words": [],
+    "introduced_terms": [],
+    "proper_names": [
+      "Ayşe",
+      "Mehmet",
+      "Zeynep"
+    ],
+    "grammar_only_tokens": [],
+    "above_level_words": [],
+    "tests_with_unknown_vocabulary": [],
+    "note": "All Turkish context and question content uses reviewed A1 dictionary headwords, approved names, or the regular -lar/-ler plural of an allowed noun. The plural suffixes are grammar, not vocabulary lemmas. Incorrect choices are explicit spelling errors based on permitted nouns."
+  },
+  "level_audit": {
+    "status": "pass",
+    "target_cefr": "A1",
+    "maximum_sentence_length_observed": 4,
+    "unapproved_grammar_features": [],
+    "unmet_prerequisites": [],
+    "scope_violations": [],
+    "note": "Only regular noun plurals are taught and scored. The next lesson covers nouns after cardinal numbers; this lesson does not teach that structure. Context lines use A1 inventory labels and brief greetings, without introducing later sentence patterns."
+  },
+  "quality_audit": {
+    "status": "pass",
+    "unique_id_check": "pass",
+    "cross_reference_check": "pass",
+    "prerequisite_check": "pass",
+    "scope_check": "pass",
+    "answer_check": "pass",
+    "single_best_answer_check": "pass",
+    "turkish_casing_and_diacritic_check": "pass",
+    "harmony_check": "pass_checked_regular_noun_plurals",
+    "suffix_order_check": "pass_single_plural_suffix_attached",
+    "stem_change_check": "pass_stems_preserved",
+    "question_particle_check": "not_applicable",
+    "apostrophe_check": "not_applicable",
+    "conjugation_form_check": "not_applicable",
+    "naturalness_and_translation_check": "pass",
+    "requested_count_check": "pass",
+    "counts": {
+      "contexts": 2,
+      "teaching_examples": 10,
+      "scored_exercises": 20,
+      "transfer_exercises": 4,
+      "unaided_production_self_checks": 2,
+      "full_written_form_tests": 20
+    },
+    "authoritative_sources_consulted": [
+      {
+        "publisher": "Türk Dil Kurumu",
+        "title": "Yazım Kılavuzu – Sesler ve Ses Uyumları",
+        "url": "https://yazim.tdk.gov.tr/content/02-sesler-ve-ses-uyumlari.html",
+        "verified_rule": "Regular suffix vowel harmony matches -lar to back final vowels (a/ı/o/u) and -ler to front final vowels (e/i/ö/ü)."
+      },
+      {
+        "publisher": "Türkiye Maarif Vakfı",
+        "title": "Türkçenin Yabancı Dil Olarak Öğretimi Programı (2. Baskı), p. 125",
+        "url": "https://kutuphane.turkiyemaarif.org/uploads/Turkcenin_Yabanci_Dil_Olarak_Ogretimi_Programi_2_Baski-xpsg9.pdf",
+        "verified_rule": "A1 curriculum explicitly includes the plural suffix -lar/-ler, with introductory nouns such as kalemler, kitaplar and defterler."
+      }
+    ],
+    "requires_human_review": [],
+    "notes": [
+      "Topic 4 is selected because Topics 1, 2 and 3 were delivered earlier in this conversation; the original source ZIP still contains its unadvanced NEXT request with an empty completed_topic_ids field.",
+      "Transfer noun stems (çiçek, sokak, pencere and kadın) do not appear in the teaching examples or contexts.",
+      "No exception words, number-plus-noun structures, personal names with plural, or collective nuances are tested.",
+      "Two open writing tasks are self-checked, not marked automatically."
+    ]
+  },
+  "explanation_language": "en"
+}

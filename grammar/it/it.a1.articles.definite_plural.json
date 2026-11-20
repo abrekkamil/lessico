@@ -1,0 +1,2161 @@
+{
+  "schema_version": "lessico-grammar-v1",
+  "content_version": "1.0.0",
+  "status": "ready",
+  "mode": "topic_pack",
+  "language": "it",
+  "explanation_language": "en",
+  "vocabulary_manifest_id": "it-reviewed-9d35be468e23",
+  "topic": {
+    "id": "it.a1.articles.definite_plural",
+    "cefr": "A1",
+    "sequence": 5,
+    "module_id": "it.a1.articles",
+    "title_target": "Gli articoli determinativi plurali",
+    "title_en": "Plural definite articles",
+    "estimated_minutes": 8,
+    "prerequisite_ids": [
+      "it.a1.articles.definite_singular",
+      "it.a1.nouns.plural"
+    ],
+    "learning_objectives": [
+      "Choose i, gli, or le before familiar plural Italian nouns.",
+      "Apply plural gender and number agreement, including gli before vowels, z and s + consonant, and le before vowels."
+    ],
+    "scope_included": [
+      "i versus gli",
+      "feminine le",
+      "article-noun number agreement"
+    ],
+    "scope_excluded": [
+      "articulated prepositions",
+      "partitives",
+      "irregular noun plurals"
+    ],
+    "new_terms": [],
+    "reading_links": []
+  },
+  "skills": [
+    {
+      "id": "it.a1.articles.definite_plural.masculine_default",
+      "description_en": "Choose i before ordinary consonant-initial masculine plural nouns.",
+      "capability": "recognition",
+      "critical": true
+    },
+    {
+      "id": "it.a1.articles.definite_plural.masculine_special",
+      "description_en": "Choose gli before masculine plural nouns beginning with z or s plus a consonant.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "it.a1.articles.definite_plural.masculine_vowel",
+      "description_en": "Choose gli before vowel-initial masculine plural nouns.",
+      "capability": "contextual",
+      "critical": true
+    },
+    {
+      "id": "it.a1.articles.definite_plural.feminine",
+      "description_en": "Use le with feminine plural nouns, including vowel-initial nouns, without elision.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "it.a1.articles.definite_plural.production",
+      "description_en": "Transform, correct and produce plural article+noun phrases with gender/number agreement.",
+      "capability": "production",
+      "critical": true
+    }
+  ],
+  "lesson": {
+    "short_explanation_en": "Italian uses three plural definite articles, all meaning “the”: i, gli and le. Choose the article using the plural noun’s grammatical gender and its first sound. For masculine nouns, i is common; gli is used before a vowel, z, or s followed by another consonant (and some other clusters). For feminine plural nouns, use le even before a vowel: le arance.",
+    "rule_blocks": [
+      {
+        "id": "it.a1.articles.definite_plural.rule.i",
+        "heading_en": "Masculine plural: i",
+        "explanation_en": "Use i before masculine plural nouns beginning with an ordinary consonant such as l, b, f, m or t.",
+        "pattern": "il libro → i libri; il fiore → i fiori",
+        "usage_notes_en": [
+          "Both article and noun must be plural.",
+          "A singular noun such as libro cannot follow plural i in a standard noun phrase."
+        ],
+        "common_errors_en": [
+          "Not *i libro*: write i libri.",
+          "Not *gli libri*: write i libri."
+        ],
+        "example_ids": [
+          "it.a1.articles.definite_plural.ex01",
+          "it.a1.articles.definite_plural.ex02",
+          "it.a1.articles.definite_plural.ex03"
+        ]
+      },
+      {
+        "id": "it.a1.articles.definite_plural.rule.gli",
+        "heading_en": "Masculine plural: gli",
+        "explanation_en": "Use gli before masculine plurals beginning with a vowel, z, s + consonant, and certain less common clusters (for example gn or ps).",
+        "pattern": "lo zaino → gli zaini; lo studente → gli studenti; l’albero → gli alberi",
+        "usage_notes_en": [
+          "Gli is the plural counterpart of lo and masculine l’ in these contexts.",
+          "In standard modern writing, write gli alberi, not gl’alberi."
+        ],
+        "common_errors_en": [
+          "Not *i studenti*: write gli studenti.",
+          "Not *i alberi*: write gli alberi."
+        ],
+        "example_ids": [
+          "it.a1.articles.definite_plural.ex04",
+          "it.a1.articles.definite_plural.ex05",
+          "it.a1.articles.definite_plural.ex06",
+          "it.a1.articles.definite_plural.ex07",
+          "it.a1.articles.definite_plural.ex08"
+        ]
+      },
+      {
+        "id": "it.a1.articles.definite_plural.rule.le",
+        "heading_en": "Feminine plural: le",
+        "explanation_en": "Use le before all ordinary feminine plural nouns, including nouns beginning with a vowel. Do not shorten it to l’.",
+        "pattern": "la chiave → le chiavi; l’arancia → le arance",
+        "usage_notes_en": [
+          "Le is the plural article for both consonant-initial and vowel-initial feminine nouns.",
+          "Contrast singular l’arancia with plural le arance."
+        ],
+        "common_errors_en": [
+          "Not *gli chiavi*: write le chiavi.",
+          "Not *l’arance*: write le arance."
+        ],
+        "example_ids": [
+          "it.a1.articles.definite_plural.ex09",
+          "it.a1.articles.definite_plural.ex10"
+        ]
+      }
+    ],
+    "form_tables": [
+      {
+        "id": "it.a1.articles.definite_plural.table.plural_articles",
+        "title_en": "Singular-to-plural article choice",
+        "columns": [
+          "Gender",
+          "Singular phrase",
+          "Plural phrase",
+          "When"
+        ],
+        "rows": [
+          [
+            "Masculine",
+            "il libro",
+            "i libri",
+            "Ordinary consonant"
+          ],
+          [
+            "Masculine",
+            "lo zaino",
+            "gli zaini",
+            "z or s + consonant"
+          ],
+          [
+            "Masculine",
+            "l'albero",
+            "gli alberi",
+            "Vowel"
+          ],
+          [
+            "Feminine",
+            "la chiave",
+            "le chiavi",
+            "Consonant"
+          ],
+          [
+            "Feminine",
+            "l'arancia",
+            "le arance",
+            "Vowel: le does not elide"
+          ]
+        ]
+      }
+    ]
+  },
+  "contexts": [
+    {
+      "id": "it.a1.articles.definite_plural.ctx1",
+      "type": "dialogue",
+      "setting_en": "Anna and Marco are organising their school things.",
+      "lines": [
+        {
+          "speaker": "Anna",
+          "target": "Marco, dove sono i libri?",
+          "translation_en": "Marco, where are the books?"
+        },
+        {
+          "speaker": "Marco",
+          "target": "I libri sono in classe. Gli zaini sono qui.",
+          "translation_en": "The books are in the classroom. The backpacks are here."
+        },
+        {
+          "speaker": "Anna",
+          "target": "E le penne?",
+          "translation_en": "And the pens?"
+        },
+        {
+          "speaker": "Marco",
+          "target": "Le penne sono in borsa.",
+          "translation_en": "The pens are in the bag."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "i libri",
+          "lemma": "libro",
+          "skill_id": "it.a1.articles.definite_plural.masculine_default",
+          "form_key": "definite.plural.masculine.default",
+          "explanation_en": "Il libro becomes i libri in the plural: an ordinary masculine initial consonant."
+        },
+        {
+          "surface": "gli zaini",
+          "lemma": "zaino",
+          "skill_id": "it.a1.articles.definite_plural.masculine_special",
+          "form_key": "definite.plural.masculine.special",
+          "explanation_en": "Zaino begins with z, so its plural uses gli."
+        },
+        {
+          "surface": "le penne",
+          "lemma": "penna",
+          "skill_id": "it.a1.articles.definite_plural.feminine",
+          "form_key": "definite.plural.feminine",
+          "explanation_en": "A feminine plural uses le."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "dove",
+          "essere",
+          "i",
+          "libro",
+          "in",
+          "classe",
+          "gli",
+          "zaino",
+          "qui",
+          "e",
+          "le",
+          "penna",
+          "borsa"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.ctx2",
+      "type": "message",
+      "setting_en": "Anna sends Marco a short message before a gathering in the garden.",
+      "lines": [
+        {
+          "speaker": "Anna",
+          "target": "Ciao, Marco! I tavoli e le sedie sono in giardino.",
+          "translation_en": "Hi, Marco! The tables and chairs are in the garden."
+        },
+        {
+          "speaker": "Anna",
+          "target": "Gli ombrelli sono in casa.",
+          "translation_en": "The umbrellas are in the house."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "i tavoli",
+          "lemma": "tavolo",
+          "skill_id": "it.a1.articles.definite_plural.masculine_default",
+          "form_key": "definite.plural.masculine.default",
+          "explanation_en": "Tavoli is masculine plural before an ordinary consonant: i."
+        },
+        {
+          "surface": "le sedie",
+          "lemma": "sedia",
+          "skill_id": "it.a1.articles.definite_plural.feminine",
+          "form_key": "definite.plural.feminine",
+          "explanation_en": "Sedie is feminine plural and needs le."
+        },
+        {
+          "surface": "gli ombrelli",
+          "lemma": "ombrello",
+          "skill_id": "it.a1.articles.definite_plural.masculine_vowel",
+          "form_key": "definite.plural.masculine.vowel",
+          "explanation_en": "Ombrelli begins with a vowel and is masculine plural: gli."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ciao",
+          "i",
+          "tavolo",
+          "e",
+          "le",
+          "sedia",
+          "essere",
+          "in",
+          "giardino",
+          "gli",
+          "ombrello",
+          "casa"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "it.a1.articles.definite_plural.ex01",
+      "target": "I libri sono in camera.",
+      "translation_en": "The books are in the bedroom.",
+      "focus_surface": "i libri",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.masculine_default"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.masculine.default"
+      ],
+      "register": "neutral",
+      "note_en": "Use i with masculine plural libri (ordinary initial consonant).",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "i",
+          "libro",
+          "essere",
+          "in",
+          "camera"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.ex02",
+      "target": "Vedo i gatti in giardino.",
+      "translation_en": "I can see the cats in the garden.",
+      "focus_surface": "i gatti",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.masculine_default"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.masculine.default"
+      ],
+      "register": "neutral",
+      "note_en": "Gatti is a masculine plural beginning with g.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "vedere",
+          "i",
+          "gatto",
+          "in",
+          "giardino"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.ex03",
+      "target": "Anna compra i fiori.",
+      "translation_en": "Anna is buying the flowers.",
+      "focus_surface": "i fiori",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.masculine_default"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.masculine.default"
+      ],
+      "register": "neutral",
+      "note_en": "Fiori takes i: f is an ordinary consonant.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "comprare",
+          "i",
+          "fiore"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.ex04",
+      "target": "Gli studenti sono a scuola.",
+      "translation_en": "The students are at school.",
+      "focus_surface": "gli studenti",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.masculine_special"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.masculine.special"
+      ],
+      "register": "neutral",
+      "note_en": "The masculine plural studenti begins with st-, so use gli.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "gli",
+          "studente",
+          "essere",
+          "a",
+          "scuola"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.ex05",
+      "target": "Marco cerca gli zaini.",
+      "translation_en": "Marco is looking for the backpacks.",
+      "focus_surface": "gli zaini",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.masculine_special"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.masculine.special"
+      ],
+      "register": "neutral",
+      "note_en": "Zaini begins with z, so use gli.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "cercare",
+          "gli",
+          "zaino"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.ex06",
+      "target": "Gli specchi sono in bagno.",
+      "translation_en": "The mirrors are in the bathroom.",
+      "focus_surface": "gli specchi",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.masculine_special"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.masculine.special"
+      ],
+      "register": "neutral",
+      "note_en": "Specchi begins with sp-, which takes gli.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "gli",
+          "specchio",
+          "essere",
+          "in",
+          "bagno"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.ex07",
+      "target": "Gli alberi sono in giardino.",
+      "translation_en": "The trees are in the garden.",
+      "focus_surface": "gli alberi",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.masculine_vowel"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.masculine.vowel"
+      ],
+      "register": "neutral",
+      "note_en": "Alberi starts with a vowel and is masculine plural.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "gli",
+          "albero",
+          "essere",
+          "in",
+          "giardino"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.ex08",
+      "target": "Prendo gli ombrelli.",
+      "translation_en": "I’m taking the umbrellas.",
+      "focus_surface": "gli ombrelli",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.masculine_vowel"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.masculine.vowel"
+      ],
+      "register": "neutral",
+      "note_en": "Ombrelli starts with a vowel, so use gli.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "prendere",
+          "gli",
+          "ombrello"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.ex09",
+      "target": "Anna cerca le chiavi.",
+      "translation_en": "Anna is looking for the keys.",
+      "focus_surface": "le chiavi",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.feminine"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.feminine"
+      ],
+      "register": "neutral",
+      "note_en": "Feminine plural chiavi takes le.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "cercare",
+          "le",
+          "chiave"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.ex10",
+      "target": "Marco compra le arance.",
+      "translation_en": "Marco is buying the oranges.",
+      "focus_surface": "le arance",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.feminine"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.feminine.vowel"
+      ],
+      "register": "neutral",
+      "note_en": "Feminine plural arance uses full le even though it starts with a vowel.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "comprare",
+          "le",
+          "arancia"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "id": "it.a1.articles.definite_plural.q01",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the correct plural definite article.",
+      "context_target": "",
+      "prompt_target": "___ libri sono qui.",
+      "prompt_en": "Choose the best article for this noun.",
+      "options": [
+        {
+          "id": "it.a1.articles.definite_plural.q01.opt1",
+          "text": "i",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Libri is masculine plural and begins with l."
+        },
+        {
+          "id": "it.a1.articles.definite_plural.q01.opt2",
+          "text": "gli",
+          "correct": false,
+          "error_type": "wrong_gender_or_initial_sound",
+          "explanation_en": "Gli is used with masculine plurals beginning with a vowel or a special initial group, not here."
+        },
+        {
+          "id": "it.a1.articles.definite_plural.q01.opt3",
+          "text": "le",
+          "correct": false,
+          "error_type": "wrong_gender_or_initial_sound",
+          "explanation_en": "Le is used with feminine plurals, not here."
+        },
+        {
+          "id": "it.a1.articles.definite_plural.q01.opt4",
+          "text": "l'",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "L’ is a singular elided article and is not a standard plural definite article."
+        }
+      ],
+      "accepted_answers": [
+        "i"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First decide whether the plural noun is masculine or feminine.",
+        "For masculine plurals, check whether the noun begins with a vowel, z, or s + consonant."
+      ],
+      "feedback_correct_en": "Correct: i.",
+      "feedback_wrong_en": "Expected: i. Libri is masculine plural and begins with l.",
+      "explanation_en": "Libri is masculine plural and begins with l.",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.masculine_default"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.masculine.default"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "libro",
+          "essere",
+          "qui",
+          "i",
+          "gli",
+          "le",
+          "l'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.q02",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the correct plural definite article.",
+      "context_target": "",
+      "prompt_target": "___ zaini sono in camera.",
+      "prompt_en": "Choose the best article for this noun.",
+      "options": [
+        {
+          "id": "it.a1.articles.definite_plural.q02.opt1",
+          "text": "i",
+          "correct": false,
+          "error_type": "wrong_gender_or_initial_sound",
+          "explanation_en": "I is used for masculine plurals beginning with an ordinary consonant, not here."
+        },
+        {
+          "id": "it.a1.articles.definite_plural.q02.opt2",
+          "text": "gli",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Zaini is masculine plural and begins with z."
+        },
+        {
+          "id": "it.a1.articles.definite_plural.q02.opt3",
+          "text": "le",
+          "correct": false,
+          "error_type": "wrong_gender_or_initial_sound",
+          "explanation_en": "Le is used with feminine plurals, not here."
+        },
+        {
+          "id": "it.a1.articles.definite_plural.q02.opt4",
+          "text": "l'",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "L’ is a singular elided article and is not a standard plural definite article."
+        }
+      ],
+      "accepted_answers": [
+        "gli"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First decide whether the plural noun is masculine or feminine.",
+        "For masculine plurals, check whether the noun begins with a vowel, z, or s + consonant."
+      ],
+      "feedback_correct_en": "Correct: gli.",
+      "feedback_wrong_en": "Expected: gli. Zaini is masculine plural and begins with z.",
+      "explanation_en": "Zaini is masculine plural and begins with z.",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.masculine_special"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.masculine.special"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "zaino",
+          "essere",
+          "in",
+          "camera",
+          "gli",
+          "i",
+          "le",
+          "l'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.q03",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Choose the correct plural definite article.",
+      "context_target": "",
+      "prompt_target": "___ mele sono in cucina.",
+      "prompt_en": "Choose the best article for this noun.",
+      "options": [
+        {
+          "id": "it.a1.articles.definite_plural.q03.opt1",
+          "text": "i",
+          "correct": false,
+          "error_type": "wrong_gender_or_initial_sound",
+          "explanation_en": "I is used for masculine plurals beginning with an ordinary consonant, not here."
+        },
+        {
+          "id": "it.a1.articles.definite_plural.q03.opt2",
+          "text": "gli",
+          "correct": false,
+          "error_type": "wrong_gender_or_initial_sound",
+          "explanation_en": "Gli is used with masculine plurals beginning with a vowel or a special initial group, not here."
+        },
+        {
+          "id": "it.a1.articles.definite_plural.q03.opt3",
+          "text": "le",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Mele is feminine plural."
+        },
+        {
+          "id": "it.a1.articles.definite_plural.q03.opt4",
+          "text": "l'",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "L’ is a singular elided article and is not a standard plural definite article."
+        }
+      ],
+      "accepted_answers": [
+        "le"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First decide whether the plural noun is masculine or feminine.",
+        "For masculine plurals, check whether the noun begins with a vowel, z, or s + consonant."
+      ],
+      "feedback_correct_en": "Correct: le.",
+      "feedback_wrong_en": "Expected: le. Mele is feminine plural.",
+      "explanation_en": "Mele is feminine plural.",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.feminine"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.feminine"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "mela",
+          "essere",
+          "in",
+          "cucina",
+          "le",
+          "i",
+          "gli",
+          "l'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.q04",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Choose the correct plural definite article.",
+      "context_target": "",
+      "prompt_target": "___ alberi sono in giardino.",
+      "prompt_en": "Choose the best article for this noun.",
+      "options": [
+        {
+          "id": "it.a1.articles.definite_plural.q04.opt1",
+          "text": "i",
+          "correct": false,
+          "error_type": "wrong_gender_or_initial_sound",
+          "explanation_en": "I is used for masculine plurals beginning with an ordinary consonant, not here."
+        },
+        {
+          "id": "it.a1.articles.definite_plural.q04.opt2",
+          "text": "le",
+          "correct": false,
+          "error_type": "wrong_gender_or_initial_sound",
+          "explanation_en": "Le is used with feminine plurals, not here."
+        },
+        {
+          "id": "it.a1.articles.definite_plural.q04.opt3",
+          "text": "l'",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "L’ is a singular elided article and is not a standard plural definite article."
+        },
+        {
+          "id": "it.a1.articles.definite_plural.q04.opt4",
+          "text": "gli",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Alberi is masculine plural and begins with a vowel."
+        }
+      ],
+      "accepted_answers": [
+        "gli"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First decide whether the plural noun is masculine or feminine.",
+        "For masculine plurals, check whether the noun begins with a vowel, z, or s + consonant."
+      ],
+      "feedback_correct_en": "Correct: gli.",
+      "feedback_wrong_en": "Expected: gli. Alberi is masculine plural and begins with a vowel.",
+      "explanation_en": "Alberi is masculine plural and begins with a vowel.",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.masculine_vowel"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.masculine.vowel"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "albero",
+          "essere",
+          "in",
+          "giardino",
+          "gli",
+          "i",
+          "le",
+          "l'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.q05",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the missing plural definite article.",
+      "context_target": "",
+      "prompt_target": "Marco porta ___ quaderni.",
+      "prompt_en": "Write only the article; do not rewrite the sentence.",
+      "options": [],
+      "accepted_answers": [
+        "i"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First decide whether the plural noun is masculine or feminine.",
+        "For masculine plurals, check whether the noun begins with a vowel, z, or s + consonant."
+      ],
+      "feedback_correct_en": "Correct: i.",
+      "feedback_wrong_en": "Expected: i. Quaderni is masculine plural and begins with q.",
+      "explanation_en": "Quaderni is masculine plural and begins with q.",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.masculine_default"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.masculine.default"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "portare",
+          "quaderno",
+          "i"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.q06",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the missing plural definite article.",
+      "context_target": "",
+      "prompt_target": "Anna cerca ___ studenti.",
+      "prompt_en": "Write only the article; do not rewrite the sentence.",
+      "options": [],
+      "accepted_answers": [
+        "gli"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First decide whether the plural noun is masculine or feminine.",
+        "For masculine plurals, check whether the noun begins with a vowel, z, or s + consonant."
+      ],
+      "feedback_correct_en": "Correct: gli.",
+      "feedback_wrong_en": "Expected: gli. Studenti begins with st- and is masculine plural.",
+      "explanation_en": "Studenti begins with st- and is masculine plural.",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.masculine_special"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.masculine.special"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "cercare",
+          "studente",
+          "gli"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.q07",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the missing plural definite article.",
+      "context_target": "",
+      "prompt_target": "Marco trova ___ chiavi.",
+      "prompt_en": "Write only the article; do not rewrite the sentence.",
+      "options": [],
+      "accepted_answers": [
+        "le"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First decide whether the plural noun is masculine or feminine.",
+        "For masculine plurals, check whether the noun begins with a vowel, z, or s + consonant."
+      ],
+      "feedback_correct_en": "Correct: le.",
+      "feedback_wrong_en": "Expected: le. Chiavi is feminine plural.",
+      "explanation_en": "Chiavi is feminine plural.",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.feminine"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.feminine"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "trovare",
+          "chiave",
+          "le"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.q08",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the missing plural definite article.",
+      "context_target": "",
+      "prompt_target": "___ fiori sono in giardino.",
+      "prompt_en": "Write only the article; do not rewrite the sentence.",
+      "options": [],
+      "accepted_answers": [
+        "i"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First decide whether the plural noun is masculine or feminine.",
+        "For masculine plurals, check whether the noun begins with a vowel, z, or s + consonant."
+      ],
+      "feedback_correct_en": "Correct: i.",
+      "feedback_wrong_en": "Expected: i. Fiori is masculine plural and starts with f.",
+      "explanation_en": "Fiori is masculine plural and starts with f.",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.masculine_default"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.masculine.default"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "fiore",
+          "essere",
+          "in",
+          "giardino",
+          "i"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.q09",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the missing plural definite article.",
+      "context_target": "",
+      "prompt_target": "Dove sono ___ specchi?",
+      "prompt_en": "Write only the article; do not rewrite the sentence.",
+      "options": [],
+      "accepted_answers": [
+        "gli"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First decide whether the plural noun is masculine or feminine.",
+        "For masculine plurals, check whether the noun begins with a vowel, z, or s + consonant."
+      ],
+      "feedback_correct_en": "Correct: gli.",
+      "feedback_wrong_en": "Expected: gli. Specchi is masculine plural and begins with sp-.",
+      "explanation_en": "Specchi is masculine plural and begins with sp-.",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.masculine_special"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.masculine.special"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "dove",
+          "essere",
+          "specchio",
+          "gli"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.q10",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the missing plural definite article.",
+      "context_target": "",
+      "prompt_target": "___ arance sono in cucina.",
+      "prompt_en": "Write only the article; do not rewrite the sentence.",
+      "options": [],
+      "accepted_answers": [
+        "le"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First decide whether the plural noun is masculine or feminine.",
+        "For masculine plurals, check whether the noun begins with a vowel, z, or s + consonant."
+      ],
+      "feedback_correct_en": "Correct: le.",
+      "feedback_wrong_en": "Expected: le. Feminine plural arance uses le, not an elided article.",
+      "explanation_en": "Feminine plural arance uses le, not an elided article.",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.feminine"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.feminine.vowel"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "arancia",
+          "essere",
+          "in",
+          "cucina",
+          "le"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.q11",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the missing plural definite article.",
+      "context_target": "",
+      "prompt_target": "___ ombrelli sono qui.",
+      "prompt_en": "Write only the article; do not rewrite the sentence.",
+      "options": [],
+      "accepted_answers": [
+        "gli"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First decide whether the plural noun is masculine or feminine.",
+        "For masculine plurals, check whether the noun begins with a vowel, z, or s + consonant."
+      ],
+      "feedback_correct_en": "Correct: gli.",
+      "feedback_wrong_en": "Expected: gli. Ombrelli begins with a vowel and is masculine plural.",
+      "explanation_en": "Ombrelli begins with a vowel and is masculine plural.",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.masculine_vowel"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.masculine.vowel"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ombrello",
+          "essere",
+          "qui",
+          "gli"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.q12",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write only the missing plural definite article.",
+      "context_target": "",
+      "prompt_target": "___ tavoli sono in giardino.",
+      "prompt_en": "Write only the article; do not rewrite the sentence.",
+      "options": [],
+      "accepted_answers": [
+        "i"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First decide whether the plural noun is masculine or feminine.",
+        "For masculine plurals, check whether the noun begins with a vowel, z, or s + consonant."
+      ],
+      "feedback_correct_en": "Correct: i.",
+      "feedback_wrong_en": "Expected: i. Tavoli is masculine plural and begins with t.",
+      "explanation_en": "Tavoli is masculine plural and begins with t.",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.masculine_default"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.masculine.default"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "tavolo",
+          "essere",
+          "in",
+          "giardino",
+          "i"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.q13",
+      "type": "multiple_choice",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_en": "Choose the correct plural definite article.",
+      "context_target": "",
+      "prompt_target": "Per la scuola, Marco compra ___ penne.",
+      "prompt_en": "Choose the best article for this noun.",
+      "options": [
+        {
+          "id": "it.a1.articles.definite_plural.q13.opt1",
+          "text": "i",
+          "correct": false,
+          "error_type": "wrong_gender_or_initial_sound",
+          "explanation_en": "I is used for masculine plurals beginning with an ordinary consonant, not here."
+        },
+        {
+          "id": "it.a1.articles.definite_plural.q13.opt2",
+          "text": "gli",
+          "correct": false,
+          "error_type": "wrong_gender_or_initial_sound",
+          "explanation_en": "Gli is used with masculine plurals beginning with a vowel or a special initial group, not here."
+        },
+        {
+          "id": "it.a1.articles.definite_plural.q13.opt3",
+          "text": "le",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Penne is a feminine plural and takes le."
+        },
+        {
+          "id": "it.a1.articles.definite_plural.q13.opt4",
+          "text": "l'",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "L’ is a singular elided article and is not a standard plural definite article."
+        }
+      ],
+      "accepted_answers": [
+        "le"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First decide whether the plural noun is masculine or feminine.",
+        "For masculine plurals, check whether the noun begins with a vowel, z, or s + consonant."
+      ],
+      "feedback_correct_en": "Correct: le.",
+      "feedback_wrong_en": "Expected: le. Penne is a feminine plural and takes le.",
+      "explanation_en": "Penne is a feminine plural and takes le.",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.feminine"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.feminine"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "per",
+          "la",
+          "scuola",
+          "comprare",
+          "penna",
+          "le",
+          "i",
+          "gli",
+          "l'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.q14",
+      "type": "multiple_choice",
+      "stage": "contextual",
+      "difficulty": 3,
+      "instruction_en": "Choose the correct plural definite article.",
+      "context_target": "",
+      "prompt_target": "Anna vede ___ amici a Roma.",
+      "prompt_en": "Choose the best article for this noun.",
+      "options": [
+        {
+          "id": "it.a1.articles.definite_plural.q14.opt1",
+          "text": "gli",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Amici is masculine plural and starts with a vowel."
+        },
+        {
+          "id": "it.a1.articles.definite_plural.q14.opt2",
+          "text": "i",
+          "correct": false,
+          "error_type": "wrong_gender_or_initial_sound",
+          "explanation_en": "I is used for masculine plurals beginning with an ordinary consonant, not here."
+        },
+        {
+          "id": "it.a1.articles.definite_plural.q14.opt3",
+          "text": "le",
+          "correct": false,
+          "error_type": "wrong_gender_or_initial_sound",
+          "explanation_en": "Le is used with feminine plurals, not here."
+        },
+        {
+          "id": "it.a1.articles.definite_plural.q14.opt4",
+          "text": "l'",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "L’ is a singular elided article and is not a standard plural definite article."
+        }
+      ],
+      "accepted_answers": [
+        "gli"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First decide whether the plural noun is masculine or feminine.",
+        "For masculine plurals, check whether the noun begins with a vowel, z, or s + consonant."
+      ],
+      "feedback_correct_en": "Correct: gli.",
+      "feedback_wrong_en": "Expected: gli. Amici is masculine plural and starts with a vowel.",
+      "explanation_en": "Amici is masculine plural and starts with a vowel.",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.masculine_vowel"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.masculine.vowel"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "vedere",
+          "amico",
+          "a",
+          "gli",
+          "i",
+          "le",
+          "l'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.q15",
+      "type": "transform",
+      "stage": "production",
+      "difficulty": 3,
+      "instruction_en": "Change the entire singular noun phrase into the plural.",
+      "context_target": "",
+      "prompt_target": "lo zaino → ___",
+      "prompt_en": "Write the corrected noun phrase, including the plural noun.",
+      "options": [],
+      "accepted_answers": [
+        "gli zaini"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the plural noun’s gender and opening sound.",
+        "Use i, gli or le and make sure the noun itself stays plural."
+      ],
+      "feedback_correct_en": "Correct: gli zaini.",
+      "feedback_wrong_en": "Expected: gli zaini. The singular lo zaino becomes gli zaini: z takes gli and zaino becomes zaini.",
+      "explanation_en": "The singular lo zaino becomes gli zaini: z takes gli and zaino becomes zaini.",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.production"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.masculine.special"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "lo",
+          "zaino",
+          "gli"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.q16",
+      "type": "error_correction",
+      "stage": "production",
+      "difficulty": 3,
+      "instruction_en": "Correct the plural noun phrase; write both words.",
+      "context_target": "",
+      "prompt_target": "l'arance → ___",
+      "prompt_en": "Write the corrected noun phrase, including the plural noun.",
+      "options": [],
+      "accepted_answers": [
+        "le arance"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the plural noun’s gender and opening sound.",
+        "Use i, gli or le and make sure the noun itself stays plural."
+      ],
+      "feedback_correct_en": "Correct: le arance.",
+      "feedback_wrong_en": "Expected: le arance. Le arance is the standard feminine plural; l’ must not replace le.",
+      "explanation_en": "Le arance is the standard feminine plural; l’ must not replace le.",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.production"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.feminine.vowel"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "l'",
+          "arancia",
+          "le"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.q17",
+      "type": "guided_production",
+      "stage": "production",
+      "difficulty": 3,
+      "instruction_en": "Write two short, natural Italian sentences using the given nouns in the plural with definite articles.",
+      "context_target": "",
+      "prompt_target": "ragazzi; sedie",
+      "prompt_en": "Write two short A1 sentences.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the plural noun’s gender and opening sound.",
+        "Use i, gli or le and make sure the noun itself stays plural."
+      ],
+      "feedback_correct_en": "Check your response with the rubric.",
+      "feedback_wrong_en": "Check that each noun has the correct plural article.",
+      "explanation_en": "Use i with ragazzi and le with sedie in two meaningful sentences.",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.production"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "Use i ragazzi for the masculine plural noun.",
+          "Use le sedie for the feminine plural noun.",
+          "Write two complete, natural A1 sentences. Score by meaning and grammar, not exact wording."
+        ],
+        "example_response": "I ragazzi sono a scuola. Le sedie sono in cucina."
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ragazzo",
+          "sedia",
+          "i",
+          "essere",
+          "a",
+          "scuola",
+          "le",
+          "in",
+          "cucina"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.q18",
+      "type": "multiple_choice",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Choose the correct plural definite article.",
+      "context_target": "",
+      "prompt_target": "___ cani sono in giardino.",
+      "prompt_en": "Choose the best article for this noun.",
+      "options": [
+        {
+          "id": "it.a1.articles.definite_plural.q18.opt1",
+          "text": "gli",
+          "correct": false,
+          "error_type": "wrong_gender_or_initial_sound",
+          "explanation_en": "Gli is used with masculine plurals beginning with a vowel or a special initial group, not here."
+        },
+        {
+          "id": "it.a1.articles.definite_plural.q18.opt2",
+          "text": "i",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Cani is masculine plural before c, an ordinary consonant."
+        },
+        {
+          "id": "it.a1.articles.definite_plural.q18.opt3",
+          "text": "le",
+          "correct": false,
+          "error_type": "wrong_gender_or_initial_sound",
+          "explanation_en": "Le is used with feminine plurals, not here."
+        },
+        {
+          "id": "it.a1.articles.definite_plural.q18.opt4",
+          "text": "l'",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "L’ is a singular elided article and is not a standard plural definite article."
+        }
+      ],
+      "accepted_answers": [
+        "i"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First decide whether the plural noun is masculine or feminine.",
+        "For masculine plurals, check whether the noun begins with a vowel, z, or s + consonant."
+      ],
+      "feedback_correct_en": "Correct: i.",
+      "feedback_wrong_en": "Expected: i. Cani is masculine plural before c, an ordinary consonant.",
+      "explanation_en": "Cani is masculine plural before c, an ordinary consonant.",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.masculine_default"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.masculine.default"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "cane",
+          "essere",
+          "in",
+          "giardino",
+          "i",
+          "gli",
+          "le",
+          "l'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.q19",
+      "type": "multiple_choice",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Choose the correct plural definite article.",
+      "context_target": "",
+      "prompt_target": "___ zii sono a Milano.",
+      "prompt_en": "Choose the best article for this noun.",
+      "options": [
+        {
+          "id": "it.a1.articles.definite_plural.q19.opt1",
+          "text": "i",
+          "correct": false,
+          "error_type": "wrong_gender_or_initial_sound",
+          "explanation_en": "I is used for masculine plurals beginning with an ordinary consonant, not here."
+        },
+        {
+          "id": "it.a1.articles.definite_plural.q19.opt2",
+          "text": "le",
+          "correct": false,
+          "error_type": "wrong_gender_or_initial_sound",
+          "explanation_en": "Le is used with feminine plurals, not here."
+        },
+        {
+          "id": "it.a1.articles.definite_plural.q19.opt3",
+          "text": "l'",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "L’ is a singular elided article and is not a standard plural definite article."
+        },
+        {
+          "id": "it.a1.articles.definite_plural.q19.opt4",
+          "text": "gli",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Zii is masculine plural beginning with z, so it takes gli."
+        }
+      ],
+      "accepted_answers": [
+        "gli"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First decide whether the plural noun is masculine or feminine.",
+        "For masculine plurals, check whether the noun begins with a vowel, z, or s + consonant."
+      ],
+      "feedback_correct_en": "Correct: gli.",
+      "feedback_wrong_en": "Expected: gli. Zii is masculine plural beginning with z, so it takes gli.",
+      "explanation_en": "Zii is masculine plural beginning with z, so it takes gli.",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.masculine_special"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.masculine.special"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "zio",
+          "essere",
+          "a",
+          "gli",
+          "i",
+          "le",
+          "l'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.q20",
+      "type": "fill_gap",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Write only the missing plural definite article.",
+      "context_target": "",
+      "prompt_target": "___ scarpe sono in camera.",
+      "prompt_en": "Write only the article; do not rewrite the sentence.",
+      "options": [],
+      "accepted_answers": [
+        "le"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First decide whether the plural noun is masculine or feminine.",
+        "For masculine plurals, check whether the noun begins with a vowel, z, or s + consonant."
+      ],
+      "feedback_correct_en": "Correct: le.",
+      "feedback_wrong_en": "Expected: le. Scarpe is feminine plural; use le.",
+      "explanation_en": "Scarpe is feminine plural; use le.",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.feminine"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.feminine"
+      ],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "scarpa",
+          "essere",
+          "in",
+          "camera",
+          "le"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.q21",
+      "type": "guided_production",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Write two short, natural Italian sentences using the given nouns in the plural with definite articles.",
+      "context_target": "",
+      "prompt_target": "orologi; biciclette",
+      "prompt_en": "Write two short A1 sentences.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the plural noun’s gender and opening sound.",
+        "Use i, gli or le and make sure the noun itself stays plural."
+      ],
+      "feedback_correct_en": "Check your response with the rubric.",
+      "feedback_wrong_en": "Check that each noun has the correct plural article.",
+      "explanation_en": "Use gli before vowel-initial masculine plural orologi and le with biciclette.",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.production"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "Write gli orologi, not i orologi.",
+          "Write le biciclette, not gli biciclette.",
+          "Create two sensible original sentences; no exact-match scoring."
+        ],
+        "example_response": "Gli orologi sono in negozio. Le biciclette sono in giardino."
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "orologio",
+          "bicicletta",
+          "gli",
+          "essere",
+          "in",
+          "negozio",
+          "le",
+          "giardino"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.q22",
+      "type": "multiple_choice",
+      "stage": "review",
+      "difficulty": 2,
+      "instruction_en": "Choose the correct plural definite article.",
+      "context_target": "",
+      "prompt_target": "___ tazze sono in cucina.",
+      "prompt_en": "Choose the best article for this noun.",
+      "options": [
+        {
+          "id": "it.a1.articles.definite_plural.q22.opt1",
+          "text": "i",
+          "correct": false,
+          "error_type": "wrong_gender_or_initial_sound",
+          "explanation_en": "I is used for masculine plurals beginning with an ordinary consonant, not here."
+        },
+        {
+          "id": "it.a1.articles.definite_plural.q22.opt2",
+          "text": "le",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Tazze is a feminine plural beginning with t."
+        },
+        {
+          "id": "it.a1.articles.definite_plural.q22.opt3",
+          "text": "gli",
+          "correct": false,
+          "error_type": "wrong_gender_or_initial_sound",
+          "explanation_en": "Gli is used with masculine plurals beginning with a vowel or a special initial group, not here."
+        },
+        {
+          "id": "it.a1.articles.definite_plural.q22.opt4",
+          "text": "l'",
+          "correct": false,
+          "error_type": "wrong_number",
+          "explanation_en": "L’ is a singular elided article and is not a standard plural definite article."
+        }
+      ],
+      "accepted_answers": [
+        "le"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First decide whether the plural noun is masculine or feminine.",
+        "For masculine plurals, check whether the noun begins with a vowel, z, or s + consonant."
+      ],
+      "feedback_correct_en": "Correct: le.",
+      "feedback_wrong_en": "Expected: le. Tazze is a feminine plural beginning with t.",
+      "explanation_en": "Tazze is a feminine plural beginning with t.",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.feminine"
+      ],
+      "verb_ids": [],
+      "form_keys": [
+        "definite.plural.feminine"
+      ],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "tazza",
+          "essere",
+          "in",
+          "cucina",
+          "le",
+          "i",
+          "gli",
+          "l'"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.articles.definite_plural.q23",
+      "type": "guided_production",
+      "stage": "review",
+      "difficulty": 2,
+      "instruction_en": "Write two short, natural Italian sentences using the given nouns in the plural with definite articles.",
+      "context_target": "",
+      "prompt_target": "ombrelli; bambini",
+      "prompt_en": "Write two short A1 sentences.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "First identify the plural noun’s gender and opening sound.",
+        "Use i, gli or le and make sure the noun itself stays plural."
+      ],
+      "feedback_correct_en": "Check your response with the rubric.",
+      "feedback_wrong_en": "Check that each noun has the correct plural article.",
+      "explanation_en": "Use gli with the vowel-initial masculine plural and i with the ordinary consonant-initial masculine plural.",
+      "skill_ids": [
+        "it.a1.articles.definite_plural.production"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "Use gli ombrelli.",
+          "Use i bambini.",
+          "Write two complete, natural sentences using vocabulary you know."
+        ],
+        "example_response": "Gli ombrelli sono in casa. I bambini sono a scuola."
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ombrello",
+          "bambino",
+          "gli",
+          "essere",
+          "in",
+          "casa",
+          "i",
+          "a",
+          "scuola"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "verb_application": {
+    "applicable": false,
+    "required_form_keys": [],
+    "verbs": []
+  },
+  "mastery": {
+    "minimum_scored_items": 12,
+    "required_score": 0.8,
+    "minimum_production_score": 0.7,
+    "minimum_unaided_production_items": 2,
+    "required_stages": [
+      "notice",
+      "controlled",
+      "contextual",
+      "production",
+      "transfer"
+    ],
+    "review_intervals_days": [
+      1,
+      3,
+      7,
+      14,
+      30,
+      60
+    ]
+  },
+  "vocabulary_audit": {
+    "manifest_id": "it-reviewed-9d35be468e23",
+    "used_lemmas": [
+      "a",
+      "albero",
+      "amico",
+      "arancia",
+      "bagno",
+      "bambino",
+      "bicicletta",
+      "borsa",
+      "camera",
+      "cane",
+      "casa",
+      "cercare",
+      "chiave",
+      "ciao",
+      "classe",
+      "comprare",
+      "cucina",
+      "dove",
+      "e",
+      "essere",
+      "fiore",
+      "gatto",
+      "giardino",
+      "gli",
+      "i",
+      "in",
+      "l'",
+      "la",
+      "le",
+      "libro",
+      "lo",
+      "mela",
+      "negozio",
+      "ombrello",
+      "orologio",
+      "penna",
+      "per",
+      "portare",
+      "prendere",
+      "quaderno",
+      "qui",
+      "ragazzo",
+      "scarpa",
+      "scuola",
+      "sedia",
+      "specchio",
+      "studente",
+      "tavolo",
+      "tazza",
+      "trovare",
+      "vedere",
+      "zaino",
+      "zio"
+    ],
+    "target_lemmas": [
+      "i",
+      "gli",
+      "le"
+    ],
+    "outside_allowlist_lemmas": [],
+    "introduced_lemmas": [],
+    "proper_names": [
+      "Anna",
+      "Marco",
+      "Milano",
+      "Roma"
+    ],
+    "grammar_only_tokens": [],
+    "above_level_lemmas": [],
+    "tests_with_unknown_vocabulary": [],
+    "status": "pass"
+  },
+  "level_audit": {
+    "target_cefr": "A1",
+    "max_sentence_length_words": 10,
+    "unapproved_grammar_features": [],
+    "scope_violations": [],
+    "status": "pass"
+  },
+  "quality_audit": {
+    "status": "pass",
+    "checks": {
+      "unique_ids": true,
+      "prerequisites_resolve": true,
+      "answers_verified": true,
+      "forms_verified": true,
+      "single_best_answers": true,
+      "naturalness_checked": true,
+      "cefr_checked": true,
+      "translations_checked": true,
+      "requested_counts_met": true
+    },
+    "issues": [],
+    "needs_human_review": [],
+    "sources": [
+      {
+        "name": "Treccani — Articoli determinativi (La grammatica italiana)",
+        "url": "https://www.treccani.it/enciclopedia/articoli-determinativi_%28La-grammatica-italiana%29/"
+      },
+      {
+        "name": "Treccani — Articolo (Enciclopedia dell’Italiano)",
+        "url": "https://www.treccani.it/enciclopedia/articolo_%28Enciclopedia-dell%27Italiano%29/"
+      },
+      {
+        "name": "Zanichelli — Le forme dell’articolo determinativo",
+        "url": "https://aulalingue.scuola.zanichelli.it/uso-dell-articolo-determinativo/"
+      }
+    ],
+    "counts": {
+      "contexts": 2,
+      "examples": 10,
+      "exercise_bank": 23,
+      "scored_exercises": 20,
+      "transfer_exercises": 4,
+      "article_form_tests": 8
+    }
+  },
+  "audit": {
+    "status": "pass",
+    "issues": [],
+    "needs_human_review": [],
+    "sources": [
+      {
+        "name": "Treccani — Articoli determinativi (La grammatica italiana)",
+        "url": "https://www.treccani.it/enciclopedia/articoli-determinativi_%28La-grammatica-italiana%29/"
+      },
+      {
+        "name": "Treccani — Articolo (Enciclopedia dell’Italiano)",
+        "url": "https://www.treccani.it/enciclopedia/articolo_%28Enciclopedia-dell%27Italiano%29/"
+      },
+      {
+        "name": "Zanichelli — Le forme dell’articolo determinativo",
+        "url": "https://aulalingue.scuola.zanichelli.it/uso-dell-articolo-determinativo/"
+      }
+    ],
+    "checks": {
+      "unique_ids": true,
+      "prerequisites_resolve": true,
+      "answers_verified": true,
+      "forms_verified": true,
+      "single_best_answers": true,
+      "naturalness_checked": true,
+      "cefr_checked": true,
+      "translations_checked": true,
+      "requested_counts_met": true
+    }
+  }
+}

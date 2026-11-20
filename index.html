@@ -334,7 +334,13 @@
   .chart i.on { background:linear-gradient(180deg,var(--primary-2),var(--primary)); }
   .chart span { font-size:10.5px; font-weight:700; color:var(--faint); }
   .chart .today span { color:var(--primary-text); }
-  .boxes { display:grid; grid-template-columns:repeat(auto-fit,minmax(52px,1fr)); gap:6px; margin-top:12px; }
+  /* every box of a level on one row: seven flashcard boxes, six in Level 2 */
+  .boxes { display:grid; grid-template-columns:repeat(var(--n,6),minmax(0,1fr)); gap:6px; margin-top:12px; }
+  @media (max-width:420px) {
+    .boxes { gap:4px; }
+    .boxes b { font-size:17px !important; }
+    .boxes span { font-size:10px !important; }
+  }
   .boxes button { min-width:0; min-height:0; text-align:center; padding:10px 2px 8px; border:0;
     border-radius:12px; background:var(--surface2); box-shadow:none; flex-direction:column; gap:0; }
   .boxes button:hover { background:var(--primary-soft); }
@@ -1810,7 +1816,8 @@ function sayAnswer(text) {
    their examples and notes, the example sentences, the explanations and the
    usual phrases, each with a button to hear it. Opened from the card once a
    word has been answered, and from the Words tab. */
-function wordSheet(card) {
+function wordSheet(card, extra) {
+  fillCoverage();
   const before = primaryButton;
   const veil = el("div", "veil");
   const box = el("div", "sheet details");
@@ -1883,10 +1890,19 @@ function wordSheet(card) {
     if (!refs.length) {
       box.appendChild(el("div", "line", '<div class="txt muted">Not covered by a reading text yet.</div>'));
     } else {
-      for (const ref of refs) {
-        const kind = ref.match === "mapped" ? "lemma mapped" : "exact wording";
-        box.appendChild(el("div", "line", `<div class="txt"><div class="it">${esc(ref.title || ref.id)}</div>` +
-          `<div class="en">${esc([ref.level, ref.id, kind].filter(Boolean).join(" · "))}</div></div>`));
+      // a common word is in dozens of texts: the first few, and the rest on request
+      const SHOWN = 5;
+      const refLine = ref => el("div", "line", `<div class="txt"><div class="it">${esc(ref.title || ref.id)}</div>` +
+        `<div class="en">${esc([ref.level, ref.id, ref.match === "mapped" ? "lemma mapped" : "exact wording"]
+          .filter(Boolean).join(" · "))}</div></div>`);
+      refs.slice(0, SHOWN).forEach(ref => box.appendChild(refLine(ref)));
+      if (refs.length > SHOWN) {
+        const all = button(`Show all ${refs.length} texts`, "soft small", () => {
+          const rest = refs.slice(SHOWN).map(refLine);
+          all.replaceWith(...rest);
+        });
+        all.style.margin = "0 2px 8px";
+        box.appendChild(all);
       }
     }
   }
@@ -1895,6 +1911,7 @@ function wordSheet(card) {
     section("Common phrases");
     for (const phrase of phrases) box.appendChild(line(phrase, "", "", mark(phrase)));
   }
+  if (extra) box.appendChild(extra);       // e.g. the words inside a tapped phrase
 
   const s = stageOf(card);
   const when = s.stage < 4 && !card.suspended ? dueText(card.due) : "";
@@ -1981,6 +1998,23 @@ function readingTextRefs(card) {
     ? card.reading_texts.filter(ref => ref && ref.id)
     : [];
 }
+/* The desktop's coverage index only knows the desktop's words, so a word
+   added from a text on a phone read "not in texts". Such words get the same
+   kind of entry from the texts on this phone. Returns how many it filled. */
+function fillCoverage() {
+  const book = books[speechLang()];
+  if (!book || !state.cards.some(c => !c.manual && Array.isArray(c.reading_texts))) return 0;
+  let filled = 0;
+  for (const card of state.cards) {
+    if (!card.manual || Array.isArray(card.reading_texts) || !isReadingWord(card)) continue;
+    const key = wordKey(card.w);
+    card.reading_texts = book.texts
+      .filter(t => Object.values(t.words || {}).some(lemma => wordKey(lemma) === key))
+      .map(t => ({ id: t.id, title: t.title, level: t.level, match: "mapped" }));
+    filled++;
+  }
+  return filled;
+}
 function readingWords() {
   const words = reading().words;
   return state.cards.filter(isReadingWord)
@@ -2052,7 +2086,69 @@ function occurrence(book, t, lemma) {
     const hit = lookupToken(book, t, m.text);
     if (hit.lemma === lemma) return { book, t, sentence, sentenceEn, at: m.index, token: m.text, ...hit };
   }
+  // a word the text only uses inside a phrase it explains ("cevap" in
+  // "cevap veriyor", "ti chiami" in "come ti chiami") is found there instead
+  for (const para of t.p) for (const [sentence, sentenceEn] of para) for (const m of pieces(book, t, sentence)) {
+    if (!m.text.includes(" ")) continue;
+    for (const span of innerSpans(m.text)) {
+      const hit = lookupToken(book, t, span.text);
+      if (hit.lemma === lemma)
+        return { book, t, sentence, sentenceEn, at: m.index + span.index, token: span.text, ...hit };
+    }
+  }
   return null;
+}
+/* The shorter stretches inside a phrase, longest first: its single words
+   and any smaller phrase, joined by single spaces as pieces() joins them. */
+function innerSpans(text) {
+  const words = [...text.matchAll(WORD_RE)];
+  const end = k => words[k].index + words[k][0].length;
+  const out = [];
+  for (let size = words.length - 1; size >= 1; size--)
+    for (let i = 0; i + size <= words.length; i++) {
+      const j = i + size - 1;
+      let joined = true;
+      for (let k = i + 1; k <= j && joined; k++) joined = text.slice(end(k - 1), words[k].index) === " ";
+      if (joined) out.push({ index: words[i].index, text: text.slice(words[i].index, end(j)) });
+    }
+  return out;
+}
+/* The words inside a tapped phrase that the text also explains on their
+   own. A phrase is tapped as one, so these could never be tapped alone;
+   the phrase's sheet lists them instead, each ready to add. */
+function phraseParts(ctx) {
+  const { book, t } = ctx;
+  if (!ctx.lemma || !(ctx.base || "").includes(" ")) return [];
+  const out = [], seen = new Set([ctx.lemma]);
+  for (const span of innerSpans(ctx.token || "")) {
+    const hit = lookupToken(book, t, span.text);
+    if (!hit.lemma || seen.has(hit.lemma) || !book.dict[hit.lemma]) continue;
+    seen.add(hit.lemma);
+    out.push({ book, t, sentence: ctx.sentence, sentenceEn: ctx.sentenceEn,
+               at: ctx.at + span.index, token: span.text, ...hit });
+  }
+  return out;
+}
+function partsBlock(parts) {
+  if (!parts || !parts.length) return null;
+  const wrap = el("div", "parts");
+  wrap.appendChild(el("div", "label", "Words in this phrase"));
+  for (const part of parts) {
+    const entry = part.book.dict[part.lemma];
+    const row = el("div", "line");
+    row.appendChild(el("div", "txt", `<div class="it">${esc(dictWord(part.book, part.lemma))}</div>` +
+      `<div class="en">${esc(entry[0])}</div>`));
+    const card = findCard(part.lemma);
+    const action = card
+      ? button("In my words", "small soft", () => wordSheet(card))
+      : button(icon("plus") + "Add", "small soft", () => {
+          addFromText(part, part.lemma, entry[0], entry[1], entry[2]);
+          action.replaceWith(el("span", "badge", `${icon("check")}Added`));
+        });
+    row.appendChild(action);
+    wrap.appendChild(row);
+  }
+  return wrap;
 }
 
 /* ------------------------------------------------- words before the text
@@ -2349,14 +2445,15 @@ function tapWord(book, t, span) {
   const hit = lookupToken(book, t, token);
   const ctx = { book, t, token, sentence, sentenceEn, at: Number(span.dataset.a), ...hit };
   const card = findCard(hit.lemma || hit.base);
+  const parts = phraseParts(ctx);
   // a word from an earlier text is a chance to check it stuck, once per reading
   if (hit.lemma && !t.fresh.includes(hit.lemma) && !(hit.lemma in readSession.recall))
-    return recallSheet(ctx, card);
-  if (card) return wordSheet(card);
-  addWordSheet(ctx);
+    return recallSheet(ctx, card, parts);
+  if (card) return wordSheet(card, partsBlock(parts));
+  addWordSheet(ctx, parts);
 }
 
-function recallSheet(ctx, card) {
+function recallSheet(ctx, card, parts) {
   const { book, lemma } = ctx;
   const first = book.firstIn[lemma];
   const meaning = el("div", "gloss hidden", esc(book.dict[lemma][0]));
@@ -2369,6 +2466,9 @@ function recallSheet(ctx, card) {
   const reveal = button("Show the meaning", "primary", () => {
     meaning.classList.remove("hidden");
     s.box.querySelector(".line").replaceWith(sentenceLine(ctx, true));
+    // its words only now, so they do not give the meaning away
+    const inside = partsBlock(parts);
+    if (inside) s.box.insertBefore(inside, s.actions);
     s.actions.innerHTML = "";
     const yes = button(icon("check") + "I remembered it", "primary", () => {
       readSession.recall[lemma] = true;
@@ -2388,7 +2488,7 @@ function recallSheet(ctx, card) {
   s.primary(reveal);
 }
 
-function addWordSheet(ctx) {
+function addWordSheet(ctx, parts) {
   const { book, t, lemma } = ctx;
   const entry = lemma && book.dict[lemma];
   if (entry) {
@@ -2397,7 +2497,8 @@ function addWordSheet(ctx) {
       el("div", "tags", esc([entry[1], t.fresh.includes(lemma) ? "new in this text" : ""]
         .filter(Boolean).join(" · "))),
       el("div", "gloss", esc(entry[0])),
-      sentenceLine(ctx, true)
+      sentenceLine(ctx, true),
+      partsBlock(parts)
     ]);
     const add = button(icon("plus") + "Add to my words", "primary", () => {
       s.close();
@@ -2512,8 +2613,12 @@ function askQuestion(book, t, list, i) {
   }
   // Keep every question in the language being learned. Its English helper is
   // available on request, but never gives the translation away on first view.
+  // A word question's English is its instruction ("What does it mean here?"),
+  // not a translation, so it stays in view.
   const englishText = String(q.en || "").trim();
-  if (englishText) {
+  if (englishText && q.t === "vocab") {
+    card.appendChild(el("div", "muted qen", esc(englishText)));
+  } else if (englishText) {
     const english = el("div", "muted qen hidden", esc(englishText));
     card.appendChild(english);
     const show_ = button("Show English", "small soft", () => {
@@ -3131,15 +3236,21 @@ const NO_MARKERS = { pulled_to: "", pushed_to: "", reviews_to: "", reviews_sent:
 async function cloudRequest(method, path, body, cfg) {
   cfg = cfg || cloudSettings();
   if (!cfg.url || !cfg.key) throw new Error("Sync is not set up yet.");
-  const response = await fetch(`${cfg.url.replace(/\/$/, "")}/rest/v1/${path}`, {
-    method,
-    headers: {
-      apikey: cfg.key, Authorization: `Bearer ${cfg.key}`,
-      "Content-Type": "application/json", Accept: "application/json",
-      ...(method === "POST" ? { Prefer: "resolution=merge-duplicates,return=minimal" } : {})
-    },
-    body: body === undefined ? undefined : JSON.stringify(body)
-  });
+  let response;
+  try {
+    response = await fetch(`${cfg.url.replace(/\/$/, "")}/rest/v1/${path}`, {
+      method,
+      headers: {
+        apikey: cfg.key, Authorization: `Bearer ${cfg.key}`,
+        "Content-Type": "application/json", Accept: "application/json",
+        ...(method === "POST" ? { Prefer: "resolution=merge-duplicates,return=minimal" } : {})
+      },
+      body: body === undefined ? undefined : JSON.stringify(body)
+    });
+  } catch (e) {
+    // the request never reached the database: no signal, or a wrong address
+    throw offlineError();
+  }
   if (!response.ok) {
     const text = await response.text();
     let code = "";
@@ -3156,7 +3267,19 @@ async function cloudRequest(method, path, body, cfg) {
     throw error;
   }
   const text = await response.text();
-  return text ? JSON.parse(text) : [];
+  if (!text) return [];
+  try { return JSON.parse(text); }
+  catch (e) {
+    // a page instead of data: a Wi-Fi login page, or an old offline copy answering
+    throw offlineError();
+  }
+}
+function offlineError() {
+  const error = new Error(navigator.onLine === false
+    ? "No connection. Your answers are kept on this phone and sync next time."
+    : "The database could not be reached. Check the connection or the Project URL.");
+  error.offline = true;
+  return error;
 }
 
 /* ------------------------------------------------------- reading changes
@@ -3601,7 +3724,7 @@ async function autoSync(reason) {
   try {
     const summary = await cloudSync(true);
     flash(summary);
-  } catch (e) { flash("Sync failed: " + e.message); }
+  } catch (e) { flash(e.offline ? "Offline: answers will sync next time." : "Sync failed: " + e.message); }
 }
 
 let flashTimer = null;
@@ -3660,6 +3783,7 @@ function selectFrom(values, onPick) {
 function wordsScreen(options) {
   options = options || {};
   chrome(false);
+  fillCoverage();
   let query = "", stageFilter = options.stage || "", boxFilter = options.box || "",
       cefrFilter = "", dueFilter = "", sourceFilter = "", coverageFilter = "", limit = 150;
   if (!stageFilter && boxFilter) stageFilter = boxFilter.startsWith("flash:") ? "1" : "2";
@@ -3777,6 +3901,8 @@ function wordsScreen(options) {
   }
   paint();
   show([pageHead("Words"), searchBox, filters, note, list, more], tabBar("words"));
+  // the texts may not be loaded yet on a fresh start
+  if (!books[speechLang()]) loadBook().then(() => { if (fillCoverage() && list.isConnected) paint(); });
 }
 
 function progressScreen() {
@@ -3813,6 +3939,7 @@ function progressScreen() {
   flashBoxes.appendChild(el("div", "muted",
     "Each box is practised in both directions. Tap a box to see every word in it."));
   const flashGrid = el("div", "boxes");
+  flashGrid.style.setProperty("--n", 7);
   for (let i = 1; i <= 7; i++) {
     const count = state.cards.filter(card => stageOf(card).stage === 1 && stageOf(card).box === i).length;
     const cell = button(`<b>${count}</b><span>Box ${i}</span>`, "", () => wordsScreen({ box: `flash:${i}` }));
@@ -3827,6 +3954,7 @@ function progressScreen() {
   boxes.appendChild(el("div", "muted",
     "Boxes 1–2 write meanings and words, 3–4 fill sentence gaps, 5–6 translate whole sentences."));
   const grid = el("div", "boxes");
+  grid.style.setProperty("--n", LEVEL2_TOP);
   for (let i = 1; i <= LEVEL2_TOP; i++) {
     const count = state.cards.filter(card => stageOf(card).stage === 2 && stageOf(card).box === i).length;
     const cell = button(`<b>${count}</b><span>Box ${i}</span>`, "", () => wordsScreen({ box: `level2:${i}` }));
@@ -4355,14 +4483,23 @@ function grammarNormalize(value, rules) {
   let out = String(value || "");
   if (!rules || rules.trim !== false) out = out.trim();
   if (rules && rules.ignore_terminal_punctuation) out = out.replace(/[.!?]+$/u, "").trim();
-  if (!rules || rules.case_sensitive === false) out = out.toLocaleLowerCase("it");
+  // the lesson's own language: Turkish lower-cases İ and I differently
+  const lang = (grammarRun && grammarRun.topic && grammarRun.topic.language) || speechLang() || undefined;
+  if (!rules || rules.case_sensitive === false) out = out.toLocaleLowerCase(lang);
   return out.replace(/\s+/gu, " ");
 }
 function grammarTypedQuestion(exercise) {
   const card = grammarQuestionCard(exercise);
   const answer = el("div", "grammar-answer");
   const input = el("input");
-  input.placeholder = "Type maschile or femminile";
+  // the lesson's typed answers, when they are a small set ("maschile or
+  // femminile"), say what is expected; otherwise a plain prompt
+  const answers = [...new Set(grammarRun.topic.exercises
+    .filter(item => item.type !== "multiple_choice" && item.type !== "guided_production" &&
+                    item.scoring_mode !== "self_check")
+    .flatMap(item => item.accepted_answers || []))];
+  input.placeholder = exercise.placeholder_en ||
+    (answers.length >= 2 && answers.length <= 3 ? `Type ${answers.join(" or ")}` : "Type your answer");
   input.autocapitalize = "none"; input.spellcheck = false;
   answer.appendChild(input); card.appendChild(answer);
   const feedback = el("div", "grammar-feedback hidden"); card.appendChild(feedback);
@@ -4590,7 +4727,8 @@ function infoScreen() {
     ["words", "var(--s1)", "Word details", "Open a word to see the exact reading titles that contain it. Use Not in reading texts to find gaps for future texts."]
   ]) readingLists.appendChild(listItem({ lead: icobox(name, colour), title, detail }));
   nodes.push(readingLists);
-  nodes.push(el("div", "guide-note", `${icon("info")}<span>Italian and English are aligned sentence by sentence. ` +
+  nodes.push(el("div", "guide-note", `${icon("info")}<span>${esc(hasCollection ? languageName(speechLang()) + " texts" : "Texts")} ` +
+    `and their English are aligned sentence by sentence. ` +
     "English under paragraphs and questions stays hidden until you ask for it. Finishing a text saves its score and answers.</span>"));
 
   nodes.push(sectionHead("Find words by box"));
@@ -4630,7 +4768,10 @@ const topicName = v => {
    first reading text that uses it. */
 function levelOf(card, book) {
   if (card.cefr) return card.cefr;
-  if (!book) return "";
+  // only a word made on the phone borrows a level from the texts: the A1
+  // texts now use nearly every word, so for the desktop's words the first
+  // text that uses one says little about its level
+  if (!book || !card.manual) return "";
   if (!book.levelOf) {
     book.levelOf = new Map();
     for (const [lemma, t] of Object.entries(book.firstIn)) book.levelOf.set(wordKey(lemma), t.level);
@@ -5129,7 +5270,14 @@ function cloudScreen() {
           "collection name; switch between them from the home screen.");
       await importFile(payload, true);     // quiet: the report comes below
       flash("Words loaded, catching up\u2026");
-      await cloudSync(true);               // markers were cleared by the import
+      try {
+        await cloudSync(true);             // markers were cleared by the import
+      } catch (e) {
+        // the words are here already; only the catching up failed
+        notify(`${state.cards.length} words loaded. Catching up with the latest answers did not ` +
+               `finish (${e.message}) It will happen on the next sync.`, "Words loaded");
+        return home();
+      }
       const c = counts();
       notify(`Snapshot uploaded: ${(payload.exported_at || "?").replace("T", " ")}\n` +
              `Rows seen in the database: ${lastSync.seen}\n` +
@@ -5377,7 +5525,7 @@ function setup() {
   const perks = el("div", "list perks");
   for (const [name, colour, head, text] of [
     ["ladder", "var(--s2)", "A ladder for every word",
-     "Sort, flashcards, meanings, gaps, translation and writing, one rung at a time."],
+     "Sort, flashcards, meaning writing, gaps, translation and free writing, one rung at a time."],
     ["wifi", "var(--s1)", "Works with no signal",
      "Study on a walk. Everything lives on the phone."],
     ["sync", "var(--s4)", "In step with the desktop",

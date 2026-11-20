@@ -84,7 +84,9 @@ private. Do not commit the key to the public GitHub repository. Type it into
 the phone directly, where it is stored only in the phone's own database.
 
 If a sync fails, nothing is lost. The devices simply diverge until the next
-one, and per-card merging sorts it out then.
+one, and per-card merging sorts it out then. With no signal the app says so
+plainly and tries again next time. The offline copy holds only the app's own
+files and texts, never answers from the database.
 
 **Recommended upgrade.** Run `supabase-upgrade.sql` from this repository
 once, in the same SQL editor. It does two things. It adds the `reading`
@@ -172,8 +174,10 @@ When a collection includes the generated `reading_texts` index, the Words tab
 also shows how many reading texts contain each word and can filter to **In
 reading texts** or **Not in reading texts**. Word details list the text title,
 ID, level and whether the match was an explicit lemma mapping or exact visible
-wording. This makes the uncovered vocabulary list usable as the plan for new
-reading texts.
+wording: the first five, and the rest a tap away. This makes the uncovered
+vocabulary list usable as the plan for new reading texts. A word added from a
+text on the phone is not in the desktop's index yet, so it takes the same kind
+of entry from the texts on the phone.
 
 The speaker buttons say the word or sentence aloud with the phone's own
 voices. That costs nothing, needs no key and works offline. Next to a word's
@@ -239,7 +243,9 @@ have 40 A2 texts, a little longer and
 with past tenses, some in short series that follow one story over two or
 three texts. The same people come back from text to text, so their words do
 too. A phrase the text explains as one, such as *öğleden sonra* or *fare la
-spesa*, is tapped and added as one.
+spesa*, is tapped and added as one. Its sheet also lists the words inside it
+that the text explains on their own (*öğle*, *sonra*), each ready to add, and
+the word check after a text finds such a word inside its phrase.
 The method follows exam-style reading books such as METU's *Reader at Work*:
 - **Before you read**, a question gets you thinking about the topic.
 - **Recycled words:** the words you met in earlier texts come back. They are

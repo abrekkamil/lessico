@@ -1,0 +1,1923 @@
+{
+  "schema_version": "lessico-grammar-v1",
+  "content_version": "1.0.1",
+  "status": "ready",
+  "mode": "topic_pack",
+  "language": "it",
+  "explanation_language": "en",
+  "vocabulary_manifest_id": "it-reviewed-9d35be468e23",
+  "topic": {
+    "id": "it.a1.nouns.gender",
+    "cefr": "A1",
+    "sequence": 1,
+    "module_id": "it.a1.nouns",
+    "title_target": "Il genere dei nomi",
+    "title_en": "Noun gender",
+    "estimated_minutes": 15,
+    "prerequisite_ids": [],
+    "learning_objectives": [
+      "Recognize the grammatical gender of common singular nouns and use dictionary gender information."
+    ],
+    "scope_included": [
+      "common masculine and feminine endings",
+      "dictionary gender",
+      "frequent checked exceptions"
+    ],
+    "scope_excluded": [
+      "articles",
+      "plural formation",
+      "long exception lists"
+    ],
+    "new_terms": [
+      {
+        "lemma": "maschile",
+        "meaning_en": "masculine grammatical gender",
+        "introduced_in": "it.a1.nouns.gender.rule1"
+      },
+      {
+        "lemma": "femminile",
+        "meaning_en": "feminine grammatical gender",
+        "introduced_in": "it.a1.nouns.gender.rule1"
+      }
+    ],
+    "reading_links": []
+  },
+  "skills": [
+    {
+      "id": "it.a1.nouns.gender.regular",
+      "description_en": "Identify typical gender from common singular noun endings -o and -a.",
+      "capability": "recognition",
+      "critical": true
+    },
+    {
+      "id": "it.a1.nouns.gender.e_endings",
+      "description_en": "Retrieve the recorded gender of familiar nouns in -e.",
+      "capability": "controlled",
+      "critical": true
+    },
+    {
+      "id": "it.a1.nouns.gender.exceptions",
+      "description_en": "Identify the checked exceptions problema, mano and foto.",
+      "capability": "contextual",
+      "critical": true
+    },
+    {
+      "id": "it.a1.nouns.gender.production",
+      "description_en": "Record and correct a noun’s grammatical gender in a new context.",
+      "capability": "production",
+      "critical": true
+    }
+  ],
+  "lesson": {
+    "short_explanation_en": "In Italian, every noun has a grammatical gender: maschile (masculine) or femminile (feminine). Most common singular nouns ending in -o are masculine, and most ending in -a are feminine. Nouns ending in -e can be either, so learn their gender with the word. Remember common exceptions such as problema (masculine), mano (feminine) and foto (feminine). Grammatical gender is a property of the noun. For objects, it does not describe biological sex; some nouns for people and animals have separate masculine and feminine forms.",
+    "rule_blocks": [
+      {
+        "id": "it.a1.nouns.gender.rule1",
+        "heading_en": "The two gender labels",
+        "explanation_en": "Maschile means masculine (m.); femminile means feminine (f.). These are the two new grammar labels for this lesson.",
+        "pattern": "noun → maschile (m.) OR femminile (f.)",
+        "usage_notes_en": [
+          "Record a noun together with its gender when studying vocabulary."
+        ],
+        "common_errors_en": [
+          "Do not assume grammatical gender describes the sex of an object."
+        ],
+        "example_ids": [
+          "it.a1.nouns.gender.ex01",
+          "it.a1.nouns.gender.ex02"
+        ]
+      },
+      {
+        "id": "it.a1.nouns.gender.rule2",
+        "heading_en": "Useful endings, not absolute rules",
+        "explanation_en": "For common singular nouns, -o often suggests masculine and -a often suggests feminine. An ending in -e alone cannot tell you the gender.",
+        "pattern": "-o → usually m.; -a → usually f.; -e → check the noun",
+        "usage_notes_en": [
+          "Typical examples: libro (m.) and casa (f.).",
+          "Contrast two nouns in -e: bicchiere (m.) and chiave (f.)."
+        ],
+        "common_errors_en": [
+          "Incorrect: every noun ending in -e is masculine. Correct: check its gender."
+        ],
+        "example_ids": [
+          "it.a1.nouns.gender.ex03",
+          "it.a1.nouns.gender.ex04",
+          "it.a1.nouns.gender.ex05",
+          "it.a1.nouns.gender.ex10"
+        ]
+      },
+      {
+        "id": "it.a1.nouns.gender.rule3",
+        "heading_en": "Three exceptions worth learning",
+        "explanation_en": "Problema ends in -a but is masculine; mano and foto end in -o but are feminine.",
+        "pattern": "problema → m.; mano → f.; foto → f.",
+        "usage_notes_en": [
+          "Memorise these as complete noun-and-gender pairs."
+        ],
+        "common_errors_en": [
+          "Incorrect: problema is feminine because it ends in -a. Correct: problema is masculine.",
+          "Incorrect: mano is masculine because it ends in -o. Correct: mano is feminine.",
+          "Incorrect: foto is masculine because it ends in -o. Correct: foto is feminine."
+        ],
+        "example_ids": [
+          "it.a1.nouns.gender.ex07",
+          "it.a1.nouns.gender.ex08",
+          "it.a1.nouns.gender.ex09"
+        ]
+      }
+    ],
+    "form_tables": [
+      {
+        "id": "it.a1.nouns.gender.table1",
+        "title_en": "Reading noun endings",
+        "columns": [
+          "Ending",
+          "Typical gender",
+          "Examples / note"
+        ],
+        "rows": [
+          [
+            "-o",
+            "Masculine (m.)",
+            "libro, gatto; exception: mano, foto"
+          ],
+          [
+            "-a",
+            "Feminine (f.)",
+            "casa, ragazza; exception: problema"
+          ],
+          [
+            "-e",
+            "Either gender",
+            "bicchiere (m.), chiave (f.)"
+          ]
+        ]
+      }
+    ]
+  },
+  "contexts": [
+    {
+      "id": "it.a1.nouns.gender.ctx1",
+      "type": "dialogue",
+      "setting_en": "Two students checking noun genders in an Italian class.",
+      "lines": [
+        {
+          "speaker": "Anna",
+          "target": "Marco, «libro»: maschile o femminile?",
+          "translation_en": "Marco, is “libro” masculine or feminine?"
+        },
+        {
+          "speaker": "Marco",
+          "target": "Maschile. E «casa»?",
+          "translation_en": "Masculine. And “casa”?"
+        },
+        {
+          "speaker": "Anna",
+          "target": "Femminile. «Problema»?",
+          "translation_en": "Feminine. “Problema”?"
+        },
+        {
+          "speaker": "Marco",
+          "target": "Maschile. E «mano»?",
+          "translation_en": "Masculine. And “mano”?"
+        },
+        {
+          "speaker": "Anna",
+          "target": "«Mano» è femminile.",
+          "translation_en": "“Mano” is feminine."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "libro",
+          "lemma": "libro",
+          "skill_id": "it.a1.nouns.gender.regular",
+          "form_key": "",
+          "explanation_en": "The noun ends in -o and is masculine."
+        },
+        {
+          "surface": "casa",
+          "lemma": "casa",
+          "skill_id": "it.a1.nouns.gender.regular",
+          "form_key": "",
+          "explanation_en": "The noun ends in -a and is feminine."
+        },
+        {
+          "surface": "problema",
+          "lemma": "problema",
+          "skill_id": "it.a1.nouns.gender.exceptions",
+          "form_key": "",
+          "explanation_en": "This common noun in -ma is masculine."
+        },
+        {
+          "surface": "mano",
+          "lemma": "mano",
+          "skill_id": "it.a1.nouns.gender.exceptions",
+          "form_key": "",
+          "explanation_en": "This noun ends in -o but is feminine."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "libro",
+          "o",
+          "e",
+          "casa",
+          "problema",
+          "mano",
+          "essere"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.ctx2",
+      "type": "message",
+      "setting_en": "Anna’s short vocabulary note, organised by rooms at home.",
+      "lines": [
+        {
+          "speaker": "Anna",
+          "target": "Lista di Anna. Cucina: piatto (m.), tazza (f.). Camera: letto (m.), finestra (f.).",
+          "translation_en": "Anna’s list. Kitchen: plate (masculine), cup (feminine). Bedroom: bed (masculine), window (feminine)."
+        }
+      ],
+      "focus_items": [
+        {
+          "surface": "piatto (m.)",
+          "lemma": "piatto",
+          "skill_id": "it.a1.nouns.gender.regular",
+          "form_key": "",
+          "explanation_en": "-o usually signals masculine."
+        },
+        {
+          "surface": "tazza (f.)",
+          "lemma": "tazza",
+          "skill_id": "it.a1.nouns.gender.regular",
+          "form_key": "",
+          "explanation_en": "-a usually signals feminine."
+        },
+        {
+          "surface": "letto (m.)",
+          "lemma": "letto",
+          "skill_id": "it.a1.nouns.gender.regular",
+          "form_key": "",
+          "explanation_en": "A familiar masculine noun."
+        },
+        {
+          "surface": "finestra (f.)",
+          "lemma": "finestra",
+          "skill_id": "it.a1.nouns.gender.regular",
+          "form_key": "",
+          "explanation_en": "A familiar feminine noun."
+        }
+      ],
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "lista",
+          "di",
+          "cucina",
+          "piatto",
+          "tazza",
+          "camera",
+          "letto",
+          "finestra"
+        ],
+        "out_of_list_lemmas": [],
+        "grammar_only_tokens": [
+          "m.",
+          "f."
+        ],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "it.a1.nouns.gender.ex01",
+      "target": "«Libro» è maschile.",
+      "translation_en": "“Libro” is masculine.",
+      "focus_surface": "libro",
+      "skill_ids": [
+        "it.a1.nouns.gender.regular"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "register": "neutral",
+      "note_en": "A typical noun ending in -o.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "libro",
+          "essere"
+        ],
+        "out_of_list_lemmas": [
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.ex02",
+      "target": "«Casa» è femminile.",
+      "translation_en": "“Casa” is feminine.",
+      "focus_surface": "casa",
+      "skill_ids": [
+        "it.a1.nouns.gender.regular"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "register": "neutral",
+      "note_en": "A typical noun ending in -a.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "casa",
+          "essere"
+        ],
+        "out_of_list_lemmas": [
+          "femminile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.ex03",
+      "target": "«Ragazzo» è maschile; «ragazza» è femminile.",
+      "translation_en": "“Ragazzo” is masculine; “ragazza” is feminine.",
+      "focus_surface": "ragazzo / ragazza",
+      "skill_ids": [
+        "it.a1.nouns.gender.regular"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "register": "neutral",
+      "note_en": "Two familiar person nouns with matching endings.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ragazzo",
+          "ragazza",
+          "essere"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.ex04",
+      "target": "«Bicchiere» è maschile.",
+      "translation_en": "“Bicchiere” is masculine.",
+      "focus_surface": "bicchiere",
+      "skill_ids": [
+        "it.a1.nouns.gender.e_endings"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "register": "neutral",
+      "note_en": "The ending -e does not determine gender.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "bicchiere",
+          "essere"
+        ],
+        "out_of_list_lemmas": [
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.ex05",
+      "target": "«Chiave» è femminile.",
+      "translation_en": "“Chiave” is feminine.",
+      "focus_surface": "chiave",
+      "skill_ids": [
+        "it.a1.nouns.gender.e_endings"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "register": "neutral",
+      "note_en": "Another noun in -e, with a different gender.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "chiave",
+          "essere"
+        ],
+        "out_of_list_lemmas": [
+          "femminile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.ex06",
+      "target": "«Gatto»: maschile. «Finestra»: femminile.",
+      "translation_en": "“Gatto”: masculine. “Finestra”: feminine.",
+      "focus_surface": "gatto / finestra",
+      "skill_ids": [
+        "it.a1.nouns.gender.regular"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "register": "neutral",
+      "note_en": "Two regular nouns from different settings.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "gatto",
+          "finestra"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.ex07",
+      "target": "«Problema» è maschile, non femminile.",
+      "translation_en": "“Problema” is masculine, not feminine.",
+      "focus_surface": "problema",
+      "skill_ids": [
+        "it.a1.nouns.gender.exceptions"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "register": "neutral",
+      "note_en": "A checked exception to the -a pattern.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "problema",
+          "essere",
+          "non"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.ex08",
+      "target": "«Mano» è femminile, non maschile.",
+      "translation_en": "“Mano” is feminine, not masculine.",
+      "focus_surface": "mano",
+      "skill_ids": [
+        "it.a1.nouns.gender.exceptions"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "register": "neutral",
+      "note_en": "A checked exception to the -o pattern.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "mano",
+          "essere",
+          "non"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.ex09",
+      "target": "«Foto» è femminile.",
+      "translation_en": "“Foto” is feminine.",
+      "focus_surface": "foto",
+      "skill_ids": [
+        "it.a1.nouns.gender.exceptions"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "register": "neutral",
+      "note_en": "A familiar feminine noun ending in -o.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "foto",
+          "essere"
+        ],
+        "out_of_list_lemmas": [
+          "femminile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.ex10",
+      "target": "«Fiore» è maschile; «notte» è femminile.",
+      "translation_en": "“Fiore” is masculine; “notte” is feminine.",
+      "focus_surface": "fiore / notte",
+      "skill_ids": [
+        "it.a1.nouns.gender.e_endings"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "register": "neutral",
+      "note_en": "Learn the gender with each noun ending in -e.",
+      "translation_hidden_by_default": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "fiore",
+          "notte",
+          "essere"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "id": "it.a1.nouns.gender.q01",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the grammatical gender of the Italian noun.",
+      "context_target": "",
+      "prompt_target": "«libro»",
+      "prompt_en": "Select maschile or femminile.",
+      "options": [
+        {
+          "id": "it.a1.nouns.gender.q01.opt1",
+          "text": "maschile",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct: libro is maschile."
+        },
+        {
+          "id": "it.a1.nouns.gender.q01.opt2",
+          "text": "femminile",
+          "correct": false,
+          "error_type": "noun_gender_confusion",
+          "explanation_en": "This noun is not feminine; check its recorded gender."
+        }
+      ],
+      "accepted_answers": [
+        "maschile"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the ending, then consider whether this noun is an exception.",
+        "If the ending does not decide the gender, recall the noun-and-gender pair."
+      ],
+      "feedback_correct_en": "Correct: libro is maschile.",
+      "feedback_wrong_en": "Check the recorded gender of libro, not only its last letter.",
+      "explanation_en": "libro is maschile.",
+      "skill_ids": [
+        "it.a1.nouns.gender.regular"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "libro"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.q02",
+      "type": "multiple_choice",
+      "stage": "notice",
+      "difficulty": 1,
+      "instruction_en": "Choose the grammatical gender of the Italian noun.",
+      "context_target": "",
+      "prompt_target": "«sedia»",
+      "prompt_en": "Select maschile or femminile.",
+      "options": [
+        {
+          "id": "it.a1.nouns.gender.q02.opt2",
+          "text": "maschile",
+          "correct": false,
+          "error_type": "noun_gender_confusion",
+          "explanation_en": "This noun is not masculine; check its recorded gender."
+        },
+        {
+          "id": "it.a1.nouns.gender.q02.opt1",
+          "text": "femminile",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct: sedia is femminile."
+        }
+      ],
+      "accepted_answers": [
+        "femminile"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the ending, then consider whether this noun is an exception.",
+        "If the ending does not decide the gender, recall the noun-and-gender pair."
+      ],
+      "feedback_correct_en": "Correct: sedia is femminile.",
+      "feedback_wrong_en": "Check the recorded gender of sedia, not only its last letter.",
+      "explanation_en": "sedia is femminile.",
+      "skill_ids": [
+        "it.a1.nouns.gender.regular"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "sedia"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.q03",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Choose the grammatical gender of the Italian noun.",
+      "context_target": "",
+      "prompt_target": "«cane»",
+      "prompt_en": "Select maschile or femminile.",
+      "options": [
+        {
+          "id": "it.a1.nouns.gender.q03.opt1",
+          "text": "maschile",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct: cane is maschile."
+        },
+        {
+          "id": "it.a1.nouns.gender.q03.opt2",
+          "text": "femminile",
+          "correct": false,
+          "error_type": "noun_gender_confusion",
+          "explanation_en": "This noun is not feminine; check its recorded gender."
+        }
+      ],
+      "accepted_answers": [
+        "maschile"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the ending, then consider whether this noun is an exception.",
+        "If the ending does not decide the gender, recall the noun-and-gender pair."
+      ],
+      "feedback_correct_en": "Correct: cane is maschile.",
+      "feedback_wrong_en": "Check the recorded gender of cane, not only its last letter.",
+      "explanation_en": "cane is maschile.",
+      "skill_ids": [
+        "it.a1.nouns.gender.e_endings"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "cane"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.q04",
+      "type": "multiple_choice",
+      "stage": "controlled",
+      "difficulty": 1,
+      "instruction_en": "Choose the grammatical gender of the Italian noun.",
+      "context_target": "",
+      "prompt_target": "«donna»",
+      "prompt_en": "Select maschile or femminile.",
+      "options": [
+        {
+          "id": "it.a1.nouns.gender.q04.opt2",
+          "text": "maschile",
+          "correct": false,
+          "error_type": "noun_gender_confusion",
+          "explanation_en": "This noun is not masculine; check its recorded gender."
+        },
+        {
+          "id": "it.a1.nouns.gender.q04.opt1",
+          "text": "femminile",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct: donna is femminile."
+        }
+      ],
+      "accepted_answers": [
+        "femminile"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the ending, then consider whether this noun is an exception.",
+        "If the ending does not decide the gender, recall the noun-and-gender pair."
+      ],
+      "feedback_correct_en": "Correct: donna is femminile.",
+      "feedback_wrong_en": "Check the recorded gender of donna, not only its last letter.",
+      "explanation_en": "donna is femminile.",
+      "skill_ids": [
+        "it.a1.nouns.gender.regular"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "donna"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.q05",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write exactly maschile or femminile. Do not write an article.",
+      "context_target": "",
+      "prompt_target": "«tavolo» → ____",
+      "prompt_en": "Identify the grammatical gender of tavolo.",
+      "options": [],
+      "accepted_answers": [
+        "maschile"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about the noun’s gender, not the object’s meaning.",
+        "Use the usual ending rule unless this is a checked exception."
+      ],
+      "feedback_correct_en": "Correct: tavolo is maschile.",
+      "feedback_wrong_en": "tavolo is maschile; learn the noun and label together.",
+      "explanation_en": "The correct gender of tavolo is maschile.",
+      "skill_ids": [
+        "it.a1.nouns.gender.regular"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "tavolo"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.q06",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write exactly maschile or femminile. Do not write an article.",
+      "context_target": "",
+      "prompt_target": "«borsa» → ____",
+      "prompt_en": "Identify the grammatical gender of borsa.",
+      "options": [],
+      "accepted_answers": [
+        "femminile"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about the noun’s gender, not the object’s meaning.",
+        "Use the usual ending rule unless this is a checked exception."
+      ],
+      "feedback_correct_en": "Correct: borsa is femminile.",
+      "feedback_wrong_en": "borsa is femminile; learn the noun and label together.",
+      "explanation_en": "The correct gender of borsa is femminile.",
+      "skill_ids": [
+        "it.a1.nouns.gender.regular"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "borsa"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.q07",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write exactly maschile or femminile. Do not write an article.",
+      "context_target": "",
+      "prompt_target": "«cuore» → ____",
+      "prompt_en": "Identify the grammatical gender of cuore.",
+      "options": [],
+      "accepted_answers": [
+        "maschile"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about the noun’s gender, not the object’s meaning.",
+        "Use the usual ending rule unless this is a checked exception."
+      ],
+      "feedback_correct_en": "Correct: cuore is maschile.",
+      "feedback_wrong_en": "cuore is maschile; learn the noun and label together.",
+      "explanation_en": "The correct gender of cuore is maschile.",
+      "skill_ids": [
+        "it.a1.nouns.gender.e_endings"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "cuore"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.q08",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write exactly maschile or femminile. Do not write an article.",
+      "context_target": "",
+      "prompt_target": "«notte» → ____",
+      "prompt_en": "Identify the grammatical gender of notte.",
+      "options": [],
+      "accepted_answers": [
+        "femminile"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about the noun’s gender, not the object’s meaning.",
+        "Use the usual ending rule unless this is a checked exception."
+      ],
+      "feedback_correct_en": "Correct: notte is femminile.",
+      "feedback_wrong_en": "notte is femminile; learn the noun and label together.",
+      "explanation_en": "The correct gender of notte is femminile.",
+      "skill_ids": [
+        "it.a1.nouns.gender.e_endings"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "notte"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.q09",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write exactly maschile or femminile. Do not write an article.",
+      "context_target": "",
+      "prompt_target": "«problema» → ____",
+      "prompt_en": "Identify the grammatical gender of problema.",
+      "options": [],
+      "accepted_answers": [
+        "maschile"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about the noun’s gender, not the object’s meaning.",
+        "Use the usual ending rule unless this is a checked exception."
+      ],
+      "feedback_correct_en": "Correct: problema is maschile.",
+      "feedback_wrong_en": "problema is maschile; learn the noun and label together.",
+      "explanation_en": "The correct gender of problema is maschile.",
+      "skill_ids": [
+        "it.a1.nouns.gender.exceptions"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "problema"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.q10",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write exactly maschile or femminile. Do not write an article.",
+      "context_target": "",
+      "prompt_target": "«mano» → ____",
+      "prompt_en": "Identify the grammatical gender of mano.",
+      "options": [],
+      "accepted_answers": [
+        "femminile"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about the noun’s gender, not the object’s meaning.",
+        "Use the usual ending rule unless this is a checked exception."
+      ],
+      "feedback_correct_en": "Correct: mano is femminile.",
+      "feedback_wrong_en": "mano is femminile; learn the noun and label together.",
+      "explanation_en": "The correct gender of mano is femminile.",
+      "skill_ids": [
+        "it.a1.nouns.gender.exceptions"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "mano"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.q11",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write exactly maschile or femminile. Do not write an article.",
+      "context_target": "",
+      "prompt_target": "«foto» → ____",
+      "prompt_en": "Identify the grammatical gender of foto.",
+      "options": [],
+      "accepted_answers": [
+        "femminile"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about the noun’s gender, not the object’s meaning.",
+        "Use the usual ending rule unless this is a checked exception."
+      ],
+      "feedback_correct_en": "Correct: foto is femminile.",
+      "feedback_wrong_en": "foto is femminile; learn the noun and label together.",
+      "explanation_en": "The correct gender of foto is femminile.",
+      "skill_ids": [
+        "it.a1.nouns.gender.exceptions"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "foto"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.q12",
+      "type": "fill_gap",
+      "stage": "controlled",
+      "difficulty": 2,
+      "instruction_en": "Write exactly maschile or femminile. Do not write an article.",
+      "context_target": "",
+      "prompt_target": "«museo» → ____",
+      "prompt_en": "Identify the grammatical gender of museo.",
+      "options": [],
+      "accepted_answers": [
+        "maschile"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Think about the noun’s gender, not the object’s meaning.",
+        "Use the usual ending rule unless this is a checked exception."
+      ],
+      "feedback_correct_en": "Correct: museo is maschile.",
+      "feedback_wrong_en": "museo is maschile; learn the noun and label together.",
+      "explanation_en": "The correct gender of museo is maschile.",
+      "skill_ids": [
+        "it.a1.nouns.gender.regular"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "museo"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.q13",
+      "type": "multiple_choice",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_en": "In a home vocabulary list, choose the gender for the word.",
+      "context_target": "Casa: porta, finestra, camera.",
+      "prompt_target": "«porta»",
+      "prompt_en": "Select maschile or femminile.",
+      "options": [
+        {
+          "id": "it.a1.nouns.gender.q13.opt2",
+          "text": "femminile",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct: porta is femminile."
+        },
+        {
+          "id": "it.a1.nouns.gender.q13.opt1",
+          "text": "maschile",
+          "correct": false,
+          "error_type": "noun_gender_confusion",
+          "explanation_en": "This noun is not masculine; check its recorded gender."
+        }
+      ],
+      "accepted_answers": [
+        "femminile"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the ending, then consider whether this noun is an exception.",
+        "If the ending does not decide the gender, recall the noun-and-gender pair."
+      ],
+      "feedback_correct_en": "Correct: porta is femminile.",
+      "feedback_wrong_en": "Check the recorded gender of porta, not only its last letter.",
+      "explanation_en": "porta is femminile.",
+      "skill_ids": [
+        "it.a1.nouns.gender.regular"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "porta",
+          "casa",
+          "finestra",
+          "camera"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.q14",
+      "type": "multiple_choice",
+      "stage": "contextual",
+      "difficulty": 2,
+      "instruction_en": "In a food vocabulary list, choose the noun’s grammatical gender.",
+      "context_target": "Cucina: pane, piatto, tazza.",
+      "prompt_target": "«pane»",
+      "prompt_en": "Select maschile or femminile.",
+      "options": [
+        {
+          "id": "it.a1.nouns.gender.q14.opt1",
+          "text": "femminile",
+          "correct": false,
+          "error_type": "noun_gender_confusion",
+          "explanation_en": "This noun is not feminine; check its recorded gender."
+        },
+        {
+          "id": "it.a1.nouns.gender.q14.opt2",
+          "text": "maschile",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct: pane is maschile."
+        }
+      ],
+      "accepted_answers": [
+        "maschile"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the ending, then consider whether this noun is an exception.",
+        "If the ending does not decide the gender, recall the noun-and-gender pair."
+      ],
+      "feedback_correct_en": "Correct: pane is maschile.",
+      "feedback_wrong_en": "Check the recorded gender of pane, not only its last letter.",
+      "explanation_en": "pane is maschile.",
+      "skill_ids": [
+        "it.a1.nouns.gender.e_endings"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "pane",
+          "cucina",
+          "piatto",
+          "tazza"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.q15",
+      "type": "transform",
+      "stage": "controlled",
+      "difficulty": 3,
+      "instruction_en": "Replace the incorrect label with the correct one. Write only the new label.",
+      "context_target": "",
+      "prompt_target": "«zaino» → femminile",
+      "prompt_en": "Supply the correct gender label.",
+      "options": [],
+      "accepted_answers": [
+        "maschile"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The given label is wrong; recall this noun’s dictionary gender.",
+        "Write one of the two gender labels from the lesson."
+      ],
+      "feedback_correct_en": "Correct: the noun zaino is masculine (maschile).",
+      "feedback_wrong_en": "The noun zaino is masculine (maschile).",
+      "explanation_en": "The noun zaino has masculine grammatical gender (maschile).",
+      "skill_ids": [
+        "it.a1.nouns.gender.regular",
+        "it.a1.nouns.gender.production"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "zaino"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.q16",
+      "type": "error_correction",
+      "stage": "controlled",
+      "difficulty": 3,
+      "instruction_en": "Correct the erroneous gender label by writing only the correct label.",
+      "context_target": "",
+      "prompt_target": "«scuola» → maschile",
+      "prompt_en": "Supply the correct gender label.",
+      "options": [],
+      "accepted_answers": [
+        "femminile"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "The given label is wrong; recall this noun’s dictionary gender.",
+        "Write one of the two gender labels from the lesson."
+      ],
+      "feedback_correct_en": "Correct: the noun scuola is feminine (femminile).",
+      "feedback_wrong_en": "The noun scuola is feminine (femminile).",
+      "explanation_en": "The noun scuola has feminine grammatical gender (femminile).",
+      "skill_ids": [
+        "it.a1.nouns.gender.regular",
+        "it.a1.nouns.gender.production"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "exact",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "scuola"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.q17",
+      "type": "guided_production",
+      "stage": "production",
+      "difficulty": 4,
+      "instruction_en": "Write the gender of each noun in a brief vocabulary note.",
+      "context_target": "",
+      "prompt_target": "«mela»; «bicchiere»",
+      "prompt_en": "Write your own answer, then compare with the criteria.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Choose a noun and recall whether its gender is regular or exceptional.",
+        "Write one gender label next to each requested noun."
+      ],
+      "feedback_correct_en": "Your labels are consistent with the reference noun genders.",
+      "feedback_wrong_en": "Check each noun and use maschile or femminile accurately.",
+      "explanation_en": "mela is femminile; bicchiere is maschile.",
+      "skill_ids": [
+        "it.a1.nouns.gender.production"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "mela is femminile; bicchiere is maschile.",
+          "Use the exact labels maschile and femminile.",
+          "Do not add articles or plural forms."
+        ]
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "mela",
+          "bicchiere"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.q18",
+      "type": "multiple_choice",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Unseen transfer: identify the gender of this noun without using an article.",
+      "context_target": "",
+      "prompt_target": "«ombrello»",
+      "prompt_en": "Select maschile or femminile.",
+      "options": [
+        {
+          "id": "it.a1.nouns.gender.q18.opt2",
+          "text": "maschile",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct: ombrello is maschile."
+        },
+        {
+          "id": "it.a1.nouns.gender.q18.opt1",
+          "text": "femminile",
+          "correct": false,
+          "error_type": "noun_gender_confusion",
+          "explanation_en": "This noun is not feminine; check its recorded gender."
+        }
+      ],
+      "accepted_answers": [
+        "maschile"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the ending, then consider whether this noun is an exception.",
+        "If the ending does not decide the gender, recall the noun-and-gender pair."
+      ],
+      "feedback_correct_en": "Correct: ombrello is maschile.",
+      "feedback_wrong_en": "Check the recorded gender of ombrello, not only its last letter.",
+      "explanation_en": "ombrello is maschile.",
+      "skill_ids": [
+        "it.a1.nouns.gender.regular"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "ombrello"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.q19",
+      "type": "multiple_choice",
+      "stage": "transfer",
+      "difficulty": 3,
+      "instruction_en": "Unseen transfer: identify the gender of this noun without using an article.",
+      "context_target": "",
+      "prompt_target": "«fontana»",
+      "prompt_en": "Select maschile or femminile.",
+      "options": [
+        {
+          "id": "it.a1.nouns.gender.q19.opt1",
+          "text": "maschile",
+          "correct": false,
+          "error_type": "noun_gender_confusion",
+          "explanation_en": "This noun is not masculine; check its recorded gender."
+        },
+        {
+          "id": "it.a1.nouns.gender.q19.opt2",
+          "text": "femminile",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct: fontana is femminile."
+        }
+      ],
+      "accepted_answers": [
+        "femminile"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the ending, then consider whether this noun is an exception.",
+        "If the ending does not decide the gender, recall the noun-and-gender pair."
+      ],
+      "feedback_correct_en": "Correct: fontana is femminile.",
+      "feedback_wrong_en": "Check the recorded gender of fontana, not only its last letter.",
+      "explanation_en": "fontana is femminile.",
+      "skill_ids": [
+        "it.a1.nouns.gender.regular"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "fontana"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.q20",
+      "type": "guided_production",
+      "stage": "transfer",
+      "difficulty": 4,
+      "instruction_en": "Unseen transfer: make two noun–gender pairs in Italian.",
+      "context_target": "",
+      "prompt_target": "«parco»; «spiaggia»",
+      "prompt_en": "Write your own answer, then compare with the criteria.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Choose a noun and recall whether its gender is regular or exceptional.",
+        "Write one gender label next to each requested noun."
+      ],
+      "feedback_correct_en": "Your labels are consistent with the reference noun genders.",
+      "feedback_wrong_en": "Check each noun and use maschile or femminile accurately.",
+      "explanation_en": "parco is maschile; spiaggia is femminile.",
+      "skill_ids": [
+        "it.a1.nouns.gender.production"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "parco is maschile; spiaggia is femminile.",
+          "Use the exact labels maschile and femminile.",
+          "Do not add articles or plural forms."
+        ]
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "parco",
+          "spiaggia"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.q21",
+      "type": "guided_production",
+      "stage": "transfer",
+      "difficulty": 4,
+      "instruction_en": "Unseen transfer: write the gender of both nouns in -e and say in English why the ending alone is not enough.",
+      "context_target": "",
+      "prompt_target": "«stazione»; «dente»",
+      "prompt_en": "Write your own answer, then compare with the criteria.",
+      "options": [],
+      "accepted_answers": [],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Choose a noun and recall whether its gender is regular or exceptional.",
+        "Write one gender label next to each requested noun."
+      ],
+      "feedback_correct_en": "Your labels are consistent with the reference noun genders.",
+      "feedback_wrong_en": "Check each noun and use maschile or femminile accurately.",
+      "explanation_en": "stazione is femminile; dente is maschile; -e does not uniquely identify noun gender.",
+      "skill_ids": [
+        "it.a1.nouns.gender.e_endings"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "self_check",
+      "scored": false,
+      "rubric": {
+        "criteria_en": [
+          "stazione is femminile; dente is maschile; -e does not uniquely identify noun gender.",
+          "Use the exact labels maschile and femminile.",
+          "Do not add articles or plural forms."
+        ]
+      },
+      "vocabulary": {
+        "vocab_lemmas": [
+          "stazione",
+          "dente"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.q22",
+      "type": "multiple_choice",
+      "stage": "review",
+      "difficulty": 3,
+      "instruction_en": "Delayed mixed review: select the noun’s gender.",
+      "context_target": "",
+      "prompt_target": "«nome»",
+      "prompt_en": "Select maschile or femminile.",
+      "options": [
+        {
+          "id": "it.a1.nouns.gender.q22.opt2",
+          "text": "maschile",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct: nome is maschile."
+        },
+        {
+          "id": "it.a1.nouns.gender.q22.opt1",
+          "text": "femminile",
+          "correct": false,
+          "error_type": "noun_gender_confusion",
+          "explanation_en": "This noun is not feminine; check its recorded gender."
+        }
+      ],
+      "accepted_answers": [
+        "maschile"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the ending, then consider whether this noun is an exception.",
+        "If the ending does not decide the gender, recall the noun-and-gender pair."
+      ],
+      "feedback_correct_en": "Correct: nome is maschile.",
+      "feedback_wrong_en": "Check the recorded gender of nome, not only its last letter.",
+      "explanation_en": "nome is maschile.",
+      "skill_ids": [
+        "it.a1.nouns.gender.e_endings"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "nome"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    },
+    {
+      "id": "it.a1.nouns.gender.q23",
+      "type": "multiple_choice",
+      "stage": "review",
+      "difficulty": 3,
+      "instruction_en": "Delayed mixed review: select the noun’s gender.",
+      "context_target": "",
+      "prompt_target": "«radio»",
+      "prompt_en": "Select maschile or femminile.",
+      "options": [
+        {
+          "id": "it.a1.nouns.gender.q23.opt1",
+          "text": "maschile",
+          "correct": false,
+          "error_type": "noun_gender_confusion",
+          "explanation_en": "This noun is not masculine; check its recorded gender."
+        },
+        {
+          "id": "it.a1.nouns.gender.q23.opt2",
+          "text": "femminile",
+          "correct": true,
+          "error_type": "",
+          "explanation_en": "Correct: radio is femminile."
+        }
+      ],
+      "accepted_answers": [
+        "femminile"
+      ],
+      "normalization": {
+        "trim": true,
+        "case_sensitive": false,
+        "accent_sensitive": true,
+        "ignore_terminal_punctuation": true
+      },
+      "hint_steps": [
+        "Look at the ending, then consider whether this noun is an exception.",
+        "If the ending does not decide the gender, recall the noun-and-gender pair."
+      ],
+      "feedback_correct_en": "Correct: radio is femminile.",
+      "feedback_wrong_en": "Check the recorded gender of radio, not only its last letter.",
+      "explanation_en": "radio is femminile.",
+      "skill_ids": [
+        "it.a1.nouns.gender.exceptions"
+      ],
+      "verb_ids": [],
+      "form_keys": [],
+      "scoring_mode": "choice",
+      "scored": true,
+      "vocabulary": {
+        "vocab_lemmas": [
+          "radio"
+        ],
+        "out_of_list_lemmas": [
+          "femminile",
+          "maschile"
+        ],
+        "grammar_only_tokens": [],
+        "cefr_ceiling": "A1"
+      }
+    }
+  ],
+  "verb_application": {
+    "applicable": false,
+    "required_form_keys": [],
+    "verbs": []
+  },
+  "mastery": {
+    "minimum_scored_items": 12,
+    "required_score": 0.8,
+    "minimum_unaided_production_items": 2,
+    "required_stages": [
+      "notice",
+      "controlled",
+      "contextual",
+      "production",
+      "transfer"
+    ],
+    "review_intervals_days": [
+      1,
+      3,
+      7,
+      14,
+      30,
+      60
+    ],
+    "production_evaluation": "self_check"
+  },
+  "vocabulary_audit": {
+    "manifest_id": "it-reviewed-9d35be468e23",
+    "used_lemmas": [
+      "bicchiere",
+      "borsa",
+      "camera",
+      "cane",
+      "casa",
+      "chiave",
+      "cucina",
+      "cuore",
+      "dente",
+      "di",
+      "donna",
+      "e",
+      "essere",
+      "finestra",
+      "fiore",
+      "fontana",
+      "foto",
+      "gatto",
+      "letto",
+      "libro",
+      "lista",
+      "mano",
+      "mela",
+      "museo",
+      "nome",
+      "non",
+      "notte",
+      "o",
+      "ombrello",
+      "pane",
+      "parco",
+      "piatto",
+      "porta",
+      "problema",
+      "radio",
+      "ragazza",
+      "ragazzo",
+      "scuola",
+      "sedia",
+      "spiaggia",
+      "stazione",
+      "tavolo",
+      "tazza",
+      "zaino"
+    ],
+    "target_lemmas": [
+      "libro",
+      "casa",
+      "bicchiere",
+      "chiave",
+      "problema",
+      "mano",
+      "foto"
+    ],
+    "outside_allowlist_lemmas": [
+      "femminile",
+      "maschile"
+    ],
+    "introduced_lemmas": [
+      "femminile",
+      "maschile"
+    ],
+    "proper_names": [
+      "Anna",
+      "Marco"
+    ],
+    "grammar_only_tokens": [
+      "m.",
+      "f."
+    ],
+    "above_level_lemmas": [],
+    "tests_with_unknown_vocabulary": [],
+    "status": "pass"
+  },
+  "level_audit": {
+    "target_cefr": "A1",
+    "max_sentence_length_words": 13,
+    "unapproved_grammar_features": [],
+    "scope_violations": [],
+    "status": "pass"
+  },
+  "quality_audit": {
+    "status": "pass",
+    "checks": {
+      "unique_ids": true,
+      "prerequisites_resolve": true,
+      "answers_verified": true,
+      "forms_verified": true,
+      "single_best_answers": true,
+      "naturalness_checked": true,
+      "cefr_checked": true,
+      "translations_checked": true,
+      "requested_counts_met": true
+    },
+    "issues": [],
+    "needs_human_review": [],
+    "sources": [
+      {
+        "name": "Treccani, Genere dei nomi (La grammatica italiana)",
+        "url": "https://www.treccani.it/enciclopedia/genere-dei-nomi_%28La-grammatica-italiana%29/"
+      },
+      {
+        "name": "Accademia della Crusca, Un asterisco sul genere",
+        "url": "https://accademiadellacrusca.it/it/consulenza/un-asterisco-sul-genere/4018"
+      },
+      {
+        "name": "Treccani, genere: incertezze nell’uso",
+        "url": "https://www.treccani.it/enciclopedia/incertezze-nell-uso-del-prontuario-genere_%28Enciclopedia-dell%27Italiano%29/"
+      }
+    ],
+    "counts": {
+      "contexts": 2,
+      "examples": 10,
+      "exercise_bank": 23,
+      "scored_exercises": 20,
+      "transfer_exercises": 4,
+      "noun_gender_form_tests": 8
+    }
+  }
+}

@@ -372,6 +372,79 @@
     .schedule-row.head > small { display:none; }
   }
 
+  /* ------------------------------------------------------------ grammar */
+  .grammar-hero { position:relative; overflow:hidden; padding:22px; margin-bottom:14px;
+    border-radius:26px; color:#fff;
+    background:linear-gradient(140deg,#5363df 0%,#7356dc 58%,#9a59ce 100%);
+    box-shadow:var(--shadow-lg); }
+  .grammar-hero::after { content:""; position:absolute; width:170px; height:170px;
+    right:-64px; bottom:-104px; border-radius:50%; background:rgba(255,255,255,.11); }
+  .grammar-hero h1 { position:relative; z-index:1; margin:8px 0 3px; font-size:30px; }
+  .grammar-hero .subtitle { position:relative; z-index:1; opacity:.86; font-size:15px; }
+  .grammar-meta { position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:7px;
+    align-items:center; margin-top:16px; }
+  .grammar-meta .badge { color:#fff; background:rgba(255,255,255,.17); }
+  .grammar-objectives ul, .grammar-notes { margin:12px 0 0; padding-left:21px; }
+  .grammar-objectives li, .grammar-notes li { margin:7px 0; color:var(--muted);
+    font-size:14.5px; line-height:1.5; }
+  .grammar-rule { border-left:4px solid var(--primary); }
+  .grammar-rule .pattern { margin:12px 0; padding:11px 13px; border-radius:12px;
+    color:var(--primary-text); background:var(--primary-soft); font-family:var(--mono);
+    font-size:14px; font-weight:650; line-height:1.5; overflow-wrap:anywhere; }
+  .grammar-rule .error { margin-top:10px; color:var(--muted); font-size:13.5px; line-height:1.45; }
+  .grammar-table-wrap { overflow-x:auto; margin:14px -18px -18px; }
+  .grammar-table { width:100%; border-collapse:collapse; min-width:430px; font-size:14px; }
+  .grammar-table th, .grammar-table td { padding:11px 14px; border-top:1px solid var(--border);
+    text-align:left; vertical-align:top; line-height:1.4; }
+  .grammar-table th { color:var(--muted); background:var(--surface2); font-size:12px;
+    text-transform:uppercase; letter-spacing:.04em; }
+  .grammar-table td:first-child { color:var(--primary-text); font-family:var(--mono); font-weight:750; }
+  .grammar-context .setting { margin-bottom:12px; }
+  .grammar-dialogue { display:flex; flex-direction:column; gap:9px; }
+  .grammar-line { display:grid; grid-template-columns:minmax(48px,auto) 1fr auto; gap:10px;
+    align-items:start; padding:11px 12px; border-radius:13px; background:var(--surface2); }
+  .grammar-line b { color:var(--primary-text); font-size:13px; padding-top:2px; }
+  .grammar-line .target { min-width:0; line-height:1.48; }
+  .grammar-translation { margin-top:10px; padding:11px 13px; border-radius:12px;
+    color:var(--muted); background:var(--surface2); font-size:14px; line-height:1.5; }
+  .grammar-example .target { font-size:16px; font-weight:650; line-height:1.45; }
+  .grammar-example .note { color:var(--faint); font-size:13px; margin-top:3px; line-height:1.4; }
+  .grammar-example .row { margin-top:10px; align-items:center; }
+  .grammar-cta { background:linear-gradient(145deg,var(--primary-soft),transparent 78%); }
+  .grammar-cta .row { margin-top:14px; }
+  .grammar-stage { display:inline-flex; align-items:center; gap:6px; margin:2px 0 10px;
+    padding:4px 9px; border-radius:99px; color:var(--primary-text); background:var(--primary-soft);
+    font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; }
+  .grammar-question .context { margin:4px 0 10px; color:var(--muted); font-size:15px;
+    line-height:1.5; }
+  .grammar-question .prompt { margin:8px 0 6px; font-family:var(--display);
+    font-size:clamp(29px,8vw,38px); font-weight:800; line-height:1.2; overflow-wrap:anywhere; }
+  .grammar-question .instruction { color:var(--muted); line-height:1.5; }
+  .grammar-options { display:grid; gap:9px; margin-top:16px; }
+  .grammar-options button { width:100%; justify-content:flex-start; text-align:left; }
+  .grammar-options button.correct-choice { color:var(--good); border-color:var(--good);
+    background:var(--good-soft); }
+  .grammar-options button.wrong-choice { color:var(--bad); border-color:var(--bad);
+    background:var(--bad-soft); }
+  .grammar-feedback { margin-top:14px; padding:12px 14px; border-radius:13px;
+    font-size:14px; line-height:1.5; }
+  .grammar-feedback.good { color:var(--good); background:var(--good-soft); }
+  .grammar-feedback.bad { color:var(--bad); background:var(--bad-soft); }
+  .grammar-feedback.hint { color:var(--primary-text); background:var(--primary-soft); }
+  .grammar-answer { margin-top:14px; }
+  .grammar-answer textarea { min-height:112px; }
+  .grammar-rubric { margin-top:14px; padding:14px; border-radius:14px; background:var(--surface2); }
+  .grammar-rubric b { display:block; margin-bottom:6px; }
+  .grammar-result-score { font-family:var(--display); font-size:46px; font-weight:850;
+    letter-spacing:-.04em; color:var(--primary-text); }
+  @media (max-width:420px) {
+    #foot.tabs { gap:0; }
+    .tab { font-size:10.5px; }
+    .tab svg { width:22px; height:22px; }
+    .grammar-line { grid-template-columns:minmax(42px,auto) 1fr; }
+    .grammar-line > .say { grid-column:2; }
+  }
+
   /* ------------------------------------------------------------ welcome */
   .welcome { text-align:center; padding-top:18px; }
   .welcome .mark { width:76px; height:76px; border-radius:24px; font-size:42px; margin:8px auto 18px;
@@ -1049,7 +1122,9 @@ const ICONS = {
         'M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7"/>',
   turn: '<path d="M4 12a8 8 0 0 1 13.7-5.6L20 8.5"/><path d="M20 4v4.5h-4.5"/>' +
         '<path d="M20 12a8 8 0 0 1-13.7 5.6L4 15.5"/><path d="M4 20v-4.5h4.5"/>',
-  read: '<path d="M6 3.5h8.5L19 8v12.5H6z"/><path d="M14 3.5V8h5"/><path d="M9 12h7M9 15.5h7M9 8.5h3"/>'
+  read: '<path d="M6 3.5h8.5L19 8v12.5H6z"/><path d="M14 3.5V8h5"/><path d="M9 12h7M9 15.5h7M9 8.5h3"/>',
+  grammar: '<path d="M4 5.5h6a3 3 0 0 1 2 1 3 3 0 0 1 2-1h6v13h-6a3 3 0 0 0-2 1 3 3 0 0 0-2-1H4z"/>' +
+            '<path d="M12 6.5v13M7 9h2.5M14.5 9H17M7 12h2.5M14.5 12H17"/>'
 };
 function icon(name) {
   return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" ' +
@@ -1153,7 +1228,8 @@ function chrome(session) { document.body.classList.toggle("session", !!session);
 
 /* The tabs along the bottom of the main screens. */
 function tabBar(active) {
-  return [["home", "Home", home], ["read", "Read", () => readScreen()], ["words", "Words", wordsScreen],
+  return [["home", "Home", home], ["read", "Read", () => readScreen()],
+          ["grammar", "Grammar", grammarScreen], ["words", "Words", wordsScreen],
           ["progress", "Progress", progressScreen], ["sync", "Sync", cloudScreen]]
     .map(([id, label, go]) => {
       const tab = el("button", "tab" + (id === active ? " on" : ""),
@@ -1167,6 +1243,7 @@ function tabBar(active) {
    tap even when the answer is already on screen, which is the whole rhythm of
    a session on a phone with a keyboard attached. */
 let primaryButton = null;
+let screenVersion = 0;
 
 document.addEventListener("keydown", event => {
   if (event.key !== "Enter" || event.isComposing) return;
@@ -1182,6 +1259,7 @@ document.addEventListener("keydown", event => {
 });
 
 function show(nodes, buttons) {
+  screenVersion++;
   main.innerHTML = ""; foot.innerHTML = "";
   nodes.filter(Boolean).forEach(n => main.appendChild(n));
   (buttons || []).filter(Boolean).forEach(b => foot.appendChild(b));
@@ -1370,6 +1448,13 @@ function home() {
                        (textOpen(nextText, nextWords) ? "" : ", once you meet its words")
                      : book ? "Every text read" : "Short texts from A1 to B2, with questions",
     end: icon("chevron"), onTap: () => readScreen() }));
+  const grammarLang = speechLang();
+  const grammarProgress = grammarLang === "it" ? grammarProgressOf("it.a1.nouns.gender") : null;
+  more.appendChild(listItem({ lead: icobox("grammar", "var(--primary)"), title: "Grammar",
+    detail: grammarLang === "it"
+      ? (grammarProgress ? grammarProgressDetail(grammarProgress) : "Italian A1 · Noun gender is ready")
+      : grammarLang === "tr" ? "Turkish lessons are being prepared" : "Small lessons from easy to hard",
+    end: icon("chevron"), onTap: grammarScreen }));
   // playing with any words, which never moves a card
   const free = el("div", "list free");
   free.appendChild(listItem({ lead: icobox("play", "var(--k-gaps)"), title: "Free practice",
@@ -3928,6 +4013,491 @@ function settingsScreen() {
   show(nodes, [button("Back", "back", home)]);
 }
 
+/* ------------------------------------------------------------- grammar
+   Lessons are immutable JSON files. Progress belongs to the open collection,
+   alongside its word and reading progress, so Italian and Turkish can never
+   overwrite one another. */
+const grammarData = { index: null, topics: new Map() };
+let grammarRun = null;
+
+async function loadGrammarIndex() {
+  if (grammarData.index) return grammarData.index;
+  const response = await fetch("grammar/index.json");
+  if (!response.ok) throw new Error("The grammar index could not be loaded.");
+  grammarData.index = await response.json();
+  return grammarData.index;
+}
+async function loadGrammarTopic(entry) {
+  if (grammarData.topics.has(entry.id)) return grammarData.topics.get(entry.id);
+  const response = await fetch(`grammar/${entry.file}`);
+  if (!response.ok) throw new Error("This grammar lesson could not be loaded.");
+  const topic = await response.json();
+  if (!topic.topic || topic.topic.id !== entry.id || topic.status !== "ready")
+    throw new Error("This grammar lesson is not ready yet.");
+  grammarData.topics.set(entry.id, topic);
+  return topic;
+}
+function grammarProgressOf(topicId) {
+  return state && state.grammar && state.grammar.topics
+    ? state.grammar.topics[topicId] || null : null;
+}
+function grammarProgressDetail(progress) {
+  const best = progress.best_score === undefined ? "" : ` · best ${progress.best_score}%`;
+  if (progress.completed_at) {
+    if (progress.next_due && progress.next_due <= todayStr()) return `Review due${best}`;
+    return `Learned${progress.next_due ? ` · review ${dueText(progress.next_due)}` : ""}${best}`;
+  }
+  return `In progress${best}`;
+}
+function grammarProgressRecord(topicId) {
+  if (!state.grammar) state.grammar = { version: 1, topics: {} };
+  if (!state.grammar.topics) state.grammar.topics = {};
+  if (!state.grammar.topics[topicId]) state.grammar.topics[topicId] = {};
+  return state.grammar.topics[topicId];
+}
+function mergeGrammarProgress(local, incoming) {
+  const object = value => value && typeof value === "object" && !Array.isArray(value);
+  if (!object(local) && !object(incoming)) return null;
+  const topics = {};
+  const take = (source, newerOnly) => {
+    if (!object(source) || !object(source.topics)) return;
+    for (const [id, record] of Object.entries(source.topics)) {
+      if (!id || ["__proto__", "constructor", "prototype"].includes(id) || !object(record)) continue;
+      const mine = topics[id];
+      if (!newerOnly || !mine || (record.last_studied || "") > (mine.last_studied || ""))
+        topics[id] = { ...record };
+    }
+  };
+  take(local, false);
+  take(incoming, true);
+  return { version: Math.max(Number(local?.version) || 1, Number(incoming?.version) || 1), topics };
+}
+function grammarStatus(progress) {
+  if (!progress) return ["New", "var(--s1)"];
+  if (progress.completed_at && progress.next_due && progress.next_due <= todayStr())
+    return ["Review due", "var(--warn)"];
+  if (progress.completed_at) return ["Learned", "var(--s4)"];
+  return ["In progress", "var(--s2)"];
+}
+function grammarTranslationPanel(lines, label = "Show English") {
+  const wrap = el("div", "grammar-translation-wrap");
+  const translated = el("div", "grammar-translation hidden");
+  for (const line of lines.filter(Boolean)) translated.appendChild(el("div", "", esc(line)));
+  const reveal = button(label, "soft small", () => {
+    const hidden = translated.classList.toggle("hidden");
+    reveal.textContent = hidden ? label : "Hide English";
+  });
+  reveal.setAttribute("aria-expanded", "false");
+  reveal.addEventListener("click", () =>
+    reveal.setAttribute("aria-expanded", String(!translated.classList.contains("hidden"))));
+  const row = el("div", "row"); row.style.marginTop = "10px"; row.appendChild(reveal);
+  wrap.append(row, translated);
+  return wrap;
+}
+
+async function grammarScreen() {
+  grammarRun = null; quitTo = null; chrome(false); setProgress("", 0);
+  const lang = speechLang();
+  const loading = el("div", "card muted", "Loading grammar lessons…");
+  show([pageHead("Grammar", "Small topics, studied in order and reviewed over time."), loading],
+       tabBar("grammar"));
+  const view = screenVersion;
+  let index;
+  try { index = await loadGrammarIndex(); }
+  catch (error) {
+    if (view !== screenVersion) return;
+    const card = el("div", "card");
+    card.append(el("h2", "", "Grammar is unavailable"),
+      el("div", "muted", esc(error.message || "Try again when you have a connection.")));
+    const row = el("div", "row"); row.style.marginTop = "14px";
+    row.appendChild(button("Try again", "soft", grammarScreen)); card.appendChild(row);
+    return show([pageHead("Grammar"), card], tabBar("grammar"));
+  }
+  if (view !== screenVersion) return;
+  const topics = (index.topics || []).filter(topic => topic.language === lang && topic.status === "ready")
+    .sort((a, b) => a.sequence - b.sequence);
+  const language = languageName(lang) || state.language_name || "This language";
+  const nodes = [pageHead("Grammar", `${language} topics from easy to hard.`)];
+  if (!topics.length) {
+    const card = el("div", "card");
+    card.appendChild(el("h2", "", `No ${esc(language)} lesson published yet`));
+    card.appendChild(el("div", "muted",
+      lang === "tr" ? "The Turkish course map is ready. Its first reviewed lesson will appear here next."
+                    : "A reviewed lesson has not been added for this language yet."));
+    nodes.push(card);
+    return show(nodes, tabBar("grammar"));
+  }
+
+  const completed = topics.filter(topic => grammarProgressOf(topic.id)?.completed_at).length;
+  const hero = el("div", "grammar-hero");
+  hero.innerHTML = `<span class="badge">${esc(language)}</span><h1>${completed} of ${topics.length}</h1>` +
+    `<div class="subtitle">lesson${topics.length === 1 ? "" : "s"} learned</div>` +
+    `<div class="grammar-meta"><span class="badge">A1 course</span>` +
+    `<span class="badge">Progress stays with this collection</span></div>`;
+  nodes.push(hero, sectionHead("A1 · Foundations"));
+  const list = el("div", "list");
+  for (const entry of topics) {
+    const progress = grammarProgressOf(entry.id);
+    const [status, colour] = grammarStatus(progress);
+    list.appendChild(listItem({
+      lead: icobox("grammar", colour),
+      title: `${esc(entry.title_target)} <span class="muted">· ${esc(entry.title_en)}</span>`,
+      detail: `${entry.estimated_minutes} min · ${entry.exercise_count} exercises` +
+        (progress ? ` · ${esc(grammarProgressDetail(progress))}` : ""),
+      end: `<span class="badge" style="--c:${colour}">${esc(status)}</span>${icon("chevron")}`,
+      onTap: () => grammarTopicScreen(entry)
+    }));
+  }
+  nodes.push(list, el("div", "guide-note", `${icon("info")}<span>Grammar progress is saved on this ` +
+    "device with the open language collection. It is not sent to the database during this first test.</span>"));
+  show(nodes, tabBar("grammar"));
+}
+
+async function grammarTopicScreen(entry, suppliedTopic) {
+  grammarRun = null; quitTo = null; chrome(false); setProgress("", 0);
+  let topic = suppliedTopic;
+  if (!topic) {
+    show([pageHead(entry.title_target, "Loading lesson…")], [button("Back", "back", grammarScreen)]);
+    const view = screenVersion;
+    try { topic = await loadGrammarTopic(entry); }
+    catch (error) {
+      if (view !== screenVersion) return;
+      return show([pageHead(entry.title_target),
+        el("div", "card muted", esc(error.message || "The lesson could not be opened."))],
+        [button("Back", "back", grammarScreen), button("Try again", "primary grow", () => grammarTopicScreen(entry))]);
+    }
+    if (view !== screenVersion) return;
+  }
+  const progress = grammarProgressOf(entry.id);
+  const hero = el("div", "grammar-hero");
+  hero.innerHTML = `<span class="badge">${esc(topic.topic.cefr)} · Topic ${topic.topic.sequence}</span>` +
+    `<h1>${esc(topic.topic.title_target)}</h1><div class="subtitle">${esc(topic.topic.title_en)}</div>` +
+    `<div class="grammar-meta"><span class="badge">${topic.topic.estimated_minutes} minutes</span>` +
+    `<span class="badge">${topic.exercises.length} exercises</span>` +
+    (progress ? `<span class="badge">${esc(grammarProgressDetail(progress))}</span>` : "") + "</div>";
+  const nodes = [hero];
+
+  const objectives = el("div", "card grammar-objectives");
+  objectives.appendChild(el("h2", "", "What you will learn"));
+  const objectiveList = el("ul");
+  for (const objective of topic.topic.learning_objectives || [])
+    objectiveList.appendChild(el("li", "", esc(objective)));
+  objectives.appendChild(objectiveList);
+  nodes.push(objectives, sectionHead("The idea"));
+
+  const overview = el("div", "card");
+  overview.appendChild(el("div", "muted", esc(topic.lesson.short_explanation_en)));
+  nodes.push(overview);
+  for (const rule of topic.lesson.rule_blocks || []) {
+    const card = el("div", "card grammar-rule");
+    card.append(el("h2", "", esc(rule.heading_en)),
+      el("div", "muted", esc(rule.explanation_en)),
+      el("div", "pattern", esc(rule.pattern)));
+    if ((rule.usage_notes_en || []).length) {
+      const notes = el("ul", "grammar-notes");
+      for (const note of rule.usage_notes_en) notes.appendChild(el("li", "", esc(note)));
+      card.appendChild(notes);
+    }
+    if ((rule.common_errors_en || []).length)
+      card.appendChild(el("div", "error", `<b>Watch out:</b> ${esc(rule.common_errors_en.join(" "))}`));
+    nodes.push(card);
+  }
+
+  for (const table of topic.lesson.form_tables || []) {
+    nodes.push(sectionHead(table.title_en));
+    const card = el("div", "card");
+    const wrap = el("div", "grammar-table-wrap");
+    const grid = el("table", "grammar-table");
+    const head = el("thead"), headRow = el("tr");
+    for (const column of table.columns || []) headRow.appendChild(el("th", "", esc(column)));
+    head.appendChild(headRow); grid.appendChild(head);
+    const body = el("tbody");
+    for (const row of table.rows || []) {
+      const tr = el("tr");
+      for (const cell of row) tr.appendChild(el("td", "", esc(cell)));
+      body.appendChild(tr);
+    }
+    grid.appendChild(body); wrap.appendChild(grid); card.appendChild(wrap); nodes.push(card);
+  }
+
+  nodes.push(sectionHead("Practice"));
+  const cta = el("div", "card grammar-cta");
+  cta.append(el("h2", "", progress?.completed_at ? "Review this lesson" : "Check what you learned"),
+    el("div", "muted", `${topic.exercises.filter(exercise => exercise.scored).length} automatically scored questions and ` +
+      `${topic.exercises.filter(exercise => !exercise.scored).length} short self-checks. ` +
+      "Wrong answers get another try and progressive hints."));
+  const ctaRow = el("div", "row");
+  ctaRow.appendChild(button(icon("play") + (progress ? "Practise again" : "Start practice"),
+    "primary grow", () => grammarStart(entry, topic)));
+  cta.appendChild(ctaRow); nodes.push(cta);
+
+  nodes.push(sectionHead("In context"));
+  for (const context of topic.contexts || []) {
+    const card = el("div", "card grammar-context");
+    card.append(el("h2", "", context.type === "dialogue" ? "Classroom dialogue" : "Vocabulary note"),
+      el("div", "muted setting", esc(context.setting_en)));
+    const dialogue = el("div", "grammar-dialogue");
+    for (const line of context.lines || []) {
+      const row = el("div", "grammar-line");
+      row.append(el("b", "", esc(line.speaker || "")), el("div", "target", esc(line.target)));
+      const audio = sayButton(line.target); if (audio) row.appendChild(audio);
+      dialogue.appendChild(row);
+    }
+    card.append(dialogue,
+      grammarTranslationPanel((context.lines || []).map(line =>
+        `${line.speaker ? line.speaker + ": " : ""}${line.translation_en || ""}`)));
+    nodes.push(card);
+  }
+
+  nodes.push(sectionHead(`Examples · ${topic.examples.length}`));
+  const examples = el("div", "list");
+  for (const example of topic.examples || []) {
+    const row = el("div", "item grammar-example");
+    const body = el("div", "body");
+    body.append(el("div", "target", esc(example.target)), el("div", "note", esc(example.note_en || "")));
+    const translation = el("div", "grammar-translation hidden", esc(example.translation_en || ""));
+    body.appendChild(translation);
+    const actions = el("div", "row");
+    const audio = sayButton(example.target); if (audio) actions.appendChild(audio);
+    const reveal = button("English", "soft small", () => {
+      const hidden = translation.classList.toggle("hidden");
+      reveal.textContent = hidden ? "English" : "Hide";
+    });
+    actions.appendChild(reveal); row.append(body, actions); examples.appendChild(row);
+  }
+  nodes.push(examples);
+  show(nodes, [button("Back", "back", grammarScreen),
+    button(icon("play") + (progress ? "Practise again" : "Start practice"), "primary grow",
+      () => grammarStart(entry, topic))]);
+}
+
+function grammarStart(entry, topic) {
+  play = null; filter = null;
+  grammarRun = { entry, topic, items: topic.exercises.slice(), index: 0, results: [] };
+  quitTo = () => grammarTopicScreen(entry, topic);
+  chrome(true);
+  grammarNext();
+}
+function grammarFooter(buttons) {
+  foot.innerHTML = "";
+  buttons.filter(Boolean).forEach(control => foot.appendChild(control));
+  foot.classList.remove("tabs");
+  primaryButton = foot.querySelector("button.primary");
+}
+function grammarQuestionCard(exercise) {
+  const card = el("div", "card grammar-question");
+  card.appendChild(el("div", "grammar-stage", esc(exercise.stage)));
+  card.appendChild(el("div", "instruction", esc(exercise.instruction_en)));
+  if (exercise.context_target) card.appendChild(el("div", "context", esc(exercise.context_target)));
+  const prompt = el("div", "prompt", esc(exercise.prompt_target));
+  card.appendChild(prompt);
+  const spoken = (/«([^»]+)»/.exec(exercise.prompt_target || "") || [])[1];
+  if (spoken) { const audio = sayButton(spoken); if (audio) card.appendChild(audio); }
+  return card;
+}
+function grammarHint(exercise, feedback, at) {
+  const hints = exercise.hint_steps || [];
+  const text = hints[Math.min(at, Math.max(0, hints.length - 1))];
+  if (!text) return at;
+  feedback.className = "grammar-feedback hint";
+  feedback.textContent = `Hint: ${text}`;
+  feedback.classList.remove("hidden");
+  return Math.min(at + 1, hints.length);
+}
+function grammarAdvance(result) {
+  grammarRun.results.push({ id: grammarRun.items[grammarRun.index].id, ...result });
+  grammarRun.index++;
+  grammarNext();
+}
+function grammarNext() {
+  if (!grammarRun || grammarRun.index >= grammarRun.items.length) return grammarSummary();
+  const exercise = grammarRun.items[grammarRun.index];
+  setProgress(`${grammarRun.index + 1} of ${grammarRun.items.length}`,
+    grammarRun.index / grammarRun.items.length);
+  if (exercise.type === "multiple_choice") return grammarChoiceQuestion(exercise);
+  if (exercise.scoring_mode === "self_check" || exercise.type === "guided_production")
+    return grammarProductionQuestion(exercise);
+  return grammarTypedQuestion(exercise);
+}
+function grammarChoiceQuestion(exercise) {
+  const card = grammarQuestionCard(exercise);
+  const options = el("div", "grammar-options");
+  const feedback = el("div", "grammar-feedback hidden");
+  let attempts = 0, hintAt = 0, aided = false, answered = false;
+  const next = () => grammarAdvance({ scored: true, correct: attempts === 0 && !aided });
+  const hintButton = button("Hint", "ghost", () => {
+    aided = true; hintAt = grammarHint(exercise, feedback, hintAt);
+  });
+  for (const option of exercise.options || []) {
+    const choice = button(esc(option.text), "", () => {
+      if (answered || choice.disabled) return;
+      if (option.correct) {
+        answered = true; choice.classList.add("correct-choice");
+        options.querySelectorAll("button").forEach(control => { control.disabled = true; });
+        feedback.className = "grammar-feedback good";
+        feedback.textContent = exercise.feedback_correct_en || option.explanation_en || "Correct.";
+        grammarFooter([button("Next", "primary grow", next)]);
+      } else {
+        attempts++; aided = true; choice.disabled = true; choice.classList.add("wrong-choice");
+        feedback.className = "grammar-feedback bad";
+        const hint = (exercise.hint_steps || [])[Math.min(attempts - 1, (exercise.hint_steps || []).length - 1)];
+        feedback.textContent = `${option.explanation_en || exercise.feedback_wrong_en || "Not quite."}` +
+          (hint ? ` Hint: ${hint}` : " Try the other answer.");
+      }
+      feedback.classList.remove("hidden");
+    });
+    options.appendChild(choice);
+  }
+  card.append(options, feedback);
+  show([pageHead(grammarRun.topic.topic.title_target, "Practice"), card], [hintButton]);
+}
+function grammarNormalize(value, rules) {
+  let out = String(value || "");
+  if (!rules || rules.trim !== false) out = out.trim();
+  if (rules && rules.ignore_terminal_punctuation) out = out.replace(/[.!?]+$/u, "").trim();
+  if (!rules || rules.case_sensitive === false) out = out.toLocaleLowerCase("it");
+  return out.replace(/\s+/gu, " ");
+}
+function grammarTypedQuestion(exercise) {
+  const card = grammarQuestionCard(exercise);
+  const answer = el("div", "grammar-answer");
+  const input = el("input");
+  input.placeholder = "Type maschile or femminile";
+  input.autocapitalize = "none"; input.spellcheck = false;
+  answer.appendChild(input); card.appendChild(answer);
+  const feedback = el("div", "grammar-feedback hidden"); card.appendChild(feedback);
+  let attempts = 0, hintAt = 0, aided = false, answered = false;
+  const accepted = (exercise.accepted_answers || []).map(value => grammarNormalize(value, exercise.normalization));
+  const hintButton = button("Hint", "ghost", () => {
+    if (answered) return; aided = true; hintAt = grammarHint(exercise, feedback, hintAt);
+  });
+  const check = button("Check", "primary grow", () => {
+    if (answered) return;
+    const typed = grammarNormalize(input.value, exercise.normalization);
+    if (!typed) {
+      feedback.className = "grammar-feedback hint";
+      feedback.textContent = "Write an answer first."; feedback.classList.remove("hidden"); return;
+    }
+    if (accepted.includes(typed)) {
+      answered = true; input.disabled = true;
+      feedback.className = "grammar-feedback good";
+      feedback.textContent = exercise.feedback_correct_en || "Correct.";
+      feedback.classList.remove("hidden");
+      return grammarFooter([button("Next", "primary grow", () =>
+        grammarAdvance({ scored: true, correct: attempts === 0 && !aided }))]);
+    }
+    attempts++; aided = true;
+    if (attempts >= 3) {
+      answered = true; input.disabled = true;
+      feedback.className = "grammar-feedback bad";
+      feedback.textContent = `${exercise.feedback_wrong_en || "Not quite."} ` +
+        `Answer: ${(exercise.accepted_answers || []).join(" / ")}.`;
+      feedback.classList.remove("hidden");
+      return grammarFooter([button("Next", "primary grow", () =>
+        grammarAdvance({ scored: true, correct: false }))]);
+    }
+    hintAt = grammarHint(exercise, feedback, hintAt);
+    feedback.className = "grammar-feedback bad";
+    feedback.textContent = `Not quite — try again. ${feedback.textContent || ""} ` +
+      `${3 - attempts} ${3 - attempts === 1 ? "try" : "tries"} left.`;
+    input.select();
+  });
+  input.addEventListener("keydown", event => {
+    if (event.key === "Enter") { event.preventDefault(); check.click(); }
+  });
+  show([pageHead(grammarRun.topic.topic.title_target, "Practice"), card], [hintButton, check]);
+  setTimeout(() => input.focus(), 60);
+}
+function grammarProductionQuestion(exercise) {
+  const card = grammarQuestionCard(exercise);
+  const answer = el("div", "grammar-answer");
+  const input = el("textarea");
+  input.placeholder = "Write your answer before checking the model";
+  input.spellcheck = false; answer.appendChild(input); card.appendChild(answer);
+  const feedback = el("div", "grammar-feedback hidden"); card.appendChild(feedback);
+  let hintAt = 0, aided = false, revealed = false;
+  const hintButton = button("Hint", "ghost", () => {
+    if (revealed) return; aided = true; hintAt = grammarHint(exercise, feedback, hintAt);
+  });
+  const reveal = button("Show model answer", "primary grow", () => {
+    if (!input.value.trim()) {
+      feedback.className = "grammar-feedback hint";
+      feedback.textContent = "Write your own answer first, even if you are unsure.";
+      feedback.classList.remove("hidden"); return;
+    }
+    revealed = true; input.disabled = true;
+    const rubric = el("div", "grammar-rubric");
+    rubric.append(el("b", "", "Model and checklist"),
+      el("div", "muted", esc(exercise.explanation_en || "Compare both noun labels.")));
+    const list = el("ul", "grammar-notes");
+    for (const item of (exercise.rubric?.criteria_en || [])) list.appendChild(el("li", "", esc(item)));
+    rubric.appendChild(list); card.appendChild(rubric);
+    feedback.classList.add("hidden");
+    grammarFooter([
+      button("I need to review", "", () => grammarAdvance({ scored: false, self_correct: false, unaided: false })),
+      button("Mine matches", "primary grow", () =>
+        grammarAdvance({ scored: false, self_correct: true, unaided: !aided }))
+    ]);
+  });
+  show([pageHead(grammarRun.topic.topic.title_target, "Write and check"), card], [hintButton, reveal]);
+  setTimeout(() => input.focus(), 60);
+}
+function grammarSummary() {
+  const run = grammarRun;
+  const scored = run.results.filter(result => result.scored);
+  const correct = scored.filter(result => result.correct).length;
+  const production = run.results.filter(result => result.self_correct && result.unaided).length;
+  const score = scored.length ? Math.round(100 * correct / scored.length) : 0;
+  const needed = Math.round(100 * (run.topic.mastery.required_score || .8));
+  const productionNeeded = run.topic.mastery.minimum_unaided_production_items || 0;
+  const mastered = score >= needed && production >= productionNeeded;
+  const progress = grammarProgressRecord(run.entry.id);
+  progress.attempts = (progress.attempts || 0) + 1;
+  progress.last_score = score;
+  progress.best_score = Math.max(progress.best_score || 0, score);
+  progress.last_studied = nowStr();
+  progress.production_self_checks = production;
+  progress.last_scored_correct = correct;
+  progress.last_scored_total = scored.length;
+  const alreadyLearned = !!progress.completed_at;
+  const reviewWasDue = alreadyLearned && (!progress.next_due || progress.next_due <= todayStr());
+  if (mastered) {
+    if (!progress.completed_at) progress.completed_at = nowStr();
+    // Extra practice before the due date is welcome, but it must not skip
+    // scheduled intervals. Only first mastery and a due review move the date.
+    if (!alreadyLearned || reviewWasDue) {
+      const intervals = run.topic.mastery.review_intervals_days || [1, 3, 7, 14, 30, 60];
+      const step = Math.max(0, progress.review_step || 0);
+      progress.next_due = plusDays(intervals[Math.min(step, intervals.length - 1)] || 1);
+      progress.review_step = Math.min(step + 1, intervals.length - 1);
+    }
+  } else if (!alreadyLearned || reviewWasDue) {
+    progress.next_due = todayStr();
+  }
+  save();
+  setProgress("", 1); chrome(false); quitTo = null; grammarRun = null;
+
+  const head = el("div", "center");
+  head.appendChild(el("div", "done-mark", icon(mastered ? "check" : "grammar")));
+  head.appendChild(el("h1", "", mastered ? "Lesson learned" : "One more round will help"));
+  head.appendChild(el("div", "grammar-result-score", `${score}%`));
+  head.appendChild(el("div", "muted", mastered
+    ? `Next review ${dueText(progress.next_due)}.`
+    : `Aim for ${needed}% and ${productionNeeded} unaided writing self-checks.`));
+  const stats = el("div", "stats"); stats.style.marginTop = "20px";
+  for (const [name, value, label, colour] of [
+    ["check", `${correct}/${scored.length}`, "right first try", "var(--s4)"],
+    ["write", `${production}/${productionNeeded}`, "writing checks", "var(--s3)"],
+    ["star", `${progress.best_score}%`, "best score", "var(--primary)"],
+    ["turn", progress.attempts, progress.attempts === 1 ? "attempt" : "attempts", "var(--s1)"]
+  ]) stats.appendChild(el("div", "stat", `${icobox(name, colour)}<b>${value}</b><span>${label}</span>`));
+  show([head, stats], [
+    button("Grammar", "back", grammarScreen),
+    button("Review lesson", "", () => grammarTopicScreen(run.entry, run.topic)),
+    button("Practise again", "primary grow", () => grammarStart(run.entry, run.topic))
+  ]);
+}
+
 /* --------------------------------------------------------------- guide
    The schedule is generated from the same intervals as the exercises, so
    the dates shown here cannot drift away from the actual box rules. */
@@ -4657,7 +5227,8 @@ function exportProgress() {
   }
   const payload = { format: 3, language: state.language,
     language_name: state.language_name, exported_at: nowStr(),
-    cards, reviews: state.reviews.slice(-4000) };
+    cards, reviews: state.reviews.slice(-4000),
+    ...(state.grammar ? { grammar: state.grammar } : {}) };
   download(`lessico-${state.language}-phone.json`, JSON.stringify(payload));
 }
 function pick(handler) {
@@ -4714,6 +5285,7 @@ async function importFile(payload, quiet) {
               // what was read here, and the words made here that the desktop
               // has not taken in yet, survive downloading the words again
               ...(base && base.reading ? { reading: base.reading } : {}),
+              ...(base && base.grammar ? { grammar: base.grammar } : {}),
               cloud };
     // a re-imported collection must not undo progress made here
     let kept = 0;
@@ -4755,6 +5327,7 @@ async function importFile(payload, quiet) {
     return notify(`That progress file is for ${payload.language_name || payload.language}, ` +
                  `but the words open here are ${state.language_name || state.language}. ` +
                  "Switch language on the home screen first.");
+  if (payload.grammar) state.grammar = mergeGrammarProgress(state.grammar, payload.grammar) || state.grammar;
   let updated = 0, skipped = 0;
   const byWord = new Map(state.cards.map(c => [c.w, c]));
   for (const [word, entry] of Object.entries(payload.cards || {})) {

@@ -1,0 +1,20 @@
+{
+  "schema_version": "lessico-grammar-index-v1",
+  "content_version": "2026-11-19",
+  "topics": [
+    {
+      "id": "it.a1.nouns.gender",
+      "language": "it",
+      "cefr": "A1",
+      "sequence": 1,
+      "module_id": "it.a1.nouns",
+      "title_target": "Il genere dei nomi",
+      "title_en": "Noun gender",
+      "estimated_minutes": 15,
+      "status": "ready",
+      "exercise_count": 23,
+      "scored_exercise_count": 20,
+      "file": "it/it.a1.nouns.gender.json"
+    }
+  ]
+}

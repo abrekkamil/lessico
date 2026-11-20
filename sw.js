@@ -1,8 +1,9 @@
 // Cache the shell so the app opens with no signal. The collection itself
 // lives in IndexedDB, not here.
-const CACHE = 'lessico-v9';
+const CACHE = 'lessico-v10';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icon.svg',
-               './reading/it.json', './reading/tr.json'];
+               './reading/it.json', './reading/tr.json', './grammar/index.json',
+               './grammar/it/it.a1.nouns.gender.json'];
 
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
